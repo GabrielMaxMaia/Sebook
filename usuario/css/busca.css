@@ -1,0 +1,48 @@
+.busca {
+  box-sizing:border-box;
+  padding:0!important;
+  height:100vh
+}
+
+.busca .container{
+    margin: auto;
+    max-width: 400px
+}
+
+.busca .box-search {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  grid-gap: 10px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.busca .box-search a.search {
+  width: 20px;
+  height: 20px;
+  display: block;
+  margin: 8px 0 0 0;
+}
+.busca .box-search a.search img {
+  width: 100%;
+}
+.busca .box-search input {
+  width: 100%;
+  height: 35px;
+  border: 1px solid #999;
+  padding: 0 0 0 5px;
+}
+.busca .searchBooks {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+.busca .searchBooks a {
+  display: block;
+  width: 100%;
+  height: 180px;
+}
+.busca .searchBooks a img {
+  width: 100%;
+}

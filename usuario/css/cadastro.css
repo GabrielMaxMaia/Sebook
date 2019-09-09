@@ -1,0 +1,100 @@
+.cadastro {
+  padding: 2rem 0;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  box-sizing: border-box
+}
+.cadastro .container figure {
+  margin: 0 auto;
+  display: block;
+  width: 208px;
+}
+.cadastro .container figure img {
+  float: left;
+  height: 55px;
+  width: 55px;
+}
+.cadastro .container figure figcaption {
+  float: left;
+  font-size: 25px;
+  margin-top: 14px;
+  margin-left: 10px;
+}
+.cadastro .container p {
+  float: left;
+  width: 100%;
+  text-align: center;
+  height: 20px;
+  position: relative;
+  margin:1rem 0
+}
+.cadastro .container p:before {
+  content: '';
+  width: 100%;
+  height: 1px;
+  background-color: #999;
+  position: absolute;
+  left: 0;
+  top: 10px;
+}
+.cadastro .container p span {
+  position: absolute;
+  z-index: 1;
+  width: 250px;
+  left: 50%;
+  margin-left: -125px;
+}
+.cadastro .container p:after {
+  content: '';
+  width: 250px;
+  height: 20px;
+  background: #fff;
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  margin-left: -125px;
+}
+.cadastro .container form {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column
+}
+.cadastro .container form label,
+.cadastro .container form input {
+  width: 100%;
+  float: left;
+}
+.cadastro .container form label {
+  margin-bottom: 5px;
+}
+.cadastro .container form label[for=feminino],
+.cadastro .container form label[for=masculino] {
+  width: auto;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+.cadastro .container form input[type=radio] {
+  width: auto;
+}
+.cadastro .container form input[type=text],
+.cadastro .container form input[type=password] {
+  height: 30px;
+  margin-bottom: 10px;
+  border: 1px solid #999;
+}
+.cadastro .container form button {
+  width: 35%;
+  margin: 0 auto;
+  margin: 1rem 0;
+  padding: .6rem;
+  border: 1px solid #ccc;
+  background: #fff
+}
+.cadastro .container form .password2 {
+  margin-bottom: 20px !important;
+}
+.cadastro .container form hr {
+  margin: 25px 0;
+}

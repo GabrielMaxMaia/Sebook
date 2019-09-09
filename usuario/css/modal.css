@@ -1,0 +1,120 @@
+.modal .btn-close {
+  color: #aaa;
+  cursor: pointer;
+  font-size: 35px;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  text-decoration: none;
+}
+.modal .btn-close:hover,
+.modal .btn-close:focus {
+  color: #999999;
+}
+.modal-wrap:before {
+  content: '';
+  display: none;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 101;
+}
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 102;
+}
+.modal-open:checked ~ .modal-wrap:before,
+.modal-open:checked ~ .modal-wrap .modal-overlay {
+  display: block;
+}
+.modal-open:checked ~ .modal-wrap .modal-dialog {
+  transform: translate(-50%, -50%);
+  position: fixed;
+  top: 40%;
+}
+.modal-dialog {
+  background: #fefefe;
+  border: #555 solid 1px;
+  border-radius: 5px;
+  position: fixed;
+  left: 50%;
+  top: -100%;
+  transform: translate(-50%, -150%);
+  transition: transform 0.6s ease-in-out;
+  width: 80%;
+  max-width: 600px;
+  z-index: 103;
+}
+.modal-body {
+  padding: 50px 20px;
+}
+.modal-body p {
+  margin: 0;
+}
+.modal-body .content-modal-cadastre {
+  display: grid;
+  grid-template-columns: 1fr 30px 1fr;
+  grid-gap: 5px;
+}
+.modal-body .content-modal-cadastre .btn-modal {
+  border: 1px solid #05a532;
+  display: block;
+  padding: 8px 0;
+  border-radius: 3px;
+  background-color: #06cc3e;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  font-size: 16px;
+  width: auto;
+}
+.modal-body .content-modal-cadastre .btn-modal.blue {
+  background-color: #008a9b;
+  border: 1px solid #006875;
+}
+.modal-body .content-modal-cadastre span {
+  text-align: center;
+  font-weight: 700;
+  line-height: 36px;
+}
+.modal-header {
+  border-bottom: #eaeaea solid 1px;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+.modal-header h2 {
+  font-size: 16px;
+  margin: 0;
+  color: #555;
+}
+.modal-footer {
+  border-top: #eaeaea solid 1px;
+  text-align: right;
+  padding: 10px;
+}
+.btn {
+  background: #fff;
+  border: #555 solid 1px;
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  padding: 8px 15px;
+  text-decoration: none;
+  text-align: center;
+  min-width: 60px;
+  position: relative;
+}
+.btn.btn-primary {
+  background: #428bca;
+  border-color: #3885c7;
+  color: #fff;
+}

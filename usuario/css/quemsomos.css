@@ -1,0 +1,21 @@
+
+.quemSomos .container{
+  margin:1rem
+}
+.quemSomos .container h1 {
+  font-size: 25px;
+  text-align: center;
+}
+.quemSomos .container .containerText{
+  border: 1px solid #ccc;
+  padding: 1rem 0 0
+}
+.quemSomos .container p {
+  line-height: 1.35rem;
+  padding: 1rem;
+  text-align:justify
+}
+.quemSomos .container img {
+  height: 250px;
+  width: 100%;
+}

@@ -1,0 +1,637 @@
+@import 'login.css';
+@import 'cadastro.css';
+@import 'quemsomos.css';
+@import 'busca.css';
+@import 'modal.css';
+@import 'carousel.css';
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+.container {
+  margin: 0 10px;
+}
+.grid {
+  display: grid;
+  grid-gap: 10px;
+}
+.grid.grid-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+.grid.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.grid.grid-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.master1 header {
+  width: 100%;
+  height: 90px;
+  background-color: #f1f1f1;
+  position: fixed;
+  top: 0;
+  z-index: 9;
+  border-bottom: 1px solid #111;
+}
+
+.master1 header .perfil {
+  width: 50px;
+  height: 40px;
+  display: block;
+  float: right;
+  margin-top: 15px;
+  margin-right: 20px;
+}
+.master1 header .perfil img {
+  height: 50px;
+}
+.master1 header .logo {
+  width: 125px;
+  height: 65px;
+  position: absolute;
+  left: 20px;
+  top: 10px;
+}
+
+.master1 header .logo img {
+  width: 100%;
+}
+
+.master1 nav {
+  width: 100%;
+  height: 60px;
+  bottom: 0;
+}
+}
+  
+.menu1{
+  text-align: center;
+  height: 60px auto;
+  position: absolute;
+}
+.menu1 ul{
+  margin-left:10%;
+  list-style: none;  
+  display: flex;
+  justify-content: start;
+}
+.menu1 li a{
+  color: #000;
+  text-decoration: none;
+  padding: 20px 35px;
+  display: block;
+  
+}
+.menu1 ul li a:hover {
+  color:blue;
+  
+}
+
+.busca {
+  text-align: center;
+  margin-right:190px;
+  float: right;
+  display: flex;
+}
+.busca input{
+  background-image: url(images/icons/search2.png);
+  background-repeat:no-repeat;
+  height: 20px;
+  padding: 10px;
+  width: 190px;
+  margin-top: -140px ;
+  background-position: 96%;
+  border: 1px solid #d6d6d6;
+  display: flex;
+}
+.master1 nav{
+  display: none;
+}
+ 
+section {
+  width: 100%;
+  position: relative;
+  padding: 80px 0;
+}
+section .banner img {
+  width: 100%;
+  height: 100%;
+}
+section .banner .image {
+  width: 100%;
+  height: 450px;
+}
+section .banner .radio {
+  display: none;
+}
+section .banner .images {
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+section .banner .images-inner {
+  width: 500%;
+  transition: all 800ms cubic-bezier(0.77, 0, 0.175, 1);
+  transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+}
+section .banner .image-slide {
+  width: 20%;
+  float: left;
+}
+section .banner .fake-radio {
+  text-align: center;
+  margin: -20px 0 0 0;
+}
+section .banner .image-slide,
+  section .banner .fake-radio,
+  section .banner .radio-btn {
+    transition: all 0.5s ease-out;
+  }
+
+section .banner #slide1:checked ~ .images .images-inner {
+  margin-left: 0;
+}
+section .banner #slide2:checked ~ .images .images-inner {
+  margin-left: -100%;
+}
+section .banner #slide3:checked ~ .images .images-inner {
+  margin-left: -200%;
+}
+section .banner #slide1:checked ~ div .fake-radio .radio-btn:nth-child(1),
+section .banner #slide2:checked ~ div .fake-radio .radio-btn:nth-child(2),
+section .banner #slide3:checked ~ div .fake-radio .radio-btn:nth-child(3) {
+  background: #000;
+}
+
+section .banner .radio-btn {
+  width: 20px;
+  height: 10px;
+  border-radius: 20px;
+  background: gray;
+  display: inline-block !important;
+  margin: 0 1px;
+  cursor: pointer;
+  border: 2px solid #FFF;
+}
+section .banner .label {
+  opacity: 0;
+  position: absolute;
+}
+@keyframes bullet {
+  0%,
+  33.32333333333334% {
+    background: #000;
+  }
+  33.333333333333336%,
+  100% {
+    background: gray;
+  }
+}
+section .banner #play1:checked ~ div .fake-radio .radio-btn:nth-child(1) {
+  animation: bullet 12300ms infinite -1000ms;
+}
+section .banner #play1:checked ~ div .fake-radio .radio-btn:nth-child(2) {
+  animation: bullet 12300ms infinite 3100ms;
+}
+section .banner #play1:checked ~ div .fake-radio .radio-btn:nth-child(3) {
+  animation: bullet 12300ms infinite 7200ms;
+}
+@keyframes slide {
+  0%,
+  25.203252032520325% {
+    margin-left: 0;
+  }
+  33.333333333333336%,
+  58.53658536585366% {
+    margin-left: -100%;
+  }
+  66.66666666666667%,
+  91.869918699187% {
+    margin-left: -200%;
+  }
+}
+section .banner .st-slider > #play1:checked ~ .images .images-inner {
+  animation: slide 12300ms infinite;
+}
+@keyframes caption {
+  0%,
+  33.32333333333334% {
+    opacity: 1;
+  }
+  33.333333333333336%,
+  100% {
+    opacity: 0;
+  }
+}
+section .banner #play1:checked ~ .labels .label:nth-child(1) {
+  animation: caption 12300ms infinite -1000ms;
+}
+section .banner #play1:checked ~ .labels .label:nth-child(2) {
+  animation: caption 12300ms infinite 3100ms;
+}
+section .banner #play1:checked ~ .labels .label:nth-child(3) {
+  animation: caption 12300ms infinite 7200ms;
+}
+section .maisProcurados h1 {
+  font-size: 20px;
+  color: #665;
+  margin-top: 30px;
+  margin-left: 15px;
+}
+section .maisProcurados .books {
+  width: 80%;
+  height:20%;
+}
+section .maisProcurados .books img {
+  width: 80%;
+  height:20%;
+}  
+
+section .eventos {
+  width: 100%;
+}
+section .eventos h2 {
+  font-size: 20px;
+  text-align: center;
+  margin: 20px 0 10px 0;
+}
+section .eventos figure {
+  margin: 0;
+}
+section .eventos figure img {
+  width: 100%;
+  height: 400px;
+}
+section .eventos figure figcaption {
+  font-size: 15px;
+}
+section .eventos figure:last-child {
+  margin-top: 20px;
+}
+
+@media (max-width: 767px) {
+  .master1 nav{
+    display: block;
+    position: fixed;
+  }
+  .menu1{
+    display: none;
+  }
+  .busca input{
+    display: none;
+  }
+  .busca{
+    display: none;
+  }
+  .master1 header {
+    width: 100%;
+    height: 80px;
+    background-color: #f1f1f1;
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    border-bottom: 1px solid #111;
+  }
+  .master1 header .perfil {
+    width: 40px;
+    height: 40px;
+    display: block;
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+  }
+  .master1 header .perfil img {
+    height: 100%;
+  }
+  .master1 header .logo {
+    width: 125px;
+    height: 60px;
+    position: absolute;
+    left: 20px;
+    top: 10px;
+  }
+  .master1 header .logo img {
+    width: 100%;
+  }
+  .master1 nav {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+  }
+  .master1 nav:after {
+    content: '';
+    width: 100%;
+    height: 60px;
+    background-color: aliceblue;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 8;
+    border-top: 1px solid #111;
+  }
+  .master1 nav .home {
+    width: 30px;
+    height: 30px;
+    display: block;
+    position: absolute;
+    z-index: 9;
+    top: 20px;
+    left: 20px;
+  }
+  .master1 nav .home img {
+    height: 100%;
+  }
+  .master1 nav .search {
+    width: 25px;
+    height: 25px;
+    display: block;
+    position: absolute;
+    z-index: 9;
+    left: 50%;
+    top: 23px;
+    margin-left: -20px;
+  }
+  .master1 nav .search img {
+    height: 100%;
+  }
+  .master1 nav .menu {
+    float: right;
+    margin-top: 20px;
+  }
+  .master1 nav .menu input {
+    display: none;
+  }
+  .master1 nav .menu label {
+    width: 25px;
+    height: 25px;
+    display: block;
+    position: absolute;
+    right: 20px;
+    z-index: 9;
+  }
+  .master1 nav .menu label img {
+    height: 100%;
+  }
+  .master1 nav .menu ul {
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 80px 0 60px 0;
+    background-color: green;
+    z-index: 1;
+    flex-flow: column;
+    margin-top: 0;
+  }
+  .master1 nav .menu ul li {
+    width: 100%;
+    height: inherit;
+    padding-left: 20px;
+    background-color: #665;
+    border-bottom: 3px solid #fff;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .master1 nav .menu ul li:last-child {
+    border-bottom: 0;
+  }
+  .master1 nav .menu ul li a {
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+  }
+  .master1 nav .menu #menuH:checked ~ ul {
+    display: flex;
+  }
+  .master2 header {
+    width: 100%;
+    height: 80px;
+    background-color: #f1f1f1;
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    border-bottom: 1px solid #111;
+    padding: 0 20px;
+    line-height: 105px;
+  }
+  .master2 header .volta {
+    width: 40px;
+    height: 50px;
+  }
+  .master2 header .volta img {
+    width: 100%;
+  }
+  .master2 header .logo {
+    width: 125px;
+    height: 60px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+  }
+  .master2 header .logo img {
+    width: 100%;
+  }
+  .master2 footer {
+    width: 100%;
+    height: 50px;
+    background-color: #f1f1f1;
+    padding: 1px 0;
+    border-top: 1px solid #111;
+    float: left;
+    margin-top: 20px;
+  }
+  .master2 footer p {
+    text-align: center;
+  }
+  section {
+    width: 100%;
+    position: relative;
+    padding: 80px 0;
+  }
+  section .banner {
+    width: 100%;
+    height: 184px;
+    /* Move slides overflowed container */
+    /* Color of bullets */
+    /* Color of bullets - END */
+    /* Text of slides - END */
+    /* Calculate AUTOPLAY for BULLETS */
+    /* Calculate AUTOPLAY for BULLETS - END */
+    /* Calculate AUTOPLAY for SLIDES */
+    /* Calculate AUTOPLAY for SLIDES - END */
+    /* Calculate AUTOPLAY for CAPTION */
+  }
+  section .banner img {
+    width: 100%;
+    height: 100%;
+  }
+  section .banner .image {
+    width: 100%;
+    height: 200px;
+  }
+  section .banner .radio {
+    display: none;
+  }
+  section .banner .images {
+    overflow: hidden;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+  section .banner .images-inner {
+    width: 500%;
+    transition: all 800ms cubic-bezier(0.77, 0, 0.175, 1);
+    transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  section .banner .image-slide {
+    width: 20%;
+    float: left;
+  }
+  section .banner .image-slide,
+  section .banner .fake-radio,
+  section .banner .radio-btn {
+    transition: all 0.5s ease-out;
+  }
+  section .banner .fake-radio {
+    text-align: center;
+    margin: -20px 0 0 0;
+  }
+  section .banner #slide1:checked ~ .images .images-inner {
+    margin-left: 0;
+  }
+  section .banner #slide2:checked ~ .images .images-inner {
+    margin-left: -100%;
+  }
+  section .banner #slide3:checked ~ .images .images-inner {
+    margin-left: -200%;
+  }
+  section .banner #slide1:checked ~ div .fake-radio .radio-btn:nth-child(1),
+  section .banner #slide2:checked ~ div .fake-radio .radio-btn:nth-child(2),
+  section .banner #slide3:checked ~ div .fake-radio .radio-btn:nth-child(3) {
+    background: #000;
+  }
+  section .banner .radio-btn {
+    width: 20px;
+    height: 10px;
+    border-radius: 20px;
+    background: gray;
+    display: inline-block !important;
+    margin: 0 1px;
+    cursor: pointer;
+    border: 2px solid #FFF;
+  }
+  section .banner .label {
+    opacity: 0;
+    position: absolute;
+  }
+  @keyframes bullet {
+    0%,
+    33.32333333333334% {
+      background: #000;
+    }
+    33.333333333333336%,
+    100% {
+      background: gray;
+    }
+  }
+  section .banner #play1:checked ~ div .fake-radio .radio-btn:nth-child(1) {
+    animation: bullet 12300ms infinite -1000ms;
+  }
+  section .banner #play1:checked ~ div .fake-radio .radio-btn:nth-child(2) {
+    animation: bullet 12300ms infinite 3100ms;
+  }
+  section .banner #play1:checked ~ div .fake-radio .radio-btn:nth-child(3) {
+    animation: bullet 12300ms infinite 7200ms;
+  }
+  @keyframes slide {
+    0%,
+    25.203252032520325% {
+      margin-left: 0;
+    }
+    33.333333333333336%,
+    58.53658536585366% {
+      margin-left: -100%;
+    }
+    66.66666666666667%,
+    91.869918699187% {
+      margin-left: -200%;
+    }
+  }
+  section .banner .st-slider > #play1:checked ~ .images .images-inner {
+    animation: slide 12300ms infinite;
+  }
+  @keyframes caption {
+    0%,
+    33.32333333333334% {
+      opacity: 1;
+    }
+    33.333333333333336%,
+    100% {
+      opacity: 0;
+    }
+  }
+  section .banner #play1:checked ~ .labels .label:nth-child(1) {
+    animation: caption 12300ms infinite -1000ms;
+  }
+  section .banner #play1:checked ~ .labels .label:nth-child(2) {
+    animation: caption 12300ms infinite 3100ms;
+  }
+  section .banner #play1:checked ~ .labels .label:nth-child(3) {
+    animation: caption 12300ms infinite 7200ms;
+  }
+  section .maisProcurados h1 {
+    font-size: 20px;
+    color: #665;
+    margin-top: 30px;
+    margin-left: 15px;
+  }
+  section .maisProcurados .books {
+    width: 100%;
+    height: 180px;
+  }
+  section .maisProcurados .books img {
+    width: 100%;
+    height: 180px;
+  }
+  section .eventos {
+    width: 100%;
+  }
+  section .eventos h2 {
+    font-size: 20px;
+    text-align: center;
+    margin: 20px 0 10px 0;
+  }
+  section .eventos figure {
+    margin: 0;
+  }
+  section .eventos figure img {
+    width: 100%;
+    height: 200px;
+  }
+  section .eventos figure figcaption {
+    font-size: 15px;
+  }
+  section .eventos figure:last-child {
+    margin-top: 20px;
+  }
+}
