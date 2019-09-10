@@ -9,7 +9,7 @@
 	<script src="https://code.jquery.com/jquery-3.4.0.slim.min.js"></script>
 
 	<link rel="stylesheet" href="css/swiper.css">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/styleLog.css">
 
 	<title>Sebook</title>
 </head>
@@ -17,20 +17,31 @@
 <body class="">
 	<header>
 		<div class="menuGroup">
-			<a class="logo" href="index.html">
+			<a class="logo" href="Logado.html">
 				<img src="images/img/logoSebookCor.png" alt="SebooK">
-			</a>
-			<a class="perfil" href="login.html">
-				<img src="images/icons/user.png" alt="Perfil" title="Perfil">
-			</a>
+				</a>
+				<div id="Logado">
+				<input type="checkbox" id="menuP">
+				<label for="menuP">
+						<img src="images/icons/Logado.png" alt="Perfil" title="Perfil">
+				</label>
+				<div class="ulCenter2">
+					<ul>
+						<ul>
+							<li><a href="perfil.html">PERFIL</a></li>
+							<li><a href="index.html">SAIR</a></li>
+						</ul>
+					</ul>
+				</div>
+			</div>
 		</div>
 		<nav class="navDesk">
 			<ul>
 				<li>
 					<ul>
 						<li><a href="eventos.html">EVENTOS</a></li>
-						<li><a href="sebos.html">SEBOS</a></li>
-						<li><a href="livro.html">LIVROS</a></li>
+						<li><a href="Losebos.html">SEBOS</a></li>
+						<li><a href="Logalivro.html">LIVROS</a></li>
 						<li><a href="quemSomos.html">QUEM SOMOS</a></li>
 						<li><a href="ajuda.html">FAQ</a></li>
 					</ul>
@@ -99,31 +110,31 @@
 					<div class="swiper-container">
 						<div class="books swiper-wrapper">
 							<div class="swiper-slide">
-								<img src="images/img/livroHarry.jpg" alt="livroHarry" title="Livro">
+								<a href="LoDescLivros.html"><img src="images/img/livroHarry.jpg" alt="livroHarry" title="Livro"></a>
 							</div>
 							<div class="swiper-slide">
-								<img src="images/img/livroNeve.jpg" alt="livroNeve" title="Livro">
+								<a href="LoDescLivros2.html"><img src="images/img/livroNeve.jpg" alt="livroNeve" title="Livro"></a>
 							</div>
 							<div class="swiper-slide">
-								<img src="images/img/livroPercy.jpg" alt="livroPercy" title="Livro">
+								<a href="LoDescLivros3.html"><img src="images/img/Capa_Como-eu-era-antes-de-voce2.jpg" alt="livroPercy" title="Livro"></a>
 							</div>
 							<div class="swiper-slide">
-								<img src="images/img/livroHarry.jpg" alt="livroHarry" title="Livro">
+								<a href="LoDescLivros4.html"><img src="images/img/Cidades-de-Papel.jpg" alt="livroHarry" title="Livro"></a>
 							</div>
 							<div class="swiper-slide">
-								<img src="images/img/livroNeve.jpg" alt="livroNeve" title="Livro">
+								<a href="LoDescLivros5.html"><img src="images/img/DepoisDeVoce_Jojo.jpg" alt="livroNeve" title="Livro"></a>
 							</div>
 							<div class="swiper-slide">
-								<img src="images/img/livroPercy.jpg" alt="livroPercy" title="Livro">
+								<a href="LoDescLivros6.html"><img src="images/img/livroPercy.jpg" alt="livroPercy" title="Livro"></a>
 							</div>
 							<div class="swiper-slide">
-								<img src="images/img/livroHarry.jpg" alt="livroHarry" title="Livro">
+								<a href="LoDescLivros7.html"><img src="images/img/Livro-A-Culpa-e-das-Estrelas.jpg" alt="livroHarry" title="Livro"></a>
 							</div>
 							<div class="swiper-slide">
-								<img src="images/img/livroNeve.jpg" alt="livroNeve" title="Livro">
+								<a href="LoDescLivros8.html"><img src="images/img/Livro-After.jpg" alt="livroNeve" title="Livro"></a>
 							</div>
 							<div class="swiper-slide">
-								<img src="images/img/livroPercy.jpg" alt="livroPercy" title="Livro">
+								<a href="LoDescLivros9.html"><img src="images/img/Livro-As-Cronicas-de-Gelo-e-Fogo-A-Danca-dos-Dragoes.jpg" alt="livroPercy" title="Livro"></a>
 							</div>
 						</div>
 						<!-- Add Pagination -->
@@ -149,7 +160,7 @@
 	</div>
 	<footer class="master1">
 		<nav class="menuMobile">
-			<a href="index.html" class="home">
+			<a href="Logado.html" class="home">
 				<img src="images/icons/home.png" alt="Home" title="Página inicial">
 			</a>
 			<a href="busca.html" class="search">
@@ -165,7 +176,7 @@
 						<ul>
 							<li><a href="eventos.html">EVENTOS</a></li>
 							<li><a href="sebos.html">SEBOS</a></li>
-							<li><a href="livro.html">LIVROS</a></li>
+							<li><a href="Lolivro.html">LIVROS</a></li>
 							<li><a href="quemSomos.html">QUEM SOMOS</a></li>
 							<li><a href="ajuda.html">FAQ</a></li>
 						</ul>
@@ -174,6 +185,7 @@
 			</div>
 		</nav>
 	</footer>
+	<div id="rodape">Rodape</div>
 
 	<script src="https://idangero.us/swiper/dist/js/swiper.min.js"></script>
 	<script>
