@@ -1,10 +1,11 @@
 .busca {
   box-sizing:border-box;
-  padding:0!important;
+  padding:1!important;
   height:100vh
 }
 
 .busca .container{
+    
     margin: auto;
     max-width: 400px
 }
@@ -16,6 +17,7 @@
   grid-gap: 10px;
   margin: 0 auto;
   margin-bottom: 20px;
+  
 }
 .busca .box-search a.search {
   width: 20px;
@@ -46,3 +48,9 @@
 .busca .searchBooks a img {
   width: 100%;
 }
+@media(max-width:780px) {
+  
+  .busca .container{
+  padding: 3vh;
+  }
+  }
