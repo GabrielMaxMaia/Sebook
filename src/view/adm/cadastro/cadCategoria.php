@@ -11,8 +11,9 @@ use Controller\CategoriaController;
 		<caption>Lista de Categorias</caption>
 		<thead>
 			<tr>
+				<th>Id</th>
 				<th>Nome</th>
-				<th>Descrição</th>
+				<th>Status</th>
 				<th colspan="2">Ação</th>
 			</tr>
 		</thead>
@@ -22,7 +23,7 @@ use Controller\CategoriaController;
 			?>
 		</tbody>
 	</table>
-	<input class="button" type="button" onclick="window.location='http://localhost/Plao/projetos/modelo_mvc_dao/area/adm/cadastro/cadCategoria/add'" value="Novo">
+	<input class="button" type="button" onclick="window.location='http://localhost/Sebook/area/adm/cadastro/cadCategoria/add'" value="Novo">
 
 </section>
 
@@ -33,12 +34,6 @@ use Controller\CategoriaController;
 		<input type="hidden" name="txtAcao" id="txtAcao" value="<?php echo $categoriaController->getAcaoGET();?>">
 		<label>Categoria</label>
 		<input class="grande" type="text" id="txtNome"  name="txtNome" onblur="validarNomeCategoria('http://localhost/PLAO3/Projetos/Modelo_mvc_dao/src/view/adm/cadastro/cadCategoriaAjax.php', 'txtNomeCat='+this.value, 'txtNome')" value="<?php echo $categoriaController->getCategoriaDAO()->getNomeCategoria(); ?>">
-		<br>
-		<label>Descrição</label>
-		<textarea class="grande" name="txtDescr"><?php echo $categoriaController->getCategoriaDAO()->getDescrCategoria(); ?></textarea>
-		<br>
-
-
 		<label> </label>
 		<input class="buttonCancel" type="reset" value="Limpar">
 		<input class="button" type="submit" value="Enviar">
@@ -47,5 +42,5 @@ use Controller\CategoriaController;
 	<br>
 	<br>
 	<br>
-	<a href="http://localhost/Plao/Projetos/modelo_mvc_dao/area/adm/cadastro/cadCategoria">Voltar</a>
+	<a href="http://localhost/Sebook/area/adm/cadastro/cadCategoria">Voltar</a>
 </section>

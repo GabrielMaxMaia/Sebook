@@ -6,7 +6,7 @@ use Model\CategoriaDAO;
 
 class CategoriaController
 {
-//Atributos
+    //Atributos
     private $lista = 'on';
     private $formulario = 'off';
     private $acaoGET;
@@ -14,35 +14,53 @@ class CategoriaController
 
     private $categoriaDAO = null;
 
-//Método Construtor
+    //Método Construtor
     public function __construct($sql)
     {
         $this->categoriaDAO = new CategoriaDAO($sql);
         $this->verificaExibicao();
     }
 
-//Métodos GETTERS e SETTERS
+    //Métodos GETTERS e SETTERS
     public function getLista()
-    {return $this->lista;}
+    {
+        return $this->lista;
+    }
     public function getFormulario()
-    {return $this->formulario;}
+    {
+        return $this->formulario;
+    }
     public function getAcaoGET()
-    {return $this->acaoGET;}
+    {
+        return $this->acaoGET;
+    }
     public function getAcaoPOST()
-    {return $this->acaoPOST;}
+    {
+        return $this->acaoPOST;
+    }
     public function getCategoriaDAO()
-    {return $this->categoriaDAO;}
+    {
+        return $this->categoriaDAO;
+    }
 
     public function setLista($valor)
-    {$this->lista = $valor;}
+    {
+        $this->lista = $valor;
+    }
     public function setFormulario($valor)
-    {$this->formulario = $valor;}
+    {
+        $this->formulario = $valor;
+    }
     public function setAcaoGET($valor)
-    {$this->acaoGET = $valor;}
+    {
+        $this->acaoGET = $valor;
+    }
     public function setAcaoPOST($valor)
-    {$this->acaoPOST = $valor;}
+    {
+        $this->acaoPOST = $valor;
+    }
 
-//Métodos Especialistas
+    //Métodos Especialistas
 
     public function recuperarAcaoPOST()
     {
@@ -75,11 +93,8 @@ class CategoriaController
     public function recuperarDadosFormulario()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
             $this->categoriaDAO->setIdCategoria($_POST['txtId']);
             $this->categoriaDAO->setNomeCategoria($_POST['txtNome']);
-            $this->categoriaDAO->setDescrCategoria($_POST['txtDescr']);
-            
         }
     }
 
@@ -88,37 +103,37 @@ class CategoriaController
     // $_SESSION['var'] = 'valor';
     // echo $_SESSION['var'];
 
-    public function evitarReenvio(){
+    public function evitarReenvio()
+    {
         //verificar se existe uma variavel de sessão para os dados do form
-        if(isset($_SESSION['dadosForm'])){
+        if (isset($_SESSION['dadosForm'])) {
             //conteúdo armazenado sessão diferente do conteúdo atual --> ambos em forma de hash
-            if($_SESSION['dadosForm'] != md5(implode($_POST)) ){   //novo envio             
+            if ($_SESSION['dadosForm'] != md5(implode($_POST))) {   //novo envio             
                 //armazena conteúdo do formulário em forma de hash na varivel de sessao
                 $_SESSION['dadosForm'] = md5(implode($_POST)); // md5 cria um hash de uma string  --> implode converte array para string;
                 //indica que não há reenvio de dados
                 return true;
-            }else{ //reenvio
+            } else { //reenvio
                 //conteúdo armazenado sessão é igual do conteúdo atual --> ambos em forma de hash
                 //não atualizo a sessão
                 return false;
             }
-        } else{
+        } else {
             //armazena conteúdo do formulário em forma de hash na varivel de sessao
             $_SESSION['dadosForm'] = md5(implode($_POST)); // md5 cria um hash de uma string  --> implode converte array para string;
             //indica que não há reenvio de dados
             return true;
         }
     }
-    
+
     public function gravarAlterar()
     {
         $this->recuperarAcaoPOST();
         $this->recuperarDadosFormulario();
-        if ($this->acaoPOST == 1 && $this->evitarReenvio()) {            
+        if ($this->acaoPOST == 1 && $this->evitarReenvio()) {
             $this->categoriaDAO->adicionarCategoria();
         } else if ($this->acaoPOST == 2) {
             $this->categoriaDAO->alterarCategoria();
-
         }
     }
 
@@ -135,8 +150,7 @@ class CategoriaController
         if ($this->acaoGET == 2) {
             $this->categoriaDAO->setIdCategoria($_GET['id']);
             $categoria = $this->categoriaDAO->listarCategoriaId();
-            $this->categoriaDAO->setNomeCategoria($categoria['nomeCat']);
-            $this->categoriaDAO->setDescrCategoria($categoria['descrCat']);
+            $this->categoriaDAO->setNomeCategoria($categoria['nomeCategoria']);
         }
     }
 
@@ -147,24 +161,24 @@ class CategoriaController
         if ($result != null) {
             foreach ($result as $linha) {
                 $tabela .= "<tr>
-                    <td>" . $linha['nomeCat'] . "</td>
-                        <td>" . $linha['descrCat'] . "</td>
+                        <td>" . $linha['idCategoria'] . "</td>
+                        <td>" . utf8_encode($linha['nomeCategoria']) . "</td>
+                        <td>" . $linha['codStatusCategoria'] . "</td>
                         <td>
-                            <a href='http://localhost/PLAO3/Projetos/modelo_mvc_dao/index.php?area=adm&folder=cadastro&page=cadCategoria&acao=2&id=" . $linha['idCat'] . "'>
-                                <img src='public/img/editar.jpg'>
+                            <a href='http://localhost/Sebook/area/adm/cadastro/cadCategoria/alter/" . $linha['idCategoria'] . "'>
+                                <img src='" . _URLBASE_ . "public/img/editar.jpg'>
                             </a>
                         </td>
                         <td>
-                            <a href='http://localhost/PLAO3/Projetos/modelo_mvc_dao/index.php?area=adm&folder=cadastro&page=cadCategoria&acao=3&id=" . $linha['idCat'] . "'>
-                                <img src='public/img/excluir.jpg'>
+                            <a href='http://localhost/Sebook/area/adm/cadastro/cadCategoria/delete/" . $linha['idCategoria'] . "'>
+                                <img src='" . _URLBASE_ . "public/img/excluir.jpg'>
                             </a>
                         </td>
                     </tr>";
             }
         } else {
             $tabela = "<tr colspan='5'><td>Não há categorias registradas</td></tr>";
-        }        
+        }
         return $tabela;
     }
-
 }
