@@ -2,8 +2,8 @@
 
 require_once $ajuste.'src/util/Psr4AutoloaderClass.php';
 
-define("_URLBASE_","http://localhost/Sebook_projeto/php/Sebook_dao/");
-define("_URLBASEADM_","http://localhost/Sebook_projeto/php/Sebook_dao/index.php?area=adm");
+define("_URLBASE_","http://localhost/Sebook/");
+define("_URLBASEADM_","http://localhost/Sebook/index.php?area=adm");
 date_default_timezone_set('America/Sao_Paulo'); 
 
 $autoLoading = new Util\Psr4AutoloaderClass();

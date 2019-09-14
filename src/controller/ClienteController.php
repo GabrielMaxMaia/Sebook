@@ -149,17 +149,17 @@ class ClienteController
             foreach ($result as $linha) {
                 $tabela .= "<tr>
                 <td>" . $linha['idUsuario'] . "</td>
-                    <td>" . $linha['cpfCliente'] . "</td>
-                        <td>" . $linha['sexoCliente'] . "</td>
-                      
+                <td>" . $linha['cpfCliente'] . "</td>
+                <td>" . $linha['sexoCliente'] . "</td>
+                <td>" . $linha['codStatusCliente'] . "</td>
                         <td>
-                            <a href='http://localhost/Sebook_projeto/php/Sebook_dao/index.php?area=adm&folder=cadastro&page=cadCliente&acao=2&id=" . $linha['idUsuario'] . "'>
-                                <img src='public/img/editar.jpg'>
+                            <a href='http://localhost/Sebook/area/adm/cadastro/cadCliente/2/id=" . $linha['idUsuario'] . "'>
+                                <img src='"._URLBASE_."public/img/editar.jpg'>
                             </a>
                         </td>
                         <td>
-                            <a href='http://localhost/Sebook_projeto/php/Sebook_dao/index.php?area=adm&folder=cadastro&page=cadCliente&acao=3&id=" . $linha['idUsuario'] . "'>
-                                <img src='public/img/excluir.jpg'>
+                            <a href='http://localhost/Sebook/area/adm/cadastro/cadCliente/3/id=" . $linha['idUsuario'] . "'>
+                                <img src='"._URLBASE_."public/img/excluir.jpg'>
                             </a>
                         </td>
                     </tr>";

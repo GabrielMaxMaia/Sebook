@@ -15,6 +15,7 @@
 				<th>Id</th>
 				<th>Cpf</th>
 				<th>Sexo</th>
+				<th>Status</th>
 				<th colspan="2">Ação</th>
 			</tr>
 		</thead>
@@ -24,7 +25,7 @@
 			?>
 		</tbody>
 	</table>
-	<input class="button" type="button" onclick="window.location='http://localhost/Sebook_projeto/php/Sebook_dao/index.php?area=adm&folder=cadastro&page=cadCliente&acao=1'"
+     <input class="button" type="button" onclick="window.location='http://localhost/Sebook/adm/cadastro/cadCliente/acao=1'"
 	 value="Novo">
 </section>
 
@@ -48,5 +49,5 @@
 	<br>
 	<br>
 	<br>
-	<a href="http://localhost/Sebook_projeto/php/Sebook_dao/index.php?area=adm&folder=cadastro&page=cadCliente">Voltar</a>
+	<a href="http://localhost/Sebook/area/adm/cadastro/cadCliente">Voltar</a>
 </section>

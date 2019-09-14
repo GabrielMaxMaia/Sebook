@@ -1,1 +1,0 @@
-<img src='public/img/404_morte.jpg'>
