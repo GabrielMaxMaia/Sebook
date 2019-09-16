@@ -1,4 +1,3 @@
-
 .controle {
   width: 100%;
   position: relative;
@@ -14,7 +13,6 @@
   font-size: 30px;
   text-align: center;
   background-color: none
-
 }
 
 .controle .container p {
@@ -23,17 +21,21 @@
   text-align: center;
   line-height: 1.3rem 
 }
+
 .controle .container hr {
-  margin-bottom: 25px;
+  margin-bottom: 25px
 }
+
 .controle .container form input {
   width: 100%;
   height: 30px;
-  margin-bottom: 15px;
+  margin-bottom: 15px
 }
+
 .controle .container form .tex {
-  height: 70px;
+  height: 70px
 }
+
 .controle .container form button {
   width: 35%;
   margin: 0 auto;

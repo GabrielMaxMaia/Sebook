@@ -1,4 +1,3 @@
-
 .tratamento {
   width: 100%;
   position: relative;
@@ -9,16 +8,14 @@
   align-self:center
 }
 
-
 .tratamento img{
   margin-top:20px ;
-  max-width:50px;
+  max-width:50px
 }
 
 h2{
-  padding: 10px 20px;
+  padding: 10px 20px
   }
-
 
 .balaoContainer{
   display: flex;
@@ -37,16 +34,15 @@ h2{
   margin: 1rem auto;
   display: flex;
   flex-direction:column;
-
   min-height: 100px;
   color: #111;
   background: linear-gradient(45deg,#ccede3, #bee3e3)
-  
-
 }
+
 #balao h5, #balao p{
   align-self:center
 }
+
 #balao h5{padding: .5rem;
   box-sizing: border-box
 }
@@ -56,6 +52,7 @@ h2{
   position: absolute;
   background: #fff
 }
+
 #balao:before{
   width: 19px;
   height: 19px;
@@ -64,6 +61,7 @@ h2{
   -webkit-transform: rotate(45deg);
   border:1px solid #ccc
 }
+
 #balao::after{
   width: 20px;
   height: 22px;
@@ -73,11 +71,11 @@ h2{
   z-index:9999
 }
 
-
 .itemComentario figure{
   display:flex;
   align-items: flex-end
 }
+
 .itemComentario figcaption p{
   align-self:flex-end
 }
@@ -88,9 +86,7 @@ h2{
 
 .itemComentario p{
   text-align:left;
-  padding: 20px;
-  
-  
+  padding: 20px
 }
 
 .btn{
@@ -103,12 +99,11 @@ h2{
   width: 7rem;
   margin: .4rem 0;
   align-self: flex-end;
-  color: #fff;
-  
+  color: #fff
 }
+
 .btn:hover{
   color: #fff;
   background-color:#7bc5c0;
-
-  transition: .2s all ease-in-out;
+  transition: .2s all ease-in-out
 }

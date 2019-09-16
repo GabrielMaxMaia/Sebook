@@ -1,4 +1,3 @@
-
 div#container {
   max-width:10000px!important
 }
@@ -6,18 +5,19 @@ div#container {
 .comentarios{
   padding:1rem;
   box-sizing:border-box
-
 }
+
 .containerTable table{
   border-collapse: collapse;
   width: 100%;
   max-width:1000px;
   margin:auto
-
 }
+
 .containerTable table th{
   min-width:100px
 }
+
 th, td{
   padding:.5rem;
   box-sizing:border-box;
