@@ -1,109 +1,112 @@
 .tratamento {
-  width: 100%;
-  position: relative;
-  padding: 1rem;
-  margin: auto;
-  box-sizing: border-box;
-  max-width: 460px;
-  align-self:center
+    width: 100%;
+    position: relative;
+    padding: 1rem;
+    margin: auto;
+    box-sizing: border-box;
+    max-width: 460px;
+    align-self: center
 }
 
-.tratamento img{
-  margin-top:20px ;
-  max-width:50px
+.tratamento img {
+    margin-top: 20px;
+    max-width: 50px
 }
 
-h2{
-  padding: 10px 20px
-  }
-
-.balaoContainer{
-  display: flex;
-  flex-direction:column;
-  background:#fff;
-  z-index: 1;
-  width:100%;
-  border: 1px solid #ccc
+h2 {
+    padding: 10px 20px
 }
 
-#balao{
-  background:#fff;
-  position: relative;
-  padding: 1rem;
-  width: auto;
-  margin: 1rem auto;
-  display: flex;
-  flex-direction:column;
-  min-height: 100px;
-  color: #111;
-  background: linear-gradient(45deg,#ccede3, #bee3e3)
+.balaoContainer {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    z-index: 1;
+    width: 100%;
+    border: 1px solid #ccc
 }
 
-#balao h5, #balao p{
-  align-self:center
+#balao {
+    background: #fff;
+    position: relative;
+    padding: 1rem;
+    width: auto;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100px;
+    color: #111;
+    background: linear-gradient(45deg, #ccede3, #bee3e3)
 }
 
-#balao h5{padding: .5rem;
-  box-sizing: border-box
+#balao h5,
+#balao p {
+    align-self: center
 }
 
-#balao:before, #balao::after{
-  content: '';
-  position: absolute;
-  background: #fff
+#balao h5 {
+    padding: .5rem;
+    box-sizing: border-box
 }
 
-#balao:before{
-  width: 19px;
-  height: 19px;
-  left: -10px;
-  top: 17px;
-  -webkit-transform: rotate(45deg);
-  border:1px solid #ccc
+#balao:before,
+#balao::after {
+    content: '';
+    position: absolute;
+    background: #fff
 }
 
-#balao::after{
-  width: 20px;
-  height: 22px;
-  left: -7.5px;  
-  top: 16px;
-  -webkit-transform: rotate(45deg);
-  z-index:9999
+#balao:before {
+    width: 19px;
+    height: 19px;
+    left: -10px;
+    top: 17px;
+    -webkit-transform: rotate(45deg);
+    border: 1px solid #ccc
 }
 
-.itemComentario figure{
-  display:flex;
-  align-items: flex-end
+#balao::after {
+    width: 20px;
+    height: 22px;
+    left: -7.5px;
+    top: 16px;
+    -webkit-transform: rotate(45deg);
+    z-index: 9999
 }
 
-.itemComentario figcaption p{
-  align-self:flex-end
+.itemComentario figure {
+    display: flex;
+    align-items: flex-end
 }
 
-.itemComentario h4{
-  margin-top:.3rem
+.itemComentario figcaption p {
+    align-self: flex-end
 }
 
-.itemComentario p{
-  text-align:left;
-  padding: 20px
+.itemComentario h4 {
+    margin-top: .3rem
 }
 
-.btn{
-  background: none;
-  padding: 1rem 1.5rem;
-  cursor: pointer;
-  outline: none;
-  border: none;
-  background: #6eb9b4;
-  width: 7rem;
-  margin: .4rem 0;
-  align-self: flex-end;
-  color: #fff
+.itemComentario p {
+    text-align: left;
+    padding: 20px
 }
 
-.btn:hover{
-  color: #fff;
-  background-color:#7bc5c0;
-  transition: .2s all ease-in-out
+.btn {
+    background: none;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: #6eb9b4;
+    width: 7rem;
+    margin: .4rem 0;
+    align-self: flex-end;
+    color: #fff
+}
+
+.btn:hover {
+    color: #fff;
+    background-color: #7bc5c0;
+    transition: .2s all ease-in-out
 }
