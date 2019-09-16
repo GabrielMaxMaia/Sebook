@@ -153,12 +153,12 @@ class ClienteController
                 <td>" . $linha['sexoCliente'] . "</td>
                 <td>" . $linha['codStatusCliente'] . "</td>
                         <td>
-                            <a href='http://localhost/Sebook/area/adm/cadastro/cadCliente/2/id=" . $linha['idUsuario'] . "'>
+                            <a href='http://localhost/sebook/area/adm/cadastro/cadCliente/2/id=" . $linha['idUsuario'] . "'>
                                 <img src='"._URLBASE_."public/img/editar.jpg'>
                             </a>
                         </td>
                         <td>
-                            <a href='http://localhost/Sebook/area/adm/cadastro/cadCliente/3/id=" . $linha['idUsuario'] . "'>
+                            <a href='http://localhost/sebook/area/adm/cadastro/cadCliente/3/id=" . $linha['idUsuario'] . "'>
                                 <img src='"._URLBASE_."public/img/excluir.jpg'>
                             </a>
                         </td>
