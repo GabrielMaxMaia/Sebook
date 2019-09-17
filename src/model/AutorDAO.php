@@ -11,26 +11,20 @@ class AutorDAO extends Autor
     //Atributos - serão os comandos SQL  + um objeto Sql
     private static $SELECT_ALL = "select * from autor where cod_status_autor = '1'";
 
-    private static $SELECT_ID = "select * from Autor where id_usuario = :id";
+    private static $SELECT_ID = "select * from Autor where id_usuario = :idUsuario";
 
     private static $INSERT = "INSERT INTO `Autor` (`id_usuario`,`sexo_Autor`,`compl_end_Autor`,`logradouro_Autor`,`url_foto_Autor`,`num_compl_Autor`,`cpf_Autor`,`cep_Autor`,`dt_nasc_Autor`,`cod_status_Autor`) VALUES (:id_usuario,:sexo_Autor,:compl_end_Autor,:logradouro_Autor,:url_foto_Autor,:num_compl_Autor,:cpf_Autor,:cep_Autor,:dt_nasc_Autor,:cod_status_Autor)";
 
     private static $UPDATE = "UPDATE `Autor` SET
-    `id_usuario` = :id_usuario,
-    `sexo_Autor` = :sexo_Autor,
-    `compl_end_Autor` = :compl_end_Autor,
-    `logradouro_Autor` = :logradouro_Autor,
-    `url_foto_Autor` = :url_foto_Autor,
-    `num_compl_Autor` = :num_compl_Autor,
-    `cpf_Autor` = :cpf_Autor,
-    `cep_Autor` = :cep_Autor,
-    `dt_nasc_Autor` = :dt_nasc_Autor,
-    `cod_status_Autor` = :cod_status_Autor
-    WHERE `id_usuario` = :id_usuario";
+    `id_autor` = :idAutor,
+    `nome_autor` = :nomeAutor,
+    `compl_end_autor` = :complEndAutor,
+    `cod_status_autor` = :codStatusAutor
+    WHERE `id_usuario` = :idUsuario";
 
 
     //DELETE lógico -> altera status    
-    private static $DELETE = "UPDATE autor SET cod_status_autor = '0' WHERE id_usuario = :id_usuario";
+    private static $DELETE = "UPDATE autor SET cod_status_autor = 0 WHERE id_usuario = :idUsuario";
 
     //Atributo par armazenar o Objeto SQL 
     private $sql;
@@ -78,8 +72,8 @@ class AutorDAO extends Autor
         if ($result->rowCount() == 1) {
             $linha = $result->fetch(\PDO::FETCH_OBJ);
             $itens = array(
-                `id_usuario` => $linha->id_Autor,
-                `cod_status_Autor` => $linha->cod_status_Autor
+                `idAutor` => $linha->id_Autor,
+                `codStatusAutor` => $linha->cod_status_Autor
             );
         } else {
             $itens = null;
@@ -112,7 +106,7 @@ class AutorDAO extends Autor
         $result = $this->sql->execute(
             AutorDAO::$DELETE,
             array(
-                ':id' => array(0 => $this->getIdAutor(), 1 => \PDO::PARAM_INT)
+                ':idAutor' => array(0 => $this->getIdAutor(), 1 => \PDO::PARAM_INT)
             )
         );
         return $result;

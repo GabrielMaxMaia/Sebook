@@ -61,7 +61,7 @@ class Autor
 			'idAutor' => $this->idAutor,
 			'nomeAutor' => $this->nomeAutor,
 			'codStatusAutor' => $this->codStatusAutor,
-			'idNacionalida' => $this->idNacionalida
+			'idNacionalidade' => $this->idNacionalida
 		));
 	}
 }

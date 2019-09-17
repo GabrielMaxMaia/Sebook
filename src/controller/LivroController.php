@@ -168,8 +168,8 @@ class LivroController
                 <td>" . $linha['idLivro'] . "</td>
                 <td>" . $linha['isbnLivro'] . "</td>
                 <td>" . $linha['anoLivro'] . "</td>
-                <td>" . utf8_encode($linha['nomeLivro']) . "</td>
-                <td>" . utf8_encode($linha['sinopseLivro']) . "</td>    
+                <td>" . $linha['nomeLivro'] . "</td>
+                <td>" . $linha['sinopseLivro'] . "</td>    
                 <td>" . $linha['codStatusLivro'] . "</td>      
                 <td>" . $linha['idEditora'] . "</td>      
                 <td>" . $linha['idCategoria'] . "</td>      

@@ -167,7 +167,7 @@ class EditoraController
             foreach ($result as $linha) {
                 $tabela .= "<tr>
                 <td>" . $linha['idEditora'] . "</td>
-                <td>" . utf8_encode($linha['nomeEditora']) . "</td>
+                <td>" . $linha['nomeEditora'] . "</td>
                 <td>" . $linha['codStatusEditora'] . "</td>    
                         <td>
                             <a href='http://localhost/Sebook/area/adm/cadastro/cadEditora/2/id=" . $linha['idEditora'] . "'>

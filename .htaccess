@@ -1,4 +1,4 @@
-#ativar mecanismo de reescrita de URL
+﻿#ativar mecanismo de reescrita de URL
 RewriteEngine On
 #bloqueio de navegação de diretório
 Options -Indexes

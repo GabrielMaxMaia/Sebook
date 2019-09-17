@@ -162,7 +162,7 @@ class CategoriaController
             foreach ($result as $linha) {
                 $tabela .= "<tr>
                         <td>" . $linha['idCategoria'] . "</td>
-                        <td>" . utf8_encode($linha['nomeCategoria']) . "</td>
+                        <td>" . $linha['nomeCategoria'] . "</td>
                         <td>" . $linha['codStatusCategoria'] . "</td>
                         <td>
                             <a href='http://localhost/Sebook/area/adm/cadastro/cadCategoria/alter/" . $linha['idCategoria'] . "'>

@@ -31,14 +31,16 @@
 
 <section class="<?php echo $autorController->getFormulario(); ?>">
 	<form method="post" action="">
-		<h4 class="cadCat">Cadastro de utors</h4>
+		<h4 class="cadCat">Cadastro de utores</h4>
 		<input type="hidden" name="txtId" id="txtId" value="<?php echo $autorController->getAutorDAO()->getIdAutor(); ?>">
 		<input type="hidden" name="txtAcao" id="txtAcao" value="<?php echo $autorController->getAcaoGET();?>">
 		<label>Autor</label>
 		<input class="grande" type="text" name="txtNome" value="<?php echo $autorController->getAutorDAO()->getNomeAutor(); ?>">
 		<br>
 		<label>Descrição</label>
-		<textarea class="grande" name="txtDescr"><?php echo $autorController->getAutorDAO()->getDescrAutor(); ?></textarea>
+		<!-- <textarea class="grande" name="txtDescr"> -->
+			<?php //echo $autorController->getAutorDAO()->getDescrAutor(); ?>
+		<!-- </textarea> -->
 		<br>
 
 		<label> </label>

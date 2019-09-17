@@ -15,7 +15,7 @@ class CategoriaDAO extends Categoria
                                 VALUES (:nomeCategoria)";
 
     private static $UPDATE = "UPDATE categoria SET
-                                 nome_categoria = :nomeCategoria, 
+                                 nome_categoria = :nomeCategoria 
                               WHERE id_categoria =  :idCategoria";
 
     //DELETE lógico -> altera status

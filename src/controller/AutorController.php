@@ -128,17 +128,17 @@ class AutorController
         }
     }
 
-    // public function gravarAlterar()
-    // {
-    //     $this->recuperarAcaoPOST();
-    //     $this->recuperarDadosFormulario();
-    //     if ($this->acaoPOST == 1 && $this->evitarReenvio()) {            
-    //         $this->autorDAO->adicionarAutor();
-    //     } else if ($this->acaoPOST == 2) {
-    //         $this->autorDAO->alterarAutor();
+    public function gravarAlterar()
+    {
+        $this->recuperarAcaoPOST();
+        $this->recuperarDadosFormulario();
+        if ($this->acaoPOST == 1 && $this->evitarReenvio()) {            
+            $this->autorDAO->adicionarAutor();
+        } else if ($this->acaoPOST == 2) {
+            $this->autorDAO->alterarAutor();
 
-    //     }
-    // }
+        }
+    }
 
     public function excluir()
     {
@@ -151,7 +151,7 @@ class AutorController
     public function listarAutorId()
     {
         if ($this->acaoGET == 2) {
-            $this->autorDAO->setIdUsuario($_GET['id']);
+            $this->autorDAO->setIdAutor($_GET['id']);
             $autor = $this->autorDAO->listarAutorId();
             $this->autorDAO->setNomeAutor($autor['nomeCat']);
             $this->autorDAO->setDescrAutor($autor['descrCat']);
@@ -167,15 +167,15 @@ class AutorController
             foreach ($result as $linha) {
                 $tabela .= "<tr>
                 <td>" . $linha['idAutor'] . "</td>
-                <td>" . utf8_encode($linha['nomeAutor']) . "</td>
+                <td>" . $linha['nomeAutor'] . "</td>
                 <td>" . $linha['codStatusAutor'] . "</td>    
                         <td>
-                            <a href='http://localhost/Sebook/area/adm/cadastro/cadAutor/2/id=" . $linha['idAutor'] . "'>
+                            <a href='http://localhost/Sebook/area/adm/cadastro/cadAutor/alter/" . $linha['idAutor'] . "'>
                                 <img src='" . _URLBASE_ . "public/img/editar.jpg'>
                             </a>
                         </td>
                         <td>
-                            <a href='http://localhost/Sebook/area/adm/cadastro/cadAutor/3/id=" . $linha['idAutor'] . "'>
+                            <a href='http://localhost/Sebook/area/adm/cadastro/cadAutor/delete/" . $linha['idAutor'] . "'>
                                 <img src='" . _URLBASE_ . "public/img/excluir.jpg'>
                             </a>
                         </td>
