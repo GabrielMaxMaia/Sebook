@@ -11,26 +11,25 @@ class AutorDAO extends Autor
     //Atributos - serão os comandos SQL  + um objeto Sql
     private static $SELECT_ALL = "select * from autor where cod_status_autor = '1'";
 
-    private static $SELECT_ID = "select * from Autor where id_usuario = :idUsuario";
+    private static $SELECT_ID = "select * from Autor where id_autor = :idAutor";
 
-    private static $INSERT = "INSERT INTO `Autor` (`id_usuario`,`sexo_Autor`,`compl_end_Autor`,`logradouro_Autor`,`url_foto_Autor`,`num_compl_Autor`,`cpf_Autor`,`cep_Autor`,`dt_nasc_Autor`,`cod_status_Autor`) VALUES (:id_usuario,:sexo_Autor,:compl_end_Autor,:logradouro_Autor,:url_foto_Autor,:num_compl_Autor,:cpf_Autor,:cep_Autor,:dt_nasc_Autor,:cod_status_Autor)";
+    private static $INSERT = "INSERT INTO `Autor` (`nome_autor`,`cod_status_autor`,`id_nacionalidade`) VALUES (:nomeAutor,:codStatusAutor,:idNacionalidade)";
 
-    private static $UPDATE = "UPDATE `Autor` SET
-    `id_autor` = :idAutor,
+    private static $UPDATE = "UPDATE autor SET
     `nome_autor` = :nomeAutor,
-    `compl_end_autor` = :complEndAutor,
-    `cod_status_autor` = :codStatusAutor
-    WHERE `id_usuario` = :idUsuario";
+    `cod_status_autor` = :codStatusAutor,
+    `id_nacionalidade` = :idNacionalidade
+    WHERE `id_autor` = :idAutor";
 
 
     //DELETE lógico -> altera status    
-    private static $DELETE = "UPDATE autor SET cod_status_autor = 0 WHERE id_usuario = :idUsuario";
+    private static $DELETE = "UPDATE autor SET cod_status_autor = '0' WHERE id_autor = :idAutor";
 
     //Atributo par armazenar o Objeto SQL 
     private $sql;
 
     //Método Construtor - setamos os parametros e passamos um obj SQL
-    public function __construct($objSql = "",$idAutor = "", $nomeAutor = "", $codStatusAutor = "", $idNacionalida = "")
+    public function __construct($objSql = "", $idAutor = "", $nomeAutor = "", $codStatusAutor = "", $idNacionalida = "")
     {
         parent::__construct($idAutor, $nomeAutor, $codStatusAutor, $idNacionalida);
         $this->sql = $objSql;
@@ -49,9 +48,8 @@ class AutorDAO extends Autor
                     'idAutor' => $linha->id_autor,
                     'nomeAutor' => $linha->nome_autor,
                     'codStatusAutor' => $linha->cod_status_autor,
-                    'idNacionalida' => $linha->id_nacionalidade
+                    'idNacionalidade' => $linha->id_nacionalidade
                 );
-    
             }
         } else {
             $itens = null;
@@ -66,14 +64,14 @@ class AutorDAO extends Autor
         $result = $this->sql->query(
             AutorDAO::$SELECT_ID,
             array(
-                'id_usuario' => array(0 => $this->setIdUsuario(), 1 => \PDO::PARAM_INT)
+                'idAutor' => array(0 => $this->getIdAutor(), 1 => \PDO::PARAM_INT)
             )
         );
         if ($result->rowCount() == 1) {
             $linha = $result->fetch(\PDO::FETCH_OBJ);
             $itens = array(
-                `idAutor` => $linha->id_Autor,
-                `codStatusAutor` => $linha->cod_status_Autor
+                `idAutor` => $linha->id_autor,
+                `codStatusAutor` => $linha->cod_status_autor
             );
         } else {
             $itens = null;
@@ -87,15 +85,9 @@ class AutorDAO extends Autor
         $result = $this->sql->execute(
             AutorDAO::$INSERT,
             array(
-                `:sexo_Autor` => array(0 => $this->getSexoAutor(), 1 => \PDO::PARAM_STR),
-                `:compl_end_Autor` => array(0 => $this->getComplEndAutor(), 1 => \PDO::PARAM_STR),
-                `:logradouro_Autor` => array(0 => $this->getLogradouroAutor(), 1 => \PDO::PARAM_STR),
-                `:url_foto_Autor` => array(0 => $this->getUrlFotoAutor(), 1 => \PDO::PARAM_STR),
-                `:num_compl_Autor` => array(0 => $this->getNumComplAutor(), 1 => \PDO::PARAM_STR),
-                `:cpf_Autor` => array(0 => $this->getCpfAutor(), 1 => \PDO::PARAM_STR),
-                `:cep_Autor` => array(0 => $this->getCepAutor(), 1 => \PDO::PARAM_STR),
-                `:dt_nasc_Autor` => array(0 => $this->getDtNascAutor(), 1 => \PDO::PARAM_STR),
-                `:cod_status_Autor` => array(0 => $this->getCodStatusAutor(), 1 => \PDO::PARAM_STR),
+                `:nomeAutor` => array(0 => $this->getNomeAutor()(), 1 => \PDO::PARAM_STR),
+                `:codStatusAutor` => array(0 => $this->getCodStatusAutor()(), 1 => \PDO::PARAM_STR),
+                `:idNacionalidade` => array(0 => $this->getIdNacionalidade()(), 1 => \PDO::PARAM_INT)
             )
         );
         return $result;

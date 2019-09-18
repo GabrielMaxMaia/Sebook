@@ -96,7 +96,6 @@ class AutorController
 
             $this->autorDAO->setIdAutor($_POST['txtId']);
             $this->autorDAO->setNomeAutor($_POST['txtNome']);
-            $this->autorDAO->setDescrAutor($_POST['txtDescr']);
         }
     }
 
@@ -153,8 +152,7 @@ class AutorController
         if ($this->acaoGET == 2) {
             $this->autorDAO->setIdAutor($_GET['id']);
             $autor = $this->autorDAO->listarAutorId();
-            $this->autorDAO->setNomeAutor($autor['nomeCat']);
-            $this->autorDAO->setDescrAutor($autor['descrCat']);
+            $this->autorDAO->setNomeAutor($autor['nomeAutor']);
         }
     }
 

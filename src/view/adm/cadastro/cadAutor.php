@@ -4,7 +4,7 @@
 
  $objSql = new Util\Sql($conn);
  $autorController = new Controller\AutorController($objSql);
-//  $AutorController->gravarAlterar();
+ $autorController->gravarAlterar();
 ?>
 
 <section class="<?php echo $autorController->getLista(); ?>">
@@ -25,13 +25,13 @@
 			?>
 		</tbody>
 	</table>
-	 <input class="button" type="button" onclick="window.location='http://localhost/Sebook/adm/cadastro/cadAutor/acao=1'"
+	 <input class="button" type="button" onclick="window.location='http://localhost/sebook/area/adm/cadastro/cadAutor/add'"
 	 value="Novo">
 </section>
 
 <section class="<?php echo $autorController->getFormulario(); ?>">
 	<form method="post" action="">
-		<h4 class="cadCat">Cadastro de utores</h4>
+		<h4 class="cadCat">Cadastro de autores</h4>
 		<input type="hidden" name="txtId" id="txtId" value="<?php echo $autorController->getAutorDAO()->getIdAutor(); ?>">
 		<input type="hidden" name="txtAcao" id="txtAcao" value="<?php echo $autorController->getAcaoGET();?>">
 		<label>Autor</label>

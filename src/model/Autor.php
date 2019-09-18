@@ -10,15 +10,15 @@ class Autor
 	private $idAutor;
 	private $nomeAutor;
 	private $codStatusAutor;
-	private $idNacionalida;
+	private $idNacionalidade;
 
 	//Método construtor auxiliar de criação de objetos
-	public function __construct($idAutor = "", $nomeAutor = "", $codStatusAutor = "", $idNacionalida = "")
+	public function __construct($idAutor = "", $nomeAutor = "", $codStatusAutor = "", $idNacionalidade = "")
 	{
 		$this->idAutor = $idAutor;
 		$this->nomeAutor = $nomeAutor;
 		$this->codStatusAutor = $codStatusAutor;
-		$this->idNacionalida = $idNacionalida;
+		$this->idNacionalidade = $idNacionalidade;
 	}
 
 	//getters e setters
@@ -46,12 +46,12 @@ class Autor
 		$this->codStatusAutor = $codStatusAutor;
 	}
 
-	public function getIdNacionalida(){
-		return $this->idNacionalida;
+	public function getIdNacionalidade(){
+		return $this->idNacionalidade;
 	}
 
-	public function setIdNacionalida($idNacionalida){
-		$this->idNacionalida = $idNacionalida;
+	public function setIdNacionalidade($idNacionalidade){
+		$this->idNacionalidade = $idNacionalidade;
 	}
 
 	//Método __toString()
@@ -61,7 +61,7 @@ class Autor
 			'idAutor' => $this->idAutor,
 			'nomeAutor' => $this->nomeAutor,
 			'codStatusAutor' => $this->codStatusAutor,
-			'idNacionalidade' => $this->idNacionalida
+			'idNacionalidade' => $this->idNacionalidade
 		));
 	}
 }
