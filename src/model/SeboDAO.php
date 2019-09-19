@@ -36,9 +36,9 @@ class SeboDAO extends Sebo
     private $sql;
 
     //Método Construtor - setamos os parametros e passamos um obj SQL
-    public function __construct($objSql = "", $idUsuario = "", $razaoSebo = "", $nomeFantasia = "", $cnpjSebo = "", $urlFotoSebo = "", $numEndSebo = "", $complEndSebo = "", $logradouroSebo = "", $cepEndSebo = "", $numTelSebo = "", $celular1Sebo = "", $celular2Sebo = "", $inscEstadualSebo = "", $urlSiteSebo = "", $codStatusSebo = "", $idLivro = "")
+    public function __construct($objSql = "", $idUsuario = "", $razaoSebo = "", $nomeFantasia = "", $cnpjSebo = "", $urlFotoSebo = "", $numEndSebo = "", $complEndSebo = "", $logradouroSebo = "", $cepEndSebo = "", $numTelSebo = "", $celular1Sebo = "", $celular2Sebo = "", $inscEstadualSebo = "", $urlSiteSebo = "", $codStatusSebo = "")
     {
-        parent::__construct($idUsuario, $razaoSebo, $nomeFantasia, $cnpjSebo, $urlFotoSebo, $numEndSebo, $complEndSebo, $logradouroSebo, $cepEndSebo, $numTelSebo, $celular1Sebo, $celular2Sebo, $inscEstadualSebo, $urlSiteSebo, $codStatusSebo, $idLivro);
+        parent::__construct($idUsuario, $razaoSebo, $nomeFantasia, $cnpjSebo, $urlFotoSebo, $numEndSebo, $complEndSebo, $logradouroSebo, $cepEndSebo, $numTelSebo, $celular1Sebo, $celular2Sebo, $inscEstadualSebo, $urlSiteSebo, $codStatusSebo);
         $this->sql = $objSql;
     }
 
@@ -66,8 +66,7 @@ class SeboDAO extends Sebo
                     'celular2Sebo' => $linha->celular_2_sebo,
                     'inscEstadualSebo' => $linha->insc_estadual_sebo,
                     'urlSiteSebo' => $linha->url_site_sebo,
-                    'codStatusSebo' => $linha->cod_status_sebo,
-                    'idLivro' => $linha->id_livro
+                    'codStatusSebo' => $linha->cod_status_sebo
                 );
             }
         } else {

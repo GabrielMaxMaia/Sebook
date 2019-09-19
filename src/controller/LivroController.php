@@ -143,7 +143,7 @@ class LivroController
     public function excluir()
     {
         if ($this->acaoGET == 3) {
-            $this->livroDAO->setIdlivro($_GET['id']);
+            $this->livroDAO->setIsbnLivro($_GET['id']);
             $this->livroDAO->excluirlivro();
         }
     }
@@ -165,7 +165,6 @@ class LivroController
         if ($result != null) {
             foreach ($result as $linha) {
                 $tabela .= "<tr>
-                <td>" . $linha['idLivro'] . "</td>
                 <td>" . $linha['isbnLivro'] . "</td>
                 <td>" . $linha['anoLivro'] . "</td>
                 <td>" . $linha['nomeLivro'] . "</td>
@@ -175,12 +174,12 @@ class LivroController
                 <td>" . $linha['idCategoria'] . "</td>      
 
                         <td>
-                            <a href='http://localhost/Sebook/area/adm/cadastro/cadlivro/2/id=" . $linha['idLivro'] . "'>
+                            <a href='http://localhost/Sebook/area/adm/cadastro/cadlivro/2/id=" . $linha['isbnLivro'] . "'>
                                 <img src='" . _URLBASE_ . "public/img/editar.jpg'>
                             </a>
                         </td>
                         <td>
-                            <a href='http://localhost/Sebook/area/adm/cadastro/cadlivro/3/id=" . $linha['idLivro'] . "'>
+                            <a href='http://localhost/Sebook/area/adm/cadastro/cadlivro/3/id=" . $linha['isbnLivro'] . "'>
                                 <img src='" . _URLBASE_ . "public/img/excluir.jpg'>
                             </a>
                         </td>

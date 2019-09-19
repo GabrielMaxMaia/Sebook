@@ -13,15 +13,15 @@ class LivroDAO extends Livro
 
 
     //DELETE lógico -> altera status    
-    private static $DELETE = "UPDATE livro SET cod_status_livro = '0' WHERE id_livro = :id_livro";
+    private static $DELETE = "UPDATE livro SET cod_status_livro = '0' WHERE isbn_livro = :isbn_livro";
 
     //Atributo par armazenar o Objeto SQL 
     private $sql;
 
     //Método Construtor - setamos os parametros e passamos um obj SQL
-    public function __construct($objSql = "", $idLivro = "", $isbnLivro = "", $anoLivro = "", $nomeLivro = "", $idEditora = "", $codStatusLivro = "", $sinopseLivro = "", $idCategoria = "")
+    public function __construct($objSql = "", $isbnLivro = "", $anoLivro = "", $nomeLivro = "", $idEditora = "", $codStatusLivro = "", $sinopseLivro = "", $idCategoria = "")
     {
-        parent::__construct($idLivro, $isbnLivro, $anoLivro, $nomeLivro, $idEditora, $codStatusLivro, $sinopseLivro, $idCategoria);
+        parent::__construct($isbnLivro, $anoLivro, $nomeLivro, $idEditora, $codStatusLivro, $sinopseLivro, $idCategoria);
         $this->sql = $objSql;
     }
 
@@ -35,7 +35,6 @@ class LivroDAO extends Livro
         if ($result->rowCount() > 0) {
             while ($linha = $result->fetch(\PDO::FETCH_OBJ)) {
                 $itens[] = array(
-                    'idLivro' => $linha->id_livro,
                     'isbnLivro' => $linha->isbn_livro,
                     'anoLivro' => $linha->ano_livro,
                     'nomeLivro' => $linha->nome_livro,
@@ -98,7 +97,7 @@ class LivroDAO extends Livro
         $result = $this->sql->execute(
             LivroDAO::$DELETE,
             array(
-                ':id' => array(0 => $this->getIdLivro(), 1 => \PDO::PARAM_INT)
+                ':id' => array(0 => $this->getisbnLivro(), 1 => \PDO::PARAM_INT)
             )
         );
         return $result;
