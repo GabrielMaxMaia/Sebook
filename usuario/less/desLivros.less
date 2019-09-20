@@ -1,0 +1,47 @@
+.livros{
+    .container{
+        .box-descricao-livro {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            grid-gap: 10px;
+            margin: 20px 0;
+            img{
+                width: 100%;
+            }
+            .descricaoLivro {
+                h1 {
+                    margin: 0;
+                    font-size: 20px;
+                }
+            }
+        }
+        .sinopse {
+            width: 100%;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f1f1f1;
+            .comentario {
+                width: 100%;
+                background-color: #86c3cb;
+                border-radius: 4px;
+                padding: 10px;
+                margin-top: 10px;
+                &:first-child {
+                    margin-top: 0;
+                }
+                .person {
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: 24px 1fr;
+                    grid-gap: 10px;
+                    .descricao-person {
+                        strong {
+                            margin-bottom: 5px;
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

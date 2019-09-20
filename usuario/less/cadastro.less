@@ -1,0 +1,97 @@
+.cadastro{
+    float: left;
+    padding: 20px 0;
+    .container{
+        figure{
+            margin: 0 auto;
+            display: block;
+            width: 208px;
+            img{
+                float: left;
+                height: 55px;
+                width: 55px;
+                
+            }
+            figcaption{
+                float: left;
+                font-size: 25px;
+                margin-top: 14px;
+                margin-left: 10px;
+                
+            }
+        }
+        p{
+            float: left;
+            width: 100%;
+            text-align: center;
+            height: 20px;
+            position: relative;
+            &:before{
+                content: '';
+                width: 100%;
+                height: 1px;
+                background-color: #999;
+                position: absolute;
+                left: 0;
+                top: 10px;
+            }
+            span{
+                position: absolute;
+                z-index: 1;
+                width: 250px;
+                left: 50%;
+                margin-left: -125px;
+
+            }
+            &:after{
+                content: '';
+                width: 250px;
+                height: 20px;
+                background: #fff;
+                position: absolute;
+                z-index: 0;
+                left: 50%;
+                margin-left: -125px;
+            }
+        }
+        form{
+            width: 100%;
+            float: left;
+            margin-top: 20px;
+            label, input{
+                width: 100%;
+                float: left;
+            }
+            label {
+                margin-bottom: 5px;
+            }
+            label[for=feminino], label[for=masculino]{
+                width: auto;
+                margin-right: 10px;
+                margin-bottom: 15px;
+            }
+            input[type=radio]{
+                width: auto;
+            }
+            input[type=text], input[type=password] {
+                height: 30px;
+                margin-bottom: 10px;
+                border: 1px solid #999;
+            }
+            button{
+                width: 40%;
+                height: 50px;
+                margin: 0 auto;
+                display: block;
+                margin-top: 50px; 
+            }
+            .password2{
+                margin-bottom: 20px !important;
+            }
+            hr{
+                margin: 25px 0;
+               
+            }
+        }
+    }
+}
