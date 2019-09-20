@@ -1,0 +1,137 @@
+.login {
+    padding: 1rem;
+    margin: 6rem auto
+}
+
+.login .container {
+    background-color: #fff;
+    /* box-shadow: 0px 1px 2px 1px #0000005c; */
+    padding: 2rem 1rem;
+    max-width: 500px;
+    margin: 3rem auto 0;
+    border: 1px solid #ccc
+}
+
+.login .container figure {
+    margin: 0;
+    text-align: center
+}
+
+.login .container figure img {
+    max-width: 64px;
+    margin: auto
+}
+
+.login .container figure figcaption {
+    font-weight: 700;
+    font-size: 18px;
+    margin: 10px 0 20px
+}
+
+.login .container .btn-modal-cadastre {
+    width: 100%;
+    text-align: center;
+    display: block;
+    color: blue;
+    text-decoration: none;
+    font-size: 14px
+}
+
+.login .container .btn-modal-cadastre:hover {
+    text-decoration: underline
+}
+
+.login .container a {
+    width: 100%;
+    text-align: center;
+    display: block;
+    color: blue;
+    text-decoration: none;
+    font-size: 14px
+}
+
+.login .container a:hover {
+    text-decoration: underline
+}
+
+.login .container form {
+    padding: 2rem 0 1rem 0;
+    max-width: 330px;
+    margin: auto
+}
+
+.login .container form label {
+    width: 100%;
+    float: left;
+    margin: 0 0 5px 0
+}
+
+.login .container form input {
+    width: 100%;
+    display: block;
+    margin: 1rem auto;
+    border: 1px solid #999;
+    height: 30px;
+    padding: 0 0 0 5px
+}
+
+.login .container form button {
+    background-color: #2196F3;
+    border: 0;
+    color: #fff;
+    padding: 10px 40px;
+    border-radius: 4px;
+    margin: 0 auto;
+    display: block
+}
+
+.login .container p {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    height: 20px;
+    margin: 1rem 0
+}
+
+.login .container p span {
+    padding: .2rem .5rem;
+    background: #eee;
+    z-index: 9999;
+    position: inherit
+}
+
+.login .container p::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #CCC;
+    left: 0;
+    top: 7px
+}
+
+.login .container p:after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    background-color: #eee;
+    left: 50%;
+    margin-left: -20px;
+    z-index: 0
+}
+
+.login .container .login-social-media {
+    width: 100%;
+    height: 32px;
+    padding: 0 80px
+}
+
+.login .container .login-social-media a {
+    float: left;
+    width: auto
+}
+
+.login .container .login-social-media a:nth-child(2) {
+    float: right
+}

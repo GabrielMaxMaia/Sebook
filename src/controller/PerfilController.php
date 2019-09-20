@@ -2,9 +2,9 @@
 
 namespace Controller;
 
-use Model\AutorDAO;
+use Model\PerfilDAO;
 
-class AutorController
+class PerfilController
 {
     //Atributos
     private $lista = 'on';
@@ -12,12 +12,12 @@ class AutorController
     private $acaoGET;
     private $acaoPOST;
 
-    private $autorDAO = null;
+    private $perfilDAO = null;
 
     //Método Construtor
     public function __construct($sql)
     {
-        $this->autorDAO = new AutorDAO($sql);
+        $this->perfilDAO = new PerfilDAO($sql);
         $this->verificaExibicao();
     }
 
@@ -38,9 +38,9 @@ class AutorController
     {
         return $this->acaoPOST;
     }
-    public function getAutorDAO()
+    public function getPerfilDAO()
     {
-        return $this->autorDAO;
+        return $this->perfilDAO;
     }
 
     public function setLista($valor)
@@ -84,7 +84,7 @@ class AutorController
             $this->lista = 'on';
             $this->formulario = 'off';
         } else if ($this->acaoGET == 1 || $this->acaoGET == 2) {
-            $this->listarAutorId();
+            $this->listarPerfilId();
             $this->lista = 'off';
             $this->formulario = 'on';
         }
@@ -94,8 +94,8 @@ class AutorController
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-            $this->autorDAO->setIdAutor($_POST['txtId']);
-            $this->autorDAO->setNomeAutor($_POST['txtNome']);
+            $this->perfilDAO->setIdPerfil($_POST['txtId']);
+            $this->perfilDAO->setNomePerfil($_POST['txtNome']);
         }
     }
 
@@ -132,9 +132,9 @@ class AutorController
         $this->recuperarAcaoPOST();
         $this->recuperarDadosFormulario();
         if ($this->acaoPOST == 1 && $this->evitarReenvio()) {            
-            $this->autorDAO->adicionarAutor();
+            $this->perfilDAO->adicionarPerfil();
         } else if ($this->acaoPOST == 2) {
-            $this->autorDAO->alterarAutor();
+            $this->perfilDAO->alterarPerfil();
 
         }
     }
@@ -142,47 +142,47 @@ class AutorController
     public function excluir()
     {
         if ($this->acaoGET == 3) {
-            $this->autorDAO->setIdAutor($_GET['id']);
-            $this->autorDAO->excluirAutor();
+            $this->perfilDAO->setIdPerfil($_GET['id']);
+            $this->perfilDAO->excluirPerfil();
         }
     }
 
-    public function listarAutorId()
+    public function listarPerfilId()
     {
         if ($this->acaoGET == 2) {
-            $this->autorDAO->setIdAutor($_GET['id']);
-            $autor = $this->autorDAO->listarAutorId();
+            $this->perfilDAO->setIdPerfil($_GET['id']);
+            $Perfil = $this->perfilDAO->listarPerfilId();
       
-            $this->autorDAO->setNomeAutor($autor['nomeAutor']);
+            $this->perfilDAO->setNomePerfil($Perfil['nomePerfil']);
         }
     
     }
 
-    public function listarAutores()
+    public function listarPerfiles()
     {
-        $result = $this->autorDAO->listarAutores();
+        $result = $this->perfilDAO->listarPerfiles();
 
         $tabela = "";
         if ($result != null) {
             foreach ($result as $linha) {
                 $tabela .= "<tr>
-                <td>" . $linha['idAutor'] . "</td>
-                <td>" . $linha['nomeAutor'] . "</td>
-                <td>" . $linha['codStatusAutor'] . "</td>    
+                <td>" . $linha['idPerfil'] . "</td>
+                <td>" . $linha['nomePerfil'] . "</td>
+                <td>" . $linha['codStatusPerfil'] . "</td>    
                         <td>
-                            <a href='http://localhost/Sebook/area/adm/cadastro/cadAutor/alter/" . $linha['idAutor'] . "'>
+                            <a href='http://localhost/Sebook/area/adm/cadastro/cadPerfil/alter/" . $linha['idPerfil'] . "'>
                                 <img src='" . _URLBASE_ . "public/img/editar.jpg'>
                             </a>
                         </td>
                         <td>
-                            <a href='http://localhost/Sebook/area/adm/cadastro/cadAutor/delete/" . $linha['idAutor'] . "'>
+                            <a href='http://localhost/Sebook/area/adm/cadastro/cadPerfil/delete/" . $linha['idPerfil'] . "'>
                                 <img src='" . _URLBASE_ . "public/img/excluir.jpg'>
                             </a>
                         </td>
                     </tr>";
             }
         } else {
-            $tabela = "<tr colspan='5'><td>Não há Autores registradas</td></tr>";
+            $tabela = "<tr colspan='5'><td>Não há Perfiles registradas</td></tr>";
         }
         return $tabela;
     }

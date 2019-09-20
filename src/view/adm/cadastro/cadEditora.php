@@ -24,8 +24,8 @@
 			?>
 		</tbody>
 	</table>
-	 <input class="button" type="button" onclick="window.location='http://localhost/Sebook/adm/cadastro/cadEditora/acao=1'"
-	 value="Novo">
+	 <input class="button" type="button" onclick="window.location='http://localhost/Sebook/area/adm/cadastro/cadEditora/add'" value="Novo">
+
 </section>
 
 <section class="<?php echo $editoraController->getFormulario(); ?>">
@@ -35,10 +35,7 @@
 		<input type="hidden" name="txtAcao" id="txtAcao" value="<?php echo $editoraController->getAcaoGET();?>">
 		<label>Editora</label>
 		<input class="grande" type="text" name="txtNome" value="<?php echo $editoraController->getEditoraDAO()->getNomeEditora(); ?>">
-		<br>
-		<label>Descrição</label>
-		<textarea class="grande" name="txtDescr"><?php echo $editoraController->getEditoraDAO()->getDescrEditora(); ?></textarea>
-		<br>
+
 
 		<label> </label>
 		<input class="buttonCancel" type="reset" value="Limpar">
@@ -48,5 +45,5 @@
 	<br>
 	<br>
 	<br>
-	<a href="http://localhost/Editoraok_projeto/php/Editoraok_dao/index.php?area=adm&folder=cadastro&page=cadEditora">Voltar</a>
+	<a href="http://localhost/Sebook/area/adm/cadastro/cadEditora">Voltar</a>
 </section>

@@ -2,9 +2,9 @@
 
 namespace Controller;
 
-use Model\AutorDAO;
+use Model\UsuarioDAO;
 
-class AutorController
+class UsuarioController
 {
     //Atributos
     private $lista = 'on';
@@ -12,12 +12,12 @@ class AutorController
     private $acaoGET;
     private $acaoPOST;
 
-    private $autorDAO = null;
+    private $usuarioDAO = null;
 
     //Método Construtor
     public function __construct($sql)
     {
-        $this->autorDAO = new AutorDAO($sql);
+        $this->usuarioDAO = new UsuarioDAO($sql);
         $this->verificaExibicao();
     }
 
@@ -38,9 +38,9 @@ class AutorController
     {
         return $this->acaoPOST;
     }
-    public function getAutorDAO()
+    public function getUsuarioDAO()
     {
-        return $this->autorDAO;
+        return $this->usuarioDAO;
     }
 
     public function setLista($valor)
@@ -84,7 +84,7 @@ class AutorController
             $this->lista = 'on';
             $this->formulario = 'off';
         } else if ($this->acaoGET == 1 || $this->acaoGET == 2) {
-            $this->listarAutorId();
+            $this->listarUsuarioId();
             $this->lista = 'off';
             $this->formulario = 'on';
         }
@@ -93,9 +93,8 @@ class AutorController
     public function recuperarDadosFormulario()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-            $this->autorDAO->setIdAutor($_POST['txtId']);
-            $this->autorDAO->setNomeAutor($_POST['txtNome']);
+            $this->usuarioDAO->setIdUsuario($_POST['txtId']);
+            $this->usuarioDAO->setNomeUsuario($_POST['txtNome']);
         }
     }
 
@@ -131,58 +130,54 @@ class AutorController
     {
         $this->recuperarAcaoPOST();
         $this->recuperarDadosFormulario();
-        if ($this->acaoPOST == 1 && $this->evitarReenvio()) {            
-            $this->autorDAO->adicionarAutor();
+        if ($this->acaoPOST == 1 && $this->evitarReenvio()) {
+            $this->usuarioDAO->adicionarUsuario();
         } else if ($this->acaoPOST == 2) {
-            $this->autorDAO->alterarAutor();
-
+            $this->usuarioDAO->alterarUsuario();
         }
     }
 
     public function excluir()
     {
         if ($this->acaoGET == 3) {
-            $this->autorDAO->setIdAutor($_GET['id']);
-            $this->autorDAO->excluirAutor();
+            $this->usuarioDAO->setIdUsuario($_GET['id']);
+            $this->usuarioDAO->excluirUsuario();
         }
     }
 
-    public function listarAutorId()
+    public function listarUsuarioId()
     {
         if ($this->acaoGET == 2) {
-            $this->autorDAO->setIdAutor($_GET['id']);
-            $autor = $this->autorDAO->listarAutorId();
-      
-            $this->autorDAO->setNomeAutor($autor['nomeAutor']);
+            $this->usuarioDAO->setIdUsuario($_GET['id']);
+            $Usuario = $this->usuarioDAO->listarUsuarioId();
+            $this->usuarioDAO->setNomeUsuario($Usuario['nomeUsuario']);
         }
-    
     }
 
-    public function listarAutores()
+    public function listarUsuarios()
     {
-        $result = $this->autorDAO->listarAutores();
-
+        $result = $this->usuarioDAO->listarUsuarios();
         $tabela = "";
         if ($result != null) {
             foreach ($result as $linha) {
                 $tabela .= "<tr>
-                <td>" . $linha['idAutor'] . "</td>
-                <td>" . $linha['nomeAutor'] . "</td>
-                <td>" . $linha['codStatusAutor'] . "</td>    
+                        <td>" . $linha['idUsuario'] . "</td>
+                        <td>" . $linha['nomeUsuario'] . "</td>
+                        <td>" . $linha['codStatusUsuario'] . "</td>
                         <td>
-                            <a href='http://localhost/Sebook/area/adm/cadastro/cadAutor/alter/" . $linha['idAutor'] . "'>
+                            <a href='http://localhost/Sebook/area/adm/cadastro/cadUsuario/alter/" . $linha['idUsuario'] . "'>
                                 <img src='" . _URLBASE_ . "public/img/editar.jpg'>
                             </a>
                         </td>
                         <td>
-                            <a href='http://localhost/Sebook/area/adm/cadastro/cadAutor/delete/" . $linha['idAutor'] . "'>
+                            <a href='http://localhost/Sebook/area/adm/cadastro/cadUsuario/delete/" . $linha['idUsuario'] . "'>
                                 <img src='" . _URLBASE_ . "public/img/excluir.jpg'>
                             </a>
                         </td>
                     </tr>";
             }
         } else {
-            $tabela = "<tr colspan='5'><td>Não há Autores registradas</td></tr>";
+            $tabela = "<tr colspan='5'><td>Não há Usuarios registradas</td></tr>";
         }
         return $tabela;
     }
