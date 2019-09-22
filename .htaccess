@@ -3,7 +3,7 @@
 #bloqueio de navegação de diretório
 #Options -Indexes
 
-# ErrorDocument código de erro caminho para página de erro customizada
+#ErrorDocument código de erro caminho para página de erro customizada
 #ErrorDocument 404 http://localhost/Sebook/src/view/erros/404.php
 #ErrorDocument 403 http://localhost/Sebook/src/view/erros/403.php
 #ErrorDocument 500 http://localhost/Sebook/src/view/erros/500.php

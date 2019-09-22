@@ -28,7 +28,22 @@
 
         <div id="container">
             <section class="home">
-
+<!-----------------------------------------------------CHAMAR HTML----------------------------------------------->
+        <article>
+            <?php
+                if (isset($_GET['page']) && $_GET['page'] != "") {
+                    $page = $_GET['page'];
+                    if (isset($_GET['pasta']) && $_GET['pasta'] != "") {
+                        $pasta = $_GET['pasta'];
+                        if (isset($_GET['folder']) && $_GET['folder'] != "") {
+                            $folder = $_GET['folder'];
+                            require_once "./src/view/user/$folder/$pasta/$page.php";
+                        }
+                    }
+                }
+            ?>
+        </article>
+<!-----------------------------------------------------BANNER----------------------------------------------->
                 <div class="banner">
                     <div id="homepage-slider" class="st-slider">
 
@@ -66,11 +81,10 @@
                         </div>
                     </div>
                 </div>
-
+<!-----------------------------------------------------SWIPER QUEBRADO----------------------------------------------->
                 <div class="maisProcurados">
                     <div class="container">
                         <h1>Mais Procurados</h1>
-
                         <div class="swiper-container">
                             <div class="books swiper-wrapper">
                                 <div class="swiper-slide">
@@ -106,6 +120,7 @@
                         </div>
                     </div>
                 </div>
+<!-----------------------------------------------------EVENTOS----------------------------------------------->
                 <div class="eventos">
                     <div class="container">
                         <h2>Eventos</h2>
