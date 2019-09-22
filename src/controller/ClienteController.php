@@ -76,10 +76,9 @@ class ClienteController
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-            $this->clienteDAO->setIdcliente($_POST['txtId']);
-            $this->clienteDAO->setNomecliente($_POST['txtNome']);
-            $this->clienteDAO->setDescrcliente($_POST['txtDescr']);
-            
+            $this->clienteDAO->setIdUsuario($_POST['txtId']);
+            // $this->clienteDAO->setDescrcliente($_POST['txtDescr']);
+            $this->clienteDAO->setSexoCliente($_POST['selectSexo']);
         }
     }
 
@@ -110,22 +109,22 @@ class ClienteController
         }
     }
     
-    // public function gravarAlterar()
-    // {
-    //     $this->recuperarAcaoPOST();
-    //     $this->recuperarDadosFormulario();
-    //     if ($this->acaoPOST == 1 && $this->evitarReenvio()) {            
-    //         $this->clienteDAO->adicionarCliente();
-    //     } else if ($this->acaoPOST == 2) {
-    //         $this->clienteDAO->alterarCliente();
+    public function gravarAlterar()
+    {
+        $this->recuperarAcaoPOST();
+        $this->recuperarDadosFormulario();
+        if ($this->acaoPOST == 1 && $this->evitarReenvio()) {            
+            $this->clienteDAO->adicionarCliente();
+        } else if ($this->acaoPOST == 2) {
+            $this->clienteDAO->alterarCliente();
 
-    //     }
-    // }
+        }
+    }
 
     public function excluir()
     {
         if ($this->acaoGET == 3) {
-            $this->clienteDAO->setIdCliente($_GET['id']);
+            $this->clienteDAO->setIdUsuario($_GET['id']);
             $this->clienteDAO->excluirCliente();
         }
     }
@@ -135,8 +134,7 @@ class ClienteController
         if ($this->acaoGET == 2) {
             $this->clienteDAO->setIdUsuario($_GET['id']);
             $cliente = $this->clienteDAO->listarClienteId();
-            $this->clienteDAO->setNomeCliente($cliente['nomeCat']);
-            $this->clienteDAO->setDescrCliente($cliente['descrCat']);
+            $this->clienteDAO->setSexoCliente($cliente['sexoCliente']);
         }
     }
 
@@ -151,14 +149,15 @@ class ClienteController
                 <td>" . $linha['idUsuario'] . "</td>
                 <td>" . $linha['cpfCliente'] . "</td>
                 <td>" . $linha['sexoCliente'] . "</td>
-                <td>" . $linha['codStatusCliente'] . "</td>
+                <td>" . $linha['codStatusCliente']
+                 . "</td>
                         <td>
-                            <a href='http://localhost/sebook/area/adm/cadastro/cadCliente/2/id=" . $linha['idUsuario'] . "'>
+                            <a href='http://localhost/sebook/area/adm/cadastro/cadCliente/alter/" . $linha['idUsuario'] . "'>
                                 <img src='"._URLBASE_."public/img/editar.jpg'>
                             </a>
                         </td>
                         <td>
-                            <a href='http://localhost/sebook/area/adm/cadastro/cadCliente/3/id=" . $linha['idUsuario'] . "'>
+                            <a href='http://localhost/sebook/area/adm/cadastro/cadCliente/delete/" . $linha['idUsuario'] . "'>
                                 <img src='"._URLBASE_."public/img/excluir.jpg'>
                             </a>
                         </td>

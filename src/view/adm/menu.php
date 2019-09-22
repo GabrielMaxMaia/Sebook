@@ -1,6 +1,10 @@
 <nav>
+	<h4>Bem vindo, <?= $_SESSION['userLogado']['nome']; ?></h4>
 	<h4>Gerenciamento</h4>
 	<ul class="vertical-menu">
+		<li>
+			<a href="<?php echo _URLBASE_ ?>area/adm/cadastro/cadNacionalidade">Nacionalidade</a>
+		</li>
 		<li>
 			<a href="<?php echo _URLBASE_ ?>area/adm/cadastro/cadPerfil">Perfil</a>
 		</li>
@@ -25,5 +29,6 @@
 		<li>
 			<a href="<?php echo _URLBASE_ ?>area/adm/cadastro/cadAutor">Autor</a>
 		</li>
+		<li><a href="<?php echo _URLBASE_?>area/adm/sair">Sair</a></li>
 	</ul>
 </nav>

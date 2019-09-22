@@ -12,12 +12,12 @@ class SeboController
     private $acaoGET;
     private $acaoPOST;
 
-    private $clienteDAO = null;
+    private $seboDAO = null;
 
     //Método Construtor
     public function __construct($sql)
     {
-        $this->clienteDAO = new SeboDAO($sql);
+        $this->seboDAO = new SeboDAO($sql);
         $this->verificaExibicao();
     }
 
@@ -38,9 +38,9 @@ class SeboController
     {
         return $this->acaoPOST;
     }
-    public function getclienteDAO()
+    public function getseboDAO()
     {
-        return $this->clienteDAO;
+        return $this->seboDAO;
     }
 
     public function setLista($valor)
@@ -84,7 +84,7 @@ class SeboController
             $this->lista = 'on';
             $this->formulario = 'off';
         } else if ($this->acaoGET == 1 || $this->acaoGET == 2) {
-            $this->listarClienteId();
+            $this->listarSeboId();
             $this->lista = 'off';
             $this->formulario = 'on';
         }
@@ -94,9 +94,8 @@ class SeboController
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-            $this->clienteDAO->setIdcliente($_POST['txtId']);
-            $this->clienteDAO->setNomecliente($_POST['txtNome']);
-            $this->clienteDAO->setDescrcliente($_POST['txtDescr']);
+            $this->seboDAO->setIdUsuario($_POST['txtId']);
+            $this->seboDAO->setRazaoSebo($_POST['txtNome']);
         }
     }
 
@@ -128,39 +127,39 @@ class SeboController
         }
     }
 
-    // public function gravarAlterar()
-    // {
-    //     $this->recuperarAcaoPOST();
-    //     $this->recuperarDadosFormulario();
-    //     if ($this->acaoPOST == 1 && $this->evitarReenvio()) {            
-    //         $this->clienteDAO->adicionarCliente();
-    //     } else if ($this->acaoPOST == 2) {
-    //         $this->clienteDAO->alterarCliente();
+    public function gravarAlterar()
+    {
+        $this->recuperarAcaoPOST();
+        $this->recuperarDadosFormulario();
+        if ($this->acaoPOST == 1 && $this->evitarReenvio()) {            
+            $this->seboDAO->adicionarSebo();
+        } else if ($this->acaoPOST == 2) {
+            $this->seboDAO->alterarSebo();
 
-    //     }
-    // }
+        }
+    }
 
     public function excluir()
     {
         if ($this->acaoGET == 3) {
-            $this->clienteDAO->setIdCliente($_GET['id']);
-            $this->clienteDAO->excluirCliente();
+            $this->seboDAO->setIdUsuario($_GET['id']);
+            $this->seboDAO->excluirSebo();
         }
     }
 
-    public function listarClienteId()
+    public function listarSeboId()
     {
         if ($this->acaoGET == 2) {
-            $this->clienteDAO->setIdUsuario($_GET['id']);
-            $cliente = $this->clienteDAO->listarClienteId();
-            $this->clienteDAO->setNomeCliente($cliente['nomeCat']);
-            $this->clienteDAO->setDescrCliente($cliente['descrCat']);
+            $this->seboDAO->setIdUsuario($_GET['id']);
+            $sebo = $this->seboDAO->listarSeboId();
+            $this->seboDAO->setRazaoSebo($sebo['razaoSebo']);
+
         }
     }
 
     public function listarSebos()
     {
-        $result = $this->clienteDAO->listarSebos();
+        $result = $this->seboDAO->listarSebos();
 
         $tabela = "";
         if ($result != null) {
@@ -171,19 +170,20 @@ class SeboController
                 <td>" . $linha['nomeFantasia'] . "</td>
                 <td>" . $linha['codStatusSebo'] . "</td>      
                         <td>
-                            <a href='http://localhost/Sebook/area/adm/cadastro/cadCliente/2/id=" . $linha['idUsuario'] . "'>
+                            <a href='http://localhost/Sebook/area/adm/cadastro/cadSebo/alter/" . $linha['idUsuario'] . "'>
                                 <img src='" . _URLBASE_ . "public/img/editar.jpg'>
                             </a>
                         </td>
+                        
                         <td>
-                            <a href='http://localhost/Sebook/area/adm/cadastro/cadCliente/3/id=" . $linha['idUsuario'] . "'>
+                            <a href='http://localhost/Sebook/area/adm/cadastro/cadSebo/delete/" . $linha['idUsuario'] . "'>
                                 <img src='" . _URLBASE_ . "public/img/excluir.jpg'>
                             </a>
                         </td>
                     </tr>";
             }
         } else {
-            $tabela = "<tr colspan='5'><td>Não há clientes registradas</td></tr>";
+            $tabela = "<tr colspan='5'><td>Não há Sebos registradas</td></tr>";
         }
         return $tabela;
     }

@@ -31,8 +31,11 @@
 <section class="<?php echo $editoraController->getFormulario(); ?>">
 	<form method="post" action="">
 		<h4 class="cadCat">Cadastro de Editoras</h4>
+		
 		<input type="hidden" name="txtId" id="txtId" value="<?php echo $editoraController->getEditoraDAO()->getIdEditora(); ?>">
+
 		<input type="hidden" name="txtAcao" id="txtAcao" value="<?php echo $editoraController->getAcaoGET();?>">
+
 		<label>Editora</label>
 		<input class="grande" type="text" name="txtNome" value="<?php echo $editoraController->getEditoraDAO()->getNomeEditora(); ?>">
 

@@ -84,7 +84,7 @@ class LivroController
             $this->lista = 'on';
             $this->formulario = 'off';
         } else if ($this->acaoGET == 1 || $this->acaoGET == 2) {
-            $this->listarlivroId();
+            $this->listarLivroIsbn();
             $this->lista = 'off';
             $this->formulario = 'on';
         }
@@ -94,8 +94,9 @@ class LivroController
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-            $this->livroDAO->setIdlivro($_POST['txtId']);
-            $this->livroDAO->setNomelivro($_POST['txtNome']);
+            //$this->livroDAO->setIsbnLivro($_POST['txtId']);
+            $this->livroDAO->setIsbnLivro($_POST['txtIsbn']);
+            $this->livroDAO->setNomeLivro($_POST['txtNome']);
             $this->livroDAO->setSinopseLivro($_POST['txtDescr']);
         }
     }
@@ -128,17 +129,17 @@ class LivroController
         }
     }
 
-    // public function gravarAlterar()
-    // {
-    //     $this->recuperarAcaoPOST();
-    //     $this->recuperarDadosFormulario();
-    //     if ($this->acaoPOST == 1 && $this->evitarReenvio()) {            
-    //         $this->livroDAO->adicionarlivro();
-    //     } else if ($this->acaoPOST == 2) {
-    //         $this->livroDAO->alterarlivro();
+    public function gravarAlterar()
+    {
+        $this->recuperarAcaoPOST();
+        $this->recuperarDadosFormulario();
+        if ($this->acaoPOST == 1 && $this->evitarReenvio()) {            
+            $this->livroDAO->adicionarlivro();
+        } else if ($this->acaoPOST == 2) {
+            $this->livroDAO->alterarlivro();
 
-    //     }
-    // }
+        }
+    }
 
     public function excluir()
     {
@@ -148,13 +149,13 @@ class LivroController
         }
     }
 
-    public function listarLivroId()
+    public function listarLivroIsbn()
     {
         if ($this->acaoGET == 2) {
-            $this->livroDAO->setIdUsuario($_GET['id']);
-            $livro = $this->livroDAO->listarlivroId();
-            $this->livroDAO->setNomelivro($livro['nomeCat']);
-            $this->livroDAO->setDescrlivro($livro['descrCat']);
+            $this->livroDAO->setIsbnLivro($_GET['id']);
+            $livro = $this->livroDAO->listarLivroIsbn();
+            $this->livroDAO->setNomeLivro($livro['nomeLivro']);
+            $this->livroDAO->setSinopseLivro($livro['sinopseLivro']);
         }
     }
 
@@ -174,12 +175,12 @@ class LivroController
                 <td>" . $linha['idCategoria'] . "</td>      
 
                         <td>
-                            <a href='http://localhost/Sebook/area/adm/cadastro/cadlivro/2/id=" . $linha['isbnLivro'] . "'>
+                            <a href='http://localhost/Sebook/area/adm/cadastro/cadlivro/alter/" . $linha['isbnLivro'] . "'>
                                 <img src='" . _URLBASE_ . "public/img/editar.jpg'>
                             </a>
                         </td>
                         <td>
-                            <a href='http://localhost/Sebook/area/adm/cadastro/cadlivro/3/id=" . $linha['isbnLivro'] . "'>
+                            <a href='http://localhost/Sebook/area/adm/cadastro/cadlivro/delete/" . $linha['isbnLivro'] . "'>
                                 <img src='" . _URLBASE_ . "public/img/excluir.jpg'>
                             </a>
                         </td>

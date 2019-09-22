@@ -13,15 +13,12 @@ class EditoraDAO extends Editora
 
     private static $SELECT_ID = "select * from editora where id_editora = :idEditora";
 
-    private static $INSERT = "INSERT INTO editora (nome_editora) VALUES (:nomeEditora)";
+    private static $INSERT = "INSERT INTO editora nome_editora VALUES :nomeEditora";
 
     private static $UPDATE = "UPDATE editora SET
-    id_editora = :idEditora
-    WHERE id_editora = :idEditora";
+    nome_editora = :nomeEditora WHERE id_editora = :idEditora";
 
-
-    //DELETE lógico -> altera status    
-    private static $DELETE = "UPDATE editora SET cod_status_editora = 0 WHERE id_editora = :idEditora";
+    private static $DELETE = "UPDATE editora SET cod_status_editora = '0' WHERE id_editora = :idEditora";
 
     //Atributo par armazenar o Objeto SQL 
     private $sql;
@@ -61,7 +58,7 @@ class EditoraDAO extends Editora
         $result = $this->sql->query(
             EditoraDAO::$SELECT_ID,
             array(
-                'idEditora' => array(0 => $this->setIdEditora(), 1 => \PDO::PARAM_INT)
+                'idEditora' => array(0 => $this->getIdEditora(), 1 => \PDO::PARAM_INT)
             )
         );
         if ($result->rowCount() == 1) {
@@ -89,12 +86,23 @@ class EditoraDAO extends Editora
         return $result;
     }
 
+    public function alterarEditora()
+    {
+        $result = $this->sql->execute(
+            EditoraDAO::$UPDATE,
+            array(
+                ':nomeEditora' => array(0 => $this->getNomeEditora(), 1 => \PDO::PARAM_STR)
+            )
+        );
+        return $result;
+    }
+
     public function excluirEditora()
     {
         $result = $this->sql->execute(
             EditoraDAO::$DELETE,
             array(
-                ':id' => array(0 => $this->getIdEditora(), 1 => \PDO::PARAM_INT)
+                ':idEditora' => array(0 => $this->getIdEditora(), 1 => \PDO::PARAM_INT)
             )
         );
         return $result;

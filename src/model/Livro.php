@@ -28,7 +28,6 @@ class Livro
     }
 
     //getters e setters
-
     public function getIsbnLivro()
     {
         return $this->isbnLivro;

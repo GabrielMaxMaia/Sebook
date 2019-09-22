@@ -2,65 +2,47 @@
 
 namespace Controller;
 
-use Model\EditoraDAO;
+use Model\NacionalidadeDAO;
 
-class EditoraController
+class NacionalidadeController
 {
-    //Atributos
+//Atributos
     private $lista = 'on';
     private $formulario = 'off';
     private $acaoGET;
     private $acaoPOST;
 
-    private $editoraDAO = null;
+    private $nacionalidade = null;
 
-    //Método Construtor
+//Método Construtor
     public function __construct($sql)
     {
-        $this->editoraDAO = new EditoraDAO($sql);
+        $this->nacionalidade = new NacionalidadeDAO($sql);
         $this->verificaExibicao();
     }
 
-    //Métodos GETTERS e SETTERS
+//Métodos GETTERS e SETTERS
     public function getLista()
-    {
-        return $this->lista;
-    }
+    {return $this->lista;}
     public function getFormulario()
-    {
-        return $this->formulario;
-    }
+    {return $this->formulario;}
     public function getAcaoGET()
-    {
-        return $this->acaoGET;
-    }
+    {return $this->acaoGET;}
     public function getAcaoPOST()
-    {
-        return $this->acaoPOST;
-    }
-    public function getEditoraDAO()
-    {
-        return $this->editoraDAO;
-    }
+    {return $this->acaoPOST;}
+    public function getNacionalidadeDAO()
+    {return $this->nacionalidade;}
 
     public function setLista($valor)
-    {
-        $this->lista = $valor;
-    }
+    {$this->lista = $valor;}
     public function setFormulario($valor)
-    {
-        $this->formulario = $valor;
-    }
+    {$this->formulario = $valor;}
     public function setAcaoGET($valor)
-    {
-        $this->acaoGET = $valor;
-    }
+    {$this->acaoGET = $valor;}
     public function setAcaoPOST($valor)
-    {
-        $this->acaoPOST = $valor;
-    }
+    {$this->acaoPOST = $valor;}
 
-    //Métodos Especialistas
+//Métodos Especialistas
 
     public function recuperarAcaoPOST()
     {
@@ -84,7 +66,7 @@ class EditoraController
             $this->lista = 'on';
             $this->formulario = 'off';
         } else if ($this->acaoGET == 1 || $this->acaoGET == 2) {
-            $this->listareditoraId();
+            $this->listarNacionalidadeId();
             $this->lista = 'off';
             $this->formulario = 'on';
         }
@@ -94,8 +76,8 @@ class EditoraController
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-            $this->editoraDAO->setIdEditora($_POST['txtId']);
-            $this->editoraDAO->setNomeEditora($_POST['txtNome']);
+            $this->nacionalidade->setIdNacionalidade($_POST['txtId']);
+            $this->nacionalidade->setNomeNacionalidade($_POST['txtNome']);
         }
     }
 
@@ -104,37 +86,36 @@ class EditoraController
     // $_SESSION['var'] = 'valor';
     // echo $_SESSION['var'];
 
-    public function evitarReenvio()
-    {
+    public function evitarReenvio(){
         //verificar se existe uma variavel de sessão para os dados do form
-        if (isset($_SESSION['dadosForm'])) {
+        if(isset($_SESSION['dadosForm'])){
             //conteúdo armazenado sessão diferente do conteúdo atual --> ambos em forma de hash
-            if ($_SESSION['dadosForm'] != md5(implode($_POST))) {   //novo envio             
+            if($_SESSION['dadosForm'] != md5(implode($_POST)) ){   //novo envio             
                 //armazena conteúdo do formulário em forma de hash na varivel de sessao
                 $_SESSION['dadosForm'] = md5(implode($_POST)); // md5 cria um hash de uma string  --> implode converte array para string;
                 //indica que não há reenvio de dados
                 return true;
-            } else { //reenvio
+            }else{ //reenvio
                 //conteúdo armazenado sessão é igual do conteúdo atual --> ambos em forma de hash
                 //não atualizo a sessão
                 return false;
             }
-        } else {
+        } else{
             //armazena conteúdo do formulário em forma de hash na varivel de sessao
             $_SESSION['dadosForm'] = md5(implode($_POST)); // md5 cria um hash de uma string  --> implode converte array para string;
             //indica que não há reenvio de dados
             return true;
         }
     }
-
+    
     public function gravarAlterar()
     {
         $this->recuperarAcaoPOST();
         $this->recuperarDadosFormulario();
         if ($this->acaoPOST == 1 && $this->evitarReenvio()) {            
-            $this->editoraDAO->adicionareditora();
+            $this->nacionalidade->adicionarNacionalidade();
         } else if ($this->acaoPOST == 2) {
-            $this->editoraDAO->alterareditora();
+            $this->nacionalidade->alterarNacionalidade();
 
         }
     }
@@ -142,46 +123,47 @@ class EditoraController
     public function excluir()
     {
         if ($this->acaoGET == 3) {
-            $this->editoraDAO->setIdEditora($_GET['id']);
-            $this->editoraDAO->excluirEditora();
+            $this->nacionalidade->setIdNacionalidade($_GET['id']);
+            $this->nacionalidade->excluirNacionalidade();
         }
     }
 
-    public function listarEditoraId()
+    public function listarNacionalidadeId()
     {
         if ($this->acaoGET == 2) {
-            $this->editoraDAO->setIdEditora($_GET['id']);
-            $editora = $this->editoraDAO->listarEditoraId();
-            $this->editoraDAO->setNomeEditora($editora['nomeEditora']);
+            $this->nacionalidade->setIdNacionalidade($_GET['id']);
+            $Nacionalidade = $this->nacionalidade->listarNacionalidadeId();
+            $this->nacionalidade->setNomeNacionalidade($Nacionalidade['nomeNacionalidade']);
         }
     }
 
-    public function listarEditoras()
+    public function listarNacionalidades()
     {
-        $result = $this->editoraDAO->listarEditoras();
-
+        $result = $this->nacionalidade->listarNacionalidades();
+       
         $tabela = "";
         if ($result != null) {
             foreach ($result as $linha) {
                 $tabela .= "<tr>
-                <td>" . $linha['idEditora'] . "</td>
-                <td>" . $linha['nomeEditora'] . "</td>
-                <td>" . $linha['codStatusEditora'] . "</td>    
+                <td>" . $linha['idNacionalidade'] . "</td>
+                <td>" . $linha['nomeNacionalidade'] . "</td>"
+                 . "</td>
                         <td>
-                            <a href='http://localhost/Sebook/area/adm/cadastro/cadEditora/alter/" . $linha['idEditora'] . "'>
-                                <img src='" . _URLBASE_ . "public/img/editar.jpg'>
+                            <a href='http://localhost/sebook/area/adm/cadastro/cadNacionalidade/alter/" . $linha['idNacionalidade'] . "'>
+                                <img src='"._URLBASE_."public/img/editar.jpg'>
                             </a>
                         </td>
                         <td>
-                            <a href='http://localhost/Sebook/area/adm/cadastro/cadEditora/delete/" . $linha['idEditora'] . "'>
-                                <img src='" . _URLBASE_ . "public/img/excluir.jpg'>
+                            <a href='http://localhost/sebook/area/adm/cadastro/cadNacionalidade/delete/" . $linha['idNacionalidade'] . "'>
+                                <img src='"._URLBASE_."public/img/excluir.jpg'>
                             </a>
                         </td>
                     </tr>";
             }
         } else {
-            $tabela = "<tr colspan='5'><td>Não há editoras registradas</td></tr>";
-        }
+            $tabela = "<tr colspan='5'><td>Não há Nacionalidades registradas</td></tr>";
+        }        
         return $tabela;
     }
+
 }
