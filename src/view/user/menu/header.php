@@ -1,5 +1,5 @@
 <div class="menuGroup">
-	<a class="logo" href="<?php echo _URLBASE_ ?>index.html">
+	<a class="logo" href="<?php echo _URLBASE_ ?>index.php">
 		<img src="<?php echo _IMGBASE_ ?>logoSebookCor.png" alt="SebooK">
 	</a>
 	<a class="perfil" href="<?php echo _URLBASE_ ?>src/view/user/pages/login/login.php">
@@ -10,12 +10,12 @@
 	<ul>
 		<li>
 			<ul>
-			<li><a href="<?php echo _URLBASEMENU_ ?>?area=user/pages/menu/sebos.php">SEBOS</a></li>
-			
-		 	<!--<li><a href="<?php// echo _URLBASE_ ?>src/view/user/pages/menu/sebos.php">SEBOS</a></li>-->
-			<li><a href="<?php echo _URLBASE_ ?>src/view/user/pages/menu/livros.php">LIVROS</a></li>
-			<li><a href="<?php echo _URLBASE_ ?>src/view/user/pages/menu/quemSomos.php">QUEM SOMOS</a></li>
-			<li><a href="<?php echo _URLBASE_ ?>src/view/user/pages/menu/ajuda.php">FAQ</a></li>
+			 <!--<li><a href="<?php// echo _URLBASE_ ?>src/view/user/pages/menu/sebos.php">SEBOS</a></li>-->
+
+			 <li><a href="<?php echo _URLBASE_ ?>area/user/menu/sebos.php">SEBOS</a></li>
+			<li><a href="<?php echo _URLBASEMENU_ ?>/pages/menu/livros.php">LIVROS</a></li>
+			<li><a href="<?php echo _URLBASEMENU_ ?>/pages/menu/quemSomos.php">QUEM SOMOS</a></li>
+			<li><a href="<?php echo _URLBASEMENU_ ?>/pages/menu/ajuda.php">FAQ</a></li>
 		</ul>
 	</ul>
 </nav>

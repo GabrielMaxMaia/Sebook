@@ -15,6 +15,6 @@ if (isset($_GET['area']) && $_GET['area'] == "adm") {
     require_once "./teste.php";
     
 } else {
-
+    
     require_once "./src/view/user/index_user.php";
 }
