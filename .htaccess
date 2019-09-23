@@ -1,7 +1,7 @@
 ﻿#ativar mecanismo de reescrita de URL
-#RewriteEngine On
+RewriteEngine On
 #bloqueio de navegação de diretório
-#Options -Indexes
+Options -Indexes
 
 #ErrorDocument código de erro caminho para página de erro customizada
 #ErrorDocument 404 http://localhost/Sebook/src/view/erros/404.php
@@ -9,9 +9,11 @@
 #ErrorDocument 500 http://localhost/Sebook/src/view/erros/500.php
 
 #Pega o caminho na url de tudo apos area
-#RewriteRule ^area\/([a-z]+)$ index.php?area=$1 [NC,L]
+RewriteRule ^area\/([a-z]+)$ index.php?area=$1 [NC,L]
 
-#RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)$ http://localhost/Sebook/index.php?area=$1&folder=$2&page=$3 [NC,L]
+RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)$ http://localhost/Sebook/index.php?area=$1&folder=$2&page=$3 [NC,L]
+
+RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)$ http://localhost/Sebook/index.php?area=$1&pasta=$2&page=$3 [NC,L]
 
 #regra para adicionar
 #RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)\/add$ http://localhost/Sebook/index.php?area=$1&folder=$2&page=$3&acao=1 [NC,L]
