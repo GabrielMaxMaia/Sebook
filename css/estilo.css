@@ -1,0 +1,362 @@
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#container{
+    width: 90%;
+    margin: 0 auto;
+
+}
+
+#container::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+html {
+    font-family: "Lucida Sans", sans-serif;
+}
+header {    
+    background-color: #05514E;
+    /*background-color: #0099cc;*/
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+    height:150px; 
+    display: flex;
+}
+header section:nth-child(1){
+    width: 55%;
+    display: block;
+    background-image: url(http://localhost/plao3_2sem/Modelo/public/img/capa_small.png);
+    margin: 10px;
+}
+header section:nth-child(2){
+    width: 45%;
+    display: block;
+    text-align: right;
+    margin-top: 15px;
+    margin-right: 15px;}
+
+header h1{
+    font-family: 'Monoton', cursive;
+    padding-left: 20px;
+    color: burlywood;
+    font-size: 2rem;
+}
+header h2{
+    padding-top: 25px;
+    padding-right: 10px;
+    color: #fff;
+    text-align: right
+}
+
+header h1 sub{
+    color: brown;
+    font-size: 3rem;
+}
+header form{
+    margin: 15px;
+    text-align: right;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+
+    display: inline
+}
+
+.inputLogin{
+    padding: 0.30rem 1rem;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: #52575C;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+p{
+    margin-right: 135px; 
+}
+p a{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+p a:hover{
+    color: black;
+}
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.menu li {
+    padding: 8px;
+    margin-bottom: 7px;
+    background-color: #33b5e5;
+    color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.menu li:hover {
+    background-color: #0099cc;
+}
+
+.button{
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.buttonCancel{
+    margin-right: 5px;
+    margin-top: 5px;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #DB0237;
+    border-color: #DB0237;
+}
+main{
+    width: 90%;
+    height: 600px;
+    margin: 0 auto;
+    display: flex
+
+}
+
+main aside {
+    width: 20%;
+    height: 600px;
+    background-color: #BAB01D;
+    display: block
+}
+
+ul {
+    list-style-type: none;
+}
+.vertical-menu {
+    width: 100%;
+}
+
+.vertical-menu a , nav h4 {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+nav h4 {
+    background-color: #BAB01D;
+    color: white
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc;
+}
+
+.vertical-menu a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+main article{
+    background-color: wheat;
+    width: 80%;
+    height: 600px;
+    display: block;
+}
+
+
+/* Footer */
+footer {
+    width: 90%;
+    margin: 0 auto;
+    background-color: #05514E;
+    /*background-color: #0099cc;*/
+    color: #ffffff;
+    text-align: center;
+    font-size: 12px;
+    padding: 15px;
+    min-height: 70px;
+}
+
+.icons {
+    text-align: center;
+}
+.icons li {
+    line-height:24px;
+    font-size:12px;
+    display:inline;
+}
+.icons li a{
+    line-height:30px;
+    text-decoration: none;
+    padding: 0.30rem 1rem;
+    font-size: 1.2rem;
+
+    color: #52575C;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+.icons img {
+    margin-right:5px;
+    margin-top:10px
+}
+
+/* -------------------------------- Tabela ---------------------------------- */
+
+main article{
+    padding:10px;
+}
+table {
+    width: 100%;
+    border-collapse : collapse;
+    text-align:left;
+}
+caption {
+    -moz-border-radius : 4px;
+    -webkit-border-radius : 4px;
+    background : #05514E;
+    color : #FFF;
+    font-weight : bold;
+}
+tr{
+    border : 2px solid #BAB01D;
+}
+tr:nth-child(odd) { 
+    background : #FFF;
+    font-weight: bold;        
+
+}
+tr:nth-child(even) {
+    background : #DDD;
+    font-weight: bold;
+}
+tr:hover td {
+    color : red;
+    font-weight: bold;
+}
+td, th {
+    padding : 0 5px;
+    text-align: center;
+    vertical-align:middle;               
+    font-weight: bold;
+}
+th {
+    padding: 2px 0;
+    background : #BAB01D;
+    border-bottom : 2px solid #BAB01D;
+    color : #000;
+    font-size: 0.7em;
+    font-weight : bold;
+    text-align: center;
+}
+td {
+    border-bottom : 1px solid #CCC;
+    font-size : 10px;
+}
+td a img{
+    padding-bottom: 2px;
+}
+figure img{
+    padding-bottom: 2px;
+    width: 100px;
+}
+
+
+/* ----------------------------- FIM TABELA --------------------------------- */
+.on{
+    display: block;
+}
+
+.off{
+    display: none;
+}
+
+
+
+label {
+    display: inline-block;
+    width: 120px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.grande{
+    width: 200px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    margin: 5px 0;  
+}
+
+.cadCat{
+    -webkit-border-radius: 4px;
+    background: #05514E;
+    color: #FFF;
+    font-weight: bold;
+    text-align: center;
+}
+
+a, a:visited{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+a:hover{
+        color: #DB0237;
+        font-weight: bolder;
+}

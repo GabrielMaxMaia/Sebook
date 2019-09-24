@@ -30,11 +30,11 @@
                     ?>
                 </article>
 <!--BANNER-->
-                <?php // require_once 'pages/util/banner.php'; ?>
+                <?php require_once 'util/banner.php'; ?>
 <!--SWIPER QUEBRADO-->
-                <?php// require_once 'pages/util/carrossel.php'; ?>
+                <?php require_once 'util/slick.php'; ?>
 <!--EVENTOS-->
-                <?php //require_once 'pages/util/eventosBanner.php'; ?>
+                <?php require_once 'util/eventosBanner.php'; ?>
             </section>
         </div>
         <footer class="master1">
