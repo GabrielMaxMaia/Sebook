@@ -12,10 +12,10 @@
 			<ul>
 			 <!--<li><a href="<?php// echo _URLBASE_ ?>src/view/user/pages/menu/sebos.php">SEBOS</a></li>-->
 
-			 <li><a href="<?php echo _URLBASE_ ?>area/user/menu/sebos.php">SEBOS</a></li>
-			<li><a href="<?php echo _URLBASEMENU_ ?>/pages/menu/livros.php">LIVROS</a></li>
-			<li><a href="<?php echo _URLBASEMENU_ ?>/pages/menu/quemSomos.php">QUEM SOMOS</a></li>
-			<li><a href="<?php echo _URLBASEMENU_ ?>/pages/menu/ajuda.php">FAQ</a></li>
+			 <li><a href="<?php echo _URLBASE_ ?>area/user/menuHome/sebos.php">SEBOS</a></li>
+			<li><a href="<?php echo _URLBASEMENU_ ?>/pages/menuHome/livros.php">LIVROS</a></li>
+			<li><a href="<?php echo _URLBASEMENU_ ?>/pages/menuHome/quemSomos.php">QUEM SOMOS</a></li>
+			<li><a href="<?php echo _URLBASEMENU_ ?>/pages/menuHome/ajuda.php">FAQ</a></li>
 		</ul>
 	</ul>
 </nav>
