@@ -13,10 +13,9 @@ class NacionalidadeDAO extends Nacionalidade
 
     private static $SELECT_ID = "select * from nacionalidade where id_nacionalidade = :idNacionalidade";
 
-    private static $INSERT = "INSERT INTO nacionalidade nome_nacionalidade VALUES (:nomeNacionalidade)";
+    private static $INSERT = "INSERT INTO nacionalidade (nome_nacionalidade) VALUES (:nomeNacionalidade)";
 
-    private static $UPDATE = "UPDATE nacionalidade SET nome_nacionalidade = :nomeNacionalidade
-    WHERE id_nacionalidade = :idNacionalidade";
+    private static $UPDATE = "UPDATE nacionalidade SET nome_nacionalidade = :nomeNacionalidade WHERE id_nacionalidade = :idNacionalidade";
                                      
     private static $DELETE = "UPDATE nacionalidade SET cod_status_nacionalidade = '0' WHERE id_nacionalidade = :idNacionalidade";
 

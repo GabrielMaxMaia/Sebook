@@ -29,6 +29,6 @@
 		<li>
 			<a href="<?php echo _URLBASE_ ?>area/adm/cadastro/cadAutor">Autor</a>
 		</li>
-		<li><a href="<?php echo _URLBASE_?>area/adm/sair">Sair</a></li>
+		<li><a href="<?php echo _URLBASE_ ?>area/adm/sair">Sair</a></li>
 	</ul>
 </nav>

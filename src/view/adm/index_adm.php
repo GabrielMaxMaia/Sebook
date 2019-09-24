@@ -32,14 +32,14 @@
 <body>
     <?php
 
-    // $sql = new \Util\Sql($conn);
+    $sql = new \Util\Sql($conn);
 
-    // $autenticadorController = new \Controller\AutentificadorController($sql);
+    $autenticadorController = new \Controller\AutentificadorController($sql);
 
-    // $autenticadorController->validarAcesso('http://localhost/Sebook/area/adm',array(0=>1, 1=>2));
+    $autenticadorController->validarAcesso('http://localhost/Sebook/area/adm',array(0=>1, 1=>2));
 
-    // $autenticadorController->efetuarLogin();
-    // $autenticadorController->efetuarLogOut();
+    $autenticadorController->efetuarLogin();
+    $autenticadorController->efetuarLogOut();
 
 
     ?>
@@ -56,8 +56,8 @@
 
             <aside>
                 <?php
-                require_once './src/view/adm/menu.php';
-                //$autenticadorController->toggleFormLogin();
+                // require_once './src/view/adm/menu.php';
+                $autenticadorController->toggleFormLogin();
                 ?>
             </aside>
 
