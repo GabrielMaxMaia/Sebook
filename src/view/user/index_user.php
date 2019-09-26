@@ -11,35 +11,30 @@
 
 <body>
     <header>
-        <?php require_once 'menu/header.php'; ?>
+        <?php //require_once 'menu/header.php'; ?>
     </header>
     <div id="container">
-        <div id="container">
-            <?php require_once 'menu/social.php'; ?>
+        <?php require_once 'menu/social.php'; ?>
 <!--CHAMAR HTML-->
-            <section class="home">
-                <article>
-                    <?php
-                        if (isset($_GET['page']) && $_GET['page'] != "") {
-                            $page = $_GET['page'];
-                            if (isset($_GET['pasta']) && $_GET['pasta'] != "") {
-                                $pasta = $_GET['pasta'];
-                                    require_once "./src/view/user/$pasta/$page.php";
-                            }
+        <section class="home">
+            <article>
+                <?php
+                    if (isset($_GET['page']) && $_GET['page'] != "") {
+                        $page = $_GET['page'];
+                        if (isset($_GET['pasta']) && $_GET['pasta'] != "") {
+                            $pasta = $_GET['pasta'];
+                            require_once "./src/view/user/$pasta/$page.php";
                         }
-                    ?>
-                </article>
-<!--BANNER-->
-                <?php require_once 'util/banner.php'; ?>
-<!--SWIPER QUEBRADO-->
-                <?php require_once 'util/slick.php'; ?>
-<!--EVENTOS-->
-                <?php require_once 'util/eventosBanner.php'; ?>
-            </section>
-        </div>
-        <footer class="master1">
-            <?php require_once 'menu/footer.php'; ?>
-        </footer>
+                    }else{
+                        require_once "./src/view/user/menuHome/home.php";
+                    }
+                ?>
+            </article>
+        </section>
+    </div>
+    <footer class="master1">
+        <?php require_once 'menu/footer.php'; ?>
+    </footer>
 </body>
 
 </html>
