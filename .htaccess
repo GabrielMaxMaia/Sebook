@@ -14,7 +14,9 @@ RewriteRule ^area/adm/sair$ http://localhost/Sebook/index.php?area=adm&logout=tr
 #Pega o caminho na url de tudo apos area
 RewriteRule ^area\/([a-z]+)$ index.php?area=$1 [NC,L]
 
-RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)$ http://localhost/Sebook/index.php?area=$1&folder=$2&page=$3 [NC,L]
+RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)$ http://localhost/sebook/index.php?area=$1&pasta=$2&page=$3 [NC,L]
+
+#RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)$ http://localhost/Sebook/index.php?area=$1&folder=$2&page=$3 [NC,L]
 
 RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)$ http://localhost/Sebook/index.php?area=$1&pasta=$2&page=$3 [NC,L]
 
