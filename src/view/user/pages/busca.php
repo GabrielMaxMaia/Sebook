@@ -7,7 +7,7 @@
                 </a>
                 <input type="text">
             </div>
-            
+
             <div class="searchBooks">
                 <a href="">
                     <img src="<?php echo _IMGBASE_ ?>livroHarry.jpg" alt="">
