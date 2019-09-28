@@ -1553,7 +1553,7 @@ form select {
     width: auto;
     max-width: 1200px;
     margin: auto;
-    padding: 40px;
+    padding: 4rem
 }
 
 .container-body {
@@ -1561,11 +1561,17 @@ form select {
     justify-content: space-between;
 
 }
+@media (max-width:560px){
+    .container-body{
+        flex-direction:column
+    }
+}
 
 .coluna1,
 .coluna2,
 .coluna3 {
-    max-width: 400px
+    max-width: 450px;
+    margin: 1rem .5rem;
 }
 
 .coluna1 h1,
