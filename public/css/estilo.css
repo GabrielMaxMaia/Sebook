@@ -9,13 +9,14 @@
 #container{
     width: 90%;
     margin: 0 auto;
-
+  
 }
 
 #container::after {
     content: "";
     clear: both;
     display: block;
+
 }
 
 html {
