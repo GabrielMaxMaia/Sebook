@@ -30,26 +30,28 @@ $output = ob_get_clean();
 </head>
 
 <body>
-    <?php
-    $menuHide ?? require_once 'menu/header.php';
-    ?>
-    <div id="containerTemplate">
+    <div class="containerScroll">
         <?php
-        if (isset($menuHide) != true) {
-            ?>
-            <?php require_once 'menu/social.php'; ?>
-            <section class="home">
-                <article>
-                    <?= $output ?>
-                </article>
-            </section>
-        <?php
-        } else {
-            echo $output;
-        }
+        $menuHide ?? require_once 'menu/header.php';
         ?>
+        <div id="containerTemplate">
+            <?php
+            if (isset($menuHide) != true) {
+                ?>
+                <?php require_once 'menu/social.php'; ?>
+                <section class="home">
+                    <article>
+                        <?= $output ?>
+                    </article>
+                </section>
+            <?php
+            } else {
+                echo $output;
+            }
+            ?>
+        </div>
+        <?php require_once 'menu/footer.php'; ?>
     </div>
-    <?php require_once 'menu/footer.php'; ?>
 </body>
 
 </html>

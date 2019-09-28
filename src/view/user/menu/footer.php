@@ -19,36 +19,36 @@
             <div class="coluna2">
                 <h1>Redes Sociais</h1>
                 <div class="row">
-                    <img src="<?php echo _ICONBASE_ ?>Face-R.png" alt="">
+                    <img src="images/icons/Face-R.png" alt="">
                     <label>Siga-nos no Facebook</label>
                 </div>
                 <div class="row">
-                    <img src="<?php echo _ICONBASE_ ?>Twitter-R.png" alt="">
+                    <img src="images/icons/Twitter-R.png" alt="">
                     <label>Siga-nos no Twitter</label>
                 </div>
                 <div class="row">
-                    <img src="<?php echo _ICONBASE_ ?>Instagram-R.png" alt="">
+                    <img src="images/icons/Instagram-R.png" alt="">
                     <label>Siga-nos no Instagram</label>
                 </div>
                 <div class="row">
-                    <img src="<?php echo _ICONBASE_ ?>Google-R.png" alt="">
+                    <img src="images/icons/Google-R.png" alt="">
                     <label>Siga-nos no Google Plus</label>
                 </div>
             </div>
             <div class="coluna3">
                 <h1>Informações</h1>
                 <div class="row2">
-                    <img src="<?php echo _ICONBASE_ ?>Home-R.png" alt="">
+                    <img src="images/icons/Home-R.png" alt="">
                     <label>Why do we use it?
                         It is a long established fact that a reader will be distracted by the readable
                         that it has</label>
                 </div>
                 <div class="row2">
-                    <img src="<?php echo _ICONBASE_ ?>Phone-R.png" alt="Telefone">
+                    <img src="images/icons/Phone-R.png" alt="Telefone">
                     <label>+ xx xxxx-xxxx</label>
                 </div>
                 <div class="row2">
-                    <img src="<?php echo _ICONBASE_ ?>Email-R.png" alt="">
+                    <img src="images/icons/Email-R.png" alt="">
                     <label>Fulano_de_tal@gmail.com</label>
                 </div>
 
@@ -58,7 +58,9 @@
     <div class="container-footer">
         <div class="footer">
             <div class="copyright">
-                @ 2019 Todos os direitos Reservados |<a href="">Sebook</a>
+                <p>
+                    @ 2019 Todos os direitos Reservados |<a href="">Sebook</a>
+                </p>
             </div>
 
             <div class="informar">
@@ -71,18 +73,18 @@
 
 </footer>
 
-<footer class="master1">
+<div class="master1">
     <nav class="menuMobile">
         <a href="index.html" class="home">
-            <img src="<?php echo _ICONBASE_ ?>home.png" alt="Home" title="Página inicial">
+            <img src="images/icons/home.png" alt="Home" title="Página inicial">
         </a>
         <a href="busca.html" class="search">
-            <img src="<?php echo _ICONBASE_ ?>search.png" alt="Buscar" title="Buscar">
+            <img src="images/icons/search.png" alt="Buscar" title="Buscar">
         </a>
         <div class="menu">
             <input type="checkbox" id="menuH">
             <label for="menuH">
-                <img src="<?php echo _ICONBASE_ ?>menu.png" alt="">
+                <img src="images/icons/menu.png" alt="">
             </label>
             <div class="ulCenter">
                 <ul>
@@ -96,4 +98,4 @@
             </div>
         </div>
     </nav>
-</footer>
+</div>
