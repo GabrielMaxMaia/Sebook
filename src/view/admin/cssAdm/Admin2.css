@@ -20,7 +20,8 @@ div#container {
     height: 100%;
     /* margin:1rem auto 0; */
     box-sizing: border-box;
-    background: linear-gradient(45deg, #06cc3e26, #008a9b47)
+    background: linear-gradient(45deg, #06cc3e26, #008a9b47);
+    overflow: hidden;
 }
 
 img {
