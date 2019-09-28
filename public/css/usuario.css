@@ -1,4 +1,5 @@
 @import './slick.css';
+
 body {
     padding: 0;
     margin: 0;
@@ -6,11 +7,14 @@ body {
     font-family: sans-serif;
     margin: auto
 }
-div#containerTemplate::before{
+
+div#containerTemplate::before {
     content: "asdasd";
-    display:block;
-    height:18px; opacity: 0;
+    display: block;
+    height: 18px;
+    opacity: 0;
 }
+
 div#containerTemplate {
     width: 100%;
     height: 100%;
@@ -116,7 +120,7 @@ div#containerTemplate {
 
 .busca {
     box-sizing: border-box;
-    padding: 1!important;
+    padding: 1 !important;
     height: 100vh
 }
 
@@ -1167,7 +1171,7 @@ header,
 
 .navDesk ul li {
     list-style: none;
-    padding:.6rem 1rem
+    padding: .6rem 1rem
 }
 
 .navDesk ul a {
@@ -1202,25 +1206,30 @@ header .menuGroup {
         top: 0;
         z-index: 99999
     }
+
     .headerStatic {
         position: static
     }
+
     .busca .container {
         padding: 3vh
     }
 }
 
 @media (min-width:780px) {
+
     .master1 nav:after,
     .menuMobile,
     .menuMobile img {
         display: none
     }
+
     .navDesk {
         display: block
     }
+
     section {
-        padding: 0!important
+        padding: 0 !important
     }
 }
 
@@ -1230,7 +1239,7 @@ header .menuGroup {
     display: flex;
     padding: 0 20px;
     line-height: 105px;
-    position: static!important
+    position: static !important
 }
 
 .master2 .volta {
@@ -1364,10 +1373,12 @@ section .banner .label {
 }
 
 @keyframes bullet {
+
     0%,
     33.32333333333334% {
         background: #000
     }
+
     33.333333333333336%,
     100% {
         background: gray
@@ -1387,14 +1398,17 @@ section .banner #play1:checked~div .fake-radio .radio-btn:nth-child(3) {
 }
 
 @keyframes slide {
+
     0%,
     25.203252032520325% {
         margin-left: 0
     }
+
     33.333333333333336%,
     58.53658536585366% {
         margin-left: -100%
     }
+
     66.66666666666667%,
     91.869918699187% {
         margin-left: -200%
@@ -1406,10 +1420,12 @@ section .banner .st-slider>#play1:checked~.images .images-inner {
 }
 
 @keyframes caption {
+
     0%,
     33.32333333333334% {
         opacity: 1
     }
+
     33.333333333333336%,
     100% {
         opacity: 0
@@ -1498,7 +1514,7 @@ form select {
     padding: .5rem;
     display: flex;
     transition: all ease-in-out .5s;
-    margin:.025rem 0
+    margin: .025rem 0
 }
 
 .icon-facebook {
@@ -1524,6 +1540,98 @@ form select {
 .icon:hover {
     padding-right: 3rem;
     border-radius: .5rem 0 0 1rem;
+}
+
+/*=====================AREA DO RODAPE===============*/
+#Rodape {
+    width: 100%;
+    background: #202020;
+    color: #fff;
+}
+
+.container-footer-all {
+    width: auto;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px;
+}
+
+.container-body {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.coluna1,
+.coluna2,
+.coluna3 {
+    max-width: 400px
+}
+
+.coluna1 h1,
+.coluna2 h1,
+.coluna3 h1 {
+    font-size: 22px
+}
+
+.coluna1 p {
+    font-size: 14px;
+    color: #c7c7c7;
+    margin-top: 20px;
+}
+
+.row,
+.row2 {
+    margin-top: 20px;
+    display: flex
+}
+
+.row img,
+.row2 img {
+    width: 36px;
+    height: 36px;
+}
+
+.row label {
+    margin-top: 10px;
+    margin-left: 20px;
+    color: #c7c7c7;
+}
+
+.row2 label {
+    margin-top: 10px;
+    margin-left: 20px;
+    max-width: 140px
+}
+
+.container-footer {
+    width: auto;
+    background: #111;
+}
+
+.footer {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px
+}
+
+.copyright {
+    color: #c7c7c7;
+
+
+}
+
+.copyright a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold
+}
+
+.informar a {
+    text-decoration: none;
+    color: #c7c7c7
 }
 
 
