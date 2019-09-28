@@ -1,11 +1,2 @@
-﻿# Para ignorar o arquivo de configuração do MySQL
-.ini
 *.ini
-bd_mysql.ini
-.bd_mysql.ini
-/bd_mysql.ini
-./bd_mysql.ini
-config/bd_mysql.ini
-.config/bd_mysql.ini
-/config/bd_mysql.ini
-./.config/bd_mysql.ini
+.ini
