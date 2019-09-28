@@ -58,7 +58,9 @@
     <div class="container-footer">
         <div class="footer">
             <div class="copyright">
-                @ 2019 Todos os direitos Reservados |<a href="">Sebook</a>
+                <p>
+                    @ 2019 Todos os direitos Reservados |<a href="">Sebook</a>
+                </p>
             </div>
 
             <div class="informar">
@@ -71,7 +73,7 @@
 
 </footer>
 
-<footer class="master1">
+<div class="master1">
     <nav class="menuMobile">
         <a href="index.html" class="home">
             <img src="images/icons/home.png" alt="Home" title="Página inicial">
@@ -96,4 +98,4 @@
             </div>
         </div>
     </nav>
-</footer>
+</div>

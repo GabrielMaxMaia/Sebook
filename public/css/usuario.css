@@ -5,7 +5,13 @@ body {
     margin: 0;
     /* font-family: Arial, Helvetica, sans-serif; */
     font-family: sans-serif;
-    margin: auto
+    margin: auto;
+    overflow: hidden;
+}
+
+.containerScroll{
+    height:100vh;
+    overflow-y:scroll
 }
 
 div#containerTemplate::before {
@@ -17,11 +23,9 @@ div#containerTemplate::before {
 
 div#containerTemplate {
     width: 100%;
-    height: 100%;
     max-width: 700px;
-    margin: 1rem auto 0;
-    box-sizing: border-box;
-    overflow: hidden;
+    margin: 1rem auto;
+    box-sizing: border-box
 }
 
 * {
@@ -1507,6 +1511,11 @@ form select {
     align-items: flex-end;
     z-index: 100
 }
+@media (min-width:420px){
+    .Social-Bar{
+        right:19px;
+    }
+}
 
 .icon {
     color: white;
@@ -1561,8 +1570,8 @@ form select {
     justify-content: space-between;
 
 }
-@media (max-width:560px){
-    .container-body{
+@media (max-width:701px){
+    .container-body, .footer{
         flex-direction:column
     }
 }
@@ -1614,13 +1623,21 @@ form select {
     width: auto;
     background: #111;
 }
+@media (max-width:700px){
+    .container-footer{
+        padding: 0 0 3rem
+    }
+}
 
 .footer {
     max-width: 1200px;
     margin: auto;
     display: flex;
     justify-content: space-between;
-    padding: 40px
+    padding: 4rem 1rem
+}
+.footer div{
+    margin:1rem 0
 }
 
 .copyright {
