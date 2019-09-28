@@ -28,11 +28,12 @@ $output = ob_get_clean();
         <?= isset($title) ? 'Sebook | ' . $title : 'Sebook'; ?>
     </title>
 </head>
+
 <body>
     <?php
     $menuHide ?? require_once 'menu/header.php';
     ?>
-    <div id="container">
+    <div id="containerTemplate">
         <?php
         if (isset($menuHide) != true) {
             ?>

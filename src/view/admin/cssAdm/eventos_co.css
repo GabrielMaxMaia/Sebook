@@ -1,5 +1,6 @@
 div#container {
-    max-width: 10000px!important
+    max-width: 10000px!important;
+    overflow: hidden;
 }
 
 .comentarios {

@@ -16,7 +16,8 @@ div#container {
     height: 100%;
     /* margin:1rem auto 0; */
     box-sizing: border-box;
-    background: linear-gradient(45deg, #06cc3e26, #008a9b47)
+    background: linear-gradient(45deg, #06cc3e26, #008a9b47);
+    overflow: hidden;
 }
 
 img {
@@ -351,7 +352,8 @@ header .menuGroup {
 /*===================AREA DO EVENTOS E COMENTÁRIOS====================*/
 
 div#container {
-    max-width: 10000px!important
+    max-width: 10000px!important;
+    overflow: hidden;
 }
 
 .comentarios {
