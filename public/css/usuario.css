@@ -1552,12 +1552,17 @@ form select {
 }
 
 /*=====================AREA DO RODAPE===============*/
-#Rodape {
+#rodape {
     width: 100%;
     background: #202020;
     color: #fff;
 }
-
+#rodape .container-body a, #rodape label{
+    color:#c7c7c7
+}
+#rodape a:hover, #rodape a:hover label{
+    color:#fff
+}
 .container-footer-all {
     width: auto;
     max-width: 1200px;
@@ -1598,11 +1603,15 @@ form select {
     color: #c7c7c7;
     margin-top: 20px;
 }
+.coluna3 label{
+    line-height:1.4rem
+}
 
 .row,
 .row2 {
     margin-top: 20px;
-    display: flex
+    display: flex;
+    align-items:center
 }
 
 .row img,
@@ -1650,6 +1659,7 @@ form select {
 .footer div{
     margin:1rem 0
 }
+
 @media (min-width:900px){
     .footer{
         flex-direction:row;
