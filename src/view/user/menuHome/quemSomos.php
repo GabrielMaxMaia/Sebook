@@ -12,7 +12,7 @@
                         ecológica o consumo dessas obras dentro e fora dos grandes centros.
                     </p>
                 </div>
-                <img src="images/img/quemSomos.jpg" alt="Sebook">
+                <img src="<?php echo _IMGBASE_ ?>quemSomos.jpg" alt="Sebook">
             </div>
         </section>
     </div>
