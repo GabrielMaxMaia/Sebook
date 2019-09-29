@@ -1,48 +1,49 @@
-<footer id="Rodape">
+<footer id="rodape">
     <div class="container-footer-all">
 
         <div class="container-body">
             <div class="coluna1">
                 <h1>Mais Informações do site</h1>
                 <p>
-                    SebooK é uma Plataforma Web dedicada aos amantes de livros usados com a principal missão de fornecer acesso ágil e eficiente aos leitores na busca por livros em sua região. Oferecemos um sistema de Gestão de Acervos para os donos de sebos parceiros. Promovemos interação entre sebos e leitores sob um enfoque social - através da Economia Solidária - incentivando assim o consumo sustentável, pois, além de garantir economia ao leitor, trará visibilidade aos empreendedores desse mercado, estimulando e fomentando de forma ecológica o consumo dessas obras dentro e fora dos grandes centros.
+                    SebooK é uma Plataforma Web dedicada aos amantes de livros usados com a principal missão de fornecer acesso ágil e eficiente aos leitores na busca por livros em sua região. Oferecemos um sistema de Gestão de Acervos para os donos de sebos parceiros. Promovemos interação entre sebos e leitores sob um enfoque social - através da Economia Solidária - incentivando assim o consumo sustentável, pois, além de garantir economia ao leitor, trará visibilidade aos empreendedores desse mercado, estimulando e fomentando de forma ecológica o consumo dessas obras dentro e fora dos grandes ce ntros.
                 </p>
 
             </div>
             <div class="coluna2">
                 <h1>Redes Sociais</h1>
                 <div class="row">
-                    <img src="<?php echo _ICONBASE_ ?>Face-R.png" alt="">
-                    <label>Siga-nos no Facebook</label>
+                    <a href="#face">
+                        <img src="<?php echo _ICONBASE_ ?>Face-R.png" alt="">
+                        <label>Facebook</label>
+                    </a>
                 </div>
                 <div class="row">
-                    <img src="<?php echo _ICONBASE_ ?>Twitter-R.png" alt="">
-                    <label>Siga-nos no Twitter</label>
+                    <a href="#twitter">
+                        <img src="<?php echo _ICONBASE_ ?>Twitter-R.png" alt="">
+                        <label>Twitter</label>
+                    </a>
                 </div>
                 <div class="row">
-                    <img src="<?php echo _ICONBASE_ ?>Instagram-R.png" alt="">
-                    <label>Siga-nos no Instagram</label>
-                </div>
-                <div class="row">
-                    <img src="<?php echo _ICONBASE_ ?>Google-R.png" alt="">
-                    <label>Siga-nos no Google Plus</label>
+                    <a href="#instagram">
+                        <img src="<?php echo _ICONBASE_ ?>Instagram-R.png" alt="">
+                        <label>Instagram</label>
+                    </a>
                 </div>
             </div>
             <div class="coluna3">
                 <h1>Contato</h1>
                 <div class="row2">
-                    <img src="<?php echo _ICONBASE_ ?>Home-R.png" alt="">
-                    <label>Caso surjam dúvidas entre em contato, estaremos prontos para ajudar.</label>
-                </div>
-                <div class="row2">
-                    <img src="<?php echo _ICONBASE_ ?>Phone-R.png" alt="Telefone">
-                    <label>+ xx xxxx-xxxx</label>
+                    <a href="#contato">
+                        <img src="<?php echo _ICONBASE_ ?>Home-R.png" alt="">
+                        <label>Entre em contato conosco</label>
+                    </a>
                 </div>
                 <div class="row2">
                     <img src="<?php echo _ICONBASE_ ?>Email-R.png" alt="">
-                    <label>Fulano_de_tal@gmail.com</label>
+                    <label>
+                        Caixa Postal 5180, <br>São Paulo - SP - Brasil<br>CEP: 01311-100
+                    </label>
                 </div>
-
             </div>
         </div>
     </div>
@@ -50,7 +51,7 @@
         <div class="footer">
             <div class="copyright">
                 <p>
-                    @ 2019 Todos os direitos Reservados |<a href="">Sebook</a>
+                    @ 2019 Todos os direitos Reservados | <a href="">Sebook</a>
                 </p>
             </div>
 
