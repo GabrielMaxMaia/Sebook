@@ -1,6 +1,4 @@
-<?php
-     $title = "Sebos";
-?>
+<?php $title = "Sebos";?>
 <section class="sebos">
     <div class="container">
         <h1>SEBOS</h1>

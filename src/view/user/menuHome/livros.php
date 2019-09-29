@@ -1,3 +1,4 @@
+<?php $title = "Livros";?>
 <div id="container">
     <section class="pagLivro">
         <div class="container">
