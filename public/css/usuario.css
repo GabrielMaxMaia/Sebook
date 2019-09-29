@@ -1564,11 +1564,15 @@ form select {
     margin: auto;
     padding: 4rem
 }
-
+@media (max-width:700px){
+.container-footer-all{
+    padding: 2rem
+}
+}
 .container-body {
     display: flex;
     justify-content: space-between;
-
+    flex-wrap: wrap
 }
 @media (max-width:701px){
     .container-body, .footer{
@@ -1616,7 +1620,12 @@ form select {
 .row2 label {
     margin-top: 10px;
     margin-left: 20px;
-    max-width: 140px
+    
+}
+@media(min-width:700px){
+    .row2 label{
+    max-width: 200px
+    }
 }
 
 .container-footer {
@@ -1633,13 +1642,20 @@ form select {
     max-width: 1200px;
     margin: auto;
     display: flex;
+    flex-direction:column;
     justify-content: space-between;
-    padding: 4rem 1rem
+    padding: 1rem;
+    max-width:700px;
 }
 .footer div{
     margin:1rem 0
 }
-
+@media (min-width:900px){
+    .footer{
+        flex-direction:row;
+        max-width:1000px
+    }
+}
 .copyright {
     color: #c7c7c7;
 
