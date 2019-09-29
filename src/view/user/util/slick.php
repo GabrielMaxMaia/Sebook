@@ -1,7 +1,7 @@
 <?php
   $cssCaminho = '<link rel="stylesheet" href="http://localhost/sebook/css/slick.css">';
 ?>
-<div id="container">
+<div class="containerSlick">
   <section class="regular slider">
     <div>
       <img src="<?php echo _IMGBASE_ ?>livroHarry.jpg">
