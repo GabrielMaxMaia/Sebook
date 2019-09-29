@@ -20,7 +20,7 @@ $output = ob_get_clean();
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!--<link rel="stylesheet" href="http://localhost/sebook/css/slick.css">-->
     <link rel="stylesheet" href="<?php echo _CSSBASEUSER_ ?>">
-    <?php echo $cssCaminho ?? "";?>
+    <?php echo $cssCaminho ?? ""; ?>
     <title><?= isset($title) ? 'Sebook | ' . $title : 'Sebook'; ?></title>
 </head>
 
@@ -48,4 +48,5 @@ $output = ob_get_clean();
         <?php require_once 'menu/footer.php'; ?>
     </div>
 </body>
+
 </html>

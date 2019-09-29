@@ -4,15 +4,8 @@
         <div class="container-body">
             <div class="coluna1">
                 <h1>Mais Informações do site</h1>
-                <p> Why do we use it?
-                    It is a long established fact that a reader will be distracted by the readable
-                    content of a page when looking at its layout. The point of using Lorem Ipsum is
-                    that it has a more-or-less normal distribution of letters, as opposed to using
-                    'Content here, content here', making it look like readable English. Many desktop
-                    publishing packages and web page editors now use Lorem Ipsum as their default
-                    model text, and a search for 'lorem ipsum' will uncover many web sites still
-                    in their infancy. Various versions have evolved over the years, sometimes by
-                    accident, sometimes on purpose (injected humour and the like).
+                <p>
+                    SebooK é uma Plataforma Web dedicada aos amantes de livros usados com a principal missão de fornecer acesso ágil e eficiente aos leitores na busca por livros em sua região. Oferecemos um sistema de Gestão de Acervos para os donos de sebos parceiros. Promovemos interação entre sebos e leitores sob um enfoque social - através da Economia Solidária - incentivando assim o consumo sustentável, pois, além de garantir economia ao leitor, trará visibilidade aos empreendedores desse mercado, estimulando e fomentando de forma ecológica o consumo dessas obras dentro e fora dos grandes centros.
                 </p>
 
             </div>
@@ -36,12 +29,10 @@
                 </div>
             </div>
             <div class="coluna3">
-                <h1>Informações</h1>
+                <h1>Contato</h1>
                 <div class="row2">
                     <img src="<?php echo _ICONBASE_ ?>Home-R.png" alt="">
-                    <label>Why do we use it?
-                        It is a long established fact that a reader will be distracted by the readable
-                        that it has</label>
+                    <label>Caso surjam dúvidas entre em contato, estaremos prontos para ajudar.</label>
                 </div>
                 <div class="row2">
                     <img src="<?php echo _ICONBASE_ ?>Phone-R.png" alt="Telefone">
