@@ -1,4 +1,5 @@
 <?php
+$title = "Livros";
 //BANNER
 require_once  'src/view/user/util/banner.php';
 //SWIPER QUEBRADO
