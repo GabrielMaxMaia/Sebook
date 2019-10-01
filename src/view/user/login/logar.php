@@ -9,8 +9,7 @@ $styleSobrescrito =
     overflow:hidden
 }
 div#containerTemplate{
-    display:flex;
-    height:100%
+    align-self:center
 }
 </style>";
 ?>
