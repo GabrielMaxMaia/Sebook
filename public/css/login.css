@@ -1,18 +1,21 @@
 body {
-    margin: 0;
-    padding: 0;
+    background: url(../img/background/girasol.png) #0000003d;
     background-size: cover;
-    transform-style: preserve-3d;
-    overflow-x: hidden;
-    font-family: "comfortaa", sans-serif
+    background-blend-mode: color
 }
 
-.logo {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+.linkTop {
+    position: absolute;
+    left: 2%;
+    top: 9%;
+    /* transform: rotate(-49deg); */
+}
+.linkTop a{
+    color: #fff;
+    font-size: 1.4rem;
+    text-transform: uppercase;
     padding: 1rem;
-    box-sizing: border-box
+    max-width: 200px;
 }
 
 header img {
@@ -64,11 +67,10 @@ h1 {
 .loginAdm input[type="text"],
 input[type="password"] {
     border: none;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #fff;
     background: transparent;
     outline: none;
     height: 40px;
-    color: white;
     font-size: 16px
 }
 
@@ -100,4 +102,13 @@ input[type="password"] {
 .loginAdm a:hover {
     transition: 0.2s;
     color: #767fbf
+}
+
+.linkGroup{
+    display: flex;
+    max-width: 290px;
+    margin: 5% auto 0
+}
+.linkGroup a{
+    padding:.1rem;
 }

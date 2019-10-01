@@ -1,15 +1,15 @@
 <?php
 $title = "Login";
 $menuHide = true;
-$styleSobrescrito = 
-"<style>
+$cssCaminho = '<link rel="stylesheet" href="http://localhost/sebook/public/css/login.css">';
+$styleSobrescrito =
+    "<style>
 .containerScroll{
     display:flex;
     overflow:hidden
 }
 div#containerTemplate{
     display:flex;
-    align-self:center;
     height:100%
 }
 </style>";
@@ -17,7 +17,16 @@ div#containerTemplate{
 
 <!--Style sobrescrito para login-->
 
-
+<!-- <figure class="logo">
+    <a href="<? //_URLBASE_ 
+                ?>">
+        <img src="<? //_IMGBASE_
+                    ?>logoSebookCor.png" alt="SebooK">
+    </a>
+</figure> -->
+<div class="linkTop">
+    <a href="<?= _URLBASE_ ?>">Voltar | Home</a>
+</div>
 <div class="containerLogin">
     <article class="loginSpace">
         <section class="login">
@@ -34,7 +43,9 @@ div#containerTemplate{
                 <input type="password">
                 <button>ENTRAR</button>
             </form>
-            <a href="">Esqueci minha senha</a>
+            <div class="linkGroup">
+                <a href="">Esqueci minha senha</a>
+            </div>
         </section>
 
         <!--Modal-->

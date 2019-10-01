@@ -506,7 +506,8 @@ div#containerTemplate {
 .containerLogin {
     padding: 1rem;
     width:100%;
-    align-self:center
+    align-self:center;
+    margin: 0 auto 
 }
 
 .loginSpace{
@@ -517,8 +518,9 @@ div#containerTemplate {
     background-color: #fff;
     padding: 2rem 1rem!important;
     max-width: 500px;
-    margin: 1% auto;
-    border: 1px solid #ccc
+    margin: 2% auto 0;
+    border: 1px solid #ccc;
+    border-radius:.5rem 4rem; 
 }
 
 .containerLogin figure {
@@ -543,7 +545,8 @@ div#containerTemplate {
     display: block;
     color: blue;
     text-decoration: none;
-    font-size: 14px
+    font-size: 14px;
+    margin:5% auto
 }
 
 .containerLogin .btn-modal-cadastre:hover {
@@ -564,7 +567,7 @@ div#containerTemplate {
 }
 
 .containerLogin form {
-    padding: 2rem 0 1rem 0;
+    padding: 1% 0 4%;
     max-width: 330px;
     margin: auto
 }
@@ -590,7 +593,6 @@ div#containerTemplate {
     color: #fff;
     padding: .6rem 2.5rem;
     border-radius: 4px;
-    margin: 0 auto;
     display: block
 }
 
