@@ -12,7 +12,7 @@ id_usuario INTEGER PRIMARY KEY AUTO_INCREMENT,
 nome_usuario VARCHAR(50),
 sobrenome_usuario VARCHAR(50),
 email_usuario VARCHAR(100),
-senha_usuario VARCHAR(20),
+senha_usuario VARCHAR(100),
 cod_status_usuario VARCHAR(10),
 id_perfil INTEGER,
 FOREIGN KEY(id_perfil) REFERENCES perfil (id_perfil)
