@@ -1,5 +1,5 @@
-create database bd_sebo;
-use bd_sebo;
+create database bd_sebook;
+use bd_sebook;
 
 CREATE TABLE perfil (
 id_perfil INTEGER PRIMARY KEY AUTO_INCREMENT,
