@@ -198,14 +198,12 @@ div#containerTemplate {
 
 .cadastro .container figure {
     margin: 0 auto;
-    display: block;
+    display:flex;
     width: 208px
 }
 
-.cadastro .container figure img {
-    float: left;
-    height: 55px;
-    width: 55px
+.cadastro .container img {
+    width: 40px
 }
 
 .cadastro .container figure figcaption {
@@ -516,7 +514,7 @@ div#containerTemplate {
 
 .containerLogin .login {
     background-color: #fff;
-    padding: 2rem 1rem!important;
+    padding: 3rem 1rem!important;
     max-width: 500px;
     margin: 2% auto 0;
     border: 1px solid #ccc;
@@ -917,7 +915,7 @@ a {
 }
 
 .container {
-    margin: 0 10px
+    margin: 1rem
 }
 
 .grid {
@@ -1508,7 +1506,7 @@ form select {
 }
 @media (min-width:420px){
     .Social-Bar{
-        right:19px;
+        right:18px;
     }
 }
 

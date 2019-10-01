@@ -1,16 +1,6 @@
 <?php
 $title = "FAQ";
-$styleSobrescrito =
-"<style>
-    div#containerTemplate {
-        display: flex;
-        justify-content: center;
-        align-items: center
-    } 
-</style>";
 ?>
-
-
 <section class="ajuda">
     <div class="container">
         <h1>Contato</h1>

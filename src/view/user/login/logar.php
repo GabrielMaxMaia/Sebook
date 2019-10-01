@@ -14,7 +14,6 @@ div#containerTemplate{
 }
 </style>";
 ?>
-
 <!--Style sobrescrito para login-->
 
 <!-- <figure class="logo">
@@ -60,9 +59,9 @@ div#containerTemplate{
                     </div>
                     <div class="modal-body">
                         <div class="content-modal-cadastre">
-                            <a class="btn-modal" href="cadLeitor.html">Sou Leitor</a>
+                            <a class="btn-modal" href="<?= _URLBASE_?>area/user/pages/cadLeitor">Sou Leitor</a>
                             <span>OU</span>
-                            <a class="btn-modal blue" href="cadSeboJuridica.html">Sou Sebo</a>
+                            <a class="btn-modal blue" href="<?= _URLBASE_?>area/user/pages/cadSeboFisica">Sou Sebo</a>
                         </div>
                     </div>
                     <div class="modal-footer">
