@@ -1175,7 +1175,8 @@ header,
 
 .navDesk ul li {
     list-style: none;
-    padding: .6rem 1rem
+    /* padding: .6rem 1rem */
+    padding: 1rem
 }
 
 .navDesk ul a {
