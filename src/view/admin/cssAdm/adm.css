@@ -36,9 +36,6 @@ a {
     padding: 0
 }
 
-.container {
-    margin: 0 10px
-}
 
 .grid {
     display: grid;

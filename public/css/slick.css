@@ -1,6 +1,6 @@
 @charset 'UTF-8';
 .containerSlick{
-    margin:3rem 0
+    margin:3rem auto
 }
 .slider {
     width: 100%;
@@ -147,7 +147,7 @@
 /* Dots */
 
 .slick-dotted.slick-slider {
-    margin-bottom: 30px;
+    margin: 11% auto 0
 }
 
 .slick-dots {

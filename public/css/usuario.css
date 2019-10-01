@@ -1,5 +1,6 @@
 @import './slick.css';
 
+
 body {
     padding: 0;
     margin: 0;
@@ -15,17 +16,24 @@ body {
 }
 
 div#containerTemplate::before {
-    content: "asdasd";
+    content: "";
     display: block;
-    height: 18px;
-    opacity: 0;
+    position: relative;
+    min-height:2rem
+}
+@media (max-width:779.99px){
+    div#containerTemplate::before{
+        min-height: 90px
+    }
 }
 
 div#containerTemplate {
     width: 100%;
     max-width: 700px;
-    margin: 1rem auto;
-    box-sizing: border-box
+    margin: 0 auto 4%;
+    box-sizing: border-box;
+    min-height:500px
+ 
 }
 
 * {
@@ -450,7 +458,7 @@ div#containerTemplate {
 /*===================AREA DO LIVRO====================*/
 
 .pagLivro {
-    padding: 100px 0
+    padding: 10% 0
 }
 
 .pagLivro .box-search {
@@ -772,24 +780,30 @@ div#containerTemplate {
 
 /*===================AREA DO QUEM SOMOS====================*/
 
-.quemSomos .container {
-    margin: 1rem
+.quemSomos{
+    max-width: 650px;
+    margin: auto;
 }
 
 .quemSomos .container h1 {
     font-size: 25px;
-    text-align: center
+    text-align: center;
+    margin:1rem 0 0
 }
 
 .quemSomos .container .containerText {
-    border: 1px solid #ccc;
-    padding: 1rem 0 0
+    border: 1px solid #ccc
 }
 
 .quemSomos .container p {
     line-height: 1.35rem;
     padding: 1rem;
     text-align: justify
+}
+@media (max-width:700px){
+    .quemSomos .container p{
+        text-align:left
+    }
 }
 
 .quemSomos .container img {
@@ -800,6 +814,10 @@ div#containerTemplate {
 
 /*===================AREA DO SEBOS====================*/
 
+.sebos{
+    padding:1rem
+}
+
 .sebos .container {
     background: #5cccb3;
     padding: 15px;
@@ -807,7 +825,7 @@ div#containerTemplate {
     width: 100%;
     height: 100%;
     max-width: 700px;
-    margin: 1rem auto 0;
+    margin: 3% auto;
     box-sizing: border-box
 }
 
@@ -1267,24 +1285,9 @@ header .menuGroup {
     text-align: center
 }
 
-section {
-    width: 100%;
-    position: relative;
-    padding: 60px 0 0 0
-}
-
 section .banner {
     width: 100%;
-    min-height: 184px;
-    /* Move slides overflowed container */
-    /* Color of bullets */
-    /* Color of bullets - END */
-    /* Text of slides - END */
-    /* Calculate AUTOPLAY for BULLETS */
-    /* Calculate AUTOPLAY for BULLETS - END */
-    /* Calculate AUTOPLAY for SLIDES */
-    /* Calculate AUTOPLAY for SLIDES - END */
-    /* Calculate AUTOPLAY for CAPTION */
+    min-height: 184px
 }
 
 section .banner img {
@@ -1562,6 +1565,9 @@ form select {
 @media (max-width:700px){
 .container-footer-all{
     padding: 2rem
+}
+#rodape p{
+    text-align:left
 }
 }
 .container-body {
