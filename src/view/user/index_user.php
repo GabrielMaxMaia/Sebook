@@ -32,9 +32,9 @@ $output = ob_get_clean();
         ?>
         <div id="containerTemplate">
             <?php
-            if (isset($menuHide) != true) {
-                ?>
-                <?php require_once 'menu/social.php'; ?>
+                if (isset($menuHide) != true) {
+                require_once 'menu/social.php';
+            ?>
                 <article class="home">
                     <section>
                         <?= $output ?>
