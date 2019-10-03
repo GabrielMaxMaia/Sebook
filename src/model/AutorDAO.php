@@ -13,13 +13,12 @@ class AutorDAO extends Autor
 
     private static $SELECT_ID = "select * from Autor where id_autor = :idAutor";
 
-    private static $INSERT = "INSERT INTO `Autor` (`nome_autor`,`cod_status_autor`,`id_nacionalidade`) VALUES (:nomeAutor,:codStatusAutor,:idNacionalidade)";
+    private static $INSERT = "INSERT INTO autor (nome_autor, id_nacionalidade) VALUES (:nomeAutor, :idNacionalidade)";
 
     private static $UPDATE = "UPDATE autor SET
-    `nome_autor` = :nomeAutor,
-    `cod_status_autor` = :codStatusAutor,
-    `id_nacionalidade` = :idNacionalidade
-    WHERE `id_autor` = :idAutor";
+    nome_autor = :nomeAutor,
+    id_nacionalidade = :idNacionalidade
+    WHERE id_autor = :idAutor";
 
 
     //DELETE lógico -> altera status    
@@ -55,7 +54,7 @@ class AutorDAO extends Autor
             $itens = null;
         }
         return $itens;
-        var_dump($itens);
+
     }
 
     public function listarAutorId()
@@ -69,15 +68,31 @@ class AutorDAO extends Autor
         );
         if ($result->rowCount() == 1) {
             $linha = $result->fetch(\PDO::FETCH_OBJ);
+           
             $itens = array(
-                `idAutor` => $linha->id_autor,
-                `codStatusAutor` => $linha->cod_status_autor
+                'idAutor' => $linha->id_autor,
+                'nomeAutor' => $linha->nome_autor,
+                'codStatusAutor' => $linha->cod_status_autor
             );
         } else {
             $itens = null;
         }
-        //devolver o resultado     
+        //devolver o resultado  
+
         return $itens;
+    }
+
+    public function alterarAutor()
+    {
+        $result = $this->sql->execute(
+            AutorDAO::$UPDATE,
+            array(
+                ':idAutor' => array(0 => $this->getIdAutor(), 1 => \PDO::PARAM_STR),
+                ':nomeAutor' => array(0 => $this->getNomeAutor(), 1 => \PDO::PARAM_STR),
+                ':idNacionalidade' => array(0 => 1, 1 => \PDO::PARAM_INT)
+            )
+        );
+        return $result;
     }
 
     public function adicionarAutor()
@@ -85,9 +100,11 @@ class AutorDAO extends Autor
         $result = $this->sql->execute(
             AutorDAO::$INSERT,
             array(
-                `:nomeAutor` => array(0 => $this->getNomeAutor()(), 1 => \PDO::PARAM_STR),
-                `:codStatusAutor` => array(0 => $this->getCodStatusAutor()(), 1 => \PDO::PARAM_STR),
-                `:idNacionalidade` => array(0 => $this->getIdNacionalidade()(), 1 => \PDO::PARAM_INT)
+                ':nomeAutor' => array(0 => $this->getNomeAutor(), 1 => \PDO::PARAM_STR),
+            
+                // ':idNacionalidade' => array(0 => $this->getIdNacionalidade(), 1 => \PDO::PARAM_INT)
+
+                ':idNacionalidade' => array(0 => 1, 1 => \PDO::PARAM_INT)
             )
         );
         return $result;

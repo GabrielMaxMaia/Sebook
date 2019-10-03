@@ -9,28 +9,16 @@ class EditoraDAO extends Editora
 {
 
     //Atributos - serão os comandos SQL  + um objeto Sql
-    private static $SELECT_ALL = "select * from editora where cod_status_Editora = '1'";
+    private static $SELECT_ALL = "select * from editora where cod_status_editora = '1'";
 
-    private static $SELECT_ID = "select * from Editora where id_usuario = :id";
+    private static $SELECT_ID = "select * from editora where id_editora = :idEditora";
 
-    private static $INSERT = "INSERT INTO `Editora` (`id_usuario`,`sexo_Editora`,`compl_end_Editora`,`logradouro_Editora`,`url_foto_Editora`,`num_compl_Editora`,`cpf_Editora`,`cep_Editora`,`dt_nasc_Editora`,`cod_status_Editora`) VALUES (:id_usuario,:sexo_Editora,:compl_end_Editora,:logradouro_Editora,:url_foto_Editora,:num_compl_Editora,:cpf_Editora,:cep_Editora,:dt_nasc_Editora,:cod_status_Editora)";
+    private static $INSERT = "INSERT INTO editora nome_editora VALUES :nomeEditora";
 
-    private static $UPDATE = "UPDATE `Editora` SET
-    `id_usuario` = :id_usuario,
-    `sexo_Editora` = :sexo_Editora,
-    `compl_end_Editora` = :compl_end_Editora,
-    `logradouro_Editora` = :logradouro_Editora,
-    `url_foto_Editora` = :url_foto_Editora,
-    `num_compl_Editora` = :num_compl_Editora,
-    `cpf_Editora` = :cpf_Editora,
-    `cep_Editora` = :cep_Editora,
-    `dt_nasc_Editora` = :dt_nasc_Editora,
-    `cod_status_Editora` = :cod_status_Editora
-    WHERE `id_usuario` = :id_usuario";
+    private static $UPDATE = "UPDATE editora SET
+    nome_editora = :nomeEditora WHERE id_editora = :idEditora";
 
-
-    //DELETE lógico -> altera status    
-    private static $DELETE = "UPDATE Editora SET cod_status_Editora = 0 WHERE id_usuario = :id_usuario";
+    private static $DELETE = "UPDATE editora SET cod_status_editora = '0' WHERE id_editora = :idEditora";
 
     //Atributo par armazenar o Objeto SQL 
     private $sql;
@@ -70,14 +58,15 @@ class EditoraDAO extends Editora
         $result = $this->sql->query(
             EditoraDAO::$SELECT_ID,
             array(
-                'id_usuario' => array(0 => $this->setIdUsuario(), 1 => \PDO::PARAM_INT)
+                'idEditora' => array(0 => $this->getIdEditora(), 1 => \PDO::PARAM_INT)
             )
         );
         if ($result->rowCount() == 1) {
             $linha = $result->fetch(\PDO::FETCH_OBJ);
             $itens = array(
-                `id_usuario` => $linha->id_editora,
-                `cod_status_Editora` => $linha->cod_status_editora
+                `idEditora` => $linha->id_editora,
+                'nomeEditora' => $linha->nome_editora,
+                `codStatusEditora` => $linha->cod_status_editora
             );
         } else {
             $itens = null;
@@ -91,15 +80,18 @@ class EditoraDAO extends Editora
         $result = $this->sql->execute(
             EditoraDAO::$INSERT,
             array(
-                `:sexo_Editora` => array(0 => $this->getSexoEditora(), 1 => \PDO::PARAM_STR),
-                `:compl_end_Editora` => array(0 => $this->getComplEndEditora(), 1 => \PDO::PARAM_STR),
-                `:logradouro_Editora` => array(0 => $this->getLogradouroEditora(), 1 => \PDO::PARAM_STR),
-                `:url_foto_Editora` => array(0 => $this->getUrlFotoEditora(), 1 => \PDO::PARAM_STR),
-                `:num_compl_Editora` => array(0 => $this->getNumComplEditora(), 1 => \PDO::PARAM_STR),
-                `:cpf_Editora` => array(0 => $this->getCpfEditora(), 1 => \PDO::PARAM_STR),
-                `:cep_Editora` => array(0 => $this->getCepEditora(), 1 => \PDO::PARAM_STR),
-                `:dt_nasc_Editora` => array(0 => $this->getDtNascEditora(), 1 => \PDO::PARAM_STR),
-                `:cod_status_Editora` => array(0 => $this->getCodStatusEditora(), 1 => \PDO::PARAM_STR),
+                `:nomeEditora` => array(0 => $this->getNomeEditora(), 1 => \PDO::PARAM_STR)
+            )
+        );
+        return $result;
+    }
+
+    public function alterarEditora()
+    {
+        $result = $this->sql->execute(
+            EditoraDAO::$UPDATE,
+            array(
+                ':nomeEditora' => array(0 => $this->getNomeEditora(), 1 => \PDO::PARAM_STR)
             )
         );
         return $result;
@@ -110,7 +102,7 @@ class EditoraDAO extends Editora
         $result = $this->sql->execute(
             EditoraDAO::$DELETE,
             array(
-                ':id' => array(0 => $this->getIdEditora(), 1 => \PDO::PARAM_INT)
+                ':idEditora' => array(0 => $this->getIdEditora(), 1 => \PDO::PARAM_INT)
             )
         );
         return $result;

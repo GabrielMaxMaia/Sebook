@@ -30,7 +30,19 @@
 </head>
 
 <body>
+    <?php
 
+    $sql = new \Util\Sql($conn);
+
+    $autenticadorController = new \Controller\AutentificadorController($sql);
+
+    $autenticadorController->validarAcesso('http://localhost/Sebook/area/adm',array(0=>1, 1=>2));
+
+    $autenticadorController->efetuarLogin();
+    $autenticadorController->efetuarLogOut();
+
+
+    ?>
     <div id=container>
         <header>
             <section>
@@ -41,8 +53,12 @@
             </section>
         </header>
         <main>
+
             <aside>
-                <?php require_once './src/view/adm/menu.php'; ?>
+                <?php
+                // require_once './src/view/adm/menu.php';
+                $autenticadorController->toggleFormLogin();
+                ?>
             </aside>
 
             <article>
@@ -59,9 +75,9 @@
         </main>
         <footer>
             <ul class="icons">
-                <li><a href="#"><img src="<?=_URLBASE_?>public/img/icon1.jpg" alt="">Facebook</a></li>
-                <li><a href="#"><img src="<?=_URLBASE_?>public/img/icon2.jpg" alt="">Twitter</a></li>
-                <li><a href="#"><img src="<?=_URLBASE_?>public/img/icon3.jpg" alt="">LinkedIn</a></li>
+                <li><a href="#"><img src="<?= _URLBASE_ ?>public/img/icon1.jpg" alt="">Facebook</a></li>
+                <li><a href="#"><img src="<?= _URLBASE_ ?>public/img/icon2.jpg" alt="">Twitter</a></li>
+                <li><a href="#"><img src="<?= _URLBASE_ ?>public/img/icon3.jpg" alt="">LinkedIn</a></li>
             </ul>
         </footer>
     </div>

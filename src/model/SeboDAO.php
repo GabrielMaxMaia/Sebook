@@ -11,26 +11,20 @@ class SeboDAO extends Sebo
     //Atributos - serão os comandos SQL  + um objeto Sql
     private static $SELECT_ALL = "select * from sebo where cod_status_sebo = '1'";
 
-    private static $SELECT_ID = "select * from sebo where id_usuario = :id";
+    private static $SELECT_ID = "select * from sebo where id_usuario = :idUsuario";
 
-    private static $INSERT = "INSERT INTO `sebo` (`id_usuario`,`sexo_sebo`,`compl_end_sebo`,`logradouro_sebo`,`url_foto_sebo`,`num_compl_sebo`,`cpf_sebo`,`cep_sebo`,`dt_nasc_sebo`,`cod_status_sebo`) VALUES (:id_usuario,:sexo_sebo,:compl_end_sebo,:logradouro_sebo,:url_foto_sebo,:num_compl_sebo,:cpf_sebo,:cep_sebo,:dt_nasc_sebo,:cod_status_sebo)";
+    // private static $INSERT = "INSERT INTO sebo (razao_sebo, nome_fantasia, cnpj_sebo, url_foto_sebo, num_end_sebo,compl_end_sebo, logradouro_sebo, cep_end_sebo,num_tel_sebo, celular_1_sebo, celular_2_sebo,insc_estadual_sebo, url_site_sebo,cod_status_sebo) VALUES
+    // (razao_sebo, nome_fantasia, cnpj_sebo,url_foto_sebo, num_end_sebo, compl_end_sebo,logradouro_sebo, cep_end_sebo, num_tel_sebo,celular_1_sebo, celular_2_sebo, insc_estadual_sebo, url_site_sebo)";
 
-    private static $UPDATE = "UPDATE `sebo` SET
-    `id_usuario` = :id_usuario,
-    `sexo_sebo` = :sexo_sebo,
-    `compl_end_sebo` = :compl_end_sebo,
-    `logradouro_sebo` = :logradouro_sebo,
-    `url_foto_sebo` = :url_foto_sebo,
-    `num_compl_sebo` = :num_compl_sebo,
-    `cpf_sebo` = :cpf_sebo,
-    `cep_sebo` = :cep_sebo,
-    `dt_nasc_sebo` = :dt_nasc_sebo,
-    `cod_status_sebo` = :cod_status_sebo
-    WHERE `id_usuario` = :id_usuario";
+    private static $INSERT = "INSERT INTO sebo (razao_sebo) VALUES (:razaoSebo)";
+
+
+    private static $UPDATE = "UPDATE sebo SET
+    razao_sebo = :razaoSebo WHERE id_usuario = :idUsuario";
 
 
     //DELETE lógico -> altera status    
-    private static $DELETE = "UPDATE sebo SET cod_status_sebo = 0 WHERE id_usuario = :id_usuario";
+    private static $DELETE = "UPDATE sebo SET cod_status_sebo = '0' WHERE id_usuario = :idUsuario";
 
     //Atributo par armazenar o Objeto SQL 
     private $sql;
@@ -73,23 +67,24 @@ class SeboDAO extends Sebo
             $itens = null;
         }
         return $itens;
-        var_dump($itens);
     }
 
-    public function listarseboId()
+    public function listarSeboId()
     {
         //executar a consulta no banco
         $result = $this->sql->query(
             SeboDAO::$SELECT_ID,
             array(
-                'id_usuario' => array(0 => $this->setIdUsuario(), 1 => \PDO::PARAM_INT)
+                'idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT)
             )
         );
+
         if ($result->rowCount() == 1) {
             $linha = $result->fetch(\PDO::FETCH_OBJ);
             $itens = array(
-                `id_usuario` => $linha->idUsuario,
-                `cod_status_sebo` => $linha->codStatussebo
+                'idUsuario' => $linha->id_usuario,
+                'codStatusSebo' => $linha->cod_status_sebo,
+                'razaoSebo' => $linha->razao_sebo
             );
         } else {
             $itens = null;
@@ -98,20 +93,24 @@ class SeboDAO extends Sebo
         return $itens;
     }
 
-    public function adicionarsebo()
+    public function adicionarSebo()
     {
         $result = $this->sql->execute(
             SeboDAO::$INSERT,
             array(
-                `:sexo_sebo` => array(0 => $this->getSexosebo(), 1 => \PDO::PARAM_STR),
-                `:compl_end_sebo` => array(0 => $this->getComplEndsebo(), 1 => \PDO::PARAM_STR),
-                `:logradouro_sebo` => array(0 => $this->getLogradourosebo(), 1 => \PDO::PARAM_STR),
-                `:url_foto_sebo` => array(0 => $this->getUrlFotosebo(), 1 => \PDO::PARAM_STR),
-                `:num_compl_sebo` => array(0 => $this->getNumComplsebo(), 1 => \PDO::PARAM_STR),
-                `:cpf_sebo` => array(0 => $this->getCpfsebo(), 1 => \PDO::PARAM_STR),
-                `:cep_sebo` => array(0 => $this->getCepsebo(), 1 => \PDO::PARAM_STR),
-                `:dt_nasc_sebo` => array(0 => $this->getDtNascsebo(), 1 => \PDO::PARAM_STR),
-                `:cod_status_sebo` => array(0 => $this->getCodStatussebo(), 1 => \PDO::PARAM_STR),
+                ':razaoSebo' => array(0 => $this->getRazaoSebo(), 1 => \PDO::PARAM_STR)
+            )
+        );
+        return $result;
+    }
+
+    public function alterarSebo()
+    {
+        $result = $this->sql->execute(
+            SeboDAO::$UPDATE,
+            array(
+                ':razaoSebo' => array(0 => $this->getRazaoSebo(), 1 => \PDO::PARAM_STR),
+                ':idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT)
             )
         );
         return $result;
@@ -122,7 +121,7 @@ class SeboDAO extends Sebo
         $result = $this->sql->execute(
             seboDAO::$DELETE,
             array(
-                ':id' => array(0 => $this->getIdsebo(), 1 => \PDO::PARAM_INT)
+                ':idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT)
             )
         );
         return $result;

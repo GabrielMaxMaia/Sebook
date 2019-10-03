@@ -96,7 +96,6 @@ class EditoraController
 
             $this->editoraDAO->setIdEditora($_POST['txtId']);
             $this->editoraDAO->setNomeEditora($_POST['txtNome']);
-            $this->editoraDAO->setDescrEditora($_POST['txtDescr']);
         }
     }
 
@@ -128,17 +127,17 @@ class EditoraController
         }
     }
 
-    // public function gravarAlterar()
-    // {
-    //     $this->recuperarAcaoPOST();
-    //     $this->recuperarDadosFormulario();
-    //     if ($this->acaoPOST == 1 && $this->evitarReenvio()) {            
-    //         $this->editoraDAO->adicionareditora();
-    //     } else if ($this->acaoPOST == 2) {
-    //         $this->editoraDAO->alterareditora();
+    public function gravarAlterar()
+    {
+        $this->recuperarAcaoPOST();
+        $this->recuperarDadosFormulario();
+        if ($this->acaoPOST == 1 && $this->evitarReenvio()) {            
+            $this->editoraDAO->adicionareditora();
+        } else if ($this->acaoPOST == 2) {
+            $this->editoraDAO->alterareditora();
 
-    //     }
-    // }
+        }
+    }
 
     public function excluir()
     {
@@ -151,10 +150,9 @@ class EditoraController
     public function listarEditoraId()
     {
         if ($this->acaoGET == 2) {
-            $this->editoraDAO->setIdUsuario($_GET['id']);
+            $this->editoraDAO->setIdEditora($_GET['id']);
             $editora = $this->editoraDAO->listarEditoraId();
-            $this->editoraDAO->setNomeEditora($editora['nomeCat']);
-            $this->editoraDAO->setDescrEditora($editora['descrCat']);
+            $this->editoraDAO->setNomeEditora($editora['nomeEditora']);
         }
     }
 
@@ -170,12 +168,12 @@ class EditoraController
                 <td>" . $linha['nomeEditora'] . "</td>
                 <td>" . $linha['codStatusEditora'] . "</td>    
                         <td>
-                            <a href='http://localhost/Sebook/area/adm/cadastro/cadEditora/2/id=" . $linha['idEditora'] . "'>
+                            <a href='http://localhost/Sebook/area/adm/cadastro/cadEditora/alter/" . $linha['idEditora'] . "'>
                                 <img src='" . _URLBASE_ . "public/img/editar.jpg'>
                             </a>
                         </td>
                         <td>
-                            <a href='http://localhost/Sebook/area/adm/cadastro/cadEditora/3/id=" . $linha['idEditora'] . "'>
+                            <a href='http://localhost/Sebook/area/adm/cadastro/cadEditora/delete/" . $linha['idEditora'] . "'>
                                 <img src='" . _URLBASE_ . "public/img/excluir.jpg'>
                             </a>
                         </td>

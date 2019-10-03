@@ -1,0 +1,33 @@
+.acervo-sebo .container .topo-acervo {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    grid-gap: 10px;
+    margin: 20px 0;
+    background-color: #f1f1f1
+}
+
+.acervo-sebo .container .topo-acervo .img-topo-acervo {
+    width: 100%;
+    height: 140px;
+    overflow: hidden;
+    padding: 10px
+}
+
+.acervo-sebo .container .topo-acervo .img-topo-acervo img {
+    height: 100%;
+    width: 100%
+}
+
+.acervo-sebo .container .acervo h2 {
+    text-align: center
+}
+
+.acervo-sebo .container .acervo .estante-slider {
+    width: 100%;
+    margin-bottom: 20px
+}
+
+.acervo-sebo .container .acervo .estante-slider .titulo-estante-slider {
+    margin-bottom: 10px
+}

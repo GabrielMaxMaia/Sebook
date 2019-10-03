@@ -8,6 +8,9 @@ Options -Indexes
 #ErrorDocument 403 http://localhost/Sebook/src/view/erros/403.php
 #ErrorDocument 500 http://localhost/Sebook/src/view/erros/500.php
 
+#regra para sair do login
+RewriteRule ^area/adm/sair$ http://localhost/Sebook/index.php?area=adm&logout=true [NC,L]
+
 #Pega o caminho na url de tudo apos area
 RewriteRule ^area\/([a-z]+)$ index.php?area=$1 [NC,L]
 

@@ -152,8 +152,10 @@ class AutorController
         if ($this->acaoGET == 2) {
             $this->autorDAO->setIdAutor($_GET['id']);
             $autor = $this->autorDAO->listarAutorId();
+      
             $this->autorDAO->setNomeAutor($autor['nomeAutor']);
         }
+    
     }
 
     public function listarAutores()

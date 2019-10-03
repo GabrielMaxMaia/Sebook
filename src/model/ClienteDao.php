@@ -10,26 +10,30 @@ class ClienteDAO extends Cliente
 
     //Atributos - serão os comandos SQL  + um objeto Sql
     private static $SELECT_ALL = "select * from cliente where cod_status_cliente = '1'";
-    private static $SELECT_ID = "select * from cliente where id_usuario = :id";
 
-    private static $INSERT = "INSERT INTO `cliente` (`id_usuario`,`sexo_cliente`,`compl_end_cliente`,`logradouro_cliente`,`url_foto_cliente`,`num_compl_cliente`,`cpf_cliente`,`cep_cliente`,`dt_nasc_cliente`,`cod_status_cliente`) VALUES (:id_usuario,:sexo_cliente,:compl_end_cliente,:logradouro_cliente,:url_foto_cliente,:num_compl_cliente,:cpf_cliente,:cep_cliente,:dt_nasc_cliente,:cod_status_cliente)";
+    private static $SELECT_ID = "select * from cliente where id_usuario = :idUsuario";
 
-    private static $UPDATE = "UPDATE `cliente` SET
-    `id_usuario` = :id_usuario,
-    `sexo_cliente` = :sexo_cliente,
-    `compl_end_cliente` = :compl_end_cliente,
-    `logradouro_cliente` = :logradouro_cliente,
-    `url_foto_cliente` = :url_foto_cliente,
-    `num_compl_cliente` = :num_compl_cliente,
-    `cpf_cliente` = :cpf_cliente,
-    `cep_cliente` = :cep_cliente,
-    `dt_nasc_cliente` = :dt_nasc_cliente,
-    `cod_status_cliente` = :cod_status_cliente
-    WHERE `id_usuario` = :id_usuario";
+    private static $INSERT = "INSERT INTO cliente (id_usuario,sexo_cliente,compl_end_cliente,logradouro_cliente,url_foto_cliente,num_compl_cliente,cpf_cliente,cep_cliente,dt_nasc_cliente,cod_status_cliente) VALUES (:id_usuario,:sexo_cliente,:compl_end_cliente,:logradouro_cliente,:url_foto_cliente,:num_compl_cliente,:cpf_cliente,:cep_cliente,:dt_nasc_cliente,:cod_status_cliente)";
+
+    // private static $UPDATE = "UPDATE cliente SET
+    // id_usuario = :id_usuario,
+    // sexo_cliente = :sexo_cliente,
+    // compl_end_cliente = :compl_end_cliente,
+    // logradouro_cliente = :logradouro_cliente,
+    // url_foto_cliente = :url_foto_cliente,
+    // num_compl_cliente = :num_compl_cliente,
+    // cpf_cliente = :cpf_cliente,
+    // cep_cliente = :cep_cliente,
+    // dt_nasc_cliente = :dt_nasc_cliente,
+    // cod_status_cliente = :cod_status_cliente
+    // WHERE id_usuario = :id_usuario";
+
+    private static $UPDATE = "UPDATE cliente SET sexo_cliente = :sexoCliente
+    WHERE id_usuario = :idUsuario";
 
 
     //DELETE lógico -> altera status                                            
-    private static $DELETE = "UPDATE cliente SET cod_status_cliente = 0 WHERE id_usuario = :id_usuario";
+    private static $DELETE = "UPDATE cliente SET cod_status_cliente = '0' WHERE id_usuario = :idUsuario";
 
     //Atributo par armazenar o Objeto SQL 
     private $sql;
@@ -68,7 +72,7 @@ class ClienteDAO extends Cliente
             $itens = null;
         }
         return $itens;
-        var_dump($itens);
+        
     }
 
     public function listarClienteId()
@@ -77,14 +81,15 @@ class ClienteDAO extends Cliente
         $result = $this->sql->query(
             ClienteDAO::$SELECT_ID,
             array(
-                'id_usuario' => array(0 => $this->setIdUsuario(), 1 => \PDO::PARAM_INT)
+                'idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT)
             )
         );
         if ($result->rowCount() == 1) {
             $linha = $result->fetch(\PDO::FETCH_OBJ);
             $itens = array(
-                `id_usuario` => $linha->idUsuario,
-                `cod_status_cliente` => $linha->codStatusCliente
+                'idUsuario' => $linha->id_usuario,
+                'codStatusCliente' => $linha->cod_status_cliente,
+                'sexoCliente' => $linha->sexo_cliente
             );
         } else {
             $itens = null;
@@ -93,20 +98,32 @@ class ClienteDAO extends Cliente
         return $itens;
     }
 
+    public function alterarCliente()
+    {
+        $result = $this->sql->execute(
+            ClienteDAO::$UPDATE,
+            array(
+                ':sexoCliente' => array(0 => $this->getSexoCliente(), 1 => \PDO::PARAM_STR),
+                ':idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT)
+            )
+        );
+        return $result;
+    }
+
     public function adicionarCliente()
     {
         $result = $this->sql->execute(
             ClienteDAO::$INSERT,
             array(
-                `:sexo_cliente` => array(0 => $this->getSexoCliente(), 1 => \PDO::PARAM_STR),
-                `:compl_end_cliente` => array(0 => $this->getComplEndCliente(), 1 => \PDO::PARAM_STR),
-                `:logradouro_cliente` => array(0 => $this->getLogradouroCliente(), 1 => \PDO::PARAM_STR),
-                `:url_foto_cliente` => array(0 => $this->getUrlFotoCliente(), 1 => \PDO::PARAM_STR),
-                `:num_compl_cliente` => array(0 => $this->getNumComplCliente(), 1 => \PDO::PARAM_STR),
-                `:cpf_cliente` => array(0 => $this->getCpfCliente(), 1 => \PDO::PARAM_STR),
-                `:cep_cliente` => array(0 => $this->getCepCliente(), 1 => \PDO::PARAM_STR),
-                `:dt_nasc_cliente` => array(0 => $this->getDtNascCliente(), 1 => \PDO::PARAM_STR),
-                `:cod_status_cliente` => array(0 => $this->getCodStatusCliente(), 1 => \PDO::PARAM_STR),
+                ':sexo_cliente' => array(0 => $this->getSexoCliente(), 1 => \PDO::PARAM_STR),
+                ':compl_end_cliente' => array(0 => $this->getComplEndCliente(), 1 => \PDO::PARAM_STR),
+                ':logradouro_cliente' => array(0 => $this->getLogradouroCliente(), 1 => \PDO::PARAM_STR),
+                ':url_foto_cliente' => array(0 => $this->getUrlFotoCliente(), 1 => \PDO::PARAM_STR),
+                ':num_compl_cliente' => array(0 => $this->getNumComplCliente(), 1 => \PDO::PARAM_STR),
+                ':cpf_cliente' => array(0 => $this->getCpfCliente(), 1 => \PDO::PARAM_STR),
+                ':cep_cliente' => array(0 => $this->getCepCliente(), 1 => \PDO::PARAM_STR),
+                ':dt_nasc_cliente' => array(0 => $this->getDtNascCliente(), 1 => \PDO::PARAM_STR),
+                ':cod_status_cliente' => array(0 => $this->getCodStatusCliente(), 1 => \PDO::PARAM_STR),
             )
         );
         return $result;
@@ -117,7 +134,7 @@ class ClienteDAO extends Cliente
         $result = $this->sql->execute(
             ClienteDAO::$DELETE,
             array(
-                ':id' => array(0 => $this->getIdCliente(), 1 => \PDO::PARAM_INT)
+                ':idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT)
             )
         );
         return $result;

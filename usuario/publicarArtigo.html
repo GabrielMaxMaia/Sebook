@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Gestão</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="menuGroup">
+            <a class="logo" href="index.html">
+                <img src="images/img/logoSebookCor.png" alt="SebooK">
+            </a>
+            <a class="perfil" href="login.html">
+                <img src="images/icons/user.png" alt="Perfil" title="Perfil">
+            </a>
+        </div>
+        <nav class="navDesk">
+            <ul>
+                <li><a href="sebos.html">SEBOS</a></li>
+                <li><a href="livro.html">LIVROS</a></li>
+                <li><a href="quemSomos.html">QUEM SOMOS</a></li>
+                <li><a href="ajuda.html">FAQ</a></li>
+            </ul>
+            </div>
+        </nav>
+    </header>
+    <div id="container">
+        <section class=publicar>
+            <h2>Criar publicação</h2>
+            <p>Não é necessário preencher todos os campos para se criar uma publicação</p>
+            <form name=foo method="post" enctype="multipart/form-data" action="">
+                <div class=itemForm>
+                    <label for=tiluto>Título</label>
+                    <input type=text id=titulo placeholder="Escreva um título para a publicação">
+                </div>
+                <div class=itemForm>
+                    <label for=textArea>Texto</label>
+                    <textarea id=textArea placeholder="Escreva um texto para a publicação"></textarea>
+                </div>
+                <div class=itemForm>
+                    <label for=carregarFoto>Foto</label>
+                    <input type="file" id=carregarFoto>
+                </div>
+                <div class="itemForm enviaForm">
+                    <input type="submit" value="Confirmar">
+                    <input type="reset" value="Cancelar">
+                </div>
+            </form>
+        </section>
+    </div>
+    <footer class="master1">
+        <nav class="menuMobile">
+            <a href="index.html" class="home">
+                <img src="images/icons/home.png" alt="Home" title="Página inicial">
+            </a>
+            <a href="busca.html" class="search">
+                <img src="images/icons/search.png" alt="Buscar" title="Buscar">
+            </a>
+            <div class="menu">
+                <input type="checkbox" id="menuH">
+                <label for="menuH">
+                    <img src="images/icons/menu.png" alt="">
+                </label>
+                <div class="ulCenter">
+                    <ul>
+                        <li><a href="sebos.html">SEBOS</a></li>
+                        <li><a href="livro.html">LIVROS</a></li>
+                        <li><a href="quemSomos.html">QUEM SOMOS</a></li>
+                        <li><a href="ajuda.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </footer>
+</body>
+
+</html>
