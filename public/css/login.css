@@ -4,6 +4,14 @@ body {
     background-blend-mode: color
 }
 
+.containerScroll{
+    display:flex;
+    overflow:hidden
+}
+div#containerTemplate{
+    align-self:center
+}
+
 .linkTop {
     position: absolute;
     left: 2%;
