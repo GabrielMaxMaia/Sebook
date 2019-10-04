@@ -1,0 +1,257 @@
+@import './tratamento.css';
+@import './eventos&co.css';
+@import './controle.css';
+@import './apagar.css';
+@import './cadastrarEve.css';
+@import './aprovaSebo.css';
+body {
+    padding: 0;
+    margin: 0;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: sans-serif;
+    margin: auto
+}
+
+
+/*Container pai de todos, centraliza tudo*/
+
+div#container {
+    width: 100%;
+    height: 100%;
+    /* margin:1rem auto 0; */
+    box-sizing: border-box;
+    background: linear-gradient(45deg, #06cc3e26, #008a9b47)
+}
+
+img {
+    width: 100%;
+    object-fit: cover
+}
+
+a {
+    text-decoration: none;
+    color: #123
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+.container {
+    margin: 0 10px
+}
+
+.grid {
+    display: grid;
+    grid-gap: 10px
+}
+
+.grid.grid-1 {
+    grid-template-columns: repeat(1, 1fr)
+}
+
+.grid.grid-2 {
+    grid-template-columns: repeat(2, 1fr)
+}
+
+.grid.grid-3 {
+    grid-template-columns: repeat(3, 1fr)
+}
+
+.grid.grid-4 {
+    grid-template-columns: repeat(4, 1fr)
+}
+
+.grid.grid-5 {
+    grid-template-columns: repeat(5, 1fr)
+}
+
+header img {
+    max-width: 150px;
+    object-fit: contain
+}
+
+
+/*Nessa parte foi removido a media query para que o layou espandisse na tela*/
+
+
+/*Menu mobile desaparece quando a resolução for maior que 780px*/
+
+header,
+.master1 nav {
+    background: linear-gradient(45deg, #008a9b47, #06cc3e26);
+    background-color: #fff;
+    z-index: 9999
+}
+
+.navDesk ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+    position: relative;
+    background: #111
+}
+
+.navDesk ul li {
+    list-style: none;
+    margin: 1rem
+}
+
+.navDesk ul ul {
+    background-color: #555;
+    position: absolute;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0 0
+}
+
+.navDesk ul li:hover ul {
+    visibility: visible
+}
+
+.navDesk ul a {
+    color: #fff;
+    padding: 1rem 0
+}
+
+header img {
+    max-width: 130px
+}
+
+header .perfil {
+    max-width: 40px;
+    align-self: flex-end
+}
+
+header .menuGroup {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    box-sizing: border-box
+}
+
+.navDesk {
+    display: none
+}
+
+@media (max-width: 780px) {
+    header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 99999
+    }
+    .headerStatic {
+        position: static
+    }
+}
+
+@media (min-width:780px) {
+    .master1 nav:after,
+    .menuMobile,
+    .menuMobile img {
+        display: none
+    }
+    .navDesk {
+        display: block
+    }
+    section {
+        padding: 0!important
+    }
+}
+
+
+/**/
+
+.master2 {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    padding: 0 20px;
+    line-height: 105px;
+    position: static!important
+}
+
+.master2 .volta {
+    width: 40px;
+    height: 50px
+}
+
+.master2 .volta img {
+    width: 100%
+}
+
+.master2 .logo {
+    width: 125px;
+    height: 60px;
+    position: absolute;
+    right: 20px;
+    top: 10px
+}
+
+.master2 .logo img {
+    width: 100%
+}
+
+.master2Footer {
+    width: 100%;
+    background-color: #f1f1f1;
+    padding: 1rem 0
+}
+
+.master2Footer p {
+    text-align: center
+}
+
+
+/*===========================================Icone laterais*/
+
+.Social-Bar {
+    position: fixed;
+    right: 0;
+    top: 35%;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 100
+}
+
+.icon {
+    color: white;
+    text-decoration: none;
+    padding: .7rem;
+    display: flex;
+    transition: all .5s
+}
+
+.icon-facebook {
+    background: #2E406E
+}
+
+.icon-twitter {
+    background: #339DC5
+}
+
+.icon-instagram {
+    background: linear-gradient(45Deg, #405DE6, #5851DB, #833AB4, #C13584, #C13584, #E1306C, #FD1D1D)
+}
+
+.icon:first-child {
+    border-radius: 1rem 0 0 0
+}
+
+.icon:last-child {
+    border-radius: 0 0 0 1rem
+}
+
+.icon:hover {
+    padding-right: 3rem;
+    border-radius: 1rem 0 0 1rem;
+    box-shadow: 0 0 .5rem rgb(255, 255, 255)
+}
