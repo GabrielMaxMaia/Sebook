@@ -36,11 +36,26 @@ class AutentificadorController
                     // echo "<script>alert('Senha ou e-mail inválidos (Null)')</script>";
                     echo "email inválido";
                 } else {
-
+                    
+                  
+                    
                     $_SESSION['userLogado']['nome'] = $resultado['nomeUsuario'];
+                    $_SESSION['userLogado']['idUsuario'] = $resultado['idUsuario'];
                     $_SESSION['userLogado']['acesso'] = $resultado['idPerfil'];
+                    // var_dump($_SESSION['userLogado']['acesso']);
+                    if(($_SESSION['userLogado']['acesso']) <= 3){
+                        
+                        // header("Location: ");
 
-                    var_dump($_SESSION);
+                        echo "ADM";
+                        header("location:http://localhost/Sebook/area/adm");
+
+                    }else{
+                        echo "Login usuário";
+                        header("location:http://localhost/Sebook/area/user");
+                    }
+
+                    // var_dump($_SESSION['userLogdao']['acesso']);
                 }
             }
         }
@@ -52,10 +67,13 @@ class AutentificadorController
             $logout = isset($_GET['logout']) ? $_GET['logout'] : null;
             if ($logout == true) {
                 session_unset($_SESSION['userLogado']);
-                header("location:http://localhost/Sebook/area/adm");
+                // header("location:http://localhost/Sebook/area/adm");
+                header("location:http://localhost/Sebook");
             }
         }
     }
+
+    
 
     public function toggleFormLogin()
     {
@@ -66,6 +84,25 @@ class AutentificadorController
             require_once 'src/view/adm/menu.php';
         }
     }
+
+    public function toggleLogin()
+    {
+        $sessao = isset($_SESSION['userLogado']) ? $_SESSION['userLogado'] : null;
+        if ($sessao == null) {
+            return "<a class='perfil' href='". _URLBASE_ . "area/user/login/logar'>
+            <img src='". _ICONBASE_ ."user.png' alt='Perfil' title='Perfil'>
+        </a>";
+        
+        } else {
+            return "<a class='perfil' href='#Perfil'>
+            <b>".$_SESSION['userLogado']['nome']."</b>
+        </a>";
+
+        }
+    }
+
+
+
 
     //listaNivelAcesso --> array de niveis autorrizados
     public function validarAcesso($urlDirecionamento, $listaNivelAcesso)

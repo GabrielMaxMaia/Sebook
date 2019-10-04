@@ -15,17 +15,24 @@ body {
 }
 
 div#containerTemplate::before {
-    content: "asdasd";
+    content: "";
     display: block;
-    height: 18px;
-    opacity: 0;
+    position: relative;
+    min-height:2rem
+}
+@media (max-width:779.99px){
+    div#containerTemplate::before{
+        min-height: 90px
+    }
 }
 
 div#containerTemplate {
     width: 100%;
     max-width: 700px;
-    margin: 1rem auto;
-    box-sizing: border-box
+    margin: 0 auto 4%;
+    box-sizing: border-box;
+    min-height:500px
+ 
 }
 
 * {
@@ -190,14 +197,12 @@ div#containerTemplate {
 
 .cadastro .container figure {
     margin: 0 auto;
-    display: block;
+    display:flex;
     width: 208px
 }
 
-.cadastro .container figure img {
-    float: left;
-    height: 55px;
-    width: 55px
+.cadastro .container img {
+    width: 40px
 }
 
 .cadastro .container figure figcaption {
@@ -450,7 +455,7 @@ div#containerTemplate {
 /*===================AREA DO LIVRO====================*/
 
 .pagLivro {
-    padding: 100px 0
+    padding: 10% 0
 }
 
 .pagLivro .box-search {
@@ -495,37 +500,57 @@ div#containerTemplate {
 
 /*===================AREA DO LOGIN====================*/
 
-.login {
+.containerLogin {
     padding: 1rem;
-    margin: 6rem auto
+    width:100%;
+    align-self:center;
+    margin: 0 auto 
 }
 
-.login .container {
+.loginSpace{
+    width:100%
+}
+
+.containerLogin .login {
     background-color: #fff;
-    /* box-shadow: 0px 1px 2px 1px #0000005c; */
-    padding: 2rem 1rem;
+    padding: 3rem 1rem!important;
     max-width: 500px;
-    margin: 3rem auto 0;
-    border: 1px solid #ccc
+    margin: 2% auto 0;
+    border: 1px solid #ccc;
+    border-radius:.5rem 4rem; 
 }
 
-.login .container figure {
+.containerLogin figure {
     margin: 0;
     text-align: center
 }
 
-.login .container figure img {
+.containerLogin figure img {
     max-width: 64px;
     margin: auto
 }
 
-.login .container figure figcaption {
+.containerLogin figure figcaption {
     font-weight: 700;
     font-size: 18px;
     margin: 10px 0 20px
 }
 
-.login .container .btn-modal-cadastre {
+.containerLogin .btn-modal-cadastre {
+    width: 100%;
+    text-align: center;
+    display: block;
+    color: blue;
+    text-decoration: none;
+    font-size: 14px;
+    margin:5% auto
+}
+
+.containerLogin .btn-modal-cadastre:hover {
+    text-decoration: underline
+}
+
+.containerLogin a {
     width: 100%;
     text-align: center;
     display: block;
@@ -534,36 +559,23 @@ div#containerTemplate {
     font-size: 14px
 }
 
-.login .container .btn-modal-cadastre:hover {
+.containerLogin a:hover {
     text-decoration: underline
 }
 
-.login .container a {
-    width: 100%;
-    text-align: center;
-    display: block;
-    color: blue;
-    text-decoration: none;
-    font-size: 14px
-}
-
-.login .container a:hover {
-    text-decoration: underline
-}
-
-.login .container form {
-    padding: 2rem 0 1rem 0;
+.containerLogin form {
+    padding: 1% 0 4%;
     max-width: 330px;
     margin: auto
 }
 
-.login .container form label {
+.containerLogin form label {
     width: 100%;
     float: left;
     margin: 0 0 5px 0
 }
 
-.login .container form input {
+.containerLogin form input {
     width: 100%;
     display: block;
     margin: 1rem auto;
@@ -572,17 +584,16 @@ div#containerTemplate {
     padding: 0 0 0 5px
 }
 
-.login .container form button {
+.containerLogin form button {
     background-color: #2196F3;
     border: 0;
     color: #fff;
-    padding: 10px 40px;
+    padding: .6rem 2.5rem;
     border-radius: 4px;
-    margin: 0 auto;
     display: block
 }
 
-.login .container p {
+.containerLogin p {
     width: 100%;
     text-align: center;
     position: relative;
@@ -590,14 +601,14 @@ div#containerTemplate {
     margin: 1rem 0
 }
 
-.login .container p span {
+.containerLogin p span {
     padding: .2rem .5rem;
     background: #eee;
     z-index: 9999;
     position: inherit
 }
 
-.login .container p::before {
+.containerLogin p::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -607,7 +618,7 @@ div#containerTemplate {
     top: 7px
 }
 
-.login .container p:after {
+.containerLogin p:after {
     content: '';
     position: absolute;
     width: 40px;
@@ -616,21 +627,6 @@ div#containerTemplate {
     left: 50%;
     margin-left: -20px;
     z-index: 0
-}
-
-.login .container .login-social-media {
-    width: 100%;
-    height: 32px;
-    padding: 0 80px
-}
-
-.login .container .login-social-media a {
-    float: left;
-    width: auto
-}
-
-.login .container .login-social-media a:nth-child(2) {
-    float: right
 }
 
 
@@ -673,12 +669,12 @@ div#containerTemplate {
     z-index: 102
 }
 
-.modal-open:checked~.modal-wrap:before,
-.modal-open:checked~.modal-wrap .modal-overlay {
+.modal-open:checked ~ .modal-wrap:before,
+.modal-open:checked ~ .modal-wrap .modal-overlay {
     display: block
 }
 
-.modal-open:checked~.modal-wrap .modal-dialog {
+.modal-open:checked ~ .modal-wrap .modal-dialog {
     transform: translate(-50%, -50%);
     position: fixed;
     top: 40%
@@ -783,24 +779,30 @@ div#containerTemplate {
 
 /*===================AREA DO QUEM SOMOS====================*/
 
-.quemSomos .container {
-    margin: 1rem
+.quemSomos{
+    max-width: 650px;
+    margin: auto;
 }
 
 .quemSomos .container h1 {
     font-size: 25px;
-    text-align: center
+    text-align: center;
+    margin:1rem 0 0
 }
 
 .quemSomos .container .containerText {
-    border: 1px solid #ccc;
-    padding: 1rem 0 0
+    border: 1px solid #ccc
 }
 
 .quemSomos .container p {
     line-height: 1.35rem;
     padding: 1rem;
     text-align: justify
+}
+@media (max-width:700px){
+    .quemSomos .container p{
+        text-align:left
+    }
 }
 
 .quemSomos .container img {
@@ -811,6 +813,10 @@ div#containerTemplate {
 
 /*===================AREA DO SEBOS====================*/
 
+.sebos{
+    padding:1rem
+}
+
 .sebos .container {
     background: #5cccb3;
     padding: 15px;
@@ -818,7 +824,7 @@ div#containerTemplate {
     width: 100%;
     height: 100%;
     max-width: 700px;
-    margin: 1rem auto 0;
+    margin: 3% auto;
     box-sizing: border-box
 }
 
@@ -908,7 +914,7 @@ a {
 }
 
 .container {
-    margin: 0 10px
+    margin: 1rem
 }
 
 .grid {
@@ -1175,7 +1181,8 @@ header,
 
 .navDesk ul li {
     list-style: none;
-    padding: .6rem 1rem
+    /* padding: .6rem 1rem */
+    padding: 1rem
 }
 
 .navDesk ul a {
@@ -1513,7 +1520,7 @@ form select {
 }
 @media (min-width:420px){
     .Social-Bar{
-        right:19px;
+        right:18px;
     }
 }
 
@@ -1565,13 +1572,16 @@ form select {
 }
 .container-footer-all {
     width: auto;
-    max-width: 1200px;
+    max-width: 1300px;
     margin: auto;
     padding: 4rem
 }
 @media (max-width:700px){
 .container-footer-all{
     padding: 2rem
+}
+#rodape p{
+    text-align:left
 }
 }
 .container-body {
@@ -1599,9 +1609,12 @@ form select {
 }
 
 .coluna1 p {
-    font-size: 14px;
+    font-size:.95rem;
     color: #c7c7c7;
-    margin-top: 20px;
+    margin-top:20px;
+    text-align:justify;
+    line-height:1.3rem;
+    letter-spacing:-.01rem
 }
 .coluna3 label{
     line-height:1.4rem

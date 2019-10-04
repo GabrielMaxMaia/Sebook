@@ -20,7 +20,8 @@ $output = ob_get_clean();
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!--<link rel="stylesheet" href="http://localhost/sebook/css/slick.css">-->
     <link rel="stylesheet" href="<?php echo _CSSBASEUSER_ ?>">
-    <?php echo $cssCaminho ?? ""; ?>
+    <?= $styleSobrescrito ?? "" ?>
+    <?= $cssCaminho ?? ""; ?>
     <title><?= isset($title) ? 'Sebook | ' . $title : 'Sebook'; ?></title>
 </head>
 
@@ -31,21 +32,21 @@ $output = ob_get_clean();
         ?>
         <div id="containerTemplate">
             <?php
-            if (isset($menuHide) != true) {
-                ?>
-                <?php require_once 'menu/social.php'; ?>
-                <section class="home">
-                    <article>
+                if (isset($menuHide) != true) {
+                    require_once 'menu/social.php';
+            ?>
+                <article class="home">
+                    <section>
                         <?= $output ?>
-                    </article>
-                </section>
+                    </section>
+                </article>
             <?php
             } else {
                 echo $output;
             }
             ?>
         </div>
-        <?php require_once 'menu/footer.php'; ?>
+        <?php $menuHide ?? require_once 'menu/footer.php'; ?>
     </div>
 </body>
 

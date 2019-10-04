@@ -10,11 +10,10 @@ if (isset($_GET['area']) && $_GET['area'] == "adm") {
 
     require_once "./src/view/adm/index_adm.php";
     
-} else if (isset($_GET['area']) && $_GET['area'] == "teste") {
+} else if (isset($_GET['area']) && $_GET['area'] == "user") {
 
-    require_once "./teste.php";
-    
-} else {
-    
     require_once "./src/view/user/index_user.php";
+} else {
+    require_once "./src/view/user/index_user.php";
+    // require_once "./teste.php";
 }

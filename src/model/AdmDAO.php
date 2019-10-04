@@ -10,7 +10,7 @@ class AdmDAO extends Adm
 
     //private static $SELECT_AUTENTICACAO = "select * from usuario where senha_usuario = :senhaUsuario";
 
-    private static $SELECT_AUTENTICACAO = "select * from usuario u, perfil p where (u.id_perfil = p.id_perfil) and p.id_perfil <= 2 and email_usuario = :emailUsuario";
+    private static $SELECT_AUTENTICACAO = "select * from usuario u, perfil p where (u.id_perfil = p.id_perfil) and p.id_perfil <= 5 and email_usuario = :emailUsuario";
 
     private static $SELECT_ALL = "select * from usuario where id_perfil between 1 and 3";
 
