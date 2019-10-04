@@ -3,9 +3,13 @@
 		<a class="logo" href="<?php echo _URLBASE_ ?>">
 			<img src="<?php echo _IMGBASE_ ?>logoSebookCor.png" alt="SebooK">
 		</a>
-		<a class="perfil" href="<?php echo _URLBASE_ ?>area/user/login/logar">
-			<img src="<?php echo _ICONBASE_ ?>user.png" alt="Perfil" title="Perfil">
-		</a>
+		<?php
+		$sql = new \Util\Sql($conn);
+		
+			$autenticadorController = new \Controller\AutentificadorController($sql);
+		echo $autenticadorController->toggleLogin();
+		
+		?>
 	</div>
 	<nav class="navDesk">
 		<ul>
