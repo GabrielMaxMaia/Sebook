@@ -517,7 +517,7 @@ div#containerTemplate {
     max-width: 500px;
     margin: 2% auto 0;
     border: 1px solid #ccc;
-    border-radius:.5rem 4rem; 
+    border-radius:.4rem; 
 }
 
 .containerLogin figure {
@@ -564,7 +564,7 @@ div#containerTemplate {
 }
 
 .containerLogin form {
-    padding: 1% 0 4%;
+    padding: 2% 0 7%;
     max-width: 330px;
     margin: auto
 }
@@ -572,7 +572,8 @@ div#containerTemplate {
 .containerLogin form label {
     width: 100%;
     float: left;
-    margin: 0 0 5px 0
+    margin: 0 0 5px 0;
+    color:#000
 }
 
 .containerLogin form input {
@@ -580,17 +581,22 @@ div#containerTemplate {
     display: block;
     margin: 1rem auto;
     border: 1px solid #999;
-    height: 30px;
-    padding: 0 0 0 5px
+    /* height: 30px; */
+    padding: .5rem;
+    outline:none;
+    font-size:16px
 }
 
-.containerLogin form button {
+.containerLogin form input.button {
     background-color: #2196F3;
     border: 0;
     color: #fff;
-    padding: .6rem 2.5rem;
     border-radius: 4px;
-    display: block
+    display: block;
+    width: 100%;
+    max-width: 151px;
+    margin: 0;
+    padding:.45rem
 }
 
 .containerLogin p {
@@ -1287,7 +1293,7 @@ header .menuGroup {
 section {
     width: 100%;
     position: relative;
-    padding: 60px 0 0 0
+    /* padding: 60px 0 0 0 */
 }
 
 section .banner {

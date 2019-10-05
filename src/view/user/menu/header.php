@@ -5,16 +5,21 @@
 		</a>
 		<?php
 		$sql = new \Util\Sql($conn);
-		
-			$autenticadorController = new \Controller\AutentificadorController($sql);
-		echo $autenticadorController->toggleLogin();
-		
+
+		$autenticadorController = new \Controller\AutentificadorController($sql);
+
+		$autenticadorController->toggleLogin();
+		$autenticadorController->efetuarLogOut();
+
 		?>
+
 	</div>
 	<nav class="navDesk">
 		<ul>
-			<!--<li><a href="<?php 
-					// echo _URLBASE_ ?>src/view/user/pages/menu/sebos.php">SEBOS</a>
+			<!--<li><a href="
+			<?php
+			// echo _URLBASE_ 
+			?>src/view/user/pages/menu/sebos.php">SEBOS</a>
 			</li>-->
 			<li>
 				<a href="<?php echo _URLBASE_ ?>">HOME</a>
@@ -31,7 +36,7 @@
 			<li>
 				<a href="<?php echo _URLBASE_ ?>area/user/menuHome/ajuda">FAQ</a>
 			</li>
-			</ul>
+		</ul>
 		</ul>
 	</nav>
 </header>

@@ -80,7 +80,7 @@ input[type="password"] {
     border-bottom: 1px solid #fff;
     background: transparent;
     outline: none;
-    height: 40px;
+    /* height: 40px; */
     font-size: 16px
 }
 

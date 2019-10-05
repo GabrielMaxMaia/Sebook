@@ -36,21 +36,18 @@ class AutentificadorController
                     // echo "<script>alert('Senha ou e-mail inválidos (Null)')</script>";
                     echo "email inválido";
                 } else {
-                    
-                  
-                    
+
                     $_SESSION['userLogado']['nome'] = $resultado['nomeUsuario'];
                     $_SESSION['userLogado']['idUsuario'] = $resultado['idUsuario'];
                     $_SESSION['userLogado']['acesso'] = $resultado['idPerfil'];
                     // var_dump($_SESSION['userLogado']['acesso']);
-                    if(($_SESSION['userLogado']['acesso']) <= 3){
-                        
+                    if (($_SESSION['userLogado']['acesso']) <= 3) {
+
                         // header("Location: ");
 
                         echo "ADM";
                         header("location:http://localhost/Sebook/area/adm");
-
-                    }else{
+                    } else {
                         echo "Login usuário";
                         header("location:http://localhost/Sebook/area/user");
                     }
@@ -64,21 +61,25 @@ class AutentificadorController
     public function efetuarLogOut()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-            $logout = isset($_GET['logout']) ? $_GET['logout'] : null;
+            // $logout = isset($_GET['logout']) ? $_GET['logout'] : null;
+            $logout = $_GET['logout'] ?? null;
             if ($logout == true) {
-                session_unset($_SESSION['userLogado']);
+
+                // session_unset($_SESSION['userLogado']);
+
+                unset($_SESSION['userLogado']);
+
                 // header("location:http://localhost/Sebook/area/adm");
-                header("location:http://localhost/Sebook");
+                header("location:http://localhost/Sebook/");
             }
         }
     }
-
-    
 
     public function toggleFormLogin()
     {
         $sessao = isset($_SESSION['userLogado']) ? $_SESSION['userLogado'] : null;
         if ($sessao == null) {
+            $sessao = null;
             require_once 'src/view/adm/login.php';
         } else {
             require_once 'src/view/adm/menu.php';
@@ -87,21 +88,26 @@ class AutentificadorController
 
     public function toggleLogin()
     {
-        $sessao = isset($_SESSION['userLogado']) ? $_SESSION['userLogado'] : null;
-        if ($sessao == null) {
-            return "<a class='perfil' href='". _URLBASE_ . "area/user/login/logar'>
-            <img src='". _ICONBASE_ ."user.png' alt='Perfil' title='Perfil'>
-        </a>";
+        // $sessao = isset($_SESSION['userLogado']) ? $_SESSION['userLogado'] : null;
+        $sessao = $_SESSION['userLogado'] ?? null;
         
+        if ($sessao == null) {
+            echo "<a class='perfil' href='" . _URLBASE_ . "area/user/login/logar'>
+                <img src='" . _ICONBASE_ . "user.png' alt='Perfil' title='Perfil'>
+            </a>";
         } else {
-            return "<a class='perfil' href='#Perfil'>
-            <b>".$_SESSION['userLogado']['nome']."</b>
-        </a>";
+         
+            if ($_SESSION['userLogado']['acesso'] <= 3) {
+                $perfil = "http://localhost/Sebook/area/adm";
+            } else {
+                $perfil = "#usuarioComum";
+            }
+            echo "<a class='perfil' href='{$perfil}'>
+            <b>" . $_SESSION['userLogado']['nome'] . "</b></a>";
+            echo "<a href='". _URLBASE_ . "area/adm/sair'>Sair</a>";
 
         }
     }
-
-
 
 
     //listaNivelAcesso --> array de niveis autorrizados

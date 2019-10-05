@@ -27,7 +27,6 @@ div#containerTemplate{
 
 ?>
 
-
 <div class="linkTop">
 	<a href="<?= _URLBASE_ ?>">Voltar | Home</a>
 </div>
@@ -48,8 +47,6 @@ div#containerTemplate{
 				<input class='inputLogin' type='password' placeholder='Senha' name='txtSenha' id='senha'>
                 
                 <input class='button' type='submit' value='Entrar'>
-
-				<button>ENTRAR</button>
 			</form>
 			<div class="linkGroup">
 				<a href="">Esqueci minha senha</a>
