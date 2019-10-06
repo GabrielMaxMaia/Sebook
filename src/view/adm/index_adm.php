@@ -66,9 +66,9 @@
                 <?php
                 if (isset($_GET['page']) && $_GET['page'] != "") {
                     $page = $_GET['page'];
-                    if (isset($_GET['folder']) && $_GET['folder'] != "") {
-                        $folder = $_GET['folder'];
-                        require_once "./src/view/adm/$folder/$page.php";
+                    if (isset($_GET['pasta']) && $_GET['pasta'] != "") {
+                        $pasta = $_GET['pasta'];
+                        require_once "./src/view/adm/$pasta/$page.php";
                     }
                 }
                 ?>
