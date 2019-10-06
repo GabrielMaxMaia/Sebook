@@ -94,6 +94,7 @@ class PostagemController
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $this->postagemDAO->setIdPostagem($_POST['txtId']);
+            $this->postagemDAO->setIdUsuario($_SESSION['userLogado']['idUsuario']);
             $this->postagemDAO->setTituloPostagem($_POST['txtTitulo']);
             $this->postagemDAO->setTxtPostagem($_POST['txtPostagem']);
         }
@@ -159,28 +160,11 @@ class PostagemController
     public function listarPostagem()
     {
         $result = $this->postagemDAO->listarPostagem();
-        
-        $tabela = "";
+
         $postagem = "";
         if ($result != null) {
             foreach ($result as $linha) {
-                $tabela .= "<tr>
-                        <td>" . $linha['idPostagem'] . "</td>
-                        <td>" . $linha['tituloPostagem'] . "</td>
-                        <td>" . $linha['txtPostagem'] . "</td>
-                        <td>" . $linha['idUsuario'] . "</td>
-                        <td>
-                            <a href='http://localhost/Sebook/area/adm/cadastro/cadPostagem/alter/" . $linha['idUsuario'] . "'>
-                                <img src='" . _URLBASE_ . "public/img/editar.jpg'>
-                            </a>
-                        </td>
-                        <td>
-                            <a href='http://localhost/Sebook/area/adm/cadastro/cadPostagem/delete/" . $linha['idPostagem'] . "'>
-                                <img src='" . _URLBASE_ . "public/img/excluir.jpg'>
-                            </a>
-                        </td>
-                    </tr>";
-
+               
                 $postagem .= "<div>
                                <h3> id da postagem {$linha['idPostagem']} </h3>
                                <h3> id usuario {$linha['idUsuario']} </h3>

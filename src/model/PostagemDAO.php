@@ -11,19 +11,21 @@ class PostagemDAO extends Postagem
     private static $SELECT_ALL = "select * from postagem where cod_status_post = '1'";
 
     private static $SELECT_ID = "select * from postagem where id_post = :idPostagem";
+
+    //$selectIdUser = "SELECT id_usuario FROM usuario WHERE id_usuario =  $_SESSION['userLogado']['idUsuario']";
     
     private static $INSERT = "INSERT INTO postagem
-    (`titulo_post`,`txt_post`,`data_hora_post`,`id_usuario`)
+    (titulo_post,txt_post,data_hora_post,id_usuario)
     VALUES (:tituloPostagem, :txtPostagem, date('Y/mm/dd H:i:s'), :idUsuario)";
     
-    // private static $INSERT = "INSERT INTO `postagem`
+    // private static $INSERT = "INSERT INTO postagem
     // (`titulo_post`,`txt_post`,`data_hora_post`,`id_usuario`)
-    // VALUES ( :tituloPostagem, :txtPostagem, :dataHoraPost, :idUsuario)";
+    // VALUES (:tituloPostagem, :txtPostagem, date('Y/mm/dd H:i:s'), :idUsuario)";
 
     private static $UPDATE = "UPDATE postagem SET
                             titulo_post = :tituloPostagem,
-                            txt_post = :txtPostagem 
-                              WHERE id_post =  :idPostagem";
+                            txt_post = :txtPostagem
+                            WHERE id_post =  :idPostagem";
 
     //DELETE lógico -> altera status
     private static $DELETE = "UPDATE postagem SET
@@ -56,7 +58,9 @@ class PostagemDAO extends Postagem
                     'datahoraPostagem' => $linha->data_hora_post,
                     'idUsuario' => $linha->id_usuario
                 );
+               
             }
+            //var_dump($itens);
         } else {
             $itens = null;
         }
@@ -77,8 +81,10 @@ class PostagemDAO extends Postagem
             $itens = array(
                 'idPostagem' => $linha->id_post,
                 'tituloPostagem' => $linha->titulo_post,
-                'txtPostagem' => $linha->txt_post
+                'txtPostagem' => $linha->txt_post,
+                'idUsuario' => $linha->id_usuario
             );
+            var_dump($itens);
         } else {
             $itens = null;
         }
@@ -96,6 +102,7 @@ class PostagemDAO extends Postagem
                 ':txtPostagem' => array(0 => $this->getTxtPostagem(), 1 => \PDO::PARAM_STR)
             )
         );
+        //var_dump($result);
         return $result;
     }
 

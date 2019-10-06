@@ -121,7 +121,7 @@ class Postagem
 			'linkPostagem' => $this->linkPostagem,
 			'urlFotoPostagem' => $this->urlFotoPostagem,
 			'codStatusPostagem' => $this->codStatusPostagem,
-			'idUsuario' => $this->idUsuario,
+			'idUsuario' => $this->idUsuario
 		));
 	}
 }
