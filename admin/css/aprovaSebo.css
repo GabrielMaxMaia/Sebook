@@ -1,0 +1,9 @@
+.aprovaSebo {
+    width: 100%;
+    position: relative;
+    padding: 1rem;
+    margin: auto;
+    box-sizing: border-box;
+    max-width: 460px;
+    align-self: center
+}

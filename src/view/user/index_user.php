@@ -51,5 +51,3 @@ $output = ob_get_clean();
 </body>
 
 </html>
-
-<!-- #http://localhost/sebook/index.php?area=user&pasta=pages&page=postVer&idPost=1 -->
