@@ -54,7 +54,6 @@ class AutorDAO extends Autor
             $itens = null;
         }
         return $itens;
-
     }
 
     public function listarAutorId()
@@ -63,12 +62,15 @@ class AutorDAO extends Autor
         $result = $this->sql->query(
             AutorDAO::$SELECT_ID,
             array(
-                'idAutor' => array(0 => $this->getIdAutor(), 1 => \PDO::PARAM_INT)
+                'idAutor' => array(
+                    0 => $this->getIdAutor(),
+                    1 => \PDO::PARAM_INT
+                )
             )
         );
         if ($result->rowCount() == 1) {
             $linha = $result->fetch(\PDO::FETCH_OBJ);
-           
+
             $itens = array(
                 'idAutor' => $linha->id_autor,
                 'nomeAutor' => $linha->nome_autor,
@@ -101,7 +103,7 @@ class AutorDAO extends Autor
             AutorDAO::$INSERT,
             array(
                 ':nomeAutor' => array(0 => $this->getNomeAutor(), 1 => \PDO::PARAM_STR),
-            
+
                 // ':idNacionalidade' => array(0 => $this->getIdNacionalidade(), 1 => \PDO::PARAM_INT)
 
                 ':idNacionalidade' => array(0 => 1, 1 => \PDO::PARAM_INT)

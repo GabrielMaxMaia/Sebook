@@ -10,14 +10,15 @@ class PostagemDAO extends Postagem
     //Atributos - serão os comandos SQL  + um objeto Sql
     private static $SELECT_ALL = "select * from postagem where cod_status_post = '1'";
 
-    private static $SELECT_ID = "select * from postagem where id_post = :idPostagem";
+    //private static $SELECT_ID = "select * from postagem where id_post = :idPostagem";
+    private static $SELECT_ID = "SELECT * from postagem where id_post = :idPostagem";
 
     //$selectIdUser = "SELECT id_usuario FROM usuario WHERE id_usuario =  $_SESSION['userLogado']['idUsuario']";
-    
+
     private static $INSERT = "INSERT INTO postagem
     (titulo_post,txt_post,data_hora_post,id_usuario)
     VALUES (:tituloPostagem, :txtPostagem, date('Y/mm/dd H:i:s'), :idUsuario)";
-    
+
     // private static $INSERT = "INSERT INTO postagem
     // (`titulo_post`,`txt_post`,`data_hora_post`,`id_usuario`)
     // VALUES (:tituloPostagem, :txtPostagem, date('Y/mm/dd H:i:s'), :idUsuario)";
@@ -58,7 +59,6 @@ class PostagemDAO extends Postagem
                     'datahoraPostagem' => $linha->data_hora_post,
                     'idUsuario' => $linha->id_usuario
                 );
-               
             }
             //var_dump($itens);
         } else {
@@ -73,7 +73,10 @@ class PostagemDAO extends Postagem
         $result = $this->sql->query(
             PostagemDAO::$SELECT_ID,
             array(
-                ':idPostagem' => array(0 => $this->getIdPostagem(), 1 => \PDO::PARAM_INT)
+                ':idPostagem' => array(
+                    0 => $this->getIdPostagem(),
+                    1 => \PDO::PARAM_INT
+                )
             )
         );
         if ($result->rowCount() == 1) {
@@ -84,13 +87,38 @@ class PostagemDAO extends Postagem
                 'txtPostagem' => $linha->txt_post,
                 'idUsuario' => $linha->id_usuario
             );
-            var_dump($itens);
+            // var_dump($itens);
         } else {
             $itens = null;
         }
         //devolver o resultado     
         return $itens;
     }
+    // public function listarPostagemId()
+    // {
+    //     //executar a consulta no banco
+    //     $result = $this->sql->query(
+    //         PostagemDAO::$SELECT_ID,
+    //         array(
+    //             ':idPostagem' => array(0 => $this->getIdPostagem(), 
+    //             1 => \PDO::PARAM_INT)
+    //             )
+    //     );
+    //     if ($result->rowCount() == 1) {
+    //         $linha = $result->fetch(\PDO::FETCH_OBJ);
+    //         $itens = array(
+    //             'idPostagem' => $linha->id_post,
+    //             'tituloPostagem' => $linha->titulo_post,
+    //             'txtPostagem' => $linha->txt_post,
+    //             'idUsuario' => $linha->id_usuario
+    //         );
+    //         // var_dump($itens);
+    //     } else {
+    //         $itens = null;
+    //     }
+    //     //devolver o resultado     
+    //     return $itens;
+    // }
 
     public function adicionarPostagem()
     {
