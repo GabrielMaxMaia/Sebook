@@ -39,7 +39,7 @@ if(isset($_GET['idDelete'])){
                     <a href='<?= _URLBASE_ . "area/user/pages/postEditar/{$linha['idPostagem']}" ?>'>
                         Editar
                     </a>
-                    <!-- <a href='http://localhost/Sebook/area/adm/cadastro/cadPostagem/delete/<? //= $linha['idPostagem'] ?>'>Excluir </a> -->
+
                     <a href='<?= _URLBASE_ . "area/user/pages/postListar/delete/{$linha['idPostagem']}" ?>'>
                         Excluir
                     </a>

@@ -8,7 +8,6 @@ $result = $postagemDAO->listarPostagem();
 
 $IdUser = $_SESSION['userLogado']['idUsuario'] ?? "";
 
-
 $GetPost = $_GET['idPost'] ?? "";
 
 ?>

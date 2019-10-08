@@ -20,13 +20,12 @@ if(isset($_POST['update'])){
     $postagemDAO->setTituloPostagem($_POST['titulo']);
     $postagemDAO->setTxtPostagem( $_POST['conteudo']);
     $postagemDAO->alterarPostagem();
-    header("Location:". _URLBASE_ . "area/user/pages/postEditar/" . $postId);
+    header("Location:". _URLBASE_ . "area/user/pages/postListar");
 }
 
 ?>
 <h1>Alterar Publicação</h1>
 
-<!-- http://localhost/sebook/index.php?area=user&pasta=pages&page=postEditar&idPost=1 -->
 <?php
 
 if ($result != null) {
