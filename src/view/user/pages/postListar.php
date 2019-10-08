@@ -29,7 +29,7 @@ if(isset($_GET['idDelete'])){
             ?>
             <section class='postagem'>
                 <h2>
-                    <a href='<?= _URLBASE_ . "/area/user/pages/postVer/{$linha['idPostagem']}" ?>'> <?= $linha['tituloPostagem'] ?></a>
+                    <a href='<?= _URLBASE_ . "area/user/pages/postVer/{$linha['idPostagem']}" ?>'> <?= $linha['tituloPostagem'] ?></a>
                 </h2>
 
                 <p><?= $linha['txtPostagem'] ?></p>
