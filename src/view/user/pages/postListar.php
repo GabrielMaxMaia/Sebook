@@ -2,11 +2,23 @@
 
 use Model\PostagemDAO;
 
-$postagemDAO = new PostagemDAO($conn);
-
+//Pega a conexão
+$sql = new \Util\Sql($conn);
+//Passa a conexão para o dao
+$postagemDAO = new PostagemDAO($sql);
+//Armazena em result para o laço
 $result = $postagemDAO->listarPostagem();
-
+//Pega a sessão se hover, caso contrario string vazia
 $IdUser = $_SESSION['userLogado']['idUsuario'] ?? "";
+
+
+if(isset($_GET['idDelete'])){
+    //Ao passar idDelete seta o valor e executa exclusão em postagemDAO
+    $postagemDAO->setIdPostagem($_GET['idDelete']);
+    $postagemDAO->excluirPostagem();
+    //header para recarregar a página
+    header("Location:". _URLBASE_ . "area/user/pages/postListar");
+}
 
 ?>
 <article class="postContainer">
@@ -16,25 +28,27 @@ $IdUser = $_SESSION['userLogado']['idUsuario'] ?? "";
         foreach ($result as $linha) {
             ?>
             <section class='postagem'>
-                <h2><a href='<?php echo  _URLBASE_ . "/area/user/pages/postVer/{$linha['idPostagem']}" ?>'> 
-                <?= $linha['tituloPostagem'] ?>
-            </a>
-        </h2>
+                <h2>
+                    <a href='<?= _URLBASE_ . "/area/user/pages/postVer/{$linha['idPostagem']}" ?>'> <?= $linha['tituloPostagem'] ?></a>
+                </h2>
 
-        <p><?= $linha['txtPostagem'] ?></p>
-        <?php
-                if ($linha['idUsuario'] == $IdUser && $IdUser != null)  {
-                    ?> 
-        <a href='http://localhost/Sebook/area/adm/cadastro/cadPostagem/alter/<?= $linha['idPostagem'] ?>'>
-            Editar
-        </a>
-        <a href='http://localhost/Sebook/area/adm/cadastro/cadPostagem/delete/<?= $linha['idPostagem'] ?>'>
-            Excluir
-        </a>
-        </section>
+                <p><?= $linha['txtPostagem'] ?></p>
+                <?php
+                    if ($linha['idUsuario'] == $IdUser && $IdUser != null) {
+                ?>
+                    <a href='<?= _URLBASE_ . "area/user/pages/postEditar/{$linha['idPostagem']}" ?>'>
+                        Editar
+                    </a>
+                    <!-- <a href='http://localhost/Sebook/area/adm/cadastro/cadPostagem/delete/<? //= $linha['idPostagem'] ?>'>Excluir </a> -->
+                    <a href='<?= _URLBASE_ . "area/user/pages/postListar/delete/{$linha['idPostagem']}" ?>'>
+                        Excluir
+                    </a>
+            </section>
     <?php
             }
         }
+    }else{
+        echo "<h2>Não há postagens</h2>";
     }
     ?>
 </article>

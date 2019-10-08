@@ -1,26 +1,27 @@
 <?php
 
-use Model\Postagem;
 use Model\PostagemDAO;
 
+//Pega a conexão
 $sql = new \Util\Sql($conn);
+//Passa a conexão para o dao
 $postagemDAO = new PostagemDAO($sql);
-$postagem = new Postagem();
-
+//Pega a sessão se hover, caso contrario string vazia
 $IdSessaoUser = $_SESSION['userLogado']['idUsuario'] ?? "";
-
-$postagem->setIdPostagem(1);
-
+//Pega o idPost da url
+$postId = isset($_GET['idPost']) ? $_GET['idPost'] : "";
+//Seta armazena o idPost em setIdPost
 $postagemDAO->setIdPostagem($_GET['idPost']);
-//$postagemDAO->setIdPostagem(1);
 
-echo "GET " . $postagemDAO->getIdPostagem();
-
+//Chama a função listaPostagemId
 $result = $postagemDAO->listarPostagemId();
 
-// var_dump($postagemDAO->listarPostagemId());
-
-$postId = isset($_GET['idPost']) ? $_GET['idPost'] : "";
+if(isset($_POST['update'])){
+    $postagemDAO->setTituloPostagem($_POST['titulo']);
+    $postagemDAO->setTxtPostagem( $_POST['conteudo']);
+    $postagemDAO->alterarPostagem();
+    header("Location:". _URLBASE_ . "area/user/pages/postEditar/" . $postId);
+}
 
 ?>
 <h1>Alterar Publicação</h1>
@@ -32,17 +33,17 @@ if ($result != null) {
 
 if ($result['idUsuario'] == $IdSessaoUser) {
             ?>
-<form method="post" action="?pagina=admin&metodo=update">
+<form method="post" action="">
 
-	<input type="text" name="titulo" value="<?= $result['tituloPostagem'] ?>">
+	<input type="text" name="titulo" value="<?= $result['tituloPostagem']?>">
 
 	<textarea name="conteudo" cols="25" rows="5">
-                 <?= $result['txtPostagem'] ?>
-                </textarea>
+       <?= $result['txtPostagem'] ?>
+    </textarea>
 
 	<input type="hidden" name="id" value="<?= $result['idPostagem'] ?>">
 
-	<input type="submit" value="Alterar">
+	<input type="submit" name="update" value="Alterar">
 </form>
 <?php
     }

@@ -5,7 +5,7 @@
 	<input type="text" name="titulo"><br><br>
 	
 	<span>Conteúdo</span><br>
-	<textarea name="conteudo" cols="25" rows="5"></textarea><br><br>
+	<textarea name="conteudo" cols="25" rows="5"></textarea>
 	
 	<input type="submit" value="Cadastrar">
 </form>

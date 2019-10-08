@@ -95,31 +95,6 @@ class PostagemDAO extends Postagem
         //devolver o resultado     
         return $itens;
     }
-    // public function listarPostagemId()
-    // {
-    //     //executar a consulta no banco
-    //     $result = $this->sql->query(
-    //         PostagemDAO::$SELECT_ID,
-    //         array(
-    //             ':idPostagem' => array(0 => $this->getIdPostagem(), 
-    //             1 => \PDO::PARAM_INT)
-    //             )
-    //     );
-    //     if ($result->rowCount() == 1) {
-    //         $linha = $result->fetch(\PDO::FETCH_OBJ);
-    //         $itens = array(
-    //             'idPostagem' => $linha->id_post,
-    //             'tituloPostagem' => $linha->titulo_post,
-    //             'txtPostagem' => $linha->txt_post,
-    //             'idUsuario' => $linha->id_usuario
-    //         );
-    //         // var_dump($itens);
-    //     } else {
-    //         $itens = null;
-    //     }
-    //     //devolver o resultado     
-    //     return $itens;
-    // }
 
     public function adicionarPostagem()
     {
