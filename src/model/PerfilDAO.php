@@ -34,7 +34,7 @@ class PerfilDAO extends Perfil
     }
 
     //Métodos especialistas - irão executar os SQL dos Atributos
-    public function listarPerfiles()
+    public function listarPerfils()
     {
         //executar a consulta no banco
         $result = $this->sql->query(PerfilDAO::$SELECT_ALL);

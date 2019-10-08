@@ -93,8 +93,12 @@ class UsuarioController
     public function recuperarDadosFormulario()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $this->usuarioDAO->setIdUsuario($_POST['txtId']);
-            $this->usuarioDAO->setNomeUsuario($_POST['txtNome']);
+            $this->usuarioDAO->setIdUsuario($_POST['idUsuario']);
+            $this->usuarioDAO->setNomeUsuario($_POST['nomeUsuario']);
+            $this->usuarioDAO->setSobrenomeUsuario($_POST['sobrenomeUsuario']);
+            $this->usuarioDAO->setEmailUsuario($_POST['emailUsuario']);
+            $this->usuarioDAO->setSenhaUsuario($_POST['senhaUsuario']);
+            $this->usuarioDAO->setIdPerfil($_POST['selecPerfil']);
         }
     }
 
@@ -151,6 +155,9 @@ class UsuarioController
             $this->usuarioDAO->setIdUsuario($_GET['id']);
             $Usuario = $this->usuarioDAO->listarUsuarioId();
             $this->usuarioDAO->setNomeUsuario($Usuario['nomeUsuario']);
+            $this->usuarioDAO->setSobrenomeUsuario($Usuario['sobrenomeUsuario']);
+            $this->usuarioDAO->setEmailUsuario($Usuario['emailUsuario']);
+            $this->usuarioDAO->setSenhaUsuario($Usuario['senhaUsuario']);
         }
     }
 

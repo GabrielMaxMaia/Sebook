@@ -87,8 +87,8 @@ class LivroDAO extends Livro
             LivroDAO::$UPDATE,
             array(
                 ':nomeLivro' => array(0 => $this->getNomeLivro(), 1 => \PDO::PARAM_STR),
-                ':sinopseLivro' => array(0 => $this->getDescrCategoria(), 1 => \PDO::PARAM_STR),
-                ':isbnLivro' => array(0 => $this->getIdCategoria(), 1 => \PDO::PARAM_STR)
+                ':sinopseLivro' => array(0 => $this->getSinopseLivro(), 1 => \PDO::PARAM_STR),
+                ':isbnLivro' => array(0 => $this->getIsbnLivro(), 1 => \PDO::PARAM_STR)
             )
         );
         return $result;

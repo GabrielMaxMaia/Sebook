@@ -76,8 +76,9 @@ class ClienteController
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-            $this->clienteDAO->setIdUsuario($_POST['txtId']);
-            // $this->clienteDAO->setDescrcliente($_POST['txtDescr']);
+            $this->clienteDAO->setIdUsuario($_POST['idUsuario']);
+            $this->clienteDAO->setCpfCliente($_POST['cpfCliente']);
+            $this->clienteDAO->setNascimentoCliente($_POST['nascCliente']);
             $this->clienteDAO->setSexoCliente($_POST['selectSexo']);
         }
     }
@@ -134,6 +135,8 @@ class ClienteController
         if ($this->acaoGET == 2) {
             $this->clienteDAO->setIdUsuario($_GET['id']);
             $cliente = $this->clienteDAO->listarClienteId();
+            $this->clienteDAO->setCpfCliente($cliente['cpfCliente']);
+            $this->clienteDAO->setNascimentoCliente($cliente['nascCliente']);
             $this->clienteDAO->setSexoCliente($cliente['sexoCliente']);
         }
     }

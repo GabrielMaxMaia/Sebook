@@ -21,7 +21,7 @@
 		</thead>
 		<tbody>
 			<?php
-				echo $perfilCrontoller->listarPerfiles();
+				echo $perfilCrontoller->listarPerfils();
 			?>
 		</tbody>
 	</table>
@@ -32,16 +32,14 @@
 <section class="<?php echo $perfilCrontoller->getFormulario(); ?>">
 	<form method="post" action="">
 		<h4 class="cadCat">Cadastro de Perfiles</h4>
-		<input type="hidden" name="txtId" id="txtId" value="<?php echo $perfilCrontoller->getPerfilDAO()->getIdPerfil(); ?>">
+
+		<input type="hidden" name="idPerfil" id="idPerfil" value="<?php echo $perfilCrontoller->getPerfilDAO()->getIdPerfil(); ?>">
+
 		<input type="hidden" name="txtAcao" id="txtAcao" value="<?php echo $perfilCrontoller->getAcaoGET();?>">
 		<label>Perfil</label>
-		<input class="grande" type="text" name="txtNome" value="<?php echo $perfilCrontoller->getPerfilDAO()->getNomePerfil(); ?>">
+		<input class="grande" type="text" name="nomePerfil" id="nomePefil" value="<?php echo $perfilCrontoller->getPerfilDAO()->getNomePerfil(); ?>">
 		<br>
-		<label>Descrição</label>
-		<!-- <textarea class="grande" name="txtDescr"> -->
-			<?php //echo $perfilCrontoller->getPerfilDAO()->getDescrPerfil(); ?>
-		<!-- </textarea> -->
-		<br>
+	
 
 		<label> </label>
 		<input class="buttonCancel" type="reset" value="Limpar">

@@ -94,8 +94,8 @@ class PerfilController
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-            $this->perfilDAO->setIdPerfil($_POST['txtId']);
-            $this->perfilDAO->setNomePerfil($_POST['txtNome']);
+            $this->perfilDAO->setIdPerfil($_POST['idPerfil']);
+            $this->perfilDAO->setNomePerfil($_POST['nomePerfil']);
         }
     }
 
@@ -158,9 +158,9 @@ class PerfilController
     
     }
 
-    public function listarPerfiles()
+    public function listarPerfils()
     {
-        $result = $this->perfilDAO->listarPerfiles();
+        $result = $this->perfilDAO->listarPerfils();
 
         $tabela = "";
         if ($result != null) {

@@ -10,27 +10,27 @@ class Cliente
 	//Atributos mapeando os campos da tabela
 	private $idUsuario;
 	private $sexoCliente;
-	private $complEndCliente;
+	private $complementoCliente;
 	private $logradouroCliente;
 	private $urlFotoCliente;
 	private $numComplCliente;
 	private $cpfCliente;
 	private $cepCliente;
-	private $dtNascCliente;
+	private $nascimentoCliente;
 	private $codStatusCliente;
 
 	//Método construtor auxiliar de criação de objetos
-	public function __construct($idUsuario = "", $sexoCliente = "", $complEndCliente = "", $logradouroCliente = "", $urlFotoCliente = "", $numComplCliente = "", $cpfCliente = "", $cepCliente = "", $dtNascCliente = "", $codStatusCliente = "")
+	public function __construct($idUsuario = "", $sexoCliente = "", $complementoCliente = "", $logradouroCliente = "", $urlFotoCliente = "", $numComplCliente = "", $cpfCliente = "", $cepCliente = "", $nascimentoCliente = "", $codStatusCliente = "")
 	{
 		$this->idUsuario = $idUsuario;
 		$this->sexoCliente = $sexoCliente;
-		$this->complEndCliente = $complEndCliente;
+		$this->complementoCliente = $complementoCliente;
 		$this->logradouroCliente = $logradouroCliente;
 		$this->urlFotoCliente = $urlFotoCliente;
 		$this->numComplCliente = $numComplCliente;
 		$this->cpfCliente = $cpfCliente;
 		$this->cepCliente = $cepCliente;
-		$this->dtNascCliente = $dtNascCliente;
+		$this->nascimentoCliente = $nascimentoCliente;
 		$this->codStatusCliente = $codStatusCliente;
 	}
 
@@ -55,14 +55,14 @@ class Cliente
 		$this->sexoCliente = $sexoCliente;
 	}
 
-	public function getComplEndCliente()
+	public function getComplementoCliente()
 	{
-		return $this->complEndCliente;
+		return $this->complementoCliente;
 	}
 
-	public function setComplEndCliente($complEndCliente)
+	public function setComplementoCliente($complementoCliente)
 	{
-		$this->complEndCliente = $complEndCliente;
+		$this->complementoCliente = $complementoCliente;
 	}
 
 	public function getLogradouroCliente()
@@ -115,14 +115,14 @@ class Cliente
 		$this->cepCliente = $cepCliente;
 	}
 
-	public function getDtNascCliente()
+	public function getNascimentoCliente()
 	{
-		return $this->dtNascCliente;
+		return $this->nascimentoCliente;
 	}
 
-	public function setDtNascCliente($dtNascCliente)
+	public function setNascimentoCliente($nascimentoCliente)
 	{
-		$this->dtNascCliente = $dtNascCliente;
+		$this->nascimentoCliente = $nascimentoCliente;
 	}
 
 	public function getCodStatusCliente()
@@ -141,13 +141,13 @@ class Cliente
 		return json_encode(array(
 			'idUsuario' => $this->idUsuario,
 			'sexoCliente' => $this->sexoCliente,
-			'complEndCliente' => $this->complEndCliente,
+			'complementoCliente' => $this->complementoCliente,
 			'logradouroCliente' => $this->logradouroCliente,
 			'urlFotoCliente' => $this->urlFotoCliente,
 			'numComplCliente' => $this->numComplCliente,
 			'cpfCliente' => $this->cpfCliente,
 			'cepCliente' => $this->cepCliente,
-			'dtNascCliente' => $this->dtNascCliente,
+			'nascimentoCliente' => $this->nascimentoCliente,
 			'codStatusCliente' => $this->codStatusCliente
 		));
 	}

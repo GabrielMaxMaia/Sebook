@@ -25,22 +25,28 @@ $clienteController->gravarAlterar();
 			?>
 		</tbody>
 	</table>
-	<input class="button" type="button" onclick="window.location='http://localhost/Sebook/adm/cadastro/cadCliente/add'" value="Novo">
+	<input class="button" type="button" onclick="window.location='http://localhost/sebook/area/adm/cadastro/cadCliente/add'" value="Novo">
 </section>
 
 <section class="<?php echo $clienteController->getFormulario(); ?>">
 	<form method="post" action="">
 		<h4 class="cadCat">Cadastro de clientes</h4>
 
-		<input type="hidden" name="txtId" id="txtId" value="<?php echo $clienteController->getClienteDAO()->getIdUsuario(); ?>">
+		<!-- <input type="hidden" name="idUsuario" id="idUsuario" value="<?php //echo $clienteController->getClienteDAO()->getIdUsuario(); ?>"> -->
+		<!-- Esse campo deve ficar escondido posteriormente--->
+		<input type="text" name="idUsuario" id="idUsuario" value="<?php echo $clienteController->getClienteDAO()->getIdUsuario(); ?>">
 
+		<label>Id</label>
 		<input type="hidden" name="txtAcao" id="txtAcao" value="<?php echo $clienteController->getAcaoGET(); ?>">
-		
-		<label>Sexo</label>
+		<br>
+		<label>Cpf</label>
+		<input class="grande" type="text" name="cpfCliente" id="cpfCliente" value="<?= $clienteController->getClienteDAO()->getCpfCliente() ?>">
 
-		
-		<!-- <input class="grande" type="text" name="selectSexo" value="<?php //echo $clienteController->getClienteDAO()->getSexoCliente();?>"> -->
-		
+		<label>Nascimento</label>
+		<input class="grande" type="text" name="nascCliente" id="nascCliente" value="<?= $clienteController->getclienteDAO()->getNascimentoCliente() ?>">
+
+
+		<label>Sexo</label>
 		<select class="grande" name="selectSexo">
 			<?php
 			$check = $clienteController->getClienteDAO()->getSexoCliente();
@@ -56,11 +62,20 @@ $clienteController->gravarAlterar();
 			</optgroup>
 		</select>
 
-		<br>
-		<!-- <label>Descrição</label>
-		<textarea class="grande" name="txtDescr"><?php //echo $clienteController->getClienteDAO()->getLogradouroCliente(); 
-													?></textarea> -->
-		<br>
+		<label>Cep</label>
+		<input class="grande" type="text" name="cepCliente" id="cepCliente" value="<?= $clienteController->getClienteDAO()->getCepCliente() ?>">
+	
+		<label>Logradouro</label>
+		<input class="grande" type="text" name="logradouroCliente" id="logradouroCliente" value="<?= $clienteController->getClienteDAO()->getLogradouroCliente() ?>">
+		
+		<label>Complemento</label>
+		<input class="grande" type="text" name="complEndCliente" id="complEndCliente" value="<?= $clienteController->getclienteDAO()->getNumComplCliente() ?>">
+
+		<label>Número</label>
+		<input class="grande" type="text" name="numComplCliente" id="numComplCliente" value="<?= $clienteController->getclienteDAO()->getNumComplCliente() ?>">
+
+		
+
 
 		<label> </label>
 		<input class="buttonCancel" type="reset" value="Limpar">
