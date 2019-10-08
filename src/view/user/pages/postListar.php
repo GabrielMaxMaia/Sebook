@@ -23,7 +23,7 @@ $IdUser = $_SESSION['userLogado']['idUsuario'] ?? "";
 
         <p><?= $linha['txtPostagem'] ?></p>
         <?php
-                if ($linha['idUsuario'] == $IdUser) {
+                if ($linha['idUsuario'] == $IdUser && $IdUser != null)  {
                     ?> 
         <a href='http://localhost/Sebook/area/adm/cadastro/cadPostagem/alter/<?= $linha['idPostagem'] ?>'>
             Editar

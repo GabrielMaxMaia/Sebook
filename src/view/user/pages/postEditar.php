@@ -3,7 +3,8 @@
 use Model\Postagem;
 use Model\PostagemDAO;
 
-$postagemDAO = new PostagemDAO($conn);
+$sql = new \Util\Sql($conn);
+$postagemDAO = new PostagemDAO($sql);
 $postagem = new Postagem();
 
 $IdSessaoUser = $_SESSION['userLogado']['idUsuario'] ?? "";
@@ -13,11 +14,11 @@ $postagem->setIdPostagem(1);
 $postagemDAO->setIdPostagem($_GET['idPost']);
 //$postagemDAO->setIdPostagem(1);
 
-echo $postagemDAO->getIdPostagem();
+echo "GET " . $postagemDAO->getIdPostagem();
 
-$postagemDAO->listarPostagemId();
+$result = $postagemDAO->listarPostagemId();
 
-var_dump($postagemDAO->listarPostagemId());
+// var_dump($postagemDAO->listarPostagemId());
 
 $postId = isset($_GET['idPost']) ? $_GET['idPost'] : "";
 
@@ -28,24 +29,24 @@ $postId = isset($_GET['idPost']) ? $_GET['idPost'] : "";
 <?php
 
 if ($result != null) {
-    foreach ($result as $linha) {
-        if ($linha['idPostagem'] == $IdSessaoUser) {
+
+if ($result['idUsuario'] == $IdSessaoUser) {
             ?>
-            <form method="post" action="?pagina=admin&metodo=update">
+<form method="post" action="?pagina=admin&metodo=update">
 
-                <input type="text" name="titulo" value="<?= $linha['tituloPostagem'] ?>">
+	<input type="text" name="titulo" value="<?= $result['tituloPostagem'] ?>">
 
-                <textarea name="conteudo" cols="25" rows="5">
-                 <?= $linha['txtPostagem'] ?>
+	<textarea name="conteudo" cols="25" rows="5">
+                 <?= $result['txtPostagem'] ?>
                 </textarea>
 
-                <input type="hidden" name="id" value="<?= $linha['idPostagem'] ?>">
+	<input type="hidden" name="id" value="<?= $result['idPostagem'] ?>">
 
-                <input type="submit" value="Alterar">
-            </form>
+	<input type="submit" value="Alterar">
+</form>
 <?php
-        }
     }
-} else {
-    echo "Essa postagem não pertence a você";
-}
+    else {
+        echo "Essa postagem não pertence a você";
+    }
+} 

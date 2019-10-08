@@ -8,7 +8,7 @@ $conn = \Util\FabricaConexao::getConexao('./config/bd_mysql.ini');
 
 if (isset($_GET['area']) && $_GET['area'] == "adm") {
 
-    require_once "./src/view/admin/index_adm.php";
+    require_once "./src/view/adm/index_adm.php";
     
 } else if (isset($_GET['area']) && $_GET['area'] == "user") {
 

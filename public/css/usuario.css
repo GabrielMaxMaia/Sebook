@@ -28,7 +28,7 @@ div#containerTemplate::before {
 
 div#containerTemplate {
     width: 100%;
-    max-width: 1000px;
+    max-width: 700px;
     margin: 0 auto 4%;
     box-sizing: border-box;
     min-height:500px
@@ -458,69 +458,31 @@ div#containerTemplate {
     padding: 10% 0
 }
 
-.pagLivro .search-box{
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    background: #2f3640;
-    height: 40px;
-    border-radius: 40px;
-    padding: 4px
+.pagLivro .box-search {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    grid-gap: 10px;
+    margin: 0 auto;
+    margin-bottom: 20px
 }
 
-.pagLivro .search-box:hover > .search-btn{
-    background: white;
+.pagLivro .box-search a.search {
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin: 8px 0 0 0
 }
-.pagLivro .search-btn{
-    color:#e84118;
-    float: right;
-    width: 35px;
+
+.pagLivro .box-search a.search img {
+    width: 100%
+}
+
+.pagLivro .box-search input {
+    width: 100%;
     height: 35px;
-    border-radius: 50%;
-    background: #2f3640;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.4s;
-}
-
-.pagLivro .search-txt{
-    border:none;
-    background: none;
-    outline: none;
-    float:left;
-    padding: 0 6px;
-    color: white;
-    font-size: 16px;
-    transition: 0.4s;
-    line-height: 40px;
-    width:  400px;
-
-}
-.pagLivro .search-box img{
-    height: 40px;
-}
-@media (max-width:900px){
-    .pagLivro .search-box {
-        height:40px;
-     
-    }
-    .pagLivro .search-btn {
-        top:-43px
-    }
-    .pagLivro .search-txt{
-        width:  0px;
-        padding: 0px;
-    
-    }
-    .pagLivro .search-box:hover > .search-txt{
-        width:300px;
- 
-    }
-    .pagLivro .search-box:hover > .search-btn{
-        background: white;
-        position: relative
-    }
+    border: 1px solid #999;
+    padding: 0 0 0 5px
 }
 
 .pagLivro .estante-slider {

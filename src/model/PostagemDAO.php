@@ -70,6 +70,7 @@ class PostagemDAO extends Postagem
     public function listarPostagemId()
     {
         //executar a consulta no banco
+   
         $result = $this->sql->query(
             PostagemDAO::$SELECT_ID,
             array(
