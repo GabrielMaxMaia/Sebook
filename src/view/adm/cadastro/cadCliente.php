@@ -38,13 +38,14 @@ $clienteController->gravarAlterar();
 
 		<label>Id</label>
 		<input type="hidden" name="txtAcao" id="txtAcao" value="<?php echo $clienteController->getAcaoGET(); ?>">
-		<br>
+		<br><br>
 		<label>Cpf</label>
 		<input class="grande" type="text" name="cpfCliente" id="cpfCliente" value="<?= $clienteController->getClienteDAO()->getCpfCliente() ?>">
 
+		<br><br>
 		<label>Nascimento</label>
-		<input class="grande" type="text" name="nascCliente" id="nascCliente" value="<?= $clienteController->getclienteDAO()->getNascimentoCliente() ?>">
-
+		<input class="grande" type="text" name="nascCliente" id="nascCliente" value="<?= $clienteController->getClienteDAO()->getNascimentoCliente() ?>">
+		<br><br>
 
 		<label>Sexo</label>
 		<select class="grande" name="selectSexo">
@@ -62,17 +63,23 @@ $clienteController->gravarAlterar();
 			</optgroup>
 		</select>
 
+		<br><br>
 		<label>Cep</label>
 		<input class="grande" type="text" name="cepCliente" id="cepCliente" value="<?= $clienteController->getClienteDAO()->getCepCliente() ?>">
-	
+		<?php
+		var_dump($clienteController->getClienteDAO()->getCepCliente() );
+		?>
+		<br><br>
 		<label>Logradouro</label>
 		<input class="grande" type="text" name="logradouroCliente" id="logradouroCliente" value="<?= $clienteController->getClienteDAO()->getLogradouroCliente() ?>">
 		
+		<br><br>
 		<label>Complemento</label>
-		<input class="grande" type="text" name="complEndCliente" id="complEndCliente" value="<?= $clienteController->getclienteDAO()->getNumComplCliente() ?>">
+		<input class="grande" type="text" name="complEndCliente" id="complEndCliente" value="<?= $clienteController->getClienteDAO()->getNumComplCliente() ?>">
 
+		<br><br>
 		<label>Número</label>
-		<input class="grande" type="text" name="numComplCliente" id="numComplCliente" value="<?= $clienteController->getclienteDAO()->getNumComplCliente() ?>">
+		<input class="grande" type="text" name="numComplCliente" id="numComplCliente" value="<?= $clienteController->getClienteDAO()->getNumComplCliente() ?>">
 
 		
 

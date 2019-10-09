@@ -16,7 +16,7 @@ class ClienteDAO extends Cliente
     private static $INSERT = "INSERT INTO cliente (id_usuario,sexo_cliente,compl_end_cliente,logradouro_cliente,num_compl_cliente,cpf_cliente,cep_cliente,dt_nasc_cliente) VALUES (:idUsuario,:sexoCliente,:complEndCliente,:logradouroCliente,:numComplCliente,:cpfCliente,:cepCliente,:nascCliente)";
     // private static $INSERT = "INSERT INTO cliente (id_usuario,sexo_cliente,compl_end_cliente,logradouro_cliente,url_foto_cliente,num_compl_cliente,cpf_cliente,cep_cliente,dt_nasc_cliente) VALUES (:id_usuario,:sexo_cliente,:compl_end_cliente,:logradouro_cliente,:url_foto_cliente,:num_compl_cliente,:cpf_cliente,:cep_cliente,:dt_nasc_cliente)";
 
-    private static $UPDATE = "UPDATE cliente SET sexo_cliente = :sexoCliente
+    private static $UPDATE = "UPDATE cliente SET sexo_cliente = :sexoCliente, compl_end_cliente = :complEndCliente, logradouro_cliente = :logradouroCliente, num_compl_cliente = :numComplCliente, cpf_cliente = :cpfCliente,cep_cliente =:cepCliente, dt_nasc_cliente = :nascCliente
     WHERE id_usuario = :idUsuario";
 
 
@@ -83,7 +83,7 @@ class ClienteDAO extends Cliente
                 'cepCliente' => $linha->cep_cliente,
                 'logradouroCliente' => $linha->logradouro_cliente,
                 'complEndCliente' => $linha->compl_end_cliente
-            );
+        );
         } else {
             $itens = null;
         }
@@ -96,8 +96,15 @@ class ClienteDAO extends Cliente
         $result = $this->sql->execute(
             ClienteDAO::$UPDATE,
             array(
+                ':idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT),
                 ':sexoCliente' => array(0 => $this->getSexoCliente(), 1 => \PDO::PARAM_STR),
-                ':idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT)
+                ':complEndCliente' => array(0 => $this->getComplementoCliente(), 1 => \PDO::PARAM_STR),
+                ':logradouroCliente' => array(0 => $this->getLogradouroCliente(), 1 => \PDO::PARAM_STR),
+                // ':url_foto_cliente' => array(0 => $this->getUrlFotoCliente(), 1 => \PDO::PARAM_STR),
+                ':numComplCliente' => array(0 => $this->getNumComplCliente(), 1 => \PDO::PARAM_STR),
+                ':cpfCliente' => array(0 => $this->getCpfCliente(), 1 => \PDO::PARAM_STR),
+                ':cepCliente' => array(0 => $this->getCepCliente(), 1 => \PDO::PARAM_STR),
+                ':nascCliente' => array(0 => $this->getNascimentoCliente(), 1 => \PDO::PARAM_STR)
             )
         );
         return $result;

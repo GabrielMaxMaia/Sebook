@@ -30,7 +30,7 @@ class ClienteController
     {return $this->acaoGET;}
     public function getAcaoPOST()
     {return $this->acaoPOST;}
-    public function getclienteDAO()
+    public function getClienteDAO()
     {return $this->clienteDAO;}
 
     public function setLista($valor)
@@ -41,6 +41,8 @@ class ClienteController
     {$this->acaoGET = $valor;}
     public function setAcaoPOST($valor)
     {$this->acaoPOST = $valor;}
+    public function setClienteDAO($valor)
+    {$this->clienteDAO = $valor;}
 
 //Métodos Especialistas
 
@@ -80,6 +82,10 @@ class ClienteController
             $this->clienteDAO->setCpfCliente($_POST['cpfCliente']);
             $this->clienteDAO->setNascimentoCliente($_POST['nascCliente']);
             $this->clienteDAO->setSexoCliente($_POST['selectSexo']);
+            $this->clienteDAO->setCepCliente($_POST['cepCliente']);
+            $this->clienteDAO->setNumComplCliente($_POST['numComplCliente']);
+            $this->clienteDAO->setLogradouroCliente($_POST['logradouroCliente']);
+            $this->clienteDAO->setComplementoCliente($_POST['complEndCliente']);
         }
     }
 

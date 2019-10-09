@@ -16,16 +16,16 @@ class PostagemDAO extends Postagem
     //$selectIdUser = "SELECT id_usuario FROM usuario WHERE id_usuario =  $_SESSION['userLogado']['idUsuario']";
 
     private static $INSERT = "INSERT INTO postagem
-    (titulo_post,txt_post,data_hora_post,id_usuario)
-    VALUES (:tituloPostagem, :txtPostagem, date('Y/mm/dd H:i:s'), :idUsuario)";
+    (titulo_post,txt_postagem,data_hora_post,id_usuario)
+    VALUES (:tituloPostagem, :txtPostagem, :datahoraPost, :idUsuario)";
 
     // private static $INSERT = "INSERT INTO postagem
-    // (`titulo_post`,`txt_post`,`data_hora_post`,`id_usuario`)
+    // (`titulo_post`,`txt_postagem`,`data_hora_post`,`id_usuario`)
     // VALUES (:tituloPostagem, :txtPostagem, date('Y/mm/dd H:i:s'), :idUsuario)";
 
     private static $UPDATE = "UPDATE postagem SET
                             titulo_post = :tituloPostagem,
-                            txt_post = :txtPostagem
+                            txt_postagem = :txtPostagem
                             WHERE id_post =  :idPostagem";
 
     //DELETE lógico -> altera status
@@ -55,9 +55,10 @@ class PostagemDAO extends Postagem
                 $itens[] = array(
                     'idPostagem' => $linha->id_post,
                     'tituloPostagem' => $linha->titulo_post,
-                    'txtPostagem' => $linha->txt_post,
-                    'datahoraPostagem' => $linha->data_hora_post,
-                    'idUsuario' => $linha->id_usuario
+                    'txtPostagem' => $linha->txt_postagem,
+                    'datahoraPost' => $linha->data_hora_post,
+                    'idUsuario' => $linha->id_usuario,
+                    'datahoraPost' => $linha->data_hora_post
                 );
             }
             //var_dump($itens);
@@ -85,7 +86,7 @@ class PostagemDAO extends Postagem
             $itens = array(
                 'idPostagem' => $linha->id_post,
                 'tituloPostagem' => $linha->titulo_post,
-                'txtPostagem' => $linha->txt_post,
+                'txtPostagem' => $linha->txt_postagem,
                 'idUsuario' => $linha->id_usuario
             );
             // var_dump($itens);
@@ -103,7 +104,8 @@ class PostagemDAO extends Postagem
             array(
                 ':idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT),
                 ':tituloPostagem' => array(0 => $this->getTituloPostagem(), 1 => \PDO::PARAM_STR),
-                ':txtPostagem' => array(0 => $this->getTxtPostagem(), 1 => \PDO::PARAM_STR)
+                ':txtPostagem' => array(0 => $this->getTxtPostagem(), 1 => \PDO::PARAM_STR),
+                ':datahoraPost' => array(0 => $this->getDatahoraPostagem(), 1 => \PDO::PARAM_STR)
             )
         );
         //var_dump($result);

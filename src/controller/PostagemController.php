@@ -97,6 +97,7 @@ class PostagemController
             $this->postagemDAO->setIdUsuario($_SESSION['userLogado']['idUsuario']);
             $this->postagemDAO->setTituloPostagem($_POST['txtTitulo']);
             $this->postagemDAO->setTxtPostagem($_POST['txtPostagem']);
+            $this->postagemDAO->setDatahoraPostagem($_POST['dataPost']);
         }
     }
 
