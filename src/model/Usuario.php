@@ -7,97 +7,124 @@ namespace Model;
 class Usuario
 {
 
-    //Atributos mapeando os campos da tabela
-    private $idUsuario;
-    private $nomeUsuario;
-    private $sobrenomeUsuario;
-    private $emailUsuario;
-    private $senhaUsuario;
-    private $codStatusUsuario;
-    private $idPerfil;
+	//Atributos mapeando os campos da tabela
+	private $idUsuario;
+	private $nomeUsuario;
+	private $sobrenomeUsuario;
+	private $emailUsuario;
+	private $senhaUsuario;
+	private $codStatusUsuario;
+	private $idPerfil;
+	private $dataCriacao;
 
-    //Método construtor auxiliar de criação de objetos
-    public function __construct($idUsuario = "", $nomeUsuario = "", $sobrenomeUsuario = "",$emailUsuario = "" , $senhaUsuario = "", $codStatusUsuario = "", $idPerfil = "")
-    {
-        $this->idUsuario = $idUsuario;
-        $this->nomeUsuario = $nomeUsuario;
-        $this->sobrenomeUsuario = $sobrenomeUsuario;
-        $this->emailUsuario = $emailUsuario;
-        $this->senhaUsuario = $senhaUsuario;
-        $this->codStatusUsuario = $codStatusUsuario;
-        $this->idPerfil = $idPerfil;
-    }
+	//Método construtor auxiliar de criação de objetos
+	public function __construct($idUsuario = "", $nomeUsuario = "", $sobrenomeUsuario = "", $emailUsuario = "", $senhaUsuario = "", $codStatusUsuario = "", $idPerfil = "", $dataCriacao = "")
+	{
+		$this->idUsuario = $idUsuario;
+		$this->nomeUsuario = $nomeUsuario;
+		$this->sobrenomeUsuario = $sobrenomeUsuario;
+		$this->emailUsuario = $emailUsuario;
+		$this->senhaUsuario = $senhaUsuario;
+		$this->codStatusUsuario = $codStatusUsuario;
+		$this->idPerfil = $idPerfil;
+		$this->dataCriacao = $dataCriacao;
+	}
 
-    //getters e setters
-    public function getIdUsuario(){
+	//getters e setters
+	public function getIdUsuario()
+	{
 		return $this->idUsuario;
 	}
 
-	public function setIdUsuario($idUsuario){
+	public function setIdUsuario($idUsuario)
+	{
 		$this->idUsuario = $idUsuario;
 	}
 
-	public function getNomeUsuario(){
+	public function getNomeUsuario()
+	{
 		return $this->nomeUsuario;
 	}
 
-	public function setNomeUsuario($nomeUsuario){
+	public function setNomeUsuario($nomeUsuario)
+	{
 		$this->nomeUsuario = $nomeUsuario;
 	}
 
-	public function getSobrenomeUsuario(){
+	public function getSobrenomeUsuario()
+	{
 		return $this->sobrenomeUsuario;
 	}
 
-	public function setSobrenomeUsuario($sobrenomeUsuario){
+	public function setSobrenomeUsuario($sobrenomeUsuario)
+	{
 		$this->sobrenomeUsuario = $sobrenomeUsuario;
 	}
 
-	public function getEmailUsuario(){
+	public function getEmailUsuario()
+	{
 		return $this->emailUsuario;
 	}
 
-	public function setEmailUsuario($emailUsuario){
+	public function setEmailUsuario($emailUsuario)
+	{
 		$this->emailUsuario = $emailUsuario;
 	}
 
-	public function getSenhaUsuario(){
+	public function getSenhaUsuario()
+	{
 		return $this->senhaUsuario;
 	}
 
-	public function setSenhaUsuario($senhaUsuario){
+	public function setSenhaUsuario($senhaUsuario)
+	{
 		$this->senhaUsuario = $senhaUsuario;
 	}
 
-	public function getCodStatusUsuario(){
+	public function getCodStatusUsuario()
+	{
 		return $this->codStatusUsuario;
 	}
 
-	public function setCodStatusUsuario($codStatusUsuario){
+	public function setCodStatusUsuario($codStatusUsuario)
+	{
 		$this->codStatusUsuario = $codStatusUsuario;
 	}
 
-	public function getIdPerfil(){
+	public function getIdPerfil()
+	{
 		return $this->idPerfil;
 	}
 
-	public function setIdPerfil($idPerfil){
+	public function setIdPerfil($idPerfil)
+	{
 		$this->idPerfil = $idPerfil;
 	}
 
-    //Método __toString()
-    public function __toString()
-    {
-        return json_encode(array(
-            'idUsuario' => $this->idUsuario,
-            'nomeUsuario' => $this->nomeUsuario,
-            'sobrenomeUsuario' => $this->sobrenomeUsuario,
-            'emailUsuario' => $this->emailUsuario,
-            'senhaUsuario' => $this->senhaUsuario,
-            'codStatusUsuario' => $this->codStatusUsuario,
-            'idPerfil' => $this->idPerfil
-        ));
-    }
+	public function getDataCriacao()
+	{
+		return $this->dataCriacao;
+	}
+
+	public function setDataCriacao($dataCriacao)
+	{
+		$this->dataCriacao = $dataCriacao;
+	}
+
+	//Método __toString()
+	public function __toString()
+	{
+		return json_encode(array(
+			'idUsuario' => $this->idUsuario,
+			'nomeUsuario' => $this->nomeUsuario,
+			'sobrenomeUsuario' => $this->sobrenomeUsuario,
+			'emailUsuario' => $this->emailUsuario,
+			'senhaUsuario' => $this->senhaUsuario,
+			'codStatusUsuario' => $this->codStatusUsuario,
+			'idPerfil' => $this->idPerfil,
+			'dataCriacao' => $this->dataCriacao
+		));
+	}
 }
 
 /*

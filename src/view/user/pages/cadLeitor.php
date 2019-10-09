@@ -1,3 +1,56 @@
+<?php
+
+use Model\ClienteDAO;
+use Model\UsuarioDAO;
+
+//Pega a conexão
+$sql = new \Util\Sql($conn);
+//Passa a conexão para o dao
+$clienteDAO = new ClienteDAO($sql);
+$usuarioDAO = new UsuarioDAO($sql);
+//Pega a sessão se hover, caso contrario string vazia
+//$IdSessaoUser = $_SESSION['userLogado']['idUsuario'] ?? "";
+
+if (isset($_POST['enviar']) != null || "") {
+	//Nome
+	if ($_POST['nomeUsuario'] != "") {
+		$usuarioDAO->setNomeUsuario($_POST['nomeUsuario']);
+	} else {
+		$erro = true;
+		echo "Prencha o nome";
+	}
+	//Sobrenome
+	if ($_POST['sobrenomeUsuario'] != "") {
+		$usuarioDAO->setSobrenomeUsuario($_POST['sobrenomeUsuario']);
+	} else {
+		$erro = true;
+		echo "Prencha o Sobrenome";
+	}
+	//Email
+	if ($_POST['emailUsuario'] != "") {
+		$usuarioDAO->setEmailUsuario($_POST['emailUsuario']);
+	} else {
+		$erro = true;
+		echo "Prencha o E-mail";
+	}
+	//Senha
+	if ($_POST['senhaUsuario'] == $_POST['repeteSenhaUsuario']) {
+		$usuarioDAO->setSenhaUsuario($_POST['senhaUsuario']);
+	} else {
+		$erro = true;
+		echo "Preencha a senha";
+	}
+
+	if (isset($erro) != true) {
+		$usuarioDAO->setIdPerfil(5);
+		$usuarioDAO->setDataCriacao(date('Y-m-d H:i:s'));
+		$usuarioDAO->adicionarUsuario();
+		//header("Location:" . _URLBASE_ . "area/user/pages/postListar");
+	}
+	
+
+}
+?>
 <section class="cadastro">
 	<div class="container">
 		<figure>
@@ -7,15 +60,16 @@
 		<p>
 			<span>Preencha o formulário abaixo</span>
 		</p>
-		<form action="">
+		<form action="" method="post">
 			<div class="formItem">
-				<label for="">Nome</label>
-				<input type="text">
+				<label for="nomeUsuario">Nome</label>
+				<input type="text" id="nomeUsuario" name="nomeUsuario">
 			</div>
 			<div class="formItem">
-				<label for="">Sobrenome</label>
-				<input type="text">
+				<label for="sobrenomeUsuario">Sobrenome</label>
+				<input type="text" id="sobrenomeUsuario" name="sobrenomeUsuario">
 			</div>
+
 			<div class="formItem">
 				<label for="">Data de Nascimento</label>
 				<input type="text">
@@ -68,21 +122,21 @@
 				<label for="">Complemento</label>
 				<input type="text">
 			</div>
+
+			
 			<div class="formItem">
-				<label for="">E-mail</label>
-				<input type="text">
+				<label for="emailUsuario">E-mail</label>
+				<input type="text" name="emailUsuario" id="emailUsuario">
 			</div>
 			<div class="formItem">
-				<label for="">Senha</label>
-				<input type="password">
+				<label for="senhaUsuario">Senha</label>
+				<input type="password" name="senhaUsuario" id="senhaUsuario">
 			</div>
 			<div class="formItem">
 				<label for="">Repita a senha</label>
-				<input class="password2" type="password">
+				<input type="password" name="repeteSenhaUsuario" id="repeteSenhaUsuario">
 			</div>
-			<button>
-				<a href="Logado.html">Cadastrar</a>
-			</button>
+			<input type="submit" name="enviar" value="Cadastrar">
 		</form>
 	</div>
 </section>

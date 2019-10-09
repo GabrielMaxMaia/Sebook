@@ -13,7 +13,7 @@ class UsuarioDAO extends Usuario
     private static $SELECT_PERFIL = "select * from perfil where cod_status_perfil = '1'";
 
     private static $SELECT_ID = "select * from usuario where id_usuario = :idUsuario";
-    private static $INSERT = "INSERT INTO usuario (nome_Usuario, sobrenome_usuario, email_usuario, senha_usuario, id_perfil) VALUES (:nomeUsuario, :sobrenomeUsuario, :emailUsuario, :senhaUsuario,:idPerfil)";
+    private static $INSERT = "INSERT INTO usuario (nome_Usuario, sobrenome_usuario, email_usuario, senha_usuario, id_perfil, data_criacao) VALUES (:nomeUsuario, :sobrenomeUsuario, :emailUsuario, :senhaUsuario,:idPerfil, :dataCriacao)";
 
     private static $UPDATE = "UPDATE usuario SET nome_usuario = :nomeUsuario, sobrenome_usuario = :sobrenomeUsuario, email_usuario = :emailUsuario, senha_usuario = :senhaUsuario, id_perfil = :idPerfil WHERE id_usuario =  :idUsuario";
 
@@ -110,6 +110,8 @@ class UsuarioDAO extends Usuario
                 ':emailUsuario' => array(0 => $this->getEmailUsuario(), 1 => \PDO::PARAM_STR),
                 ':senhaUsuario' => array(0 => $this->getSenhaUsuario(), 1 => \PDO::PARAM_STR),
                 ':idPerfil' => array(0 => $this->getIdPerfil(), 1 => \PDO::PARAM_STR),
+                ':dataCriacao' => array(0 => $this->getDataCriacao(), 1 => \PDO::PARAM_STR)
+                
             )
         );
         return $result;
