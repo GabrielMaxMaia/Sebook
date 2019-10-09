@@ -1,3 +1,9 @@
+<?php 
+//Previni que usuários comumns entre na área administrativa
+if($_SESSION['userLogado']['idUsuario'] > 3){
+    header('Location:' . _URLBASE_);
+}
+?>
 <!DOCTYPE html>
 <html lang="pt_br">
 
