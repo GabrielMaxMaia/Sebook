@@ -33,6 +33,7 @@ $clienteController->gravarAlterar();
 		<h4 class="cadCat">Cadastro de clientes</h4>
 
 		<!-- <input type="hidden" name="idUsuario" id="idUsuario" value="<?php //echo $clienteController->getClienteDAO()->getIdUsuario(); ?>"> -->
+
 		<!-- Esse campo deve ficar escondido posteriormente--->
 		<input type="text" name="idUsuario" id="idUsuario" value="<?php echo $clienteController->getClienteDAO()->getIdUsuario(); ?>">
 
@@ -63,26 +64,23 @@ $clienteController->gravarAlterar();
 			</optgroup>
 		</select>
 
+		<!-- Deixei brs aqui para não ter que fazer o css, depois não deixe asiim, okaa? -->
+
 		<br><br>
 		<label>Cep</label>
 		<input class="grande" type="text" name="cepCliente" id="cepCliente" value="<?= $clienteController->getClienteDAO()->getCepCliente() ?>">
-		<?php
-		var_dump($clienteController->getClienteDAO()->getCepCliente() );
-		?>
+	
 		<br><br>
 		<label>Logradouro</label>
 		<input class="grande" type="text" name="logradouroCliente" id="logradouroCliente" value="<?= $clienteController->getClienteDAO()->getLogradouroCliente() ?>">
 		
 		<br><br>
 		<label>Complemento</label>
-		<input class="grande" type="text" name="complEndCliente" id="complEndCliente" value="<?= $clienteController->getClienteDAO()->getNumComplCliente() ?>">
+		<input class="grande" type="text" name="complEndCliente" id="complEndCliente" value="<?= $clienteController->getClienteDAO()->getComplementoCliente() ?>">
 
 		<br><br>
 		<label>Número</label>
 		<input class="grande" type="text" name="numComplCliente" id="numComplCliente" value="<?= $clienteController->getClienteDAO()->getNumComplCliente() ?>">
-
-		
-
 
 		<label> </label>
 		<input class="buttonCancel" type="reset" value="Limpar">

@@ -74,7 +74,8 @@ class AutorDAO extends Autor
             $itens = array(
                 'idAutor' => $linha->id_autor,
                 'nomeAutor' => $linha->nome_autor,
-                'codStatusAutor' => $linha->cod_status_autor
+                'codStatusAutor' => $linha->cod_status_autor,
+                'idNacionalidade' => $linha->id_nacionalidade
             );
         } else {
             $itens = null;
@@ -91,7 +92,7 @@ class AutorDAO extends Autor
             array(
                 ':idAutor' => array(0 => $this->getIdAutor(), 1 => \PDO::PARAM_STR),
                 ':nomeAutor' => array(0 => $this->getNomeAutor(), 1 => \PDO::PARAM_STR),
-                ':idNacionalidade' => array(0 => 1, 1 => \PDO::PARAM_INT)
+                ':idNacionalidade' => array(0 => $this->getIdNacionalidade(), 1 => \PDO::PARAM_INT)
             )
         );
         return $result;
@@ -104,9 +105,7 @@ class AutorDAO extends Autor
             array(
                 ':nomeAutor' => array(0 => $this->getNomeAutor(), 1 => \PDO::PARAM_STR),
 
-                // ':idNacionalidade' => array(0 => $this->getIdNacionalidade(), 1 => \PDO::PARAM_INT)
-
-                ':idNacionalidade' => array(0 => 1, 1 => \PDO::PARAM_INT)
+                ':idNacionalidade' => array(0 => $this->getIdNacionalidade(), 1 => \PDO::PARAM_INT)
             )
         );
         return $result;

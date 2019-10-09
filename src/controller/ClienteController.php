@@ -144,6 +144,10 @@ class ClienteController
             $this->clienteDAO->setCpfCliente($cliente['cpfCliente']);
             $this->clienteDAO->setNascimentoCliente($cliente['nascCliente']);
             $this->clienteDAO->setSexoCliente($cliente['sexoCliente']);
+            $this->clienteDAO->setCepCliente($cliente['cepCliente']);
+            $this->clienteDAO->setLogradouroCliente($cliente['logradouroCliente']);
+            $this->clienteDAO->setComplementoCliente($cliente['complEndCliente']);
+            $this->clienteDAO->setNumComplCliente($cliente['numComplCliente']);
         }
     }
 

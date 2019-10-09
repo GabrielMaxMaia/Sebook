@@ -36,12 +36,13 @@
 
     $autenticadorController = new \Controller\AutentificadorController($sql);
 
-    $autenticadorController->validarAcesso('http://localhost/sebook/area/adm',array(0=>1, 1=>2, 1=>3));
-    // $autenticadorController->validarAcesso('http://localhost/sebook/',array(0=>1, 1=>2, 1=>3));
-
+    
+    // $autenticadorController->validarAcesso('http://localhost/sebook/area/adm', array(0=>1, 1=>2, 1=>3));
+  
     $autenticadorController->efetuarLogin();
     $autenticadorController->efetuarLogOut();
 
+    $autenticadorController->validarAcesso($_SESSION['userLogado']['acesso']);
 
     ?>
     <div id=container>

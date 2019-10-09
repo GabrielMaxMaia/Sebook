@@ -93,9 +93,9 @@ class AutorController
     public function recuperarDadosFormulario()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
             $this->autorDAO->setIdAutor($_POST['txtId']);
             $this->autorDAO->setNomeAutor($_POST['txtNome']);
+            $this->autorDAO->setIdNacionalidade($_POST['selecNacionalidade']);
         }
     }
 

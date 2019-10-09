@@ -52,7 +52,7 @@ class ClienteDAO extends Cliente
                     'numComplCliente' => $linha->num_compl_cliente,
                     'cpfCliente' => $linha->cpf_cliente,
                     'cepCliente' => $linha->cep_cliente,
-                    'dtNascCliente' => $linha->dt_nasc_cliente,
+                    'nascCliente' => $linha->dt_nasc_cliente,
                     'codStatusCliente' => $linha->cod_status_cliente
                 );
             }
@@ -82,7 +82,8 @@ class ClienteDAO extends Cliente
                 'nascCliente' => $linha->dt_nasc_cliente,
                 'cepCliente' => $linha->cep_cliente,
                 'logradouroCliente' => $linha->logradouro_cliente,
-                'complEndCliente' => $linha->compl_end_cliente
+                'complEndCliente' => $linha->compl_end_cliente,
+                'numComplCliente' => $linha->num_compl_cliente
         );
         } else {
             $itens = null;

@@ -43,7 +43,7 @@ class AutentificadorController
                     // var_dump($_SESSION['userLogado']['acesso']);
                     if (($_SESSION['userLogado']['acesso']) <= 3) {
                         echo "ADM";
-                        header("Location: http://localhost/Sebook/area/adm");
+                        header("Location: http://localhost/sebook/area/adm");
                     } else {
                         echo "Login usuário";
                         header("location: http://localhost/sebook/");
@@ -62,12 +62,9 @@ class AutentificadorController
             $logout = $_GET['logout'] ?? null;
             if ($logout == true) {
 
-                // session_unset($_SESSION['userLogado']);
-
                 unset($_SESSION['userLogado']);
 
-                // header("location:http://localhost/Sebook/area/adm");
-                header("location:http://localhost/Sebook/");
+                header("location:" . _URLBASE_);
             }
         }
     }
@@ -95,7 +92,7 @@ class AutentificadorController
         } else {
          
             if ($_SESSION['userLogado']['acesso'] <= 3) {
-                $perfil = "http://localhost/Sebook/area/adm";
+                $perfil = "http://localhost/sebook/area/adm";
             } else {
                 $perfil = "#usuarioComum";
             }
@@ -108,13 +105,11 @@ class AutentificadorController
 
 
     //listaNivelAcesso --> array de niveis autorrizados
-    public function validarAcesso($urlDirecionamento, $listaNivelAcesso)
+    public function validarAcesso($nivelAcesso)
     {
         $sessao = isset($_SESSION['userLogado']) ? $_SESSION['userLogado'] : null;
-        if ($sessao == null) {
-            //header("location:$urlDirecionamento");
-        } else if (!in_array($_SESSION['userLogado']['acesso'], $listaNivelAcesso)) {
-            header("location:$urlDirecionamento");
+        if ($sessao == null || $nivelAcesso > 3) {
+            header("Location: " . _URLBASE_);
         }
     }
 }
