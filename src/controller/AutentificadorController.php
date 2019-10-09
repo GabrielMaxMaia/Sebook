@@ -42,14 +42,11 @@ class AutentificadorController
                     $_SESSION['userLogado']['acesso'] = $resultado['idPerfil'];
                     // var_dump($_SESSION['userLogado']['acesso']);
                     if (($_SESSION['userLogado']['acesso']) <= 3) {
-
-                        // header("Location: ");
-
                         echo "ADM";
-                        header("location:http://localhost/Sebook/area/adm");
+                        header("Location: http://localhost/Sebook/area/adm");
                     } else {
                         echo "Login usuário";
-                        header("location:http://localhost/Sebook/area/user");
+                        header("location: http://localhost/sebook/");
                     }
 
                     // var_dump($_SESSION['userLogdao']['acesso']);

@@ -1,9 +1,3 @@
-<?php 
-//Previni que usuários comumns entre na área administrativa
-if($_SESSION['userLogado']['idUsuario'] > 3){
-    header('Location:' . _URLBASE_);
-}
-?>
 <!DOCTYPE html>
 <html lang="pt_br">
 
@@ -42,8 +36,8 @@ if($_SESSION['userLogado']['idUsuario'] > 3){
 
     $autenticadorController = new \Controller\AutentificadorController($sql);
 
-    // $autenticadorController->validarAcesso('http://localhost/sebook/area/adm',array(0=>1, 1=>2, 1=>3));
-    //$autenticadorController->validarAcesso('http://localhost/sebook/',array(0=>1, 1=>2, 1=>3));
+    $autenticadorController->validarAcesso('http://localhost/sebook/area/adm',array(0=>1, 1=>2, 1=>3));
+    // $autenticadorController->validarAcesso('http://localhost/sebook/',array(0=>1, 1=>2, 1=>3));
 
     $autenticadorController->efetuarLogin();
     $autenticadorController->efetuarLogOut();
