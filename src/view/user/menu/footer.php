@@ -17,19 +17,19 @@
 				<h1>Redes Sociais</h1>
 				<div class="row">
 					<a href="#face">
-						<img src="<?php echo _ICONBASE_ ?>Face-R.png" alt="">
+						<img src="<?= _ICONBASE_ ?>facebookSVG.svg" alt="">
 						<label>Facebook</label>
 					</a>
 				</div>
 				<div class="row">
 					<a href="#twitter">
-						<img src="<?php echo _ICONBASE_ ?>Twitter-R.png" alt="">
+						<img src="<?= _ICONBASE_ ?>twitterSVG.svg" alt="">
 						<label>Twitter</label>
 					</a>
 				</div>
 				<div class="row">
 					<a href="#instagram">
-						<img src="<?php echo _ICONBASE_ ?>Instagram-R.png" alt="">
+						<img src="<?= _ICONBASE_ ?>instagramSVG.svg" alt="">
 						<label>Instagram</label>
 					</a>
 				</div>
@@ -38,12 +38,12 @@
 				<h1>Contato</h1>
 				<div class="row2">
 					<a href="#contato">
-						<img src="<?php echo _ICONBASE_ ?>Home-R.png" alt="">
+						<img src="<?= _ICONBASE_ ?>homeSVG.svg" alt="">
 						<label>Entre em contato conosco</label>
 					</a>
 				</div>
 				<div class="row2">
-					<img src="<?php echo _ICONBASE_ ?>Email-R.png" alt="">
+					<img src="<?= _ICONBASE_ ?>emailSVG.svg" alt="">
 					<label>
 						Caixa Postal 5180,
 						<br>São Paulo - SP - Brasil
@@ -75,15 +75,15 @@
 <div class="master1">
 	<nav class="menuMobile">
 		<a href="<?= _URLBASE_ ?>" class="home">
-			<img src="<?php echo _ICONBASE_ ?>home.png" alt="Home" title="Página inicial">
+			<img src="<?= _ICONBASE_ ?>homeSVG.svg" alt="Home" title="Página inicial">
 		</a>
 		<a href="<?= _URLBASE_ ?>area/user/pages/busca" class="search">
-			<img src="<?php echo _ICONBASE_ ?>search.png" alt="Buscar" title="Buscar">
+			<img src="<?= _ICONBASE_ ?>buscaSVG.svg" alt="Buscar" title="Buscar">
 		</a>
 		<div class="menu">
 			<input type="checkbox" id="menuH">
 			<label for="menuH">
-				<img src="<?php echo _ICONBASE_ ?>menu.png" alt="">
+				<img src="<?= _ICONBASE_ ?>menuSVG.svg" alt="">
 			</label>
 			<div class="ulCenter">
 				<ul>
@@ -92,19 +92,19 @@
 										?>src/view/user/pages/menu/sebos.php">SEBOS</a>
 					</li>-->
 					<li>
-						<a href="<?php echo _URLBASE_ ?>">HOME</a>
+						<a href="<?= _URLBASE_ ?>">HOME</a>
 					</li>
 					<li>
-						<a href="<?php echo _URLBASE_ ?>area/user/menuHome/sebos">SEBOS</a>
+						<a href="<?= _URLBASE_ ?>area/user/menuHome/sebos">SEBOS</a>
 					</li>
 					<li>
-						<a href="<?php echo _URLBASE_ ?>area/user/menuHome/livros">LIVROS</a>
+						<a href="<?= _URLBASE_ ?>area/user/menuHome/livros">LIVROS</a>
 					</li>
 					<li>
-						<a href="<?php echo _URLBASE_ ?>area/user/menuHome/quemSomos">QUEM SOMOS</a>
+						<a href="<?= _URLBASE_ ?>area/user/menuHome/quemSomos">QUEM SOMOS</a>
 					</li>
 					<li>
-						<a href="<?php echo _URLBASE_ ?>area/user/menuHome/ajuda">FAQ</a>
+						<a href="<?= _URLBASE_ ?>area/user/menuHome/ajuda">FAQ</a>
 					</li>
 				</ul>
 				</ul>
