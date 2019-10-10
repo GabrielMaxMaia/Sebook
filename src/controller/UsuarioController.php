@@ -93,6 +93,7 @@ class UsuarioController
     public function recuperarDadosFormulario()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $this->usuarioDAO->setDataCriacao(date('Y-m-d H:i:s'));
             $this->usuarioDAO->setIdUsuario($_POST['idUsuario']);
             $this->usuarioDAO->setNomeUsuario($_POST['nomeUsuario']);
             $this->usuarioDAO->setSobrenomeUsuario($_POST['sobrenomeUsuario']);

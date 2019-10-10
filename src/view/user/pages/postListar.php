@@ -12,9 +12,9 @@ $result = $postagemDAO->listarPostagem();
 $IdUser = $_SESSION['userLogado']['idUsuario'] ?? "";
 
 
-if(isset($_GET['idDelete'])){
+if(isset($_GET['id'])){
     //Ao passar idDelete seta o valor e executa exclusão em postagemDAO
-    $postagemDAO->setIdPostagem($_GET['idDelete']);
+    $postagemDAO->setIdPostagem($_GET['id']);
     $postagemDAO->excluirPostagem();
     //header para recarregar a página
     header("Location:". _URLBASE_ . "area/user/pages/postListar");
