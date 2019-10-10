@@ -1,7 +1,8 @@
 <?php
 
-use Model\ClienteDAO;
+
 use Model\UsuarioDAO;
+use Model\ClienteDAO;
 
 //Pega a conexão
 $sql = new \Util\Sql($conn);
@@ -47,8 +48,6 @@ if (isset($_POST['enviar'])) {
 		$usuarioDAO->setDataCriacao(date('Y-m-d H:i:s'));
 		$usuarioDAO->adicionarUsuario();
 
-		
-		
 		// $clienteDAO->setIdUsuario($usuarioDAO->getIdUsuario());
 		// $clienteDAO->adicionarCliente();
 	}
@@ -56,7 +55,7 @@ if (isset($_POST['enviar'])) {
 		echo "Cadastrado com sucesso";
 	}
 
-	var_dump( $usuarioDAO->listarUsuarioId());
+	var_dump($usuarioDAO->listarUsuarioId());
 }
 ?>
 <section class="cadastro">

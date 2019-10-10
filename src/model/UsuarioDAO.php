@@ -27,7 +27,7 @@ class UsuarioDAO extends Usuario
     //Método Construtor - setamos os parametros e passamos um obj SQL
     public function __construct($objSql = "", $idUsuario = "", $nomeUsuario = "", $sobrenomeUsuario = "", $emailUsuario = "", $senhaUsuario = "", $codStatusUsuario = "", $idPerfil = "")
     {
-        parent::__construct($idUsuario = "", $nomeUsuario = "", $sobrenomeUsuario = "", $emailUsuario = "", $senhaUsuario = "", $codStatusUsuario = "", $idPerfil = "");
+        parent::__construct($idUsuario, $nomeUsuario , $sobrenomeUsuario, $emailUsuario, $senhaUsuario, $codStatusUsuario, $idPerfil);
         $this->sql = $objSql;
     }
 

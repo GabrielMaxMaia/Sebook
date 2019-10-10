@@ -6,6 +6,9 @@
 			<a href="<?php echo _URLBASE_ ?>area/adm/cadastro/cadPostagem">Postagem</a>
 		</li>
 		<li>
+			<a href="<?php echo _URLBASE_ ?>area/adm/cadastro/cadComentario">Comentários</a>
+		</li>
+		<li>
 			<a href="<?php echo _URLBASE_ ?>area/adm/cadastro/cadNacionalidade">Nacionalidade</a>
 		</li>
 		<li>
