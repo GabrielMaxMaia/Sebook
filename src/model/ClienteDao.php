@@ -102,7 +102,6 @@ class ClienteDAO extends Cliente
                 ':sexoCliente' => array(0 => $this->getSexoCliente(), 1 => \PDO::PARAM_STR),
                 ':complEndCliente' => array(0 => $this->getComplementoCliente(), 1 => \PDO::PARAM_STR),
                 ':logradouroCliente' => array(0 => $this->getLogradouroCliente(), 1 => \PDO::PARAM_STR),
-                // ':url_foto_cliente' => array(0 => $this->getUrlFotoCliente(), 1 => \PDO::PARAM_STR),
                 ':numComplCliente' => array(0 => $this->getNumComplCliente(), 1 => \PDO::PARAM_STR),
                 ':cpfCliente' => array(0 => $this->getCpfCliente(), 1 => \PDO::PARAM_STR),
                 ':cepCliente' => array(0 => $this->getCepCliente(), 1 => \PDO::PARAM_STR),
@@ -110,6 +109,7 @@ class ClienteDAO extends Cliente
             )
         );
         return $result;
+        // ':url_foto_cliente' => array(0 => $this->getUrlFotoCliente(), 1 => \PDO::PARAM_STR),
     }
 
     public function adicionarCliente()

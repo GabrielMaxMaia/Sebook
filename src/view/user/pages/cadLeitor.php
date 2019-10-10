@@ -7,8 +7,9 @@ $sql = new \Util\Sql($conn);
 //Passa a conexão para o dao
 $usuarioDAO = new UsuarioDAO($sql);
 
+if (isset($_POST['enviar'])) {
 
-if (isset($_POST['enviar']) != null || "") {
+	$erro = false;
 	//Nome
 	if ($_POST['nomeUsuario'] != "") {
 		$usuarioDAO->setNomeUsuario($_POST['nomeUsuario']);
@@ -31,18 +32,21 @@ if (isset($_POST['enviar']) != null || "") {
 		echo "Prencha o E-mail";
 	}
 	//Senha
-	if ($_POST['senhaUsuario'] == $_POST['repeteSenhaUsuario']) {
-		$usuarioDAO->setSenhaUsuario($_POST['senhaUsuario']);
-	} else {
+	if (($_POST['senhaUsuario'] != $_POST['repeteSenhaUsuario']) != null || "") {
 		$erro = true;
-		echo "Preencha a senha";
+		echo "Senhas diferente";
+	} else {
+		$usuarioDAO->setSenhaUsuario($_POST['senhaUsuario']);
 	}
 
-	if (isset($erro) != true) {
+	if ($erro != true) {
+		$success = true;
 		$usuarioDAO->setIdPerfil(5);
 		$usuarioDAO->setDataCriacao(date('Y-m-d H:i:s'));
 		$usuarioDAO->adicionarUsuario();
-		//header("Location:" . _URLBASE_ . "area/user/pages/postListar");
+	}
+	if(isset($success)){
+		echo "Cadastrado com sucesso";
 	}
 }
 ?>
@@ -58,24 +62,24 @@ if (isset($_POST['enviar']) != null || "") {
 		<form action="" method="post">
 			<div class="formItem">
 				<label for="nomeUsuario">Nome</label>
-				<input type="text" id="nomeUsuario" name="nomeUsuario">
+				<input type="text" id="nomeUsuario" name="nomeUsuario" value="<?= $_POST['nomeUsuario'] ?? '' ?>">
 			</div>
 			<div class="formItem">
 				<label for="sobrenomeUsuario">Sobrenome</label>
-				<input type="text" id="sobrenomeUsuario" name="sobrenomeUsuario">
+				<input type="text" id="sobrenomeUsuario" name="sobrenomeUsuario" value="<?= $_POST['sobrenomeUsuario'] ?? '' ?>">
 			</div>
 
 			<div class="formItem">
 				<label for="emailUsuario">E-mail</label>
-				<input type="text" name="emailUsuario" id="emailUsuario">
+				<input type="text" name="emailUsuario" id="emailUsuario" value="<?= $_POST['emailUsuario'] ?? '' ?>">
 			</div>
 			<div class="formItem">
 				<label for="senhaUsuario">Senha</label>
-				<input type="password" name="senhaUsuario" id="senhaUsuario">
+				<input type="password" name="senhaUsuario" id="senhaUsuario" value="<?= $_POST['senhaUsuario'] ?? '' ?>">
 			</div>
 			<div class="formItem">
 				<label for="">Repita a senha</label>
-				<input type="password" name="repeteSenhaUsuario" id="repeteSenhaUsuario">
+				<input type="password" name="repeteSenhaUsuario" id="repeteSenhaUsuario" value="<?= $_POST['repeteSenhaUsuario'] ?? '' ?>">
 			</div>
 			<input type="submit" name="enviar" value="Cadastrar">
 		</form>

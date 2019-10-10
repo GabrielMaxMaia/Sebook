@@ -41,10 +41,10 @@ div#containerTemplate{
 
 			<form method="post">
 				<label for="email">Email:</label>
-				<input class='inputLogin' type='text' placeholder='Usuário' name='txtUsuario' id='email'>
+				<input class='inputLogin' type='text' placeholder='Usuário' name='txtUsuario' id='email' value="<?= $_POST['txtUsuario'] ?? '' ?>">
 
 				<label for="senha">Senha:</label>
-				<input class='inputLogin' type='password' placeholder='Senha' name='txtSenha' id='senha'>
+				<input class='inputLogin' type='password' placeholder='Senha' name='txtSenha' id='senha' value="<?= $_POST['txtSenha'] ?? '' ?>">
                 
                 <input class='button' type='submit' value='Entrar'>
 			</form>
@@ -67,7 +67,7 @@ div#containerTemplate{
 						<div class="content-modal-cadastre">
 							<a class="btn-modal" href="<?= _URLBASE_?>area/user/pages/cadLeitor">Sou Leitor</a>
 							<span>OU</span>
-							<a class="btn-modal blue" href="<?= _URLBASE_?>area/user/pages/cadSeboFisica">Sou Sebo</a>
+							<a class="btn-modal blue" href="<?= _URLBASE_?>area/user/pages/cadSebo">Sou Sebo</a>
 						</div>
 					</div>
 					<div class="modal-footer">
