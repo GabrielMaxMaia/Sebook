@@ -21,6 +21,8 @@ $clienteDAO->setNascimentoCliente($result['nascCliente']);
 
 if (isset($_POST['atualizar'])) {
 	$clienteDAO->alterarCliente();
+	// $clienteDAO->adicionarCliente();
+	
 	//echo "Dados atualizados";
 	header("Location:". _URLBASE_ . "area/user/pages/perfilLeitor");
 }

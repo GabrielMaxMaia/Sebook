@@ -4,6 +4,38 @@ use Controller\ClienteController;
 
 $objSql = new Util\Sql($conn);
 $clienteController = new Controller\ClienteController($objSql);
+
+
+//Upload
+// require_once _URLBASE_ . 'src/util/Upload.php';
+
+$up = new Util\Upload(array(
+	0 => "image/png",  1 => "image/tiff",
+	2 => "image/jpeg", 3 => "image/bmp", 4 => "image/gif"
+), "/public/imgPerfil/");
+
+$result = $up->realizarUpload("urlFotoCliente");
+
+if ($result === true) {
+	$arq = $up->getArqUpload();
+	$arquivo = "public/imgPerfil/" . $arq["name"];
+} else {
+	$arquivo = -1;
+}
+
+var_dump($arquivo);
+
+echo "<script> parent.resultadoUpload('$arquivo',$result) </script>";
+//Upload
+
+// $clienteController->getClienteDAO()->setUrlFotoCliente($_POST['urlFotoCliente']);
+
+if($_POST){
+	// $clienteController->getClienteDAO()->setUrlFotoCliente($arq["name"]);
+}
+
+
+// var_dump($_POST);
 $clienteController->gravarAlterar();
 ?>
 
@@ -32,7 +64,8 @@ $clienteController->gravarAlterar();
 	<form method="post" action="">
 		<h4 class="cadCat">Cadastro de clientes</h4>
 
-		<!-- <input type="hidden" name="idUsuario" id="idUsuario" value="<?php //echo $clienteController->getClienteDAO()->getIdUsuario(); ?>"> -->
+		<!-- <input type="hidden" name="idUsuario" id="idUsuario" value="<?php //echo $clienteController->getClienteDAO()->getIdUsuario(); 
+																			?>"> -->
 
 		<!-- Esse campo deve ficar escondido posteriormente--->
 		<input type="text" name="idUsuario" id="idUsuario" value="<?php echo $clienteController->getClienteDAO()->getIdUsuario(); ?>">
@@ -60,7 +93,7 @@ $clienteController->gravarAlterar();
 			?>
 			<optgroup label="Sexo">
 				<option value="M" <?= $optionM ?? null ?>>M</option>
-				<option value="F" <?=$optionF ?? null ?>>F</option>
+				<option value="F" <?= $optionF ?? null ?>>F</option>
 			</optgroup>
 		</select>
 
@@ -69,11 +102,11 @@ $clienteController->gravarAlterar();
 		<br><br>
 		<label>Cep</label>
 		<input class="grande" type="text" name="cepCliente" id="cepCliente" value="<?= $clienteController->getClienteDAO()->getCepCliente() ?>">
-	
+
 		<br><br>
 		<label>Logradouro</label>
 		<input class="grande" type="text" name="logradouroCliente" id="logradouroCliente" value="<?= $clienteController->getClienteDAO()->getLogradouroCliente() ?>">
-		
+
 		<br><br>
 		<label>Complemento</label>
 		<input class="grande" type="text" name="complEndCliente" id="complEndCliente" value="<?= $clienteController->getClienteDAO()->getComplementoCliente() ?>">
@@ -82,10 +115,27 @@ $clienteController->gravarAlterar();
 		<label>Número</label>
 		<input class="grande" type="text" name="numComplCliente" id="numComplCliente" value="<?= $clienteController->getClienteDAO()->getNumComplCliente() ?>">
 
+		<input type="hidden" name="txtImg" id="txtImg" value="<?= $clienteController->getClienteDAO()->getUrlFotoCliente() ?>">
+
 		<label> </label>
 		<input class="buttonCancel" type="reset" value="Limpar">
 		<input class="button" type="submit" value="Enviar">
 	</form>
+
+	<div class="img">
+		<form action="" method='post' enctype='multipart/form-data' target='ifrmUpload' name="urlFotoCliente">
+			<input type="file" name="urlFotoCliente">
+			<!-- <input type="file" name="arqImagem"> -->
+			<input class="button" type="submit" value="Carregar">
+		</form>
+		<iframe id="ifrmUpload" name="ifrmUpload" src="" frameborder="0"></iframe>
+	</div>
+	<div class="imgCadastro">
+		<picture>
+			<img id="imgAvatar" src="<?//= $clienteController->getUrlFotoCliente()  ?>" alt="Avatar" class="avatar">
+		</picture>
+	</div>
+
 	<br>
 	<br>
 	<br>

@@ -26,7 +26,7 @@
     <!-- Auxiliares -->
     <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
 
-    <script src="public/js/funcoes.js"></script>
+    <script src='<?= _URLBASE_ ?>public/js/funcoes.js'></script>
 </head>
 
 <body>

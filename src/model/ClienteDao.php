@@ -13,11 +13,11 @@ class ClienteDAO extends Cliente
 
     private static $SELECT_ID = "select * from cliente where id_usuario = :idUsuario";
 
-    private static $INSERT = "INSERT INTO cliente (id_usuario,sexo_cliente,compl_end_cliente,logradouro_cliente,num_compl_cliente,cpf_cliente,cep_cliente,dt_nasc_cliente) VALUES (:idUsuario,:sexoCliente,:complEndCliente,:logradouroCliente,:numComplCliente,:cpfCliente,:cepCliente,:nascCliente)";
+    private static $INSERT = "INSERT INTO cliente (id_usuario,sexo_cliente,compl_end_cliente,logradouro_cliente,url_foto_cliente,num_compl_cliente,cpf_cliente,cep_cliente,dt_nasc_cliente) VALUES (:idUsuario,:sexoCliente,:complEndCliente,:logradouroCliente,:urlFotoCliente,:numComplCliente,:cpfCliente,:cepCliente,:nascCliente)";
 
     // private static $INSERT = "INSERT INTO cliente (id_usuario,sexo_cliente,compl_end_cliente,logradouro_cliente,url_foto_cliente,num_compl_cliente,cpf_cliente,cep_cliente,dt_nasc_cliente) VALUES (:id_usuario,:sexo_cliente,:compl_end_cliente,:logradouro_cliente,:url_foto_cliente,:num_compl_cliente,:cpf_cliente,:cep_cliente,:dt_nasc_cliente)";
 
-    private static $UPDATE = "UPDATE cliente SET sexo_cliente = :sexoCliente, compl_end_cliente = :complEndCliente, logradouro_cliente = :logradouroCliente, num_compl_cliente = :numComplCliente, cpf_cliente = :cpfCliente,cep_cliente =:cepCliente, dt_nasc_cliente = :nascCliente
+    private static $UPDATE = "UPDATE cliente SET sexo_cliente = :sexoCliente, compl_end_cliente = :complEndCliente, logradouro_cliente = :logradouroCliente, url_foto_cliente = :urlFotoCliente, num_compl_cliente = :numComplCliente, cpf_cliente = :cpfCliente,cep_cliente =:cepCliente, dt_nasc_cliente = :nascCliente
     WHERE id_usuario = :idUsuario";
 
 
@@ -83,6 +83,7 @@ class ClienteDAO extends Cliente
                 'nascCliente' => $linha->dt_nasc_cliente,
                 'cepCliente' => $linha->cep_cliente,
                 'logradouroCliente' => $linha->logradouro_cliente,
+                'urlFotoCliente' => $linha->url_foto_cliente,
                 'complEndCliente' => $linha->compl_end_cliente,
                 'numComplCliente' => $linha->num_compl_cliente
             );
@@ -102,6 +103,7 @@ class ClienteDAO extends Cliente
                 ':sexoCliente' => array(0 => $this->getSexoCliente(), 1 => \PDO::PARAM_STR),
                 ':complEndCliente' => array(0 => $this->getComplementoCliente(), 1 => \PDO::PARAM_STR),
                 ':logradouroCliente' => array(0 => $this->getLogradouroCliente(), 1 => \PDO::PARAM_STR),
+                ':urlFotoCliente' => array(0 => $this->getUrlFotoCliente(), 1 => \PDO::PARAM_STR),
                 ':numComplCliente' => array(0 => $this->getNumComplCliente(), 1 => \PDO::PARAM_STR),
                 ':cpfCliente' => array(0 => $this->getCpfCliente(), 1 => \PDO::PARAM_STR),
                 ':cepCliente' => array(0 => $this->getCepCliente(), 1 => \PDO::PARAM_STR),
@@ -121,7 +123,7 @@ class ClienteDAO extends Cliente
                 ':sexoCliente' => array(0 => $this->getSexoCliente(), 1 => \PDO::PARAM_STR),
                 ':complEndCliente' => array(0 => $this->getComplementoCliente(), 1 => \PDO::PARAM_STR),
                 ':logradouroCliente' => array(0 => $this->getLogradouroCliente(), 1 => \PDO::PARAM_STR),
-                // ':url_foto_cliente' => array(0 => $this->getUrlFotoCliente(), 1 => \PDO::PARAM_STR),
+                ':urlFotoCliente' => array(0 => $this->getUrlFotoCliente(), 1 => \PDO::PARAM_STR),
                 ':numComplCliente' => array(0 => $this->getNumComplCliente(), 1 => \PDO::PARAM_STR),
                 ':cpfCliente' => array(0 => $this->getCpfCliente(), 1 => \PDO::PARAM_STR),
                 ':cepCliente' => array(0 => $this->getCepCliente(), 1 => \PDO::PARAM_STR),
