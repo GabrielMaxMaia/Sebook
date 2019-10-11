@@ -19,6 +19,8 @@ class UsuarioDAO extends Usuario
 
     private static $UPDATE_SENHA = "UPDATE usuario SET senha_usuario =:senhaUsuario WHERE id_usuario = :idUsuario";
 
+    private static $UPDATE_INFO = "UPDATE usuario SET nome_usuario =:nomeUsuario, sobrenome_usuario =:sobrenomeUsuario, email_usuario =:emailUsuario WHERE id_usuario = :idUsuario";
+
     private static $UPDATE = "UPDATE usuario SET nome_usuario = :nomeUsuario, sobrenome_usuario = :sobrenomeUsuario, email_usuario = :emailUsuario, senha_usuario = :senhaUsuario, id_perfil = :idPerfil WHERE id_usuario =  :idUsuario";
 
     //DELETE lógico -> altera status
@@ -148,6 +150,20 @@ class UsuarioDAO extends Usuario
             UsuarioDAO::$UPDATE_SENHA,
             array(
                 ':senhaUsuario' => array(0 => \Util\Bcrypt::hash($this->getSenhaUsuario()), 1 => \PDO::PARAM_STR),
+                ':idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT) 
+            )
+        );
+        return $result;
+    }
+    
+    public function alterarInfoUsuario()
+    {
+        $result = $this->sql->execute(
+            UsuarioDAO::$UPDATE_INFO,
+            array(
+                ':nomeUsuario' => array(0 => \Util\Bcrypt::hash($this->getNomeUsuario()), 1 => \PDO::PARAM_STR),
+                ':sobrenomeUsuario' => array(0 => $this->getSobrenomeUsuario(), 1 => \PDO::PARAM_STR),
+                ':emailUsuario' => array(0 => $this->getEmailUsuario(), 1 => \PDO::PARAM_STR),
                 ':idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT) 
             )
         );

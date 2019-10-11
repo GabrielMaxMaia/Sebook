@@ -22,12 +22,16 @@ $clienteDAO->setNumComplCliente($result['numComplCliente']);
 $clienteDAO->setCpfCliente($result['cpfCliente']);
 $clienteDAO->setCepCliente($result['cepCliente']);
 $clienteDAO->setNascimentoCliente($result['nascCliente']);
+$clienteDAO->setUrlFotoCliente($result['urlFotoCliente']);
 
-//Retorna a que tem no usuarioDao
+//Retorna a que tem no listarUsuarioDaoId
 $resultUsuario = $usuarioDAO->listarUsuarioId();
+//Seta a atributos do usuarioDAO
 $usuarioDAO->setSenhaUsuario($resultUsuario['senhaUsuario']);
+$usuarioDAO->setNomeUsuario(($resultUsuario['nomeUsuario']));
+$usuarioDAO->setSobrenomeUsuario($resultUsuario['sobrenomeUsuario']);
+$usuarioDAO->setEmailUsuario($resultUsuario['emailUsuario']);
 
-// if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
 
 	$clienteDAO->setNumComplCliente($_POST['numComplCliente']);
@@ -37,6 +41,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
 	$clienteDAO->setCpfCliente($_POST['cpfCliente']);
 	$clienteDAO->setCepCliente($_POST['cepCliente']);
 	$clienteDAO->setNascimentoCliente($_POST['nascCliente']);
+	$clienteDAO->setUrlFotoCliente($_POST['urlFotoCliente']);
+
+	if (isset($_POST['nomeUsuario']) || isset($_POST['sobrenomeUsuario']) || isset($_POST['emailUsuario'])) {
+		$usuarioDAO->setNomeUsuario($_POST['nomeUsuario']);
+		$usuarioDAO->setSobrenomeUsuario($_POST['sobrenomeUsuario']);
+		$usuarioDAO->setEmailUsuario($_POST['emailUsuario']);
+
+		$usuarioDAO->alterarInfoUsuario();
+	}
 
 	$clienteDAO->alterarCliente();
 	header("Location:" . _URLBASE_ . "area/user/pages/perfilLeitor");
@@ -49,6 +62,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
 		<form action="" method="post" name="atualizarCampos">
 
 			<input type="hidden" name="idUsuario" id="idUsuario" value="<?= $clienteDAO->getIdUsuario() ?>">
+
+			<div class="formItem">
+				<label for="nomeUsuario">Nome</label>
+				<input type="text" name="nomeUsuario" id="nomeUsuario" value="<?= $usuarioDAO->getNomeUsuario() ?>">
+			</div>
+
+			<div class="formItem">
+				<label for="nomeUsuario">Sobrenome</label>
+				<input type="text" name="sobrenomeUsuario" id="sobrenomeUsuario" value="<?= $usuarioDAO->getSobrenomeUsuario()  ?>">
+			</div>
+
+			<div class="formItem">
+				<label for="emailUsuario">E-mail</label>
+				<input type="text" name="emailUsuario" id="emailUsuario" value="<?= $usuarioDAO->getEmailUsuario()  ?>">
+			</div>
 
 			<div class="formItem">
 				<label for="nascCliente">Data de Nascimento</label>
@@ -116,8 +144,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
 				<input type="text" name="complEndCliente" id="complEndCliente" value="<?= $clienteDAO->getComplementoCliente() ?>">
 			</div>
 
+			<!--Foto campo escondifo-->
+			<input type="hidden" name="urlFotoCliente" id="urlFotoCliente" value="<?= $clienteDAO->getUrlFotoCliente() ?>">
+
 			<input type="submit" name="atualizar" value="Atualizar">
 		</form>
+
+		<!--Formulário de foto-->
+		<div class="img">
+			<form action="<?= _URLBASE_ ?>src/view/adm/cadastro/cadUpload.php" method='post' enctype='multipart/form-data' target='ifrmUpload' name="urlFotoCliente">
+				<input type="file" name="urlFotoCliente">
+				<!-- <input type="file" name="arqImagem"> -->
+				<input class="button" type="submit" value="Carregar">
+			</form>
+			<iframe id="ifrmUpload" name="ifrmUpload" src="" frameborder="0"></iframe>
+		</div>
+		<div class="imgCadastro">
+			<picture>
+				<img id="imgAvatar" src="<?= "http://localhost/sebook/" . $clienteDAO->getUrlFotoCliente()  ?>" alt="Avatar" class="avatar">
+			</picture>
+		</div>
 
 		<!--Modal-->
 		<label class="btn-modal-cadastre" for="modal-cadastre">Trocar senha?</label>

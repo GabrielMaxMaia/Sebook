@@ -1,92 +1,116 @@
-<div id="container">
-	<section class="cadastro">
-		<div class="container">
-			<figure>
-				<img src="<?= _ICONBASE_ ?>userSVG.svg" alt="">
-				<figcaption>Cadastre-se</figcaption>
-			</figure>
-			<p>
-				<span>Preencha o formulário abaixo</span>
-			</p>
-			<form action="">
-				<label for="">Nome Fantasia</label>
-				<input type="text">
+<?php
 
-				<label for="">Razão Social</label>
-				<input type="text">
+// use Model\UsuarioDAO;
+// use Model\ClienteDAO;
 
-				<label for="">CNPJ</label>
-				<input type="text">
+// //Pega a conexão
+// $sql = new \Util\Sql($conn);
+// //Passa a conexão para o dao
+// $usuarioDAO = new UsuarioDAO($sql);
+// $clienteDAO = new ClienteDAO($sql);
 
-				<label for="">Inscrição Estadual</label>
-				<input type="text">
+// function evitarReenvio()
+// {
+// 	//verificar se existe uma variavel de sessão para os dados do form
+// 	if (isset($_SESSION['dadosForm'])) {
+// 		//conteúdo armazenado sessão diferente do conteúdo atual --> ambos em forma de hash
+// 		if ($_SESSION['dadosForm'] != md5(implode($_POST))) {   //novo envio             
+// 			//armazena conteúdo do formulário em forma de hash na varivel de sessao
+// 			$_SESSION['dadosForm'] = md5(implode($_POST)); // md5 cria um hash de uma string  --> implode converte array para string;
+// 			//indica que não há reenvio de dados
+// 			return true;
+// 		} else { //reenvio
+// 			//conteúdo armazenado sessão é igual do conteúdo atual --> ambos em forma de hash
+// 			//não atualizo a sessão
+// 			return false;
+// 		}
+// 	} else {
+// 		//armazena conteúdo do formulário em forma de hash na varivel de sessao
+// 		$_SESSION['dadosForm'] = md5(implode($_POST)); // md5 cria um hash de uma string  --> implode converte array para string;
+// 		//indica que não há reenvio de dados
+// 		return true;
+// 	}
+// }
 
-				<hr>
+// if (isset($_POST['enviar'])) {
 
-				<div class="formItem">
-					<label for="">CEP</label>
-					<input type="text">
-				</div>
+// 	$erro = false;
+// 	//Nome
+// 	if ($_POST['nomeUsuario'] != "") {
+// 		$usuarioDAO->setNomeUsuario($_POST['nomeUsuario']);
+// 	} else {
+// 		$erro = true;
+// 		echo "Prencha o nome";
+// 	}
+// 	//Sobrenome
+// 	if ($_POST['sobrenomeUsuario'] != "") {
+// 		$usuarioDAO->setSobrenomeUsuario($_POST['sobrenomeUsuario']);
+// 	} else {
+// 		$erro = true;
+// 		echo "Prencha o Sobrenome";
+// 	}
+// 	//Email
+// 	if ($_POST['emailUsuario'] != "") {
+// 		$usuarioDAO->setEmailUsuario($_POST['emailUsuario']);
+// 	} else {
+// 		$erro = true;
+// 		echo "Prencha o E-mail";
+// 	}
+// 	//Senha
+// 	if (($_POST['senhaUsuario'] != $_POST['repeteSenhaUsuario']) != null || "") {
+// 		$erro = true;
+// 		echo "Senhas diferente";
+// 	} else {
+// 		$usuarioDAO->setSenhaUsuario($_POST['senhaUsuario']);
+// 	}
 
-				<div class="formItem">
-					<label for="">Logradouro</label>
-					<select name=" Logradouro ">
-						<option value=" AL"> ALAMEDA </option>
-						<option value=" AV">AVENIDA </option>
-						<option value=" BC "> BECO </option>
-						<option value=" BL "> BLOCO </option>
-						<option value=" CAM "> CAMINHO </option>
-						<option value=" EST "> ESTAÇÃO </option>
-						<option value=" FAZ "> FAZENDA </option>
-						<option value=" GL"> GALERIA </option>
-						<option value=" LD"> LADEIRA </option>
-						<option value=" LGO "> LARGO </option>
-						<option value=" PÇA "> PRAÇA </option>
-						<option value=" PRQ "> PARQUE </option>
-						<option value=" PR "> PRAIA </option>
-						<option value=" KM "> QUILÔMETRO </option>
-						<option value=" ROD "> RODOVIA </option>
-						<option value=" R "> RUA </option>
-						<option value=" SQD "> SUPER QUADRA </option>
-						<option value=" TRV "> TRAVESSA </option>
-						<option value=" VD "> VIADUTO </option>
-						<option value=" VL "> VILA </option>
-					</select>
-				</div>
-				<div class="formItem">
-					<label for="">Número</label>
-					<input type="text">
-				</div>
-				<div class="formItem">
-					<label for="">Complemento</label>
-					<input type="text">
-				</div>
+// 	if ($erro != true) {
 
-				<label for="">Telefone</label>
-				<input type="text">
+// 		$usuarioDAO->setIdPerfil(5);
+// 		$usuarioDAO->setDataCriacao(date('Y-m-d H:i:s'));
+// 		if(evitarReenvio()){
+// 			$success = true;
+// 			$usuarioDAO->adicionarUsuario();
+// 		}else{
+// 			echo "Usuário já cadastrado";
+// 		}
+// 	}
+// 	if(isset($success)){
+// 		echo "Cadastrado com sucesso";
+// 	}
 
-				<label for="">Celular 1</label>
-				<input type="text">
+// }
 
-				<label for="">Celular 2</label>
-				<input type="text">
+?>
+<section class="cadastro">
+    <div class="container">
+        <figure>
+            <img src="<?= _ICONBASE_ ?>userSVG.svg" alt="">
+            <figcaption>Cadastre-se</figcaption>
+        </figure>
+        <p>
+            <span>Preencha o formulário abaixo</span>
+        </p>
+        <form action="" method="post">
+            <div class="formItem">
+                <label for="nomeFantasia">Nome Fantasia</label>
+                <input type="text" id="nomeFantasia" name="nomeFantasia" value="<?= $_POST['nomeFantasia'] ?? '' ?>">
+            </div>
 
-				<label for="">Link e/ou site</label>
-				<input type="text">
+            <div class="formItem">
+                <label for="email">E-mail</label>
+                <input type="text" id="email" name="nomeFantasia" value="<?= $_POST['email'] ?? '' ?>">
+            </div>
+            <div class="formItem">
+                <label for="senhaSebo">Senha</label>
+                <input type="password" name="senhaSebo" id="senhaSebo" value="<?= $_POST['senhaSebo'] ?? '' ?>">
+            </div>
+            <div class="formItem">
+                <label for="senhaSeboRepetir">Repetir Senha</label>
+                <input type="password" name="senhaSeboRepetir" id="senhaSeboRepetir" value="<?= $_POST['senhaSeboRepetir'] ?? '' ?>">
+            </div>
 
-				<label for="">E-mail</label>
-				<input type="text">
-
-				<hr>
-
-				<label for="">Senha</label>
-				<input type="password">
-
-				<label for="">Repita a senha</label>
-				<input class="password2" type="password">
-
-				<button>ENVIAR</button>
-			</form>
-		</div>
-	</section>
-</div>
+            <input type="submit" name="enviar" value="Cadastrar">
+        </form>
+    </div>
+</section>
