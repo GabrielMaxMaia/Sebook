@@ -17,6 +17,8 @@ class UsuarioDAO extends Usuario
     private static $SELECT_ID = "select * from usuario where id_usuario = :idUsuario";
     private static $INSERT = "INSERT INTO usuario (nome_Usuario, sobrenome_usuario, email_usuario, senha_usuario, id_perfil, data_criacao) VALUES (:nomeUsuario, :sobrenomeUsuario, :emailUsuario, :senhaUsuario,:idPerfil, :dataCriacao)";
 
+    private static $UPDATE_SENHA = "UPDATE usuario SET senha_usuario =:senhaUsuuario WHERE id_usuario = :idUsuario";
+
     private static $UPDATE = "UPDATE usuario SET nome_usuario = :nomeUsuario, sobrenome_usuario = :sobrenomeUsuario, email_usuario = :emailUsuario, senha_usuario = :senhaUsuario, id_perfil = :idPerfil WHERE id_usuario =  :idUsuario";
 
     //DELETE lógico -> altera status
@@ -122,7 +124,6 @@ class UsuarioDAO extends Usuario
         $clienteDAO = new ClienteDAO($this->sql, $usuario->last_id, null, null, null, null, null, null, null, null, '1');
         $clienteDAO->adicionarCliente();
         return $result;
-
     }
 
     public function alterarUsuario()
@@ -140,6 +141,19 @@ class UsuarioDAO extends Usuario
         );
         return $result;
     }
+
+    public function alterarSenhaUsuario()
+    {
+        $result = $this->sql->execute(
+            UsuarioDAO::$UPDATE_SENHA,
+            array(
+                ':senhaUsuario' => array(0 => $this->getSenhaUsuario(), 1 => \PDO::PARAM_STR),
+                ':idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT)
+            )
+        );
+        return $result;
+    }
+
 
     public function excluirUsuario()
     {

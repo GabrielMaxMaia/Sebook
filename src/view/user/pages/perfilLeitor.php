@@ -27,7 +27,8 @@ $clienteDAO->setNascimentoCliente($result['nascCliente']);
 $resultUsuario = $usuarioDAO->listarUsuarioId();
 $usuarioDAO->setSenhaUsuario($resultUsuario['senhaUsuario']);
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+// if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
 
 	$clienteDAO->setNumComplCliente($_POST['numComplCliente']);
 	$clienteDAO->setSexoCliente($_POST['sexoCliente']);
@@ -45,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!-- Perfil -->
 <section class="cadastro">
 	<div class="container">
-		<form action="" method="post">
+		<form action="" method="post" name="atualizarCampos">
 
 			<input type="hidden" name="idUsuario" id="idUsuario" value="<?= $clienteDAO->getIdUsuario() ?>">
 
@@ -118,8 +119,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			<input type="submit" name="atualizar" value="Atualizar">
 		</form>
 
-
-
 		<!--Modal-->
 		<label class="btn-modal-cadastre" for="modal-cadastre">Trocar senha?</label>
 		<section class="modal">
@@ -137,7 +136,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 							<input type="text" name="senhaAtual" id="senhaAtual">
 							<label for="senhaNova">Nova senha</label>
 							<input type="text" name="senhaNova">
-							<input type="submit">
+							<input type="submit" name="trocarSenha">
 						</form>
 					</div>
 					<div class="modal-footer">
@@ -147,14 +146,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			</div>
 		</section>
 		<?php
-		if (isset($_POST['mudarSenha'])) {
+		if (isset($_POST['trocarSenha'])) {
 			if ($_POST['senhaAtual'] == $usuarioDAO->getSenhaUsuario()) {
 				$usuarioDAO->setSenhaUsuario($_POST['senhaNova']);
-				$usuarioDAO->alterarUsuario();
+				$usuarioDAO->alterarSenhaUsuario();
+				echo "senha trocada";
 			} else {
 				echo 'Senha não confere';
 			}
 		}
-		var_dump($usuarioDAO->getSenhaUsuario()) ?>
+		var_dump($usuarioDAO->getSenhaUsuario());
+			var_dump($_POST['senhaAtual']);
+		?>
 	</div>
 </section>
