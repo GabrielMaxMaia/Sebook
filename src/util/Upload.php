@@ -45,10 +45,14 @@ class Upload{
         if($result == true){
             //recuperar o caminho absoluto do projeto
             $caminho = getcwd();
+            var_dump($caminho);
             //adicionando o caminho para salvar o arquivo
+
+            $caminho = str_replace('\src\view\adm\cadastro', '', $caminho);
             $caminho .= $this->caminhoArmazenamento; //no formato "/pasta/"
             //adicionar o nome do arquivo;
             $caminho .= $this->arqUpload["name"];
+      
             //verificando se já existe um arquivo com este nome
             if(! file_exists($caminho)){            
                 if(in_array($this->arqUpload['type'], $this->listaPermitidos)){

@@ -19,6 +19,12 @@
 
 }
 
+#ifrmUpload{
+    display:block;
+    position: absolute;
+    width:100%
+}
+
 html {
     font-family: "Lucida Sans", sans-serif;
 }

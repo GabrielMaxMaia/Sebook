@@ -9,7 +9,7 @@ function resultadoUpload(arquivo, codigoErro) {
     if (arquivo != '-1') {
         var img = document.getElementById('imgAvatar');
         var campo = document.getElementById('txtImg');
-        img.setAttribute("src", arquivo);
+        img.setAttribute("src", "http://localhost/sebook/" + arquivo);
         campo.value = arquivo;
         alert("Arquivo carregado com sucesso!");
       

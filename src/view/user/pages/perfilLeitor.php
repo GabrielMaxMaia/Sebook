@@ -19,10 +19,18 @@ $clienteDAO->setCpfCliente($result['cpfCliente']);
 $clienteDAO->setCepCliente($result['cepCliente']);
 $clienteDAO->setNascimentoCliente($result['nascCliente']);
 
-if (isset($_POST['atualizar'])) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+	$clienteDAO->setNumComplCliente($_POST['numComplCliente']);
+	$clienteDAO->setSexoCliente($_POST['sexoCliente']);
+	$clienteDAO->setComplementoCliente($_POST['complEndCliente']);
+	$clienteDAO->setLogradouroCliente($_POST['logradouroCliente']);
+    $clienteDAO->setCpfCliente($_POST['cpfCliente']);
+	$clienteDAO->setCepCliente($_POST['cepCliente']);
+	$clienteDAO->setNascimentoCliente($_POST['nascCliente']);
+
 	$clienteDAO->alterarCliente();
 	// $clienteDAO->adicionarCliente();
-	
 	//echo "Dados atualizados";
 	header("Location:". _URLBASE_ . "area/user/pages/perfilLeitor");
 }
@@ -41,20 +49,20 @@ if (isset($_POST['atualizar'])) {
 			</div>
 
 			<div class="formItem">
-				<label for="selectSexo">Sexo</label>
-				<select class="" name="selectSexo" id="selectSexo">
-					<?php
-					$check = $clienteDAO->getSexoCliente();
-
-					if ($check == 'M') {
-						$optionM = 'selected';
-					} else if ($check == 'F') {
-						$optionF = 'selected';
-					}
-					?>
+				<label for="sexoCliente">Sexo</label>
+				<select class="" name="sexoCliente" id="sexoCliente">
 					<optgroup label="Sexo">
-						<option value="M" <?= $optionM ?? null ?>>M</option>
-						<option value="F" <?= $optionF ?? null ?>>F</option>
+						<?php 
+							$sexo = ['M', 'F'];
+							foreach ($sexo as $s){
+								if($s == $clienteDAO->getSexoCliente()){
+									$select = "selected";
+								}else{
+									$select = "";
+								}
+								echo "<option value='$s' $select>$s</option>";
+							}
+						?>
 					</optgroup>
 				</select>
 			</div>

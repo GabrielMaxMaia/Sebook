@@ -7,15 +7,12 @@ namespace Model;
 //Criamos a herança entre Cliente e ClienteDAO
 class ClienteDAO extends Cliente
 {
-
     //Atributos - serão os comandos SQL  + um objeto Sql
     private static $SELECT_ALL = "select * from cliente where cod_status_cliente = '1'";
 
     private static $SELECT_ID = "select * from cliente where id_usuario = :idUsuario";
 
     private static $INSERT = "INSERT INTO cliente (id_usuario,sexo_cliente,compl_end_cliente,logradouro_cliente,url_foto_cliente,num_compl_cliente,cpf_cliente,cep_cliente,dt_nasc_cliente) VALUES (:idUsuario,:sexoCliente,:complEndCliente,:logradouroCliente,:urlFotoCliente,:numComplCliente,:cpfCliente,:cepCliente,:nascCliente)";
-
-    // private static $INSERT = "INSERT INTO cliente (id_usuario,sexo_cliente,compl_end_cliente,logradouro_cliente,url_foto_cliente,num_compl_cliente,cpf_cliente,cep_cliente,dt_nasc_cliente) VALUES (:id_usuario,:sexo_cliente,:compl_end_cliente,:logradouro_cliente,:url_foto_cliente,:num_compl_cliente,:cpf_cliente,:cep_cliente,:dt_nasc_cliente)";
 
     private static $UPDATE = "UPDATE cliente SET sexo_cliente = :sexoCliente, compl_end_cliente = :complEndCliente, logradouro_cliente = :logradouroCliente, url_foto_cliente = :urlFotoCliente, num_compl_cliente = :numComplCliente, cpf_cliente = :cpfCliente,cep_cliente =:cepCliente, dt_nasc_cliente = :nascCliente
     WHERE id_usuario = :idUsuario";

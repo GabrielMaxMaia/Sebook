@@ -8,6 +8,8 @@ namespace Model;
 class UsuarioDAO extends Usuario
 {
     //Atributos - serão os comandos SQL  + um objeto Sql
+    private static $SELECT_LAST_ID = "SELECT last_insert_id() as last_id FROM db_sebook.usuario limit 0,1";
+
     private static $SELECT_ALL = "select * from usuario where cod_status_Usuario = '1'";
 
     private static $SELECT_PERFIL = "select * from perfil where cod_status_perfil = '1'";
@@ -108,13 +110,19 @@ class UsuarioDAO extends Usuario
                 ':nomeUsuario' => array(0 => $this->getNomeUsuario(), 1 => \PDO::PARAM_STR),
                 ':sobrenomeUsuario' => array(0 => $this->getSobrenomeUsuario(), 1 => \PDO::PARAM_STR),
                 ':emailUsuario' => array(0 => $this->getEmailUsuario(), 1 => \PDO::PARAM_STR),
-                ':senhaUsuario' => array(0 => $this->getSenhaUsuario(), 1 => \PDO::PARAM_STR),
+                ':senhaUsuario' => array(0 => \Util\Bcrypt::hash($this->getSenhaUsuario()), 1 => \PDO::PARAM_STR),
                 ':idPerfil' => array(0 => $this->getIdPerfil(), 1 => \PDO::PARAM_STR),
                 ':dataCriacao' => array(0 => $this->getDataCriacao(), 1 => \PDO::PARAM_STR)
-                
             )
         );
+        //Executar last id 
+        //Usar a clienteDAO para inserir um registro só com id
+        $result_last_id = $this->sql->query(UsuarioDAO::$SELECT_LAST_ID);
+        $usuario = $result_last_id->fetch(\PDO::FETCH_OBJ);
+        $clienteDAO = new ClienteDAO($this->sql, $usuario->last_id, null, null, null, null, null, null, null, null, '1');
+        $clienteDAO->adicionarCliente();
         return $result;
+
     }
 
     public function alterarUsuario()

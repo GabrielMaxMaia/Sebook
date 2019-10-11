@@ -83,7 +83,7 @@ class ClienteController
             $this->clienteDAO->setNascimentoCliente($_POST['nascCliente']);
             $this->clienteDAO->setSexoCliente($_POST['selectSexo']);
             $this->clienteDAO->setCepCliente($_POST['cepCliente']);
-            $this->clienteDAO->setUrlFotoCliente($_POST['urlFotoCliente']);
+            $this->clienteDAO->setUrlFotoCliente($_POST['txtImg']);
             $this->clienteDAO->setNumComplCliente($_POST['numComplCliente']);
             $this->clienteDAO->setLogradouroCliente($_POST['logradouroCliente']);
             $this->clienteDAO->setComplementoCliente($_POST['complEndCliente']);

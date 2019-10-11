@@ -1,6 +1,5 @@
 <?php
 
-
 use Model\UsuarioDAO;
 use Model\ClienteDAO;
 
@@ -9,6 +8,29 @@ $sql = new \Util\Sql($conn);
 //Passa a conexão para o dao
 $usuarioDAO = new UsuarioDAO($sql);
 $clienteDAO = new ClienteDAO($sql);
+
+function evitarReenvio()
+{
+	//verificar se existe uma variavel de sessão para os dados do form
+	if (isset($_SESSION['dadosForm'])) {
+		//conteúdo armazenado sessão diferente do conteúdo atual --> ambos em forma de hash
+		if ($_SESSION['dadosForm'] != md5(implode($_POST))) {   //novo envio             
+			//armazena conteúdo do formulário em forma de hash na varivel de sessao
+			$_SESSION['dadosForm'] = md5(implode($_POST)); // md5 cria um hash de uma string  --> implode converte array para string;
+			//indica que não há reenvio de dados
+			return true;
+		} else { //reenvio
+			//conteúdo armazenado sessão é igual do conteúdo atual --> ambos em forma de hash
+			//não atualizo a sessão
+			return false;
+		}
+	} else {
+		//armazena conteúdo do formulário em forma de hash na varivel de sessao
+		$_SESSION['dadosForm'] = md5(implode($_POST)); // md5 cria um hash de uma string  --> implode converte array para string;
+		//indica que não há reenvio de dados
+		return true;
+	}
+}
 
 if (isset($_POST['enviar'])) {
 
@@ -43,20 +65,22 @@ if (isset($_POST['enviar'])) {
 	}
 
 	if ($erro != true) {
-		$success = true;
+	
 		$usuarioDAO->setIdPerfil(5);
 		$usuarioDAO->setDataCriacao(date('Y-m-d H:i:s'));
-		$usuarioDAO->adicionarUsuario();
-
-		// $clienteDAO->setIdUsuario($usuarioDAO->getIdUsuario());
-		// $clienteDAO->adicionarCliente();
+		if(evitarReenvio()){
+			$success = true;
+			$usuarioDAO->adicionarUsuario();
+		}else{
+			echo "Usuário já cadastrado";
+		}
 	}
 	if(isset($success)){
 		echo "Cadastrado com sucesso";
 	}
 
-	var_dump($usuarioDAO->listarUsuarioId());
 }
+
 ?>
 <section class="cadastro">
 	<div class="container">
