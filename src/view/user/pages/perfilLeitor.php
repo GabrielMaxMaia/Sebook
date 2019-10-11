@@ -133,9 +133,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
 					<div class="modal-body">
 						<form name="mudarSenha" method="post">
 							<label for="senhaAtual">Senha Atual</label>
-							<input type="text" name="senhaAtual" id="senhaAtual">
+							<input type="password" name="senhaAtual" id="senhaAtual">
 							<label for="senhaNova">Nova senha</label>
-							<input type="text" name="senhaNova">
+							<input type="password" name="senhaNova">
 							<input type="submit" name="trocarSenha">
 						</form>
 					</div>
@@ -146,8 +146,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
 			</div>
 		</section>
 		<?php
-		if (isset($_POST['trocarSenha'])) {
-			if ($_POST['senhaAtual'] == $usuarioDAO->getSenhaUsuario()) {
+		if (isset($_POST['senhaNova'])) {
+			$senhaAtual = $_POST['senhaAtual'] ?? null;
+			if (password_verify($senhaAtual,  $usuarioDAO->getSenhaUsuario())) {
 				$usuarioDAO->setSenhaUsuario($_POST['senhaNova']);
 				$usuarioDAO->alterarSenhaUsuario();
 				echo "senha trocada";
@@ -155,8 +156,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
 				echo 'Senha não confere';
 			}
 		}
-		var_dump($usuarioDAO->getSenhaUsuario());
-			var_dump($_POST['senhaAtual']);
 		?>
 	</div>
 </section>
