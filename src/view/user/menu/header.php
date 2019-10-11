@@ -16,11 +16,6 @@
 	</div>
 	<nav class="navDesk">
 		<ul>
-			<!--<li><a href="
-			<?php
-			// echo _URLBASE_ 
-			?>src/view/user/pages/menu/sebos.php">SEBOS</a>
-			</li>-->
 			<li>
 				<a href="<?php echo _URLBASE_ ?>">HOME</a>
 			</li>

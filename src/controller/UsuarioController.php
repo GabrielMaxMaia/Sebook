@@ -98,9 +98,10 @@ class UsuarioController
             $this->usuarioDAO->setNomeUsuario($_POST['nomeUsuario']);
             $this->usuarioDAO->setSobrenomeUsuario($_POST['sobrenomeUsuario']);
             $this->usuarioDAO->setEmailUsuario($_POST['emailUsuario']);
-            $this->usuarioDAO->setSenhaUsuario($_POST['senhaUsuario']);
+            $this->usuarioDAO->setSenhaUsuario(\Util\Bcrypt::hash($_POST['senhaUsuario']));
             $this->usuarioDAO->setIdPerfil($_POST['selecPerfil']);
         }
+        
     }
 
     //$_SESSION ---> array --> indice armazena valores

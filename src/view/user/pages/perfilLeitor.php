@@ -1,14 +1,18 @@
 <?php
 
 use Model\ClienteDAO;
+use Model\UsuarioDAO;
 
 //Pega a conexão
 $objSql = new Util\Sql($conn);
 //Passa a conexão para o dao
 $clienteDAO = new ClienteDAO($objSql);
+$usuarioDAO = new UsuarioDAO($objSql);
 
 //Seta o id para o clinete por meio da sessão do usuário
 $clienteDAO->setIdUsuario($_SESSION['userLogado']['idUsuario']);
+$usuarioDAO->setIdUsuario($_SESSION['userLogado']['idUsuario']);
+
 //Seta os valores para o dao
 $result = $clienteDAO->listarClienteId();
 $clienteDAO->setSexoCliente($result['sexoCliente']);
@@ -19,20 +23,22 @@ $clienteDAO->setCpfCliente($result['cpfCliente']);
 $clienteDAO->setCepCliente($result['cepCliente']);
 $clienteDAO->setNascimentoCliente($result['nascCliente']);
 
+//Retorna a que tem no usuarioDao
+$resultUsuario = $usuarioDAO->listarUsuarioId();
+$usuarioDAO->setSenhaUsuario($resultUsuario['senhaUsuario']);
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	$clienteDAO->setNumComplCliente($_POST['numComplCliente']);
 	$clienteDAO->setSexoCliente($_POST['sexoCliente']);
 	$clienteDAO->setComplementoCliente($_POST['complEndCliente']);
 	$clienteDAO->setLogradouroCliente($_POST['logradouroCliente']);
-    $clienteDAO->setCpfCliente($_POST['cpfCliente']);
+	$clienteDAO->setCpfCliente($_POST['cpfCliente']);
 	$clienteDAO->setCepCliente($_POST['cepCliente']);
 	$clienteDAO->setNascimentoCliente($_POST['nascCliente']);
 
 	$clienteDAO->alterarCliente();
-	// $clienteDAO->adicionarCliente();
-	//echo "Dados atualizados";
-	header("Location:". _URLBASE_ . "area/user/pages/perfilLeitor");
+	header("Location:" . _URLBASE_ . "area/user/pages/perfilLeitor");
 }
 
 ?>
@@ -45,23 +51,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 			<div class="formItem">
 				<label for="nascCliente">Data de Nascimento</label>
-				<input type="text" name="nascCliente" id="nascCliente" value="<?= $clienteDAO->getNascimentoCliente() ?> ">
+				<?php
+				$date = date_create($clienteDAO->getNascimentoCliente());
+				$newDate = date_format($date, "d/m/Y");
+				?>
+				<input type="text" name="nascCliente" id="nascCliente" value="<?=
+																					trim($newDate) ?> ">
 			</div>
 
 			<div class="formItem">
 				<label for="sexoCliente">Sexo</label>
 				<select class="" name="sexoCliente" id="sexoCliente">
 					<optgroup label="Sexo">
-						<?php 
-							$sexo = ['M', 'F'];
-							foreach ($sexo as $s){
-								if($s == $clienteDAO->getSexoCliente()){
-									$select = "selected";
-								}else{
-									$select = "";
-								}
-								echo "<option value='$s' $select>$s</option>";
+						<?php
+						$sexo = ['M', 'F'];
+						foreach ($sexo as $s) {
+							if ($s == $clienteDAO->getSexoCliente()) {
+								$select = "selected";
+							} else {
+								$select = "";
 							}
+							echo "<option value='$s' $select>$s</option>";
+						}
 						?>
 					</optgroup>
 				</select>
@@ -106,5 +117,44 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 			<input type="submit" name="atualizar" value="Atualizar">
 		</form>
+
+
+
+		<!--Modal-->
+		<label class="btn-modal-cadastre" for="modal-cadastre">Trocar senha?</label>
+		<section class="modal">
+			<input class="modal-open" id="modal-cadastre" type="checkbox" hidden>
+			<div class="modal-wrap" aria-hidden="true" role="dialog">
+				<label class="modal-overlay" for="modal-cadastre"></label>
+				<div class="modal-dialog">
+					<div class="modal-header">
+						<h2>Mudar sua senha</h2>
+						<label class="btn-close" for="modal-cadastre" aria-hidden="true">×</label>
+					</div>
+					<div class="modal-body">
+						<form name="mudarSenha" method="post">
+							<label for="senhaAtual">Senha Atual</label>
+							<input type="text" name="senhaAtual" id="senhaAtual">
+							<label for="senhaNova">Nova senha</label>
+							<input type="text" name="senhaNova">
+							<input type="submit">
+						</form>
+					</div>
+					<div class="modal-footer">
+						<label class="btn btn-primary" for="modal-cadastre">Fechar</label>
+					</div>
+				</div>
+			</div>
+		</section>
+		<?php
+		if (isset($_POST['mudarSenha'])) {
+			if ($_POST['senhaAtual'] == $usuarioDAO->getSenhaUsuario()) {
+				$usuarioDAO->setSenhaUsuario($_POST['senhaNova']);
+				$usuarioDAO->alterarUsuario();
+			} else {
+				echo 'Senha não confere';
+			}
+		}
+		var_dump($usuarioDAO->getSenhaUsuario()) ?>
 	</div>
 </section>

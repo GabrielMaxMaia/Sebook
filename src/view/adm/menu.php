@@ -2,6 +2,7 @@
 	<h4>Bem vindo, <?= $_SESSION['userLogado']['nome']; ?></h4>
 	<h4>Gerenciamento</h4>
 	<ul class="vertical-menu">
+		<li><a href="<?php echo _URLBASE_ ?>">Home</a></li>
 		<li>
 			<a href="<?php echo _URLBASE_ ?>area/adm/cadastro/cadPostagem">Postagem</a>
 		</li>

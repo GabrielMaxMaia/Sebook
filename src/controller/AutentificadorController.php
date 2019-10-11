@@ -92,14 +92,16 @@ class AutentificadorController
         } else {
          
             if ($_SESSION['userLogado']['acesso'] <= 3) {
-                $perfil = "http://localhost/sebook/area/adm";
-            } else {
-                $perfil = "#usuarioComum";
+                $adm = "http://localhost/sebook/area/adm";
             }
-            echo "<a class='perfil' href='{$perfil}'>
-            <b>" . $_SESSION['userLogado']['nome'] . "</b></a>";
+            $perfil = "http://localhost/sebook/area/user/pages/perfilLeitor";
+            echo "<b> Bem vindo " . $_SESSION['userLogado']['nome'] . "</b></a>";
+            echo "<a class='pefil' href='{$perfil}'>Editar Perfil</a>";
+            if(isset($adm)){
+                echo "<a class='pefil' href='{$adm}'>Adm</a>";
+            }
             echo "<a href='". _URLBASE_ . "area/adm/sair'>Sair</a>";
-
+          
         }
     }
 

@@ -104,9 +104,10 @@ class ClienteDAO extends Cliente
                 ':numComplCliente' => array(0 => $this->getNumComplCliente(), 1 => \PDO::PARAM_STR),
                 ':cpfCliente' => array(0 => $this->getCpfCliente(), 1 => \PDO::PARAM_STR),
                 ':cepCliente' => array(0 => $this->getCepCliente(), 1 => \PDO::PARAM_STR),
-                ':nascCliente' => array(0 => $this->getNascimentoCliente(), 1 => \PDO::PARAM_STR)
+                ':nascCliente' => array(0 => date_format(date_create($this->getNascimentoCliente()),"Y-m-d"), 1 => \PDO::PARAM_STR)    
             )
         );
+        var_dump($result);
         return $result;
         // ':url_foto_cliente' => array(0 => $this->getUrlFotoCliente(), 1 => \PDO::PARAM_STR),
     }
