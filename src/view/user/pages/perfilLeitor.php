@@ -41,13 +41,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
 	$clienteDAO->setLogradouroCliente($_POST['logradouroCliente']);
 	$clienteDAO->setCpfCliente($_POST['cpfCliente']);
 	$clienteDAO->setCepCliente($_POST['cepCliente']);
+	$clienteDAO->setUrlFotoCliente($_POST['urlFotoCliente']);
 
 
-	$date = date_create(str_replace('/', '-',$_POST['nascCliente']));
+	$date = date_create(str_replace('/', '-', $_POST['nascCliente']));
 	$newDate = date_format($date, "Y-m-d");
 	$clienteDAO->setNascimentoCliente($newDate);
 
-	
+
 	$clienteDAO->setUrlFotoCliente($_POST['urlFotoCliente']);
 
 	if (isset($_POST['nomeUsuario']) || isset($_POST['sobrenomeUsuario']) || isset($_POST['emailUsuario'])) {
@@ -66,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
 <!-- Perfil -->
 <section class="cadastro">
 	<div class="container">
-		<form action="" method="post" >
+		<form action="" method="post">
 
 			<input type="hidden" name="idUsuario" id="idUsuario" value="<?= $clienteDAO->getIdUsuario() ?>">
 
@@ -91,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
 				$date = date_create($clienteDAO->getNascimentoCliente());
 				$newDate = date_format($date, "d/m/Y");
 				?>
-				<input type="text" name="nascCliente" id="nascCliente" value="<?=trim($newDate) ?> ">
+				<input type="text" name="nascCliente" id="nascCliente" value="<?= trim($newDate) ?> ">
 			</div>
 
 			<div class="formItem">
@@ -158,56 +159,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
 
 		<!--Formulário de foto-->
 		<div class="img">
-			<form action="<?= _URLBASE_ ?>src/view/adm/cadastro/cadUpload.php" method='post' enctype='multipart/form-data' target='ifrmUpload' name="urlFotoCliente">
+			<form action="<?= _URLBASE_ ?>src/view/user/pages/cadUpload.php" method='post' enctype='multipart/form-data' target='ifrmUpload' name="urlFotoCliente">
+
 				<input type="file" name="urlFotoCliente">
-				<!-- <input type="file" name="arqImagem"> -->
+				
 				<input class="button" type="submit" value="Carregar">
 			</form>
 			<iframe id="ifrmUpload" name="ifrmUpload" src="" frameborder="0"></iframe>
 		</div>
 		<div class="imgCadastro">
 			<picture>
-				<img id="imgAvatar" src="<?= "http://localhost/sebook/" . $clienteDAO->getUrlFotoCliente()  ?>" alt="Avatar" class="avatar">
+				<img id="imgAvatar" src="<?= "http://localhost/sebook/" . $clienteDAO->getUrlFotoCliente() ?>" alt="Avatar" class="avatar">
 			</picture>
 		</div>
 
-		<!--Modal-->
-		<label class="btn-modal-cadastre" for="modal-cadastre">Trocar senha?</label>
-		<section class="modal">
-			<input class="modal-open" id="modal-cadastre" type="checkbox" hidden>
-			<div class="modal-wrap" aria-hidden="true" role="dialog">
-				<label class="modal-overlay" for="modal-cadastre"></label>
-				<div class="modal-dialog">
-					<div class="modal-header">
-						<h2>Mudar sua senha</h2>
-						<label class="btn-close" for="modal-cadastre" aria-hidden="true">×</label>
-					</div>
-					<div class="modal-body">
-						<form name="mudarSenha" method="post">
-							<label for="senhaAtual">Senha Atual</label>
-							<input type="password" name="senhaAtual" id="senhaAtual">
-							<label for="senhaNova">Nova senha</label>
-							<input type="password" name="senhaNova">
-							<input type="submit" name="trocarSenha">
-						</form>
-					</div>
-					<div class="modal-footer">
-						<label class="btn btn-primary" for="modal-cadastre">Fechar</label>
-					</div>
-				</div>
-			</div>
-		</section>
 		<?php
-		if (isset($_POST['senhaNova'])) {
-			$senhaAtual = $_POST['senhaAtual'] ?? null;
-			if (password_verify($senhaAtual,  $usuarioDAO->getSenhaUsuario())) {
-				$usuarioDAO->setSenhaUsuario($_POST['senhaNova']);
-				$usuarioDAO->alterarSenhaUsuario();
-				echo "senha trocada";
-			} else {
-				echo 'Senha não confere';
-			}
-		}
+			//Chama estrutura para trocar senha
+			include "includes/trocarSenha.php"
 		?>
 	</div>
 </section>

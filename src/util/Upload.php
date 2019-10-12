@@ -3,9 +3,10 @@
 namespace Util;
 
 
-class Upload{
+class Upload
+{
 
-//atributos 
+    //atributos 
 
     private $listaPermitidos;
     private $caminhoArmazenamento;
@@ -15,61 +16,68 @@ class Upload{
     public function __construct($lista, $caminho)
     {
         $this->listaPermitidos = $lista;
-        $this->caminhoArmazenamento = $caminho;   
+        $this->caminhoArmazenamento = $caminho;
     }
 
-    public function recuperarDados($inputFiles){
+    public function recuperarDados($inputFiles)
+    {
         // recurerando os dados do upload e validando o valor 
         // do atributo error
-        if( $_SERVER['REQUEST_METHOD'] == "POST"){
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $this->arqUpload = isset($_FILES[$inputFiles]) ? $_FILES[$inputFiles] : null;
-            if($this->arqUpload != null){
-                if($this->arqUpload["error"] > 0){
+            if ($this->arqUpload != null) {
+                if ($this->arqUpload["error"] > 0) {
                     return $this->arqUpload["error"];
-                }else{
+                } else {
                     return true;
                 }
-            }else{
+            } else {
                 return null;
             }
-        }else{
+        } else {
             return null;
         }
-
     }
 
-    public function realizarUpload($inputFiles){
+    public function realizarUpload($inputFiles)
+    {
         //executando a função para recuperar os dados do upload
         $result = $this->recuperarDados($inputFiles);
 
-        if($result == true){
+        if ($result == true) {
             //recuperar o caminho absoluto do projeto
             $caminho = getcwd();
             var_dump($caminho);
             //adicionando o caminho para salvar o arquivo
 
-            $caminho = str_replace('\src\view\adm\cadastro', '', $caminho);
+            if ($caminho == '\src\view\adm\cadastro') {
+                $caminho = str_replace('\src\view\adm\cadastro', '', $caminho);
+            }else {
+                $caminho = str_replace('\src\view\user\pages', '', $caminho);
+            }
+
+
             $caminho .= $this->caminhoArmazenamento; //no formato "/pasta/"
             //adicionar o nome do arquivo;
             $caminho .= $this->arqUpload["name"];
-      
+
             //verificando se já existe um arquivo com este nome
-            if(! file_exists($caminho)){            
-                if(in_array($this->arqUpload['type'], $this->listaPermitidos)){
-                //Efetuando o upload - mover o arquivo da pasta temporária
-                // para a pasta de destino
-                    if(move_uploaded_file($this->arqUpload["tmp_name"], $caminho)){
-                        return true;   
-                    }else{
-                        return 10; 
+            if (!file_exists($caminho)) {
+                if (in_array($this->arqUpload['type'], $this->listaPermitidos)) {
+                    //Efetuando o upload - mover o arquivo da pasta temporária
+                    // para a pasta de destino
+                    if (move_uploaded_file($this->arqUpload["tmp_name"], $caminho)) {
+                        return true;
+                    } else {
+                        return 10;
                     }
-                }else{
+                } else {
                     return 11;
                 }
-            }else{
+            } else {
                 return 9;
             }
-        }else{
+        } else {
             return $result;
         }
     }
@@ -78,7 +86,7 @@ class Upload{
     {
         return $this->arqUpload;
     }
- 
+
     public function setArqUpload($arqUpload)
     {
         $this->arqUpload = $arqUpload;

@@ -2,15 +2,8 @@
 
 use Controller\ClienteController;
 
-
 $objSql = new Util\Sql($conn);
 $clienteController = new Controller\ClienteController($objSql);
-
-// $clienteController->getClienteDAO()->setUrlFotoCliente($_POST['urlFotoCliente']);
-
-if($_POST){
-	// $clienteController->getClienteDAO()->setUrlFotoCliente($arq["name"]);
-}
 
 // var_dump($_POST);
 $clienteController->gravarAlterar();
@@ -101,8 +94,9 @@ $clienteController->gravarAlterar();
 
 	<div class="img">
 		<form action="<?= _URLBASE_ ?>src/view/adm/cadastro/cadUpload.php" method='post' enctype='multipart/form-data' target='ifrmUpload' name="urlFotoCliente">
+
 			<input type="file" name="urlFotoCliente">
-			<!-- <input type="file" name="arqImagem"> -->
+
 			<input class="button" type="submit" value="Carregar">
 		</form>
 		<iframe id="ifrmUpload" name="ifrmUpload" src="" frameborder="0"></iframe>
@@ -112,7 +106,7 @@ $clienteController->gravarAlterar();
 			<img id="imgAvatar" src="<?= "http://localhost/sebook/" . $clienteController->getClienteDAO()->getUrlFotoCliente()  ?>" alt="Avatar" class="avatar">
 		</picture>
 
-		
+
 	</div>
 
 	<br>
