@@ -12,7 +12,6 @@
 		$autenticadorController->efetuarLogOut();
 
 		?>
-
 	</div>
 	<nav class="navDesk">
 		<ul>

@@ -111,6 +111,8 @@ $clienteController->gravarAlterar();
 		<picture>
 			<img id="imgAvatar" src="<?= "http://localhost/sebook/" . $clienteController->getClienteDAO()->getUrlFotoCliente()  ?>" alt="Avatar" class="avatar">
 		</picture>
+
+		
 	</div>
 
 	<br>

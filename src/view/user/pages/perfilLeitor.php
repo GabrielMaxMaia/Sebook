@@ -32,6 +32,7 @@ $usuarioDAO->setNomeUsuario(($resultUsuario['nomeUsuario']));
 $usuarioDAO->setSobrenomeUsuario($resultUsuario['sobrenomeUsuario']);
 $usuarioDAO->setEmailUsuario($resultUsuario['emailUsuario']);
 
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
 
 	$clienteDAO->setNumComplCliente($_POST['numComplCliente']);
@@ -40,10 +41,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
 	$clienteDAO->setLogradouroCliente($_POST['logradouroCliente']);
 	$clienteDAO->setCpfCliente($_POST['cpfCliente']);
 	$clienteDAO->setCepCliente($_POST['cepCliente']);
-	$clienteDAO->setNascimentoCliente($_POST['nascCliente']);
+
+
+	$date = date_create(str_replace('/', '-',$_POST['nascCliente']));
+	$newDate = date_format($date, "Y-m-d");
+	$clienteDAO->setNascimentoCliente($newDate);
+
+	
 	$clienteDAO->setUrlFotoCliente($_POST['urlFotoCliente']);
 
 	if (isset($_POST['nomeUsuario']) || isset($_POST['sobrenomeUsuario']) || isset($_POST['emailUsuario'])) {
+
 		$usuarioDAO->setNomeUsuario($_POST['nomeUsuario']);
 		$usuarioDAO->setSobrenomeUsuario($_POST['sobrenomeUsuario']);
 		$usuarioDAO->setEmailUsuario($_POST['emailUsuario']);
@@ -52,14 +60,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
 	}
 
 	$clienteDAO->alterarCliente();
-	header("Location:" . _URLBASE_ . "area/user/pages/perfilLeitor");
 }
 
 ?>
 <!-- Perfil -->
 <section class="cadastro">
 	<div class="container">
-		<form action="" method="post" name="atualizarCampos">
+		<form action="" method="post" >
 
 			<input type="hidden" name="idUsuario" id="idUsuario" value="<?= $clienteDAO->getIdUsuario() ?>">
 
@@ -84,8 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
 				$date = date_create($clienteDAO->getNascimentoCliente());
 				$newDate = date_format($date, "d/m/Y");
 				?>
-				<input type="text" name="nascCliente" id="nascCliente" value="<?=
-																					trim($newDate) ?> ">
+				<input type="text" name="nascCliente" id="nascCliente" value="<?=trim($newDate) ?> ">
 			</div>
 
 			<div class="formItem">
