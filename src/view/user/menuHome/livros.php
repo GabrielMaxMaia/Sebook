@@ -5,7 +5,7 @@
             <div class="search-box">
                 <input class="search-txt" type="text" name="" placeholder="Pesquise ...">
                 <a class="search-btn" href="#">
-                <img src="<?= _ICONBASE_ ?>buscaSVG.svg" alt="">
+                <img src="<?= _ICONBASE_ ?>busca.svg" alt="">
                 </a>
              </div>
             <div class="estante-slider">
