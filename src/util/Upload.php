@@ -47,12 +47,12 @@ class Upload
         if ($result == true) {
             //recuperar o caminho absoluto do projeto
             $caminho = getcwd();
-            var_dump($caminho);
+            //var_dump($caminho);
             //adicionando o caminho para salvar o arquivo
 
             if ($caminho == '\src\view\adm\cadastro') {
                 $caminho = str_replace('\src\view\adm\cadastro', '', $caminho);
-            }else {
+            } else {
                 $caminho = str_replace('\src\view\user\pages', '', $caminho);
             }
 
@@ -75,6 +75,9 @@ class Upload
                     return 11;
                 }
             } else {
+                if (file_exists($caminho)) {
+                    unlink($caminho);
+                }
                 return 9;
             }
         } else {

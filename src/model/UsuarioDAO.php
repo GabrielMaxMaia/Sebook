@@ -123,8 +123,19 @@ class UsuarioDAO extends Usuario
         //Usar a clienteDAO para inserir um registro só com id
         $result_last_id = $this->sql->query(UsuarioDAO::$SELECT_LAST_ID);
         $usuario = $result_last_id->fetch(\PDO::FETCH_OBJ);
-        $clienteDAO = new ClienteDAO($this->sql, $usuario->last_id, null, null, null, null, null, null, null, null, '1');
-        $clienteDAO->adicionarCliente();
+        
+
+        if($this->getIdPerfil() != 5){
+            $clienteDAO = new ClienteDAO($this->sql, $usuario->last_id, null, null, null, null, null, null, null, null, '1');
+
+            $clienteDAO->adicionarCliente();
+        }else{
+            $seboDAO = new SeboDAO($this->sql, $usuario->last_id, null, null, null, null, null, null, null, null, null, null, null, null, null, '1');
+
+            $seboDAO->adicionarSebo();
+        }
+
+        
         return $result;
     }
 

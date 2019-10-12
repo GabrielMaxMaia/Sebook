@@ -13,11 +13,9 @@ class SeboDAO extends Sebo
 
     private static $SELECT_ID = "select * from sebo where id_usuario = :idUsuario";
 
-    // private static $INSERT = "INSERT INTO sebo (razao_sebo, nome_fantasia, cnpj_sebo, url_foto_sebo, num_end_sebo,compl_end_sebo, logradouro_sebo, cep_end_sebo,num_tel_sebo, celular_1_sebo, celular_2_sebo,insc_estadual_sebo, url_site_sebo,cod_status_sebo) VALUES
-    // (razao_sebo, nome_fantasia, cnpj_sebo,url_foto_sebo, num_end_sebo, compl_end_sebo,logradouro_sebo, cep_end_sebo, num_tel_sebo,celular_1_sebo, celular_2_sebo, insc_estadual_sebo, url_site_sebo)";
+    private static $INSERT = "INSERT INTO sebo (id_usuario, razao_sebo, nome_fantasia, cnpj_sebo, url_foto_sebo, num_end_sebo,compl_end_sebo, logradouro_sebo, cep_end_sebo,num_tel_sebo, celular_1_sebo, celular_2_sebo,insc_estadual_sebo, url_site_sebo) VALUES (:idUsuario, :razaoSebo, :nomeFantasia, :cnpjSebo, :urlFotoSebo, :numEndSebo, :complEndSebo,:logradouroSebo, :cepEndSebo, :numTelSebo,celular1Sebo, celular2Sebo, :inscEstadualSebo, urlSiteSebo)";
 
-    private static $INSERT = "INSERT INTO sebo (razao_sebo) VALUES (:razaoSebo)";
-
+    //private static $INSERT = "INSERT INTO sebo (razao_sebo) VALUES (:razaoSebo)";
 
     private static $UPDATE = "UPDATE sebo SET
     razao_sebo = :razaoSebo WHERE id_usuario = :idUsuario";
@@ -98,7 +96,20 @@ class SeboDAO extends Sebo
         $result = $this->sql->execute(
             SeboDAO::$INSERT,
             array(
-                ':razaoSebo' => array(0 => $this->getRazaoSebo(), 1 => \PDO::PARAM_STR)
+                ':idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT),
+                ':razaoSebo' => array(0 => $this->getRazaoSebo(), 1 => \PDO::PARAM_STR),
+                ':nomeFantasia' => array(0 => $this->getNomeFantasia(), 1 => \PDO::PARAM_STR),
+                ':cnpjSebo' => array(0 => $this->getCnpjSebo(), 1 => \PDO::PARAM_STR),
+                ':urlFotoSebo' => array(0 => $this->getUrlFotoSebo(), 1 => \PDO::PARAM_STR),
+                ':numEndSebo' => array(0 => $this->getNumEndSebo(), 1 => \PDO::PARAM_STR),
+                ':complEndSebo' => array(0 => $this->getComplEndSebo(), 1 => \PDO::PARAM_STR),
+                ':logradouroSebo' => array(0 => $this->getLogradouroSebo(), 1 => \PDO::PARAM_STR),
+                ':cepEndSebo' => array(0 => $this->getCepEndSebo(), 1 => \PDO::PARAM_STR),
+                ':numTelSebo' => array(0 => $this->getNumTelSebo(), 1 => \PDO::PARAM_STR),
+                ':celular1Sebo' => array(0 => $this->getCelular1Sebo(), 1 => \PDO::PARAM_STR),
+                ':celular2Sebo' => array(0 => $this->getCelular2Sebo(), 1 => \PDO::PARAM_STR),
+                ':inscEstadualSebo' => array(0 => $this->getInscEstadualSebo(), 1 => \PDO::PARAM_STR),
+                ':urlSiteSebo' => array(0 => $this->getUrlSiteSebo(), 1 => \PDO::PARAM_STR)
             )
         );
         return $result;

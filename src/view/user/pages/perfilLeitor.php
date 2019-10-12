@@ -41,15 +41,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
 	$clienteDAO->setLogradouroCliente($_POST['logradouroCliente']);
 	$clienteDAO->setCpfCliente($_POST['cpfCliente']);
 	$clienteDAO->setCepCliente($_POST['cepCliente']);
-	$clienteDAO->setUrlFotoCliente($_POST['urlFotoCliente']);
-
+	// $clienteDAO->setUrlFotoCliente($_POST['urlFotoCliente']);
+	$clienteDAO->setUrlFotoCliente($_POST['txtImg']);
 
 	$date = date_create(str_replace('/', '-', $_POST['nascCliente']));
 	$newDate = date_format($date, "Y-m-d");
 	$clienteDAO->setNascimentoCliente($newDate);
-
-
-	$clienteDAO->setUrlFotoCliente($_POST['urlFotoCliente']);
 
 	if (isset($_POST['nomeUsuario']) || isset($_POST['sobrenomeUsuario']) || isset($_POST['emailUsuario'])) {
 
@@ -68,6 +65,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
 <section class="cadastro">
 	<div class="container">
 		<form action="" method="post">
+
+			<!--Foto campo escondifo-->
+			<!-- <input type="hidden" name="urlFotoCliente" id="urlFotoCliente" value="<?//= $clienteDAO->getUrlFotoCliente() ?>"> -->
+
+			<input type="hidden" name="txtImg" id="txtImg" value="<?= $clienteDAO->getUrlFotoCliente() ?>">
 
 			<input type="hidden" name="idUsuario" id="idUsuario" value="<?= $clienteDAO->getIdUsuario() ?>">
 
@@ -151,27 +153,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
 				<input type="text" name="complEndCliente" id="complEndCliente" value="<?= $clienteDAO->getComplementoCliente() ?>">
 			</div>
 
-			<!--Foto campo escondifo-->
-			<input type="hidden" name="urlFotoCliente" id="urlFotoCliente" value="<?= $clienteDAO->getUrlFotoCliente() ?>">
-
+			
 			<input type="submit" name="atualizar" value="Atualizar">
 		</form>
 
-		<!--Formulário de foto-->
-		<div class="img">
-			<form action="<?= _URLBASE_ ?>src/view/user/pages/cadUpload.php" method='post' enctype='multipart/form-data' target='ifrmUpload' name="urlFotoCliente">
-
-				<input type="file" name="urlFotoCliente">
-				
-				<input class="button" type="submit" value="Carregar">
-			</form>
-			<iframe id="ifrmUpload" name="ifrmUpload" src="" frameborder="0"></iframe>
-		</div>
-		<div class="imgCadastro">
-			<picture>
-				<img id="imgAvatar" src="<?= "http://localhost/sebook/" . $clienteDAO->getUrlFotoCliente() ?>" alt="Avatar" class="avatar">
-			</picture>
-		</div>
+		<?php
+			//Chama estrutura para formulário de img 
+			include "includes/formImg.php";
+		?>
 
 		<?php
 			//Chama estrutura para trocar senha

@@ -94,8 +94,20 @@ class SeboController
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-            $this->seboDAO->setIdUsuario($_POST['txtId']);
-            $this->seboDAO->setRazaoSebo($_POST['txtNome']);
+            $this->seboDAO->setIdUsuario($_POST['idUsuario']);
+            $this->seboDAO->setRazaoSebo($_POST['razaoSebo']);
+            $this->seboDAO->setNomeFantasia($_POST['nomeFantasia']);
+            $this->seboDAO->setCnpjSebo($_POST['cnpjSebo']);
+            $this->seboDAO->setUrlFotoSebo($_POST['urlFotoSebo']);
+            $this->seboDAO->setNumEndSebo($_POST['numEndSebo']);
+            $this->seboDAO->setComplEndSebo($_POST['complEndSebo']);
+            $this->seboDAO->setLogradouroSebo($_POST['logradouroSebo']);
+            $this->seboDAO->setCepEndSebo($_POST['cepEndSebo']);
+            $this->seboDAO->setNumTelSebo($_POST['numTelSebo']);
+            $this->seboDAO->setCelular1Sebo($_POST['celular1Sebo']);
+            $this->seboDAO->setCelular2Sebo($_POST['celular2Sebo']);
+            $this->seboDAO->setInscEstadualSebo($_POST['inscEstadualSebo']);
+            $this->seboDAO->setUrlSiteSebo($_POST['urlSiteSebo']);
         }
     }
 
