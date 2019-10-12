@@ -1557,28 +1557,23 @@ form select {
 .Social-Bar {
     position: fixed;
     right: 0;
-    top: 60%;
-    font-size: 1.5rem;
+    top: 40%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     z-index: 100
 }
+
 @media (min-width:420px){
     .Social-Bar{
         right:18px;
     }
 }
 
-.Social-Bar 
-
 .icon {
-    color: white;
-    text-decoration: none;
     padding: .5rem;
-    display: flex;
-    transition: all ease-in-out .5s;
-    margin: .025rem 0
+    transition: all ease-in-out .4s;
+    width: 60px;
 }
 
 .icon-facebook {
@@ -1602,8 +1597,9 @@ form select {
 }
 
 .icon:hover {
+    width:100px;
     padding-right: 3rem;
-    border-radius: .5rem 0 0 1rem;
+    border-radius: 1rem 0 0 1rem;
 }
 
 /*=====================AREA DO RODAPE===============*/
