@@ -93,7 +93,7 @@ class AutentificadorController
         
         if ($sessao == null) {
             echo "<a class='perfil' href='" . _URLBASE_ . "area/user/login/logar'>
-                <img src='" . _ICONBASE_ . "user.png' alt='Perfil' title='Perfil'>
+                <img src='" . _ICONBASE_ . "user.svg' alt='Perfil' title='Perfil'>
             </a>";
         } else {
          
