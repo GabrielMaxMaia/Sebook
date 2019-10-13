@@ -1,17 +1,3 @@
-<?php
-ob_start();
-if (isset($_GET['page']) && $_GET['page'] != "") {
-    $page = $_GET['page'];
-    if (isset($_GET['pasta']) && $_GET['pasta'] != "") {
-        $pasta = $_GET['pasta'];
-        require_once "./src/view/admin/$pasta/$page.php";
-    }
-} else {
-    require_once "./src/view/admin/pages/apagar.php";
-}
-$output = ob_get_clean();
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -24,10 +10,29 @@ $output = ob_get_clean();
 </head>
 
 <body>
+    <?php
+        $sql = new \Util\Sql($conn);
+
+        $autenticadorController = new \Controller\AutentificadorController($sql);
+
+        // $autenticadorController->validarAcesso('http://localhost/sebook/area/adm',array(0=>1, 1=>2, 1=>3));
+        //$autenticadorController->validarAcesso('http://localhost/sebook/',array(0=>1, 1=>2, 1=>3));
+
+        $autenticadorController->efetuarLogin();
+        $autenticadorController->efetuarLogOut();
+    ?>
+    <header>
+        <div class="menuGroup">
+            <a class="logo" href="<?php echo _URLBASEADM_ ?>">
+                <img src="<?php echo _IMGBASE_ ?>logoSebookCor.png" alt="SebooK">
+            </a>
+        </div>
+        <div id=divisor></div>
+    </header>
     <?php require_once 'headerAdm.php'; ?>
     <article>
         <section>
-            <?= $output ?>
+            
         </section>
     </article>
 </body>

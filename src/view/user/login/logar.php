@@ -20,7 +20,7 @@ div#containerTemplate{
 
     $autenticadorController = new \Controller\AutentificadorController($sql);
 
-   // $autenticadorController->validarAcesso('http://localhost/Sebook/area/adm',array(0=>1, 1=>2));
+   // $autenticadorController->validarAcesso('http://localhost/sebook/area/adm',array(0=>1, 1=>2));
 
     $autenticadorController->efetuarLogin();
     $autenticadorController->efetuarLogOut();

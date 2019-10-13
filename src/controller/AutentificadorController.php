@@ -34,7 +34,7 @@ class AutentificadorController
                 } else if ($resultado == null) {
                     //email inválido
                     // echo "<script>alert('Senha ou e-mail inválidos (Null)')</script>";
-                    echo "email inválido";
+                    echo "Email inválido";
                 } else {
 
                     $_SESSION['userLogado']['nome'] = $resultado['nomeUsuario'];
@@ -46,10 +46,10 @@ class AutentificadorController
                         // header("Location: ");
 
                         echo "ADM";
-                        header("location:http://localhost/Sebook/area/adm");
+                        header("location:http://localhost/sebook/area/adm");
                     } else {
                         echo "Login usuário";
-                        header("location:http://localhost/Sebook/area/user");
+                        header("location:http://localhost/sebook/area/user");
                     }
 
                     // var_dump($_SESSION['userLogdao']['acesso']);
