@@ -34,10 +34,6 @@ $clienteController->gravarAlterar();
 	<form method="post" action="">
 		<h4 class="cadCat">Cadastro de clientes</h4>
 
-		<!-- <input type="hidden" name="idUsuario" id="idUsuario" value="<?php //echo $clienteController->getClienteDAO()->getIdUsuario(); 
-																			?>"> -->
-
-		<!-- Esse campo deve ficar escondido posteriormente -->
 		<input type="text" name="idUsuario" id="idUsuario" value="<?php echo $clienteController->getClienteDAO()->getIdUsuario(); ?>">
 
 		<label>Id</label>
@@ -93,7 +89,7 @@ $clienteController->gravarAlterar();
 	</form>
 
 	<div class="img">
-		<form action="<?= _URLBASE_ ?>src/view/adm/cadastro/cadUpload.php" method='post' enctype='multipart/form-data' target='ifrmUpload' name="urlFotoCliente">
+		<form action="<?= _URLBASE_ ?>src/view/adm/cadastro/uploadAdm/clientePerfilUpload.php" method='post' enctype='multipart/form-data' target='ifrmUpload' name="urlFotoCliente">
 
 			<input type="file" name="urlFotoCliente">
 
@@ -105,8 +101,6 @@ $clienteController->gravarAlterar();
 		<picture>
 			<img id="imgAvatar" src="<?= "http://localhost/sebook/" . $clienteController->getClienteDAO()->getUrlFotoCliente()  ?>" alt="Avatar" class="avatar">
 		</picture>
-
-
 	</div>
 
 	<br>

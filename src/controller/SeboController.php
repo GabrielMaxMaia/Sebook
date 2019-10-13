@@ -165,6 +165,18 @@ class SeboController
             $this->seboDAO->setIdUsuario($_GET['id']);
             $sebo = $this->seboDAO->listarSeboId();
             $this->seboDAO->setRazaoSebo($sebo['razaoSebo']);
+            $this->seboDAO->setNomeFantasia($sebo['nomeFantasia']);
+            $this->seboDAO->setCnpjSebo($sebo['cnpjSebo']);
+            $this->seboDAO->setUrlFotoSebo($sebo['urlFotoSebo']);
+            $this->seboDAO->setNumEndSebo($sebo['numEndSebo']);
+            $this->seboDAO->setComplEndSebo($sebo['complEndSebo']);
+            $this->seboDAO->setLogradouroSebo($sebo['logradouroSebo']);
+            $this->seboDAO->setCepEndSebo($sebo['cepEndSebo']);
+            $this->seboDAO->setNumTelSebo($sebo['numTelSebo']);
+            $this->seboDAO->setCelular1Sebo($sebo['celular1Sebo']);
+            $this->seboDAO->setCelular2Sebo($sebo['celular2Sebo']);
+            $this->seboDAO->setInscEstadualSebo($sebo['inscEstadualSebo']);
+            $this->seboDAO->setUrlSiteSebo($sebo['urlSiteSebo']);
 
         }
     }

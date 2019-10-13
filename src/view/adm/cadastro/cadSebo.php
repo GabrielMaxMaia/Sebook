@@ -37,46 +37,98 @@ $SeboController->gravarAlterar();
 		<label>Id</label>
 		<input type="text" name="idUsuario" id="idUsuario" value="<?= $SeboController->getseboDAO()->getIdUsuario() ?>">
 
+		<br>
+
 		<label>Razão Sebo</label>
 		<input class="grande" type="text" name="razaoSebo" value="<?php echo $SeboController->getSeboDAO()->getRazaoSebo(); ?>">
+
+		<br>
 
 		<label>Nome Fantasia</label>
 		<input class="grande" type="text" name="nomeFantasia" value="<?php echo $SeboController->getSeboDAO()->getRazaoSebo(); ?>">
 
-		<input class="grande" type="text" name="cnpjSebo" value="<?= $SeboController->getSeboDAO()->getCnpjSebo() ?>">
-		
-		<input class="grande" type="text" name="urlFotoSebo" value="<?= $SeboController->getSeboDAO()->getUrlFotoSebo() ?>">
+		<br>
 
+		<label>Cnpj</label>
+
+		<input class="grande" type="text" name="cnpjSebo" value="<?= $SeboController->getseboDAO()->getCnpjSebo() ?>">
+
+		<br>
+
+		<label>Foto</label>
+
+		<input type="hidden" class="grande" type="text" id="txtImg" name="txtImg" value="<?= $SeboController->getSeboDAO()->getUrlFotoSebo() ?>">
+
+		<br>
+		<label>Num Endereço</label>
 		<input class="grande" type="text" name="numEndSebo" value="<?= $SeboController->getSeboDAO()->getNumEndSebo() ?>">
 
+		<br>
+
+		<label>Complemento endereço</label>
 		<input class="grande" type="text" name="complEndSebo" value="<?= $SeboController->getSeboDAO()->getComplEndSebo() ?>">
 
+		<br>
+
+		<label>Logradouro</label>
 		<input class="grande" type="text" name="logradouroSebo" value="<?= $SeboController->getSeboDAO()->getLogradouroSebo() ?>">
 
-		<input class="grande" type="text" name="cepEndSebo" value="<?= $SeboController->getSeboDAO()->getCepEndSebo()?>">
+		<br>
+
+		<label>Cep</label>
+
+		<input class="grande" type="text" name="cepEndSebo" value="<?= $SeboController->getSeboDAO()->getCepEndSebo() ?>">
+
+		<br>
+
+		<label>Telefone</label>
 
 		<input class="grande" type="text" name="numTelSebo" value="<?= $SeboController->getSeboDAO()->getNumTelSebo() ?>">
 
+		<br>
+
+		<label>Celular 1</label>
+
 		<input class="grande" type="text" name="celular1Sebo" value="<?= $SeboController->getSeboDAO()->getCelular1Sebo() ?>">
+
+		<br>
+
+		<label>Celular 2</label>
 
 		<input class="grande" type="text" name="celular2Sebo" value="<?= $SeboController->getSeboDAO()->getCelular2Sebo() ?>">
 
+		<br>
+
+		<label>Inscrição Estadual</label>
+
 		<input class="grande" type="text" name="inscEstadualSebo" value="<?= $SeboController->getSeboDAO()->getInscEstadualSebo() ?>">
 
-
-		<input class="grande" type="text" name="urlSiteSebo" value="<?= $SeboController->getSeboDAO()->getUrlSiteSebo() ?>">
-
-
-
 		<br>
-		<!-- <label>Descrição</label>
-		<textarea class="grande" name="txtDescr"><?php //echo $SeboController->getSeboDAO()->getDescrSebo();?></textarea> -->
+
+		<label>Link do site</label>
+		<input class="grande" type="text" name="urlSiteSebo" value="<?= $SeboController->getSeboDAO()->getUrlSiteSebo() ?>">
 		<br>
 
 		<label> </label>
 		<input class="buttonCancel" type="reset" value="Limpar">
 		<input class="button" type="submit" value="Enviar">
 	</form>
+
+	<div class="img">
+		<form action="<?= _URLBASE_ ?>src/view/adm/cadastro/uploadAdm/cadClienteUpload.php" method='post' enctype='multipart/form-data' target='ifrmUpload' name="urlFotoCliente">
+
+			<input type="file" name="urlFotoCliente">
+
+			<input class="button" type="submit" value="Carregar">
+		</form>
+		<iframe id="ifrmUpload" name="ifrmUpload" src="" frameborder="0"></iframe>
+	</div>
+	<div class="imgCadastro">
+		<picture>
+			<img id="imgAvatar" src="<?= "http://localhost/sebook/" . $SeboController->getSeboDAO()->getUrlFotoSebo() ?>" alt="Avatar" class="avatar">
+		</picture>
+	</div>
+
 	<br>
 	<br>
 	<br>

@@ -94,7 +94,13 @@ class AutentificadorController
             if ($_SESSION['userLogado']['acesso'] <= 3) {
                 $adm = "http://localhost/sebook/area/adm";
             }
-            $perfil = "http://localhost/sebook/area/user/pages/perfilLeitor";
+
+            if($_SESSION['userLogado']['acesso'] != 5){
+                $perfil = "http://localhost/sebook/area/user/pages/perfilLeitor";
+            }else{
+                $perfil = "http://localhost/sebook/area/user/pages/perfilSebo";
+            }
+
             echo "<b> Bem vindo " . $_SESSION['userLogado']['nome'] . "</b></a>";
             echo "<a class='pefil' href='{$perfil}'>Editar Perfil</a>";
             if(isset($adm)){

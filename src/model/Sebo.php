@@ -22,10 +22,9 @@ class Sebo {
     private $inscEstadualSebo;
     private $urlSiteSebo;
     private $codStatusSebo;
-    private $idLivro;
-   
+
     //Método construtor auxiliar de criação de objetos
-    public function __construct($idUsuario = "", $razaoSebo = "", $nomeFantasia = "", $cnpjSebo = "", $urlFotoSebo = "", $numEndSebo = "", $complEndSebo = "", $logradouroSebo = "", $cepEndSebo = "", $numTelSebo = "", $celular1Sebo = "", $celular2Sebo = "", $inscEstadualSebo = "", $urlSiteSebo = "", $codStatusSebo = "", $idLivro = "") {
+    public function __construct($idUsuario = "", $razaoSebo = "", $nomeFantasia = "", $cnpjSebo = "", $urlFotoSebo = "", $numEndSebo = "", $complEndSebo = "", $logradouroSebo = "", $cepEndSebo = "", $numTelSebo = "", $celular1Sebo = "", $celular2Sebo = "", $inscEstadualSebo = "", $urlSiteSebo = "", $codStatusSebo = "") {
         $this->idUsuario = $idUsuario;
         $this->razaoSebo = $razaoSebo;
         $this->nomeFantasia = $nomeFantasia;
@@ -41,7 +40,6 @@ class Sebo {
         $this->inscEstadualSebo = $inscEstadualSebo;
         $this->urlSiteSebo = $urlSiteSebo;
         $this->codStatusSebo = $codStatusSebo;  
-        $this->idLivro = $idLivro;  
     }
 
     //getters e setters
@@ -165,16 +163,6 @@ class Sebo {
 		$this->codStatusSebo = $codStatusSebo;
 	}
 
-	public function getIdLivro(){
-		return $this->idLivro;
-	}
-
-	public function setIdLivro($idLivro){
-		$this->idLivro = $idLivro;
-    }
-    
-    
-
     //Método __toString()
     public function __toString() {
         return json_encode(array(
@@ -192,8 +180,7 @@ class Sebo {
             'celular2Sebo' => $this->celular2Sebo,
             'inscEstadualSebo' => $this->inscEstadualSebo,
             'urlSiteSebo' => $this->urlSiteSebo,
-            'codStatusSebo' => $this->codStatusSebo,
-            'idLivro' => $this->idLivro  
+            'codStatusSebo' => $this->codStatusSebo
         ));
     }
 

@@ -1,48 +1,69 @@
 <?php
 
-// use Model\ClienteDAO;
-// use Model\UsuarioDAO;
+use Model\SeboDAO;
+use Model\UsuarioDAO;
 
-// //Pega a conexão
-// $objSql = new Util\Sql($conn);
-// //Passa a conexão para o dao
-// $clienteDAO = new ClienteDAO($objSql);
-// $usuarioDAO = new UsuarioDAO($objSql);
+// Pega a conexão
+$objSql = new Util\Sql($conn);
+//Passa a conexão para o dao
+$seboDAO = new SeboDAO($objSql);
+$usuarioDAO = new UsuarioDAO($objSql);
 
 // //Seta o id para o clinete por meio da sessão do usuário
-// $clienteDAO->setIdUsuario($_SESSION['userLogado']['idUsuario']);
-// $usuarioDAO->setIdUsuario($_SESSION['userLogado']['idUsuario']);
+$seboDAO->setIdUsuario($_SESSION['userLogado']['idUsuario']);
+$usuarioDAO->setIdUsuario($_SESSION['userLogado']['idUsuario']);
 
 // //Seta os valores para o dao
-// $result = $clienteDAO->listarClienteId();
-// $clienteDAO->setSexoCliente($result['sexoCliente']);
-// $clienteDAO->setComplementoCliente($result['complEndCliente']);
-// $clienteDAO->setLogradouroCliente($result['logradouroCliente']);
-// $clienteDAO->setNumComplCliente($result['numComplCliente']);
-// $clienteDAO->setCpfCliente($result['cpfCliente']);
-// $clienteDAO->setCepCliente($result['cepCliente']);
-// $clienteDAO->setNascimentoCliente($result['nascCliente']);
-// $clienteDAO->setUrlFotoCliente($result['urlFotoCliente']);
+$result = $seboDAO->listarSeboId();
+$seboDAO->setNomeFantasia($result['nomeFantasia']);
+$seboDAO->setRazaoSebo($result['razaoSebo']);
+$seboDAO->setCnpjSebo($result['cnpjSebo']);
+$seboDAO->setInscEstadualSebo($result['inscEstadualSebo']);
+$seboDAO->setCepEndSebo($result['cepEndSebo']);
+$seboDAO->setLogradouroSebo($result['logradouroSebo']);
+$seboDAO->setNumEndSebo($result['numEndSebo']);
+$seboDAO->setComplEndSebo($result['complEndSebo']);
+$seboDAO->setUrlFotoSebo($result['urlFotoSebo']);
+$seboDAO->setNumTelSebo($result['numTelSebo']);
+$seboDAO->setCelular1Sebo($result['celular1Sebo']);
+$seboDAO->setCelular2Sebo($result['celular2Sebo']);
+$seboDAO->setUrlSiteSebo($result['urlSiteSebo']);
 
-// //Retorna a que tem no listarUsuarioDaoId
-// $resultUsuario = $usuarioDAO->listarUsuarioId();
-// //Seta a senha do usuarioDao
-// $usuarioDAO->setSenhaUsuario($resultUsuario['senhaUsuario']);
+// Retorna a que tem no listarUsuarioDaoId
+$resultUsuario = $usuarioDAO->listarUsuarioId();
+//Seta a senha do usuarioDao
+$usuarioDAO->setSenhaUsuario($resultUsuario['senhaUsuario']);
+$usuarioDAO->setNomeUsuario(($resultUsuario['nomeUsuario']));
+$usuarioDAO->setSobrenomeUsuario($resultUsuario['sobrenomeUsuario']);
+$usuarioDAO->setEmailUsuario($resultUsuario['emailUsuario']);
 
-// if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
 
-// 	$clienteDAO->setNumComplCliente($_POST['numComplCliente']);
-// 	$clienteDAO->setSexoCliente($_POST['sexoCliente']);
-// 	$clienteDAO->setComplementoCliente($_POST['complEndCliente']);
-// 	$clienteDAO->setLogradouroCliente($_POST['logradouroCliente']);
-// 	$clienteDAO->setCpfCliente($_POST['cpfCliente']);
-// 	$clienteDAO->setCepCliente($_POST['cepCliente']);
-// 	$clienteDAO->setNascimentoCliente($_POST['nascCliente']);
-// 	$clienteDAO->setUrlFotoCliente($_POST['urlFotoCliente']);
+	$seboDAO->setNomeFantasia($_POST['nomeFantasia']);
+	$seboDAO->setRazaoSebo($_POST['razaoSebo']);
+	$seboDAO->setCnpjSebo($_POST['cnpjSebo']);
+	$seboDAO->setInscEstadualSebo($_POST['inscEstadualSebo']);
+	$seboDAO->setCepEndSebo($_POST['cepEndSebo']);
+	$seboDAO->setLogradouroSebo($_POST['logradouroSebo']);
+	$seboDAO->setNumEndSebo($_POST['numEndSebo']);
+	$seboDAO->setComplEndSebo($_POST['complEndSebo']);
+	$seboDAO->setUrlFotoSebo($_POST['txtImg']);
+	$seboDAO->setNumTelSebo($_POST['numTelSebo']);
+	$seboDAO->setCelular1Sebo($_POST['celular1Sebo']);
+	$seboDAO->setCelular2Sebo($_POST['celular2Sebo']);
+	$seboDAO->setUrlSiteSebo($_POST['urlSiteSebo']);
 
-// 	$clienteDAO->alterarCliente();
-// 	header("Location:" . _URLBASE_ . "area/user/pages/perfilLeitor");
-// }
+	if (isset($_POST['nomeUsuario']) || isset($_POST['sobrenomeUsuario']) || isset($_POST['emailUsuario'])) {
+
+		$usuarioDAO->setNomeUsuario($_POST['nomeUsuario']);
+		$usuarioDAO->setSobrenomeUsuario($_POST['sobrenomeUsuario']);
+		$usuarioDAO->setEmailUsuario($_POST['emailUsuario']);
+
+		$usuarioDAO->alterarInfoUsuario();
+	}
+
+	$seboDAO->alterarSebo();
+}
 
 ?>
 <!-- Perfil -->
@@ -50,144 +71,126 @@
 	<div class="container">
 		<form action="" method="post" name="atualizarCampos">
 
-			<input type="hidden" name="idUsuario" id="idUsuario" value="<?//= $clienteDAO->getIdUsuario() ?>">
+			<input type="hidden" name="idUsuario" id="idUsuario" value="<?= $seboDAO->getIdUsuario()?>">
 
 			<div class="formItem">
-				<label for="nascCliente">Nome Fantasia</label>
-				<input type="text" name="nascCliente" id="nascCliente">
-			</div>
-
-			<div class="formItem">
-				<label for="razaoSocial">Razão Social</label>
-				<input type="text" name="razaoSocial" id="razaoSocial">
-			</div>
-			
-			<div class="formItem">
-				<label for="cnpj">CNPJ</label>
-				<input type="text" name="cnpj" id="cnpj">
-			</div>
-			
-			<div class="formItem">
-				<label for="inscEstadual">Inscrição Estadual</label>
-				<input type="text" name="inscEstadual" id="inscEstadual">
-			</div>
-			
-			<div class="formItem">
-				<label for="cep">CEP</label>
-				<input type="text" name="inscEstadual" id="inscEstadual">
+				<label for="nomeUsuario">Nome</label>
+				<input type="text" name="nomeUsuario" id="nomeUsuario" value="<?= $usuarioDAO->getNomeUsuario() ?>">
 			</div>
 
 			<div class="formItem">
-				<label for="logradouroCliente">Logradouro</label>
-				<select name="logradouroCliente" id="logradouroCliente">
+				<label for="nomeUsuario">Sobrenome</label>
+				<input type="text" name="sobrenomeUsuario" id="sobrenomeUsuario" value="<?= $usuarioDAO->getSobrenomeUsuario()  ?>">
+			</div>
+
+			<div class="formItem">
+				<label for="emailUsuario">E-mail</label>
+				<input type="text" name="emailUsuario" id="emailUsuario" value="<?= $usuarioDAO->getEmailUsuario()  ?>">
+			</div>
+
+
+			<div class="formItem">
+				<label for="nomeFantasia">Nome Fantasia</label>
+				<input type="text" name="nomeFantasia" id="nomeFantasia" value="<?= $seboDAO->getNomeFantasia() ?>">
+			</div>
+
+			<div class="formItem">
+				<label for="razaoSebo">Razão Social</label>
+				<input type="text" name="razaoSebo" id="razaoSebo" value="<?= $seboDAO->getRazaoSebo() ?>">
+			</div>
+
+			<div class="formItem">
+				<label for="cnpjSebo">CNPJ</label>
+				<input type="text" name="cnpjSebo" id="cnpjSebo" value="<?= $seboDAO->getCnpjSebo() ?>">
+			</div>
+
+			<div class="formItem">
+				<label for="inscEstadualSebo">Inscrição Estadual</label>
+				<input type="text" name="inscEstadualSebo" id="inscEstadualSebo" value="<?= $seboDAO->getInscEstadualSebo() ?>">
+			</div>
+
+			<div class="formItem">
+				<label for="cepEndSebo">CEP</label>
+				<input type="text" name="cepEndSebo" id="cepEndSebo" value="<?= $seboDAO->getCepEndSebo() ?>">
+			</div>
+
+			<div class="formItem">
+				<label for="logradouroSebo">Logradouro</label>
+				<select name="logradouroSebo" id="logradouroSebo">
 					<?php
 					//Como logradouro não em tabelas fiz um array
 					$logradouro = ['AL' => 'ALAMEDA', 'AV' => 'AVENIDA', 'BC' => 'BECO', 'BL' => 'BLOCO', 'CAM' => 'CAMINHO', 'EST' => 'ESTAÇÃO', 'FAZ' => 'FAZENDA', 'GL' => 'GALERIA', 'LD' => 'LADEIRA', 'LGO' => 'LARGO', 'PÇA' => 'PRAÇA', 'PRQ' => 'PARQUE', 'PR' => 'PRAIA', 'KM' => 'QUILÔMETRO', 'ROD' => 'RODOVIA', 'R' => 'RUA', 'SQD' => 'SUPER QUADRA', 'TRV' => 'TRAVESSA', 'VD' => 'VIADUTO', 'VL' => 'VILA'];
 
 					//Caso a chave do array for igual ao que está no banco o option selecionado será o guardado
-					// foreach ($logradouro as $key => $value) {
-					// 	if ($key == $clienteDAO->getLogradouroCliente()) {
-					// 		$select = 'selected';
-					// 	} else {
-					// 		$select = "";
-					// 	}
-					// 	echo "<option $select value='$key'>$value</option>";
-					// }
+					foreach ($logradouro as $key => $value) {
+						if ($key == $seboDAO->getLogradouroSebo()) {
+							$select = 'selected';
+						} else {
+							$select = "";
+						}
+						echo "<option $select value='$key'>$value</option>";
+					}
 					?>
 				</select>
 			</div>
 
 			<div class="formItem">
-				<label for="numComplSebo">Número</label>
-				<input type="text" name="numComplSebo" id="numComplSebo" value="<?//= $clienteDAO->getNumComplCliente() ?>">
-			</div>
-			<div class="formItem">
-				<label for="complEndCliente">Complemento</label>
-				<input type="text" name="complEndCliente" id="complEndCliente" value="<?//= $clienteDAO->getComplementoCliente() ?>">
+				<label for="numEndSebo">Número</label>
+				<input type="text" name="numEndSebo" id="numEndSebo" value="<?= $seboDAO->getNumEndSebo() ?>">
 			</div>
 
 			<div class="formItem">
-				<label for="telefone">Telefone</label>
-				<input type="text" name="telefone" id="telefone">
+				<label for="complEndSebo">Complemento</label>
+				<input type="text" name="complEndSebo" id="complEndSebo" value="<?= $seboDAO->getComplEndSebo() ?>">
 			</div>
 
 			<div class="formItem">
-				<label for="Celular1">Celular 1</label>
-				<input type="text" name="Celular1" id="Celular1">
+				<label for="numTelSebo">Telefone</label>
+				<input type="text" name="numTelSebo" id="numTelSebo" value="<?= $seboDAO->getNumTelSebo() ?>">
 			</div>
 
 			<div class="formItem">
-				<label for="Celular2">Celular 2</label>
-				<input type="text" name="Celular2" id="Celular2">
+				<label for="celular1Sebo">Celular 1</label>
+				<input type="text" name="celular1Sebo" id="celular1Sebo" value="<?= $seboDAO->getCelular1Sebo() ?>">
 			</div>
 
 			<div class="formItem">
-				<label for="linkSite">Link e/ou site</label>
-				<input type="text" name="linkSite" id="linkSite">
+				<label for="celular2Sebo">Celular 2</label>
+				<input type="text" name="celular2Sebo" id="celular2Sebo" value="<?= $seboDAO->getCelular2Sebo() ?>">
 			</div>
+
 			<div class="formItem">
-				<label for="email">E-mail</label>
-				<input type="text" name="email" id="email">
+				<label for="urlSiteSebo">Link e/ou site</label>
+				<input type="text" name="urlSiteSebo" id="urlSiteSebo" value="<?= $seboDAO->getUrlSiteSebo() ?>">
 			</div>
 
 			<!--Foto campo escondifo-->
-			<input type="hidden" name="urlFotoCliente" id="urlFotoCliente" value="<?//= $clienteDAO->getUrlFotoCliente() ?>">
+			<input type="hidden" name="txtImg" id="txtImg" value="<?= $seboDAO->getUrlFotoSebo() ?>">
 
 			<input type="submit" name="atualizar" value="Atualizar">
 		</form>
 
 		<!--Formulário de foto-->
 		<div class="img">
-			<form action="<?= _URLBASE_ ?>src/view/adm/cadastro/cadUpload.php" method='post' enctype='multipart/form-data' target='ifrmUpload' name="urlFotoCliente">
-				<input type="file" name="urlFotoCliente">
-				<!-- <input type="file" name="arqImagem"> -->
+			<form action="<?= _URLBASE_ ?>src/view/user/pages/cadUpload.php" method='post' enctype='multipart/form-data' target='ifrmUpload' name="urlFotoCliente">
+
+				<input type="file" name="urlFotoSebo">
+
 				<input class="button" type="submit" value="Carregar">
 			</form>
 			<iframe id="ifrmUpload" name="ifrmUpload" src="" frameborder="0"></iframe>
 		</div>
+		<?php
+		$src = "src='http://localhost/sebook/{$seboDAO->getUrlFotoSebo()}'";
+		?>
 		<div class="imgCadastro">
 			<picture>
-				<img id="imgAvatar" src="<?//= "http://localhost/sebook/" . $clienteDAO->getUrlFotoCliente()  ?>" alt="Avatar" class="avatar">
+				<img id="imgAvatar" <?= $src ?> alt="Avatar" class="avatar">
 			</picture>
 		</div>
-
-		<!--Modal-->
-		<label class="btn-modal-cadastre" for="modal-cadastre">Trocar senha?</label>
-		<section class="modal">
-			<input class="modal-open" id="modal-cadastre" type="checkbox" hidden>
-			<div class="modal-wrap" aria-hidden="true" role="dialog">
-				<label class="modal-overlay" for="modal-cadastre"></label>
-				<div class="modal-dialog">
-					<div class="modal-header">
-						<h2>Mudar sua senha</h2>
-						<label class="btn-close" for="modal-cadastre" aria-hidden="true">×</label>
-					</div>
-					<div class="modal-body">
-						<form name="mudarSenha" method="post">
-							<label for="senhaAtual">Senha Atual</label>
-							<input type="password" name="senhaAtual" id="senhaAtual">
-							<label for="senhaNova">Nova senha</label>
-							<input type="password" name="senhaNova">
-							<input type="submit" name="trocarSenha">
-						</form>
-					</div>
-					<div class="modal-footer">
-						<label class="btn btn-primary" for="modal-cadastre">Fechar</label>
-					</div>
-				</div>
-			</div>
-		</section>
 		<?php
-		if (isset($_POST['senhaNova'])) {
-			$senhaAtual = $_POST['senhaAtual'] ?? null;
-			if (password_verify($senhaAtual,  $usuarioDAO->getSenhaUsuario())) {
-				$usuarioDAO->setSenhaUsuario($_POST['senhaNova']);
-				$usuarioDAO->alterarSenhaUsuario();
-				echo "senha trocada";
-			} else {
-				echo 'Senha não confere';
-			}
-		}
+		//Chama estrutura para trocar senha
+		include "includes/trocarSenha.php"
 		?>
 	</div>
 </section>

@@ -1,19 +1,19 @@
 <?php
-$ajuste = "../../../../";
-require_once '../../../../config/config.php';
+$ajuste = "../../../../../";
+require_once '../../../../../config/config.php';
 
 use util\Upload;
 //Upload
 $up = new Util\Upload(array(
 	0 => "image/png",  1 => "image/tiff",
 	2 => "image/jpeg", 3 => "image/bmp", 4 => "image/gif"
-), "/public/imgPerfil/");
+), "/public/imgPerfilSebo/");
 
 $result = $up->realizarUpload("urlFotoCliente");
 
 if ($result === true) {
 	$arq = $up->getArqUpload();
-	$arquivo = "public/imgPerfil/" . $arq["name"];
+	$arquivo = "public/imgPerfilSebo/" . $arq["name"];
 } else {
 	$arquivo = -1;
 }
