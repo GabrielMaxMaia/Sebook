@@ -25,9 +25,8 @@ $output = ob_get_clean();
     <title><?= isset($title) ? 'Sebook | ' . $title : 'Sebook'; ?></title>
 
     <!--Aplicando comentário-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src='<?= _URLBASE_ ?>public/js/funcoes.js'></script>
+    
+    
 </head>
 
 <body>
@@ -37,9 +36,9 @@ $output = ob_get_clean();
         ?>
         <div id="containerTemplate">
             <?php
-                if (isset($menuHide) != true) {
-                    require_once 'menu/social.php';
-            ?>
+            if (isset($menuHide) != true) {
+                require_once 'menu/social.php';
+                ?>
                 <article class="home">
                     <section>
                         <?= $output ?>

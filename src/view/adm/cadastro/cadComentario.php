@@ -37,7 +37,8 @@ $comentarioController->gravarAlterar();
 		
 		<input type="hidden" name="idPost" id="idPost" value="<?php echo $comentarioController->getComentarioDAO()->getIdPost(); ?>">
 
-		<input type="hidden" name="idUsuario" id="idUsuario" value="<?php echo $comentarioController->getComentarioDAO()->getIdUsuario(); ?>">
+		<label>Id usuario</label>
+		<input type="text" name="idUsuario" id="idUsuario" value="<?php echo $comentarioController->getComentarioDAO()->getIdUsuario(); ?>">
 		
 		<input type="hidden" name="idComentarioParente" id="idComentarioParente" value="<?php echo $comentarioController->getComentarioDAO()->getIdComentarioParente(); ?>">
 
