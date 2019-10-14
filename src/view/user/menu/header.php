@@ -11,6 +11,8 @@
 		$autenticadorController->toggleLogin();
 		$autenticadorController->efetuarLogOut();
 
+		$IdSessaoUser = $_SESSION['userLogado']['acesso'];
+
 		?>
 	</div>
 	<nav class="navDesk">
@@ -24,6 +26,16 @@
 			<li>
 				<a href="<?php echo _URLBASE_ ?>area/user/menuHome/livros">LIVROS</a>
 			</li>
+			<li>
+				<a href="<?php echo _URLBASE_ ?>area/user/pages/postListar">POSTAGENS</a>
+			</li>
+			<?php
+			if ($IdSessaoUser != 4 || null || "") {
+				echo "<li>
+						<a href='"._URLBASE_."area/user/pages/postCriar'>CRIAR POSTAGEM</a></a>
+					 </li>";
+			}
+			?>
 			<li>
 				<a href="<?php echo _URLBASE_ ?>area/user/menuHome/quemSomos">QUEM SOMOS</a>
 			</li>
