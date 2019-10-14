@@ -1,6 +1,6 @@
 <?php
-$ajuste = "../../../../../";
-require_once '../../../../../config/config.php';
+$ajuste = "../../../../";
+require_once '../../../../config/config.php';
 
 use util\Upload;
 //Upload
@@ -9,7 +9,7 @@ $up = new Util\Upload(array(
 	2 => "image/jpeg", 3 => "image/bmp", 4 => "image/gif"
 ), "/public/imgPerfilSebo/");
 
-$result = $up->realizarUpload("urlFotoCliente");
+$result = $up->realizarUpload("urlFotoSebo");
 
 if ($result === true) {
 	$arq = $up->getArqUpload();
@@ -20,5 +20,5 @@ if ($result === true) {
 
 // var_dump($arquivo);
 
-echo "<script>parent.resultadoUpload('$arquivo',$result) </script>";
+echo "<script>parent.resultadoUpload('$arquivo',$result)</script>";
 //Upload

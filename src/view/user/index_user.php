@@ -23,10 +23,8 @@ $output = ob_get_clean();
     <?= $styleSobrescrito ?? "" ?>
     <?= $cssCaminho ?? ""; ?>
     <title><?= isset($title) ? 'Sebook | ' . $title : 'Sebook'; ?></title>
-
-    <!--Aplicando comentário-->
     
-    
+    <script src='<?= _URLBASE_ ?>public/js/funcoes.js'></script>
 </head>
 
 <body>

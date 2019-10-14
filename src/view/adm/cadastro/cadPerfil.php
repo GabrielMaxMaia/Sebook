@@ -31,7 +31,7 @@
 
 <section class="<?php echo $perfilCrontoller->getFormulario(); ?>">
 	<form method="post" action="">
-		<h4 class="cadCat">Cadastro de Perfiles</h4>
+		<h4 class="cadCat">Cadastro de Perfil</h4>
 
 		<input type="hidden" name="idPerfil" id="idPerfil" value="<?php echo $perfilCrontoller->getPerfilDAO()->getIdPerfil(); ?>">
 

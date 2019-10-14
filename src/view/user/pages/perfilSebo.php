@@ -47,11 +47,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
 	$seboDAO->setLogradouroSebo($_POST['logradouroSebo']);
 	$seboDAO->setNumEndSebo($_POST['numEndSebo']);
 	$seboDAO->setComplEndSebo($_POST['complEndSebo']);
-	$seboDAO->setUrlFotoSebo($_POST['txtImg']);
 	$seboDAO->setNumTelSebo($_POST['numTelSebo']);
 	$seboDAO->setCelular1Sebo($_POST['celular1Sebo']);
 	$seboDAO->setCelular2Sebo($_POST['celular2Sebo']);
 	$seboDAO->setUrlSiteSebo($_POST['urlSiteSebo']);
+	$seboDAO->setUrlFotoSebo($_POST['txtImg']);
 
 	if (isset($_POST['nomeUsuario']) || isset($_POST['sobrenomeUsuario']) || isset($_POST['emailUsuario'])) {
 
@@ -71,7 +71,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
 	<div class="container">
 		<form action="" method="post" name="atualizarCampos">
 
-			<input type="hidden" name="idUsuario" id="idUsuario" value="<?= $seboDAO->getIdUsuario()?>">
+			<!--Foto campo escondifo-->
+			<input type="hidden" name="txtImg" id="txtImg" value="<?= $seboDAO->getUrlFotoSebo() ?>">
+
+			<input type="hidden" name="idUsuario" id="idUsuario" value="<?= $seboDAO->getIdUsuario() ?>">
 
 			<div class="formItem">
 				<label for="nomeUsuario">Nome</label>
@@ -164,30 +167,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
 				<input type="text" name="urlSiteSebo" id="urlSiteSebo" value="<?= $seboDAO->getUrlSiteSebo() ?>">
 			</div>
 
-			<!--Foto campo escondifo-->
-			<input type="hidden" name="txtImg" id="txtImg" value="<?= $seboDAO->getUrlFotoSebo() ?>">
-
 			<input type="submit" name="atualizar" value="Atualizar">
 		</form>
 
-		<!--Formulário de foto-->
-		<div class="img">
-			<form action="<?= _URLBASE_ ?>src/view/user/pages/cadUpload.php" method='post' enctype='multipart/form-data' target='ifrmUpload' name="urlFotoCliente">
-
-				<input type="file" name="urlFotoSebo">
-
-				<input class="button" type="submit" value="Carregar">
-			</form>
-			<iframe id="ifrmUpload" name="ifrmUpload" src="" frameborder="0"></iframe>
-		</div>
 		<?php
-		$src = "src='http://localhost/sebook/{$seboDAO->getUrlFotoSebo()}'";
+		//Chama estrutura para formulário de img
+		include "includes/perfilImgSebo.php";
 		?>
-		<div class="imgCadastro">
-			<picture>
-				<img id="imgAvatar" <?= $src ?> alt="Avatar" class="avatar">
-			</picture>
-		</div>
+
 		<?php
 		//Chama estrutura para trocar senha
 		include "includes/trocarSenha.php"

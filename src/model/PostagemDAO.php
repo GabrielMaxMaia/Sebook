@@ -16,17 +16,10 @@ class PostagemDAO extends Postagem
     //$selectIdUser = "SELECT id_usuario FROM usuario WHERE id_usuario =  $_SESSION['userLogado']['idUsuario']";
 
     private static $INSERT = "INSERT INTO postagem
-    (titulo_post,txt_postagem,data_hora_post,id_usuario)
-    VALUES (:tituloPostagem, :txtPostagem, :datahoraPost, :idUsuario)";
+    (titulo_post,txt_postagem,data_hora_post, url_foto_post, id_usuario)
+    VALUES (:tituloPostagem, :txtPostagem, :datahoraPost, :urlFotoPost, :idUsuario)";
 
-    // private static $INSERT = "INSERT INTO postagem
-    // (`titulo_post`,`txt_postagem`,`data_hora_post`,`id_usuario`)
-    // VALUES (:tituloPostagem, :txtPostagem, date('Y/mm/dd H:i:s'), :idUsuario)";
-
-    private static $UPDATE = "UPDATE postagem SET
-                            titulo_post = :tituloPostagem,
-                            txt_postagem = :txtPostagem
-                            WHERE id_post =  :idPostagem";
+    private static $UPDATE = "UPDATE postagem SET titulo_post = :tituloPostagem, txt_postagem = :txtPostagem, url_foto_post = :urlFotoPost WHERE id_post =  :idPostagem";
 
     //DELETE lógico -> altera status
     private static $DELETE = "UPDATE postagem SET
@@ -58,7 +51,8 @@ class PostagemDAO extends Postagem
                     'txtPostagem' => $linha->txt_postagem,
                     'datahoraPost' => $linha->data_hora_post,
                     'idUsuario' => $linha->id_usuario,
-                    'datahoraPost' => $linha->data_hora_post
+                    'datahoraPost' => $linha->data_hora_post,
+                    'urlFotoPost' => $linha->url_foto_post
                 );
             }
             //var_dump($itens);
@@ -87,7 +81,8 @@ class PostagemDAO extends Postagem
                 'idPostagem' => $linha->id_post,
                 'tituloPostagem' => $linha->titulo_post,
                 'txtPostagem' => $linha->txt_postagem,
-                'idUsuario' => $linha->id_usuario
+                'idUsuario' => $linha->id_usuario,
+                'urlFotoPost' => $linha->url_foto_post
             );
             // var_dump($itens);
         } else {
@@ -105,7 +100,8 @@ class PostagemDAO extends Postagem
                 ':idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT),
                 ':tituloPostagem' => array(0 => $this->getTituloPostagem(), 1 => \PDO::PARAM_STR),
                 ':txtPostagem' => array(0 => $this->getTxtPostagem(), 1 => \PDO::PARAM_STR),
-                ':datahoraPost' => array(0 => $this->getDatahoraPostagem(), 1 => \PDO::PARAM_STR)
+                ':datahoraPost' => array(0 => $this->getDatahoraPostagem(), 1 => \PDO::PARAM_STR),
+                ':urlFotoPost' => array(0 => $this->getUrlFotoPostagem(), 1 => \PDO::PARAM_STR)
             )
         );
         //var_dump($result);
@@ -119,7 +115,8 @@ class PostagemDAO extends Postagem
             array(
                 ':idPostagem' => array(0 => $this->getIdPostagem(), 1 => \PDO::PARAM_INT),
                 ':tituloPostagem' => array(0 => $this->getTituloPostagem(), 1 => \PDO::PARAM_STR),
-                ':txtPostagem' => array(0 => $this->getTxtPostagem(), 1 => \PDO::PARAM_STR)
+                ':txtPostagem' => array(0 => $this->getTxtPostagem(), 1 => \PDO::PARAM_STR),
+                ':urlFotoPost' => array(0 => $this->getUrlFotoPostagem(), 1 => \PDO::PARAM_STR)
             )
         );
         return $result;

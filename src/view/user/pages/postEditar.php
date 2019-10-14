@@ -15,12 +15,17 @@ $postagemDAO->setIdPostagem($_GET['idPost']);
 
 //Chama a função listaPostagemId
 $result = $postagemDAO->listarPostagemId();
+$postagemDAO->setUrlFotoPostagem($result['urlFotoPost']);
 
-if(isset($_POST['update'])){
+//Include para evitar reenvio
+include "includes/evitarReenvio.php";
+
+if (isset($_POST['update'])) {
     $postagemDAO->setTituloPostagem($_POST['titulo']);
-    $postagemDAO->setTxtPostagem( $_POST['conteudo']);
+    $postagemDAO->setTxtPostagem($_POST['conteudo']);
+    $postagemDAO->setUrlFotoPostagem($_POST['txtImg']);
     $postagemDAO->alterarPostagem();
-    header("Location:". _URLBASE_ . "area/user/pages/postListar");
+    header("Location:" . _URLBASE_ . "area/user/pages/postListar");
 }
 
 ?>
@@ -30,23 +35,27 @@ if(isset($_POST['update'])){
 
 if ($result != null) {
 
-if ($result['idUsuario'] == $IdSessaoUser) {
-            ?>
-<form method="post" action="">
+    if ($result['idUsuario'] == $IdSessaoUser || $_SESSION['userLogado']['acesso'] <= 3) {
+        ?>
+        <form method="post" action="">
 
-	<input type="text" name="titulo" value="<?= $result['tituloPostagem']?>">
+            <input type="hidden" name="txtImg" id="txtImg" value="<?= $postagemDAO->getUrlFotoPostagem() ?>">
 
-	<textarea name="conteudo" cols="25" rows="5">
-       <?= $result['txtPostagem'] ?>
-    </textarea>
+            <input type="text" name="titulo" value="<?= $result['tituloPostagem'] ?>">
 
-	<input type="hidden" name="id" value="<?= $result['idPostagem'] ?>">
+            <textarea name="conteudo" cols="25" rows="5">
+                <?= $result['txtPostagem'] ?>
+            </textarea>
 
-	<input type="submit" name="update" value="Alterar">
-</form>
+            <input type="hidden" name="id" value="<?= $result['idPostagem'] ?>">
+
+            <input type="submit" name="update" value="Alterar">
+        </form>
 <?php
-    }
-    else {
+    } else {
         echo "Essa postagem não pertence a você";
     }
-} 
+}
+
+//Chama estrutura para formulário de img 
+include "includes/formPostImg.php";

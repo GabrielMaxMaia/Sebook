@@ -67,8 +67,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
 		<form action="" method="post">
 
 			<!--Foto campo escondifo-->
-			<!-- <input type="hidden" name="urlFotoCliente" id="urlFotoCliente" value="<?//= $clienteDAO->getUrlFotoCliente() ?>"> -->
-
 			<input type="hidden" name="txtImg" id="txtImg" value="<?= $clienteDAO->getUrlFotoCliente() ?>">
 
 			<input type="hidden" name="idUsuario" id="idUsuario" value="<?= $clienteDAO->getIdUsuario() ?>">
@@ -153,18 +151,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
 				<input type="text" name="complEndCliente" id="complEndCliente" value="<?= $clienteDAO->getComplementoCliente() ?>">
 			</div>
 
-			
+
 			<input type="submit" name="atualizar" value="Atualizar">
 		</form>
 
 		<?php
-			//Chama estrutura para formulário de img 
-			include "includes/formImg.php";
+		//Chama estrutura para formulário de img 
+		include "includes/perfilImg.php";
 		?>
 
 		<?php
-			//Chama estrutura para trocar senha
-			include "includes/trocarSenha.php"
+		//Chama estrutura para trocar senha
+		include "includes/trocarSenha.php"
 		?>
 	</div>
 </section>
