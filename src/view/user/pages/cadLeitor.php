@@ -9,6 +9,7 @@ $sql = new \Util\Sql($conn);
 $usuarioDAO = new UsuarioDAO($sql);
 $clienteDAO = new ClienteDAO($sql);
 
+
 include "includes/evitarReenvio.php";
 
 if (isset($_POST['enviar'])) {
@@ -47,6 +48,7 @@ if (isset($_POST['enviar'])) {
 	
 		$usuarioDAO->setIdPerfil(4);
 		$usuarioDAO->setDataCriacao(date('Y-m-d H:i:s'));
+		$clienteDAO->setUrlFotoCliente('public/imgPerfil/imgPadrao/padrao.ppg');
 		if(evitarReenvio()){
 			$success = true;
 			$usuarioDAO->adicionarUsuario();
