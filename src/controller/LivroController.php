@@ -96,8 +96,12 @@ class LivroController
 
             //$this->livroDAO->setIsbnLivro($_POST['txtId']);
             $this->livroDAO->setIsbnLivro($_POST['txtIsbn']);
-            $this->livroDAO->setNomeLivro($_POST['txtNome']);
-            $this->livroDAO->setSinopseLivro($_POST['txtDescr']);
+            $this->livroDAO->setIdAutor($_POST['idAutor']);
+            $this->livroDAO->setAnoLivro($_POST['anoLivro']);
+            $this->livroDAO->setNomeLivro($_POST['nomeLivro']);
+            $this->livroDAO->setIdEditora($_POST['idEditora']);
+            $this->livroDAO->setIdCategoria($_POST['idCategoria']);
+            $this->livroDAO->setSinopseLivro($_POST['sinopseLivro']);
         }
     }
 
@@ -154,8 +158,14 @@ class LivroController
         if ($this->acaoGET == 2) {
             $this->livroDAO->setIsbnLivro($_GET['id']);
             $livro = $this->livroDAO->listarLivroIsbn();
+            $this->livroDAO->setIdAutor($livro['idAutor']);
+            $this->livroDAO->setAnoLivro($livro['anoLivro']);
+            $this->livroDAO->setUrlFotoLivro($livro['urlFotoLivro']);
             $this->livroDAO->setNomeLivro($livro['nomeLivro']);
             $this->livroDAO->setSinopseLivro($livro['sinopseLivro']);
+            $this->livroDAO->setCodStatusLivro($livro['codStatusLivro']);
+            $this->livroDAO->setIdEditora($livro['idEditora']);
+            $this->livroDAO->setIdCategoria($livro['idCategoria']);
         }
     }
 
@@ -167,9 +177,10 @@ class LivroController
             foreach ($result as $linha) {
                 $tabela .= "<tr>
                 <td>" . $linha['isbnLivro'] . "</td>
+                <td>" . $linha['idAutor'] . "</td>
                 <td>" . $linha['anoLivro'] . "</td>
-                <td>" . $linha['nomeLivro'] . "</td>
-                <td>" . $linha['sinopseLivro'] . "</td>    
+                <td>" . $linha['urlFotoLivro'] . "</td>
+                <td>" . $linha['nomeLivro'] . "</td>  
                 <td>" . $linha['codStatusLivro'] . "</td>      
                 <td>" . $linha['idEditora'] . "</td>      
                 <td>" . $linha['idCategoria'] . "</td>      

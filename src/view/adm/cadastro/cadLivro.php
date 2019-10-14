@@ -36,20 +36,38 @@ $livroController->gravarAlterar();
 <section class="<?php echo $livroController->getFormulario(); ?>">
 	<form method="post" action="">
 		<h4 class="cadCat">Cadastro de Livros</h4>
-		<input type="hidden" name="txtId" id="txtId" value="<?php echo $livroController->getLivroDAO()->getIsbnLivro(); ?>">
+		<input type="hidden" name="isbnLivro" id="isbnLivro" value="<?= $livroController->getLivroDAO()->getIsbnLivro(); ?>">
 
 		<input type="hidden" name="txtAcao" id="txtAcao" value="<?php echo $livroController->getAcaoGET(); ?>">
 
+		<input type="hidden" name="urlFotoLivro" id="urlFotoLivro" value="<?= $livroController->getLivroDAO()->getUrlFotoLivro(); ?>">
+
 		<label>Isbn</label>
-		<input class="grande" type="text" name="txtIsbn" value="<?php echo $livroController->getLivroDAO()->getIsbnLivro(); ?>">
+		<input class="grande" type="text" name="txtIsbn" value="<?= $livroController->getLivroDAO()->getIsbnLivro();  ?>">
 		<br>
 
-		<label>Livro</label>
-		<input class="grande" type="text" name="txtNome" value="<?php echo $livroController->getLivroDAO()->getNomeLivro(); ?>">
+		<label>Id Autor</label>
+		<input class="grande" type="text" name="idAutor" id="idAutor" value="<?= $livroController->getLivroDAO()->getIdAutor();  ?>">
 		<br>
 
-		<label>Descrição</label>
-		<textarea class="grande" name="txtDescr"><?php echo $livroController->getLivroDAO()->getSinopseLivro(); ?></textarea>
+		<label>Ano</label>
+		<input class="grande" type="text" name="anoLivro" id="anoLivro" value="<?= $livroController->getLivroDAO()->getAnoLivro();  ?>">
+		<br>
+
+		<label>Nome</label>
+		<input class="grande" type="text" name="nomeLivro" id="nomeLivro" value="<?php echo $livroController->getLivroDAO()->getNomeLivro(); ?>">
+		<br>
+
+		<label>Editora</label>
+		<textarea class="grande" name="idEditora" id="idEditora"><?php echo $livroController->getLivroDAO()->getIdEditora(); ?></textarea>
+		<br>
+
+		<label>Categoria</label>
+		<textarea class="grande" name="idCategoria" id="idCategoria"><?php echo $livroController->getLivroDAO()->getIdCategoria(); ?></textarea>
+		<br>
+
+		<label>Sinopse</label>
+		<textarea class="grande" name="sinopseLivro" id="sinopseLivro"><?php echo $livroController->getLivroDAO()->getSinopseLivro(); ?></textarea>
 		<br>
 
 		<label> </label>

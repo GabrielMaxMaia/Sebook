@@ -46,6 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
 
 	$date = date_create(str_replace('/', '-', $_POST['nascCliente']));
 	$newDate = date_format($date, "Y-m-d");
+	
 	$clienteDAO->setNascimentoCliente($newDate);
 
 	if (isset($_POST['nomeUsuario']) || isset($_POST['sobrenomeUsuario']) || isset($_POST['emailUsuario'])) {

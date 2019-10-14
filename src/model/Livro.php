@@ -8,7 +8,9 @@ class Livro
 {
     //Atributos mapeando os campos da tabela
     private $isbnLivro;
+    private $idAutor;
     private $anoLivro;
+    private $urlFotoLivro;
     private $nomeLivro;
     private $sinopseLivro;
     private $codStatusLivro;
@@ -16,10 +18,12 @@ class Livro
     private $idCategoria;
 
     //Método construtor auxiliar de criação de objetos
-    public function __construct($isbnLivro = "", $anoLivro = "", $nomeLivro = "", $idEditora = "", $codStatusLivro = "", $sinopseLivro = "", $idCategoria = "")
+    public function __construct($isbnLivro = "", $idAutor = "", $anoLivro = "", $urlFotoLivro= "",$nomeLivro = "", $idEditora = "", $codStatusLivro = "", $sinopseLivro = "", $idCategoria = "")
     {
         $this->isbnLivro = $isbnLivro;
+        $this->idAutor = $idAutor;
         $this->anoLivro = $anoLivro;
+        $this->urlFotoLivro = $urlFotoLivro;
         $this->nomeLivro = $nomeLivro;
         $this->codStatusLivro = $codStatusLivro;
         $this->idEditora = $idEditora;
@@ -28,82 +32,86 @@ class Livro
     }
 
     //getters e setters
-    public function getIsbnLivro()
-    {
-        return $this->isbnLivro;
-    }
+    public function getIsbnLivro(){
+		return $this->isbnLivro;
+	}
 
-    public function setIsbnLivro($isbnLivro)
-    {
-        $this->isbnLivro = $isbnLivro;
-    }
+	public function setIsbnLivro($isbnLivro){
+		$this->isbnLivro = $isbnLivro;
+	}
 
-    public function getAnoLivro()
-    {
-        return $this->anoLivro;
-    }
+	public function getIdAutor(){
+		return $this->idAutor;
+	}
 
-    public function setAnoLivro($anoLivro)
-    {
-        $this->anoLivro = $anoLivro;
-    }
+	public function setIdAutor($idAutor){
+		$this->idAutor = $idAutor;
+	}
 
-    public function getNomeLivro()
-    {
-        return $this->nomeLivro;
-    }
+	public function getAnoLivro(){
+		return $this->anoLivro;
+	}
 
-    public function setNomeLivro($nomeLivro)
-    {
-        $this->nomeLivro = $nomeLivro;
-    }
+	public function setAnoLivro($anoLivro){
+		$this->anoLivro = $anoLivro;
+	}
 
-    public function getSinopseLivro()
-    {
-        return $this->sinopseLivro;
-    }
+	public function getUrlFotoLivro(){
+		return $this->urlFotoLivro;
+	}
 
-    public function setSinopseLivro($sinopseLivro)
-    {
-        $this->sinopseLivro = $sinopseLivro;
-    }
+	public function setUrlFotoLivro($urlFotoLivro){
+		$this->urlFotoLivro = $urlFotoLivro;
+	}
 
-    public function getCodStatusLivro()
-    {
-        return $this->codStatusLivro;
-    }
+	public function getNomeLivro(){
+		return $this->nomeLivro;
+	}
 
-    public function setCodStatusLivro($codStatusLivro)
-    {
-        $this->codStatusLivro = $codStatusLivro;
-    }
+	public function setNomeLivro($nomeLivro){
+		$this->nomeLivro = $nomeLivro;
+	}
 
-    public function getIdEditora()
-    {
-        return $this->idEditora;
-    }
+	public function getSinopseLivro(){
+		return $this->sinopseLivro;
+	}
 
-    public function setIdEditora($idEditora)
-    {
-        $this->idEditora = $idEditora;
-    }
+	public function setSinopseLivro($sinopseLivro){
+		$this->sinopseLivro = $sinopseLivro;
+	}
 
-    public function getIdCategoria()
-    {
-        return $this->idCategoria;
-    }
+	public function getCodStatusLivro(){
+		return $this->codStatusLivro;
+	}
 
-    public function setIdCategoria($idCategoria)
-    {
-        $this->idCategoria = $idCategoria;
-    }
+	public function setCodStatusLivro($codStatusLivro){
+		$this->codStatusLivro = $codStatusLivro;
+	}
+
+	public function getIdEditora(){
+		return $this->idEditora;
+	}
+
+	public function setIdEditora($idEditora){
+		$this->idEditora = $idEditora;
+	}
+
+	public function getIdCategoria(){
+		return $this->idCategoria;
+	}
+
+	public function setIdCategoria($idCategoria){
+		$this->idCategoria = $idCategoria;
+	}
 
     //Método __toString()
     public function __toString()
     {
         return json_encode(array(
             'isbnLivro' => $this->isbnLivro,
+            'idAutor' => $this->idAutor,
             'anoLivro' => $this->anoLivro,
+            'urlFotoLivro' => $this->urlFotoLivro,
             'nomeLivro' => $this->nomeLivro,
             'sinopseLivro' => $this->sinopseLivro,
             'codStatusLivro' => $this->codStatusLivro,
