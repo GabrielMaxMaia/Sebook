@@ -34,7 +34,7 @@ class AdmDAO extends Adm
 
         if ($result->rowCount() == 1) {
             $linha = $result->fetch(\PDO::FETCH_OBJ);
-            var_dump($linha);
+            //var_dump($linha);
             if (\Util\Bcrypt::check($senhaUsuario, $linha->senha_usuario)) {
                 $itens = array(
                     'idUsuario' => $linha->id_usuario,
@@ -45,7 +45,6 @@ class AdmDAO extends Adm
                     'codStatusUsuario' => $linha->cod_status_usuario,
                     'idPerfil' => $linha->id_perfil
                 );
-
             } else {
                 $itens = false;
             }
@@ -53,7 +52,5 @@ class AdmDAO extends Adm
             $itens = null;
         }
         return $itens;
-
-     
     }
 }

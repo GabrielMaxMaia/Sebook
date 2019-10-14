@@ -10,6 +10,7 @@ $postagemDAO = new PostagemDAO($sql);
 $result = $postagemDAO->listarPostagem();
 //Pega a sessão se hover, caso contrario string vazia
 $IdUser = $_SESSION['userLogado']['idUsuario'] ?? "";
+$IdSessaoUser = $_SESSION['userLogado']['acesso'] ?? "";
 
 
 if (isset($_GET['id'])) {
@@ -39,7 +40,7 @@ if (isset($_GET['id'])) {
 
                 <p><?= $linha['txtPostagem'] ?></p>
                 <?php
-                    if ($linha['idUsuario'] == $IdUser || $_SESSION['userLogado']['acesso'] <= 3 && $IdUser != null) {
+                    if ($linha['idUsuario'] == $IdUser || $IdSessaoUser <= 3 && $IdUser != null) {
                 ?>
                     <a href='<?= _URLBASE_ . "area/user/pages/postEditar/{$linha['idPostagem']}" ?>'>
                         Editar

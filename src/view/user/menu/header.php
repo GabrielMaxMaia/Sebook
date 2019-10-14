@@ -11,7 +11,7 @@
 		$autenticadorController->toggleLogin();
 		$autenticadorController->efetuarLogOut();
 
-		$IdSessaoUser = $_SESSION['userLogado']['acesso'];
+		$IdSessaoUser = $_SESSION['userLogado']['acesso'] ?? "";
 
 		?>
 	</div>
@@ -30,7 +30,7 @@
 				<a href="<?php echo _URLBASE_ ?>area/user/pages/postListar">POSTAGENS</a>
 			</li>
 			<?php
-			if ($IdSessaoUser != 4 || null || "") {
+			if ($IdSessaoUser != 4 && $IdSessaoUser != null && $IdSessaoUser != "") {
 				echo "<li>
 						<a href='"._URLBASE_."area/user/pages/postCriar'>CRIAR POSTAGEM</a></a>
 					 </li>";

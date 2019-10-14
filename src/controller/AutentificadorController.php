@@ -29,12 +29,10 @@ class AutentificadorController
                 $resultado = $this->admDAO->autenticarAdm($user, $senha);
                 if ($resultado == false) {
                     //Senha inválida
-                    // echo "<script>alert('Senha ou e-mail inválidos (Senha inválida)')</script>";
-                    echo "Senha Inválida";
+                    echo "Senha ou e-mail inválidos";
                 } else if ($resultado == null) {
                     //email inválido
-                    // echo "<script>alert('Senha ou e-mail inválidos (Null)')</script>";
-                    echo "email inválido";
+                    echo "Senha ou e-mail inválidos";
                 } else {
 
                     $_SESSION['userLogado']['nome'] = $resultado['nomeUsuario'];
@@ -43,7 +41,7 @@ class AutentificadorController
                     // var_dump($_SESSION['userLogado']['acesso']);
                     if (($_SESSION['userLogado']['acesso']) <= 3) {
                         echo "ADM";
-                        header("Location: http://localhost/sebook/area/adm");
+                        header("Location: http://localhost/sebook/");
                     } else {
                         echo "Login usuário";
                         header("location: http://localhost/sebook/");
