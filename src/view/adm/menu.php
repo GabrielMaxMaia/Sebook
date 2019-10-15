@@ -25,6 +25,9 @@
 			<a href="<?php echo _URLBASE_ ?>area/adm/cadastro/cadSebo">Sebos</a>
 		</li>
 		<li>
+			<a href="<?php echo _URLBASE_ ?>area/adm/cadastro/cadSeboLivro">SeboLivro</a>
+		</li>
+		<li>
 			<a href="<?php echo _URLBASE_ ?>area/adm/cadastro/cadLivro">Livros</a>
 		</li>
 		<li>
