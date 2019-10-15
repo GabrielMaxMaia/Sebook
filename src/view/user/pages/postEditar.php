@@ -9,9 +9,9 @@ $postagemDAO = new PostagemDAO($sql);
 //Pega a sessão se hover, caso contrario string vazia
 $IdSessaoUser = $_SESSION['userLogado']['idUsuario'] ?? "";
 //Pega o idPost da url
-$postId = isset($_GET['idPost']) ? $_GET['idPost'] : "";
+$postId = isset($_GET['id']) ? $_GET['id'] : "";
 //Seta armazena o idPost em setIdPost
-$postagemDAO->setIdPostagem($_GET['idPost']);
+$postagemDAO->setIdPostagem($_GET['id']);
 
 //Chama a função listaPostagemId
 $result = $postagemDAO->listarPostagemId();

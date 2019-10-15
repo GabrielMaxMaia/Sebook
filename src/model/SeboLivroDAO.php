@@ -11,7 +11,7 @@ class SeboLivroDAO extends SeboLivro
     //Atributos - serão os comandos SQL  + um objeto Sql
     private static $SELECT_ALL = "select * from sebo_livro";
 
-    private static $SELECT_ID = "select * from sebo_livro where id_usuario = :idUsuario";
+    private static $SELECT_ID = "select * from sebo_livro where id_usuario =:idUsuario";
 
     private static $INSERT = "INSERT INTO sebo_livro (id_usuario, isbn_livro, qtd_estoque) VALUES (:idUsuario, :isbnLivro, :qtdEstoque)";
 
@@ -59,13 +59,14 @@ class SeboLivroDAO extends SeboLivro
                 'idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT)
             )
         );
-        if ($result->rowCount() == 1) {
+        if ($result->rowCount() > 0) {
             $linha = $result->fetch(\PDO::FETCH_OBJ);
             $itens = array(
                 'idUsuario' => $linha->id_usuario,
                 'isbnLivro' => $linha->isbn_livro,
                 'qtdEstoque' => $linha->qtd_estoque
             );
+          
         } else {
             $itens = null;
         }
@@ -105,7 +106,7 @@ class SeboLivroDAO extends SeboLivro
             SeboLivroDAO::$DELETE,
             array(
                 ':idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT),
-                ':isbnLivro' => array(0 => $this->getIsbnLivro(), 1 => \PDO::PARAM_STR),
+                ':isbnLivro' => array(0 => $this->getIsbnLivro(), 1 => \PDO::PARAM_STR)
             )
         );
         return $result;

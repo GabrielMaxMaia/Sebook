@@ -21,7 +21,7 @@ $usuarioDAO->setIdUsuario($_SESSION['userLogado']['idUsuario']);
 
 $IdUser = $_SESSION['userLogado']['idUsuario'] ?? "";
 
-$GetPost = $_GET['idPost'] ?? "";
+$GetPost = $_GET['id'] ?? "";
 
 //Include para evitar reenvio
 include "includes/evitarReenvio.php";
