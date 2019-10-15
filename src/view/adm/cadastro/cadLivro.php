@@ -46,10 +46,6 @@ $livroController->gravarAlterar();
 		<input class="grande" type="text" name="txtIsbn" value="<?= $livroController->getLivroDAO()->getIsbnLivro();  ?>">
 		<br>
 
-		<label>Id Autor</label>
-		<input class="grande" type="text" name="idAutor" id="idAutor" value="<?= $livroController->getLivroDAO()->getIdAutor();  ?>">
-		<br>
-
 		<label>Ano</label>
 		<input class="grande" type="text" name="anoLivro" id="anoLivro" value="<?= $livroController->getLivroDAO()->getAnoLivro();  ?>">
 		<br>

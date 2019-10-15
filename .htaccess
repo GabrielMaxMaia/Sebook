@@ -30,8 +30,11 @@ RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)\/add$ http://localhost/sebook/in
 RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)\/alter\/([\d]+)$ http://localhost/Sebook/index.php?area=$1&pasta=$2&page=$3&acao=2&id=$4 [NC,L]
 
 
-#regra para altera SeboLivro
+#regra para altera Tabelas conjuntas com 2 id's
 RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)\/alter\/([\d]+)\/([\d]+)$ http://localhost/Sebook/index.php?area=$1&pasta=$2&page=$3&acao=2&id=$4&isbnLivro=$5 [NC,L]
+
+#Regra para Tabelas conjuntas com 2 id's
+RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)\/delete\/([\d]+)\/([\d]+)$ http://localhost/Sebook/index.php?area=$1&pasta=$2&page=$3&acao=3&id=$4&isbnLivro=$5 [NC,L]
 
 
 #Regra para deletar

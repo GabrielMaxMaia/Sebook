@@ -2,9 +2,9 @@
 
 namespace Controller;
 
-use Model\LivroDAO;
+use Model\LivroAutorDAO;
 
-class LivroController
+class LivroAutorController
 {
     //Atributos
     private $lista = 'on';
@@ -12,12 +12,12 @@ class LivroController
     private $acaoGET;
     private $acaoPOST;
 
-    private $livroDAO = null;
+    private $livroAutorDAO = null;
 
     //Método Construtor
     public function __construct($sql)
     {
-        $this->livroDAO = new LivroDAO($sql);
+        $this->livroAutorDAO = new LivroAutorDAO($sql);
         $this->verificaExibicao();
     }
 
@@ -38,9 +38,9 @@ class LivroController
     {
         return $this->acaoPOST;
     }
-    public function getlivroDAO()
+    public function getLivroAutorDAO()
     {
-        return $this->livroDAO;
+        return $this->livroAutorDAO;
     }
 
     public function setLista($valor)
@@ -84,7 +84,7 @@ class LivroController
             $this->lista = 'on';
             $this->formulario = 'off';
         } else if ($this->acaoGET == 1 || $this->acaoGET == 2) {
-            $this->listarLivroIsbn();
+            $this->listarLivroAutorId();
             $this->lista = 'off';
             $this->formulario = 'on';
         }
@@ -93,20 +93,10 @@ class LivroController
     public function recuperarDadosFormulario()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-            $this->livroDAO->setIsbnLivro($_POST['txtIsbn']);
-            $this->livroDAO->setAnoLivro($_POST['anoLivro']);
-            $this->livroDAO->setNomeLivro($_POST['nomeLivro']);
-            $this->livroDAO->setIdEditora($_POST['idEditora']);
-            $this->livroDAO->setIdCategoria($_POST['idCategoria']);
-            $this->livroDAO->setSinopseLivro($_POST['sinopseLivro']);
+            $this->livroAutorDAO->setIdAutor($_POST['idAutor']);
+            $this->livroAutorDAO->setIsbnLivro($_POST['isbnLivro']);
         }
     }
-
-    //$_SESSION ---> array --> indice armazena valores
-    // objetos --> serializar e desserializar
-    // $_SESSION['var'] = 'valor';
-    // echo $_SESSION['var'];
 
     public function evitarReenvio()
     {
@@ -136,65 +126,56 @@ class LivroController
         $this->recuperarAcaoPOST();
         $this->recuperarDadosFormulario();
         if ($this->acaoPOST == 1 && $this->evitarReenvio()) {            
-            $this->livroDAO->adicionarlivro();
+            $this->livroAutorDAO->adicionarLivroAutor();
         } else if ($this->acaoPOST == 2) {
-            $this->livroDAO->alterarlivro();
-
+            //$this->livroAutorDAO->alterarSeboLivro();
+            $this->livroAutorDAO->listarLivroAutorId();
         }
     }
 
     public function excluir()
     {
         if ($this->acaoGET == 3) {
-            $this->livroDAO->setIsbnLivro($_GET['id']);
-            $this->livroDAO->excluirlivro();
+            $this->livroAutorDAO->setIdAutor($_GET['id']);
+            $this->livroAutorDAO->setIsbnLivro($_GET['isbnLivro']);
+            $this->livroAutorDAO->excluirseboLivro();
         }
     }
 
-    public function listarLivroIsbn()
+    public function listarLivroAutorId()
     {
         if ($this->acaoGET == 2) {
-            $this->livroDAO->setIsbnLivro($_GET['id']);
-            $livro = $this->livroDAO->listarLivroIsbn();
-            $this->livroDAO->setAnoLivro($livro['anoLivro']);
-            $this->livroDAO->setUrlFotoLivro($livro['urlFotoLivro']);
-            $this->livroDAO->setNomeLivro($livro['nomeLivro']);
-            $this->livroDAO->setSinopseLivro($livro['sinopseLivro']);
-            $this->livroDAO->setCodStatusLivro($livro['codStatusLivro']);
-            $this->livroDAO->setIdEditora($livro['idEditora']);
-            $this->livroDAO->setIdCategoria($livro['idCategoria']);
+            $this->livroAutorDAO->setIdAutor($_GET['id']);
+            $this->livroAutorDAO->setIsbnLivro($_GET['isbnLivro']);
+            $this->livroAutorDAO->listarLivroAutorId();
         }
     }
 
-    public function listarLivros()
+    public function listarLivroAutor()
     {
-        $result = $this->livroDAO->listarLivros();
+        $result = $this->livroAutorDAO->listarLivroAutor();
+
         $tabela = "";
         if ($result != null) {
             foreach ($result as $linha) {
                 $tabela .= "<tr>
-                <td>" . $linha['isbnLivro'] . "</td>
-                <td>" . $linha['anoLivro'] . "</td>
-                <td>" . $linha['urlFotoLivro'] . "</td>
-                <td>" . $linha['nomeLivro'] . "</td>  
-                <td>" . $linha['codStatusLivro'] . "</td>      
-                <td>" . $linha['idEditora'] . "</td>      
-                <td>" . $linha['idCategoria'] . "</td>      
-
+                <td>" . $linha['idAutor'] . "</td>
+                <td>" . $linha['isbnLivro'] . "</td>    
                         <td>
-                            <a href='http://localhost/Sebook/area/adm/cadastro/cadlivro/alter/" . $linha['isbnLivro'] . "'>
+                            <a href='http://localhost/Sebook/area/adm/cadastro/cadLivroAutor/alter/" . $linha['idAutor'] . "/" . $linha['isbnLivro'] . "'>
                                 <img src='" . _URLBASE_ . "public/img/editar.jpg'>
                             </a>
                         </td>
+                        
                         <td>
-                            <a href='http://localhost/Sebook/area/adm/cadastro/cadlivro/delete/" . $linha['isbnLivro'] . "'>
+                            <a href='http://localhost/Sebook/area/adm/cadastro/cadLivroAutor/delete/" . $linha['idAutor'] . "/" . $linha['isbnLivro'] . "'>
                                 <img src='" . _URLBASE_ . "public/img/excluir.jpg'>
                             </a>
                         </td>
                     </tr>";
             }
         } else {
-            $tabela = "<tr colspan='5'><td>Não há livros registradas</td></tr>";
+            $tabela = "<tr colspan='5'><td>Não há Sebos registradas</td></tr>";
         }
         return $tabela;
     }

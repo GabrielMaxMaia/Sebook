@@ -28,7 +28,13 @@
 			<a href="<?php echo _URLBASE_ ?>area/adm/cadastro/cadSeboLivro">SeboLivro</a>
 		</li>
 		<li>
+			<a href="<?php echo _URLBASE_ ?>area/adm/cadastro/cadAutor">Autor</a>
+		</li>
+		<li>
 			<a href="<?php echo _URLBASE_ ?>area/adm/cadastro/cadLivro">Livros</a>
+		</li>
+		<li>
+			<a href="<?php echo _URLBASE_ ?>area/adm/cadastro/cadLivroAutor">Livros Autor</a>
 		</li>
 		<li>
 			<a href="<?php echo _URLBASE_ ?>area/adm/cadastro/cadCategoria">Categorias</a>
@@ -36,9 +42,7 @@
 		<li>
 			<a href="<?php echo _URLBASE_ ?>area/adm/cadastro/cadEditora">Editoras</a>
 		</li>
-		<li>
-			<a href="<?php echo _URLBASE_ ?>area/adm/cadastro/cadAutor">Autor</a>
-		</li>
+		
 		<li><a href="<?php echo _URLBASE_ ?>area/adm/sair">Sair</a></li>
 	</ul>
 </nav>

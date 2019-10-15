@@ -8,7 +8,6 @@ class Livro
 {
     //Atributos mapeando os campos da tabela
     private $isbnLivro;
-    private $idAutor;
     private $anoLivro;
     private $urlFotoLivro;
     private $nomeLivro;
@@ -18,10 +17,9 @@ class Livro
     private $idCategoria;
 
     //Método construtor auxiliar de criação de objetos
-    public function __construct($isbnLivro = "", $idAutor = "", $anoLivro = "", $urlFotoLivro= "",$nomeLivro = "", $idEditora = "", $codStatusLivro = "", $sinopseLivro = "", $idCategoria = "")
+    public function __construct($isbnLivro = "", $anoLivro = "", $urlFotoLivro= "",$nomeLivro = "", $idEditora = "", $codStatusLivro = "", $sinopseLivro = "", $idCategoria = "")
     {
         $this->isbnLivro = $isbnLivro;
-        $this->idAutor = $idAutor;
         $this->anoLivro = $anoLivro;
         $this->urlFotoLivro = $urlFotoLivro;
         $this->nomeLivro = $nomeLivro;
@@ -38,14 +36,6 @@ class Livro
 
 	public function setIsbnLivro($isbnLivro){
 		$this->isbnLivro = $isbnLivro;
-	}
-
-	public function getIdAutor(){
-		return $this->idAutor;
-	}
-
-	public function setIdAutor($idAutor){
-		$this->idAutor = $idAutor;
 	}
 
 	public function getAnoLivro(){
@@ -109,7 +99,6 @@ class Livro
     {
         return json_encode(array(
             'isbnLivro' => $this->isbnLivro,
-            'idAutor' => $this->idAutor,
             'anoLivro' => $this->anoLivro,
             'urlFotoLivro' => $this->urlFotoLivro,
             'nomeLivro' => $this->nomeLivro,
