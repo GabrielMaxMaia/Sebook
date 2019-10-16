@@ -16,15 +16,28 @@ $seboDAO->setUrlFotoSebo($result['urlFotoSebo']);
 $seboDAO->setUrlSiteSebo($result['urlSiteSebo']);
 
 $seboLivroDAO->setIdUsuario($_GET['id']);
+//Froma que seria
 $resultSeboLivro = $seboLivroDAO->listarSeboLivroId();
 $seboLivroDAO->setIsbnLivro($resultSeboLivro['isbnLivro']);
 $seboLivroDAO->setQtdEstoque($resultSeboLivro['qtdEstoque']);
 
-for($i = 0; $i < count($resultSeboLivro); $i++){
-    var_dump($resultSeboLivro);
-}
+//GAMBIARRA 
+// $stmt = $conn->prepare("SELECT * FROM sebo_livro WHERE id_usuario = :idUsuario");
+// $stmt->bindParam(':idUsuario', $_GET['id']);
+// $stmt->execute();
+// if ($stmt->execute()) {
+//     if ($stmt->rowCount() > 0) {
+//         while ($row = $stmt->fetch(PDO::FETCH_OBJ)) {
+//             $arraySeboLivro[] = $row->id_usuario;
+//             $arraySeboLivro[] = $row->isbn_livro;
+//             $arraySeboLivro[] = $row->qtd_estoque;
+//         }
+//     }
+// }
 
-
+// var_dump($arraySeboLivro);
+// $seboLivroDAO->setIsbnLivro($isbnLiivro);
+// $seboLivroDAO->setQtdEstoque($qtdEstoque);
 
 ?>
 <article class="acervo-sebo">
@@ -52,7 +65,7 @@ for($i = 0; $i < count($resultSeboLivro); $i++){
                 <!--Posteriormente remover ccs inline-->
             </a>
             <figcaption>
-                <p>Qauntidade em Estoque: <?=$seboLivroDAO->getQtdEstoque()?></p>
+                <p>Qauntidade em Estoque: <?= $seboLivroDAO->getQtdEstoque() ?></p>
             </figcaption>
         </figure>
         <?php

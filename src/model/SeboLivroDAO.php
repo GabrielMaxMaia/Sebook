@@ -11,7 +11,9 @@ class SeboLivroDAO extends SeboLivro
     //Atributos - serão os comandos SQL  + um objeto Sql
     private static $SELECT_ALL = "select * from sebo_livro";
 
-    private static $SELECT_ID = "select * from sebo_livro where id_usuario =:idUsuario";
+    private static $SELECT_ID = "SELECT * FROM sebo_livro WHERE id_usuario = :idUsuario";
+
+    private static $SELECT_ID_ISBN = "SELECT * FROM sebo_livro WHERE id_usuario = :idUsuario and isbn_livro = :isbnLivro";
 
     private static $INSERT = "INSERT INTO sebo_livro (id_usuario, isbn_livro, qtd_estoque) VALUES (:idUsuario, :isbnLivro, :qtdEstoque)";
 
@@ -56,7 +58,7 @@ class SeboLivroDAO extends SeboLivro
         $result = $this->sql->query(
             SeboLivroDAO::$SELECT_ID,
             array(
-                'idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT)
+                ':idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT)
             )
         );
         if ($result->rowCount() > 0) {
@@ -66,7 +68,32 @@ class SeboLivroDAO extends SeboLivro
                 'isbnLivro' => $linha->isbn_livro,
                 'qtdEstoque' => $linha->qtd_estoque
             );
-          
+            // var_dump($itens);
+        } else {
+            $itens = null;
+        }
+        //devolver o resultado     
+        return $itens;
+    }
+
+    public function listarSeboLivroIdIsbn()
+    {
+        //executar a consulta no banco
+        $result = $this->sql->query(
+            SeboLivroDAO::$SELECT_ID_ISBN,
+            array(
+                ':idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT),
+                'isbnLivro' => array(0 => $this->getIsbnLivro(), 1 => \PDO::PARAM_INT)
+            )
+        );
+        if ($result->rowCount() > 0) {
+            $linha = $result->fetch(\PDO::FETCH_OBJ);
+            $itens = array(
+                'idUsuario' => $linha->id_usuario,
+                'isbnLivro' => $linha->isbn_livro,
+                'qtdEstoque' => $linha->qtd_estoque
+            );
+            // var_dump($itens);
         } else {
             $itens = null;
         }
