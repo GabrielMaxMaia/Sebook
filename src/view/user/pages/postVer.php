@@ -17,9 +17,7 @@ $resultComentario = $comentarioDAO->listarComentario();
 
 $resultUsuario = $usuarioDAO->listarUsuarios();
 
-$usuarioDAO->setIdUsuario($_SESSION['userLogado']['idUsuario']);
-
-$IdUser = $_SESSION['userLogado']['idUsuario'] ?? "";
+$usuarioDAO->setIdUsuario($IdUser);
 
 $GetPost = $_GET['id'] ?? "";
 
@@ -37,7 +35,7 @@ if ($result != null) {
             <section>
                 <header>
                     <picture>
-                        <img src="<?=_URLBASE_ . $linha['urlFotoPost']?>">
+                        <img src="<?= _URLBASE_ . $linha['urlFotoPost'] ?>">
                     </picture>
                     <h2>
                         <?= $linha['tituloPostagem'] ?>
@@ -58,11 +56,11 @@ if (isset($_POST['enviarComentario'])) {
     $erro = false;
     if ($_POST['txtComentario'] != null || "") {
         $comentarioDAO->setTxtComentario($_POST['txtComentario']);
+        echo "foi?";
     } else {
         $erro = true;
         echo "Escreva Algo antes de enviar";
     }
-
     if ($erro == false) {
         $comentarioDAO->setIdPost($GetPost);
         $comentarioDAO->setIdUsuario($IdUser);
@@ -75,18 +73,29 @@ if (isset($_POST['enviarComentario'])) {
     }
 }
 ?>
-<form method="post" action="">
 
-    <span>Enviar comentário</span><br>
+<?php
+//Se Úsuario estiver logado então o form aparece
+//Caso contrário uma menssagem pedindo para logar
+if ($IdUser != "") {
+    ?>
+    <form method="post" action="">
 
-    <textarea name="txtComentario" cols="25" rows="5"></textarea>
+        <span>Enviar comentário</span><br>
 
-    <input type="submit" name="enviarComentario" value="Comentar">
-</form>
+        <textarea name="txtComentario" cols="25" rows="5"></textarea>
+
+        <input type="submit" name="enviarComentario" value="Comentar">
+    </form>
+<?php
+} else {
+    echo "<br><br><p>Faça o Login para comentar.</p><br><br>";
+}
+?>
 
 <p>Seção de comentários</p>
 
 <?php
-    //Carrega aquivo para seção de comentários
-    include_once "includes/secaoComentario.php";
+//Carrega aquivo para seção de comentários
+include_once "includes/secaoComentario.php";
 ?>

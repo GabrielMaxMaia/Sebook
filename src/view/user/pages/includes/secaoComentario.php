@@ -10,9 +10,9 @@ if ($resultComentario > 1) {
                     <span> - Por <?= $comentario['nomeUsuario'] ?></span>
                     <span>em <?= $comentario['dataHoraComentario'] ?></span>
                     <?php
-                        //Caso o ide do usuário for o mesmo que está no comentário
+                        //Caso o id do usuário for o mesmo que está no comentário
                         //Ele pode editar excluir o comentário
-                        if ($comentario['idUsuario'] == $usuarioDAO->getIdUsuario()) {
+                        if ($comentario['idUsuario'] == $usuarioDAO->getIdUsuario() || $acessoUser <= 3 && $acessoUser != "") {
                         
                         $comentarioDAO->setIdUsuario($comentario['idUsuario']);
 
@@ -47,7 +47,15 @@ if ($resultComentario > 1) {
                         }
                     ?>
                 </p>
+
+                <?php
+                    //A opção de responder só aparece para quem está logado
+                    if($IdUser != ""){
+                ?>
                 <label class="btn-modal-cadastre" for="modal-responder" <?= $comentarioDAO->getIdComentario()?>>Responder</label>
+                <?php
+                    }
+                ?>
 
                 <b>Seção de comentarios resposta</b>
                 <hr>

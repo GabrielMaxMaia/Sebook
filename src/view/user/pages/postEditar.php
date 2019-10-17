@@ -35,7 +35,7 @@ if (isset($_POST['update'])) {
 
 if ($result != null) {
 
-    if ($result['idUsuario'] == $IdSessaoUser || $_SESSION['userLogado']['acesso'] <= 3) {
+    if ($result['idUsuario'] == $IdSessaoUser || $acessoUser <= 3) {
         ?>
         <form method="post" action="">
 
