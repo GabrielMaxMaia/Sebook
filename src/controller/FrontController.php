@@ -7,7 +7,7 @@ class FrontController
     //Itens por página
     private $itemPagina = 5;
     //Página Atual de exibição
-    private $paginaAtual = 5;
+    private $paginaAtual = 0;
     //Registro inicial da paginação
     private $regIni = 0;
 

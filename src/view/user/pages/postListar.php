@@ -31,7 +31,7 @@ if (isset($_GET['id'])) {
 
     <section class="grid-container">
         <?php
-        $postagens = $postagemDAO->listarPostagem($regIni = 0, $itemPagina = 5);
+        $postagens = $postagemDAO->listarPostagem($regIni = 0, $itemPagina = 3);
         foreach ($postagens as $post) {
             ?>
             <div class=''>
