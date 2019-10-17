@@ -91,14 +91,14 @@ class FrontController
         }
     }
 
-    public function exibirNotificador()
+    public function exibirNotificador($urlDoNotificador)
     {
         $qtdePaginas = ceil($this->postagemDAO->totalPostagens() / $this->itemPagina);
 
         $notificador = "<ul>";
         if ($this->paginaAtual >= 2) {
-            $notificador .= "<li><a href='" . _URLBASE_ . "index.php?pagina=1'><<</a></li>";
-            $notificador .= "<li><a href='" . _URLBASE_ . "index.php?pagina=" . ($this->paginaAtual - 1) . "'><</a> </li>";
+            $notificador .= "<li><a href='" . _URLBASE_ . $urlDoNotificador ."/pagina/1'><<</a></li>";
+            $notificador .= "<li><a href='" . _URLBASE_ . $urlDoNotificador . "/pagina/" . ($this->paginaAtual - 1) . "'><</a> </li>";
         }
         for ($i = 1; $i <= $qtdePaginas; $i++) {
             $active = "";
@@ -107,12 +107,12 @@ class FrontController
             }
             $notificador .= "
             <li>
-                    <a $active href='" . _URLBASE_ . "index.php?pagina=" . $i . "'>$i</a>
-                </li>";
+                <a $active href='" . _URLBASE_ . $urlDoNotificador . "/pagina/" . $i . "'>$i</a>
+            </li>";
         }
         if ($this->paginaAtual < $qtdePaginas) {
-            $notificador .= "<li><a $active href='" . _URLBASE_ . "index.php?pagina=" . ($this->paginaAtual + 1) . "'>></a></li>";
-            $notificador .= "<li><a $active href='" . _URLBASE_ . "index.php?pagina=" . $qtdePaginas . "'>>></a></li>";
+            $notificador .= "<li><a $active href='" . _URLBASE_ . $urlDoNotificador . "/pagina/" . ($this->paginaAtual + 1) . "'>></a></li>";
+            $notificador .= "<li><a $active href='" . _URLBASE_ . $urlDoNotificador . "/pagina/" . $qtdePaginas . "'>>></a></li>";
         }
         $notificador .= "</ul>";
         return $notificador;

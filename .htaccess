@@ -15,6 +15,10 @@ RewriteRule ^area\/([a-z]+)$ index.php?area=$1 [NC,L]
 RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)\/([0-9]+)$ http://localhost/sebook/index.php?area=$1&pasta=$2&page=$3&id=$4 [NC,L]
 
 
+#Regra de paginação
+RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)\/pagina\/([0-9]+)$ http://localhost/sebook/index.php?area=$1&pasta=$2&page=$3&pagina=$4 [NC,L]
+
+
 #Regra para excluirPost
 #RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)\/delete\/([\d]+)$ http://localhost/sebook/index.php?area=$1&pasta=$2&page=$3&acao=3&idDelete=$4 [NC,L]
 
