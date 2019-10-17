@@ -13,6 +13,12 @@ class PostagemController
     private $acaoPOST;
 
     private $postagemDAO = null;
+    //Itens por página
+    private $itemPagina = 5;
+    //Página Atual de exibição
+    private $paginaAtual = 0;
+    //Registro inicial da paginação
+    private $regIni = 0;
 
     //Método Construtor
     public function __construct($sql)
@@ -59,6 +65,52 @@ class PostagemController
     {
         $this->acaoPOST = $valor;
     }
+
+
+
+    //----Front Controller
+
+    public function getItemPagina()
+    {
+        return $this->itemPagina;
+    }
+
+    public function setItemPagina($itemPagina)
+    {
+        $this->itemPagina = $itemPagina;
+    }
+
+    public function setPostagemDAO($postagemDAO)
+    {
+        $this->postagemDAO = $postagemDAO;
+    }
+
+    public function getPaginaAtual()
+    {
+        return $this->paginaAtual;
+    }
+
+    public function setPaginaAtual($paginaAtual)
+    {
+        $this->paginaAtual = $paginaAtual;
+    }
+
+    public function getRegIni()
+    {
+        return $this->regIni;
+    }
+
+    public function setRegIni($regIni)
+    {
+        $this->regIni = $regIni;
+    }
+
+
+
+    //----Front Controller
+
+
+
 
     //Métodos Especialistas
 
@@ -158,30 +210,68 @@ class PostagemController
         }
     }
 
+    // public function listarPostagem()
+    // {
+    //     $result = $this->postagemDAO->listarPostagem();
+
+    //     $postagem = "";
+    //     if ($result != null) {
+    //         foreach ($result as $linha) {
+
+    //             $postagem .= "<div>
+    //                            <h3> id da postagem {$linha['idPostagem']} </h3>
+    //                            <h3> id usuario {$linha['idUsuario']} </h3>
+    //                            <h1> Titulo {$linha['tituloPostagem']} </h1>
+    //                            <p> Post {$linha['txtPostagem']} </p>
+    //                            <a href='http://localhost/Sebook/area/adm/cadastro/cadPostagem/alter/" . $linha['idPostagem'] . "'>
+    //                                 <img src='" . _URLBASE_ . "public/img/editar.jpg'>
+    //                             </a>
+    //                             <a href='http://localhost/Sebook/area/adm/cadastro/cadPostagem/delete/" . $linha['idPostagem'] . "'>
+    //                                 <img src='" . _URLBASE_ . "public/img/excluir.jpg'>
+    //                             </a>
+    //                         </div><hr>";
+    //         }
+    //     } else {
+    //         $postagem = "<tr colspan='5'><td>Não há Postagens registradas</td></tr>";
+    //     }
+    //     return $postagem;
+    // }
+
     public function listarPostagem()
     {
-        $result = $this->postagemDAO->listarPostagem();
-
+        $result = $this->postagemDAO->listarPostagem($this->regIni, $this->itemPagina);
         $postagem = "";
+
         if ($result != null) {
-            foreach ($result as $linha) {
-               
-                $postagem .= "<div>
-                               <h3> id da postagem {$linha['idPostagem']} </h3>
-                               <h3> id usuario {$linha['idUsuario']} </h3>
-                               <h1> Titulo {$linha['tituloPostagem']} </h1>
-                               <p> Post {$linha['txtPostagem']} </p>
-                               <a href='http://localhost/Sebook/area/adm/cadastro/cadPostagem/alter/" . $linha['idPostagem'] . "'>
-                                    <img src='" . _URLBASE_ . "public/img/editar.jpg'>
-                                </a>
-                                <a href='http://localhost/Sebook/area/adm/cadastro/cadPostagem/delete/" . $linha['idPostagem'] . "'>
-                                    <img src='" . _URLBASE_ . "public/img/excluir.jpg'>
-                                </a>
-                            </div><hr>";
+            foreach ($result as $post) {
+                $postagem .= "
+                <div class=''>
+                    <figure>
+                       <img src='" . _URLBASE_ . $post['urlFotoPost'] . "' style='max-width:300px;'>
+                       <figcaption>
+                        <h1>" . $post['tituloPostagem'] . "</h1>
+                        <p>" . $post['txtPostagem'] . "</p>
+                        </figcaption>
+                    </figure>
+                    <a href='http://localhost/Sebook/area/adm/cadastro/cadPostagem/alter/" . $post['idPostagem'] . "'>
+                    <img src='" . _URLBASE_ . "public/img/editar.jpg'></a>
+                    <a href='http://localhost/Sebook/area/adm/cadastro/cadPostagem/delete/" . $post['idPostagem'] . "'>
+                     <img src='" . _URLBASE_ . "public/img/excluir.jpg'></a>
+                </div>";
             }
         } else {
             $postagem = "<tr colspan='5'><td>Não há Postagens registradas</td></tr>";
         }
         return $postagem;
+    }
+
+    public function verificarPaginacao()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == "GET") {
+            $pagina = isset($_GET['pagina']) ? $_GET['pagina'] : 1;
+            $this->paginaAtual = $pagina;
+            //calculo do registro inicial;
+            $this->regIni = ($this->paginaAtual - 1) * $this->itemPagina;
+        }
     }
 }

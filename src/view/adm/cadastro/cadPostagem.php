@@ -5,6 +5,11 @@ use Controller\PostagemController;
 $objSql = new Util\Sql($conn);
 $postagemController = new Controller\PostagemController($objSql);
 $postagemController->gravarAlterar();
+
+$postagemDAO = new Model\PostagemDAO();
+
+$frontController = new Controller\FrontController($postagemDAO);
+
 ?>
 
 <section class="<?php echo $postagemController->getLista(); ?>">
@@ -12,8 +17,16 @@ $postagemController->gravarAlterar();
 	<h2>Postagens</h2>
 	<tbody>
 		<?php
-		echo $postagemController->listarPostagem();
+			echo $postagemController->listarPostagem();
 		?>
+		<section class="notificador">
+			<?php
+			//Estou usando a Url da lista que quero controlar
+			$urlDoNotificador = "/adm/cadastro/cadPostagem";
+			//$frontController->exibirNotificador($urlDoNotificador);
+			?>
+		</section>
+
 	</tbody>
 	</table>
 	<input class="button" type="button" onclick="window.location='http://localhost/sebook/area/adm/cadastro/cadPostagem/add'" value="Novo">
@@ -67,9 +80,5 @@ $postagemController->gravarAlterar();
 
 
 
-	<br>
-	<br>
-	<br>
-	<br>
 	<a href="http://localhost/Sebook/area/adm/cadastro/cadPostagem">Voltar</a>
 </section>

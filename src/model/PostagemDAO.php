@@ -10,7 +10,7 @@ class PostagemDAO extends Postagem
     //Atributos - serão os comandos SQL  + um objeto Sql
     private static $SELECT_ALL = "select * from postagem where cod_status_post = '1'";
 
-    private static $SELECT_TOT = "SELECT count(id_usuario) as tot from postagem where cod_status_post = '1'";
+    private static $SELECT_TOT = "SELECT count(id_post) as tot from postagem where cod_status_post = '1'";
 
     private static $SELECT_ID = "SELECT * from postagem where id_post = :idPostagem";
 
@@ -21,9 +21,7 @@ class PostagemDAO extends Postagem
     private static $UPDATE = "UPDATE postagem SET titulo_post = :tituloPostagem, txt_postagem = :txtPostagem, url_foto_post = :urlFotoPost WHERE id_post =  :idPostagem";
 
     //DELETE lógico -> altera status
-    private static $DELETE = "UPDATE postagem SET
-                                    cod_status_post = '0'
-                                WHERE id_post = :idPostagem ";
+    private static $DELETE = "UPDATE postagem SET cod_status_post = '0' WHERE id_post = :idPostagem ";
 
     //Atributo par armazenar o Objeto SQL 
     private $sql;
@@ -73,7 +71,7 @@ class PostagemDAO extends Postagem
         return $itens;
     }
 
-    public function totalPostagens()
+    public function totalContar()
     {
         $result = $this->sql->query(PostagemDAO::$SELECT_TOT);
         $linha = $result->fetch(\PDO::FETCH_OBJ);

@@ -11,11 +11,11 @@ class FrontController
     //Registro inicial da paginação
     private $regIni = 0;
 
-    private $postagemDAO;
+    private $modoDAO;
 
-    public function __construct($postagemDAO)
+    public function __construct($modoDAO)
     {
-        $this->postagemDAO = $postagemDAO;
+        $this->modoDAO = $modoDAO;
     }
 
     public function getItemPagina()
@@ -28,14 +28,14 @@ class FrontController
         $this->itemPagina = $itemPagina;
     }
 
-    public function getPostagemDAO()
+    public function getModoDAO()
     {
-        return $this->postagemDAO;
+        return $this->modoDAO;
     }
 
-    public function setPostagemDAO($postagemDAO)
+    public function setModoDAO($modoDAO)
     {
-        $this->postagemDAO = $postagemDAO;
+        $this->modoDAO = $modoDAO;
     }
 
     public function getPaginaAtual()
@@ -61,11 +61,12 @@ class FrontController
 
     // public function listarPostagem()
     // {
-    //     $postagens = $this->postagemDAO->listarPostagem($this->regIni, $this->itemPagina);
-    //     $grid = "";
+    //     $result = $this->modoDAO->listarPostagem($this->regIni, $this->itemPagina);
+    //     $postagem = "";
 
-    //     foreach ($postagens as $post) {
-    //         $grid .= "
+    //     if ($result != null) {
+    //         foreach ($result as $post) {
+    //             $postagem .= "
     //             <div class=''>
     //                 <a href='" . _URLBASE_ . "area/user/pages/postVer/" . $post['idPostagem'] . "'>
     //                 <figure>
@@ -76,9 +77,18 @@ class FrontController
     //                     </figcaption>
     //                 </figure>
     //                 </a>
+    //                 <a href='http://localhost/Sebook/area/adm/cadastro/cadPostagem/alter/" . $post['idPostagem'] . "'>
+    //                     <img src='" . _URLBASE_ . "public/img/editar.jpg'>
+    //                 </a>
+    //                 <a href='http://localhost/Sebook/area/adm/cadastro/cadPostagem/delete/" . $post['idPostagem'] . "'>
+    //                      <img src='" . _URLBASE_ . "public/img/excluir.jpg'>
+    //                 </a>
     //             </div>";
+    //         }
+    //     } else {
+    //         $postagem = "<tr colspan='5'><td>Não há Postagens registradas</td></tr>";
     //     }
-    //     return $grid;
+    //     return $postagem;
     // }
 
     public function verificarPaginacao()
@@ -93,11 +103,11 @@ class FrontController
 
     public function exibirNotificador($urlDoNotificador)
     {
-        $qtdePaginas = ceil($this->postagemDAO->totalPostagens() / $this->itemPagina);
+        $qtdePaginas = ceil($this->modoDAO->totalContar() / $this->itemPagina);
 
         $notificador = "<ul>";
         if ($this->paginaAtual >= 2) {
-            $notificador .= "<li><a href='" . _URLBASE_ . $urlDoNotificador ."/pagina/1'><<</a></li>";
+            $notificador .= "<li><a href='" . _URLBASE_ . $urlDoNotificador . "/pagina/1'><<</a></li>";
             $notificador .= "<li><a href='" . _URLBASE_ . $urlDoNotificador . "/pagina/" . ($this->paginaAtual - 1) . "'><</a> </li>";
         }
         for ($i = 1; $i <= $qtdePaginas; $i++) {

@@ -8,10 +8,6 @@ $sql = new \Util\Sql($conn);
 $postagemDAO = new PostagemDAO($sql);
 //Armazena em result para o laço
 $result = $postagemDAO->listarPostagem();
-//Pega a sessão se hover, caso contrario string vazia
-
-// $IdUser = $_SESSION['userLogado']['idUsuario'] ?? "";
-// $IdSessaoUser = $_SESSION['userLogado']['acesso'] ?? "";
 
 $frontController = new Controller\FrontController($postagemDAO);
 $frontController->setItemPagina(2);
@@ -69,6 +65,7 @@ var_dump($_GET);
         <?php
         //Estou usando a Url da lista que quero controlar
         $urlDoNotificador = "area/user/pages/postListar";
+
         echo $frontController->exibirNotificador($urlDoNotificador);
         ?>
     </section>
