@@ -10,10 +10,9 @@ class PostagemDAO extends Postagem
     //Atributos - serão os comandos SQL  + um objeto Sql
     private static $SELECT_ALL = "select * from postagem where cod_status_post = '1'";
 
-    //private static $SELECT_ID = "select * from postagem where id_post = :idPostagem";
-    private static $SELECT_ID = "SELECT * from postagem where id_post = :idPostagem";
+    private static $SELECT_TOT = "SELECT count(id_usuario) as tot from postagem where cod_status_post = '1'";
 
-    //$selectIdUser = "SELECT id_usuario FROM usuario WHERE id_usuario =  $_SESSION['userLogado']['idUsuario']";
+    private static $SELECT_ID = "SELECT * from postagem where id_post = :idPostagem";
 
     private static $INSERT = "INSERT INTO postagem
     (titulo_post,txt_postagem,data_hora_post, url_foto_post, id_usuario)
@@ -38,10 +37,22 @@ class PostagemDAO extends Postagem
 
     //Métodos especialistas - irão executar os SQL dos Atributos
 
-    public function listarPostagem()
+    public function listarPostagem($ini = -1, $qtde = 1)
     {
+        if ($ini >= 0) {
+            $limit = " limit :ini , :qtde ";
+        } else {
+            $limit = "";
+        }
+
         //executar a consulta no banco
-        $result = $this->sql->query(PostagemDAO::$SELECT_ALL);
+        $result = $this->sql->query(
+            PostagemDAO::$SELECT_ALL . $limit,
+            array(
+                ':ini' => array(0 => $ini, 1 => \PDO::PARAM_INT),
+                ':qtde' => array(0 => $qtde, 1 => \PDO::PARAM_INT)
+            )
+        );
         //devolver o resultado
         if ($result->rowCount() > 0) {
             while ($linha = $result->fetch(\PDO::FETCH_OBJ)) {
@@ -62,10 +73,17 @@ class PostagemDAO extends Postagem
         return $itens;
     }
 
+    public function totalPostagens()
+    {
+        $result = $this->sql->query(PostagemDAO::$SELECT_TOT);
+        $linha = $result->fetch(\PDO::FETCH_OBJ);
+        return $linha->tot;
+    }
+
     public function listarPostagemId()
     {
         //executar a consulta no banco
-   
+
         $result = $this->sql->query(
             PostagemDAO::$SELECT_ID,
             array(
