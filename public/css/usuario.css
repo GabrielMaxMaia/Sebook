@@ -3,6 +3,7 @@
 body {
     padding: 0;
     margin: 0;
+    /* font-family: Arial, Helvetica, sans-serif; */
     font-family: sans-serif;
     margin: auto;
     overflow: hidden;
@@ -313,6 +314,7 @@ div#containerTemplate {
     text-align: center;
     font-size: 18px;
     background: #fff;
+    /* Center slide text vertically */
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -530,6 +532,10 @@ div#containerTemplate {
     margin-bottom: 10px
 }
 
+
+/*===================AREA DO LO(?) DESCRIÇÃO LIVRO====================*/
+
+
 /*===================AREA DO LOGIN====================*/
 
 .containerLogin {
@@ -613,6 +619,7 @@ div#containerTemplate {
     display: block;
     margin: 1rem auto;
     border: 1px solid #999;
+    /* height: 30px; */
     padding: .5rem;
     outline:none;
     font-size:16px
@@ -665,6 +672,7 @@ div#containerTemplate {
     margin-left: -20px;
     z-index: 0
 }
+
 
 /*===================AREA DO MODAL====================*/
 
@@ -806,6 +814,13 @@ div#containerTemplate {
     color: #fff
 }
 
+
+/*===================AREA DO PERFIL====================*/
+
+
+/* O perfil.css está vazio*/
+
+
 /*===================AREA DO QUEM SOMOS====================*/
 
 .quemSomos{
@@ -838,6 +853,7 @@ div#containerTemplate {
     height: 250px;
     width: 100%
 }
+
 
 /*===================AREA DO SEBOS====================*/
 
@@ -925,7 +941,11 @@ div#containerTemplate {
     text-align: center
 }
 
+
 /*===================AREA DO STYLE====================*/
+
+
+/*Container pai de todos, centraliza tudo*/
 
 img {
     width: 100%;
@@ -1026,7 +1046,10 @@ header #Logado .ulCenter2 ul li a {
 
 .master1 #menuH:checked~.ulCenter ul {
     display: flex;
+    /*opacity: 1;
+    transition: opacity .09s linear*/
 }
+
 
 /*Nessa parte foi removido a media query para que o layou espandisse na tela*/
 
@@ -1040,9 +1063,32 @@ header #Logado .ulCenter2 ul li a {
     border-bottom: 1px solid #111
 }
 
+
+/*.master1 header .perfil {
+
+     width: 40px;
+    height: 40px;
+    display: block;
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px 
+
+  }*/
+
 .master1 header .perfil img {
     height: 100%
 }
+
+
+/*.master1 header .logo {
+
+     width: 125px;
+    height: 60px;
+    position: absolute;
+    left: 20px;
+    top: 10px; 
+
+  }*/
 
 .master1 header .logo img {
     width: 100%
@@ -1138,6 +1184,7 @@ header #Logado .ulCenter2 ul li a {
     z-index: 1;
     flex-flow: column;
     margin-top: 0;
+    /*opacity: 0;*/
 }
 
 .master1 nav .menu ul li a {
@@ -1158,6 +1205,9 @@ header #Logado .ulCenter2 ul li a {
     border-bottom: 0
 }
 
+
+
+
 /*Menu mobile desaparece quando a resolução for maior que 780px*/
 
 header,
@@ -1177,6 +1227,7 @@ header,
 
 .navDesk ul li {
     list-style: none;
+    /* padding: .6rem 1rem */
     padding: 1rem
 }
 
@@ -1282,11 +1333,21 @@ header .menuGroup {
 section {
     width: 100%;
     position: relative;
+    /* padding: 60px 0 0 0 */
 }
 
 section .banner {
     width: 100%;
     min-height: 184px;
+    /* Move slides overflowed container */
+    /* Color of bullets */
+    /* Color of bullets - END */
+    /* Text of slides - END */
+    /* Calculate AUTOPLAY for BULLETS */
+    /* Calculate AUTOPLAY for BULLETS - END */
+    /* Calculate AUTOPLAY for SLIDES */
+    /* Calculate AUTOPLAY for SLIDES - END */
+    /* Calculate AUTOPLAY for CAPTION */
 }
 
 section .banner img {
@@ -1490,6 +1551,7 @@ form select {
     width: 100%
 }
 
+
 /*===========================================Icone laterais*/
 
 .Social-Bar {
@@ -1504,7 +1566,7 @@ form select {
 
 @media (min-width:420px){
     .Social-Bar{
-        right:17px;
+        right:18px;
     }
 }
 
