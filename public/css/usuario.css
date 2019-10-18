@@ -415,7 +415,7 @@ div#containerTemplate {
 /*===================AREA DO EVENTOS====================*/
 
 .eventos .container {
-    background: #f1f1f1;
+    border: 1px solid #ccc;
     margin-top: 20px;
     padding: 20px
 }
@@ -498,7 +498,7 @@ div#containerTemplate {
 
 }
 .pagLivro .search-box img{
-    height: 40px;
+    width: 2rem;
 }
 @media (max-width:900px){
     .pagLivro .search-box {
@@ -1045,7 +1045,9 @@ header #Logado .ulCenter2 ul li a {
 }
 
 .master1 #menuH:checked~.ulCenter ul {
-    display: flex
+    display: flex;
+    /*opacity: 1;
+    transition: opacity .09s linear*/
 }
 
 
@@ -1171,6 +1173,7 @@ header #Logado .ulCenter2 ul li a {
 
 .master1 nav .menu ul {
     display: none;
+ 
     position: fixed;
     width: 100%;
     height: 100%;
@@ -1180,7 +1183,8 @@ header #Logado .ulCenter2 ul li a {
     background: linear-gradient(45deg, #548f96, #8adce6);
     z-index: 1;
     flex-flow: column;
-    margin-top: 0
+    margin-top: 0;
+    /*opacity: 0;*/
 }
 
 .master1 nav .menu ul li a {
@@ -1192,7 +1196,7 @@ header #Logado .ulCenter2 ul li a {
     -ms-flex-align: center;
     align-items: center;
     color: #fff;
-    padding: 2rem;
+    padding: 8% 2rem;
     font-size: 1.5rem;
     border-bottom: 1px solid #fff
 }
@@ -1201,9 +1205,7 @@ header #Logado .ulCenter2 ul li a {
     border-bottom: 0
 }
 
-.master1 #menuH:checked~.ulCenter ul {
-    display: fleX
-}
+
 
 
 /*Menu mobile desaparece quando a resolução for maior que 780px*/
@@ -1555,13 +1557,13 @@ form select {
 .Social-Bar {
     position: fixed;
     right: 0;
-    top: 60%;
-    font-size: 1.5rem;
+    top: 40%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     z-index: 100
 }
+
 @media (min-width:420px){
     .Social-Bar{
         right:18px;
@@ -1569,12 +1571,9 @@ form select {
 }
 
 .icon {
-    color: white;
-    text-decoration: none;
     padding: .5rem;
-    display: flex;
-    transition: all ease-in-out .5s;
-    margin: .025rem 0
+    transition: all ease-in-out .4s;
+    width: 60px;
 }
 
 .icon-facebook {
@@ -1598,8 +1597,9 @@ form select {
 }
 
 .icon:hover {
+    width:100px;
     padding-right: 3rem;
-    border-radius: .5rem 0 0 1rem;
+    border-radius: 1rem 0 0 1rem;
 }
 
 /*=====================AREA DO RODAPE===============*/

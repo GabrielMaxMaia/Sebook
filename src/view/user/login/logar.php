@@ -20,7 +20,7 @@ div#containerTemplate{
 
     $autenticadorController = new \Controller\AutentificadorController($sql);
 
-   // $autenticadorController->validarAcesso('http://localhost/Sebook/area/adm',array(0=>1, 1=>2));
+   // $autenticadorController->validarAcesso('http://localhost/sebook/area/adm',array(0=>1, 1=>2));
 
     $autenticadorController->efetuarLogin();
     $autenticadorController->efetuarLogOut();
@@ -34,7 +34,7 @@ div#containerTemplate{
 	<article class="loginSpace">
 		<section class="login">
 			<figure>
-				<img src="<?= _ICONBASE_ ?>loginSVG.svg" alt="Login" title="Login">
+				<img src="<?= _ICONBASE_ ?>login.svg" alt="Login" title="Login">
 				<figcaption>LOGIN</figcaption>
 			</figure>
 			<label class="btn-modal-cadastre" for="modal-cadastre">Primeiro Acesso? Cadastre-se</label>

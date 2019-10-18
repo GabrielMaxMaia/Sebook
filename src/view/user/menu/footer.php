@@ -17,33 +17,33 @@
 				<h1>Redes Sociais</h1>
 				<div class="row">
 					<a href="#face">
-						<img src="<?= _ICONBASE_ ?>facebookSVG.svg" alt="">
+						<img src="<?= _ICONBASE_ ?>facebook.svg" alt="">
 						<label>Facebook</label>
 					</a>
 				</div>
 				<div class="row">
 					<a href="#twitter">
-						<img src="<?= _ICONBASE_ ?>twitterSVG.svg" alt="">
+						<img src="<?= _ICONBASE_ ?>twitter.svg" alt="">
 						<label>Twitter</label>
 					</a>
 				</div>
 				<div class="row">
 					<a href="#instagram">
-						<img src="<?= _ICONBASE_ ?>instagramSVG.svg" alt="">
+						<img src="<?= _ICONBASE_ ?>instagram.svg" alt="">
 						<label>Instagram</label>
 					</a>
 				</div>
 			</div>
 			<div class="coluna3">
-				<h1>Contato</h1>
+				<h1>Entre em contato</h1>
 				<div class="row2">
 					<a href="#contato">
-						<img src="<?= _ICONBASE_ ?>homeSVG.svg" alt="">
-						<label>Entre em contato conosco</label>
+						<img src="<?= _ICONBASE_ ?>email.svg" alt="">
+						<label>contato@sebook.com</label>
 					</a>
 				</div>
 				<div class="row2">
-					<img src="<?= _ICONBASE_ ?>emailSVG.svg" alt="">
+					<img src="<?= _ICONBASE_ ?>homeFooter.svg" alt="">
 					<label>
 						Caixa Postal 5180,
 						<br>São Paulo - SP - Brasil
@@ -75,15 +75,15 @@
 <div class="master1">
 	<nav class="menuMobile">
 		<a href="<?= _URLBASE_ ?>" class="home">
-			<img src="<?= _ICONBASE_ ?>homeSVG.svg" alt="Home" title="Página inicial">
+			<img src="<?= _ICONBASE_ ?>home.svg" alt="Home" title="Página inicial">
 		</a>
 		<a href="<?= _URLBASE_ ?>area/user/pages/busca" class="search">
-			<img src="<?= _ICONBASE_ ?>buscaSVG.svg" alt="Buscar" title="Buscar">
+			<img src="<?= _ICONBASE_ ?>busca.svg" alt="Buscar" title="Buscar">
 		</a>
 		<div class="menu">
 			<input type="checkbox" id="menuH">
 			<label for="menuH">
-				<img src="<?= _ICONBASE_ ?>menuSVG.svg" alt="">
+				<img src="<?= _ICONBASE_ ?>menu.svg" alt="">
 			</label>
 			<div class="ulCenter">
 				<ul>
