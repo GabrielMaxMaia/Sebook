@@ -10,7 +10,7 @@ define("_URLBASEADM_","http://localhost/sebook/index.php?area=adm");
 //http://localhost/sebook/index.php?area=user&pasta=menuHome&page=sebos
 
 //Constantes para importar IMG, CSS e ICONS
-define("_CSSBASEUSER_","http://localhost/sebook/public/css/usuario.css");
+define("_CSSBASEUSER_","http://localhost/sebook/public/css/user.css");
 define("_CSSBASEADM_","http://localhost/sebook/public/css/adm.css");
 define("_IMGBASE_","http://localhost/sebook/public/img/");
 define("_ICONBASE_","http://localhost/sebook/public/icon/");
