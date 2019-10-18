@@ -18,8 +18,8 @@ $seboDAO->setUrlSiteSebo($result['urlSiteSebo']);
 $seboLivroDAO->setIdUsuario($_GET['id']);
 //Froma que seria
 $resultSeboLivro = $seboLivroDAO->listarSeboLivroId();
-$seboLivroDAO->setIsbnLivro($resultSeboLivro['isbnLivro']);
-$seboLivroDAO->setQtdEstoque($resultSeboLivro['qtdEstoque']);
+// $seboLivroDAO->setIsbnLivro($resultSeboLivro['isbnLivro']);
+// $seboLivroDAO->setQtdEstoque($resultSeboLivro['qtdEstoque']);
 
 //GAMBIARRA 
 // $stmt = $conn->prepare("SELECT * FROM sebo_livro WHERE id_usuario = :idUsuario");
@@ -65,7 +65,7 @@ $seboLivroDAO->setQtdEstoque($resultSeboLivro['qtdEstoque']);
                 <!--Posteriormente remover ccs inline-->
             </a>
             <figcaption>
-                <p>Qauntidade em Estoque: <?= $seboLivroDAO->getQtdEstoque() ?></p>
+                <p>Qauntidade em Estoque: <?= $seboLivro['qtdEstoque'] ?></p>
             </figcaption>
         </figure>
         <?php

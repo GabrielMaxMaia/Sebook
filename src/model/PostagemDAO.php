@@ -38,19 +38,16 @@ class PostagemDAO extends Postagem
     public function listarPostagem($ini = -1, $qtde = 1)
     {
         if ($ini >= 0) {
-            $limit = " limit :ini , :qtde ";
+            $limit = " limit $ini , $qtde ";
         } else {
             $limit = "";
         }
 
         //executar a consulta no banco
         $result = $this->sql->query(
-            PostagemDAO::$SELECT_ALL . $limit,
-            array(
-                ':ini' => array(0 => $ini, 1 => \PDO::PARAM_INT),
-                ':qtde' => array(0 => $qtde, 1 => \PDO::PARAM_INT)
-            )
-        );
+            PostagemDAO::$SELECT_ALL . $limit);
+
+        var_dump($result);
         //devolver o resultado
         if ($result->rowCount() > 0) {
             while ($linha = $result->fetch(\PDO::FETCH_OBJ)) {

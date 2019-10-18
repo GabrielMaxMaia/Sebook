@@ -98,7 +98,7 @@ class SeboController
             $this->seboDAO->setRazaoSebo($_POST['razaoSebo']);
             $this->seboDAO->setNomeFantasia($_POST['nomeFantasia']);
             $this->seboDAO->setCnpjSebo($_POST['cnpjSebo']);
-            $this->seboDAO->setUrlFotoSebo($_POST['urlFotoSebo']);
+            $this->seboDAO->setUrlFotoSebo($_POST['txtImg']);
             $this->seboDAO->setNumEndSebo($_POST['numEndSebo']);
             $this->seboDAO->setComplEndSebo($_POST['complEndSebo']);
             $this->seboDAO->setLogradouroSebo($_POST['logradouroSebo']);

@@ -25,13 +25,15 @@ $SeboController->gravarAlterar();
 			?>
 		</tbody>
 	</table>
-	<input class="button" type="button" onclick="window.location='http://localhost/Sebook/area/adm/cadastro/cadSebo/add'" value="Novo">
+	<input class="button" type="button" onclick="window.location='http://localhost/sebook/area/adm/cadastro/cadSebo/add'" value="Novo">
 </section>
 
 <section class="<?php echo $SeboController->getFormulario(); ?>">
 	<form method="post" action="">
 		<h4 class="cadCat">Cadastro de Sebos</h4>
+
 		<input type="hidden" name="txtId" id="txtId" value="<?php echo $SeboController->getSeboDAO()->getIdUsuario(); ?>">
+
 		<input type="hidden" name="txtAcao" id="txtAcao" value="<?php echo $SeboController->getAcaoGET(); ?>">
 
 		<label>Id</label>
@@ -115,9 +117,9 @@ $SeboController->gravarAlterar();
 	</form>
 
 	<div class="img">
-		<form action="<?= _URLBASE_ ?>src/view/adm/cadastro/uploadAdm/cadClienteUpload.php" method='post' enctype='multipart/form-data' target='ifrmUpload' name="urlFotoCliente">
+		<form action="<?= _URLBASE_ ?>src/view/adm/cadastro/uploadAdm/seboPerfilUpload.php" method='post' enctype='multipart/form-data' target='ifrmUpload' name="urlFotoSebo">
 
-			<input type="file" name="urlFotoCliente">
+			<input type="file" name="urlFotoSebo">
 
 			<input class="button" type="submit" value="Carregar">
 		</form>

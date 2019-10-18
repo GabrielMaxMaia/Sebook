@@ -147,7 +147,7 @@ class SeboLivroController
         if ($this->acaoGET == 2) {
             $this->seboLivroDAO->setIdUsuario($_GET['id']);
             $this->seboLivroDAO->setIsbnLivro($_GET['isbnLivro']);
-            $seboLivro = $this->seboLivroDAO->listarSeboLivroId();
+            $seboLivro = $this->seboLivroDAO->listarSeboLivroIdIsbn();
             $this->seboLivroDAO->setQtdEstoque($seboLivro['qtdEstoque']);
         }
     }

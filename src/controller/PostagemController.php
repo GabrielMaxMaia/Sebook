@@ -14,7 +14,7 @@ class PostagemController
 
     private $postagemDAO = null;
     //Itens por página
-    private $itemPagina = 5;
+    private $itemPagina = 3;
     //Página Atual de exibição
     private $paginaAtual = 0;
     //Registro inicial da paginação
@@ -25,6 +25,7 @@ class PostagemController
     {
         $this->postagemDAO = new PostagemDAO($sql);
         $this->verificaExibicao();
+        $this->verificarPaginacao();
     }
 
     //Métodos GETTERS e SETTERS
@@ -150,6 +151,7 @@ class PostagemController
             $this->postagemDAO->setTituloPostagem($_POST['txtTitulo']);
             $this->postagemDAO->setTxtPostagem($_POST['txtPostagem']);
             $this->postagemDAO->setDatahoraPostagem($_POST['dataPost']);
+            $this->postagemDAO->setUrlFotoPostagem($_POST['txtImg']);
         }
     }
 
@@ -273,5 +275,33 @@ class PostagemController
             //calculo do registro inicial;
             $this->regIni = ($this->paginaAtual - 1) * $this->itemPagina;
         }
+    }
+
+    public function exibirNotificador($urlDoNotificador)
+    {
+       // Passando a quantidade de paginas como parmetro
+        $qtdePaginas = ceil($this->postagemDAO->totalContar() / $this->itemPagina);
+
+        $notificador = "<ul>";
+        if ($this->paginaAtual >= 2) {
+            $notificador .= "<li><a href='" . _URLBASE_ . $urlDoNotificador . "/pagina/1'><<</a></li>";
+            $notificador .= "<li><a href='" . _URLBASE_ . $urlDoNotificador . "/pagina/" . ($this->paginaAtual - 1) . "'><</a> </li>";
+        }
+        for ($i = 1; $i <= $qtdePaginas; $i++) {
+            $active = "";
+            if ($this->paginaAtual == $i) {
+                $active = "class='active'";
+            }
+            $notificador .= "
+            <li>
+                <a $active href='" . _URLBASE_ . $urlDoNotificador . "/pagina/" . $i . "'>$i</a>
+            </li>";
+        }
+        if ($this->paginaAtual < $qtdePaginas) {
+            $notificador .= "<li><a $active href='" . _URLBASE_ . $urlDoNotificador . "/pagina/" . ($this->paginaAtual + 1) . "'>></a></li>";
+            $notificador .= "<li><a $active href='" . _URLBASE_ . $urlDoNotificador . "/pagina/" . $qtdePaginas . "'>>></a></li>";
+        }
+        $notificador .= "</ul>";
+        return $notificador;
     }
 }

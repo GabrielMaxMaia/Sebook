@@ -9,7 +9,7 @@ $up = new Util\Upload(array(
 	2 => "image/jpeg", 3 => "image/bmp", 4 => "image/gif"
 ), "/public/imgPerfilSebo/");
 
-$result = $up->realizarUpload("urlFotoCliente");
+$result = $up->realizarUpload("urlFotoSebo");
 
 if ($result === true) {
 	$arq = $up->getArqUpload();
@@ -18,7 +18,7 @@ if ($result === true) {
 	$arquivo = -1;
 }
 
-// var_dump($arquivo);
+var_dump($arquivo);
 
 echo "<script>parent.resultadoUpload('$arquivo',$result) </script>";
 //Upload

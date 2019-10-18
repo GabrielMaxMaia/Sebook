@@ -48,15 +48,17 @@ if ($result != null) {
     }
 }
 
+var_dump($_POST);
 //Processsa formulário que envia comentário
 if (isset($_POST['enviarComentario'])) {
-
+    
     // $comentarioDAO->setIdComentarioParente($_POST['idComentarioParente']);
 
     $erro = false;
-    if ($_POST['txtComentario'] != null || "") {
-        $comentarioDAO->setTxtComentario($_POST['txtComentario']);
+    if ($_POST['txtComentario'] != null || $_POST['txtComentario'] != "") {
         echo "foi?";
+        $comentarioDAO->setTxtComentario($_POST['txtComentario']);
+   
     } else {
         $erro = true;
         echo "Escreva Algo antes de enviar";

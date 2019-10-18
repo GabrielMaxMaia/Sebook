@@ -62,12 +62,15 @@ class SeboLivroDAO extends SeboLivro
             )
         );
         if ($result->rowCount() > 0) {
-            $linha = $result->fetch(\PDO::FETCH_OBJ);
-            $itens = array(
+            
+            while($linha = $result->fetch(\PDO::FETCH_OBJ)){
+            $itens[] = array(
                 'idUsuario' => $linha->id_usuario,
                 'isbnLivro' => $linha->isbn_livro,
                 'qtdEstoque' => $linha->qtd_estoque
             );
+        }
+
             // var_dump($itens);
         } else {
             $itens = null;

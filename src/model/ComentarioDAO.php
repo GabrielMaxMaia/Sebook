@@ -8,7 +8,7 @@ namespace Model;
 class ComentarioDAO extends Comentario
 {
     //Atributos - serão os comandos SQL  + um objeto Sql
-    private static $SELECT_ALL = "select * from comentario inner join usuario WHERE usuario.id_usuario = comentario.id_usuario and cod_status_comentario = '1'";
+    private static $SELECT_ALL = "select * from comentario inner join usuario WHERE usuario.id_usuario = comentario.id_usuario and cod_status_comentario = '1' ORDER BY id_comentario DESC";
 
     private static $SELECT_ID = "select * from comentario WHERE id_comentario =:idComentario";
 
@@ -95,7 +95,7 @@ class ComentarioDAO extends Comentario
             array(
                 ':idPost' => array(0 => $this->getIdPost(), 1 => \PDO::PARAM_STR),
                 ':idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT),
-                ':idComentarioParente' => array(0 => $this->getIdComentarioParente(), 1 => \PDO::PARAM_INT),
+                ':idComentarioParente' => array(0 => 0, 1 => \PDO::PARAM_INT),
                 ':txtComentario' => array(0 => $this->getTxtComentario(), 1 => \PDO::PARAM_STR),
                 ':dataHoraComentario' => array(0 => $this->getDataHoraComentario(), 1 => \PDO::PARAM_STR)
 

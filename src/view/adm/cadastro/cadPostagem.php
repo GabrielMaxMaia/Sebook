@@ -8,7 +8,8 @@ $postagemController->gravarAlterar();
 
 $postagemDAO = new Model\PostagemDAO();
 
-$frontController = new Controller\FrontController($postagemDAO);
+
+//$frontController = new Controller\FrontController($postagemDAO);
 
 ?>
 
@@ -22,8 +23,8 @@ $frontController = new Controller\FrontController($postagemDAO);
 		<section class="notificador">
 			<?php
 			//Estou usando a Url da lista que quero controlar
-			$urlDoNotificador = "/adm/cadastro/cadPostagem";
-			//$frontController->exibirNotificador($urlDoNotificador);
+			$urlDoNotificador = "area/adm/cadastro/cadPostagem";
+			echo $postagemController->exibirNotificador($urlDoNotificador);
 			?>
 		</section>
 
@@ -36,13 +37,16 @@ $frontController = new Controller\FrontController($postagemDAO);
 <section class="<?php echo $postagemController->getFormulario(); ?>">
 	<form method="post" action="">
 		<h4 class="cadCat">Cadastro de Postagems</h4>
+
+	
+
 		<input type="hidden" name="txtId" id="txtId" value="<?php echo $postagemController->getPostagemDAO()->getIdPostagem(); ?>">
 
 		<input type="hidden" name="idUsuario" id="idUsuario" value="<?php echo $postagemController->getPostagemDAO()->getIdUsuario(); ?>">
 
 		<input type="hidden" name="dataPost" id="dataPost" value="<?= date('Y-m-d H:i:s') ?>">
-		<!-- <input type="hidden" name="dataPost" id="dataPost" value="<?php //echo $postagemController->getPostagemDAO()->getDatahoraPostagem(); 
-																		?>"> -->
+		
+		<!-- <input type="hidden" name="dataPost" id="dataPost" value="<?php //echo $postagemController->getPostagemDAO()->getDatahoraPostagem();?>"> -->
 
 		<input type="hidden" name="txtAcao" id="txtAcao" value="<?php echo $postagemController->getAcaoGET(); ?>">
 
