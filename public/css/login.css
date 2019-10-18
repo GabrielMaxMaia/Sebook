@@ -1,8 +1,8 @@
 body {
-    /* background: url(../img/background/girasol.png) #0000003d; */
+    background: url(../img/imgBackground/library.png) #0000003d;
     background-size: cover;
     background-blend-mode: color;
-    background: #000;
+    /* background: #000; */
     color: #fff
 }
 

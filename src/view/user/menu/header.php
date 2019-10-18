@@ -1,7 +1,7 @@
 <header>
 	<div class="menuGroup">
-		<a class="logo" href="<?php echo _URLBASE_ ?>">
-			<img src="<?php echo _IMGBASE_ ?>logoSebookCor.png" alt="SebooK">
+		<a class="logo" href="<?= _URLBASE_ ?>">
+			<img src="<?= _IMGBASE_ ?>logoSebookCor.png" alt="SebooK">
 		</a>
 		<?php
 		$sql = new \Util\Sql($conn);

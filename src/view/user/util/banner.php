@@ -10,17 +10,17 @@
             <div class="images-inner">
                 <div class="image-slide">
                     <div class="image">
-                        <img src="<?php echo _IMGBASE_ ?>banner1.jpg" alt="">
+                        <img src="<?= _IMGBASE_ ?>imgBanner/banner1.jpg" alt="">
                     </div>
                 </div>
                 <div class="image-slide">
                     <div class="image">
-                        <img src="<?php echo _IMGBASE_ ?>banner2.jpg" alt="">
+                        <img src="<?= _IMGBASE_ ?>imgBanner/banner2.jpg" alt="">
                     </div>
                 </div>
                 <div class="image-slide">
                     <div class="image">
-                        <img src="<?php echo _IMGBASE_ ?>banner3.jpg" alt="">
+                        <img src="<?= _IMGBASE_ ?>imgBanner/banner3.jpg" alt="">
                     </div>
                 </div>
             </div>

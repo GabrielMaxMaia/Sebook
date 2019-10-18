@@ -24,7 +24,6 @@
 
     $autenticadorController = new \Controller\AutentificadorController($sql);
 
-    
     // $autenticadorController->validarAcesso('http://localhost/sebook/area/adm', array(0=>1, 1=>2, 1=>3));
   
     $autenticadorController->efetuarLogin();
@@ -35,8 +34,8 @@
     ?>
     <div id=container>
         <header class="menuGroup">
-            <a class="logo" href="<?php echo _URLBASE_ ?>">
-                <img src="<?php echo _IMGBASE_ ?>logoSebookCor.png" alt="SebooK">
+            <a class="logo" href="<?= _URLBASE_ ?>">
+                <img src="<?= _IMGBASE_ ?>logoSebookCor.png" alt="SebooK">
             </a>
             <div id=divisor>
         </header>

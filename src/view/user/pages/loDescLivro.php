@@ -1,7 +1,7 @@
 <article class="livrosL">
 
 	<section class="box-descricao-livro">
-		<img src="<?= _IMGBASE_ ?>/livroHarry.jpg" alt="">
+		<img src="<?= _IMGBASE_ ?>imgLivro/livroHarry.jpg" alt="">
 		<div class="descricaoLivro">
 			<h1>Harry Potter</h1>
 			<p>
@@ -32,7 +32,7 @@
 	</section>
 	<section class="comentario">
 		<div class="person">
-			<img src="<?= _IMGBASE_ ?>userComments.png" alt="">
+			<img src="<?= _ICONBASE_ ?>user.svg" alt="">
 			<div class="descricao-person">
 				<strong>paulo_10</strong>
 				<div class="stars">
@@ -48,7 +48,7 @@
 	</section>
 	<section class="comentario">
 		<div class="person">
-			<img src="<?= _ICONBASE_ ?>userComments.png" alt="">
+			<img src="<?= _ICONBASE_ ?>user.svg" alt="">
 			<div class="descricao-person">
 				<strong>fernada_silva</strong>
 				<div class="stars">

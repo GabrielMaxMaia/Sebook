@@ -5,32 +5,32 @@
 	<section class="regular slider">
 		<div>
 			<a href="<?= _URLBASE_ ?>area/user/pages/loDescLivro">
-				<img src="<?php echo _IMGBASE_ ?>livroHarry.jpg">
+				<img src="<?= _IMGBASE_ ?>imgLivro/livroHarry.jpg">
 			</a>
 		</div>
 		<div>
 			<a href="<?= _URLBASE_ ?>area/user/pages/loDescLivro">
-				<img src="<?php echo _IMGBASE_ ?>Livro-A-Culpa-e-das-Estrelas.jpg">
+				<img src="<?= _IMGBASE_ ?>imgLivro/Livro-A-Culpa-e-das-Estrelas.jpg">
 			</a>
 		</div>
 		<div>
 			<a href="<?= _URLBASE_ ?>area/user/pages/loDescLivro">
-				<img src="<?php echo _IMGBASE_ ?>DepoisDeVoce_Jojo.jpg">
+				<img src="<?= _IMGBASE_ ?>imgLivro/DepoisDeVoce_Jojo.jpg">
 			</a>
 		</div>
 		<div>
 			<a href="<?= _URLBASE_ ?>area/user/pages/loDescLivro">
-				<img src="<?php echo _IMGBASE_ ?>Livro-As-Cronicas-de-Gelo-e-Fogo-A-Danca-dos-Dragoes.jpg">
+				<img src="<?= _IMGBASE_ ?>imgLivro/Livro-As-Cronicas-de-Gelo-e-Fogo-A-Danca-dos-Dragoes.jpg">
 			</a>
 		</div>
 		<div>
 			<a href="<?= _URLBASE_ ?>area/user/pages/loDescLivro">
-				<img src="<?php echo _IMGBASE_ ?>livroNeve.jpg">
+				<img src="<?= _IMGBASE_ ?>imgLivro/livroNeve.jpg">
 			</a>
 		</div>
 		<div>
 			<a href="<?= _URLBASE_ ?>area/user/pages/loDescLivro">
-				<img src="<?php echo _IMGBASE_ ?>livroPercy.jpg">
+				<img src="<?= _IMGBASE_ ?>imgLivro/livroPercy.jpg">
 			</a>
 		</div>
 	</section>
