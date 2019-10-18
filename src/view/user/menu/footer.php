@@ -22,15 +22,15 @@
 					</a>
 				</div>
 				<div class="row">
-					<a href="#twitter">
-						<img src="<?= _ICONBASE_ ?>twitter.svg" alt="">
-						<label>Twitter</label>
-					</a>
-				</div>
-				<div class="row">
 					<a href="#instagram">
 						<img src="<?= _ICONBASE_ ?>instagram.svg" alt="">
 						<label>Instagram</label>
+					</a>
+				</div>
+				<div class="row">
+					<a href="#twitter">
+						<img src="<?= _ICONBASE_ ?>twitter.svg" alt="">
+						<label>Twitter</label>
 					</a>
 				</div>
 			</div>
@@ -87,10 +87,6 @@
 			</label>
 			<div class="ulCenter">
 				<ul>
-					<!--<li><a href="<?php
-										// echo _URLBASE_ 
-										?>src/view/user/pages/menu/sebos.php">SEBOS</a>
-					</li>-->
 					<li>
 						<a href="<?= _URLBASE_ ?>">HOME</a>
 					</li>
