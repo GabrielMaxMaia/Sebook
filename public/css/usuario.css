@@ -1609,7 +1609,8 @@ form select {
     color: #fff;
 }
 #rodape .container-body a, #rodape label{
-    color:#c7c7c7
+    color:#c7c7c7;
+    vertical-align: 10px;
 }
 #rodape a:hover, #rodape a:hover label{
     color:#fff
@@ -1668,7 +1669,7 @@ form select {
 .row2 {
     margin-top: 20px;
     display: flex;
-    align-items:center
+    align-items:center;
 }
 
 .row img,
@@ -1678,17 +1679,10 @@ form select {
     fill: #fff;
 }
 
-.row label {
-    margin-top: 10px;
+.row label, .row2 label {
     margin-left: 20px;
-    color: #c7c7c7;
 }
 
-.row2 label {
-    margin-top: 10px;
-    margin-left: 20px;
-    
-}
 @media(min-width:700px){
     .row2 label{
     max-width: 200px
@@ -1699,6 +1693,7 @@ form select {
     width: auto;
     background: #111;
 }
+
 @media (max-width:700px){
     .container-footer{
         padding: 0 0 3rem
