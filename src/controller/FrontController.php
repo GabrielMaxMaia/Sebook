@@ -78,10 +78,10 @@ class FrontController
     //                 </figure>
     //                 </a>
     //                 <a href='http://localhost/Sebook/area/adm/cadastro/cadPostagem/alter/" . $post['idPostagem'] . "'>
-    //                     <img src='" . _URLBASE_ . "public/img/editar.jpg'>
+    //                     <img src='" . _URLBASE_ . "public/icon/editar.svg'>
     //                 </a>
     //                 <a href='http://localhost/Sebook/area/adm/cadastro/cadPostagem/delete/" . $post['idPostagem'] . "'>
-    //                      <img src='" . _URLBASE_ . "public/img/excluir.jpg'>
+    //                      <img src='" . _URLBASE_ . "public/icon/excluir.svg'>
     //                 </a>
     //             </div>";
     //         }

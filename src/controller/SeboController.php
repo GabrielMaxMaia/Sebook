@@ -195,13 +195,13 @@ class SeboController
                 <td>" . $linha['codStatusSebo'] . "</td>      
                         <td>
                             <a href='http://localhost/Sebook/area/adm/cadastro/cadSebo/alter/" . $linha['idUsuario'] . "'>
-                                <img src='" . _URLBASE_ . "public/img/editar.jpg'>
+                                <img src='" . _URLBASE_ . "public/icon/editar.svg'>
                             </a>
                         </td>
                         
                         <td>
                             <a href='http://localhost/Sebook/area/adm/cadastro/cadSebo/delete/" . $linha['idUsuario'] . "'>
-                                <img src='" . _URLBASE_ . "public/img/excluir.jpg'>
+                                <img src='" . _URLBASE_ . "public/icon/excluir.svg'>
                             </a>
                         </td>
                     </tr>";

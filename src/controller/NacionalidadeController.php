@@ -150,12 +150,12 @@ class NacionalidadeController
                  . "</td>
                         <td>
                             <a href='http://localhost/sebook/area/adm/cadastro/cadNacionalidade/alter/" . $linha['idNacionalidade'] . "'>
-                                <img src='"._URLBASE_."public/img/editar.jpg'>
+                                <img src='"._URLBASE_."public/icon/editar.svg'>
                             </a>
                         </td>
                         <td>
                             <a href='http://localhost/sebook/area/adm/cadastro/cadNacionalidade/delete/" . $linha['idNacionalidade'] . "'>
-                                <img src='"._URLBASE_."public/img/excluir.jpg'>
+                                <img src='"._URLBASE_."public/icon/excluir.svg'>
                             </a>
                         </td>
                     </tr>";

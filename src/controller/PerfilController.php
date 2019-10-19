@@ -171,12 +171,12 @@ class PerfilController
                 <td>" . $linha['codStatusPerfil'] . "</td>    
                         <td>
                             <a href='http://localhost/Sebook/area/adm/cadastro/cadPerfil/alter/" . $linha['idPerfil'] . "'>
-                                <img src='" . _URLBASE_ . "public/img/editar.jpg'>
+                                <img src='" . _URLBASE_ . "public/icon/editar.svg'>
                             </a>
                         </td>
                         <td>
                             <a href='http://localhost/Sebook/area/adm/cadastro/cadPerfil/delete/" . $linha['idPerfil'] . "'>
-                                <img src='" . _URLBASE_ . "public/img/excluir.jpg'>
+                                <img src='" . _URLBASE_ . "public/icon/excluir.svg'>
                             </a>
                         </td>
                     </tr>";
