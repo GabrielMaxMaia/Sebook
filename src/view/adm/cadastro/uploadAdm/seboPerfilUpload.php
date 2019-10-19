@@ -7,13 +7,13 @@ use util\Upload;
 $up = new Util\Upload(array(
 	0 => "image/png",  1 => "image/tiff",
 	2 => "image/jpeg", 3 => "image/bmp", 4 => "image/gif"
-), "/public/imgPerfilSebo/");
+), "/public/img/imgPerfilSebo/");
 
 $result = $up->realizarUpload("urlFotoSebo");
 
 if ($result === true) {
 	$arq = $up->getArqUpload();
-	$arquivo = "public/imgPerfilSebo/" . $arq["name"];
+	$arquivo = "public/img/imgPerfilSebo/" . $arq["name"];
 } else {
 	$arquivo = -1;
 }

@@ -146,15 +146,15 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`id_usuario`, `sexo_cliente`, `compl_end_cliente`, `logradouro_cliente`, `url_foto_cliente`, `num_compl_cliente`, `cpf_cliente`, `cep_cliente`, `dt_nasc_cliente`, `cod_status_cliente`) VALUES
-(5, 'M', 'Inicio', 'AL', 'public/imgPerfil/1_1_3.jpg', '231', '489458945894', '0485416941894894', '1997-01-22', '1'),
+(5, 'M', 'Inicio', 'AL', 'public/img/imgPerfil/1_1_3.jpg', '231', '489458945894', '0485416941894894', '1997-01-22', '1'),
 (9, 'F', NULL, NULL, NULL, NULL, '45687912587', '06589054', '1900-01-01', '1'),
 (10, 'M', NULL, NULL, NULL, NULL, '12378965878', '06545687', '1900-01-01', '1'),
 (13, 'M', '', '', '', '', '36574159866', '06512987', '1900-01-01', '1'),
-(15, 'M', 'yrty', 'AL', 'public/imgPerfil/crash_bandicoot.jpg', 'ytrydsad', 'eyeyh', 'ytry', '2019-10-11', '1'),
-(26, 'M', '', '', 'public/imgPerfil/2_2_1.png', '', '', '', '2019-10-11', '1'),
-(27, 'M', '', 'FAZ', 'public/imgPerfil/1_1_1.jpg', '', '', '', '2019-10-12', '1'),
+(15, 'M', 'yrty', 'AL', 'public/img/imgPerfil/crash_bandicoot.jpg', 'ytrydsad', 'eyeyh', 'ytry', '2019-10-11', '1'),
+(26, 'M', '', '', 'public/img/imgPerfil/2_2_1.png', '', '', '', '2019-10-11', '1'),
+(27, 'M', '', 'FAZ', 'public/img/imgPerfil/1_1_1.jpg', '', '', '', '2019-10-12', '1'),
 (29, 'F', '', '', '', '', '', '', '2019-10-12', '1'),
-(37, 'M', '', 'AL', 'public/imgPerfil/sonic.png', '', '', '', '1992-01-01', '1');
+(37, 'M', '', 'AL', 'public/img/imgPerfil/sonic.png', '', '', '', '1992-01-01', '1');
 
 -- --------------------------------------------------------
 
@@ -486,7 +486,7 @@ CREATE TABLE `postagem` (
   `id_post` int(11) NOT NULL,
   `data_hora_post` datetime DEFAULT NULL,
   `link_post` varchar(100) DEFAULT NULL,
-  `url_foto_post` varchar(100) DEFAULT 'public/imgPost/imgPadrao/padrao.jpg',
+  `url_foto_post` varchar(100) DEFAULT 'public/img/imgPost/imgPadrao/padrao.jpg',
   `txt_postagem` text,
   `titulo_post` text,
   `cod_status_post` varchar(10) DEFAULT '1',
@@ -498,19 +498,19 @@ CREATE TABLE `postagem` (
 --
 
 INSERT INTO `postagem` (`id_post`, `data_hora_post`, `link_post`, `url_foto_post`, `txt_postagem`, `titulo_post`, `cod_status_post`, `id_usuario`) VALUES
-(1, '2019-10-09 21:08:03', NULL, 'public/imgPost/imgPadrao/padrao.jpg', 'PHP (um acrÃ´nimo recursivo para \"PHP: Hypertext Preprocessor\", originalmente Personal Home Page) Ã© uma linguagem interpretada livre, usada originalmente apenas para o desenvolvimento de aplicaÃ§Ãµes presentes e atuantes no lado do servidor, capazes de gerar conteÃºdo dinÃ¢mico na World Wide Web.[3] Figura entre as primeiras linguagens passÃ­veis de inserÃ§Ã£o em documentos HTML, dispensando em muitos casos o uso de arquivos externos para eventuais processamentos de dados. O cÃ³digo Ã© interpre', 'PHP', '1', 5),
-(2, '2019-10-09 21:08:23', NULL, 'public/imgPost/imgPadrao/padrao.jpg', '              JavaScript, frequentemente abreviado como JS, Ã© uma linguagem de programaÃ§Ã£o interpretada de alto nÃ­vel, caracterizada tambÃ©m, como dinÃ¢mica, fracamente tipificada, prototype-based e multi-paradigma.[2] Juntamente com HTML e CSS, o JavaScript Ã© uma das trÃªs principais tecnologias da World Wide Web. JavaScript permite pÃ¡ginas da Web interativas e, portanto, Ã© uma parte essencial dos aplicativos da web. A grande maioria dos sites usa, e todos os principais navegadores tÃªm um mecanismo JavaScript dedicado para executÃ¡-lo.  Ã‰ atualmente a principal linguagem para programaÃ§Ã£o client-side em navegadores web. Ã‰ tambÃ©m bastante utilizada do lado do servidor atravÃ©s de ambientes como o node.js.  Como uma linguagem multi-paradigma, o JavaScript suporta estilos de programaÃ§Ã£o orientados a eventos, funcionais e imperativos (incluindo orientado a objetos e prototype-based), apresentando recursos como fechamentos (closures) e funÃ§Ãµes de alta ordem comumente indisponÃ­veis em linguagens populares como Java e C++. PossuÃ­ APIs para trabalhar com texto, matrizes, datas, expressÃµes regulares e o DOM, mas a linguagem em si nÃ£o inclui nenhuma E/S, como instalaÃ§Ãµes de rede, armazenamento ou grÃ¡ficos, contando com isso no ambiente host em que estÃ¡ embutido.  Foi originalmente implementada como parte dos navegadores web para que scripts pudessem ser executados do lado do cliente e interagissem com o usuÃ¡rio sem a necessidade deste script passar pelo servidor, controlando o navegador, realizando comunicaÃ§Ã£o assÃ­ncrona e alterando o conteÃºdo do documento exibido, porÃ©m os mecanismos JavaScript agora estÃ£o incorporados em muitos outros tipos de software host, incluindo servidores em servidores e bancos de dados da Web e em programas que nÃ£o sÃ£o da Web, como processadores de texto e PDF, e em tempo de execuÃ§Ã£o ambientes que disponibilizam JavaScript para escrever aplicativos mÃ³veis e de desktop, incluindo widgets de Ã¡rea de trabalho.  Os termos Vanilla JavaScript e Vanilla JS se referem ao JavaScript nÃ£o estendido por qualquer estrutura ou biblioteca adicional. Scripts escritos em Vanilla JS sÃ£o cÃ³digos JavaScript simples.[3][4]  Embora existam semelhanÃ§as entre JavaScript e Java, incluindo o nome da linguagem, a sintaxe e as respectivas bibliotecas padrÃ£o, as duas linguagens sÃ£o distintas e diferem muito no design; JavaScript foi influenciado por linguagens de programaÃ§Ã£o como Self e Scheme.        ', 'Javascript', '1', 5),
-(3, '2019-10-13 00:52:42', NULL, 'public/imgPost/imgPadrao/padrao.jpg', 'Eu programo\r\n', 'OlÃ¡ mundosss', '1', 15),
-(4, '2019-10-13 17:16:01', NULL, 'public/imgPost/imgPadrao/padrao.jpg', '       eae    ', 'asss', '1', 5),
-(5, '2019-10-13 17:49:23', NULL, 'public/imgPost/coding-825x500.jpg', '                                eae                        ', 'PHP', '1', 5),
-(6, '2019-10-13 19:43:28', NULL, 'public/imgPost/imgPadrao/padrao.jpg', '           dsfs', 'segfs', '1', 5),
-(7, '2019-10-13 19:45:35', NULL, 'public/imgPost/imgPadrao/padrao.jpg', 'fsdafsdfsdf', 'teste', '1', 5),
-(8, '2019-10-13 19:45:42', NULL, 'public/imgPost/2_1_13.png', '                fsdafsdfsdf            ', 'teste', '1', 5),
-(9, '2019-10-13 19:56:28', NULL, 'public/imgPost/mario.jpg', '                                fsdafsdfsdf                        ', 'teste', '1', 5),
-(10, '2019-10-13 19:56:34', NULL, 'public/imgPost/gon.png', '                                                       dasd                                        ', 'OlÃ¡ mundosss', '1', 5),
-(11, '2019-10-13 21:57:35', NULL, 'public/imgPost/imgPadrao/padrao.jpg', '                                dsadas                        ', 'usuario comum', '1', 5),
-(12, '2019-10-13 23:44:59', NULL, 'public/imgPost/imgPadrao/padrao.jpg', '                                safdsad                        ', 'teste', '1', 37),
-(13, '2019-10-13 23:54:41', NULL, 'public/imgPost/bait.jpg', '                                                                sdfsd                                                ', 'bait', '1', 37);
+(1, '2019-10-09 21:08:03', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', 'PHP (um acrÃ´nimo recursivo para \"PHP: Hypertext Preprocessor\", originalmente Personal Home Page) Ã© uma linguagem interpretada livre, usada originalmente apenas para o desenvolvimento de aplicaÃ§Ãµes presentes e atuantes no lado do servidor, capazes de gerar conteÃºdo dinÃ¢mico na World Wide Web.[3] Figura entre as primeiras linguagens passÃ­veis de inserÃ§Ã£o em documentos HTML, dispensando em muitos casos o uso de arquivos externos para eventuais processamentos de dados. O cÃ³digo Ã© interpre', 'PHP', '1', 5),
+(2, '2019-10-09 21:08:23', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', '              JavaScript, frequentemente abreviado como JS, Ã© uma linguagem de programaÃ§Ã£o interpretada de alto nÃ­vel, caracterizada tambÃ©m, como dinÃ¢mica, fracamente tipificada, prototype-based e multi-paradigma.[2] Juntamente com HTML e CSS, o JavaScript Ã© uma das trÃªs principais tecnologias da World Wide Web. JavaScript permite pÃ¡ginas da Web interativas e, portanto, Ã© uma parte essencial dos aplicativos da web. A grande maioria dos sites usa, e todos os principais navegadores tÃªm um mecanismo JavaScript dedicado para executÃ¡-lo.  Ã‰ atualmente a principal linguagem para programaÃ§Ã£o client-side em navegadores web. Ã‰ tambÃ©m bastante utilizada do lado do servidor atravÃ©s de ambientes como o node.js.  Como uma linguagem multi-paradigma, o JavaScript suporta estilos de programaÃ§Ã£o orientados a eventos, funcionais e imperativos (incluindo orientado a objetos e prototype-based), apresentando recursos como fechamentos (closures) e funÃ§Ãµes de alta ordem comumente indisponÃ­veis em linguagens populares como Java e C++. PossuÃ­ APIs para trabalhar com texto, matrizes, datas, expressÃµes regulares e o DOM, mas a linguagem em si nÃ£o inclui nenhuma E/S, como instalaÃ§Ãµes de rede, armazenamento ou grÃ¡ficos, contando com isso no ambiente host em que estÃ¡ embutido.  Foi originalmente implementada como parte dos navegadores web para que scripts pudessem ser executados do lado do cliente e interagissem com o usuÃ¡rio sem a necessidade deste script passar pelo servidor, controlando o navegador, realizando comunicaÃ§Ã£o assÃ­ncrona e alterando o conteÃºdo do documento exibido, porÃ©m os mecanismos JavaScript agora estÃ£o incorporados em muitos outros tipos de software host, incluindo servidores em servidores e bancos de dados da Web e em programas que nÃ£o sÃ£o da Web, como processadores de texto e PDF, e em tempo de execuÃ§Ã£o ambientes que disponibilizam JavaScript para escrever aplicativos mÃ³veis e de desktop, incluindo widgets de Ã¡rea de trabalho.  Os termos Vanilla JavaScript e Vanilla JS se referem ao JavaScript nÃ£o estendido por qualquer estrutura ou biblioteca adicional. Scripts escritos em Vanilla JS sÃ£o cÃ³digos JavaScript simples.[3][4]  Embora existam semelhanÃ§as entre JavaScript e Java, incluindo o nome da linguagem, a sintaxe e as respectivas bibliotecas padrÃ£o, as duas linguagens sÃ£o distintas e diferem muito no design; JavaScript foi influenciado por linguagens de programaÃ§Ã£o como Self e Scheme.        ', 'Javascript', '1', 5),
+(3, '2019-10-13 00:52:42', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', 'Eu programo\r\n', 'OlÃ¡ mundosss', '1', 15),
+(4, '2019-10-13 17:16:01', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', '       eae    ', 'asss', '1', 5),
+(5, '2019-10-13 17:49:23', NULL, 'public/img/imgPost/coding-825x500.jpg', '                                eae                        ', 'PHP', '1', 5),
+(6, '2019-10-13 19:43:28', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', '           dsfs', 'segfs', '1', 5),
+(7, '2019-10-13 19:45:35', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', 'fsdafsdfsdf', 'teste', '1', 5),
+(8, '2019-10-13 19:45:42', NULL, 'public/img/imgPost/2_1_13.png', '                fsdafsdfsdf            ', 'teste', '1', 5),
+(9, '2019-10-13 19:56:28', NULL, 'public/img/imgPost/mario.jpg', '                                fsdafsdfsdf                        ', 'teste', '1', 5),
+(10, '2019-10-13 19:56:34', NULL, 'public/img/imgPost/gon.png', '                                                       dasd                                        ', 'OlÃ¡ mundosss', '1', 5),
+(11, '2019-10-13 21:57:35', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', '                                dsadas                        ', 'usuario comum', '1', 5),
+(12, '2019-10-13 23:44:59', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', '                                safdsad                        ', 'teste', '1', 37),
+(13, '2019-10-13 23:54:41', NULL, 'public/img/imgPost/bait.jpg', '                                                                sdfsd                                                ', 'bait', '1', 37);
 
 -- --------------------------------------------------------
 
@@ -545,7 +545,7 @@ INSERT INTO `sebo` (`id_usuario`, `razao_sebo`, `nome_fantasia`, `cnpj_sebo`, `u
 (12, 'Mirian Marinho da Silva Lima', 'Sebo Marinho', '12.672.074/0001-53', NULL, '115', NULL, NULL, '06320-290', '1143867762', NULL, NULL, NULL, NULL, '1'),
 (14, 'Priscilla Nobre Lobo', 'Sebo e Livraria Corujinha', '21.100.930/0001-97', NULL, '179', NULL, NULL, '06448-020', '1128614286', NULL, NULL, NULL, NULL, '1'),
 (34, 'Pirate king', 'dasdgdfg', 'dfgdgdfg', 'dsadsa', 'dasdad', 'dsada', 'dsadsa', 'dasdsad', 'asdsad', 'dsadad', 'trhtrh', 'sadd', 'dsad', '1'),
-(35, 'dsa', 'dsa', 'asd', 'public/imgPerfilSebo/1_1_1.jpg', 'dsa', 'dasdsa', 'AV', 'ads', 'sad', 'dsadsa', 'dsad', 'sda', 'dsa', '1'),
+(35, 'dsa', 'dsa', 'asd', 'public/img/imgPerfilSebo/1_1_1.jpg', 'dsa', 'dasdsa', 'AV', 'ads', 'sad', 'dsadsa', 'dsad', 'sda', 'dsa', '1'),
 (36, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1');
 
 -- --------------------------------------------------------

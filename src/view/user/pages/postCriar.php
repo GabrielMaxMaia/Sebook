@@ -15,7 +15,7 @@ $usuarioDAO = new UsuarioDAO($objSql);
 $IdSessaoUser = $_SESSION['userLogado']['idUsuario'] ?? "";
 //Seta armazena o idPost em setIdPost
 $postagemDAO->setIdUsuario($IdSessaoUser);
-$postagemDAO->setUrlFotoPostagem('public/imgPost/imgPadrao/padrao.jpg');
+$postagemDAO->setUrlFotoPostagem('public/img/imgPost/imgPadrao/padrao.jpg');
 
 
 //Include para evitar reenvio

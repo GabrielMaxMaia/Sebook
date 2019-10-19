@@ -48,7 +48,7 @@ if (isset($_POST['enviar'])) {
 	
 		$usuarioDAO->setIdPerfil(4);
 		$usuarioDAO->setDataCriacao(date('Y-m-d H:i:s'));
-		$clienteDAO->setUrlFotoCliente('public/imgPerfil/imgPadrao/padrao.ppg');
+		$clienteDAO->setUrlFotoCliente('public/img/imgPerfil/imgPadrao/padrao.ppg');
 		if(evitarReenvio()){
 			$success = true;
 			$usuarioDAO->adicionarUsuario();

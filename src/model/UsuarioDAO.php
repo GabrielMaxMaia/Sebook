@@ -126,11 +126,11 @@ class UsuarioDAO extends Usuario
         
 
         if($this->getIdPerfil() != 5){
-            $clienteDAO = new ClienteDAO($this->sql, $usuario->last_id, null, null, null, 'public/imgPerfil/imgPadrao/padrao.png', null, null, null, null, '1');
+            $clienteDAO = new ClienteDAO($this->sql, $usuario->last_id, null, null, null, 'public/img/imgPerfil/imgPadrao/padrao.png', null, null, null, null, '1');
 
             $clienteDAO->adicionarCliente();
         }else{
-            $seboDAO = new SeboDAO($this->sql, $usuario->last_id, null, null, null, 'public/imgPerfilSebo/imgPadrao/padrao.png', null, null, null, null, null, null, null, null, null, '1');
+            $seboDAO = new SeboDAO($this->sql, $usuario->last_id, null, null, null, 'public/img/imgPerfilSebo/imgPadrao/padrao.png', null, null, null, null, null, null, null, null, null, '1');
 
             $seboDAO->adicionarSebo();
         }
