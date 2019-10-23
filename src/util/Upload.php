@@ -97,8 +97,6 @@ class Upload
 }
 
 /*
-
-
 UPLOAD_ERR_OK
 Value: 0; There is no error, the file uploaded with success.
 
