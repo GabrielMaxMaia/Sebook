@@ -27,6 +27,6 @@ $styleSobrescrito =
                 ecológica o consumo dessas obras dentro e fora dos grandes centros.
             </p>
         </div>
-        <img src="<?= _IMGBASE_ ?>imgSite/quemSomos.jpg" alt="Sebook">
+        <img src="<?= _URLBASE_ ?>public/img/imgSite/quemSomos.jpg" alt="Sebook">
     </section>
 </article>

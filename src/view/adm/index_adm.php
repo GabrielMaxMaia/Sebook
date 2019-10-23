@@ -9,10 +9,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="<?php echo _CSSBASEADM_ ?>">
+    <link rel="stylesheet" href="<?= _URLBASE_ . "public/css/adm.css"?>">
 
     <!-- CSS PADRÃO -->
-    <link rel="stylesheet" href="<?php echo _URLBASE_ . "public/css/estilo.css" ?>">
+    <link rel="stylesheet" href="<?= _URLBASE_ . "public/css/estilo.css"?>">
 
     <script src='<?= _URLBASE_ ?>public/js/funcoes.js'></script>
 </head>
@@ -35,7 +35,7 @@
     <div id=container>
         <header class="menuGroup">
             <a class="logo" href="<?= _URLBASE_ ?>">
-                <img src="<?= _IMGBASE_ ?>logoSebookCor.png" alt="SebooK">
+                <img src="<?= _URLBASE_ ?>public/img/logoSebookCor.png" alt="SebooK">
             </a>
             <div id=divisor>
         </header>

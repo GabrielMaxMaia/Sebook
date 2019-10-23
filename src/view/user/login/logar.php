@@ -34,7 +34,7 @@ div#containerTemplate{
 	<article class="loginSpace">
 		<section class="login">
 			<figure>
-				<img src="<?= _ICONBASE_ ?>login.svg" alt="Login" title="Login">
+				<img src="<?= _URLBASE_ ?>public/icon/login.svg" alt="Login" title="Login">
 				<figcaption>LOGIN</figcaption>
 			</figure>
 			<label class="btn-modal-cadastre" for="modal-cadastre">Primeiro Acesso? Cadastre-se</label>

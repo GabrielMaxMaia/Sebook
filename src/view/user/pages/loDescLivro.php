@@ -1,7 +1,7 @@
 <article class="livrosL">
 
 	<section class="box-descricao-livro">
-		<img src="<?= _IMGBASE_ ?>imgLivro/livroHarry.jpg" alt="">
+		<img src="<?= _URLBASE_ ?>public/img/imgLivro/livroHarry.jpg" alt="">
 		<div class="descricaoLivro">
 			<h1>Harry Potter</h1>
 			<p>
@@ -9,12 +9,12 @@
 			<div class="line-stars">
 				<strong>Avaliação:</strong>
 				<div class="stars">
-					<!-- <img src="<?= _ICONBASE_ ?>star.png" alt="">
-						<img src="<?= _ICONBASE_ ?>star.png" alt="">
-						<img src="<?= _ICONBASE_ ?>star.png" alt="">
+					<!-- <img src="<?= _URLBASE_ ?>public/icon/star.png" alt="">
+						<img src="<?= _URLBASE_ ?>public/icon/star.png" alt="">
+						<img src="<?= _URLBASE_ ?>public/icon/star.png" alt="">
 
-						<img class="empty" src="<?= _ICONBASE_ ?>/starBlack.png" alt="">
-						<img class="empty" src="<?= _ICONBASE_ ?>/starBlack.png" alt=""> -->
+						<img class="empty" src="<?= _URLBASE_ ?>public/icon//starBlack.png" alt="">
+						<img class="empty" src="<?= _URLBASE_ ?>public/icon//starBlack.png" alt=""> -->
 				</div>
 			</div>
 		</div>
@@ -32,15 +32,15 @@
 	</section>
 	<section class="comentario">
 		<div class="person">
-			<img src="<?= _ICONBASE_ ?>user.svg" alt="">
+			<img src="<?= _URLBASE_ ?>public/icon/user.svg" alt="">
 			<div class="descricao-person">
 				<strong>paulo_10</strong>
 				<div class="stars">
-					<!-- <<img src="<?= _ICONBASE_ ?>star.png" alt="">
-							<img src="<?= _ICONBASE_ ?>star.png" alt="">
-							<img src="<?= _ICONBASE_ ?>star.png" alt="">
-							<img class="empty" src="<?= _ICONBASE_ ?>star.png" alt="">
-							<img class="empty" src="<?= _ICONBASE_ ?>star.png" alt=""> -->
+					<!-- <<img src="<?= _URLBASE_ ?>public/icon/star.png" alt="">
+							<img src="<?= _URLBASE_ ?>public/icon/star.png" alt="">
+							<img src="<?= _URLBASE_ ?>public/icon/star.png" alt="">
+							<img class="empty" src="<?= _URLBASE_ ?>public/icon/star.png" alt="">
+							<img class="empty" src="<?= _URLBASE_ ?>public/icon/star.png" alt=""> -->
 				</div>
 			</div>
 		</div>
@@ -48,15 +48,15 @@
 	</section>
 	<section class="comentario">
 		<div class="person">
-			<img src="<?= _ICONBASE_ ?>user.svg" alt="">
+			<img src="<?= _URLBASE_ ?>public/icon/user.svg" alt="">
 			<div class="descricao-person">
 				<strong>fernada_silva</strong>
 				<div class="stars">
-					<!-- <img src="<?= _ICONBASE_ ?>star.png" alt="">
-							<img src="<?= _ICONBASE_ ?>star.png" alt="">
-							<img src="<?= _ICONBASE_ ?>star.png" alt="">
-							<img class="empty" src="<?= _ICONBASE_ ?>star.png" alt="">
-							<img class="empty" src="<?= _ICONBASE_ ?>star.png" alt=""> -->
+					<!-- <img src="<?= _URLBASE_ ?>public/icon/star.png" alt="">
+							<img src="<?= _URLBASE_ ?>public/icon/star.png" alt="">
+							<img src="<?= _URLBASE_ ?>public/icon/star.png" alt="">
+							<img class="empty" src="<?= _URLBASE_ ?>public/icon/star.png" alt="">
+							<img class="empty" src="<?= _URLBASE_ ?>public/icon/star.png" alt=""> -->
 				</div>
 			</div>
 		</div>
