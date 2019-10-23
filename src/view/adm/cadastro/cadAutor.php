@@ -26,7 +26,7 @@ $autorController->gravarAlterar();
 			?>
 		</tbody>
 	</table>
-	<input class="button" type="button" onclick="window.location='http://localhost/sebook/area/adm/cadastro/cadAutor/add'" value="Novo">
+	<input class="button" type="button" onclick="window.location=<?= _URLBASE_ ?>area/adm/cadastro/cadAutor/add'" value="Novo">
 </section>
 
 <section class="<?php echo $autorController->getFormulario(); ?>">
@@ -66,5 +66,5 @@ $autorController->gravarAlterar();
 	<br>
 	<br>
 	<br>
-	<a href="http://localhost/Sebook/area/adm/cadastro/cadAutor">Voltar</a>
+	<a href=<?= _URLBASE_ ?>area/adm/cadastro/cadAutor">Voltar</a>
 </section>

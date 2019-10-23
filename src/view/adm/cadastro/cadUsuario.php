@@ -74,5 +74,5 @@ $usuarioController->gravarAlterar();
 	<br>
 	<br>
 	<br>
-	<a href="http://localhost/Sebook/area/adm/cadastro/cadUsuario">Voltar</a>
+	<a href=<?= _URLBASE_ ?>area/adm/cadastro/cadUsuario">Voltar</a>
 </section>

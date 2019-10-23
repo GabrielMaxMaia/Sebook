@@ -36,8 +36,8 @@
 
     $autenticadorController = new \Controller\AutentificadorController($sql);
 
-    // $autenticadorController->validarAcesso('http://localhost/sebook/area/adm',array(0=>1, 1=>2, 1=>3));
-    //$autenticadorController->validarAcesso('http://localhost/sebook/',array(0=>1, 1=>2, 1=>3));
+    // $autenticadorController->validarAcesso('<?= _URLBASE_ ?>area/adm',array(0=>1, 1=>2, 1=>3));
+    //$autenticadorController->validarAcesso('<?= _URLBASE_ ?>',array(0=>1, 1=>2, 1=>3));
 
     $autenticadorController->efetuarLogin();
     $autenticadorController->efetuarLogOut();

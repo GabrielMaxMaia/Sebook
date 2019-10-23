@@ -1,7 +1,7 @@
 <?php
 $title = "Login";
 $menuHide = true;
-$cssCaminho = '<link rel="stylesheet" href="http://localhost/sebook/public/css/login.css">';
+$cssCaminho = "<link rel='stylesheet' href=". _URLBASE_ ."public/css/login.css>";
 $styleSobrescrito =
     "<style>
 .containerScroll{
@@ -20,7 +20,7 @@ div#containerTemplate{
 
     $autenticadorController = new \Controller\AutentificadorController($sql);
 
-   // $autenticadorController->validarAcesso('http://localhost/sebook/area/adm',array(0=>1, 1=>2));
+   // $autenticadorController->validarAcesso(_URLBASE_.'area/adm',array(0=>1, 1=>2));
 
     $autenticadorController->efetuarLogin();
     $autenticadorController->efetuarLogOut();

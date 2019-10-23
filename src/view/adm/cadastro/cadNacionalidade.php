@@ -48,5 +48,5 @@ $nacionalidadeController->gravarAlterar();
 	<br>
 	<br>
 	<br>
-	<a href="http://localhost/Sebook/area/adm/cadastro/cadNacionalidade">Voltar</a>
+	<a href=<?= _URLBASE_ ?>area/adm/cadastro/cadNacionalidade">Voltar</a>
 </section>

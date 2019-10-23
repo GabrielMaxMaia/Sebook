@@ -169,12 +169,12 @@ class ClienteController
                 <td>" . $linha['codStatusCliente']
                  . "</td>
                         <td>
-                            <a href='http://localhost/sebook/area/adm/cadastro/cadCliente/alter/" . $linha['idUsuario'] . "'>
+                            <a href=<?= _URLBASE_ ?>area/adm/cadastro/cadCliente/alter/" . $linha['idUsuario'] . "'>
                                 <img src='"._URLBASE_."public/icon/editar.svg'>
                             </a>
                         </td>
                         <td>
-                            <a href='http://localhost/sebook/area/adm/cadastro/cadCliente/delete/" . $linha['idUsuario'] . "'>
+                            <a href=<?= _URLBASE_ ?>area/adm/cadastro/cadCliente/delete/" . $linha['idUsuario'] . "'>
                                 <img src='"._URLBASE_."public/icon/excluir.svg'>
                             </a>
                         </td>

@@ -1,36 +1,36 @@
 <?php
-  $cssCaminho = '<link rel="stylesheet" href="http://localhost/sebook/css/slick.css">';
+  $cssCaminho = "<link rel=stylesheet href="._URLBASE_."public/css/slick.css>";
 ?>
 <div class="containerSlick">
 	<section class="regular slider">
 		<div>
-			<a href="<?= _URLBASE_ ?>area/user/pages/loDescLivro">
-				<img src="<?= _URLBASE_ ?>public/img/imgLivro/livroHarry.jpg">
+			<a href="<?=_URLBASE_?>area/user/pages/loDescLivro">
+				<img src="<?=_URLBASE_?>public/img/imgLivro/livroHarry.jpg">
 			</a>
 		</div>
 		<div>
-			<a href="<?= _URLBASE_ ?>area/user/pages/loDescLivro">
-				<img src="<?= _URLBASE_ ?>public/img/imgLivro/Livro-A-Culpa-e-das-Estrelas.jpg">
+			<a href="<?=_URLBASE_?>area/user/pages/loDescLivro">
+				<img src="<?=_URLBASE_?>public/img/imgLivro/Livro-A-Culpa-e-das-Estrelas.jpg">
 			</a>
 		</div>
 		<div>
-			<a href="<?= _URLBASE_ ?>area/user/pages/loDescLivro">
-				<img src="<?= _URLBASE_ ?>public/img/imgLivro/DepoisDeVoce_Jojo.jpg">
+			<a href="<?=_URLBASE_?>area/user/pages/loDescLivro">
+				<img src="<?=_URLBASE_?>public/img/imgLivro/DepoisDeVoce_Jojo.jpg">
 			</a>
 		</div>
 		<div>
-			<a href="<?= _URLBASE_ ?>area/user/pages/loDescLivro">
-				<img src="<?= _URLBASE_ ?>public/img/imgLivro/Livro-As-Cronicas-de-Gelo-e-Fogo-A-Danca-dos-Dragoes.jpg">
+			<a href="<?=_URLBASE_?>area/user/pages/loDescLivro">
+				<img src="<?=_URLBASE_?>public/img/imgLivro/Livro-As-Cronicas-de-Gelo-e-Fogo-A-Danca-dos-Dragoes.jpg">
 			</a>
 		</div>
 		<div>
-			<a href="<?= _URLBASE_ ?>area/user/pages/loDescLivro">
-				<img src="<?= _URLBASE_ ?>public/img/imgLivro/livroNeve.jpg">
+			<a href="<?=_URLBASE_?>area/user/pages/loDescLivro">
+				<img src="<?=_URLBASE_?>public/img/imgLivro/livroNeve.jpg">
 			</a>
 		</div>
 		<div>
-			<a href="<?= _URLBASE_ ?>area/user/pages/loDescLivro">
-				<img src="<?= _URLBASE_ ?>public/img/imgLivro/livroPercy.jpg">
+			<a href="<?=_URLBASE_?>area/user/pages/loDescLivro">
+				<img src="<?=_URLBASE_?>public/img/imgLivro/livroPercy.jpg">
 			</a>
 		</div>
 	</section>

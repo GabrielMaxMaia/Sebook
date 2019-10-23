@@ -45,5 +45,5 @@ $categoriaController->gravarAlterar();
 	<br>
 	<br>
 	<br>
-	<a href="http://localhost/Sebook/area/adm/cadastro/cadCategoria">Voltar</a>
+	<a href=<?= _URLBASE_ ?>area/adm/cadastro/cadCategoria">Voltar</a>
 </section>

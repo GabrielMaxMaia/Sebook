@@ -49,5 +49,5 @@ $livroAutorController->gravarAlterar();
 	<br>
 	<br>
 	<br>
-	<a href="http://localhost/Sebook/area/adm/cadastro/cadLivroAutor">Voltar</a>
+	<a href=<?= _URLBASE_ ?>area/adm/cadastro/cadLivroAutor">Voltar</a>
 </section>

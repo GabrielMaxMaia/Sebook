@@ -74,5 +74,5 @@ $livroController->gravarAlterar();
 	<br>
 	<br>
 	<br>
-	<a href="http://localhost/Sebook/area/adm/cadastro/cadLivro">Voltar</a>
+	<a href=<?= _URLBASE_ ?>area/adm/cadastro/cadLivro">Voltar</a>
 </section>

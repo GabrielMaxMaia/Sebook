@@ -23,7 +23,7 @@ $output = ob_get_clean();
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <!--<link rel="stylesheet" href="http://localhost/sebook/css/slick.css">-->
+    <!--<link rel="stylesheet" href= _URLBASE_ ."css/slick.css">-->
     <link rel="stylesheet" href="<?= _URLBASE_ . "public/css/user.css"?>">
     <?= $styleSobrescrito ?? "" ?>
     <?= $cssCaminho ?? ""; ?>
