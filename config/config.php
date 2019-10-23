@@ -4,16 +4,18 @@ require_once $ajuste.'src/util/Psr4AutoloaderClass.php';
 
 define("_URLBASE_","http://localhost/sebook/");
 
-define("_URLBASEMENU_","http://localhost/sebook/index.php?area=user");
-define("_URLBASEADM_","http://localhost/sebook/index.php?area=adm");
+// !! TODAS AS CONSTANTES FORAM DESATIVADAS !!
 
-//http://localhost/sebook/index.php?area=user&pasta=menuHome&page=sebos
+// define("_URLBASEMENU_","http://localhost/sebook/index.php?area=user");
+// define("_URLBASEADM_","http://localhost/sebook/index.php?area=adm");
 
-//Constantes para importar IMG, CSS e ICONS
-define("_CSSBASEUSER_","http://localhost/sebook/public/css/user.css");
-define("_CSSBASEADM_","http://localhost/sebook/public/css/adm.css");
-define("_IMGBASE_","http://localhost/sebook/public/img/");
-define("_ICONBASE_","http://localhost/sebook/public/icon/");
+// http://localhost/sebook/index.php?area=user&pasta=menuHome&page=sebos
+
+// Constantes para importar IMG, CSS e ICONS
+// define("_CSSBASEUSER_","http://localhost/sebook/public/css/user.css");
+// define("_CSSBASEADM_","http://localhost/sebook/public/css/adm.css");
+// define("_IMGBASE_","http://localhost/sebook/public/img/");
+// define("_ICONBASE_","http://localhost/sebook/public/icon/");
 
 date_default_timezone_set('America/Sao_Paulo'); 
 
