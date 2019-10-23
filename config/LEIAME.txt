@@ -3,6 +3,8 @@
 Para rodar as funções do banco é necessário ter na máquina um arquivo bd_mysql.ini, abaixo estão as informações necessárias para cria-lo.
 (O arquivo não vêem mais automaticamente por conta do .gitignore, ajudar a evitar ter de modificar o arquivo toda vez que formos baixar as atualizações)
 
+Quando criar o arquivo ele deve estar localizado dentro da pasta "config", não podendo estar em uma sub-pasta e nem com o nome diferente de "bd_mysql.ini"
+
 ** Somente por as configurações abaixo sem nenhuma linha a mais **
 
 host = localhost
