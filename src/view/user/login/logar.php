@@ -1,7 +1,7 @@
 <?php
 $title = "Login";
 $menuHide = true;
-$cssCaminho = "<link rel='stylesheet' href=". _URLBASE_ ."public/css/login.css>";
+$cssCaminho = '<link rel="stylesheet" href="http://localhost/sebook/public/css/login.css">';
 $styleSobrescrito =
     "<style>
 .containerScroll{
@@ -20,7 +20,7 @@ div#containerTemplate{
 
     $autenticadorController = new \Controller\AutentificadorController($sql);
 
-   // $autenticadorController->validarAcesso(_URLBASE_.'area/adm',array(0=>1, 1=>2));
+   // $autenticadorController->validarAcesso('http://localhost/Sebook/area/adm',array(0=>1, 1=>2));
 
     $autenticadorController->efetuarLogin();
     $autenticadorController->efetuarLogOut();
@@ -34,7 +34,7 @@ div#containerTemplate{
 	<article class="loginSpace">
 		<section class="login">
 			<figure>
-				<img src="<?= _URLBASE_ ?>public/icon/login.svg" alt="Login" title="Login">
+				<img src="<?= _ICONBASE_ ?>loginSVG.svg" alt="Login" title="Login">
 				<figcaption>LOGIN</figcaption>
 			</figure>
 			<label class="btn-modal-cadastre" for="modal-cadastre">Primeiro Acesso? Cadastre-se</label>

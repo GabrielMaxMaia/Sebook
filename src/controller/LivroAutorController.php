@@ -163,13 +163,13 @@ class LivroAutorController
                 <td>" . $linha['isbnLivro'] . "</td>    
                         <td>
                             <a href='http://localhost/Sebook/area/adm/cadastro/cadLivroAutor/alter/" . $linha['idAutor'] . "/" . $linha['isbnLivro'] . "'>
-                                <img src='" . _URLBASE_ . "public/icon/editar.svg'>
+                                <img src='" . _URLBASE_ . "public/img/editar.jpg'>
                             </a>
                         </td>
                         
                         <td>
                             <a href='http://localhost/Sebook/area/adm/cadastro/cadLivroAutor/delete/" . $linha['idAutor'] . "/" . $linha['isbnLivro'] . "'>
-                                <img src='" . _URLBASE_ . "public/icon/excluir.svg'>
+                                <img src='" . _URLBASE_ . "public/img/excluir.jpg'>
                             </a>
                         </td>
                     </tr>";

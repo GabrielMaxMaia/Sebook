@@ -1,40 +1,32 @@
 <?php
-  $cssCaminho = "<link rel=stylesheet href="._URLBASE_."public/css/slick.css>";
+// $cssCaminho = '<link rel="stylesheet" href="http://localhost/sebook/public/css/slick.css">';
+
+use Model\livroDAO;
+
+//Pega a conexão
+$objSql = new Util\Sql($conn);
+
+$livroDAO = new livroDAO($objSql);
+
+$resultLivro = $livroDAO->listarLivros();
 ?>
+
 <div class="containerSlick">
 	<section class="regular slider">
-		<div>
-			<a href="<?=_URLBASE_?>area/user/pages/loDescLivro">
-				<img src="<?=_URLBASE_?>public/img/imgLivro/livroHarry.jpg">
-			</a>
-		</div>
-		<div>
-			<a href="<?=_URLBASE_?>area/user/pages/loDescLivro">
-				<img src="<?=_URLBASE_?>public/img/imgLivro/Livro-A-Culpa-e-das-Estrelas.jpg">
-			</a>
-		</div>
-		<div>
-			<a href="<?=_URLBASE_?>area/user/pages/loDescLivro">
-				<img src="<?=_URLBASE_?>public/img/imgLivro/DepoisDeVoce_Jojo.jpg">
-			</a>
-		</div>
-		<div>
-			<a href="<?=_URLBASE_?>area/user/pages/loDescLivro">
-				<img src="<?=_URLBASE_?>public/img/imgLivro/Livro-As-Cronicas-de-Gelo-e-Fogo-A-Danca-dos-Dragoes.jpg">
-			</a>
-		</div>
-		<div>
-			<a href="<?=_URLBASE_?>area/user/pages/loDescLivro">
-				<img src="<?=_URLBASE_?>public/img/imgLivro/livroNeve.jpg">
-			</a>
-		</div>
-		<div>
-			<a href="<?=_URLBASE_?>area/user/pages/loDescLivro">
-				<img src="<?=_URLBASE_?>public/img/imgLivro/livroPercy.jpg">
-			</a>
-		</div>
+		<?php
+		foreach ($resultLivro as $livro) {
+			?>
+			<div>
+				<a href="<?= _URLBASE_ ?>area/user/pages/descLivro/<?= $livro['isbnLivro'] ?>">
+					<img src="<?= _URLBASE_ . $livro['urlFotoLivro'] ?>" alt="<?= $livro['nomeLivro']?>" title="<?= $livro['nomeLivro']?>">
+				</a>
+			</div>
+		<?php
+		}
+		?>
 	</section>
 </div>
+
 
 <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
 
@@ -42,11 +34,11 @@
 
 <script type="text/javascript">
 	$(document).on('ready', function() {
-			$(".regular").slick({
+		$(".regular").slick({
 			dots: true,
 			infinite: true,
 			slidesToShow: 4,
 			slidesToScroll: 2
-			});
+		});
 	});
 </script>

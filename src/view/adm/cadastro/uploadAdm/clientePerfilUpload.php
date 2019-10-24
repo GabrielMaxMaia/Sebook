@@ -7,13 +7,13 @@ use util\Upload;
 $up = new Util\Upload(array(
 	0 => "image/png",  1 => "image/tiff",
 	2 => "image/jpeg", 3 => "image/bmp", 4 => "image/gif"
-), "/public/img/imgPerfil/");
+), "/public/imgPerfil/");
 
 $result = $up->realizarUpload("urlFotoCliente");
 
 if ($result === true) {
 	$arq = $up->getArqUpload();
-	$arquivo = "public/img/imgPerfil/" . $arq["name"];
+	$arquivo = "public/imgPerfil/" . $arq["name"];
 } else {
 	$arquivo = -1;
 }

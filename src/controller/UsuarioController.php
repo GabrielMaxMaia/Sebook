@@ -175,12 +175,12 @@ class UsuarioController
                         <td>" . $linha['codStatusUsuario'] . "</td>
                         <td>
                             <a href='http://localhost/Sebook/area/adm/cadastro/cadUsuario/alter/" . $linha['idUsuario'] . "'>
-                                <img src='" . _URLBASE_ . "public/icon/editar.svg'>
+                                <img src='" . _URLBASE_ . "public/img/editar.jpg'>
                             </a>
                         </td>
                         <td>
                             <a href='http://localhost/Sebook/area/adm/cadastro/cadUsuario/delete/" . $linha['idUsuario'] . "'>
-                                <img src='" . _URLBASE_ . "public/icon/excluir.svg'>
+                                <img src='" . _URLBASE_ . "public/img/excluir.jpg'>
                             </a>
                         </td>
                     </tr>";

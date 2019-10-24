@@ -47,7 +47,7 @@ class PostagemDAO extends Postagem
         $result = $this->sql->query(
             PostagemDAO::$SELECT_ALL . $limit);
 
-        var_dump($result);
+        //var_dump($result);
         //devolver o resultado
         if ($result->rowCount() > 0) {
             while ($linha = $result->fetch(\PDO::FETCH_OBJ)) {

@@ -9,11 +9,11 @@
     <iframe id="ifrmUpload" name="ifrmUpload" src="" frameborder="0"></iframe>
 </div>
 <?php
-$src = "src=<?= _URLBASE_ ?>{$postagemDAO->getUrlFotoPostagem()}'";
+$src = "src='http://localhost/sebook/{$postagemDAO->getUrlFotoPostagem()}'";
 ?>
 <div class="imgCadastro">
     <picture>
-        <img id="imgAvatar" src=<?= _URLBASE_ ?><?=$postagemDAO->getUrlFotoPostagem()?>' alt="Avatar" class="avatar">
+        <img id="imgAvatar" src='http://localhost/sebook/<?=$postagemDAO->getUrlFotoPostagem()?>' alt="Avatar" class="avatar">
     </picture>
 </div>
 <?php

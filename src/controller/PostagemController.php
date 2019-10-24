@@ -226,10 +226,10 @@ class PostagemController
     //                            <h1> Titulo {$linha['tituloPostagem']} </h1>
     //                            <p> Post {$linha['txtPostagem']} </p>
     //                            <a href='http://localhost/Sebook/area/adm/cadastro/cadPostagem/alter/" . $linha['idPostagem'] . "'>
-    //                                 <img src='" . _URLBASE_ . "public/icon/editar.svg'>
+    //                                 <img src='" . _URLBASE_ . "public/img/editar.jpg'>
     //                             </a>
     //                             <a href='http://localhost/Sebook/area/adm/cadastro/cadPostagem/delete/" . $linha['idPostagem'] . "'>
-    //                                 <img src='" . _URLBASE_ . "public/icon/excluir.svg'>
+    //                                 <img src='" . _URLBASE_ . "public/img/excluir.jpg'>
     //                             </a>
     //                         </div><hr>";
     //         }
@@ -256,9 +256,9 @@ class PostagemController
                         </figcaption>
                     </figure>
                     <a href='http://localhost/Sebook/area/adm/cadastro/cadPostagem/alter/" . $post['idPostagem'] . "'>
-                    <img src='" . _URLBASE_ . "public/icon/editar.svg'></a>
+                    <img src='" . _URLBASE_ . "public/img/editar.jpg'></a>
                     <a href='http://localhost/Sebook/area/adm/cadastro/cadPostagem/delete/" . $post['idPostagem'] . "'>
-                     <img src='" . _URLBASE_ . "public/icon/excluir.svg'></a>
+                     <img src='" . _URLBASE_ . "public/img/excluir.jpg'></a>
                 </div>";
             }
         } else {

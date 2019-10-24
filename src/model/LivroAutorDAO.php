@@ -12,6 +12,8 @@ class LivroAutorDAO extends LivroAutor
     private static $SELECT_ALL = "select * from livro_autor";
 
     private static $SELECT_ID = "select * from livro_autor where id_autor = :idAutor";
+    
+    private static $SELECT_ISBN_AUTOR = "select * from livro_autor where isbn_livro = :isbnLivro";
 
     private static $INSERT = "INSERT INTO livro_autor (id_autor, isbn_livro) VALUES (:idAutor, :isbnLivro)";
 
@@ -70,6 +72,29 @@ class LivroAutorDAO extends LivroAutor
         //devolver o resultado     
         return $itens;
     }
+
+    public function listarIsbnAutor()
+    {
+        //executar a consulta no banco
+        $result = $this->sql->query(
+            LivroAutorDAO::$SELECT_ISBN_AUTOR,
+            array(
+                'isbnLivro' => array(0 => $this->getIsbnLivro(), 1 => \PDO::PARAM_INT)
+            )
+        );
+        if ($result->rowCount() == 1) {
+            $linha = $result->fetch(\PDO::FETCH_OBJ);
+            $itens = array(
+                'idAutor' => $linha->id_autor,
+                'isbnLivro' => $linha->isbn_livro
+            );
+        } else {
+            $itens = null;
+        }
+        //devolver o resultado     
+        return $itens;
+    }
+
 
     public function adicionarLivroAutor()
     {
