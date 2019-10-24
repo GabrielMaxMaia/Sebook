@@ -184,12 +184,12 @@ class LivroController
 
                         <td>
                             <a href='http://localhost/Sebook/area/adm/cadastro/cadlivro/alter/" . $linha['isbnLivro'] . "'>
-                                <img src='" . _URLBASE_ . "public/img/editar.jpg'>
+                                <img src='" . _URLBASE_ . "public/icon/editar.svg'>
                             </a>
                         </td>
                         <td>
                             <a href='http://localhost/Sebook/area/adm/cadastro/cadlivro/delete/" . $linha['isbnLivro'] . "'>
-                                <img src='" . _URLBASE_ . "public/img/excluir.jpg'>
+                                <img src='" . _URLBASE_ . "public/icon/excluir.svg'>
                             </a>
                         </td>
                     </tr>";

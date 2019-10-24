@@ -171,12 +171,12 @@ class AutorController
                 <td>" . $linha['codStatusAutor'] . "</td>    
                         <td>
                             <a href='http://localhost/Sebook/area/adm/cadastro/cadAutor/alter/" . $linha['idAutor'] . "'>
-                                <img src='" . _URLBASE_ . "public/img/editar.jpg'>
+                                <img src='" . _URLBASE_ . "public/icon/editar.svg'>
                             </a>
                         </td>
                         <td>
                             <a href='http://localhost/Sebook/area/adm/cadastro/cadAutor/delete/" . $linha['idAutor'] . "'>
-                                <img src='" . _URLBASE_ . "public/img/excluir.jpg'>
+                                <img src='" . _URLBASE_ . "public/icon/excluir.svg'>
                             </a>
                         </td>
                     </tr>";
