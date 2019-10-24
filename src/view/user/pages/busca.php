@@ -1,45 +1,35 @@
-<div id="container">
-	<section class="busca">
-		<div class="container">
-			<div class="box-search">
-				<a href="" class="search">
-					<img src="<?= _ICONBASE_ ?>busca.svg" alt="">
-				</a>
-				<input type="text">
-			</div>
+<?php
 
-			<div class="searchBooks">
-				<a href="">
-					<img src="<?= _IMGBASE_ ?>livroHarry.jpg" alt="">
-				</a>
-				<a href="">
-					<img src="<?= _IMGBASE_ ?>livroHarry.jpg" alt="">
-				</a>
-				<a href="">
-					<img src="<?= _IMGBASE_ ?>livroHarry.jpg" alt="">
-				</a>
-				<a href="">
-					<img src="<?= _IMGBASE_ ?>livroHarry.jpg" alt="">
-				</a>
-				<a href="">
-					<img src="<?= _IMGBASE_ ?>livroHarry.jpg" alt="">
-				</a>
-				<a href="">
-					<img src="<?= _IMGBASE_ ?>livroHarry.jpg" alt="">
-				</a>
-				<a href="">
-					<img src="<?= _IMGBASE_ ?>livroHarry.jpg" alt="">
-				</a>
-				<a href="">
-					<img src="<?= _IMGBASE_ ?>livroHarry.jpg" alt="">
-				</a>
-				<a href="">
-					<img src="<?= _IMGBASE_ ?>livroHarry.jpg" alt="">
-				</a>
-			</div>
+use Model\livroDAO;
+
+//Pega a conexão
+$objSql = new Util\Sql($conn);
+
+$livroDAO = new livroDAO($objSql);
+
+$resultLivro = $livroDAO->listarLivros();
+
+?>
+<section class="busca">
+	<div class="container">
+		<div class="box-search">
+			<a href="" class="search">
+				<img src="<?= _ICONBASE_ ?>buscaSVG.svg" alt="">
+			</a>
+			<input type="text">
 		</div>
-		<br>
-		<br>
-
-	</section>
-</div>
+		<div class="searchBooks">
+			<?php
+			foreach ($resultLivro as $livro) {
+				?>
+				<div>
+					<a href="<?= _URLBASE_ ?>area/user/pages/descLivro/<?= $livro['isbnLivro'] ?>">
+						<img src="<?= _URLBASE_ . $livro['urlFotoLivro'] ?>" alt="<?= $livro['nomeLivro'] ?>" title="<?= $livro['nomeLivro'] ?>">
+					</a>
+				</div>
+			<?php
+			}
+			?>
+		</div>
+	</div>
+</section>

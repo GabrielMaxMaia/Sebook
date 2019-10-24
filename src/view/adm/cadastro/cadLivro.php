@@ -40,7 +40,7 @@ $livroController->gravarAlterar();
 
 		<input type="hidden" name="txtAcao" id="txtAcao" value="<?php echo $livroController->getAcaoGET(); ?>">
 
-		<input type="hidden" name="urlFotoLivro" id="urlFotoLivro" value="<?= $livroController->getLivroDAO()->getUrlFotoLivro(); ?>">
+		<input type="hidden" name="txtImg" id="txtImg" value="<?= $livroController->getlivroDAO()->getUrlFotoLivro() ?>">
 
 		<label>Isbn</label>
 		<input class="grande" type="text" name="txtIsbn" value="<?= $livroController->getLivroDAO()->getIsbnLivro();  ?>">
@@ -71,8 +71,22 @@ $livroController->gravarAlterar();
 		<input class="button" type="submit" value="Enviar">
 	</form>
 	<br>
-	<br>
-	<br>
-	<br>
+
+	<div class="img">
+		<form action="<?= _URLBASE_ ?>src/view/adm/cadastro/uploadAdm/postUploadLivro.php" method='post' enctype='multipart/form-data' target='ifrmUpload' name="urlFotoLivro">
+
+			<input type="file" name="urlFotoLivro">
+
+			<input class="button" type="submit" value="Carregar">
+		</form>
+		<iframe id="ifrmUpload" name="ifrmUpload" src="" frameborder="0"></iframe>
+
+	</div>
+	<div class="imgCadastro">
+		<picture>
+			<img id="imgAvatar" src="<?= "http://localhost/sebook/" . $livroController->getlivroDAO()->getUrlFotoLivro() ?>" alt="Avatar" class="avatar">
+		</picture>
+	</div>
+
 	<a href="http://localhost/Sebook/area/adm/cadastro/cadLivro">Voltar</a>
 </section>

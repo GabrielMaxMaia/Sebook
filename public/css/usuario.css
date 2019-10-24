@@ -9,19 +9,21 @@ body {
     overflow: hidden;
 }
 
-.containerScroll{
-    height:100vh;
-    overflow-y:scroll
+.containerScroll {
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: scroll
 }
 
 div#containerTemplate::before {
     content: "";
     display: block;
     position: relative;
-    min-height:2rem
+    min-height: 2rem
 }
-@media (max-width:779.99px){
-    div#containerTemplate::before{
+
+@media (max-width:779.99px) {
+    div#containerTemplate::before {
         min-height: 90px
     }
 }
@@ -31,8 +33,7 @@ div#containerTemplate {
     max-width: 1000px;
     margin: 0 auto 4%;
     box-sizing: border-box;
-    min-height:500px
- 
+    min-height: 500px
 }
 
 * {
@@ -132,21 +133,18 @@ div#containerTemplate {
 .busca {
     box-sizing: border-box;
     padding: 1 !important;
-    height: 100vh
 }
 
 .busca .container {
     margin: auto;
-    max-width: 400px
+    max-width: 650px
 }
 
 .busca .box-search {
     width: 80%;
-    display: grid;
-    grid-template-columns: 20px 1fr;
-    grid-gap: 10px;
+    display: flex;
     margin: 0 auto;
-    margin-bottom: 20px
+    margin-bottom: 6%;
 }
 
 .busca .box-search a.search {
@@ -169,19 +167,22 @@ div#containerTemplate {
 
 .busca .searchBooks {
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center
 }
 
 .busca .searchBooks a {
     display: block;
     width: 100%;
-    height: 180px
+    padding: .105rem
 }
 
 .busca .searchBooks a img {
-    width: 100%
+    width: 100%;
+    max-width: 120px;
+    max-height: 174px;
 }
 
 
@@ -197,7 +198,7 @@ div#containerTemplate {
 
 .cadastro .container figure {
     margin: 0 auto;
-    display:flex;
+    display: flex;
     width: 208px
 }
 
@@ -415,7 +416,7 @@ div#containerTemplate {
 /*===================AREA DO EVENTOS====================*/
 
 .eventos .container {
-    border: 1px solid #ccc;
+    background: #f1f1f1;
     margin-top: 20px;
     padding: 20px
 }
@@ -458,21 +459,22 @@ div#containerTemplate {
     padding: 10% 0
 }
 
-.pagLivro .search-box{
+.pagLivro .search-box {
     position: absolute;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     background: #2f3640;
     height: 40px;
     border-radius: 40px;
     padding: 4px
 }
 
-.pagLivro .search-box:hover > .search-btn{
+.pagLivro .search-box:hover>.search-btn {
     background: white;
 }
-.pagLivro .search-btn{
-    color:#e84118;
+
+.pagLivro .search-btn {
+    color: #e84118;
     float: right;
     width: 35px;
     height: 35px;
@@ -484,40 +486,46 @@ div#containerTemplate {
     transition: 0.4s;
 }
 
-.pagLivro .search-txt{
-    border:none;
+.pagLivro .search-txt {
+    border: none;
     background: none;
     outline: none;
-    float:left;
+    float: left;
     padding: 0 6px;
     color: white;
     font-size: 16px;
     transition: 0.4s;
     line-height: 40px;
-    width:  400px;
+    width: 400px;
 
 }
-.pagLivro .search-box img{
-    width: 2rem;
+
+.pagLivro .search-box img {
+    height: 40px;
 }
-@media (max-width:900px){
+
+@media (max-width:900px) {
     .pagLivro .search-box {
-        height:40px;
-     
+        height: 40px;
+
     }
+
     .pagLivro .search-btn {
-        top:-43px
+        top: -43px
     }
-    .pagLivro .search-txt{
-        width:  0px;
+
+    .pagLivro .search-txt {
+        width: 0px;
         padding: 0px;
-    
+
     }
-    .pagLivro .search-box:hover > .search-txt{
-        width:300px;
- 
+
+    .pagLivro .search-box:hover>.search-txt {
+        width: 300px;
+
     }
-    .pagLivro .search-box:hover > .search-btn{
+
+    .pagLivro .search-box:hover>.search-btn {
         background: white;
         position: relative
     }
@@ -540,22 +548,22 @@ div#containerTemplate {
 
 .containerLogin {
     padding: 1rem;
-    width:100%;
-    align-self:center;
-    margin: 0 auto 
+    width: 100%;
+    align-self: center;
+    margin: 0 auto
 }
 
-.loginSpace{
-    width:100%
+.loginSpace {
+    width: 100%
 }
 
 .containerLogin .login {
     background-color: #fff;
-    padding: 3rem 1rem!important;
+    padding: 3rem 1rem !important;
     max-width: 500px;
     margin: 2% auto 0;
     border: 1px solid #ccc;
-    border-radius:.4rem; 
+    border-radius: .4rem;
 }
 
 .containerLogin figure {
@@ -581,7 +589,7 @@ div#containerTemplate {
     color: blue;
     text-decoration: none;
     font-size: 14px;
-    margin:5% auto
+    margin: 5% auto
 }
 
 .containerLogin .btn-modal-cadastre:hover {
@@ -611,7 +619,7 @@ div#containerTemplate {
     width: 100%;
     float: left;
     margin: 0 0 5px 0;
-    color:#000
+    color: #000
 }
 
 .containerLogin form input {
@@ -621,8 +629,8 @@ div#containerTemplate {
     border: 1px solid #999;
     /* height: 30px; */
     padding: .5rem;
-    outline:none;
-    font-size:16px
+    outline: none;
+    font-size: 16px
 }
 
 .containerLogin form input.button {
@@ -634,7 +642,7 @@ div#containerTemplate {
     width: 100%;
     max-width: 151px;
     margin: 0;
-    padding:.45rem
+    padding: .45rem
 }
 
 .containerLogin p {
@@ -713,12 +721,12 @@ div#containerTemplate {
     z-index: 102
 }
 
-.modal-open:checked ~ .modal-wrap:before,
-.modal-open:checked ~ .modal-wrap .modal-overlay {
+.modal-open:checked~.modal-wrap:before,
+.modal-open:checked~.modal-wrap .modal-overlay {
     display: block
 }
 
-.modal-open:checked ~ .modal-wrap .modal-dialog {
+.modal-open:checked~.modal-wrap .modal-dialog {
     transform: translate(-50%, -50%);
     position: fixed;
     top: 40%
@@ -823,7 +831,7 @@ div#containerTemplate {
 
 /*===================AREA DO QUEM SOMOS====================*/
 
-.quemSomos{
+.quemSomos {
     max-width: 650px;
     margin: auto;
 }
@@ -831,7 +839,7 @@ div#containerTemplate {
 .quemSomos .container h1 {
     font-size: 25px;
     text-align: center;
-    margin:1rem 0 0
+    margin: 1rem 0 0
 }
 
 .quemSomos .container .containerText {
@@ -843,9 +851,10 @@ div#containerTemplate {
     padding: 1rem;
     text-align: justify
 }
-@media (max-width:700px){
-    .quemSomos .container p{
-        text-align:left
+
+@media (max-width:700px) {
+    .quemSomos .container p {
+        text-align: left
     }
 }
 
@@ -857,8 +866,8 @@ div#containerTemplate {
 
 /*===================AREA DO SEBOS====================*/
 
-.sebos{
-    padding:1rem
+.sebos {
+    padding: 1rem
 }
 
 .sebos .container {
@@ -1045,9 +1054,7 @@ header #Logado .ulCenter2 ul li a {
 }
 
 .master1 #menuH:checked~.ulCenter ul {
-    display: flex;
-    /*opacity: 1;
-    transition: opacity .09s linear*/
+    display: flex
 }
 
 
@@ -1136,7 +1143,7 @@ header #Logado .ulCenter2 ul li a {
     z-index: 9;
     left: 50%;
     top: 23px;
-    margin-left: -20px
+    margin-left: -14px
 }
 
 .master1 nav .search img {
@@ -1173,39 +1180,38 @@ header #Logado .ulCenter2 ul li a {
 
 .master1 nav .menu ul {
     display: none;
- 
     position: fixed;
     width: 100%;
     height: 100%;
-    top: 90px;
+    top: 89px;
     left: 0;
     padding: 0;
     background: linear-gradient(45deg, #548f96, #8adce6);
     z-index: 1;
     flex-flow: column;
-    margin-top: 0;
-    /*opacity: 0;*/
+    margin-top: 0
 }
 
 .master1 nav .menu ul li a {
     width: 100%;
-    height: inherit;
-    padding-left: 20px;
     display: flex;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
     color: #fff;
-    padding: 8% 2rem;
-    font-size: 1.5rem;
-    border-bottom: 1px solid #fff
+    padding: 7% 3%;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #fff;
 }
 
 .master1 nav .menu ul li:last-child {
     border-bottom: 0
 }
 
-
+.master1 #menuH:checked~.ulCenter ul {
+    display: fleX;
+    margin-top: 34px;
+}
 
 
 /*Menu mobile desaparece quando a resolução for maior que 780px*/
@@ -1222,34 +1228,43 @@ header,
     justify-content: center;
     align-items: center;
     align-self: flex-end;
-    background: #111
+    background: #222;
+    z-index: 1;
+    position: relative;
+    margin: auto;
+    width: 100%;
+    top: .8rem;
 }
 
 .navDesk ul li {
     list-style: none;
-    /* padding: .6rem 1rem */
-    padding: 1rem
+    padding: .85rem .1rem
 }
 
 .navDesk ul a {
-    color: #fff
+    color: #fff;
+    padding: 0 .5rem
 }
 
 header img {
-    max-width: 130px
+    max-width: 130px;
+    margin-top: 1.75rem;
 }
 
 header .perfil {
     max-width: 40px;
-    align-self: flex-end
+    margin-top: 1.4%;
 }
 
 header .menuGroup {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 1rem;
-    box-sizing: border-box
+    padding: .1rem 1.1rem 0rem 1.2rem;
+    box-sizing: border-box;
+    align-items: center;
+    min-height: 110px;
+    max-height: 110px;
 }
 
 .navDesk {
@@ -1261,7 +1276,8 @@ header .menuGroup {
         position: fixed;
         width: 100%;
         top: 0;
-        z-index: 99999
+        z-index: 99999;
+        padding-bottom: 4%;
     }
 
     .headerStatic {
@@ -1269,8 +1285,9 @@ header .menuGroup {
     }
 
     .busca .container {
-        padding: 3vh
+        padding: 3%
     }
+ 
 }
 
 @media (min-width:780px) {
@@ -1335,6 +1352,11 @@ section {
     position: relative;
     /* padding: 60px 0 0 0 */
 }
+@media(min-width:700px){
+    section .banner{
+    margin-top: .65rem;
+}
+}   
 
 section .banner {
     width: 100%;
@@ -1357,7 +1379,8 @@ section .banner img {
 
 section .banner .image {
     width: 100%;
-    height: 200px
+    height: 100%;
+    max-height:300px
 }
 
 section .banner .radio {
@@ -1557,23 +1580,33 @@ form select {
 .Social-Bar {
     position: fixed;
     right: 0;
-    top: 40%;
+    top: 60%;
+    font-size: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    z-index: 100
+    z-index: 100;
+    display:none;
+}
+@media (min-width:1100px){
+    .Social-Bar{
+        display:flex;
+    }
 }
 
-@media (min-width:420px){
-    .Social-Bar{
-        right:18px;
+@media (min-width:420px) {
+    .Social-Bar {
+        right: 18px;
     }
 }
 
 .icon {
-    padding: .5rem;
-    transition: all ease-in-out .4s;
-    width: 60px;
+    color: white;
+    text-decoration: none;
+    padding: .2rem;
+    display: flex;
+    transition: all ease-in-out .5s;
+    margin: .025rem 0
 }
 
 .icon-facebook {
@@ -1597,9 +1630,8 @@ form select {
 }
 
 .icon:hover {
-    width:100px;
-    padding-right: 3rem;
-    border-radius: 1rem 0 0 1rem;
+    padding-right: 5rem;
+    border-radius: .5rem 0 0 1rem;
 }
 
 /*=====================AREA DO RODAPE===============*/
@@ -1608,34 +1640,45 @@ form select {
     background: #202020;
     color: #fff;
 }
-#rodape .container-body a, #rodape label{
-    color:#c7c7c7
+
+#rodape .container-body a,
+#rodape label {
+    color: #c7c7c7
 }
-#rodape a:hover, #rodape a:hover label{
-    color:#fff
+
+#rodape a:hover,
+#rodape a:hover label {
+    color: #fff
 }
+
 .container-footer-all {
     width: auto;
     max-width: 1300px;
     margin: auto;
     padding: 4rem
 }
-@media (max-width:700px){
-.container-footer-all{
-    padding: 2rem
+
+@media (max-width:700px) {
+    .container-footer-all {
+        padding: 2rem
+    }
+
+    #rodape p {
+        text-align: left
+    }
 }
-#rodape p{
-    text-align:left
-}
-}
+
 .container-body {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap
 }
-@media (max-width:701px){
-    .container-body, .footer{
-        flex-direction:column
+
+@media (max-width:701px) {
+
+    .container-body,
+    .footer {
+        flex-direction: column
     }
 }
 
@@ -1653,22 +1696,23 @@ form select {
 }
 
 .coluna1 p {
-    font-size:.95rem;
+    font-size: .95rem;
     color: #c7c7c7;
-    margin-top:20px;
-    text-align:justify;
-    line-height:1.3rem;
-    letter-spacing:-.01rem
+    margin-top: 20px;
+    text-align: justify;
+    line-height: 1.3rem;
+    letter-spacing: -.01rem
 }
-.coluna3 label{
-    line-height:1.4rem
+
+.coluna3 label {
+    line-height: 1.4rem
 }
 
 .row,
 .row2 {
     margin-top: 20px;
     display: flex;
-    align-items:center
+    align-items: center
 }
 
 .row img,
@@ -1687,11 +1731,12 @@ form select {
 .row2 label {
     margin-top: 10px;
     margin-left: 20px;
-    
+
 }
-@media(min-width:700px){
-    .row2 label{
-    max-width: 200px
+
+@media(min-width:700px) {
+    .row2 label {
+        max-width: 200px
     }
 }
 
@@ -1699,8 +1744,9 @@ form select {
     width: auto;
     background: #111;
 }
-@media (max-width:700px){
-    .container-footer{
+
+@media (max-width:700px) {
+    .container-footer {
         padding: 0 0 3rem
     }
 }
@@ -1709,21 +1755,23 @@ form select {
     max-width: 1200px;
     margin: auto;
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     justify-content: space-between;
     padding: 1rem;
-    max-width:700px
-}
-.footer div{
-    margin:1rem 0
+    max-width: 700px
 }
 
-@media (min-width:900px){
-    .footer{
-        flex-direction:row;
-        max-width:1000px
+.footer div {
+    margin: 1rem 0
+}
+
+@media (min-width:900px) {
+    .footer {
+        flex-direction: row;
+        max-width: 1000px
     }
 }
+
 .copyright {
     color: #c7c7c7
 }
@@ -1738,3 +1786,74 @@ form select {
     text-decoration: none;
     color: #c7c7c7
 }
+
+
+
+/*formatação de links para usuario logado*/
+.logGroup{
+    display: flex;
+    /* flex-wrap: wrap; */
+    align-items: flex-end;
+}
+.logGroup a{
+    margin: .4rem .4rem;
+}
+.circle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3%;
+}
+.circle img{
+    overflow: hidden;
+    padding: .1rem;
+    background: #fff;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    margin-top: 40%
+}
+.circle p{
+    position: relative;
+    top: -.9rem;
+    background: #fff;
+    padding: .1rem;
+    width: 92%;
+    text-align: center;
+}
+.logGroup figcaption{
+    display:none;
+    z-index:999;
+}
+@media(min-width:782px){
+    .logItem{
+        right: 17px!important;
+    }
+    /* .logItem{
+        right: 95x!important
+    } */
+}
+.logItem{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 109.3px;
+    width: 95px;
+    background: #fff;
+    font-size: 1.1rem;
+    padding: .4rem;
+    z-index: 999;
+    right: 0;
+}
+
+input[type=checkbox]{
+    display:none
+} 
+input[type=checkbox]:checked + figure figcaption {
+    /* color: #f00;
+    font-style: normal; */
+    display:flex;
+} 
+
+
+/**?

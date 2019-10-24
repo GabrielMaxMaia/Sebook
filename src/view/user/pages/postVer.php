@@ -11,15 +11,13 @@ $postagemDAO = new PostagemDAO($objSql);
 $comentarioDAO = new ComentarioDAO($objSql);
 $usuarioDAO = new UsuarioDAO($objSql);
 
+$GetPost = $_GET['id'] ?? "";
+
 $result = $postagemDAO->listarPostagem();
 
-$resultComentario = $comentarioDAO->listarComentario();
+$comentarioDAO->setIdPost($GetPost);
+$resultComentario = $comentarioDAO->listarComentarioPost();
 
-$resultUsuario = $usuarioDAO->listarUsuarios();
-
-$usuarioDAO->setIdUsuario($IdUser);
-
-$GetPost = $_GET['id'] ?? "";
 
 //Include para evitar reenvio
 include "includes/evitarReenvio.php";
@@ -48,7 +46,7 @@ if ($result != null) {
     }
 }
 
-var_dump($_POST);
+//var_dump($_POST);
 //Processsa formulário que envia comentário
 if (isset($_POST['enviarComentario'])) {
     
