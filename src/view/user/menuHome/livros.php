@@ -29,7 +29,7 @@ $pesquisa =  _URLBASE_ . "src/view/user/pages/includes/pesquisa.php";
 
             //Aqui a ativa a imagem de load
             function loading_show() {
-                $('#loading').html("<img src='<?= _URLBASE_ ?>public/icon/loading.gif'/>").fadeIn('fast');
+                $('#loading').html("<img src='<?= _URLBASE_ ?>public/icon/loading.svg'/>").fadeIn('fast');
             }
 
             //Aqui desativa a imagem de loading

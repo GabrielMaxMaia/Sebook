@@ -1,11 +1,11 @@
 <div class="Social-Bar">
     <a href="#">
-        <img src="<?= _ICONBASE_ ?>facebook.svg" class="icon icon-facebook" target="">
+        <img src="<?= _URLBASE_ ?>public/icon/facebook.svg" class="icon icon-facebook" target="">
     </a>
     <a href="#">
-        <img src="<?= _ICONBASE_ ?>instagram.svg" class="icon icon-instagram" target="">
+        <img src="<?= _URLBASE_ ?>public/icon/instagram.svg" class="icon icon-instagram" target="">
     </a>
     <a href="#">
-        <img src="<?= _ICONBASE_ ?>twitter.svg" class="icon icon-twitter" target="">
+        <img src="<?= _URLBASE_ ?>public/icon/twitter.svg" class="icon icon-twitter" target="">
     </a>
 </div>

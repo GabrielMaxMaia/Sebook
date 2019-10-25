@@ -37,7 +37,7 @@
     $autenticadorController = new \Controller\AutentificadorController($sql);
 
     
-    // $autenticadorController->validarAcesso('http://localhost/sebook/area/adm', array(0=>1, 1=>2, 1=>3));
+    // $autenticadorController->validarAcesso('". _URLBASE_ ."area/adm', array(0=>1, 1=>2, 1=>3));
   
     $autenticadorController->efetuarLogin();
     $autenticadorController->efetuarLogOut();
@@ -77,9 +77,9 @@
         </main>
         <footer>
             <ul class="icons">
-                <li><a href="#"><img src="<?= _URLBASE_ ?>public/img/icon1.jpg" alt="">Facebook</a></li>
-                <li><a href="#"><img src="<?= _URLBASE_ ?>public/img/icon2.jpg" alt="">Twitter</a></li>
-                <li><a href="#"><img src="<?= _URLBASE_ ?>public/img/icon3.jpg" alt="">LinkedIn</a></li>
+                <li><a href="#"><img src="<?= _URLBASE_ ?>public/icon/facebook.svg" alt="">Facebook</a></li>
+                <li><a href="#"><img src="<?= _URLBASE_ ?>public/icon/twitter.svg" alt="">Twitter</a></li>
+                <li><a href="#"><img src="<?= _URLBASE_ ?>public/icon/instagram.svg" alt="">LinkedIn</a></li>
             </ul>
         </footer>
     </div>

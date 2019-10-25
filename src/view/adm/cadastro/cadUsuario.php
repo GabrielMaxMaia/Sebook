@@ -26,7 +26,7 @@ $usuarioController->gravarAlterar();
 			?>
 		</tbody>
 	</table>
-	<input class="button" type="button" onclick="window.location='http://localhost/Sebook/area/adm/cadastro/cadUsuario/add'" value="Novo">
+	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadUsuario/add'" value="Novo">
 
 </section>
 
@@ -38,7 +38,7 @@ $usuarioController->gravarAlterar();
 		<input type="hidden" name="txtAcao" id="txtAcao" value="<?php echo $usuarioController->getAcaoGET(); ?>">
 
 		<label>Usuario</label>
-		<input class="grande" type="text" id="nomeUsuario" name="nomeUsuario" onblur="validarNomeUsuario('http://localhost/PLAO3/Projetos/Modelo_mvc_dao/src/view/adm/cadastro/cadUsuarioAjax.php', 'txtNomeCat='+this.value, 'nomeUsuario')" value="<?= $usuarioController->getUsuarioDAO()->getNomeUsuario(); ?>" placeholder='Nome'>
+		<input class="grande" type="text" id="nomeUsuario" name="nomeUsuario" onblur="validarNomeUsuario('<?= _URLBASE_ ?>src/view/adm/cadastro/cadUsuarioAjax.php', 'txtNomeCat='+this.value, 'nomeUsuario')" value="<?= $usuarioController->getUsuarioDAO()->getNomeUsuario(); ?>" placeholder='Nome'>
 
 		<input class="grande" type="text" id="sobrenomeUsuario" name="sobrenomeUsuario" value="<?= $usuarioController->getUsuarioDAO()->getSobrenomeUsuario();?>" placeholder='Sobrenome'>
 
@@ -74,5 +74,5 @@ $usuarioController->gravarAlterar();
 	<br>
 	<br>
 	<br>
-	<a href="http://localhost/Sebook/area/adm/cadastro/cadUsuario">Voltar</a>
+	<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadUsuario">Voltar</a>
 </section>

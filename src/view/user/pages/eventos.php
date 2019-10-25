@@ -4,7 +4,7 @@
             <h1>Eventos</h1>
             <figure>
                 <div class="img-eventos">
-                    <img src="images/img/banner1.jpg" alt="">
+                    <img src="images/img/imgBanner/banner1.jpg" alt="">
                 </div>
                 <figcaption>
                     Festa do Livro
@@ -28,7 +28,7 @@
             <hr>
             <figure>
                     <div class="img-eventos">
-                        <img src="images/img/banner2.jpg" alt="">
+                        <img src="images/img/imgBanner/banner2.jpg" alt="">
                     </div>
                     <figcaption>
                         Festa do Livro

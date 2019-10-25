@@ -25,7 +25,7 @@ $SeboController->gravarAlterar();
 			?>
 		</tbody>
 	</table>
-	<input class="button" type="button" onclick="window.location='http://localhost/sebook/area/adm/cadastro/cadSebo/add'" value="Novo">
+	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadSebo/add'" value="Novo">
 </section>
 
 <section class="<?php echo $SeboController->getFormulario(); ?>">
@@ -127,7 +127,7 @@ $SeboController->gravarAlterar();
 	</div>
 	<div class="imgCadastro">
 		<picture>
-			<img id="imgAvatar" src="<?= "http://localhost/sebook/" . $SeboController->getSeboDAO()->getUrlFotoSebo() ?>" alt="Avatar" class="avatar">
+			<img id="imgAvatar" src="<?= _URLBASE_ . $SeboController->getSeboDAO()->getUrlFotoSebo() ?>" alt="Avatar" class="avatar">
 		</picture>
 	</div>
 
@@ -135,5 +135,5 @@ $SeboController->gravarAlterar();
 	<br>
 	<br>
 	<br>
-	<a href="http://localhost/Sebook/area/adm/cadastro/cadSebo">Voltar</a>
+	<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadSebo">Voltar</a>
 </section>

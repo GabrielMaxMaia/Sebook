@@ -9,13 +9,10 @@
     <iframe id="ifrmUpload" name="ifrmUpload" src="" frameborder="0"></iframe>
 </div>
 <?php
-$src = "src='http://localhost/sebook/{$livroDAO->getUrlFotoLivro()}'";
+$src = "src='". _URLBASE_ ."{$livroDAO->getUrlFotoLivro()}'";
 ?>
 <div class="imgCadastro">
     <picture>
-        <img id="imgAvatar" src='http://localhost/sebook/<?= $livroDAO->getUrlFotoLivro() ?>' alt="Avatar" class="avatar">
+        <img id="imgAvatar" src='<?= _URLBASE_ . $livroDAO->getUrlFotoLivro() ?>' alt="Avatar" class="avatar">
     </picture>
 </div>
-<?php
-   
-?>

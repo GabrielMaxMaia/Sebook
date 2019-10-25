@@ -12,7 +12,7 @@ $resultAutor = $autorDAO->listarAutores();
 
 //Seta armazena o idPost em setIdPost
 // $livroDAO->setIdUsuario($acessoUser);
-$livroDAO->setUrlFotoLivro('public/imgPost/imgPadrao/padrao.jpg');
+$livroDAO->setUrlFotoLivro('public/img/imgPost/imgPadrao/padrao.jpg');
 
 
 //Include para evitar reenvio
@@ -71,7 +71,7 @@ if ($post != null || $post != "") {
 		echo "Digite a sinopse do livro";
     }
 	if ($erro != true) {   
-            $livroDAO->setUrlFotoLivro('public/imgPost/imgPadrao/padrao.jpg');
+            $livroDAO->setUrlFotoLivro('public/img/imgPost/imgPadrao/padrao.jpg');
             if(evitarReenvio()){
                 $success = true;
                 $livroDAO->adicionarLivro();
@@ -94,7 +94,7 @@ if ($acessoUser != null || "") {
 
 	<h4 class="cadCat">Cadastro de Livros</h4>
 
-	<select name="selecAutor"
+	<select name="selecAutor">
 
 	<input type="hidden" name="urlFotoLivro" id="urlFotoLivro" value="<?//= $livroController->getLivroDAO()->getUrlFotoLivro(); ?>">
 

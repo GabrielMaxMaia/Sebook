@@ -2,7 +2,7 @@
     <section class="livros">
         <div class="container">
             <div class="box-descricao-livro">
-                <img src="images/img/livroHarry.jpg" alt="">
+                <img src="images/img/imgLivros/livroHarry.jpg" alt="">
                 <div class="descricaoLivro">
                     <h1>Harry Potter</h1>
                     <p><strong>Autor:</strong>:JK. ROWLING</p>

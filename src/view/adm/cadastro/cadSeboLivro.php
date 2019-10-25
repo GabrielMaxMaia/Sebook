@@ -24,7 +24,7 @@ $seboLivroController->gravarAlterar();
 			?>
 		</tbody>
 	</table>
-	<input class="button" type="button" onclick="window.location='http://localhost/Sebook/area/adm/cadastro/cadseboLivro/add'" value="Novo">
+	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadseboLivro/add'" value="Novo">
 </section>
 
 <section class="<?= $seboLivroController->getFormulario(); ?>">
@@ -55,5 +55,5 @@ $seboLivroController->gravarAlterar();
 	<br>
 	<br>
 	<br>
-	<a href="http://localhost/Sebook/area/adm/cadastro/cadSeboLivro">Voltar</a>
+	<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadSeboLivro">Voltar</a>
 </section>

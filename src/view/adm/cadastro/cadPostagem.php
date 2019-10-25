@@ -30,7 +30,7 @@ $postagemDAO = new Model\PostagemDAO();
 
 	</tbody>
 	</table>
-	<input class="button" type="button" onclick="window.location='http://localhost/sebook/area/adm/cadastro/cadPostagem/add'" value="Novo">
+	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadPostagem/add'" value="Novo">
 
 </section>
 
@@ -50,7 +50,7 @@ $postagemDAO = new Model\PostagemDAO();
 
 		<input type="hidden" name="txtAcao" id="txtAcao" value="<?php echo $postagemController->getAcaoGET(); ?>">
 
-		<!-- <input class="grande" type="text" id="txtNome" name="txtNome" onblur="validarNomeUsuario('http://localhost/PLAO3/Projetos/Modelo_mvc_dao/src/view/adm/cadastro/cadUsuarioAjax.php', 'txtNomeCat='+this.value, 'txtNome')"
+		<!-- <input class="grande" type="text" id="txtNome" name="txtNome" onblur="validarNomeUsuario('". _URLBASE_ ."src/view/adm/cadastro/cadUsuarioAjax.php', 'txtNomeCat='+this.value, 'txtNome')"
 		 value="<?php //echo $postagemController->getPostagemDAO()->getNomeUsuario(); 
 				?>"> -->
 
@@ -78,11 +78,11 @@ $postagemDAO = new Model\PostagemDAO();
 	</div>
 	<div class="imgCadastro">
 		<picture>
-			<img id="imgAvatar" src="<?= "http://localhost/sebook/" . $postagemController->getPostagemDAO()->getUrlFotoPostagem() ?>" alt="Avatar" class="avatar">
+			<img id="imgAvatar" src="<?= _URLBASE_ . $postagemController->getPostagemDAO()->getUrlFotoPostagem() ?>" alt="Avatar" class="avatar">
 		</picture>
 	</div>
 
 
 
-	<a href="http://localhost/Sebook/area/adm/cadastro/cadPostagem">Voltar</a>
+	<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadPostagem">Voltar</a>
 </section>

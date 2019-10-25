@@ -25,17 +25,17 @@
 						<div class="images-inner">
 							<div class="image-slide">
 								<div class="image">
-									<img src="images/img/banner1.jpg" alt="">
+									<img src="public/img/imgBanner/banner1.jpg" alt="">
 								</div>
 							</div>
 							<div class="image-slide">
 								<div class="image">
-									<img src="images/img/banner2.jpg" alt="">
+									<img src="public/img/imgBanner/banner2.jpg" alt="">
 								</div>
 							</div>
 							<div class="image-slide">
 								<div class="image">
-									<img src="images/img/banner3.jpg" alt="">
+									<img src="public/img/imgBanner/banner3.jpg" alt="">
 								</div>
 							</div>
 						</div>
@@ -58,31 +58,31 @@
 					<div class="swiper-container">
 						<div class="books swiper-wrapper">
 							<div class="swiper-slide">
-								<a href="LoDescLivros.html"><img src="images/img/livroHarry.jpg" alt="livroHarry" title="Livro"></a>
+								<a href="LoDescLivros.html"><img src="public/img/imgLivro/livroHarry.jpg" alt="livroHarry" title="Livro"></a>
 							</div>
 							<div class="swiper-slide">
-								<a href="LoDescLivros2.html"><img src="images/img/livroNeve.jpg" alt="livroNeve" title="Livro"></a>
+								<a href="LoDescLivros2.html"><img src="public/img/imgLivro/livroNeve.jpg" alt="livroNeve" title="Livro"></a>
 							</div>
 							<div class="swiper-slide">
-								<a href="LoDescLivros3.html"><img src="images/img/Capa_Como-eu-era-antes-de-voce2.jpg" alt="livroPercy" title="Livro"></a>
+								<a href="LoDescLivros3.html"><img src="public/img/imgLivro/Capa_Como-eu-era-antes-de-voce2.jpg" alt="livroPercy" title="Livro"></a>
 							</div>
 							<div class="swiper-slide">
-								<a href="LoDescLivros4.html"><img src="images/img/Cidades-de-Papel.jpg" alt="livroHarry" title="Livro"></a>
+								<a href="LoDescLivros4.html"><img src="public/img/imgLivro/Cidades-de-Papel.jpg" alt="livroHarry" title="Livro"></a>
 							</div>
 							<div class="swiper-slide">
-								<a href="LoDescLivros5.html"><img src="images/img/DepoisDeVoce_Jojo.jpg" alt="livroNeve" title="Livro"></a>
+								<a href="LoDescLivros5.html"><img src="public/img/imgLivro/DepoisDeVoce_Jojo.jpg" alt="livroNeve" title="Livro"></a>
 							</div>
 							<div class="swiper-slide">
-								<a href="LoDescLivros6.html"><img src="images/img/livroPercy.jpg" alt="livroPercy" title="Livro"></a>
+								<a href="LoDescLivros6.html"><img src="public/img/imgLivro/livroPercy.jpg" alt="livroPercy" title="Livro"></a>
 							</div>
 							<div class="swiper-slide">
-								<a href="LoDescLivros7.html"><img src="images/img/Livro-A-Culpa-e-das-Estrelas.jpg" alt="livroHarry" title="Livro"></a>
+								<a href="LoDescLivros7.html"><img src="public/img/imgLivro/Livro-A-Culpa-e-das-Estrelas.jpg" alt="livroHarry" title="Livro"></a>
 							</div>
 							<div class="swiper-slide">
-								<a href="LoDescLivros8.html"><img src="images/img/Livro-After.jpg" alt="livroNeve" title="Livro"></a>
+								<a href="LoDescLivros8.html"><img src="public/img/imgLivro/Livro-After.jpg" alt="livroNeve" title="Livro"></a>
 							</div>
 							<div class="swiper-slide">
-								<a href="LoDescLivros9.html"><img src="images/img/Livro-As-Cronicas-de-Gelo-e-Fogo-A-Danca-dos-Dragoes.jpg" alt="livroPercy" title="Livro"></a>
+								<a href="LoDescLivros9.html"><img src="public/img/imgLivro/Livro-As-Cronicas-de-Gelo-e-Fogo-A-Danca-dos-Dragoes.jpg" alt="livroPercy" title="Livro"></a>
 							</div>
 						</div>
 						<!-- Add Pagination -->
@@ -94,11 +94,11 @@
 				<div class="container">
 					<h2>Eventos</h2>
 					<figure>
-						<img src="images/img/banner2.jpg" alt="">
+						<img src="public/img/imgBanner/banner2.jpg" alt="">
 						<figcaption>Festa do Livro da USP</figcaption>
 					</figure>
 					<figure>
-						<img src="images/img/banner3.jpg" alt="">
+						<img src="public/img/imgBanner/banner3.jpg" alt="">
 						<figcaption>Feira Nacional Do Livro</figcaption>
 					</figure>
 				</div>

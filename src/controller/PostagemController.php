@@ -225,10 +225,10 @@ class PostagemController
     //                            <h3> id usuario {$linha['idUsuario']} </h3>
     //                            <h1> Titulo {$linha['tituloPostagem']} </h1>
     //                            <p> Post {$linha['txtPostagem']} </p>
-    //                            <a href='http://localhost/Sebook/area/adm/cadastro/cadPostagem/alter/" . $linha['idPostagem'] . "'>
+    //                            <a href='". _URLBASE_ ."area/adm/cadastro/cadPostagem/alter/" . $linha['idPostagem'] . "'>
     //                                 <img src='" . _URLBASE_ . "public/icon/editar.svg'>
     //                             </a>
-    //                             <a href='http://localhost/Sebook/area/adm/cadastro/cadPostagem/delete/" . $linha['idPostagem'] . "'>
+    //                             <a href='". _URLBASE_ ."area/adm/cadastro/cadPostagem/delete/" . $linha['idPostagem'] . "'>
     //                                 <img src='" . _URLBASE_ . "public/icon/excluir.svg'>
     //                             </a>
     //                         </div><hr>";
@@ -255,9 +255,9 @@ class PostagemController
                         <p>" . $post['txtPostagem'] . "</p>
                         </figcaption>
                     </figure>
-                    <a href='http://localhost/Sebook/area/adm/cadastro/cadPostagem/alter/" . $post['idPostagem'] . "'>
+                    <a href='" . _URLBASE_ . "area/adm/cadastro/cadPostagem/alter/" . $post['idPostagem'] . "'>
                     <img src='" . _URLBASE_ . "public/icon/editar.svg'></a>
-                    <a href='http://localhost/Sebook/area/adm/cadastro/cadPostagem/delete/" . $post['idPostagem'] . "'>
+                    <a href='" . _URLBASE_ . "area/adm/cadastro/cadPostagem/delete/" . $post['idPostagem'] . "'>
                      <img src='" . _URLBASE_ . "public/icon/excluir.svg'></a>
                 </div>";
             }

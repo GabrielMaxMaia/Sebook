@@ -164,13 +164,13 @@ class SeboLivroController
                 <td>" . $linha['isbnLivro'] . "</td>
                 <td>" . $linha['qtdEstoque'] . "</td>     
                         <td>
-                            <a href='http://localhost/Sebook/area/adm/cadastro/cadSeboLivro/alter/" . $linha['idUsuario'] . "/" . $linha['isbnLivro'] . "'>
+                            <a href='" . _URLBASE_ . "area/adm/cadastro/cadSeboLivro/alter/" . $linha['idUsuario'] . "/" . $linha['isbnLivro'] . "'>
                                 <img src='" . _URLBASE_ . "public/icon/editar.svg'>
                             </a>
                         </td>
                         
                         <td>
-                            <a href='http://localhost/Sebook/area/adm/cadastro/cadSeboLivro/delete/" . $linha['idUsuario'] . "/" . $linha['isbnLivro'] . "'>
+                            <a href='" . _URLBASE_ . "area/adm/cadastro/cadSeboLivro/delete/" . $linha['idUsuario'] . "/" . $linha['isbnLivro'] . "'>
                                 <img src='" . _URLBASE_ . "public/icon/excluir.svg'>
                             </a>
                         </td>

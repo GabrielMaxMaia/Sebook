@@ -27,7 +27,7 @@ $clienteController->gravarAlterar();
 			?>
 		</tbody>
 	</table>
-	<input class="button" type="button" onclick="window.location='http://localhost/sebook/area/adm/cadastro/cadCliente/add'" value="Novo">
+	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadCliente/add'" value="Novo">
 </section>
 
 <section class="<?php echo $clienteController->getFormulario(); ?>">
@@ -99,7 +99,7 @@ $clienteController->gravarAlterar();
 	</div>
 	<div class="imgCadastro">
 		<picture>
-			<img id="imgAvatar" src="<?= "http://localhost/sebook/" . $clienteController->getClienteDAO()->getUrlFotoCliente()  ?>" alt="Avatar" class="avatar">
+			<img id="imgAvatar" src="<?= _URLBASE_ . $clienteController->getClienteDAO()->getUrlFotoCliente()  ?>" alt="Avatar" class="avatar">
 		</picture>
 	</div>
 
@@ -107,5 +107,5 @@ $clienteController->gravarAlterar();
 	<br>
 	<br>
 	<br>
-	<a href="http://localhost/Sebook/area/adm/cadastro/cadCliente">Voltar</a>
+	<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadCliente">Voltar</a>
 </section>

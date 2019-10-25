@@ -24,7 +24,7 @@ $nacionalidadeController->gravarAlterar();
 			?>
 		</tbody>
 	</table>
-	<input class="button" type="button" onclick="window.location='http://localhost/Sebook/area/adm/cadastro/cadNacionalidade/add'" value="Novo">
+	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadNacionalidade/add'" value="Novo">
 </section>
 
 <section class="<?php echo $nacionalidadeController->getFormulario(); ?>">
@@ -48,5 +48,5 @@ $nacionalidadeController->gravarAlterar();
 	<br>
 	<br>
 	<br>
-	<a href="http://localhost/Sebook/area/adm/cadastro/cadNacionalidade">Voltar</a>
+	<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadNacionalidade">Voltar</a>
 </section>

@@ -1,5 +1,5 @@
 <?php
-// $cssCaminho = '<link rel="stylesheet" href="http://localhost/sebook/public/css/slick.css">';
+// $cssCaminho = '<link rel="stylesheet" href=". _URLBASE_ ."public/css/slick.css">';
 
 use Model\livroDAO;
 

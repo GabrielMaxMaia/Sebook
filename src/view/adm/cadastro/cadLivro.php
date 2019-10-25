@@ -29,7 +29,7 @@ $livroController->gravarAlterar();
 			?>
 		</tbody>
 	</table>
-	<input class="button" type="button" onclick="window.location='http://localhost/Sebook/area/adm/cadastro/cadLivro/add'" value="Novo">
+	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadLivro/add'" value="Novo">
 
 </section>
 
@@ -84,9 +84,9 @@ $livroController->gravarAlterar();
 	</div>
 	<div class="imgCadastro">
 		<picture>
-			<img id="imgAvatar" src="<?= "http://localhost/sebook/" . $livroController->getlivroDAO()->getUrlFotoLivro() ?>" alt="Avatar" class="avatar">
+			<img id="imgAvatar" src="<?= _URLBASE_ . $livroController->getlivroDAO()->getUrlFotoLivro() ?>" alt="Avatar" class="avatar">
 		</picture>
 	</div>
 
-	<a href="http://localhost/Sebook/area/adm/cadastro/cadLivro">Voltar</a>
+	<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadLivro">Voltar</a>
 </section>

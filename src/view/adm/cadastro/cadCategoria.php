@@ -2,7 +2,7 @@
 
 use Controller\CategoriaController;
 
- //$autenticadorController->validarAcesso('http://localhost/PLAO3/Projetos/modelo_mvc_dao/area/adm',array(0=>1, 1=>2));
+ //$autenticadorController->validarAcesso('". _URLBASE_ ."area/adm',array(0=>1, 1=>2));
 
 $objSql = new Util\Sql($conn);
 $categoriaController = new Controller\CategoriaController($objSql);
@@ -26,7 +26,7 @@ $categoriaController->gravarAlterar();
 			?>
 		</tbody>
 	</table>
-	<input class="button" type="button" onclick="window.location='http://localhost/Sebook/area/adm/cadastro/cadCategoria/add'" value="Novo">
+	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadCategoria/add'" value="Novo">
 
 </section>
 
@@ -36,7 +36,7 @@ $categoriaController->gravarAlterar();
 		<input type="hidden" name="txtId" id="txtId" value="<?php echo $categoriaController->getCategoriaDAO()->getIdCategoria(); ?>">
 		<input type="hidden" name="txtAcao" id="txtAcao" value="<?php echo $categoriaController->getAcaoGET(); ?>">
 		<label>Categoria</label>
-		<input class="grande" type="text" id="txtNome" name="txtNome" onblur="validarNomeCategoria('http://localhost/PLAO3/Projetos/Modelo_mvc_dao/src/view/adm/cadastro/cadCategoriaAjax.php', 'txtNomeCat='+this.value, 'txtNome')" value="<?php echo $categoriaController->getCategoriaDAO()->getNomeCategoria(); ?>">
+		<input class="grande" type="text" id="txtNome" name="txtNome" onblur="validarNomeCategoria('<?= _URLBASE_ ?>src/view/adm/cadastro/cadCategoriaAjax.php', 'txtNomeCat='+this.value, 'txtNome')" value="<?php echo $categoriaController->getCategoriaDAO()->getNomeCategoria(); ?>">
 		<label> </label>
 		<input class="buttonCancel" type="reset" value="Limpar">
 		<input class="button" type="submit" value="Enviar">
@@ -45,5 +45,5 @@ $categoriaController->gravarAlterar();
 	<br>
 	<br>
 	<br>
-	<a href="http://localhost/Sebook/area/adm/cadastro/cadCategoria">Voltar</a>
+	<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadCategoria">Voltar</a>
 </section>

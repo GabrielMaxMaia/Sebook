@@ -1,7 +1,7 @@
 <header>
 	<div class="menuGroup">
-		<a class="logo" href="<?php echo _URLBASE_ ?>">
-			<img src="<?php echo _IMGBASE_ ?>logoSebookCor.png" alt="SebooK">
+		<a class="logo" href="<?= _URLBASE_ ?>">
+			<img src="<?= _URLBASE_ ?>public/icon/logoSebook.svg" alt="SebooK">
 		</a>
 		<?php
 		$sql = new \Util\Sql($conn);
@@ -34,16 +34,16 @@
 	<nav class="navDesk">
 		<ul>
 			<li>
-				<a href="<?php echo _URLBASE_ ?>">HOME</a>
+				<a href="<?= _URLBASE_ ?>">HOME</a>
 			</li>
 			<li>
-				<a href="<?php echo _URLBASE_ ?>area/user/menuHome/sebos">SEBOS</a>
+				<a href="<?= _URLBASE_ ?>area/user/menuHome/sebos">SEBOS</a>
 			</li>
 			<li>
-				<a href="<?php echo _URLBASE_ ?>area/user/menuHome/livros">LIVROS</a>
+				<a href="<?= _URLBASE_ ?>area/user/menuHome/livros">LIVROS</a>
 			</li>
 			<li>
-				<a href="<?php echo _URLBASE_ ?>area/user/pages/postListar">POSTAGENS</a>
+				<a href="<?= _URLBASE_ ?>area/user/pages/postListar">POSTAGENS</a>
 			</li>
 			<?php
 			if ($acessoUser != 4 && $acessoUser != null && $acessoUser != "") {
@@ -53,10 +53,10 @@
 			}
 			?>
 			<li>
-				<a href="<?php echo _URLBASE_ ?>area/user/menuHome/quemSomos">QUEM SOMOS</a>
+				<a href="<?= _URLBASE_ ?>area/user/menuHome/quemSomos">QUEM SOMOS</a>
 			</li>
 			<li>
-				<a href="<?php echo _URLBASE_ ?>area/user/menuHome/ajuda">FAQ</a>
+				<a href="<?= _URLBASE_ ?>area/user/menuHome/ajuda">FAQ</a>
 			</li>
 		</ul>
 		</ul>

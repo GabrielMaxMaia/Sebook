@@ -27,7 +27,7 @@ $comentarioController->gravarAlterar();
 			?>
 		</tbody>
 	</table>
-	<input class="button" type="button" onclick="window.location='http://localhost/Sebook/area/adm/cadastro/cadComentario/add'" value="Novo">
+	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadComentario/add'" value="Novo">
 
 </section>
 
@@ -47,7 +47,7 @@ $comentarioController->gravarAlterar();
 		<input type="hidden" name="txtAcao" id="txtAcao" value="<?php echo $comentarioController->getAcaoGET(); ?>">
 		<label>Comentario</label>
 <!-- 
-		<input class="grande" type="text" id="txtNome" name="txtNome" onblur="validarNomeComentario('http://localhost/PLAO3/Projetos/Modelo_mvc_dao/src/view/adm/cadastro/cadComentarioAjax.php', 'txtNomeCat='+this.value, 'txtNome')" value="<?php //echo $comentarioController->getComentarioDAO()->getNomeComentario(); ?>"> -->
+		<input class="grande" type="text" id="txtNome" name="txtNome" onblur="validarNomeComentario('". _URLBASE_ ."src/view/adm/cadastro/cadComentarioAjax.php', 'txtNomeCat='+this.value, 'txtNome')" value="<?php //echo $comentarioController->getComentarioDAO()->getNomeComentario(); ?>"> -->
 		<input class="grande" type="text" id="txtComentario" name="txtComentario" value="<?= $comentarioController->getComentarioDAO()->getTxtComentario(); ?>">
 
 		<label> </label>
@@ -58,5 +58,5 @@ $comentarioController->gravarAlterar();
 	<br>
 	<br>
 	<br>
-	<a href="http://localhost/Sebook/area/adm/cadastro/cadComentario">Voltar</a>
+	<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadComentario">Voltar</a>
 </section>

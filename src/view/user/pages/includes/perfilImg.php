@@ -9,7 +9,7 @@
     <iframe id="ifrmUpload" name="ifrmUpload" src="" frameborder="0"></iframe>
 </div>
 <?php
-$src = "src='http://localhost/sebook/{$clienteDAO->getUrlFotoCliente()}'";
+$src = "src='". _URLBASE_ ."{$clienteDAO->getUrlFotoCliente()}'";
 ?>
 <div class="imgCadastro">
     <picture>

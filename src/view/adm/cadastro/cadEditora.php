@@ -24,7 +24,7 @@
 			?>
 		</tbody>
 	</table>
-	 <input class="button" type="button" onclick="window.location='http://localhost/Sebook/area/adm/cadastro/cadEditora/add'" value="Novo">
+	 <input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadEditora/add'" value="Novo">
 
 </section>
 
@@ -48,5 +48,5 @@
 	<br>
 	<br>
 	<br>
-	<a href="http://localhost/Sebook/area/adm/cadastro/cadEditora">Voltar</a>
+	<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadEditora">Voltar</a>
 </section>
