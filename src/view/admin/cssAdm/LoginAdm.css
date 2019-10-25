@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    transform-style: preserve-3d;
+    overflow-x: hidden;
+    font-family: "comfortaa", sans-serif
+}
+
+.logo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    box-sizing: border-box
+}
+
+header img {
+    max-width: 130px
+}
+
+.loginAdm {
+    width: 320px;
+    height: 420px;
+    border: 2px solid linear-gradient(45deg, #06cc3e26, #008a9b47);
+    border-radius: 80px 0px 80px 0px;
+    color: #fff;
+    background: linear-gradient(45deg, #06cc3e26, #008a9b47);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 68px 28px
+}
+
+.usuario {
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: 112px
+}
+
+h1 {
+    margin: 0;
+    padding: 0 0 20px 0;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 16px
+}
+
+.loginAdm p {
+    margin: 0;
+    padding: 0;
+    font-weight: bold
+}
+
+.loginAdm input {
+    width: 100%;
+    margin-bottom: 21px
+}
+
+.loginAdm input[type="text"],
+input[type="password"] {
+    border: none;
+    border-bottom: 1px solid white;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: white;
+    font-size: 16px
+}
+
+.loginAdm input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 35px;
+    color: #000;
+    background: #fff;
+    border-radius: 20px;
+    transition: 0.2s
+}
+
+.loginAdm input[type="submit"]:hover {
+    cursor: pointer;
+    background: #767fbf;
+    transition: 0.2s
+}
+
+.loginAdm a {
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: #4b4b4b;
+    transition: 0.2s
+}
+
+.loginAdm a:hover {
+    transition: 0.2s;
+    color: #767fbf
+}

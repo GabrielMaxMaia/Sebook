@@ -5,7 +5,7 @@ namespace Controller;
 class FrontController
 {
     //Itens por página
-    private $itemPagina = 5;
+    private $itemPagina = 3;
     //Página Atual de exibição
     private $paginaAtual = 0;
     //Registro inicial da paginação
@@ -98,11 +98,14 @@ class FrontController
             $this->paginaAtual = $pagina;
             //calculo do registro inicial;
             $this->regIni = ($this->paginaAtual - 1) * $this->itemPagina;
+           
         }
     }
 
     public function exibirNotificador($urlDoNotificador)
     {
+        //
+        //ceil($this->modoDAO->totalContar() / $this->itemPagina);
         $qtdePaginas = ceil($this->modoDAO->totalContar() / $this->itemPagina);
 
         $notificador = "<ul>";

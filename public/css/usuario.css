@@ -1856,4 +1856,49 @@ input[type=checkbox]:checked + figure figcaption {
 } 
 
 
+<<<<<<< HEAD
 /**?
+=======
+/**
+
+/*Busca dinâmica formatação*/
+#MostraPesq{
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    justify-content: center;
+    margin: auto
+}
+#MostraPesq img{
+    width: 100%;
+    max-width: 75px;
+    object-fit: contain
+}
+.containerResult{
+    background: linear-gradient(45deg, black, #d2f1da);
+}
+.containerResult li{
+    list-style:none;
+    color:#fff;
+
+}
+.containerResult figure{
+    display: flex;
+    align-items: flex-start;
+    padding:.5rem;
+    
+}
+
+.containerResult figcaption{
+    line-height: 1.4rem;
+    width: 100%;
+    padding: 1rem;
+    min-height: 100px;
+    color:azure;
+    background: #cc000012 fixed no-repeat;
+}
+.containerResult figcaption:hover{
+    background:#0000002b;
+    transition:.1s;
+}
+>>>>>>> f069e4c1212c570e1ad0e4fe0ffe0a287b05a7db
