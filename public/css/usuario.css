@@ -1787,8 +1787,6 @@ form select {
     color: #c7c7c7
 }
 
-
-
 /*formatação de links para usuario logado*/
 .logGroup{
     display: flex;
@@ -1855,13 +1853,8 @@ input[type=checkbox]:checked + figure figcaption {
     display:flex;
 } 
 
-
-<<<<<<< HEAD
-/**?
-=======
-/**
-
 /*Busca dinâmica formatação*/
+
 #MostraPesq{
     display: flex;
     flex-direction: column;
@@ -1901,4 +1894,3 @@ input[type=checkbox]:checked + figure figcaption {
     background:#0000002b;
     transition:.1s;
 }
->>>>>>> f069e4c1212c570e1ad0e4fe0ffe0a287b05a7db
