@@ -41,10 +41,10 @@ class AutentificadorController
                     // var_dump($_SESSION['userLogado']['acesso']);
                     if (($_SESSION['userLogado']['acesso']) <= 3) {
                         echo "ADM";
-                        header("Location: http://localhost/sebook/");
+                        header("Location: " . _URLBASE_);
                     } else {
                         echo "Login usuário";
-                        header("location: http://localhost/sebook/");
+                        header("location: " . _URLBASE_);
                     }
 
                     // var_dump($_SESSION['userLogdao']['acesso']);
@@ -86,18 +86,18 @@ class AutentificadorController
 
         if ($sessao == null) {
             echo "<a class='perfil' href='" . _URLBASE_ . "area/user/login/logar'>
-                <img src='" . _ICONBASE_ . "user.png' alt='Perfil' title='Perfil'>
+                <img src='" . _URLBASE_ . "public/icon/user.svg' alt='Perfil' title='Perfil'>
             </a>";
         } else {
 
             if ($_SESSION['userLogado']['acesso'] <= 3) {
-                $adm = "http://localhost/sebook/area/adm";
+                $adm = _URLBASE_ . "area/adm";
             }
 
             if ($_SESSION['userLogado']['acesso'] != 5) {
-                $perfil = "http://localhost/sebook/area/user/pages/perfilLeitor";
+                $perfil = _URLBASE_ . "area/user/pages/perfilLeitor";
             } else {
-                $perfil = "http://localhost/sebook/area/user/pages/perfilSebo";
+                $perfil = _URLBASE_ . "area/user/pages/perfilSebo";
             }
             ?>
 

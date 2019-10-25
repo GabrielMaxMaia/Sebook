@@ -176,12 +176,12 @@ class ComentarioController
                         <td>" . $linha['txtComentario'] . "</td>
                         <td>" . $linha['codStatusComentario'] . "</td>
                         <td>
-                            <a href='http://localhost/Sebook/area/adm/cadastro/cadComentario/alter/" . $linha['idComentario'] . "'>
+                            <a href='" . _URLBASE_ . "area/adm/cadastro/cadComentario/alter/" . $linha['idComentario'] . "'>
                                 <img src='" . _URLBASE_ . "public/icon/editar.svg'>
                             </a>
                         </td>
                         <td>
-                            <a href='http://localhost/Sebook/area/adm/cadastro/cadComentario/delete/" . $linha['idComentario'] . "'>
+                            <a href='" . _URLBASE_ . "area/adm/cadastro/cadComentario/delete/" . $linha['idComentario'] . "'>
                                 <img src='" . _URLBASE_ . "public/icon/excluir.svg'>
                             </a>
                         </td>

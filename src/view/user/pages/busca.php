@@ -14,7 +14,7 @@ $resultLivro = $livroDAO->listarLivros();
 	<div class="container">
 		<div class="box-search">
 			<a href="" class="search">
-				<img src="<?= _ICONBASE_ ?>buscaSVG.svg" alt="">
+				<img src="<?= _ICONBASE_ ?>busca.svg" alt="">
 			</a>
 			<input type="text">
 		</div>

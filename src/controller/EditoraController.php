@@ -168,12 +168,12 @@ class EditoraController
                 <td>" . $linha['nomeEditora'] . "</td>
                 <td>" . $linha['codStatusEditora'] . "</td>    
                         <td>
-                            <a href='http://localhost/Sebook/area/adm/cadastro/cadEditora/alter/" . $linha['idEditora'] . "'>
+                            <a href='" . _URLBASE_ . "area/adm/cadastro/cadEditora/alter/" . $linha['idEditora'] . "'>
                                 <img src='" . _URLBASE_ . "public/icon/editar.svg'>
                             </a>
                         </td>
                         <td>
-                            <a href='http://localhost/Sebook/area/adm/cadastro/cadEditora/delete/" . $linha['idEditora'] . "'>
+                            <a href='" . _URLBASE_ . "area/adm/cadastro/cadEditora/delete/" . $linha['idEditora'] . "'>
                                 <img src='" . _URLBASE_ . "public/icon/excluir.svg'>
                             </a>
                         </td>

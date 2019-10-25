@@ -165,21 +165,13 @@ class CategoriaController
                         <td>" . $linha['nomeCategoria'] . "</td>
                         <td>" . $linha['codStatusCategoria'] . "</td>
                         <td>
-                            <a href='http://localhost/Sebook/area/adm/cadastro/cadCategoria/alter/" . $linha['idCategoria'] . "'>
-<<<<<<< HEAD
+                            <a href='" . _URLBASE_ . "area/adm/cadastro/cadCategoria/alter/" . $linha['idCategoria'] . "'>
                                 <img src='" . _URLBASE_ . "public/icon/editar.svg'>
-=======
-                                <img src='" . _URLBASE_ . "public/img/editar.jpg'>
->>>>>>> f069e4c1212c570e1ad0e4fe0ffe0a287b05a7db
                             </a>
                         </td>
                         <td>
-                            <a href='http://localhost/Sebook/area/adm/cadastro/cadCategoria/delete/" . $linha['idCategoria'] . "'>
-<<<<<<< HEAD
+                            <a href='" . _URLBASE_ . "area/adm/cadastro/cadCategoria/delete/" . $linha['idCategoria'] . "'>
                                 <img src='" . _URLBASE_ . "public/icon/excluir.svg'>
-=======
-                                <img src='" . _URLBASE_ . "public/img/excluir.jpg'>
->>>>>>> f069e4c1212c570e1ad0e4fe0ffe0a287b05a7db
                             </a>
                         </td>
                     </tr>";

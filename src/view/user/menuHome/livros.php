@@ -86,7 +86,7 @@ $pesquisa =  _URLBASE_ . "src/view/user/pages/includes/pesquisa.php";
                 <input class="search-txt" type="text" name="" placeholder="Pesquise ...">
                 <a class="search-btn" href="#">
                 <img src="<? //= _ICONBASE_ 
-                            ?>buscaSVG.svg" alt="">
+                            ?>busca.svg" alt="">
                 </a>
     </div> -->
 

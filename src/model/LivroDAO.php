@@ -12,11 +12,7 @@ class LivroDAO extends Livro
 
     private static $SELECT_ALL = "select * from livro where cod_status_livro = '1' order by id_editora";
 
-<<<<<<< HEAD
-    private static $SELECT_ALL_LIVRO = "SELECT * FROM livro where nome_livro like %:parametro% ORDER BY nome_livro ASC";
-=======
     private static $SELECT_ALL_LIVRO = "SELECT * FROM livro where nome_livro like :parametro ORDER BY nome_livro ASC";
->>>>>>> f069e4c1212c570e1ad0e4fe0ffe0a287b05a7db
 
     private static $INSERT = "INSERT INTO livro (isbn_livro, id_categoria, ano_livro, nome_livro, sinopse_livro, id_editora, url_foto_livro) VALUES (:isbnLivro, :idCategoria, :anoLivro, :nomeLivro, :sinopseLivro, :idEditora, :urlFotoLivro)";
 
@@ -77,11 +73,7 @@ class LivroDAO extends Livro
         $result = $this->sql->query(
             LivroDAO::$SELECT_ALL_LIVRO,
             array(
-<<<<<<< HEAD
-                ':parametro' => array(0 => $this->getNomeLivro(), 1 => \PDO::PARAM_STR)
-=======
                 ':parametro' => array(0 => "%".$this->getNomeLivro()."%", 1 => \PDO::PARAM_STR)
->>>>>>> f069e4c1212c570e1ad0e4fe0ffe0a287b05a7db
             )
         );
         if ($result->rowCount() > 0) {
