@@ -24,7 +24,7 @@ $output = ob_get_clean();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!--<link rel="stylesheet" href="". _URLBASE_ ."public/css/slick.css">-->
-    <link rel="stylesheet" href="<?php echo _CSSBASEUSER_ ?>">
+    <link rel="stylesheet" href="<?= _URLBASE_ ?>public/css/user.css">
     <?= $styleSobrescrito ?? "" ?>
 
     <?= $cssCaminho ?? "" ?>
