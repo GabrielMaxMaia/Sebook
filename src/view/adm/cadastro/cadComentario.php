@@ -58,5 +58,5 @@ $comentarioController->gravarAlterar();
 	<br>
 	<br>
 	<br>
-	<a href=<?= _URLBASE_ ?>area/adm/cadastro/cadComentario">Voltar</a>
+	<a href="http://localhost/Sebook/area/adm/cadastro/cadComentario">Voltar</a>
 </section>

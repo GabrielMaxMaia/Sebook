@@ -100,6 +100,7 @@ class LivroController
             $this->livroDAO->setIdEditora($_POST['idEditora']);
             $this->livroDAO->setIdCategoria($_POST['idCategoria']);
             $this->livroDAO->setSinopseLivro($_POST['sinopseLivro']);
+            $this->livroDAO->setUrlFotoLivro($_POST['txtImg']);
         }
     }
 
@@ -136,9 +137,9 @@ class LivroController
         $this->recuperarAcaoPOST();
         $this->recuperarDadosFormulario();
         if ($this->acaoPOST == 1 && $this->evitarReenvio()) {            
-            $this->livroDAO->adicionarlivro();
+            $this->livroDAO->adicionarLivro();
         } else if ($this->acaoPOST == 2) {
-            $this->livroDAO->alterarlivro();
+            $this->livroDAO->alterarLivro();
 
         }
     }

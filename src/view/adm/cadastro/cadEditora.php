@@ -48,5 +48,5 @@
 	<br>
 	<br>
 	<br>
-	<a href=<?= _URLBASE_ ?>area/adm/cadastro/cadEditora">Voltar</a>
+	<a href="http://localhost/Sebook/area/adm/cadastro/cadEditora">Voltar</a>
 </section>

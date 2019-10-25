@@ -9,7 +9,7 @@
     <iframe id="ifrmUpload" name="ifrmUpload" src="" frameborder="0"></iframe>
 </div>
 <?php
-$src = "src=<?= _URLBASE_ ?>{$seboDAO->getUrlFotoSebo()}'";
+$src = "src='http://localhost/sebook/{$seboDAO->getUrlFotoSebo()}'";
 ?>
 <div class="imgCadastro">
     <picture>

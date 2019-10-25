@@ -23,13 +23,18 @@ $output = ob_get_clean();
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <!--<link rel="stylesheet" href= _URLBASE_ ."css/slick.css">-->
-    <link rel="stylesheet" href="<?= _URLBASE_ . "public/css/user.css"?>">
+    <!--<link rel="stylesheet" href="http://localhost/sebook/css/slick.css">-->
+    <link rel="stylesheet" href="<?php echo _CSSBASEUSER_ ?>">
     <?= $styleSobrescrito ?? "" ?>
-    <?= $cssCaminho ?? ""; ?>
-    <title><?= isset($title) ? 'Sebook | ' . $title : 'Sebook'; ?></title>
 
+    <?= $cssCaminho ?? "" ?>
+
+    <title><?= isset($title) ? 'Sebook | ' . $title : 'Sebook' ?></title>
     <script src='<?= _URLBASE_ ?>public/js/funcoes.js'></script>
+
+    <!-- https://code.jquery.com/jquery-2.1.1.js -->
+    <script type="text/javascript" src="<?= _URLBASE_ ?>public/js/jquery-2.1.0.js"></script>
+        
 </head>
 
 <body>

@@ -48,7 +48,7 @@ if (isset($_POST['enviar'])) {
 	
 		$usuarioDAO->setIdPerfil(4);
 		$usuarioDAO->setDataCriacao(date('Y-m-d H:i:s'));
-		$clienteDAO->setUrlFotoCliente('public/img/imgPerfil/imgPadrao/padrao.ppg');
+		$clienteDAO->setUrlFotoCliente('public/imgPerfil/imgPadrao/padrao.ppg');
 		if(evitarReenvio()){
 			$success = true;
 			$usuarioDAO->adicionarUsuario();
@@ -66,7 +66,7 @@ if (isset($_POST['enviar'])) {
 <section class="cadastro">
 	<div class="container">
 		<figure>
-			<img src="<?= _URLBASE_ ?>public/icon/user.svg" alt="">
+			<img src="<?= _ICONBASE_ ?>userSVG.svg" alt="">
 			<figcaption>Cadastre-se</figcaption>
 		</figure>
 		<p>

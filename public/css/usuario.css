@@ -1,0 +1,1859 @@
+@import './slick.css';
+
+body {
+    padding: 0;
+    margin: 0;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: sans-serif;
+    margin: auto;
+    overflow: hidden;
+}
+
+.containerScroll {
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: scroll
+}
+
+div#containerTemplate::before {
+    content: "";
+    display: block;
+    position: relative;
+    min-height: 2rem
+}
+
+@media (max-width:779.99px) {
+    div#containerTemplate::before {
+        min-height: 90px
+    }
+}
+
+div#containerTemplate {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto 4%;
+    box-sizing: border-box;
+    min-height: 500px
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+
+/*===================AREA DO ACERVO SEBO====================*/
+
+.acervo-sebo .container .topo-acervo {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    grid-gap: 10px;
+    margin: 20px 0;
+    background-color: #f1f1f1
+}
+
+.acervo-sebo .container .topo-acervo .img-topo-acervo {
+    width: 100%;
+    height: 140px;
+    overflow: hidden;
+    padding: 10px
+}
+
+.acervo-sebo .container .topo-acervo .img-topo-acervo img {
+    height: 100%;
+    width: 100%
+}
+
+.acervo-sebo .container .acervo h2 {
+    text-align: center
+}
+
+.acervo-sebo .container .acervo .estante-slider {
+    width: 100%;
+    margin-bottom: 20px
+}
+
+.acervo-sebo .container .acervo .estante-slider .titulo-estante-slider {
+    margin-bottom: 10px
+}
+
+
+/*===================AREA DO AJUDA====================*/
+
+.ajuda {
+    width: 100%;
+    position: relative;
+    margin: auto;
+    box-sizing: border-box;
+    max-width: 460px;
+    align-self: center
+}
+
+.ajuda .container h1 {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 25px
+}
+
+.ajuda .container p {
+    margin: .5rem 0;
+    font-size: .95rem;
+    text-align: center;
+    line-height: 1.3rem
+}
+
+.ajuda .container hr {
+    margin-bottom: 25px
+}
+
+.ajuda .container form input {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 15px
+}
+
+.ajuda .container form .tex {
+    height: 70px
+}
+
+.ajuda .container form button {
+    width: 35%;
+    margin: 0 auto;
+    margin: 1rem 0;
+    padding: .6rem;
+    border: 1px solid #ccc;
+    background: #fff
+}
+
+
+/*===================AREA DO BUSCA====================*/
+
+.busca {
+    box-sizing: border-box;
+    padding: 1 !important;
+}
+
+.busca .container {
+    margin: auto;
+    max-width: 650px
+}
+
+.busca .box-search {
+    width: 80%;
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 6%;
+}
+
+.busca .box-search a.search {
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin: 8px 0 0 0
+}
+
+.busca .box-search a.search img {
+    width: 100%
+}
+
+.busca .box-search input {
+    width: 100%;
+    height: 35px;
+    border: 1px solid #999;
+    padding: 0 0 0 5px
+}
+
+.busca .searchBooks {
+    width: 100%;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center
+}
+
+.busca .searchBooks a {
+    display: block;
+    width: 100%;
+    padding: .105rem
+}
+
+.busca .searchBooks a img {
+    width: 100%;
+    max-width: 120px;
+    max-height: 174px;
+}
+
+
+/*===================AREA DO CADASTRO====================*/
+
+.cadastro {
+    padding: 2rem 0;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    box-sizing: border-box
+}
+
+.cadastro .container figure {
+    margin: 0 auto;
+    display: flex;
+    width: 208px
+}
+
+.cadastro .container img {
+    width: 40px
+}
+
+.cadastro .container figure figcaption {
+    float: left;
+    font-size: 25px;
+    margin-top: 14px;
+    margin-left: 10px
+}
+
+.cadastro .container p {
+    float: left;
+    width: 100%;
+    text-align: center;
+    height: 20px;
+    position: relative;
+    margin: 1rem 0
+}
+
+.cadastro .container p:before {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #999;
+    position: absolute;
+    left: 0;
+    top: 10px
+}
+
+.cadastro .container p span {
+    position: absolute;
+    z-index: 1;
+    width: 250px;
+    left: 50%;
+    margin-left: -125px
+}
+
+.cadastro .container p:after {
+    content: '';
+    width: 250px;
+    height: 20px;
+    background: #fff;
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    margin-left: -125px
+}
+
+.cadastro .container form {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column
+}
+
+.cadastro .container form label,
+.cadastro .container form input {
+    width: 100%;
+    float: left
+}
+
+.cadastro .container form label {
+    margin-bottom: 5px
+}
+
+.cadastro .container form label[for=feminino],
+.cadastro .container form label[for=masculino] {
+    width: auto;
+    margin-right: 10px;
+    margin-bottom: 15px
+}
+
+.cadastro .container form input[type=radio] {
+    width: auto
+}
+
+.cadastro .container form input[type=text],
+.cadastro .container form input[type=password] {
+    height: 30px;
+    margin-bottom: 10px;
+    border: 1px solid #999
+}
+
+.cadastro .container form button {
+    width: 35%;
+    margin: 0 auto;
+    margin: 1rem 0;
+    padding: .6rem;
+    border: 1px solid #ccc;
+    background: #fff
+}
+
+.cadastro .container form .password2 {
+    margin-bottom: 20px !important
+}
+
+.cadastro .container form hr {
+    margin: 25px 0
+}
+
+
+/*===================AREA DO CARROUSEL====================*/
+
+.swiper-container {
+    width: 100%;
+    height: 100%
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center
+}
+
+
+/*===================AREA DO DESCRIÇÃO LIVRO====================*/
+
+.livros .container .box-descricao-livro {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    grid-gap: 10px;
+    margin: 20px 0
+}
+
+.livros .container .box-descricao-livro img {
+    width: 100%
+}
+
+.livros .container .box-descricao-livro .descricaoLivro h1 {
+    margin: 0;
+    font-size: 20px
+}
+
+.livros .container .sinopse {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f1f1f1
+}
+
+.livros .container .sinopse .comentario {
+    width: 100%;
+    background-color: #86c3cb;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 10px
+}
+
+.livros .container .sinopse .comentario:first-child {
+    margin-top: 0
+}
+
+.livros .container .sinopse .comentario .person {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    grid-gap: 10px
+}
+
+.livros .container .sinopse .comentario .person .descricao-person strong {
+    margin-bottom: 5px;
+    display: block
+}
+
+.livros textarea {
+    height: 100px;
+    margin: 0;
+    width: 100%;
+    resize: none
+}
+
+.livros .btn {
+    background: none;
+    border: 2px solid black;
+    width: 50%
+}
+
+.livros .btn:hover {
+    background-color: #86c3cb;
+    border: 2px solid gray;
+    transition: -1s
+}
+
+.livros .acervo {
+    padding: 0 30px
+}
+
+.livros #Mapa iframe {
+    width: 100%;
+    height: 400px
+}
+
+.livros .Cont {
+    padding: 0
+}
+
+
+/*===================AREA DO EVENTOS====================*/
+
+.eventos .container {
+    background: #f1f1f1;
+    margin-top: 20px;
+    padding: 20px
+}
+
+.eventos .container h1 {
+    font-size: 25px;
+    text-align: center;
+    margin: 0
+}
+
+.eventos .container figure {
+    width: 100%;
+    height: 250px;
+    margin: 20px 0 20px 0
+}
+
+.eventos .container figure .img-eventos {
+    width: 100%;
+    height: 240px;
+    overflow: hidden
+}
+
+.eventos .container figure .img-eventos img {
+    height: 100%
+}
+
+.eventos .container figure figcaption {
+    font-weight: bold;
+    margin-top: 5px
+}
+
+.eventos .container hr {
+    margin: 25px 0 30px 0
+}
+
+
+/*===================AREA DO LIVRO====================*/
+
+.pagLivro {
+    padding: 10% 0
+}
+
+.pagLivro .search-box {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #2f3640;
+    height: 40px;
+    border-radius: 40px;
+    padding: 4px
+}
+
+.pagLivro .search-box:hover>.search-btn {
+    background: white;
+}
+
+.pagLivro .search-btn {
+    color: #e84118;
+    float: right;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #2f3640;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.pagLivro .search-txt {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0 6px;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 400px;
+
+}
+
+.pagLivro .search-box img {
+    height: 40px;
+}
+
+@media (max-width:900px) {
+    .pagLivro .search-box {
+        height: 40px;
+
+    }
+
+    .pagLivro .search-btn {
+        top: -43px
+    }
+
+    .pagLivro .search-txt {
+        width: 0px;
+        padding: 0px;
+
+    }
+
+    .pagLivro .search-box:hover>.search-txt {
+        width: 300px;
+
+    }
+
+    .pagLivro .search-box:hover>.search-btn {
+        background: white;
+        position: relative
+    }
+}
+
+.pagLivro .estante-slider {
+    width: 100%;
+    margin-bottom: 20px
+}
+
+.pagLivro .estante-slider .titulo-estante-slider {
+    margin-bottom: 10px
+}
+
+
+/*===================AREA DO LO(?) DESCRIÇÃO LIVRO====================*/
+
+
+/*===================AREA DO LOGIN====================*/
+
+.containerLogin {
+    padding: 1rem;
+    width: 100%;
+    align-self: center;
+    margin: 0 auto
+}
+
+.loginSpace {
+    width: 100%
+}
+
+.containerLogin .login {
+    background-color: #fff;
+    padding: 3rem 1rem !important;
+    max-width: 500px;
+    margin: 2% auto 0;
+    border: 1px solid #ccc;
+    border-radius: .4rem;
+}
+
+.containerLogin figure {
+    margin: 0;
+    text-align: center
+}
+
+.containerLogin figure img {
+    max-width: 64px;
+    margin: auto
+}
+
+.containerLogin figure figcaption {
+    font-weight: 700;
+    font-size: 18px;
+    margin: 10px 0 20px
+}
+
+.containerLogin .btn-modal-cadastre {
+    width: 100%;
+    text-align: center;
+    display: block;
+    color: blue;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 5% auto
+}
+
+.containerLogin .btn-modal-cadastre:hover {
+    text-decoration: underline
+}
+
+.containerLogin a {
+    width: 100%;
+    text-align: center;
+    display: block;
+    color: blue;
+    text-decoration: none;
+    font-size: 14px
+}
+
+.containerLogin a:hover {
+    text-decoration: underline
+}
+
+.containerLogin form {
+    padding: 2% 0 7%;
+    max-width: 330px;
+    margin: auto
+}
+
+.containerLogin form label {
+    width: 100%;
+    float: left;
+    margin: 0 0 5px 0;
+    color: #000
+}
+
+.containerLogin form input {
+    width: 100%;
+    display: block;
+    margin: 1rem auto;
+    border: 1px solid #999;
+    /* height: 30px; */
+    padding: .5rem;
+    outline: none;
+    font-size: 16px
+}
+
+.containerLogin form input.button {
+    background-color: #2196F3;
+    border: 0;
+    color: #fff;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    max-width: 151px;
+    margin: 0;
+    padding: .45rem
+}
+
+.containerLogin p {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    height: 20px;
+    margin: 1rem 0
+}
+
+.containerLogin p span {
+    padding: .2rem .5rem;
+    background: #eee;
+    z-index: 9999;
+    position: inherit
+}
+
+.containerLogin p::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #CCC;
+    left: 0;
+    top: 7px
+}
+
+.containerLogin p:after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    background-color: #eee;
+    left: 50%;
+    margin-left: -20px;
+    z-index: 0
+}
+
+
+/*===================AREA DO MODAL====================*/
+
+.modal .btn-close {
+    color: #aaa;
+    cursor: pointer;
+    font-size: 35px;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    text-decoration: none
+}
+
+.modal .btn-close:hover,
+.modal .btn-close:focus {
+    color: #999999
+}
+
+.modal-wrap:before {
+    content: '';
+    display: none;
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 101
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 102
+}
+
+.modal-open:checked~.modal-wrap:before,
+.modal-open:checked~.modal-wrap .modal-overlay {
+    display: block
+}
+
+.modal-open:checked~.modal-wrap .modal-dialog {
+    transform: translate(-50%, -50%);
+    position: fixed;
+    top: 40%
+}
+
+.modal-dialog {
+    background: #fefefe;
+    border: #555 solid 1px;
+    border-radius: 5px;
+    position: fixed;
+    left: 50%;
+    top: -100%;
+    transform: translate(-50%, -150%);
+    transition: transform 0.6s ease-in-out;
+    width: 80%;
+    max-width: 600px;
+    z-index: 103
+}
+
+.modal-body {
+    padding: 50px 20px
+}
+
+.modal-body p {
+    margin: 0
+}
+
+.modal-body .content-modal-cadastre {
+    display: grid;
+    grid-template-columns: 1fr 30px 1fr;
+    grid-gap: 5px
+}
+
+.modal-body .content-modal-cadastre .btn-modal {
+    border: 1px solid #05a532;
+    display: block;
+    padding: 8px 0;
+    border-radius: 3px;
+    background-color: #06cc3e;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    width: auto
+}
+
+.modal-body .content-modal-cadastre .btn-modal.blue {
+    background-color: #008a9b;
+    border: 1px solid #006875
+}
+
+.modal-body .content-modal-cadastre span {
+    text-align: center;
+    font-weight: 700;
+    line-height: 36px
+}
+
+.modal-header {
+    border-bottom: #eaeaea solid 1px;
+    background-color: #f1f1f1;
+    padding: 20px
+}
+
+.modal-header h2 {
+    font-size: 16px;
+    margin: 0;
+    color: #555
+}
+
+.modal-footer {
+    border-top: #eaeaea solid 1px;
+    text-align: right;
+    padding: 10px
+}
+
+.btn {
+    background: #fff;
+    border: #555 solid 1px;
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    padding: 8px 15px;
+    text-decoration: none;
+    text-align: center;
+    min-width: 60px;
+    position: relative
+}
+
+.btn.btn-primary {
+    background: #428bca;
+    border-color: #3885c7;
+    color: #fff
+}
+
+
+/*===================AREA DO PERFIL====================*/
+
+
+/* O perfil.css está vazio*/
+
+
+/*===================AREA DO QUEM SOMOS====================*/
+
+.quemSomos {
+    max-width: 650px;
+    margin: auto;
+}
+
+.quemSomos .container h1 {
+    font-size: 25px;
+    text-align: center;
+    margin: 1rem 0 0
+}
+
+.quemSomos .container .containerText {
+    border: 1px solid #ccc
+}
+
+.quemSomos .container p {
+    line-height: 1.35rem;
+    padding: 1rem;
+    text-align: justify
+}
+
+@media (max-width:700px) {
+    .quemSomos .container p {
+        text-align: left
+    }
+}
+
+.quemSomos .container img {
+    height: 250px;
+    width: 100%
+}
+
+
+/*===================AREA DO SEBOS====================*/
+
+.sebos {
+    padding: 1rem
+}
+
+.sebos .container {
+    background: #5cccb3;
+    padding: 15px;
+    margin-top: 25px;
+    width: 100%;
+    height: 100%;
+    max-width: 700px;
+    margin: 3% auto;
+    box-sizing: border-box
+}
+
+.sebos .container h1 {
+    font-size: 25px;
+    text-align: center;
+    margin: 0 0 25px 0
+}
+
+.sebos .container form {
+    width: 100%;
+    height: 240px;
+    border: 1px solid #111;
+    background: #fff;
+    padding: 10px
+}
+
+.sebos .container form label {
+    width: 100%;
+    font-weight: bold
+}
+
+.sebos .container form input {
+    width: 100%;
+    height: 35px;
+    border: 1px solid #222;
+    margin: 10px 0 20px 0
+}
+
+.sebos .container form select {
+    width: 100%;
+    height: 35px;
+    border: 1px solid #222;
+    margin: 10px 0 20px 0
+}
+
+.sebos .container form select option {
+    width: 50px
+}
+
+.sebos .container form button {
+    width: 100px;
+    height: 35px;
+    float: right
+}
+
+.sebos .container a {
+    text-decoration: none
+}
+
+.sebos .container a .box-sebo {
+    width: 100%;
+    height: 80px;
+    background: #fff;
+    margin-top: 15px;
+    border: 1px solid #000;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr)
+}
+
+.sebos .container a .box-sebo strong {
+    padding-left: 10px;
+    line-height: 80px;
+    color: #000
+}
+
+.sebos .container a .box-sebo p {
+    color: red;
+    line-height: 50px;
+    text-align: center
+}
+
+
+/*===================AREA DO STYLE====================*/
+
+
+/*Container pai de todos, centraliza tudo*/
+
+img {
+    width: 100%;
+    object-fit: cover
+}
+
+a {
+    text-decoration: none;
+    color: #123
+}
+
+.container {
+    margin: 1rem
+}
+
+.grid {
+    display: grid;
+    grid-gap: 10px
+}
+
+.grid.grid-1 {
+    grid-template-columns: repeat(1, 1fr)
+}
+
+.grid.grid-2 {
+    grid-template-columns: repeat(2, 1fr)
+}
+
+.grid.grid-3 {
+    grid-template-columns: repeat(3, 1fr)
+}
+
+.grid.grid-4 {
+    grid-template-columns: repeat(4, 1fr)
+}
+
+.grid.grid-5 {
+    grid-template-columns: repeat(5, 1fr)
+}
+
+header img {
+    max-width: 150px;
+    object-fit: contain
+}
+
+header #Logado img {
+    max-width: 130px;
+    object-fit: contain
+}
+
+.ulCenter2 {
+    height: 100%;
+    width: 100%;
+    display: flex
+}
+
+header #Logado input {
+    display: none;
+}
+
+header #Logado ul {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 90px;
+    left: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #548f96, #8adce6);
+    z-index: 1;
+    flex-flow: column;
+    margin-top: 0
+}
+
+header #Logado .ulCenter2 {
+    height: 100%;
+    width: 100%;
+    display: flex
+}
+
+header #Logado .ulCenter2 ul li a {
+    width: 100%;
+    height: inherit;
+    padding-left: 20px;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #fff;
+    padding: 2rem;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #fff
+}
+
+.master1 nav .menu ul li:last-child {
+    border-bottom: 0
+}
+
+.master1 #menuH:checked~.ulCenter ul {
+    display: flex
+}
+
+
+/*Nessa parte foi removido a media query para que o layou espandisse na tela*/
+
+.master1 header {
+    width: 100%;
+    height: 80px;
+    background-color: #f1f1f1;
+    position: fixed;
+    bottom: 0;
+    z-index: 9;
+    border-bottom: 1px solid #111
+}
+
+
+/*.master1 header .perfil {
+
+     width: 40px;
+    height: 40px;
+    display: block;
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px 
+
+  }*/
+
+.master1 header .perfil img {
+    height: 100%
+}
+
+
+/*.master1 header .logo {
+
+     width: 125px;
+    height: 60px;
+    position: absolute;
+    left: 20px;
+    top: 10px; 
+
+  }*/
+
+.master1 header .logo img {
+    width: 100%
+}
+
+.master1 nav {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    background: aliceblue
+}
+
+.master1 nav:after {
+    content: '';
+    width: 100%;
+    height: 60px;
+    background: inherit;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 8;
+    border-top: 1px solid #111
+}
+
+.master1 nav .home {
+    width: 30px;
+    height: 30px;
+    display: block;
+    position: absolute;
+    z-index: 9;
+    top: 20px;
+    left: 20px
+}
+
+.master1 nav .home img {
+    height: 100%
+}
+
+.master1 nav .search {
+    width: 25px;
+    height: 25px;
+    display: block;
+    position: absolute;
+    z-index: 9;
+    left: 50%;
+    top: 23px;
+    margin-left: -14px
+}
+
+.master1 nav .search img {
+    height: 100%
+}
+
+.master1 nav .menu {
+    float: right;
+    margin-top: 20px
+}
+
+.master1 nav .menu input {
+    display: none
+}
+
+.master1 nav .menu label {
+    width: 25px;
+    height: 25px;
+    display: block;
+    position: absolute;
+    right: 20px;
+    z-index: 9
+}
+
+.master1 nav .menu label img {
+    height: 100%
+}
+
+.master1 .ulCenter {
+    height: 100%;
+    width: 100%;
+    display: flex
+}
+
+.master1 nav .menu ul {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 89px;
+    left: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #548f96, #8adce6);
+    z-index: 1;
+    flex-flow: column;
+    margin-top: 0
+}
+
+.master1 nav .menu ul li a {
+    width: 100%;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #fff;
+    padding: 7% 3%;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #fff;
+}
+
+.master1 nav .menu ul li:last-child {
+    border-bottom: 0
+}
+
+.master1 #menuH:checked~.ulCenter ul {
+    display: fleX;
+    margin-top: 34px;
+}
+
+
+/*Menu mobile desaparece quando a resolução for maior que 780px*/
+
+header,
+.master1 nav {
+    background: linear-gradient(45deg, #008a9b47, #06cc3e26);
+    background-color: #fff;
+    z-index: 9999
+}
+
+.navDesk ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+    background: #222;
+    z-index: 1;
+    position: relative;
+    margin: auto;
+    width: 100%;
+    top: .8rem;
+}
+
+.navDesk ul li {
+    list-style: none;
+    padding: .85rem .1rem
+}
+
+.navDesk ul a {
+    color: #fff;
+    padding: 0 .5rem
+}
+
+header img {
+    max-width: 130px;
+    margin-top: 1.75rem;
+}
+
+header .perfil {
+    max-width: 40px;
+    margin-top: 1.4%;
+}
+
+header .menuGroup {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: .1rem 1.1rem 0rem 1.2rem;
+    box-sizing: border-box;
+    align-items: center;
+    min-height: 110px;
+    max-height: 110px;
+}
+
+.navDesk {
+    display: none
+}
+
+@media (max-width: 780px) {
+    header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 99999;
+        padding-bottom: 4%;
+    }
+
+    .headerStatic {
+        position: static
+    }
+
+    .busca .container {
+        padding: 3%
+    }
+ 
+}
+
+@media (min-width:780px) {
+
+    .master1 nav:after,
+    .menuMobile,
+    .menuMobile img {
+        display: none
+    }
+
+    .navDesk {
+        display: block
+    }
+
+    section {
+        padding: 0 !important
+    }
+}
+
+.master2 {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    padding: 0 20px;
+    line-height: 105px;
+    position: static !important
+}
+
+.master2 .volta {
+    width: 40px;
+    height: 50px
+}
+
+.master2 .volta img {
+    width: 100%
+}
+
+.master2 .logo {
+    width: 125px;
+    height: 60px;
+    position: absolute;
+    right: 20px;
+    top: 10px
+}
+
+.master2 .logo img {
+    width: 100%
+}
+
+.master2Footer {
+    width: 100%;
+    background-color: #f1f1f1;
+    padding: 1rem 0
+}
+
+.master2Footer p {
+    text-align: center
+}
+
+section {
+    width: 100%;
+    position: relative;
+    /* padding: 60px 0 0 0 */
+}
+@media(min-width:700px){
+    section .banner{
+    margin-top: .65rem;
+}
+}   
+
+section .banner {
+    width: 100%;
+    min-height: 184px;
+    /* Move slides overflowed container */
+    /* Color of bullets */
+    /* Color of bullets - END */
+    /* Text of slides - END */
+    /* Calculate AUTOPLAY for BULLETS */
+    /* Calculate AUTOPLAY for BULLETS - END */
+    /* Calculate AUTOPLAY for SLIDES */
+    /* Calculate AUTOPLAY for SLIDES - END */
+    /* Calculate AUTOPLAY for CAPTION */
+}
+
+section .banner img {
+    width: 100%;
+    height: 100%
+}
+
+section .banner .image {
+    width: 100%;
+    height: 100%;
+    max-height:300px
+}
+
+section .banner .radio {
+    display: none
+}
+
+section .banner .images {
+    overflow: hidden;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%
+}
+
+section .banner .images-inner {
+    width: 500%;
+    transition: all 800ms cubic-bezier(0.77, 0, 0.175, 1);
+    transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1)
+}
+
+section .banner .image-slide {
+    width: 20%;
+    float: left
+}
+
+section .banner .image-slide,
+section .banner .fake-radio,
+section .banner .radio-btn {
+    transition: all 0.5s ease-out
+}
+
+section .banner .fake-radio {
+    text-align: center;
+    margin: -20px 0 0 0
+}
+
+section .banner #slide1:checked~.images .images-inner {
+    margin-left: 0
+}
+
+section .banner #slide2:checked~.images .images-inner {
+    margin-left: -100%
+}
+
+section .banner #slide3:checked~.images .images-inner {
+    margin-left: -200%
+}
+
+section .banner #slide1:checked~div .fake-radio .radio-btn:nth-child(1),
+section .banner #slide2:checked~div .fake-radio .radio-btn:nth-child(2),
+section .banner #slide3:checked~div .fake-radio .radio-btn:nth-child(3) {
+    background: #000
+}
+
+section .banner .radio-btn {
+    width: 20px;
+    height: 10px;
+    border-radius: 20px;
+    background: gray;
+    display: inline-block !important;
+    margin: 0 1px;
+    cursor: pointer;
+    border: 2px solid #FFF
+}
+
+section .banner .label {
+    opacity: 0;
+    position: absolute
+}
+
+@keyframes bullet {
+
+    0%,
+    33.32333333333334% {
+        background: #000
+    }
+
+    33.333333333333336%,
+    100% {
+        background: gray
+    }
+}
+
+section .banner #play1:checked~div .fake-radio .radio-btn:nth-child(1) {
+    animation: bullet 12300ms infinite -1000ms
+}
+
+section .banner #play1:checked~div .fake-radio .radio-btn:nth-child(2) {
+    animation: bullet 12300ms infinite 3100ms
+}
+
+section .banner #play1:checked~div .fake-radio .radio-btn:nth-child(3) {
+    animation: bullet 12300ms infinite 7200ms
+}
+
+@keyframes slide {
+
+    0%,
+    25.203252032520325% {
+        margin-left: 0
+    }
+
+    33.333333333333336%,
+    58.53658536585366% {
+        margin-left: -100%
+    }
+
+    66.66666666666667%,
+    91.869918699187% {
+        margin-left: -200%
+    }
+}
+
+section .banner .st-slider>#play1:checked~.images .images-inner {
+    animation: slide 12300ms infinite
+}
+
+@keyframes caption {
+
+    0%,
+    33.32333333333334% {
+        opacity: 1
+    }
+
+    33.333333333333336%,
+    100% {
+        opacity: 0
+    }
+}
+
+section .banner #play1:checked~.labels .label:nth-child(1) {
+    animation: caption 12300ms infinite -1000ms
+}
+
+section .banner #play1:checked~.labels .label:nth-child(2) {
+    animation: caption 12300ms infinite 3100ms
+}
+
+section .banner #play1:checked~.labels .label:nth-child(3) {
+    animation: caption 12300ms infinite 7200ms
+}
+
+section .maisProcurados h1 {
+    font-size: 20px;
+    color: #665;
+    margin-top: 30px;
+    margin-left: 15px
+}
+
+section .maisProcurados .books {
+    width: 100%;
+    height: 180px
+}
+
+section .maisProcurados .books img {
+    width: 100%;
+    max-width: 120px
+}
+
+section .eventos {
+    width: 100%
+}
+
+section .eventos h2 {
+    font-size: 20px;
+    text-align: center;
+    margin: 20px 0 10px 0
+}
+
+section .eventos figure {
+    margin: 0
+}
+
+section .eventos figure img {
+    width: 100%;
+    height: 200px
+}
+
+section .eventos figure figcaption {
+    font-size: 15px
+}
+
+section .eventos figure:last-child {
+    margin-top: 20px
+}
+
+form select {
+    padding: .4rem;
+    margin-bottom: .6rem;
+    width: 100%
+}
+
+
+/*===========================================Icone laterais*/
+
+.Social-Bar {
+    position: fixed;
+    right: 0;
+    top: 60%;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 100;
+    display:none;
+}
+@media (min-width:1100px){
+    .Social-Bar{
+        display:flex;
+    }
+}
+
+@media (min-width:420px) {
+    .Social-Bar {
+        right: 18px;
+    }
+}
+
+.icon {
+    color: white;
+    text-decoration: none;
+    padding: .2rem;
+    display: flex;
+    transition: all ease-in-out .5s;
+    margin: .025rem 0
+}
+
+.icon-facebook {
+    background: #2E406E
+}
+
+.icon-twitter {
+    background: #339DC5
+}
+
+.icon-instagram {
+    background: linear-gradient(45Deg, #405DE6, #5851DB, #833AB4, #C13584, #C13584, #E1306C, #FD1D1D)
+}
+
+.icon:first-child {
+    border-radius: 1rem 0 0 0
+}
+
+.icon:last-child {
+    border-radius: 0 0 0 1rem
+}
+
+.icon:hover {
+    padding-right: 5rem;
+    border-radius: .5rem 0 0 1rem;
+}
+
+/*=====================AREA DO RODAPE===============*/
+#rodape {
+    width: 100%;
+    background: #202020;
+    color: #fff;
+}
+
+#rodape .container-body a,
+#rodape label {
+    color: #c7c7c7
+}
+
+#rodape a:hover,
+#rodape a:hover label {
+    color: #fff
+}
+
+.container-footer-all {
+    width: auto;
+    max-width: 1300px;
+    margin: auto;
+    padding: 4rem
+}
+
+@media (max-width:700px) {
+    .container-footer-all {
+        padding: 2rem
+    }
+
+    #rodape p {
+        text-align: left
+    }
+}
+
+.container-body {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap
+}
+
+@media (max-width:701px) {
+
+    .container-body,
+    .footer {
+        flex-direction: column
+    }
+}
+
+.coluna1,
+.coluna2,
+.coluna3 {
+    max-width: 450px;
+    margin: 1rem .5rem;
+}
+
+.coluna1 h1,
+.coluna2 h1,
+.coluna3 h1 {
+    font-size: 22px
+}
+
+.coluna1 p {
+    font-size: .95rem;
+    color: #c7c7c7;
+    margin-top: 20px;
+    text-align: justify;
+    line-height: 1.3rem;
+    letter-spacing: -.01rem
+}
+
+.coluna3 label {
+    line-height: 1.4rem
+}
+
+.row,
+.row2 {
+    margin-top: 20px;
+    display: flex;
+    align-items: center
+}
+
+.row img,
+.row2 img {
+    width: 36px;
+    height: 36px;
+    fill: #fff;
+}
+
+.row label {
+    margin-top: 10px;
+    margin-left: 20px;
+    color: #c7c7c7;
+}
+
+.row2 label {
+    margin-top: 10px;
+    margin-left: 20px;
+
+}
+
+@media(min-width:700px) {
+    .row2 label {
+        max-width: 200px
+    }
+}
+
+.container-footer {
+    width: auto;
+    background: #111;
+}
+
+@media (max-width:700px) {
+    .container-footer {
+        padding: 0 0 3rem
+    }
+}
+
+.footer {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    max-width: 700px
+}
+
+.footer div {
+    margin: 1rem 0
+}
+
+@media (min-width:900px) {
+    .footer {
+        flex-direction: row;
+        max-width: 1000px
+    }
+}
+
+.copyright {
+    color: #c7c7c7
+}
+
+.copyright a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold
+}
+
+.informar a {
+    text-decoration: none;
+    color: #c7c7c7
+}
+
+
+
+/*formatação de links para usuario logado*/
+.logGroup{
+    display: flex;
+    /* flex-wrap: wrap; */
+    align-items: flex-end;
+}
+.logGroup a{
+    margin: .4rem .4rem;
+}
+.circle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3%;
+}
+.circle img{
+    overflow: hidden;
+    padding: .1rem;
+    background: #fff;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    margin-top: 40%
+}
+.circle p{
+    position: relative;
+    top: -.9rem;
+    background: #fff;
+    padding: .1rem;
+    width: 92%;
+    text-align: center;
+}
+.logGroup figcaption{
+    display:none;
+    z-index:999;
+}
+@media(min-width:782px){
+    .logItem{
+        right: 17px!important;
+    }
+    /* .logItem{
+        right: 95x!important
+    } */
+}
+.logItem{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 109.3px;
+    width: 95px;
+    background: #fff;
+    font-size: 1.1rem;
+    padding: .4rem;
+    z-index: 999;
+    right: 0;
+}
+
+input[type=checkbox]{
+    display:none
+} 
+input[type=checkbox]:checked + figure figcaption {
+    /* color: #f00;
+    font-style: normal; */
+    display:flex;
+} 
+
+
+/**?
