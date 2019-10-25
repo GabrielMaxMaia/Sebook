@@ -1,8 +1,8 @@
 <?php
 $ajuste = "../../../../../";
-require_once $ajuste.'config/config.php';
+require_once $ajuste . 'config/config.php';
 
-$conn = \Util\FabricaConexao::getConexao($ajuste.'config/bd_mysql.ini');
+$conn = \Util\FabricaConexao::getConexao($ajuste . 'config/bd_mysql.ini');
 $objSql = new Util\Sql($conn);
 $livroDAO = new Model\livroDAO($objSql);
 
@@ -33,6 +33,7 @@ $msg = "";
 //     echo $e->getMessage();
 // }
 //resgata os dados na tabela
+$msg .= "<ul class='containerResult'>";
 if (count($resultado)) {
     foreach ($resultado as $livro) {
         // $msg .= "                <tr>";
@@ -40,30 +41,30 @@ if (count($resultado)) {
         // $msg .= "                    <td>" . $livro['urlFotoLivro'] . "</td>";
         // $msg .= "                    <td>" . $livro['nomeLivro'] . "</td>";
         // $msg .= "                </tr>";
-        if ($parametro != false){
-        $msg .= "<ul class='containerResult'>";
-        $msg .= "<a href='"._URLBASE_."area/user/pages/descLivro/".$livro['isbnLivro']."'>";
-        $msg .= "<li>";
-        $msg .= "<figure>";
-        $msg .= "<img src='"._URLBASE_.$livro['urlFotoLivro']."' alt='".$livro['nomeLivro']."' title='".$livro['nomeLivro']."'>";
-        $msg .= "<figcaption>";
-        $msg .= "<span>Nome: ".$livro['nomeLivro']."</span>";
-        $msg .= "<span>Isbn: ".$livro['isbnLivro']."</span>";
-        $msg .= "<span>Isbn: ".$livro['anoLivro']."</span>";
-        $msg .= "</figcaption>";
-        $msg .= "</figure>";
-        $msg .= "</li>";
-        $msg .= "</a>";
-        $msg .= "</ul>";
+        if ($parametro != false) {
+            $msg .= "<li>";
+            $msg .= "<a href='" . _URLBASE_ . "area/user/pages/descLivro/" . $livro['isbnLivro'] . "'>";
+
+            $msg .= "<figure>";
+            $msg .= "<img src='" . _URLBASE_ . $livro['urlFotoLivro'] . "' alt='" . $livro['nomeLivro'] . "' title='" . $livro['nomeLivro'] . "'>";
+            $msg .= "<figcaption>";
+            $msg .=  "<p><b>Nome: </b>" . $livro['nomeLivro'] . "<br>";
+            $msg .= "<b>Isbn: </b>" . $livro['isbnLivro'] . "<br>";
+            $msg .= "<b>Ano: </b>" . $livro['anoLivro'] . "</p>";
+            $msg .= "</figcaption>";
+            $msg .= "</figure>";
+
+            $msg .= "</a>";
+            $msg .= "</li>";
         }
     }
 } else {
     $msg = "";
     $msg .= "Nenhum resultado foi encontrado...";
 }
+$msg .= "</ul>";
 // $msg .= "    </tbody>";
 // $msg .= "</table>";
 
 //retorna a msg concatenada
 echo $msg;
-
