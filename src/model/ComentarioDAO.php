@@ -12,6 +12,8 @@ class ComentarioDAO extends Comentario
 
     private static $SELECT_ID = "select * from comentario WHERE id_comentario =:idComentario";
 
+    private static $SELECT_ID_POSTAGEM = "SELECT * from comentario inner join usuario WHERE comentario.id_usuario = usuario.id_usuario and id_post = :idPost and cod_status_comentario = '1' ORDER BY id_comentario DESC";
+
     private static $INSERT = "INSERT INTO comentario(id_comentario_parente, txt_comentario, data_hora_comentario, id_post, id_usuario) VALUES (:idComentarioParente, :txtComentario, :dataHoraComentario, :idPost, :idUsuario)";
 
 
@@ -81,6 +83,48 @@ class ComentarioDAO extends Comentario
                 'idPost' => $linha->id_post,
                 'idUsuario' => $linha->id_usuario
             );
+        } else {
+            $itens = null;
+        }
+        //devolver o resultado     
+        return $itens;
+    }
+
+    public function listarComentarioPost()
+    {
+        //executar a consulta no banco
+        $result = $this->sql->query(
+            ComentarioDAO::$SELECT_ID_POSTAGEM,
+            array(
+                ':idPost' => array(0 => $this->getIdPost(), 1 => \PDO::PARAM_INT)
+            )
+        );
+        if ($result->rowCount() > 0) {
+            // $linha = $result->fetch(\PDO::FETCH_OBJ);
+
+            // $itens = array(
+            //     'idComentario' => $linha->id_comentario,
+            //     'idComentarioParente' => $linha->id_comentario_parente,
+            //     'txtComentario' => $linha->txt_comentario,
+            //     'dataHoraComentario' => $linha->data_hora_comentario,
+            //     'codStatusComentario' => $linha->cod_status_comentario,
+            //     'idPost' => $linha->id_post,
+            //     'idUsuario' => $linha->id_usuario
+            // );
+
+            while ($linha = $result->fetch(\PDO::FETCH_OBJ)) {
+                $itens[] = array(
+                    'idComentario' => $linha->id_comentario,
+                    'idComentarioParente' => $linha->id_comentario_parente,
+                    'txtComentario' => $linha->txt_comentario,
+                    'dataHoraComentario' => $linha->data_hora_comentario,
+                    'codStatusComentario' => $linha->cod_status_comentario,
+                    'idPost' => $linha->id_post,
+                    'idUsuario' => $linha->id_usuario,
+                    'nomeUsuario' => $linha->nome_usuario
+                );
+            }
+            //var_dump($itens);
         } else {
             $itens = null;
         }

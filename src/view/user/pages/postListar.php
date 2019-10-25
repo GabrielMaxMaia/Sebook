@@ -1,16 +1,19 @@
 <?php
 
 use Model\PostagemDAO;
+use Controller\PostagemController;
 
 //Pega a conexão
 $sql = new \Util\Sql($conn);
 //Passa a conexão para o dao
 $postagemDAO = new PostagemDAO($sql);
+//Passa a conexão para o controller
+$postagemController = new PostagemController($sql);
 //Armazena em result para o laço
 $result = $postagemDAO->listarPostagem();
 
 $frontController = new Controller\FrontController($postagemDAO);
-$frontController->setItemPagina(2);
+$frontController->setItemPagina(3);
 $frontController->verificarPaginacao();
 
 
@@ -31,8 +34,9 @@ var_dump($_GET);
     <article class="grid-container">
         <h1>Postagens</h1>
         <?php
-        $regIni = $_GET['pagina'] ?? 0;
-        $postagens = $postagemDAO->listarPostagem($regIni, $itemPagina = 2);
+        //$_GET['pagina'] ?? 0;
+        $frontController->verificarPaginacao() ;
+        $postagens = $postagemDAO->listarPostagem($frontController->getRegIni(), $frontController->getItemPagina());
         foreach ($postagens as $post) {
             ?>
             <section class=''>

@@ -8,10 +8,26 @@
 
 		$autenticadorController = new \Controller\AutentificadorController($sql);
 
-		$autenticadorController->toggleLogin();
+		// $IdSessaoUser = $_SESSION['userLogado']['acesso'] ?? "";
+
+		if($acessoUser != "" && $acessoUser != 5){
+			$clienteDAO = new Model\ClienteDAO($sql);
+			$clienteDAO->setIdUsuario($IdUser);
+			$resultPerfil = $clienteDAO->listarClienteId();
+			$img = $resultPerfil['urlFotoCliente'];
+			// var_dump($resultUsarioPerfil);
+		}else if($acessoUser!= "" && $acessoUser == 5){
+			$seboDAO = new Model\SeboDAO($sql);
+			$seboDAO->setIdUsuario($IdUser);
+			$resultPerfil = $seboDAO->listarSeboId();
+			$img = $resultPerfil['urlFotoSebo'];
+		}else{
+			$img = "";
+		}
+		$autenticadorController->toggleLogin($img);
 		$autenticadorController->efetuarLogOut();
 
-		$IdSessaoUser = $_SESSION['userLogado']['acesso'] ?? "";
+		
 
 		?>
 	</div>
@@ -30,7 +46,7 @@
 				<a href="<?php echo _URLBASE_ ?>area/user/pages/postListar">POSTAGENS</a>
 			</li>
 			<?php
-			if ($IdSessaoUser != 4 && $IdSessaoUser != null && $IdSessaoUser != "") {
+			if ($acessoUser != 4 && $acessoUser != null && $acessoUser != "") {
 				echo "<li>
 						<a href='"._URLBASE_."area/user/pages/postCriar'>CRIAR POSTAGEM</a></a>
 					 </li>";

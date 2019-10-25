@@ -49,8 +49,11 @@ class Upload
             $caminho = getcwd();
             var_dump($caminho);
             //adicionando o caminho para salvar o arquivo
-         
-            if ($caminho == 'G:\sebook\src\view\adm\cadastro\uploadAdm') {
+
+            //Tive que mudar o caminho pois estou usando
+            //Xampp, depois colocar esse caminho comentado
+            //'G:\sebook\src\view\adm\cadastro\uploadAdm'
+            if ($caminho == 'D:\xampp\htdocs\sebook\src\view\adm\cadastro\uploadAdm') {
                 $caminho = str_replace('\src\view\adm\cadastro\uploadAdm', '', $caminho);
             } else {
                 $caminho = str_replace('\src\view\user\pages', '', $caminho);

@@ -1,0 +1,776 @@
+/*===================AREA DO ADMIN2====================*/
+
+body {
+    padding: 0;
+    margin: 0;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: sans-serif;
+    margin: auto
+}
+
+
+/*Container pai de todos, centraliza tudo*/
+
+div#container {
+    width: 100%;
+    height: 100%;
+    /* margin:1rem auto 0; */
+    box-sizing: border-box;
+    background: linear-gradient(45deg, #06cc3e26, #008a9b47);
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    object-fit: cover
+}
+
+a {
+    text-decoration: none;
+    color: #123
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+
+.grid {
+    display: grid;
+    grid-gap: 10px
+}
+
+.grid.grid-1 {
+    grid-template-columns: repeat(1, 1fr)
+}
+
+.grid.grid-2 {
+    grid-template-columns: repeat(2, 1fr)
+}
+
+.grid.grid-3 {
+    grid-template-columns: repeat(3, 1fr)
+}
+
+.grid.grid-4 {
+    grid-template-columns: repeat(4, 1fr)
+}
+
+.grid.grid-5 {
+    grid-template-columns: repeat(5, 1fr)
+}
+
+header img {
+    max-width: 150px;
+    object-fit: contain
+}
+
+
+/*Nessa parte foi removido a media query para que o layou espandisse na tela*/
+
+
+/*Menu mobile desaparece quando a resolução for maior que 780px*/
+
+header,
+.master1 nav {
+    background: linear-gradient(45deg, #008a9b47, #06cc3e26);
+    background-color: #fff;
+    z-index: 9999
+}
+
+.navDesk ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+    position: relative;
+    background: #111
+}
+
+.navDesk ul li {
+    list-style: none;
+    margin: 1rem
+}
+
+.navDesk ul ul {
+    background-color: #555;
+    position: absolute;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0 0
+}
+
+.navDesk ul li:hover ul {
+    visibility: visible
+}
+
+.navDesk ul a {
+    color: #fff;
+    padding: 1rem 0
+}
+
+header img {
+    max-width: 130px
+}
+
+header .perfil {
+    max-width: 40px;
+    align-self: flex-end
+}
+
+header .menuGroup {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    box-sizing: border-box
+}
+
+.navDesk {
+    display: none
+}
+
+@media (max-width: 780px) {
+    header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 99999
+    }
+    .headerStatic {
+        position: static
+    }
+}
+
+@media (min-width:780px) {
+    .master1 nav:after,
+    .menuMobile,
+    .menuMobile img {
+        display: none
+    }
+    .navDesk {
+        display: block
+    }
+    section {
+        padding: 0!important
+    }
+}
+
+
+/**/
+
+.master2 {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    padding: 0 20px;
+    line-height: 105px;
+    position: static!important
+}
+
+.master2 .volta {
+    width: 40px;
+    height: 50px
+}
+
+.master2 .volta img {
+    width: 100%
+}
+
+.master2 .logo {
+    width: 125px;
+    height: 60px;
+    position: absolute;
+    right: 20px;
+    top: 10px
+}
+
+.master2 .logo img {
+    width: 100%
+}
+
+.master2Footer {
+    width: 100%;
+    background-color: #f1f1f1;
+    padding: 1rem 0
+}
+
+.master2Footer p {
+    text-align: center
+}
+
+
+/*===========================================Icone laterais*/
+
+.Social-Bar {
+    position: fixed;
+    right: 0;
+    top: 35%;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 100
+}
+
+.icon {
+    color: white;
+    text-decoration: none;
+    padding: .7rem;
+    display: flex;
+    transition: all .5s
+}
+
+.icon-facebook {
+    background: #2E406E
+}
+
+.icon-twitter {
+    background: #339DC5
+}
+
+.icon-instagram {
+    background: linear-gradient(45Deg, #405DE6, #5851DB, #833AB4, #C13584, #C13584, #E1306C, #FD1D1D)
+}
+
+.icon:first-child {
+    border-radius: 1rem 0 0 0
+}
+
+.icon:last-child {
+    border-radius: 0 0 0 1rem
+}
+
+.icon:hover {
+    padding-right: 3rem;
+    border-radius: 1rem 0 0 1rem;
+    box-shadow: 0 0 .5rem rgb(255, 255, 255)
+}
+
+
+/*===================AREA DO APAGAR====================*/
+
+.apagar {
+    width: 100%;
+    position: relative;
+    padding: 1rem;
+    margin: auto;
+    box-sizing: border-box;
+    max-width: 460px;
+    align-self: center
+}
+
+
+/*===================AREA DO APROVAR SEBO====================*/
+
+.aprovaSebo {
+    width: 100%;
+    position: relative;
+    padding: 1rem;
+    margin: auto;
+    box-sizing: border-box;
+    max-width: 460px;
+    align-self: center
+}
+
+
+/*===================AREA DO CADASTRAR EVENTO====================*/
+
+.cadastrarEve {
+    width: 100%;
+    position: relative;
+    padding: 1rem;
+    margin: auto;
+    box-sizing: border-box;
+    max-width: 460px;
+    align-self: center
+}
+
+
+/*===================AREA DO CONTROLE====================*/
+
+.controle {
+    width: 100%;
+    position: relative;
+    padding: 1rem;
+    margin: auto;
+    box-sizing: border-box;
+    max-width: 460px;
+    align-self: center;
+    top: 10px
+}
+
+.controle .container h1 {
+    font-size: 30px;
+    text-align: center;
+    background-color: none
+}
+
+.controle .container p {
+    margin: .5rem 0;
+    font-size: .95rem;
+    text-align: center;
+    line-height: 1.3rem
+}
+
+.controle .container hr {
+    margin-bottom: 25px
+}
+
+.controle .container form input {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 15px
+}
+
+.controle .container form .tex {
+    height: 70px
+}
+
+.controle .container form button {
+    width: 35%;
+    margin: 0 auto;
+    margin: 1rem 0;
+    padding: .6rem;
+    border: 1px solid #ccc;
+    background: #fff
+}
+
+@media (max-width: 780px) {
+    .headerAjuda {
+        position: inherit!important
+    }
+}
+
+
+/*===================AREA DO EVENTOS E COMENTÁRIOS====================*/
+
+div#container {
+    max-width: 10000px!important;
+    overflow: hidden;
+}
+
+.comentarios {
+    padding: 1rem;
+    box-sizing: border-box
+}
+
+.containerTable table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto
+}
+
+.containerTable table th {
+    min-width: 100px
+}
+
+th,
+td {
+    padding: .5rem;
+    box-sizing: border-box;
+    text-align: center
+}
+
+
+/*===================AREA DO LOGIN ADM====================*/
+
+body {
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    transform-style: preserve-3d;
+    overflow-x: hidden;
+    font-family: "comfortaa", sans-serif
+}
+
+.logo {
+    position: absolute;
+    left: 2%;
+    top: 3%;
+    max-width: 200px;
+}
+
+header img {
+    max-width: 130px
+}
+
+.loginAdm {
+    width: 320px;
+    height: 420px;
+    border: 2px solid linear-gradient(45deg, #06cc3e26, #008a9b47);
+    border-radius: 80px 0px 80px 0px;
+    color: #fff;
+    background: linear-gradient(45deg, #06cc3e26, #008a9b47);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 68px 28px
+}
+
+.usuario {
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: 112px
+}
+
+h1 {
+    margin: 0;
+    padding: 0 0 20px 0;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 16px
+}
+
+.loginAdm p {
+    margin: 0;
+    padding: 0;
+    font-weight: bold
+}
+
+.loginAdm input {
+    width: 100%;
+    margin-bottom: 21px
+}
+
+.loginAdm input[type="text"],
+input[type="password"] {
+    border: none;
+    border-bottom: 1px solid white;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: white;
+    font-size: 16px
+}
+
+.loginAdm input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 35px;
+    color: #000;
+    background: #fff;
+    border-radius: 20px;
+    transition: 0.2s
+}
+
+.loginAdm input[type="submit"]:hover {
+    cursor: pointer;
+    background: #767fbf;
+    transition: 0.2s
+}
+
+.loginAdm a {
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: #4b4b4b;
+    transition: 0.2s
+}
+
+.loginAdm a:hover {
+    transition: 0.2s;
+    color: #767fbf
+}
+
+
+/*===================AREA DO STYLE LOG====================*/
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+* {
+    box-sizing: border-box
+}
+
+.container {
+    margin: 0 10px
+}
+
+.grid {
+    display: grid;
+    grid-gap: 10px
+}
+
+.grid.grid-1 {
+    grid-template-columns: repeat(1, 1fr)
+}
+
+.grid.grid-2 {
+    grid-template-columns: repeat(2, 1fr)
+}
+
+.grid.grid-3 {
+    grid-template-columns: repeat(3, 1fr)
+}
+
+.grid.grid-4 {
+    grid-template-columns: repeat(4, 1fr)
+}
+
+.grid.grid-5 {
+    grid-template-columns: repeat(5, 1fr)
+}
+
+.master1 header {
+    width: 100%;
+    height: 90px;
+    background-color: #f1f1f1;
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    border-bottom: 1px solid #111
+}
+
+.master1 header .perfil {
+    width: 50px;
+    height: 40px;
+    display: block;
+    float: right;
+    margin-top: 15px;
+    margin-right: 20px
+}
+
+.master1 header .perfil img {
+    height: 50px
+}
+
+.master1 header .logo {
+    width: 125px;
+    height: 65px;
+    position: absolute;
+    left: 20px;
+    top: 10px
+}
+
+.master1 header .logo img {
+    width: 100%
+}
+
+.master1 nav {
+    width: 100%;
+    height: 60px;
+    bottom: 0
+}
+
+.menu1 {
+    text-align: center;
+    height: 60px auto
+}
+
+.menu1 ul {
+    margin-left: 10%;
+    list-style: none;
+    display: flex;
+    justify-content: start
+}
+
+.menu1 li a {
+    color: #000;
+    text-decoration: none;
+    padding: 20px 35px;
+    display: block
+}
+
+.menu1 ul li a:hover {
+    color: blue
+}
+
+.busca {
+    text-align: center;
+    margin-right: 190px;
+    float: right;
+    display: flex
+}
+
+.busca input {
+    background-image: url(images/icons/search2.png);
+    background-repeat: no-repeat;
+    height: 20px;
+    padding: 10px;
+    width: 190px;
+    margin-top: -140px;
+    background-position: 96%;
+    border: 1px solid #d6d6d6;
+    display: flex
+}
+
+.master1 nav {
+    display: none;
+}
+
+
+/*===========================================Icone laterais*/
+
+.Social-Bar {
+    position: fixed;
+    right: 0;
+    top: 35%;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 100
+}
+
+.icon {
+    color: white;
+    text-decoration: none;
+    padding: .7rem;
+    display: flex;
+    transition: all .5s
+}
+
+.icon-facebook {
+    background: #2E406E
+}
+
+.icon-twitter {
+    background: #339DC5
+}
+
+.icon-instagram {
+    background: linear-gradient(45Deg, #405DE6, #5851DB, #833AB4, #C13584, #C13584, #E1306C, #FD1D1D)
+}
+
+.icon:first-child {
+    border-radius: 1rem 0 0 0
+}
+
+.icon:last-child {
+    border-radius: 0 0 0 1rem
+}
+
+.icon:hover {
+    padding-right: 3rem;
+    border-radius: 1rem 0 0 1rem;
+    box-shadow: 0 0 .5rem rgb(255, 255, 255)
+}
+
+
+/*===================AREA DO TRATAMENTO====================*/
+
+.tratamento {
+    width: 100%;
+    position: relative;
+    padding: 1rem;
+    margin: auto;
+    box-sizing: border-box;
+    max-width: 460px;
+    align-self: center
+}
+
+.tratamento img {
+    margin-top: 20px;
+    max-width: 50px
+}
+
+h2 {
+    padding: 10px 20px
+}
+
+.balaoContainer {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    z-index: 1;
+    width: 100%;
+    border: 1px solid #ccc
+}
+
+#balao {
+    background: #fff;
+    position: relative;
+    padding: 1rem;
+    width: auto;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100px;
+    color: #111;
+    background: linear-gradient(45deg, #ccede3, #bee3e3)
+}
+
+#balao h5,
+#balao p {
+    align-self: center
+}
+
+#balao h5 {
+    padding: .5rem;
+    box-sizing: border-box
+}
+
+#balao:before,
+#balao::after {
+    content: '';
+    position: absolute;
+    background: #fff
+}
+
+#balao:before {
+    width: 19px;
+    height: 19px;
+    left: -10px;
+    top: 17px;
+    -webkit-transform: rotate(45deg);
+    border: 1px solid #ccc
+}
+
+#balao::after {
+    width: 20px;
+    height: 22px;
+    left: -7.5px;
+    top: 16px;
+    -webkit-transform: rotate(45deg);
+    z-index: 9999
+}
+
+.itemComentario figure {
+    display: flex;
+    align-items: flex-end
+}
+
+.itemComentario figcaption p {
+    align-self: flex-end
+}
+
+.itemComentario h4 {
+    margin-top: .3rem
+}
+
+.itemComentario p {
+    text-align: left;
+    padding: 20px
+}
+
+.btn {
+    background: none;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: #6eb9b4;
+    width: 7rem;
+    margin: .4rem 0;
+    align-self: flex-end;
+    color: #fff
+}
+
+.btn:hover {
+    color: #fff;
+    background-color: #7bc5c0;
+    transition: .2s all ease-in-out
+}

@@ -5,7 +5,7 @@ namespace Controller;
 class FrontController
 {
     //Itens por página
-    private $itemPagina = 5;
+    private $itemPagina = 3;
     //Página Atual de exibição
     private $paginaAtual = 0;
     //Registro inicial da paginação
@@ -78,10 +78,10 @@ class FrontController
     //                 </figure>
     //                 </a>
     //                 <a href='http://localhost/Sebook/area/adm/cadastro/cadPostagem/alter/" . $post['idPostagem'] . "'>
-    //                     <img src='" . _URLBASE_ . "public/img/editar.jpg'>
+    //                     <img src='" . _URLBASE_ . "public/icon/editar.svg'>
     //                 </a>
     //                 <a href='http://localhost/Sebook/area/adm/cadastro/cadPostagem/delete/" . $post['idPostagem'] . "'>
-    //                      <img src='" . _URLBASE_ . "public/img/excluir.jpg'>
+    //                      <img src='" . _URLBASE_ . "public/icon/excluir.svg'>
     //                 </a>
     //             </div>";
     //         }
@@ -98,11 +98,14 @@ class FrontController
             $this->paginaAtual = $pagina;
             //calculo do registro inicial;
             $this->regIni = ($this->paginaAtual - 1) * $this->itemPagina;
+           
         }
     }
 
     public function exibirNotificador($urlDoNotificador)
     {
+        //
+        //ceil($this->modoDAO->totalContar() / $this->itemPagina);
         $qtdePaginas = ceil($this->modoDAO->totalContar() / $this->itemPagina);
 
         $notificador = "<ul>";

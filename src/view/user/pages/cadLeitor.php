@@ -66,7 +66,7 @@ if (isset($_POST['enviar'])) {
 <section class="cadastro">
 	<div class="container">
 		<figure>
-			<img src="<?= _ICONBASE_ ?>user.svg" alt="">
+			<img src="<?= _ICONBASE_ ?>userSVG.svg" alt="">
 			<figcaption>Cadastre-se</figcaption>
 		</figure>
 		<p>

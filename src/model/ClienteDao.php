@@ -109,7 +109,6 @@ class ClienteDAO extends Cliente
         );
 
         return $result;
-        // ':url_foto_cliente' => array(0 => $this->getUrlFotoCliente(), 1 => \PDO::PARAM_STR),
     }
 
     public function adicionarCliente()
