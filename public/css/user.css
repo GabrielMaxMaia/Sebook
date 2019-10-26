@@ -2,6 +2,12 @@
 
 @import './slick.css';
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -24,7 +30,7 @@ div#containerTemplate::before {
 }
 @media (max-width:779.99px) {
     div#containerTemplate::before {
-        min-height: 90px
+        min-height: 125.8px
     }
 }
 
@@ -34,12 +40,6 @@ div#containerTemplate {
     margin: 0 auto 4%;
     box-sizing: border-box;
     min-height: 500px
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0
 }
 
 /*===================AREA DO ACERVO SEBO====================*/
@@ -446,87 +446,59 @@ div#containerTemplate {
 
 /*===================AREA DO LIVRO====================*/
 
+/*Gif de carregamento na busca de livros*/
+#loading{  
+    position: absolute;
+    top: 2.5%;
+    margin: auto
+}
+div#contentLoading{
+    display:flex;
+    justify-content:center;
+}
+.loadGif{
+    max-width: 91px;
+    margin: 4% auto 0
+}
+
+/*Sem resultado*/
+.noResult{
+    padding: .5rem 1rem;
+}
+
 .pagLivro {
     padding: 10% 0
 }
 
-.pagLivro .search-box {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #2f3640;
-    height: 40px;
-    border-radius: 40px;
-    padding: 4px
+.input-prepend {
+    display:flex;
+    padding:1rem
 }
 
-.pagLivro .search-box:hover>.search-btn {
-    background: white;
-}
-.pagLivro .search-btn {
-    color: #e84118;
-    float: right;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    background: #2f3640;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.4s;
-}
-
-.pagLivro .search-txt {
-    border: none;
-    background: none;
+.pagLivro .input-prepend input{
+    background: #fff;
+    border-radius: 24px;
+    padding: 0.5rem 1rem;
+    margin: auto;
     outline: none;
-    float: left;
-    padding: 0 6px;
-    color: white;
-    font-size: 16px;
-    transition: 0.4s;
-    line-height: 40px;
-    width: 400px;
-
+    border: 1px solid #111;
+    width: 100%;
+    max-width: 542px;
+    font-size: 1rem
 }
 
-.pagLivro .search-box img {
-    height: 40px;
-}
-
-@media (max-width:900px) {
-    .pagLivro .search-box {
-        height: 40px;
-    }
-
-    .pagLivro .search-btn {
-        top: -43px
-    }
-
-    .pagLivro .search-txt {
-        width: 0px;
-        padding: 0px;
-    }
-
-    .pagLivro .search-box:hover>.search-txt {
-        width: 300px;
-    }
-
-    .pagLivro .search-box:hover>.search-btn {
-        background: white;
-        position: relative
-    }
+.input-prepend input::placeholder {
+    color:#000
 }
 
 .pagLivro .estante-slider {
     width: 100%;
-    margin-bottom: 20px
+    margin: 3rem 0
 }
-
 .pagLivro .estante-slider .titulo-estante-slider {
-    margin-bottom: 10px
+    padding: 0 1rem;
+    margin: -1rem 0
 }
-
 /*===================AREA DO LOGIN====================*/
 
 .containerLogin {
@@ -808,6 +780,11 @@ div#containerTemplate {
 .quemSomos {
     max-width: 650px;
     margin: auto;
+}
+
+.quemSomos .container{
+    margin:auto;
+    padding:1rem
 }
 
 .quemSomos .container h1 {
@@ -1219,7 +1196,9 @@ header .menuGroup {
         width: 100%;
         top: 0;
         z-index: 99999;
-        padding-bottom: 4%
+        padding-bottom: 4%;
+        min-height:125px;
+        max-height:126px
     }
 
     .headerStatic {
@@ -1860,3 +1839,4 @@ section.jumbotron{
     max-width: 361px;
     border-radius: 34px
 }
+

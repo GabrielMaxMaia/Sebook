@@ -18,7 +18,6 @@ $result = $postagemDAO->listarPostagem();
 $comentarioDAO->setIdPost($GetPost);
 $resultComentario = $comentarioDAO->listarComentarioPost();
 
-
 //Include para evitar reenvio
 include "includes/evitarReenvio.php";
 
@@ -49,14 +48,13 @@ if ($result != null) {
 //var_dump($_POST);
 //Processsa formulário que envia comentário
 if (isset($_POST['enviarComentario'])) {
-    
+
     // $comentarioDAO->setIdComentarioParente($_POST['idComentarioParente']);
 
     $erro = false;
     if ($_POST['txtComentario'] != null || $_POST['txtComentario'] != "") {
         echo "foi?";
         $comentarioDAO->setTxtComentario($_POST['txtComentario']);
-   
     } else {
         $erro = true;
         echo "Escreva Algo antes de enviar";

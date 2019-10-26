@@ -34,7 +34,7 @@ $msg = "";
 // }
 //resgata os dados na tabela
 $msg .= "<ul class='containerResult'>";
-if (count($resultado)) {
+if ($resultado) {
     foreach ($resultado as $livro) {
         // $msg .= "                <tr>";
         // $msg .= "                    <td>" . $livro['isbnLivro'] . "</td>";
@@ -60,7 +60,7 @@ if (count($resultado)) {
     }
 } else {
     $msg = "";
-    $msg .= "Nenhum resultado foi encontrado...";
+    $msg .= "<p class='noResult'>Nenhum resultado foi encontrado...</p>";
 }
 $msg .= "</ul>";
 // $msg .= "    </tbody>";
