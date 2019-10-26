@@ -12,6 +12,8 @@ class UsuarioDAO extends Usuario
 
     private static $SELECT_ALL = "select * from usuario where cod_status_Usuario = '1'";
 
+    private static $SELECT_EMAIL = "SELECT email_usuario from usuario where email_usuario =:emailUsuario";
+
     private static $SELECT_PERFIL = "select * from perfil where cod_status_perfil = '1'";
 
     private static $SELECT_ID = "select * from usuario where id_usuario = :idUsuario";
@@ -79,6 +81,27 @@ class UsuarioDAO extends Usuario
         return $itens;
     }
 
+    public function listarEmailUsuario()
+    {
+        //executar a consulta no banco
+        $result = $this->sql->query(
+            UsuarioDAO::$SELECT_EMAIL,
+            array(
+                ':emailUsuario' => array(0 => $this->getEmailUsuario(), 1 => \PDO::PARAM_STR)
+            )
+        );
+        if ($result->rowCount() == 1) {
+            $linha = $result->fetch(\PDO::FETCH_OBJ);
+            $itens = array(
+                'emailUsuario' => $linha->email_usuario,   
+            );
+        } else {
+            $itens = null;
+        }
+        //devolver o resultado     
+        return $itens;
+    }
+    
     public function listarUsuarioId()
     {
         //executar a consulta no banco

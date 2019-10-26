@@ -34,7 +34,16 @@ $output = ob_get_clean();
 
     <!-- https://code.jquery.com/jquery-2.1.1.js -->
     <script type="text/javascript" src="<?= _URLBASE_ ?>public/js/jquery-2.1.0.js"></script>
-        
+    
+    <script src='<?= _URLBASE_ ?>public/js/validacoes.js'></script>
+    <!--<Máscara para o CNPJ>-->
+    <script src='https://www.geradorcnpj.com/assets/js/jquery-1.2.6.pack.js'></script> 
+    <!--<Máscara para o CNPJ>--> 
+    <script src='https://www.geradorcnpj.com/assets/js/jquery.maskedinput-1.1.4.pack.js'></script>
+     <!--<Máscara para o CPF>-->
+    <script src='https://www.geradorcpf.com/assets/js/jquery-1.2.6.pack.js'></script>
+    <!--<Máscara para o CPF>--> 
+    <script src='https://www.geradorcpf.com/assets/js/jquery.maskedinput-1.1.4.pack.js'></script>
 </head>
 
 <body>

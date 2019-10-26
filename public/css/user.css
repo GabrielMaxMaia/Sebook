@@ -1795,14 +1795,19 @@ input[type=checkbox]:checked + figure figcaption {
 
 /*Busca dinâmica formatação*/
 
+
 #MostraPesq{
     display: flex;
     flex-direction: column;
-    max-width: 500px;
+    max-width: 546px;
     justify-content: center;
-    margin: auto
+    margin: auto;
+   
 }
-
+section.jumbotron{
+    position: absolute;
+    z-index: 999;
+}
 #MostraPesq img{
     width: 100%;
     max-width: 75px;
@@ -1810,12 +1815,13 @@ input[type=checkbox]:checked + figure figcaption {
 }
 
 .containerResult{
-    background: linear-gradient(45deg, black, #d2f1da)
+    background: linear-gradient(45deg, #ffffffc7, #fffffff5);
+    border-radius:8px
 }
 
 .containerResult li{
     list-style:none;
-    color:#fff
+    color:#111
 }
 
 .containerResult figure{
@@ -1829,10 +1835,28 @@ input[type=checkbox]:checked + figure figcaption {
     width: 100%;
     padding: 1rem;
     min-height: 100px;
-    color:azure;
-    background: #cc000012 fixed no-repeat
+    color:#111;
+    background: #f9f9f9a8 fixed no-repeat;
 }
 .containerResult figcaption:hover{
-    background:#0000002b;
-    transition:.1s
+    background:#eaeaeac9;
+    transition:.1s all ease-in-out
+}
+
+/*Erro para formulários*/
+.error{
+    border: solid 1px 	rgb(148,18,23);
+    box-shadow: 3px 3px 10px rgb(148, 18, 23);
+}
+  
+/*Classe de erro para cadastro*/
+.errorCad{
+    padding: 1rem;
+    margin: auto;
+    text-align: center;
+    padding: 1rem;
+    background: #d01919d9;
+    color: #fff;
+    max-width: 361px;
+    border-radius: 34px
 }

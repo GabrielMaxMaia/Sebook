@@ -78,17 +78,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
 
 			<div class="formItem">
 				<label for="nomeUsuario">Nome</label>
-				<input type="text" name="nomeUsuario" id="nomeUsuario" value="<?= $usuarioDAO->getNomeUsuario() ?>">
+				<input type="text" name="nomeUsuario" id="nomeUsuario" required oninvalid="this.setCustomValidity('Campo Obrigatório!')" 
+				onchange="try{setCustomValidity('')}catch(e){}" value="<?= $usuarioDAO->getNomeUsuario() ?>"
+				onblur='valida_nome(this.value)'>
 			</div>
 
 			<div class="formItem">
 				<label for="nomeUsuario">Sobrenome</label>
-				<input type="text" name="sobrenomeUsuario" id="sobrenomeUsuario" value="<?= $usuarioDAO->getSobrenomeUsuario()  ?>">
+				<input type="text" name="sobrenomeUsuario" id="sobrenomeUsuario" required oninvalid="this.setCustomValidity('Campo Obrigatório!')" 
+				onchange="try{setCustomValidity('')}catch(e){}"value="<?= $usuarioDAO->getSobrenomeUsuario()  ?>"
+				onblur='valida_sobrenome(this.value)'>
 			</div>
 
 			<div class="formItem">
 				<label for="emailUsuario">E-mail</label>
-				<input type="text" name="emailUsuario" id="emailUsuario" value="<?= $usuarioDAO->getEmailUsuario()  ?>">
+				<input type="text" name="emailUsuario" id="emailUsuario" required value='<?= $usuarioDAO->getEmailUsuario() ?>'
+				onblur='mascaraEmail(this)'>
 			</div>
 
 
@@ -104,17 +109,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
 
 			<div class="formItem">
 				<label for="cnpjSebo">CNPJ</label>
-				<input type="text" name="cnpjSebo" id="cnpjSebo" value="<?= $seboDAO->getCnpjSebo() ?>">
+				<input type="text" name="cnpjSebo"  id="cnpjSebo" required value="<?= $seboDAO->getCnpjSebo() ?>"
+				onblur='valida_cnpj(this)'>
 			</div>
 
 			<div class="formItem">
 				<label for="inscEstadualSebo">Inscrição Estadual</label>
-				<input type="text" name="inscEstadualSebo" id="inscEstadualSebo" value="<?= $seboDAO->getInscEstadualSebo() ?>">
+				<input type="text" name="inscEstadualSebo" id="inscEstadualSebo" value="<?= $seboDAO->getInscEstadualSebo() ?>"
+				onblur='CheckIE(this)'>
 			</div>
 
 			<div class="formItem">
 				<label for="cepEndSebo">CEP</label>
-				<input type="text" name="cepEndSebo" id="cepEndSebo" value="<?= $seboDAO->getCepEndSebo() ?>">
+				<input type="text" name="cepEndSebo" id="cepEndSebo" require value="<?= $seboDAO->getCepEndSebo() ?>"
+				onblur="pesquisacepsebo(this.value);">
 			</div>
 
 			<div class="formItem">
@@ -139,7 +147,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
 
 			<div class="formItem">
 				<label for="numEndSebo">Número</label>
-				<input type="text" name="numEndSebo" id="numEndSebo" value="<?= $seboDAO->getNumEndSebo() ?>">
+				<input type="text" name="numEndSebo" id="numEndSebo" required value="<?= $seboDAO->getNumEndSebo() ?>"
+				onblur='valida_numerosebo(this.value)'>
 			</div>
 
 			<div class="formItem">
@@ -149,22 +158,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
 
 			<div class="formItem">
 				<label for="numTelSebo">Telefone</label>
-				<input type="text" name="numTelSebo" id="numTelSebo" value="<?= $seboDAO->getNumTelSebo() ?>">
+				<input type="text" name="numTelSebo" id="numTelSebo" placeholder='(00) 0000-0000' required value="<?= $seboDAO->getNumTelSebo() ?>"
+				onblur='mascaraTel(this)'>
 			</div>
 
 			<div class="formItem">
 				<label for="celular1Sebo">Celular 1</label>
-				<input type="text" name="celular1Sebo" id="celular1Sebo" value="<?= $seboDAO->getCelular1Sebo() ?>">
+				<input type="text" name="celular1Sebo" id="celular1Sebo" placeholder='(00) 00000-0000' required value="<?= $seboDAO->getCelular1Sebo() ?>"
+				onblur='mascaraTel(this)'>
 			</div>
 
 			<div class="formItem">
 				<label for="celular2Sebo">Celular 2</label>
-				<input type="text" name="celular2Sebo" id="celular2Sebo" value="<?= $seboDAO->getCelular2Sebo() ?>">
+				<input type="text" name="celular2Sebo" id="celular2Sebo" placeholder='(00) 00000-0000' value="<?= $seboDAO->getCelular2Sebo() ?>"
+				onblur='mascaraTel2(this)'>
 			</div>
 
 			<div class="formItem">
 				<label for="urlSiteSebo">Link e/ou site</label>
-				<input type="text" name="urlSiteSebo" id="urlSiteSebo" value="<?= $seboDAO->getUrlSiteSebo() ?>">
+				<input type="text" name="urlSiteSebo" id="urlSiteSebo" Placeholder="Campo Opcional"value="<?= $seboDAO->getUrlSiteSebo() ?>" >
 			</div>
 
 			<input type="submit" name="atualizar" value="Atualizar">
@@ -181,3 +193,40 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
 		?>
 	</div>
 </section>
+
+<script type="text/javascript">
+	$(document).ready(function(){	
+		$("#cnpjSebo").mask("99.999.999/9999-99");
+	});
+</script>
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#inscEstadualSebo").mask("999.999.999.999");
+	});
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#cepEndSebo").mask("99999-999");
+	});
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#numTelSebo").mask("(99) 9999-9999");
+	});
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#celular2Sebo").mask("(99) 99999-9999");
+	});
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#celular1Sebo").mask("(99) 99999-9999");
+	});
+</script>

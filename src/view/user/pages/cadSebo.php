@@ -13,6 +13,15 @@ include "includes/evitarReenvio.php";
 
 if (isset($_POST['enviar'])) {
 
+	$usuarioDAO->setEmailUsuario($_POST['emailUsuario']);
+	$usuarioDAO->listarEmailUsuario();
+
+	if($usuarioDAO->listarEmailUsuario() > 0){
+
+		echo "<p class='errorCad'>Email já cadastrado, verifique seus dados.</p>";
+
+	}else{
+
 	$erro = false;
 	//Nome
 	if ($_POST['nomeUsuario'] != "") {
@@ -57,6 +66,7 @@ if (isset($_POST['enviar'])) {
 	if(isset($success)){
 		echo "Cadastrado com sucesso";
 	}
+}
 
 }
 
@@ -82,8 +92,10 @@ if (isset($_POST['enviar'])) {
 
 			<div class="formItem">
 				<label for="emailUsuario">E-mail</label>
-				<input type="text" name="emailUsuario" id="emailUsuario" value="<?= $_POST['emailUsuario'] ?? '' ?>">
+				<input type="text" name="emailUsuario" id="emailUsuario" required value="<?= $_POST['emailUsuario'] ?? '' ?>"
+				onblur='mascaraEmail(this)'>
 			</div>
+
 			<div class="formItem">
 				<label for="senhaUsuario">Senha</label>
 				<input type="password" name="senhaUsuario" id="senhaUsuario" value="<?= $_POST['senhaUsuario'] ?? '' ?>">
