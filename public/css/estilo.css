@@ -7,9 +7,10 @@
 }
 
 #container{
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
-  
+    /* max-width:1200px; */
+    background:#CCC;
 }
 
 #container::after {
@@ -87,9 +88,7 @@ header form{
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
 }
-p{
-    margin-right: 135px; 
-}
+
 p a{
     color: white;
     text-decoration: none;
@@ -168,18 +167,21 @@ p a:hover{
     border-color: #DB0237;
 }
 main{
-    width: 90%;
-    height: 600px;
-    margin: 0 auto;
-    display: flex
-
+    display:flex;
+    width: 100%
 }
-
 main aside {
-    width: 20%;
-    height: 600px;
-    background-color: #BAB01D;
-    display: block
+    width:100%;
+    max-width:300px;
+    background-color: #BAB01D
+}
+@media (max-width:750px){
+    main{
+        flex-wrap:wrap;
+    }
+    main aside{
+        max-width:1000px;
+    }
 }
 
 ul {
@@ -212,10 +214,8 @@ nav h4 {
 
 
 main article{
-    background-color: wheat;
-    width: 80%;
-    height: 600px;
-    display: block;
+    width: 100%;
+    /* display: block; */
 }
 
 
@@ -311,6 +311,7 @@ td {
 }
 td a img{
     padding-bottom: 2px;
+    max-width:20px
 }
 figure img{
     padding-bottom: 2px;
@@ -366,4 +367,36 @@ a, a:visited{
 a:hover{
         color: #DB0237;
         font-weight: bolder;
+}
+
+.postagemItem a img{
+    max-width:20px;
+}
+
+/*Header adm*/
+.logGroup{
+    background-color: rgb(200, 239, 204);
+}
+#logFig{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 1rem;
+}
+#logFig label{
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin: 5px 0;
+    flex-direction: column
+}
+#logFig img{
+    border-radius: 59%;
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+}
+#logFig p{
+    margin:0;
+    text-align:center
 }

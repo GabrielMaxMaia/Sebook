@@ -22,7 +22,7 @@
     <link rel=stylesheet media="screen and (min-width:481px) and (max-width:768px)" href="<?php echo _URLBASE_ ?>css/estilo768.css"> <!-- de 5.5" a 6.7" fablet -->
     <link rel=stylesheet media="screen and (min-width:769px) and (max-width:1024px)" href="<?php echo _URLBASE_ ?>css/estilo1024.css"> <!-- tablet -->
     <link rel=stylesheet media="screen and (min-width:1025px)" href="<?php echo _URLBASE_ ?>css/estilo1025.css">
-
+   
     <!-- Auxiliares -->
     <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
 
@@ -36,26 +36,23 @@
 
     $autenticadorController = new \Controller\AutentificadorController($sql);
 
-    
-    // $autenticadorController->validarAcesso('". _URLBASE_ ."area/adm', array(0=>1, 1=>2, 1=>3));
-  
     $autenticadorController->efetuarLogin();
     $autenticadorController->efetuarLogOut();
 
     $autenticadorController->validarAcesso($_SESSION['userLogado']['acesso']);
 
+    if ($acessoUser != "" && $acessoUser != 5) {
+        $clienteDAO = new Model\ClienteDAO($sql);
+        $clienteDAO->setIdUsuario($IdUser);
+        $resultPerfil = $clienteDAO->listarClienteId();
+        $img = $resultPerfil['urlFotoCliente'];
+    } else {
+        $img = "";
+    }
+    $autenticadorController->toggleLogin($img);
     ?>
     <div id=container>
-        <header>
-            <section>
-                <h1>Games<sub>4</sub>All</h1>
-                <h2>Área Administrativa </h2>
-            </section>
-            <section>
-            </section>
-        </header>
         <main>
-
             <aside>
                 <?php
                 // require_once './src/view/adm/menu.php';
@@ -75,13 +72,13 @@
                 ?>
             </article>
         </main>
-        <footer>
+        <!-- <footer>
             <ul class="icons">
-                <li><a href="#"><img src="<?= _URLBASE_ ?>public/icon/facebook.svg" alt="">Facebook</a></li>
-                <li><a href="#"><img src="<?= _URLBASE_ ?>public/icon/twitter.svg" alt="">Twitter</a></li>
-                <li><a href="#"><img src="<?= _URLBASE_ ?>public/icon/instagram.svg" alt="">LinkedIn</a></li>
+                <li><a href="#"><img src="<?//= _URLBASE_ ?>public/icon/facebook.svg" alt="">Facebook</a></li>
+                <li><a href="#"><img src="<?//= _URLBASE_ ?>public/icon/twitter.svg" alt="">Twitter</a></li>
+                <li><a href="#"><img src="<?//= _URLBASE_ ?>public/icon/instagram.svg" alt="">LinkedIn</a></li>
             </ul>
-        </footer>
+        </footer> -->
     </div>
 
 

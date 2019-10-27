@@ -247,7 +247,7 @@ class PostagemController
         if ($result != null) {
             foreach ($result as $post) {
                 $postagem .= "
-                <div class=''>
+                <div class='postagemItem'>
                     <figure>
                        <img src='" . _URLBASE_ . $post['urlFotoPost'] . "' style='max-width:300px;'>
                        <figcaption>

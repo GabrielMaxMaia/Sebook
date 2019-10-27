@@ -97,7 +97,7 @@ class ComentarioController
     public function recuperarDadosFormulario()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $this->comentarioDAO->setIdPost($_POST['id']);
+            $this->comentarioDAO->setIdPost($_POST['idPost']);
             $this->comentarioDAO->setIdUsuario($_POST['idUsuario']);
             $this->comentarioDAO->setIdComentarioParente($_POST['idComentarioParente']);
             $this->comentarioDAO->setTxtComentario($_POST['txtComentario']);
@@ -160,7 +160,7 @@ class ComentarioController
             $this->comentarioDAO->setIdComentarioParente($Comentario['idComentarioParente']);
             $this->comentarioDAO->setTxtComentario($Comentario['txtComentario']);
             $this->comentarioDAO->setDataHoraComentario($Comentario['dataHoraComentario']);
-            $this->comentarioDAO->setIdPost($Comentario['id']);
+            $this->comentarioDAO->setIdPost($Comentario['idComentario']);
             $this->comentarioDAO->setIdUsuario($Comentario['idUsuario']);
         }
     }

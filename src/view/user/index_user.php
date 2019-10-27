@@ -1,8 +1,4 @@
 <?php
-//Variável para definir o nivel de acesso de cada úsuario
-$acessoUser = $_SESSION['userLogado']['acesso'] ?? "";
-//Variavel para definir o id do Usuario logado
-$IdUser = $_SESSION['userLogado']['idUsuario'] ?? "";
 
 ob_start();
 if (isset($_GET['page']) && $_GET['page'] != "") {

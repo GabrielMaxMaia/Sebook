@@ -1780,7 +1780,6 @@ form select {
 
 /*Busca dinâmica formatação*/
 
-
 #MostraPesq{
     display: flex;
     flex-direction: column;
@@ -1845,8 +1844,6 @@ section.jumbotron{
     border-radius: .5rem;
     z-index: 99
 }
-
-
 
 @media (max-width:780px){
     .successCad, .errorCad{

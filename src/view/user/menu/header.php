@@ -27,8 +27,6 @@
 		$autenticadorController->toggleLogin($img);
 		$autenticadorController->efetuarLogOut();
 
-		
-
 		?>
 	</div>
 	<nav class="navDesk">
