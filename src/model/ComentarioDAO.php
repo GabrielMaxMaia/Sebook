@@ -12,19 +12,14 @@ class ComentarioDAO extends Comentario
 
     private static $SELECT_ID = "select * from comentario WHERE id_comentario =:idComentario";
 
-    private static $SELECT_ID_POSTAGEM = "SELECT * from comentario inner join usuario WHERE comentario.id_usuario = usuario.id_usuario and id_post = :idPost and cod_status_comentario = '1' ORDER BY id_comentario DESC";
+    private static $SELECT_ID_POSTAGEM = "SELECT id_post, id_comentario, id_comentario_parente, txt_comentario, data_hora_comentario, cod_status_comentario, id_perfil, usuario.id_usuario, nome_usuario, email_usuario FROM comentario inner join usuario WHERE comentario.id_usuario = usuario.id_usuario AND id_post = :idPost AND cod_status_comentario = '1' ORDER BY id_comentario DESC";
 
     private static $INSERT = "INSERT INTO comentario(id_comentario_parente, txt_comentario, data_hora_comentario, id_post, id_usuario) VALUES (:idComentarioParente, :txtComentario, :dataHoraComentario, :idPost, :idUsuario)";
 
-
-    private static $UPDATE = "UPDATE comentario SET
-                                 txt_comentario = :txtComentario 
-                              WHERE id_comentario =  :idComentario";
+    private static $UPDATE = "UPDATE comentario SET txt_comentario = :txtComentario WHERE id_comentario = :idComentario";
 
     //DELETE lógico -> altera status
-    private static $DELETE = "UPDATE comentario SET
-                                    cod_status_comentario = '0'
-                                WHERE id_comentario = :idComentario ";
+    private static $DELETE = "UPDATE comentario SET cod_status_comentario = '0' WHERE id_comentario = :idComentario ";
 
     //Atributo par armazenar o Objeto SQL 
     private $sql;
@@ -100,17 +95,6 @@ class ComentarioDAO extends Comentario
             )
         );
         if ($result->rowCount() > 0) {
-            // $linha = $result->fetch(\PDO::FETCH_OBJ);
-
-            // $itens = array(
-            //     'idComentario' => $linha->id_comentario,
-            //     'idComentarioParente' => $linha->id_comentario_parente,
-            //     'txtComentario' => $linha->txt_comentario,
-            //     'dataHoraComentario' => $linha->data_hora_comentario,
-            //     'codStatusComentario' => $linha->cod_status_comentario,
-            //     'idPost' => $linha->id_post,
-            //     'idUsuario' => $linha->id_usuario
-            // );
 
             while ($linha = $result->fetch(\PDO::FETCH_OBJ)) {
                 $itens[] = array(
@@ -124,7 +108,7 @@ class ComentarioDAO extends Comentario
                     'nomeUsuario' => $linha->nome_usuario
                 );
             }
-            //var_dump($itens);
+            var_dump($itens);
         } else {
             $itens = null;
         }

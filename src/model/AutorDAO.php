@@ -11,7 +11,9 @@ class AutorDAO extends Autor
     //Atributos - serão os comandos SQL  + um objeto Sql
     private static $SELECT_ALL = "select * from autor where cod_status_autor = '1'";
 
-    private static $SELECT_ID = "select * from Autor where id_autor = :idAutor";
+    // private static $SELECT_ID = "SELECT * FROM Autor INNER JOIN nacionalidade AS Na  id_autor = :idAutor";
+
+    private static $SELECT_ID = "SELECT * FROM autor INNER JOIN nacionalidade AS Na WHERE autor.id_nacionalidade = Na.id_nacionalidade AND id_autor = :idAutor";
 
     private static $INSERT = "INSERT INTO autor (nome_autor, id_nacionalidade) VALUES (:nomeAutor, :idNacionalidade)";
 
@@ -75,7 +77,8 @@ class AutorDAO extends Autor
                 'idAutor' => $linha->id_autor,
                 'nomeAutor' => $linha->nome_autor,
                 'codStatusAutor' => $linha->cod_status_autor,
-                'idNacionalidade' => $linha->id_nacionalidade
+                'idNacionalidade' => $linha->id_nacionalidade,
+                'nomeNacionalidade' => $linha->nome_nacionalidade
             );
         } else {
             $itens = null;

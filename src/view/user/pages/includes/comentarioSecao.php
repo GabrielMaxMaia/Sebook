@@ -1,6 +1,5 @@
 <?php
-
-// var_dump($resultComentario);
+var_dump($resultComentario);
 if ($resultComentario != null || $resultComentario >= 1) {
 
     foreach ($resultComentario as $comentario) {
@@ -12,7 +11,7 @@ if ($resultComentario != null || $resultComentario >= 1) {
                     <?php
                         $usuarioDAO->setIdUsuario($IdUser);
                     ?>
-                    <?//= $comentario['idComentario'] ?>
+                    <?//=$comentario['idComentario']?>
                     <?= $comentario['txtComentario'] ?><br>
                     <span> - Por <?= $comentario['nomeUsuario'] ?></span>
                     <span>
@@ -34,8 +33,8 @@ if ($resultComentario != null || $resultComentario >= 1) {
                             $resultComentarioId = $comentarioDAO->listarComentarioId();
 
                             $comentarioDAO->setTxtComentario($resultComentarioId['txtComentario']);
-                    ?>
-                        <label class="btn-modal-cadastre" for="modal-editar" value="<?= $comentario['idComentario'] ?>" onclick="return pegaId(<?= $comentario['idComentario'] ?>,'<?= $comentario['txtComentario']?>')">Editar</label>
+                        ?>
+                        <label class="btn-modal-cadastre" for="modal-editar" value="<?= $comentario['idComentario'] ?>" onclick="return pegaId(<?= $comentario['idComentario'] ?>,'<?= $comentario['txtComentario'] ?>')">Editar</label>
 
                         <!--Formulário para excluir-->
                         <form method="post" action="" name="exçluir">
@@ -60,8 +59,8 @@ if ($resultComentario != null || $resultComentario >= 1) {
                 <?php
                     //A opção de responder só aparece para quem está logado
                     if ($IdUser != "") {
-                ?>
-                    <label class="btn-modal-cadastre" for="modal-responder" value="<?= $comentario['idComentario'] ?>" onclick="return pegaId(<?= $comentario['idComentario'] ?>)">Responder</label>
+                    ?>
+                    <!-- <label class="btn-modal-cadastre" for="modal-responder" value="<? //= $comentario['idComentario']?>" onclick="return pegaId(<? //= $comentario['idComentario']?>)">Responder</label> -->
 
                     <label class="btn-modal-cadastre" for="modal-editar" value="<?= $comentario['idComentario'] ?>" onclick="return pegaId(<?= $comentario['idComentario'] ?>)">Editar</label>
                 <?php
@@ -72,7 +71,7 @@ if ($resultComentario != null || $resultComentario >= 1) {
         }
     }
 } else {
-    echo "<p>Não existem comentários nesssa postagem, seja o primeiro a comentar</p>";
+    echo "<p>Seja o primeiro o primeiro a comentar.</p>";
 }
 ?>
 
@@ -98,12 +97,12 @@ if ($resultComentario != null || $resultComentario >= 1) {
                             //gId(idComentario).setAttribute('value',id);
                             document.getElementById("idComentario").setAttribute("value", id);
 
-                            document.getElementById("txtComentarioAtualiza").innerHTML=msg;
+                            document.getElementById("txtComentarioAtualiza").innerHTML = msg;
 
                             return
                         }
                     </script>
-                   
+
                     <input type="hidden" name="idComentario" id="idComentario">
 
                     <input type="hidden" name="idPost" value="<?= $comentarioDAO->getIdPost() ?>">
@@ -112,9 +111,8 @@ if ($resultComentario != null || $resultComentario >= 1) {
                     <label for="txtComentarioAtualiza">Comentário</label>
                     <textarea type="text" name="txtComentarioAtualiza" id="txtComentarioAtualiza">
                         <?php
-                            $comentarioDAO->getTxtComentario(); 
+                        $comentarioDAO->getTxtComentario();
                         ?>
-                        
                     </textarea>
                     <input type="submit" value="Atualizar">
                 </form>
@@ -137,7 +135,7 @@ if (isset($_POST['txtComentarioAtualiza'])) {
 ?>
 
 <!--Modal para responder o amiguinho-->
-<section class="modal">
+<!-- <section class="modal">
     <input class="modal-open" id="modal-responder" type="checkbox" hidden>
     <div class="modal-wrap" aria-hidden="true" role="dialog">
         <label class="modal-overlay" for="modal-responder"></label>
@@ -147,11 +145,13 @@ if (isset($_POST['txtComentarioAtualiza'])) {
                 <label class="btn-close" for="modal-responder" aria-hidden="true">×</label>
             </div>
             <div class="modal-body">
-                <!--Formulário de comentário-->
+                Formulário de comentário
                 <form name="responderComment" method="post">
-                    <input type="hidden" name="idPost" value="<?= $comentarioDAO->getIdPost() ?>">
+                    <input type="hidden" name="idPost" value="<? //= $comentarioDAO->getIdPost() 
+                                                                ?>">
 
-                    <input type="hidden" name="idUsuario" value="<?= $comentarioDAO->getIdUsuario() ?>">
+                    <input type="hidden" name="idUsuario" value="<? //= $comentarioDAO->getIdUsuario() 
+                                                                    ?>">
 
                     <input type="hidden" name="idComentarioParente" id="idComentario">
 
@@ -167,18 +167,18 @@ if (isset($_POST['txtComentarioAtualiza'])) {
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <?php
-if (isset($_POST['responderComentario'])) {
-    $comentarioDAO->setIdPost($_POST['idPost']);
-    $comentarioDAO->setIdUsuario($_POST['idUsuario']);
-    $comentarioDAO->setDataHoraComentario(date('Y-m-d H:i:s'));
-    $comentarioDAO->setIdComentarioParente($_POST['idComentarioParente']);
-    $comentarioDAO->setTxtComentario($_POST['responderComentario']);
+// if (isset($_POST['responderComentario'])) {
+//     $comentarioDAO->setIdPost($_POST['idPost']);
+//     $comentarioDAO->setIdUsuario($_POST['idUsuario']);
+//     $comentarioDAO->setDataHoraComentario(date('Y-m-d H:i:s'));
+//     $comentarioDAO->setIdComentarioParente($_POST['idComentarioParente']);
+//     $comentarioDAO->setTxtComentario($_POST['responderComentario']);
 
-    $comentarioDAO->adicionarComentario();
-    header("Location:" . _URLBASE_ . "area/user/pages/postVer/" . $GetPost);
+//     $comentarioDAO->adicionarComentario();
+//     header("Location:" . _URLBASE_ . "area/user/pages/postVer/" . $GetPost);
 
-    echo $outputResult = "Comentário enviado";
-}
+//     echo $outputResult = "Comentário enviado";
+// }
 ?>

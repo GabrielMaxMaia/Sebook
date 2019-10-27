@@ -136,11 +136,10 @@ class LivroController
     {
         $this->recuperarAcaoPOST();
         $this->recuperarDadosFormulario();
-        if ($this->acaoPOST == 1 && $this->evitarReenvio()) {            
+        if ($this->acaoPOST == 1 && $this->evitarReenvio()) {
             $this->livroDAO->adicionarLivro();
         } else if ($this->acaoPOST == 2) {
             $this->livroDAO->alterarLivro();
-
         }
     }
 
@@ -157,13 +156,15 @@ class LivroController
         if ($this->acaoGET == 2) {
             $this->livroDAO->setIsbnLivro($_GET['id']);
             $livro = $this->livroDAO->listarLivroIsbn();
-            $this->livroDAO->setAnoLivro($livro['anoLivro']);
-            $this->livroDAO->setUrlFotoLivro($livro['urlFotoLivro']);
-            $this->livroDAO->setNomeLivro($livro['nomeLivro']);
-            $this->livroDAO->setSinopseLivro($livro['sinopseLivro']);
-            $this->livroDAO->setCodStatusLivro($livro['codStatusLivro']);
-            $this->livroDAO->setIdEditora($livro['idEditora']);
-            $this->livroDAO->setIdCategoria($livro['idCategoria']);
+            for ($i = 0; $i < count($livro); $i++) {
+                $this->livroDAO->setAnoLivro($livro[$i]['anoLivro']);
+                $this->livroDAO->setUrlFotoLivro($livro[$i]['urlFotoLivro']);
+                $this->livroDAO->setNomeLivro($livro[$i]['nomeLivro']);
+                $this->livroDAO->setSinopseLivro($livro[$i]['sinopseLivro']);
+                $this->livroDAO->setCodStatusLivro($livro[$i]['codStatusLivro']);
+                $this->livroDAO->setIdEditora($livro[$i]['idEditora']);
+                $this->livroDAO->setIdCategoria($livro[$i]['idCategoria']);
+            }
         }
     }
 
