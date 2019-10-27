@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 .ini
+=======
+*.ini
+>>>>>>> 0460ae69c467d6ff81285292667df5cb0a0cdb63
 bd_mysql.ini
