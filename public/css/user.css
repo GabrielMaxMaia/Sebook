@@ -1739,7 +1739,8 @@ form select {
     border-radius: 50%;
     height: 80px;
     width: 80px;
-    margin-top: 40%
+    margin-top: 40%;
+    object-fit:contain
 }
 
 .circle p{

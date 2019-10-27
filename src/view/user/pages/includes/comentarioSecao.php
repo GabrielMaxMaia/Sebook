@@ -4,37 +4,49 @@ if ($resultComentario != null || $resultComentario >= 1) {
 
     foreach ($resultComentario as $comentario) {
 
-        if ($comentario['idPost'] == $GetPost) {
-            
+        if ($pagina == "paginaSebo") {
+            $pag = $comentario['idPagina'];
+        } else {
+            $pag = $comentario['idPost'];
+        }
+
+        //if ($comentario['idPost'] == $GetPost) {
+        if ($pag == $GetPost) {
+
             ?>
             <section>
                 <p>
                     <?php
-                        $usuarioDAO->setIdUsuario($IdUser);
-                    ?>
-                    <?//=$comentario['idComentario']?>
+                                $usuarioDAO->setIdUsuario($IdUser);
+                                ?>
+                    <? //=$comentario['idComentario']
+                                ?>
                     <?= $comentario['txtComentario'] ?><br>
                     <span> - Por <?= $comentario['nomeUsuario'] ?></span>
                     <span>
                         em <strong><?= date("d/m/Y - H:i", strtotime($comentario['dataHoraComentario'])); ?></strong>
                     </span>
                     <?php
-                        //Caso o id do usuário for o mesmo que está no comentário
-                        //Ele pode editar excluir o comentário
-                        if ($comentario['idUsuario'] == $usuarioDAO->getIdUsuario() || $acessoUser <= 3 && $acessoUser != "") {
+                                //Caso o id do usuário for o mesmo que está no comentário
+                                //Ele pode editar excluir o comentário
+                                if ($comentario['idUsuario'] == $usuarioDAO->getIdUsuario() || $acessoUser <= 3 && $acessoUser != "") {
 
-                            $comentarioDAO->setIdUsuario($comentario['idUsuario']);
+                                    $comentarioDAO->setIdUsuario($comentario['idUsuario']);
 
-                            $comentarioDAO->setIdPost($comentario['idPost']);
+                                    if ($pagina == "paginaSebo") {
+                                        $comentarioDAO->setIdPagina($comentario['idPagina']);
+                                    } else {
+                                        $comentarioDAO->setIdPost($comentario['idPost']);
+                                    }
 
-                            $comentarioDAO->setIdComentario($comentario['idComentario']);
+                                    $comentarioDAO->setIdComentario($comentario['idComentario']);
 
-                            $comentarioDAO->setIdComentarioParente($comentario['idComentarioParente']);
+                                    $comentarioDAO->setIdComentarioParente($comentario['idComentarioParente']);
 
-                            $resultComentarioId = $comentarioDAO->listarComentarioId();
+                                    $resultComentarioId = $comentarioDAO->listarComentarioId();
 
-                            $comentarioDAO->setTxtComentario($resultComentarioId['txtComentario']);
-                        ?>
+                                    $comentarioDAO->setTxtComentario($resultComentarioId['txtComentario']);
+                                    ?>
                         <label class="btn-modal-cadastre" for="modal-editar" value="<?= $comentario['idComentario'] ?>" onclick="return pegaId(<?= $comentario['idComentario'] ?>,'<?= $comentario['txtComentario'] ?>')">Editar</label>
 
                         <!--Formulário para excluir-->
@@ -44,29 +56,33 @@ if ($resultComentario != null || $resultComentario >= 1) {
                             <input type="submit" name="excluirComentario" value="Excluir" onclick="if (confirm('Quer Mesmo excluir comentário?')) {return true;}else{return false;}">
                         </form>
                         <?php
-                            if (isset($_POST['excluirComentario'])) {
-                                $comentarioDAO->setIdComentario($_POST['comentarioExcluir']);
-                                //Excluir comentário
-                                $comentarioDAO->excluirComentario();
-                                //Recarrega a página
-                                header("Location:" . _URLBASE_ . $caminhoEnviaComentario . $GetPost);
-                            }
-                        ?>
+                                        if (isset($_POST['excluirComentario'])) {
+                                            $comentarioDAO->setIdComentario($_POST['comentarioExcluir']);
+                                            //Excluir comentário
+                                            $comentarioDAO->excluirComentario();
+                                            //Recarrega a página
+                                            header("Location:" . _URLBASE_ . $caminhoEnviaComentario . $GetPost);
+                                        }
+                                        ?>
                     <?php
-                        }
-                    ?>
+                                }
+                                ?>
                 </p>
 
                 <?php
-                    //A opção de responder só aparece para quem está logado
-                    // if ($IdUser != "") {
-                    ?>
-                    <!-- <label class="btn-modal-cadastre" for="modal-responder" value="<? //= $comentario['idComentario']?>" onclick="return pegaId(<? //= $comentario['idComentario']?>)">Responder</label> -->
+                            //A opção de responder só aparece para quem está logado
+                            // if ($IdUser != "") {
+                            ?>
+                <!-- <label class="btn-modal-cadastre" for="modal-responder" value="<? //= $comentario['idComentario']
+                                                                                                ?>" onclick="return pegaId(<? //= $comentario['idComentario']
+                                                                                                                                                                ?>)">Responder</label> -->
 
-                    <!-- <label class="btn-modal-cadastre" for="modal-editar" value="<?//= $comentario['idComentario'] ?>" onclick="return pegaId(<?//= $comentario['idComentario'] ?>)">Editar</label> -->
+                <!-- <label class="btn-modal-cadastre" for="modal-editar" value="<? //= $comentario['idComentario'] 
+                                                                                                ?>" onclick="return pegaId(<? //= $comentario['idComentario'] 
+                                                                                                                                                            ?>)">Editar</label> -->
                 <?php
-                    // }
-                ?>
+                            // }
+                            ?>
             </section>
 <?php
         }
@@ -106,13 +122,23 @@ if ($resultComentario != null || $resultComentario >= 1) {
 
                     <input type="hidden" name="idComentario" id="idComentario">
 
-                    <input type="hidden" name="idPost" value="<?= $comentarioDAO->getIdPost() ?>">
+                    <?php
+                    if ($pagina != "paginaSebo") {
+                        $pagVal = $comentarioDAO->getIdPost();
+                        $nome = "idPost";
+                    } else {
+                        $pagVal = $comentarioDAO->getIdPagina();
+                        $nome = "idPagina";
+                    }
+                    ?>
+                    <input type="hidden" name="<?=$nome?>" value="<?= $pagVal ?>">
+
                     <input type="hidden" name="idUsuario" value="<?= $comentarioDAO->getIdUsuario() ?>">
 
                     <label for="txtComentarioAtualiza">Comentário</label>
                     <textarea type="text" name="txtComentarioAtualiza" id="txtComentarioAtualiza">
                         <?php
-                           $comentarioDAO->getTxtComentario();
+                        $comentarioDAO->getTxtComentario();
                         ?>
                     </textarea>
                     <input type="submit" value="Atualizar">
@@ -126,7 +152,13 @@ if ($resultComentario != null || $resultComentario >= 1) {
 </section>
 <?php
 if (isset($_POST['txtComentarioAtualiza'])) {
-    $comentarioDAO->setIdPost($_POST['idPost']);
+
+    if ($pagina != "paginaSebo") {
+        $comentarioDAO->setIdPost($_POST['idPost']);
+    } else {
+        $comentarioDAO->setIdPagina($_POST['idPagina']);
+    }
+
     // $comentarioDAO->setIdUsuario($_POST['idUsuario']);
     $comentarioDAO->setIdComentario($_POST['idComentario']);
     $comentarioDAO->setTxtComentario($_POST['txtComentarioAtualiza']);

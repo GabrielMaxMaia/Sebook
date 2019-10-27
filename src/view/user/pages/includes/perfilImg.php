@@ -9,13 +9,10 @@
     <iframe id="ifrmUpload" name="ifrmUpload" src="" frameborder="0"></iframe>
 </div>
 <?php
-$src = "src='". _URLBASE_ ."{$clienteDAO->getUrlFotoCliente()}'";
+$src = "src='". _URLBASE_ . "{$clienteDAO->getUrlFotoCliente()}'";
 ?>
 <div class="imgCadastro">
     <picture>
         <img id="imgAvatar" <?= $src ?> alt="Avatar" class="avatar">
     </picture>
 </div>
-<?php
-
-?>

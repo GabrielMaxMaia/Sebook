@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 21-Out-2019 às 06:53
+-- Generation Time: 27-Out-2019 às 23:21
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.2
 
@@ -150,11 +150,15 @@ INSERT INTO `cliente` (`id_usuario`, `sexo_cliente`, `compl_end_cliente`, `logra
 (9, 'F', NULL, NULL, NULL, NULL, '45687912587', '06589054', '1900-01-01', '1'),
 (10, 'M', NULL, NULL, NULL, NULL, '12378965878', '06545687', '1900-01-01', '1'),
 (13, 'M', '', '', 'public/img/imgPerfil/guts.png', '', '36574159866', '06512987', '1900-01-01', '1'),
-(15, 'M', 'yrty', 'AL', 'public/img/imgPerfil/crash_bandicoot.jpg', 'ytrydsad', 'eyeyh', 'ytry', '2019-10-11', '1'),
+(15, 'M', 'yrty', 'AL', 'public/img/imgPerfil/crash_bandicoot.jpg', 'ytrydsad', '487.795.687-10', '06874-510', '2019-10-11', '1'),
 (26, 'M', '', '', 'public/img/imgPerfil/2_2_1.png', '', '', '', '2019-10-11', '1'),
 (27, 'M', '', 'FAZ', 'public/img/imgPerfil/1_1_1.jpg', '', '', '', '2019-10-12', '1'),
 (29, 'F', '', '', 'public/img/imgPerfil/bait.jpg', '', '', '', '2019-10-12', '1'),
-(37, 'M', '', 'AL', 'public/img/imgPerfil/sonic.png', '', '', '', '1992-01-01', '1');
+(37, 'M', '', 'AL', 'public/img/imgPerfil/sonic.png', '', '', '', '1992-01-01', '1'),
+(41, NULL, NULL, NULL, 'public/icon/user.svg', NULL, NULL, NULL, NULL, '1'),
+(42, NULL, NULL, NULL, 'public/icon/user.svg', NULL, NULL, NULL, NULL, '1'),
+(43, NULL, NULL, NULL, 'public/icon/user.svg', NULL, NULL, NULL, NULL, '1'),
+(44, 'M', '', 'PRQ', 'public/img/imgPerfil/edward-elric-l.jpg', '', '', '', '2019-10-27', '1');
 
 -- --------------------------------------------------------
 
@@ -178,42 +182,21 @@ CREATE TABLE `comentario` (
   `txt_comentario` varchar(500) CHARACTER SET latin1 DEFAULT NULL,
   `data_hora_comentario` datetime DEFAULT NULL,
   `cod_status_comentario` varchar(10) CHARACTER SET latin1 DEFAULT '1',
-  `id_post` int(11) DEFAULT NULL,
+  `id_post` varchar(255) COLLATE latin1_danish_ci DEFAULT NULL,
   `id_usuario` int(11) DEFAULT NULL,
-  `id_comentario_parente` int(11) DEFAULT NULL
+  `id_comentario_parente` int(11) DEFAULT NULL,
+  `id_pagina` varchar(255) COLLATE latin1_danish_ci DEFAULT NULL,
+  `comentariocol` varchar(45) COLLATE latin1_danish_ci DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_danish_ci;
 
 --
 -- Extraindo dados da tabela `comentario`
 --
 
-INSERT INTO `comentario` (`id_comentario`, `txt_comentario`, `data_hora_comentario`, `cod_status_comentario`, `id_post`, `id_usuario`, `id_comentario_parente`) VALUES
-(11, 'dasd', '2019-10-20 22:16:27', '0', 6, 35, 0),
-(10, 'asd', '2019-10-20 22:15:47', '0', 6, 35, 0),
-(9, 'sdfd', '2019-10-20 22:14:40', '0', 6, 35, 0),
-(8, 'asd', '2019-10-20 22:00:22', '0', 6, 35, 0),
-(7, 'fsdf', '2019-10-20 22:00:19', '0', 6, 35, 0),
-(12, 'asdasd', '2019-10-20 22:16:33', '0', 6, 35, 0),
-(13, 'asdas', '2019-10-20 22:16:35', '1', 6, 35, 0),
-(14, 'das', '2019-10-20 22:16:47', '0', 5, 35, 0),
-(15, 'asdas', '2019-10-20 22:16:54', '1', 5, 35, 0),
-(16, 'asd', '2019-10-20 22:17:01', '1', 5, 35, 0),
-(17, 'adfg', '2019-10-20 22:23:56', '0', 5, 37, 0),
-(18, 'asd', '2019-10-20 22:40:07', '0', 5, 37, 0),
-(19, 'sad', '2019-10-20 22:40:23', '1', 4, 15, 0),
-(20, 'asd', '2019-10-20 22:40:47', '1', 5, 15, 0),
-(21, 'dfg', '2019-10-20 22:55:09', '0', 5, 37, 0),
-(22, 're', '2019-10-20 23:07:32', '0', 9, 37, 0),
-(23, 'sad', '2019-10-20 23:07:52', '0', 9, 15, 0),
-(24, 're', '2019-10-20 23:08:07', '1', 9, 15, 0),
-(25, ' afds                                           ', '2019-10-20 23:08:25', '0', 9, 37, 0),
-(26, 'dasd', '2019-10-20 23:10:55', '0', 9, 37, 0),
-(27, 'gg                                            ', '2019-10-20 23:11:05', '0', 9, 37, 0),
-(28, 'ProgramaÃ§Ã£o orientada a Gambiarra....\r\n                                          ', '2019-10-21 00:48:31', '0', 9, 37, 0),
-(29, 'oi                 \r\n                    ', '2019-10-21 01:09:45', '0', 9, 37, 0),
-(30, 'olÃ¡\r\n', '2019-10-21 01:27:34', '0', 10, 37, 0),
-(31, 'Comentario null                                         \r\n                    ', '2019-10-21 01:27:47', '1', 10, 37, 0),
-(32, 'Professor Giovani vai ajudar                    ', '2019-10-21 01:28:01', '1', 10, 37, 0);
+INSERT INTO `comentario` (`id_comentario`, `txt_comentario`, `data_hora_comentario`, `cod_status_comentario`, `id_post`, `id_usuario`, `id_comentario_parente`, `id_pagina`, `comentariocol`) VALUES
+(25, 'Sebo muito loko...', '2019-10-27 19:18:56', '1', '0', 44, 0, '35', NULL),
+(24, 'Minha histÃ³ria Ã© tÃ£o boa quanto a desse livro.', '2019-10-27 19:16:55', '1', '9788584390670', 44, 0, '', NULL),
+(23, 'Livro bom...', '2019-10-27 19:09:14', '1', '9788516079444', 15, 0, '', NULL);
 
 -- --------------------------------------------------------
 
@@ -517,7 +500,7 @@ INSERT INTO `postagem` (`id_post`, `data_hora_post`, `link_post`, `url_foto_post
 (1, '2019-10-09 21:08:03', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', 'PHP (um acrÃ´nimo recursivo para \"PHP: Hypertext Preprocessor\", originalmente Personal Home Page) Ã© uma linguagem interpretada livre, usada originalmente apenas para o desenvolvimento de aplicaÃ§Ãµes presentes e atuantes no lado do servidor, capazes de gerar conteÃºdo dinÃ¢mico na World Wide Web.[3] Figura entre as primeiras linguagens passÃ­veis de inserÃ§Ã£o em documentos HTML, dispensando em muitos casos o uso de arquivos externos para eventuais processamentos de dados. O cÃ³digo Ã© interpre', 'PHP', '0', 5),
 (2, '2019-10-09 21:08:23', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', '              JavaScript, frequentemente abreviado como JS, Ã© uma linguagem de programaÃ§Ã£o interpretada de alto nÃ­vel, caracterizada tambÃ©m, como dinÃ¢mica, fracamente tipificada, prototype-based e multi-paradigma.[2] Juntamente com HTML e CSS, o JavaScript Ã© uma das trÃªs principais tecnologias da World Wide Web. JavaScript permite pÃ¡ginas da Web interativas e, portanto, Ã© uma parte essencial dos aplicativos da web. A grande maioria dos sites usa, e todos os principais navegadores tÃªm um mecanismo JavaScript dedicado para executÃ¡-lo.  Ã‰ atualmente a principal linguagem para programaÃ§Ã£o client-side em navegadores web. Ã‰ tambÃ©m bastante utilizada do lado do servidor atravÃ©s de ambientes como o node.js.  Como uma linguagem multi-paradigma, o JavaScript suporta estilos de programaÃ§Ã£o orientados a eventos, funcionais e imperativos (incluindo orientado a objetos e prototype-based), apresentando recursos como fechamentos (closures) e funÃ§Ãµes de alta ordem comumente indisponÃ­veis em linguagens populares como Java e C++. PossuÃ­ APIs para trabalhar com texto, matrizes, datas, expressÃµes regulares e o DOM, mas a linguagem em si nÃ£o inclui nenhuma E/S, como instalaÃ§Ãµes de rede, armazenamento ou grÃ¡ficos, contando com isso no ambiente host em que estÃ¡ embutido.  Foi originalmente implementada como parte dos navegadores web para que scripts pudessem ser executados do lado do cliente e interagissem com o usuÃ¡rio sem a necessidade deste script passar pelo servidor, controlando o navegador, realizando comunicaÃ§Ã£o assÃ­ncrona e alterando o conteÃºdo do documento exibido, porÃ©m os mecanismos JavaScript agora estÃ£o incorporados em muitos outros tipos de software host, incluindo servidores em servidores e bancos de dados da Web e em programas que nÃ£o sÃ£o da Web, como processadores de texto e PDF, e em tempo de execuÃ§Ã£o ambientes que disponibilizam JavaScript para escrever aplicativos mÃ³veis e de desktop, incluindo widgets de Ã¡rea de trabalho.  Os termos Vanilla JavaScript e Vanilla JS se referem ao JavaScript nÃ£o estendido por qualquer estrutura ou biblioteca adicional. Scripts escritos em Vanilla JS sÃ£o cÃ³digos JavaScript simples.[3][4]  Embora existam semelhanÃ§as entre JavaScript e Java, incluindo o nome da linguagem, a sintaxe e as respectivas bibliotecas padrÃ£o, as duas linguagens sÃ£o distintas e diferem muito no design; JavaScript foi influenciado por linguagens de programaÃ§Ã£o como Self e Scheme.        ', 'Javascript', '0', 5),
 (3, '2019-10-13 00:52:42', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', 'Eu programo\r\n', 'OlÃ¡ mundosss', '0', 15),
-(4, '2019-10-13 17:16:01', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', '       eae    ', 'asss', '1', 5),
+(4, '2019-10-13 17:16:01', NULL, '', '       eaess    ', 'asss', '1', 5),
 (5, '2019-10-13 17:49:23', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', '                                eae                        ', 'PHP', '1', 5),
 (6, '2019-10-13 19:43:28', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', '           dsfs', 'segfs', '1', 5),
 (7, '2019-10-13 19:45:35', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', 'fsdafsdfsdf', 'teste', '1', 5),
@@ -526,7 +509,9 @@ INSERT INTO `postagem` (`id_post`, `data_hora_post`, `link_post`, `url_foto_post
 (10, '2019-10-13 19:56:34', NULL, 'public/img/imgPost/gon.png', '                                                       dasd                                        ', 'OlÃ¡ mundosss', '1', 5),
 (11, '2019-10-13 21:57:35', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', '                                dsadas                        ', 'usuario comum', '1', 5),
 (12, '2019-10-13 23:44:59', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', '                                safdsad                        ', 'teste', '1', 37),
-(13, '2019-10-13 23:54:41', NULL, 'public/img/imgPost/bait.jpg', '                                                                sdfsd                                                ', 'bait', '1', 37);
+(13, '2019-10-13 23:54:41', NULL, 'public/img/imgPost/bait.jpg', '                                                                sdfsd                                                ', 'bait', '1', 37),
+(14, '2019-10-27 01:03:50', NULL, '', 'tewtf', 'PHP', '1', 15),
+(15, '2019-10-27 01:04:01', NULL, '', 'dsad', 'dasd', '1', 15);
 
 -- --------------------------------------------------------
 
@@ -561,8 +546,10 @@ INSERT INTO `sebo` (`id_usuario`, `razao_sebo`, `nome_fantasia`, `cnpj_sebo`, `u
 (12, 'Mirian Marinho da Silva Lima', 'Sebo Marinho', '12.672.074/0001-53', NULL, '115', NULL, NULL, '06320-290', '1143867762', NULL, NULL, NULL, NULL, '1'),
 (14, 'Priscilla Nobre Lobo', 'Sebo e Livraria Corujinha', '21.100.930/0001-97', NULL, '179', NULL, NULL, '06448-020', '1128614286', NULL, NULL, NULL, NULL, '1'),
 (34, 'Pirate king', 'dasdgdfg', 'dfgdgdfg', 'public/img/imgPerfilSebo/1_1_1.jpg', 'dasdad', 'dsada', 'dsadsa', 'dasdsad', 'asdsad', 'dsadad', 'trhtrh', 'sadd', 'dsad', '1'),
-(35, 'Monkey D. Luffy', 'Reio dos piratas', 'asd', 'public/img/imgPerfilSebo/1_1_1.jpg', 'dsa', 'dasdsa', 'AV', 'ads', 'sad', 'dsadsa', 'dsad', 'sda', 'dsa', '1'),
-(36, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1');
+(35, 'Monkey D. Luffy', 'Reio dos piratas', '03.561.475/4516-97', 'public/img/imgPerfilSebo/luffy.jpg', 'dsa', 'dasdsa', 'AV', '', '(11) 4005-8799', '(11) 54879-9524', '', '', 'dsa', '1'),
+(36, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(39, NULL, NULL, NULL, 'public/img/imgPerfilSebo/imgPadrao/padrao.png', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(40, NULL, NULL, NULL, 'public/img/imgPerfilSebo/imgPadrao/padrao.png', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1');
 
 -- --------------------------------------------------------
 
@@ -624,7 +611,7 @@ INSERT INTO `usuario` (`id_usuario`, `nome_usuario`, `sobrenome_usuario`, `email
 (12, 'Mirian', 'Marinho da Silva Lima', 'sebosantafe@hotmail.com', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 5, '2019-09-18 00:00:00'),
 (13, 'Denis', 'Monteiro Guimaraes', 'denis.guimaraes@docente.fieb.edu.br', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 4, '2019-09-18 00:00:00'),
 (14, 'Priscilla', 'Nobre Lobo', 'globalnetconsultoria@globo.com', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 5, '2019-09-18 00:00:00'),
-(15, 'Master', 'adm ', 'master@outlook.com', '$2a$08$MTEzMzU2MjExNzVkYTIzYOazK8T1EZGH1qpbfDEdWcx3a7KdfPfqW', '1', 1, '2019-10-09 21:02:53'),
+(15, 'Master', 'adm ', 'master@outlook.com', '$2a$08$MjAyNDcxNzYzNTVkYjUwYe9vmq0joQxn3pX88hvrPWaKHUj/JEO9C', '1', 1, '2019-10-09 21:02:53'),
 (16, 'Admin 1', 'adm', 'adm1@outlook.com', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 2, '2019-10-09 21:03:42'),
 (17, 'Admin 2', 'adm ', 'adm2@outlook.com', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 3, '2019-10-09 21:04:14'),
 (18, 'Usuario', 'Cliente', 'cliente@outlook.com', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 4, '2019-10-09 21:07:01'),
@@ -635,7 +622,12 @@ INSERT INTO `usuario` (`id_usuario`, `nome_usuario`, `sobrenome_usuario`, `email
 (34, 'Giorno', 'adm', 'gansd@outlook.com', '$2a$08$ODM1OTQwMzA2NWRhMjY2ZOwzpYYg.3K8eA9jZ1Fs8ZyQtICEg9/xG', '1', 5, '2019-10-12 20:51:08'),
 (35, 'Luffy', 'Mokey D.', 'luffy@outlook.com', '$2a$08$MTUxODIzNzQxNjVkYTI4YuU9atiqVfNVpSJd/jOjOHVSKPep7VaCO', '1', 5, '2019-10-12 23:13:39'),
 (36, 'Giorno', 'adm', 'gansd@outlook.com', '$2a$08$MzQ4OTMyMTA2NWRhMjkzM.ZGzBU38O/OEUz4PfisxN.wnt2YPt8Yi', '1', 5, '2019-10-12 23:59:18'),
-(37, 'Sonic', 'the headhog', 'sonic@outlook.com', '$2a$08$MTU2NjEwNDA5MjVkYTNkYuUazvVaSHQMYS.oLcepyoVE2Xq9HO2..', '1', 4, '2019-10-13 23:23:40');
+(37, 'Sonic', 'the headhog', 'sonic@outlook.com', '$2a$08$MTU2NjEwNDA5MjVkYTNkYuUazvVaSHQMYS.oLcepyoVE2Xq9HO2..', '1', 4, '2019-10-13 23:23:40'),
+(40, 'htfh', 'hgfh', 'luffyss@outlook.com', '$2a$08$Njg4NTczMTE1NWRiM2QxNOq/YkSoWfJRG87mdstZYr/FqeD0.BJay', '1', 5, '2019-10-26 01:53:44'),
+(41, 'Giorno', 'Giovana', 'standos@outlook.com', '$2a$08$ODI0NjI5MjM3NWRiNGYxO.xJmWDsqxGXJk1ueFvVYLhLvYKOY6NPK', '1', 4, '2019-10-26 22:23:23'),
+(42, 'Giorno', 'Giovana', 'standosd@outlook.com', '$2a$08$MTc0OTQyNDY5NDVkYjRmMOYHwkM80haZE8DltQg3b4Yc5NecosoPC', '1', 4, '2019-10-26 22:24:36'),
+(43, 'teste', 'sdad', 'gan@outlook.com', '$2a$08$OTQ0NjgxMjQyNWRiNTBhZOPhQMjBPC8hbwLrS4riZKpGZtZgWO1qi', '1', 4, '2019-10-27 00:11:36'),
+(44, 'Edward ', 'Elric', 'alquimista@outlook.com', '$2a$08$MTc4NjcwMTcyODVkYjYwYuHxj4Jud4SZqYftf86JacQj0wbk268FO', '1', 4, '2019-10-27 18:31:40');
 
 --
 -- Indexes for dumped tables
@@ -790,7 +782,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT for table `comentario`
 --
 ALTER TABLE `comentario`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `editora`
@@ -832,13 +824,13 @@ ALTER TABLE `perfil`
 -- AUTO_INCREMENT for table `postagem`
 --
 ALTER TABLE `postagem`
-  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- Constraints for dumped tables

@@ -394,7 +394,8 @@ a:hover{
     border-radius: 59%;
     height: 80px;
     width: 80px;
-    object-fit: cover;
+    object-fit: contain;
+    background:#fff
 }
 #logFig p{
     margin:0;

@@ -43,8 +43,8 @@ if ($acessoUser != "") {
 		$clienteDAO->setLogradouroCliente($_POST['logradouroCliente']);
 		$clienteDAO->setCpfCliente($_POST['cpfCliente']);
 		$clienteDAO->setCepCliente($_POST['cepCliente']);
-		// $clienteDAO->setUrlFotoCliente($_POST['urlFotoCliente']);
-		$clienteDAO->setUrlFotoCliente($_POST['urlFotoCliente']);
+		
+		$clienteDAO->setUrlFotoCliente($_POST['txtImg']);
 
 		$date = date_create(str_replace('/', '-', $_POST['nascCliente']));
 		$newDate = date_format($date, "Y-m-d");
@@ -76,8 +76,7 @@ if ($acessoUser != "") {
 				echo "<p class='errorCad'>Senha não confere</p>";
 			}
 		}
-		?>
-
+	?>
 
 	<!-- Perfil -->
 	<section class="cadastro">
@@ -85,6 +84,9 @@ if ($acessoUser != "") {
 			<form action="" method="post">
 
 				<input type="hidden" name="idUsuario" id="idUsuario" value="<?= $clienteDAO->getIdUsuario() ?>">
+
+				<!--Foto campo escondifo-->
+				<input type="hidden" name="txtImg" id="txtImg" value="<?= $clienteDAO->getUrlFotoCliente() ?>">
 
 				<div class="formItem">
 					<label for="nomeUsuario">Nome</label>
@@ -133,11 +135,11 @@ if ($acessoUser != "") {
 
 				<div class="formItem">
 					<label for="cpfCliente">CPF</label>
-					<input type="text" name="cpfCliente" id="cpfCliente" required value="<?= $clienteDAO->getCpfCliente() ?>" onblur="valida(this.value)">
+					<input type="text" name="cpfCliente" id="cpfCliente" value="<?= $clienteDAO->getCpfCliente() ?>" onblur="valida(this.value)">
 				</div>
 				<div class="formItem">
 					<label for="cepCliente">CEP</label>
-					<input type="text" name="cepCliente" id="cepCliente" required value="<?= $clienteDAO->getCepCliente() ?>" onblur="pesquisacep(this.value);">
+					<input type="text" name="cepCliente" id="cepCliente" value="<?= $clienteDAO->getCepCliente() ?>" onblur="pesquisacep(this.value);">
 				</div>
 				<div class="formItem">
 					<label for="logradouroCliente">Logradouro</label>
@@ -161,34 +163,18 @@ if ($acessoUser != "") {
 
 				<div class="formItem">
 					<label for="numComplCliente">Número</label>
-					<input type="text" name="numComplCliente" id="numComplCliente" required value="<?= $clienteDAO->getNumComplCliente() ?>" onblur="valida_numero(this.value);">
+					<input type="text" name="numComplCliente" id="numComplCliente" value="<?= $clienteDAO->getNumComplCliente() ?>" onblur="valida_numero(this.value);">
 				</div>
 				<div class="formItem">
 					<label for="complEndCliente">Complemento</label>
 					<input type="text" name="complEndCliente" id="complEndCliente" value="<?= $clienteDAO->getComplementoCliente() ?>">
 				</div>
 
-				<!--Foto campo escondifo-->
-				<input type="hidden" name="urlFotoCliente" id="urlFotoCliente" value="<?= $clienteDAO->getUrlFotoCliente() ?>">
-
 				<input type="submit" name="atualizar" value="Atualizar">
 			</form>
 
-			<!--Formulário de foto-->
-			<div class="img">
-				<form action="<?= _URLBASE_ ?>src/view/adm/cadastro/cadUpload.php" method='post' enctype='multipart/form-data' target='ifrmUpload' name="urlFotoCliente">
-					<input type="file" name="urlFotoCliente">
-					<!-- <input type="file" name="arqImagem"> -->
-					<input class="button" type="submit" value="Carregar">
-				</form>
-				<iframe id="ifrmUpload" name="ifrmUpload" src="" frameborder="0"></iframe>
-			</div>
-			<div class="imgCadastro">
-				<picture>
-					<img id="imgAvatar" src="<?= _URLBASE_ . $clienteDAO->getUrlFotoCliente()  ?>" alt="Avatar" class="avatar">
-				</picture>
-			</div>
-
+			<?=include "includes/perfilImg.php"?>				
+			
 			<!--Modal-->
 			<label class="btn-modal-cadastre" for="modal-cadastre">Trocar senha?</label>
 			<section class="modal">

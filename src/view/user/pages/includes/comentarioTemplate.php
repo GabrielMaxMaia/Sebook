@@ -10,7 +10,13 @@ if (isset($_POST['enviarComentario'])) {
         echo "Escreva Algo antes de enviar";
     }
     if ($erro == false) {
-        $comentarioDAO->setIdPost($GetPost);
+
+        if ($pagina != "paginaSebo") {
+            $comentarioDAO->setIdPost($GetPost);
+        } else {
+            $comentarioDAO->setIdPagina($GetPost);
+        }
+        
         $comentarioDAO->setIdUsuario($IdUser);
         $comentarioDAO->setDataHoraComentario(date('Y-m-d H:i:s'));
         //Chama a função listaPostagemId

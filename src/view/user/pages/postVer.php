@@ -46,5 +46,6 @@ if ($result != null) {
 }
 
 /*Inclui toda sessão de comentários*/
+$pagina = "";
 $caminhoEnviaComentario = "area/user/pages/postVer/";
 include "includes/comentarioTemplate.php";

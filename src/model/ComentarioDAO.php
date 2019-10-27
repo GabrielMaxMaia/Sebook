@@ -13,8 +13,10 @@ class ComentarioDAO extends Comentario
     private static $SELECT_ID = "select * from comentario WHERE id_comentario =:idComentario";
 
     private static $SELECT_ID_POSTAGEM = "SELECT id_post, id_comentario, id_comentario_parente, txt_comentario, data_hora_comentario, cod_status_comentario, id_perfil, usuario.id_usuario, nome_usuario, email_usuario FROM comentario inner join usuario WHERE comentario.id_usuario = usuario.id_usuario AND id_post = :idPost AND cod_status_comentario = '1' ORDER BY id_comentario DESC";
+    
+    private static $SELECT_ID_PAGINA = "SELECT id_pagina, id_comentario, id_comentario_parente, txt_comentario, data_hora_comentario, cod_status_comentario, id_perfil, usuario.id_usuario, nome_usuario, email_usuario FROM comentario inner join usuario WHERE comentario.id_usuario = usuario.id_usuario AND id_pagina = :idPagina AND cod_status_comentario = '1' ORDER BY id_comentario DESC";
 
-    private static $INSERT = "INSERT INTO comentario(id_comentario_parente, txt_comentario, data_hora_comentario, id_post, id_usuario) VALUES (:idComentarioParente, :txtComentario, :dataHoraComentario, :idPost, :idUsuario)";
+    private static $INSERT = "INSERT INTO comentario (id_comentario_parente, txt_comentario, data_hora_comentario, id_post, id_pagina, id_usuario) VALUES (:idComentarioParente, :txtComentario, :dataHoraComentario, :idPost, :idPagina, :idUsuario)";
 
     private static $UPDATE = "UPDATE comentario SET txt_comentario = :txtComentario WHERE id_comentario = :idComentario";
 
@@ -25,9 +27,9 @@ class ComentarioDAO extends Comentario
     private $sql;
 
     //Método Construtor - setamos os parametros e passamos um obj SQL
-    public function __construct($objSql = "", $idComentario = "", $txtComentario = "", $dataHoraComentario = "", $codStatusComentario = "", $idPost = "", $idUsuario = "", $idComentarioParente = "")
+    public function __construct($objSql = "", $idComentario = "", $txtComentario = "", $dataHoraComentario = "", $codStatusComentario = "", $idPost = "", $idPagina= "", $idUsuario = "", $idComentarioParente = "")
     {
-        parent::__construct($idComentario, $txtComentario, $dataHoraComentario, $codStatusComentario, $idPost, $idUsuario, $idComentarioParente);
+        parent::__construct($idComentario, $txtComentario, $dataHoraComentario, $codStatusComentario, $idPost, $idPagina, $idUsuario, $idComentarioParente);
         $this->sql = $objSql;
     }
 
@@ -47,6 +49,7 @@ class ComentarioDAO extends Comentario
                     'dataHoraComentario' => $linha->data_hora_comentario,
                     'codStatusComentario' => $linha->cod_status_comentario,
                     'idPost' => $linha->id_post,
+                    'idPagina' => $linha->id_pagina,
                     'idUsuario' => $linha->id_usuario,
                     'nomeUsuario' => $linha->nome_usuario
                 );
@@ -76,6 +79,7 @@ class ComentarioDAO extends Comentario
                 'dataHoraComentario' => $linha->data_hora_comentario,
                 'codStatusComentario' => $linha->cod_status_comentario,
                 'idPost' => $linha->id_post,
+                'idPagina' => $linha->id_pagina,
                 'idUsuario' => $linha->id_usuario
             );
         } else {
@@ -115,12 +119,43 @@ class ComentarioDAO extends Comentario
         return $itens;
     }
 
+    public function listarComentarioPagina()
+    {
+        //executar a consulta no banco
+        $result = $this->sql->query(
+            ComentarioDAO::$SELECT_ID_PAGINA,
+            array(
+                ':idPagina' => array(0 => $this->getIdPagina(), 1 => \PDO::PARAM_STR)
+            )
+        );
+        if ($result->rowCount() > 0) {
+
+            while ($linha = $result->fetch(\PDO::FETCH_OBJ)) {
+                $itens[] = array(
+                    'idComentario' => $linha->id_comentario,
+                    'idComentarioParente' => $linha->id_comentario_parente,
+                    'txtComentario' => $linha->txt_comentario,
+                    'dataHoraComentario' => $linha->data_hora_comentario,
+                    'codStatusComentario' => $linha->cod_status_comentario,
+                    'idPagina' => $linha->id_pagina,
+                    'idUsuario' => $linha->id_usuario,
+                    'nomeUsuario' => $linha->nome_usuario
+                );
+            }
+        } else {
+            $itens = null;
+        }
+        //devolver o resultado     
+        return $itens;
+    }
+
     public function adicionarComentario()
     {
         $result = $this->sql->execute(
             ComentarioDAO::$INSERT,
             array(
                 ':idPost' => array(0 => $this->getIdPost(), 1 => \PDO::PARAM_INT),
+                ':idPagina' => array(0 => $this->getIdPagina(), 1 => \PDO::PARAM_STR),
                 ':idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT),
                 ':idComentarioParente' => array(0 => 0, 1 => \PDO::PARAM_INT),
                 ':txtComentario' => array(0 => $this->getTxtComentario(), 1 => \PDO::PARAM_STR),

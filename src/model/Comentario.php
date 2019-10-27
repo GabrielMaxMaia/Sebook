@@ -12,17 +12,19 @@ class Comentario
     private $dataHoraComentario;
     private $codStatusComentario;
     private $idPost;
+    private $idPagina;
     private $idUsuario;
     private $idComentarioParente;
 
     //Método construtor auxiliar de criação de objetos
-    public function __construct($idComentario = "", $txtComentario = "", $dataHoraComentario = "", $codStatusComentario = "", $idPost = "", $idUsuario = "", $idComentarioParente = "")
+    public function __construct($idComentario = "", $txtComentario = "", $dataHoraComentario = "", $codStatusComentario = "", $idPost = "", $idPagina= "", $idUsuario = "", $idComentarioParente = "")
     {
         $this->idComentario = $idComentario;
         $this->txtComentario = $txtComentario;
         $this->dataHoraComentario = $dataHoraComentario;
         $this->codStatusComentario = $codStatusComentario;
         $this->idPost = $idPost;
+        $this->idPagina = $idPagina;
         $this->idUsuario = $idUsuario;
         $this->idComentarioParente = $idComentarioParente;
     }
@@ -77,6 +79,14 @@ class Comentario
     {
         $this->idPost = $idPost;
     }
+
+    public function getIdPagina(){
+		return $this->idPagina;
+	}
+
+	public function setIdPagina($idPagina){
+		$this->idPagina = $idPagina;
+	}
 
     public function getIdUsuario()
     {

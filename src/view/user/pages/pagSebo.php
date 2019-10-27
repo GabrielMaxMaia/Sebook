@@ -3,13 +3,16 @@
 use Model\SeboDAO;
 use Model\livroDAO;
 use Model\SeboLivroDAO;
+use Model\ComentarioDAO;
+use Model\UsuarioDAO;
 
 //Pega a conexão
 $objSql = new Util\Sql($conn);
-
 $seboDAO = new SeboDAO($objSql);
 $livroDAO = new livroDAO($objSql);
 $seboLivroDAO = new SeboLivroDAO($objSql);
+$comentarioDAO = new ComentarioDAO($objSql);
+$usuarioDAO = new UsuarioDAO($objSql);
 
 $seboDAO->setIdUsuario($_GET['id']);
 $result = $seboDAO->listarSeboId();
@@ -19,6 +22,10 @@ $seboDAO->setUrlSiteSebo($result['urlSiteSebo']);
 
 $seboLivroDAO->setIdUsuario($_GET['id']);
 $resultSeboLivro = $seboLivroDAO->listarSeboLivroId();
+
+$GetPost = $_GET['id'];
+$comentarioDAO->setIdPagina($GetPost);
+$resultComentario = $comentarioDAO->listarComentarioPagina();
 
 ?>
 <article class="acervo-sebo">
@@ -45,12 +52,12 @@ $resultSeboLivro = $seboLivroDAO->listarSeboLivroId();
                 $resultLivro = $livroDAO->listarLivroSebo();
                 ?>
                 <figure>
-                    <a href="<?=_URLBASE_ ?>area/user/pages/descLivro/<?= $seboLivro['isbnLivro'] ?>">
+                    <a href="<?= _URLBASE_ ?>area/user/pages/descLivro/<?= $seboLivro['isbnLivro'] ?>">
                         <img src="<?= _URLBASE_ . $resultLivro[0]['urlFotoLivro'] ?>" alt="<?= $resultLivro[0]['nomeLivro'] ?>" title="<?= $resultLivro[0]['nomeLivro'] ?>" style="max-width:200px;">
                         <!--Posteriormente remover ccs inline-->
                     </a>
                     <figcaption>
-                        <p>Titulo: <?= $resultLivro[0]['nomeLivro']?></p>
+                        <p>Titulo: <?= $resultLivro[0]['nomeLivro'] ?></p>
                         <p>Isbn: <?= $seboLivro['isbnLivro'] ?></p>
                         <p>Quantidade em Estoque: <?= $seboLivro['qtdEstoque'] ?></p>
                     </figcaption>
@@ -60,6 +67,15 @@ $resultSeboLivro = $seboLivroDAO->listarSeboLivroId();
         } else {
             echo "<p>Sebo não possui livros cadastrados.</p>";
         }
+        ?>
+    </section>
+
+    <section>
+        <?php
+        /*Inclui toda sessão de comentários*/
+        $pagina = "paginaSebo";
+        $caminhoEnviaComentario = "area/user/pages/pagSebo/";
+        include "includes/comentarioTemplate.php";
         ?>
     </section>
 </article>

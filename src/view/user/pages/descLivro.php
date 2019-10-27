@@ -74,6 +74,7 @@ for ($i = 0; $i < count($resultLivro); $i++) {
 	<?php
 
 	/*Inclui toda sessão de comentários*/
+	$pagina = "";
 	$caminhoEnviaComentario = "area/user/pages/descLivro/";
 	include "includes/comentarioTemplate.php";
 
