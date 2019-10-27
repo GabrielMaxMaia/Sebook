@@ -3,7 +3,7 @@ $title = "Quem Somos";
 $styleSobrescrito =
     "<style>
     div#containerTemplate {
-        margin-top:6%
+        margin-top:4%
     }
     @media (min-width:780px){
         div#containerTemplate {
