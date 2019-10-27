@@ -1799,6 +1799,7 @@ section.jumbotron{
 }
 
 .containerResult{
+    background-color:#fff;
     background: linear-gradient(45deg, #ffffffc7, #fffffff5);
     border-radius:8px
 }
@@ -1871,6 +1872,7 @@ section.jumbotron{
     background: #70b771
 }
 .errorCad{
+    background-color:#b22;
     background: #d01919d9
 }
 
