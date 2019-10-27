@@ -108,7 +108,6 @@ class ComentarioDAO extends Comentario
                     'nomeUsuario' => $linha->nome_usuario
                 );
             }
-            var_dump($itens);
         } else {
             $itens = null;
         }
@@ -121,7 +120,7 @@ class ComentarioDAO extends Comentario
         $result = $this->sql->execute(
             ComentarioDAO::$INSERT,
             array(
-                ':idPost' => array(0 => $this->getIdPost(), 1 => \PDO::PARAM_STR),
+                ':idPost' => array(0 => $this->getIdPost(), 1 => \PDO::PARAM_INT),
                 ':idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT),
                 ':idComentarioParente' => array(0 => 0, 1 => \PDO::PARAM_INT),
                 ':txtComentario' => array(0 => $this->getTxtComentario(), 1 => \PDO::PARAM_STR),

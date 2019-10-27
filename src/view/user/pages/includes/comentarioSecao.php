@@ -1,10 +1,11 @@
 <?php
-var_dump($resultComentario);
+// var_dump($resultComentario);
 if ($resultComentario != null || $resultComentario >= 1) {
 
     foreach ($resultComentario as $comentario) {
 
         if ($comentario['idPost'] == $GetPost) {
+            
             ?>
             <section>
                 <p>
@@ -48,7 +49,7 @@ if ($resultComentario != null || $resultComentario >= 1) {
                                 //Excluir comentário
                                 $comentarioDAO->excluirComentario();
                                 //Recarrega a página
-                                header("Location:" . _URLBASE_ . "area/user/pages/postVer/" . $GetPost);
+                                header("Location:" . _URLBASE_ . $caminhoEnviaComentario . $GetPost);
                             }
                         ?>
                     <?php
@@ -58,13 +59,13 @@ if ($resultComentario != null || $resultComentario >= 1) {
 
                 <?php
                     //A opção de responder só aparece para quem está logado
-                    if ($IdUser != "") {
+                    // if ($IdUser != "") {
                     ?>
                     <!-- <label class="btn-modal-cadastre" for="modal-responder" value="<? //= $comentario['idComentario']?>" onclick="return pegaId(<? //= $comentario['idComentario']?>)">Responder</label> -->
 
-                    <label class="btn-modal-cadastre" for="modal-editar" value="<?= $comentario['idComentario'] ?>" onclick="return pegaId(<?= $comentario['idComentario'] ?>)">Editar</label>
+                    <!-- <label class="btn-modal-cadastre" for="modal-editar" value="<?//= $comentario['idComentario'] ?>" onclick="return pegaId(<?//= $comentario['idComentario'] ?>)">Editar</label> -->
                 <?php
-                    }
+                    // }
                 ?>
             </section>
 <?php
@@ -111,7 +112,7 @@ if ($resultComentario != null || $resultComentario >= 1) {
                     <label for="txtComentarioAtualiza">Comentário</label>
                     <textarea type="text" name="txtComentarioAtualiza" id="txtComentarioAtualiza">
                         <?php
-                        $comentarioDAO->getTxtComentario();
+                           $comentarioDAO->getTxtComentario();
                         ?>
                     </textarea>
                     <input type="submit" value="Atualizar">
@@ -130,7 +131,7 @@ if (isset($_POST['txtComentarioAtualiza'])) {
     $comentarioDAO->setIdComentario($_POST['idComentario']);
     $comentarioDAO->setTxtComentario($_POST['txtComentarioAtualiza']);
     $comentarioDAO->alterarComentario();
-    header("Location:" . _URLBASE_ . "area/user/pages/postVer/" . $GetPost);
+    header("Location:" . _URLBASE_ . $caminhoEnviaComentario . $GetPost);
 }
 ?>
 

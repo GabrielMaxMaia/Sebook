@@ -4,9 +4,11 @@ use Model\livroDAO;
 use Model\AutorDAO;
 use Model\LivroAutorDAO;
 use Model\ComentarioDAO;
+use Model\UsuarioDAO;
 
 //Pega a conexão
 $objSql = new Util\Sql($conn);
+$usuarioDAO = new UsuarioDAO($objSql);
 $livroDAO = new livroDAO($objSql);
 $autorDAO = new autorDAO($objSql);
 $livroAutorDAO = new LivroAutorDAO($objSql);
@@ -24,8 +26,6 @@ $resultLivro = $livroDAO->listarLivroIsbn();
 $GetPost = $isbn;
 $comentarioDAO->setIdPost($GetPost);
 $resultComentario = $comentarioDAO->listarComentarioPost();
-
-var_dump($resultComentario);
 
 for ($i = 0; $i < count($resultLivro); $i++) {
 	$livroDAO->setUrlFotoLivro($resultLivro[$i]['urlFotoLivro']);
