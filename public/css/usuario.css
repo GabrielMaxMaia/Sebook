@@ -1790,8 +1790,7 @@ form select {
 /*formatação de links para usuario logado*/
 .logGroup{
     display: flex;
-    /* flex-wrap: wrap; */
-    align-items: flex-end;
+    align-items: flex-end
 }
 .logGroup a{
     margin: .4rem .4rem;
@@ -1800,7 +1799,7 @@ form select {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 3%;
+    margin-bottom: 3%
 }
 .circle img{
     overflow: hidden;
@@ -1817,19 +1816,13 @@ form select {
     background: #fff;
     padding: .1rem;
     width: 92%;
-    text-align: center;
+    text-align: center
 }
-.logGroup figcaption{
-    display:none;
-    z-index:999;
-}
+
 @media(min-width:782px){
     .logItem{
-        right: 17px!important;
+        right: 17px!important
     }
-    /* .logItem{
-        right: 95x!important
-    } */
 }
 .logItem{
     display: flex;
@@ -1844,14 +1837,25 @@ form select {
     right: 0;
 }
 
-input[type=checkbox]{
+/* input[type=checkbox]{
     display:none
-} 
-input[type=checkbox]:checked + figure figcaption {
+}  */
+/* input[type=checkbox]:checked + figure figcaption { */
     /* color: #f00;
     font-style: normal; */
-    display:flex;
-} 
+    /* display:flex; */
+/* }  */
+
+#logFig:hover figcaption{
+    display: block;
+}
+.logGroup figcaption{
+    display:none;
+    z-index:999;
+}
+.logGroup figcaption{
+    display:block;
+}
 
 /*Busca dinâmica formatação*/
 

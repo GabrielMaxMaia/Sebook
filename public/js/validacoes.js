@@ -2,7 +2,6 @@ function gID(id) {
   return document.getElementById(id);
 }
 
-
 function mascaraEmail(inputText) {
   inputText.setAttribute('class', '');
   var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;

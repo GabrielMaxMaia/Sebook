@@ -23,34 +23,37 @@ if (isset($_POST['enviar'])) {
 	}else{
 
 	$erro = false;
+	$erroMen = "";
 	//Nome
 	if ($_POST['nomeUsuario'] != "") {
 		$usuarioDAO->setNomeUsuario($_POST['nomeUsuario']);
 	} else {
 		$erro = true;
-		echo "Prencha o nome";
+		$erroMen .= "<li>Prencha o nome</li>";
 	}
 	//Sobrenome
 	if ($_POST['sobrenomeUsuario'] != "") {
 		$usuarioDAO->setSobrenomeUsuario($_POST['sobrenomeUsuario']);
 	} else {
 		$erro = true;
-		echo "Prencha o Sobrenome";
+		$erroMen .= "<li>Prencha o Sobrenome</li>";
 	}
 	//Email
 	if ($_POST['emailUsuario'] != "") {
 		$usuarioDAO->setEmailUsuario($_POST['emailUsuario']);
 	} else {
 		$erro = true;
-		echo "Prencha o E-mail";
+		$erroMen .= "<li>Prencha o E-mail</li>";
 	}
 	//Senha
-	if (($_POST['senhaUsuario'] != $_POST['repeteSenhaUsuario']) != null || "") {
+	if (($_POST['senhaUsuario'] != $_POST['repeteSenhaUsuario']) != null || $_POST['senhaUsuario'] == "") {
 		$erro = true;
-		echo "Senhas diferente";
+		$erroMen .= "<li>Senhas diferem</li>";
 	} else {
 		$usuarioDAO->setSenhaUsuario($_POST['senhaUsuario']);
 	}
+
+	echo "<ul class='errorList'>$erroMen</ul>" ?? "";
 
 	if ($erro != true) {
 	
@@ -60,11 +63,11 @@ if (isset($_POST['enviar'])) {
 			$success = true;
 			$usuarioDAO->adicionarUsuario();
 		}else{
-			echo "Usuário já cadastrado";
+			echo "<p class='errorCad'>Usuário já cadastrado.</p>";
 		}
 	}
 	if(isset($success)){
-		echo "Cadastrado com sucesso";
+		echo "<p class='successCad'>Cadastrado com sucesso.</p>";
 	}
 }
 

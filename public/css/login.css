@@ -1,7 +1,8 @@
 body {
-    background: url(../img/imgBackground/library.png) #0000003d;
+    background-image: url(../img/imgBackground/library.png);
+    background-color:#0000003d;
     background-size: cover;
-    background-blend-mode: color;
+    background-blend-mode:darken;
     /* background: #000; */
     color: #fff
 }
@@ -9,6 +10,12 @@ body {
 .containerScroll{
     display:flex;
     overflow:hidden
+}
+
+@media (max-width:780px){
+    div#containerTemplate{
+        align-self:flex-start!important;
+    }
 }
 div#containerTemplate{
     align-self:center

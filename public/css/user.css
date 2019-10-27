@@ -185,7 +185,7 @@ div#containerTemplate {
 /*===================AREA DO CADASTRO====================*/
 
 .cadastro {
-    padding: 2rem 0;
+    padding: 1rem 0 2rem;
     width: 100%;
     max-width: 400px;
     margin: auto;
@@ -502,7 +502,7 @@ div#contentLoading{
 /*===================AREA DO LOGIN====================*/
 
 .containerLogin {
-    padding: 1rem;
+    padding: 0 1rem;
     width: 100%;
     align-self: center;
     margin: 0 auto
@@ -519,6 +519,8 @@ div#contentLoading{
     margin: 2% auto 0;
     border: 1px solid #ccc;
     border-radius: .4rem;
+    position: relative;
+    top: 1rem;
 }
 
 .containerLogin figure {
@@ -682,7 +684,14 @@ div#contentLoading{
 .modal-open:checked~.modal-wrap .modal-dialog {
     transform: translate(-50%, -50%);
     position: fixed;
-    top: 40%
+    top: 45%
+}
+@media (max-width:740px){
+    .modal-open:checked~.modal-wrap .modal-dialog {
+        transform: translate(-50%, -50%);
+        position: fixed;
+        top: 54%
+    }
 }
 
 .modal-dialog {
@@ -997,6 +1006,9 @@ header #Logado .ulCenter2 ul li a {
 .master1 nav .menu ul li:last-child {
     border-bottom: 0
 }
+.master1 nav .menu ul li:last-child a{
+    border:none
+}
 
 .master1 #menuH:checked~.ulCenter ul {
     display: flex
@@ -1107,7 +1119,8 @@ header #Logado .ulCenter2 ul li a {
     top: 89px;
     left: 0;
     padding: 0;
-    background: linear-gradient(45deg, #548f96, #8adce6);
+    background-color: #a1b99c;
+    /* background: linear-gradient(45deg, #548f96, #8adce6); */
     z-index: 1;
     flex-flow: column;
     margin-top: 0
@@ -1120,9 +1133,11 @@ header #Logado .ulCenter2 ul li a {
     -ms-flex-align: center;
     align-items: center;
     color: #fff;
-    padding: 7% 3%;
-    font-size: 1.1rem;
+    padding:24px;
+    font-size: 1.4rem;
     border-bottom: 1px solid #fff;
+    max-width:420px;
+    max-height:320px;
 }
 
 .master1 nav .menu ul li:last-child {
@@ -1130,15 +1145,17 @@ header #Logado .ulCenter2 ul li a {
 }
 
 .master1 #menuH:checked~.ulCenter ul {
-    display: fleX;
-    margin-top: 34px;
+    display: flex;
+    margin-top: -19%;
+    overflow-y: scroll!important;
+    justify-content: center
 }
 /*Menu mobile desaparece quando a resolução for maior que 780px*/
 
 header,
 .master1 nav {
-    background: linear-gradient(45deg, #008a9b47, #06cc3e26);
-    background-color: #fff;
+    background-color: rgb(200, 239, 204);
+    /* background: linear-gradient(45deg, #008a9b47, #06cc3e26); */
     z-index: 9999
 }
 
@@ -1147,7 +1164,8 @@ header,
     justify-content: center;
     align-items: center;
     align-self: flex-end;
-    background: #222;
+    /* background: #222; */
+    background:#505050;
     z-index: 1;
     position: relative;
     margin: auto;
@@ -1700,7 +1718,6 @@ form select {
 
 .logGroup{
     display: flex;
-    /* flex-wrap: wrap; */
     align-items: flex-end
 }
 
@@ -1734,19 +1751,10 @@ form select {
     text-align: center
 }
 
-.logGroup figcaption{
-    display:none;
-    z-index:999
-}
-
 @media(min-width:782px){
     .logItem{
         right: 17px!important
     }
-
-    /* .logItem{
-        right: 95x!important
-    } */
 }
 
 .logItem{
@@ -1762,15 +1770,13 @@ form select {
     right: 0
 }
 
-input[type=checkbox]{
-    display:none
-} 
-
-input[type=checkbox]:checked + figure figcaption {
-    /* color: #f00;
-    font-style: normal; */
-    display:flex
-} 
+#logFig figcaption{
+    display:none;
+    z-index:999
+}
+#logFig:hover figcaption{
+    display: block;
+}
 
 /*Busca dinâmica formatação*/
 
@@ -1822,21 +1828,52 @@ section.jumbotron{
     transition:.1s all ease-in-out
 }
 
-/*Erro para formulários*/
+/*Erro de validação para os formulários*/
 .error{
-    border: solid 1px 	rgb(148,18,23);
+    border: solid 1px rgb(148,18,23);
     box-shadow: 3px 3px 10px rgb(148, 18, 23);
 }
-  
-/*Classe de erro para cadastro*/
-.errorCad{
-    padding: 1rem;
-    margin: auto;
+
+/*Erro de campos não digitados*/
+.errorList{
+    text-align: left;
+    padding: 2rem;
+    position: absolute;
+    background: #ffa;
+    color: #b22;
+    line-height: 1.5rem;
+    border-radius: .5rem;
+    z-index: 99
+}
+
+
+
+@media (max-width:780px){
+    .successCad, .errorCad{
+        margin: 1.2rem auto -1rem
+    }
+}
+@media (min-width: 300px) and (max-width:360px){
+    .containerScroll{
+        overflow:scroll!important
+    }
+    .successCad, .errorCad{
+        margin: -15% auto 0!important;
+    }
+}
+.successCad, .errorCad{
+    margin: 4% auto 0;
     text-align: center;
-    padding: 1rem;
-    background: #d01919d9;
+    padding: .65rem;
     color: #fff;
-    max-width: 361px;
-    border-radius: 34px
+    max-width: 303px;
+    border-radius: 34px;
+    font-size: .9rem
+}
+.successCad{
+    background: #70b771
+}
+.errorCad{
+    background: #d01919d9
 }
 

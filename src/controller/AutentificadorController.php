@@ -29,10 +29,10 @@ class AutentificadorController
                 $resultado = $this->admDAO->autenticarAdm($user, $senha);
                 if ($resultado == false) {
                     //Senha inválida
-                    echo "Senha ou e-mail inválidos";
+                    echo "<p class='errorCad'>Senha ou e-mail inválidos</p>";
                 } else if ($resultado == null) {
                     //email inválido
-                    echo "Senha ou e-mail inválidos";
+                    echo "<p class='errorCad'>Senha ou e-mail inválidos</p>";
                 } else {
 
                     $_SESSION['userLogado']['nome'] = $resultado['nomeUsuario'];
@@ -49,6 +49,8 @@ class AutentificadorController
 
                     // var_dump($_SESSION['userLogdao']['acesso']);
                 }
+            } else {
+                echo "<p class='errorCad'>Preencha todos campos!</p>";
             }
         }
     }
@@ -101,10 +103,9 @@ class AutentificadorController
             }
             ?>
 
-
             <div class='logGroup'>
-                <input type="checkbox" id="ossm" name="ossm">
-                <figure>
+                <!-- <input type="checkbox" id="ossm" name="ossm"> -->
+                <figure id="logFig">
                     <label for="ossm" class="circle" href="">
                         <img src="<?= _URLBASE_ . $img ?>">
 
