@@ -3,14 +3,14 @@ $title = "Login";
 $menuHide = true;
 $cssCaminho = "<link rel='stylesheet' href='" . _URLBASE_ . "public/css/login.css'>";
 $styleSobrescrito =
-    "<style>
-.containerScroll{
-    display:flex;
-    overflow:hidden
-}
-div#containerTemplate{
-    align-self:center
-}
+"<style>
+	.containerScroll{
+    	display:flex;
+    	overflow:hidden
+	}
+	div#containerTemplate{
+    	align-self:center
+	}
 </style>";
 ?>
 

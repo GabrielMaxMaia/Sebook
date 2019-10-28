@@ -21,8 +21,8 @@ $output = ob_get_clean();
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!--<link rel="stylesheet" href="". _URLBASE_ ."public/css/slick.css">-->
     <link rel="stylesheet" href="<?= _URLBASE_ ?>public/css/user.css">
+    <?= $mapa ?? ""?>
     <?= $styleSobrescrito ?? "" ?>
-
     <?= $cssCaminho ?? "" ?>
 
     <title><?= isset($title) ? 'Sebook | ' . $title : 'Sebook' ?></title>
@@ -51,7 +51,7 @@ $output = ob_get_clean();
             <?php
             if (isset($menuHide) != true) {
                 require_once 'menu/social.php';
-                ?>
+            ?>
                 <article class="home">
                     <section>
                         <?= $output ?>
