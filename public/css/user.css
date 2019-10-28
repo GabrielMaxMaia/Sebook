@@ -1571,7 +1571,8 @@ form select {
 
 #rodape .container-body a,
 #rodape label {
-    color: #c7c7c7
+    color: #c7c7c7;
+    vertical-align: 10px
 }
 
 #rodape a:hover,
@@ -1649,16 +1650,9 @@ form select {
     fill: #fff;
 }
 
-.row label {
-    margin-top: 10px;
+.row label .row2 label {
     margin-left: 20px;
     color: #c7c7c7;
-}
-
-.row2 label {
-    margin-top: 10px;
-    margin-left: 20px;
-
 }
 
 @media(min-width:700px) {

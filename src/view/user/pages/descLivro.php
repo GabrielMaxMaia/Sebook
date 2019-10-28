@@ -71,13 +71,13 @@ for ($i = 0; $i < count($resultLivro); $i++) {
 	</section>
 
 	<h3>Seção de Comentarios</h3>
-	<?php
+<?php
 
-	/*Inclui toda sessão de comentários*/
-	$pagina = "";
-	$caminhoEnviaComentario = "area/user/pages/descLivro/";
-	include "includes/comentarioTemplate.php";
+/*Inclui toda sessão de comentários*/
+$pagina = "";
+$caminhoEnviaComentario = "area/user/pages/descLivro/";
+include "includes/comentarioTemplate.php";
 
-	?>
+?>
 
 </article>

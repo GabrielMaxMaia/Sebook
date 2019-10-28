@@ -22,33 +22,35 @@
 					</a>
 				</div>
 				<div class="row">
-					<a href="#twitter">
-						<img src="<?= _URLBASE_ ?>public/icon/twitter.svg" alt="">
-						<label>Twitter</label>
-					</a>
-				</div>
-				<div class="row">
 					<a href="#instagram">
 						<img src="<?= _URLBASE_ ?>public/icon/instagram.svg" alt="">
 						<label>Instagram</label>
 					</a>
 				</div>
+				<div class="row">
+					<a href="#twitter">
+						<img src="<?= _URLBASE_ ?>public/icon/twitter.svg" alt="">
+						<label>Twitter</label>
+					</a>
+				</div>
 			</div>
 			<div class="coluna3">
-				<h1>Contato</h1>
+				<h1>Entre em contato conosco</h1>
 				<div class="row2">
-					<a href="#contato">
-						<img src="<?= _URLBASE_ ?>public/icon/home.svg" alt="">
-						<label>Entre em contato conosco</label>
+					<a href="#email">
+						<img src="<?= _URLBASE_ ?>public/icon/email.svg" alt="">
+						<label>contato@sebook.com.br</label>
 					</a>
 				</div>
 				<div class="row2">
-					<img src="<?= _URLBASE_ ?>public/icon/email.svg" alt="">
-					<label>
-						Caixa Postal 5180,
-						<br>São Paulo - SP - Brasil
-						<br>CEP: 01311-100
-					</label>
+					<a href="#email">
+						<img src="<?= _URLBASE_ ?>public/icon/homeFooter.svg" alt="">
+						<label>
+							Caixa Postal 5180,<br>
+							São Paulo - SP - Brasil<br>
+							CEP: 01311-100
+						</label>
+					</a>
 				</div>
 			</div>
 		</div>

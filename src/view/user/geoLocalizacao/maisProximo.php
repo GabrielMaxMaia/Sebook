@@ -12,13 +12,12 @@ $styleSobrescrito =
         width: 100%;
         position: relative;
         left: 50%;
-        margin-left: -32%;
+        margin-left: -50%;
     }
 </style>";
 ?>
-
-	<div style="width: 640px; height: 480px;" id="mapContainer"></div>
     <div id="msg"></div>
+	<div style="width: 1000px; height: 480px;" id="mapContainer"></div>
 	<script>
 		// Instantiate a map and platform object:
 		var platform = new H.service.Platform({
