@@ -6,7 +6,7 @@ $objSql = new Util\Sql($conn);
 $postagemController = new Controller\PostagemController($objSql);
 $postagemController->gravarAlterar();
 
-$postagemDAO = new Model\PostagemDAO();
+//$postagemDAO = new Model\PostagemDAO();
 
 
 //$frontController = new Controller\FrontController($postagemDAO);
@@ -37,8 +37,6 @@ $postagemDAO = new Model\PostagemDAO();
 <section class="<?php echo $postagemController->getFormulario(); ?>">
 	<form method="post" action="">
 		<h4 class="cadCat">Cadastro de Postagems</h4>
-
-	
 
 		<input type="hidden" name="txtId" id="txtId" value="<?php echo $postagemController->getPostagemDAO()->getIdPostagem(); ?>">
 

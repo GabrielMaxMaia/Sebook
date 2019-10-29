@@ -209,6 +209,7 @@ class PostagemController
             $postagem = $this->postagemDAO->listarPostagemId();
             $this->postagemDAO->setTituloPostagem($postagem['tituloPostagem']);
             $this->postagemDAO->setTxtPostagem($postagem['txtPostagem']);
+            $this->postagemDAO->setUrlFotoPostagem($postagem['urlFotoPost']);
         }
     }
 

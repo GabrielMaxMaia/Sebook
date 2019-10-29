@@ -23,8 +23,16 @@ $comentarioController->gravarAlterar();
 		</thead>
 		<tbody>
 			<?php
-			 echo $comentarioController->listarComentario();
+			echo $comentarioController->listarComentario();
 			?>
+
+			<section class="notificador">
+				<?php
+				//Estou usando a Url da lista que quero controlar
+				$urlDoNotificador = "area/adm/cadastro/cadComentario";
+				echo $comentarioController->exibirNotificador($urlDoNotificador);
+				?>
+			</section>
 		</tbody>
 	</table>
 	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadComentario/add'" value="Novo">
@@ -34,12 +42,12 @@ $comentarioController->gravarAlterar();
 <section class="<?php echo $comentarioController->getFormulario(); ?>">
 	<form method="post" action="">
 		<h4 class="cadCat">Cadastro de Comentarios</h4>
-		
+
 		<input type="hidden" name="idPost" id="idPost" value="<?php echo $comentarioController->getComentarioDAO()->getIdPost(); ?>">
 
 		<label>Id usuario</label>
 		<input type="text" name="idUsuario" id="idUsuario" value="<?php echo $comentarioController->getComentarioDAO()->getIdUsuario(); ?>">
-		
+
 		<input type="hidden" name="idComentarioParente" id="idComentarioParente" value="<?php echo $comentarioController->getComentarioDAO()->getIdComentarioParente(); ?>">
 
 		<input type="hidden" name="idComentario" id="idComentario" value="<?php echo $comentarioController->getComentarioDAO()->getIdComentario(); ?>">
@@ -49,7 +57,7 @@ $comentarioController->gravarAlterar();
 
 		<!-- 
 		<input class="grande" type="text" id="txtNome" name="txtNome" onblur="validarNomeComentario('". _URLBASE_ ."src/view/adm/cadastro/cadComentarioAjax.php', 'txtNomeCat='+this.value, 'txtNome')" value="<?php //echo $comentarioController->getComentarioDAO()->getNomeComentario(); ?>"> -->
-		
+
 		<input class="grande" type="text" id="txtComentario" name="txtComentario" value="<?= $comentarioController->getComentarioDAO()->getTxtComentario(); ?>">
 
 		<label> </label>
