@@ -11,13 +11,15 @@ class SeboLivro
 	private $idUsuario;
 	private $isbnLivro;
 	private $qtdEstoque;
+	private $estadoLivro;
 
 	//Método construtor auxiliar de criação de objetos
-	public function __construct($idUsuario = "", $isbnLivro = "", $qtdEstoque = "")
+	public function __construct($idUsuario = "", $isbnLivro = "", $qtdEstoque = "", $estadoLivro = "")
 	{
 		$this->idUsuario = $idUsuario;
 		$this->isbnLivro = $isbnLivro;
 		$this->qtdEstoque = $qtdEstoque;
+		$this->estadoLivro = $estadoLivro;
 	}
 
 	//getters e setters
@@ -51,13 +53,22 @@ class SeboLivro
 		$this->qtdEstoque = $qtdEstoque;
 	}
 
+	public function getEstadoLivro(){
+		return $this->estadoLivro;
+	}
+
+	public function setEstadoLivro($estadoLivro){
+		$this->estadoLivro = $estadoLivro;
+	}
+
 	//Método __toString()
 	public function __toString()
 	{
 		return json_encode(array(
 			'idUsuario' => $this->idUsuario,
 			'isbnLivro' => $this->isbnLivro,
-			'qtdEstoque' => $this->qtdEstoque
+			'qtdEstoque' => $this->qtdEstoque,
+			'estadoLivro' => $this->estadoLivro
 		));
 	}
 }

@@ -173,7 +173,7 @@ if ($acessoUser != "") {
 				<input type="submit" name="atualizar" value="Atualizar">
 			</form>
 
-			<?=include "includes/perfilImg.php"?>				
+			<?php include "includes/perfilImg.php"; ?>				
 			
 			<!--Modal-->
 			<label class="btn-modal-cadastre" for="modal-cadastre">Trocar senha?</label>

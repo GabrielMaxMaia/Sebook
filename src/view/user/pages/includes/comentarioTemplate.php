@@ -23,7 +23,7 @@ if (isset($_POST['enviarComentario'])) {
         $comentarioDAO->adicionarComentario();
 
         //Pega url, caminho do post e o id
-        header("Location:" . _URLBASE_ . $caminhoEnviaComentario . $GetPost);
+        header("Location:" . _URLBASE_ . $caminhoEnvia . $GetPost);
 
         echo $outputResult = "Comentário enviado";
     }

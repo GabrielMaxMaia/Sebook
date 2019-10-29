@@ -60,8 +60,61 @@ $resultComentario = $comentarioDAO->listarComentarioPagina();
                         <p>Titulo: <?= $resultLivro[0]['nomeLivro'] ?></p>
                         <p>Isbn: <?= $seboLivro['isbnLivro'] ?></p>
                         <p>Quantidade em Estoque: <?= $seboLivro['qtdEstoque'] ?></p>
+                        <?php
+                            switch ($seboLivro['estadoLivro']){
+                                case "B":
+                                    $msgEstado =  "Bom";
+                                    break;
+                                case "M":
+                                     $msgEstado = "Médio";
+                                case "O":
+                                     $msgEstado = "Ótimo";
+                                case "N":
+                                     $msgEstado = "Novo";
+                                default:
+                                     $msgEstado = "Não informado";
+                            }
+                        ?>
+                        <p>Estado dos Livros: <?= $msgEstado ?></p>
                     </figcaption>
                 </figure>
+                <?php
+		if ($IdUser == $seboLivroDAO->getIdUsuario()) {
+            $seboLivroDAO->setIdUsuario($IdUser);
+            
+            $value = "Atualizar";
+            $excluir = true;
+            $name = "atualizarLivro";
+
+			?>
+
+			<label class="btn-modal-cadastre" for="livroAcervo" value="<?= $livroDAO->getIsbnLivro()  ?>" onclick="return pegaId(<?= $livroDAO->getIsbnLivro()  ?>,'<?= $seboLivro['qtdEstoque'] ?>')"><?= $value ?></label>
+
+			<?php
+				if ($excluir == true) {
+					?>
+				<!--Formulário para excluir-->
+				<form method="post" action="" name="excluirLivro">
+					<input type="hidden" name="isbnLivroExcluir" value="<?= $livroDAO->getIsbnLivro() ?>">
+
+					<input type="submit" name="excluirLivro" value="Excluir do Acervo" onclick="if (confirm('Quer Mesmo retirar esse Livro do acervo?')) {return true;}else{return false;}">
+				</form>
+				<?php
+                    if (isset($_POST['isbnLivroExcluir'])) {
+                        $seboLivroDAO->setIdUsuario($IdUser);
+                        $seboLivroDAO->setIsbnLivro($_POST['isbnLivroExcluir']);
+                        //Excluir comentário
+                        $seboLivroDAO->excluirseboLivro();
+                        //Recarrega a página
+
+                        // header("Location:" . _URLBASE_ . $caminhoEnviaComentario . $GetPost);
+                        echo "Excluirdsadsadd";
+                    }
+                ?>
+		<?php
+			}
+		}
+		?>
         <?php
             }
         } else {
@@ -74,8 +127,12 @@ $resultComentario = $comentarioDAO->listarComentarioPagina();
         <?php
         /*Inclui toda sessão de comentários*/
         $pagina = "paginaSebo";
-        $caminhoEnviaComentario = "area/user/pages/pagSebo/";
+        $caminhoEnvia = "area/user/pages/pagSebo/";
         include "includes/comentarioTemplate.php";
         ?>
     </section>
 </article>
+
+<?php 
+	include "includes/livroModal.php";
+?>
