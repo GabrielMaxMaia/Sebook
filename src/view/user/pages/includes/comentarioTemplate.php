@@ -22,9 +22,10 @@ if (isset($_POST['enviarComentario'])) {
         //Chama a função listaPostagemId
         $comentarioDAO->adicionarComentario();
 
-        //Pega url, caminho do post e o id
-        header("Location:" . _URLBASE_ . $caminhoEnvia . $GetPost);
-
+    
+        //Recarrega a página
+        header('Refresh:0');
+        
         echo $outputResult = "Comentário enviado";
     }
 }

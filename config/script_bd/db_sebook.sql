@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 27-Out-2019 às 23:21
+-- Generation Time: 29-Out-2019 às 05:18
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.2
 
@@ -150,7 +150,7 @@ INSERT INTO `cliente` (`id_usuario`, `sexo_cliente`, `compl_end_cliente`, `logra
 (9, 'F', NULL, NULL, NULL, NULL, '45687912587', '06589054', '1900-01-01', '1'),
 (10, 'M', NULL, NULL, NULL, NULL, '12378965878', '06545687', '1900-01-01', '1'),
 (13, 'M', '', '', 'public/img/imgPerfil/guts.png', '', '36574159866', '06512987', '1900-01-01', '1'),
-(15, 'M', 'yrty', 'AL', 'public/img/imgPerfil/crash_bandicoot.jpg', 'ytrydsad', '487.795.687-10', '06874-510', '2019-10-11', '1'),
+(15, 'M', 'yrty', 'AL', 'public/img/imgPerfil/Np9TNuLP_400x400.jpg', 'ytrydsad', '487.795.687-10', '06874-510', '2019-10-11', '1'),
 (26, 'M', '', '', 'public/img/imgPerfil/2_2_1.png', '', '', '', '2019-10-11', '1'),
 (27, 'M', '', 'FAZ', 'public/img/imgPerfil/1_1_1.jpg', '', '', '', '2019-10-12', '1'),
 (29, 'F', '', '', 'public/img/imgPerfil/bait.jpg', '', '', '', '2019-10-12', '1'),
@@ -194,9 +194,19 @@ CREATE TABLE `comentario` (
 --
 
 INSERT INTO `comentario` (`id_comentario`, `txt_comentario`, `data_hora_comentario`, `cod_status_comentario`, `id_post`, `id_usuario`, `id_comentario_parente`, `id_pagina`, `comentariocol`) VALUES
-(25, 'Sebo muito loko...', '2019-10-27 19:18:56', '1', '0', 44, 0, '35', NULL),
-(24, 'Minha histÃ³ria Ã© tÃ£o boa quanto a desse livro.', '2019-10-27 19:16:55', '1', '9788584390670', 44, 0, '', NULL),
-(23, 'Livro bom...', '2019-10-27 19:09:14', '1', '9788516079444', 15, 0, '', NULL);
+(46, 'dsad', '2019-10-29 01:16:31', '1', '9788535929225', 35, 0, '', NULL),
+(45, 'muito bom', '2019-10-29 01:10:36', '1', '9788573264241', 37, 0, '', NULL),
+(44, 'Livro show', '2019-10-29 01:09:46', '1', '9788516079444', 37, 0, '', NULL),
+(43, 'eae', '2019-10-29 01:09:35', '1', '0', 37, 0, '11', NULL),
+(41, 'let\'s rock', '2019-10-29 01:08:41', '1', '9788535928204', 37, 0, '', NULL),
+(42, 'Oi ', '2019-10-29 01:09:07', '1', '0', 37, 0, '35', NULL),
+(39, 'show de boloa', '2019-10-29 01:06:55', '1', '11', 35, 0, '11', NULL),
+(40, 'eae', '2019-10-29 01:07:47', '1', '0', 35, 0, '11', NULL),
+(38, 'eae', '2019-10-29 01:06:20', '1', '9788535928204', 35, 0, '', NULL),
+(50, 'dsadsa', '2019-10-29 01:17:47', '1', '0', 35, 0, '11', NULL),
+(49, 'adsad', '2019-10-29 01:17:31', '1', '9788516079444', 35, 0, '', NULL),
+(48, 'teste', '2019-10-29 01:17:24', '1', '5', 35, 0, '', NULL),
+(47, 'dsad', '2019-10-29 01:16:37', '1', '5', 35, 0, '', NULL);
 
 -- --------------------------------------------------------
 
@@ -511,7 +521,9 @@ INSERT INTO `postagem` (`id_post`, `data_hora_post`, `link_post`, `url_foto_post
 (12, '2019-10-13 23:44:59', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', '                                safdsad                        ', 'teste', '1', 37),
 (13, '2019-10-13 23:54:41', NULL, 'public/img/imgPost/bait.jpg', '                                                                sdfsd                                                ', 'bait', '1', 37),
 (14, '2019-10-27 01:03:50', NULL, '', 'tewtf', 'PHP', '1', 15),
-(15, '2019-10-27 01:04:01', NULL, '', 'dsad', 'dasd', '1', 15);
+(15, '2019-10-27 01:04:01', NULL, '', 'dsad', 'dasd', '1', 15),
+(16, '2019-10-29 01:02:08', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', '                dsad            ', 'eaeeeeeeeea', '1', 35),
+(17, '2019-10-29 01:02:57', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', 'sadasas            ', 'PHPdsadsa', '1', 35);
 
 -- --------------------------------------------------------
 
@@ -560,21 +572,23 @@ INSERT INTO `sebo` (`id_usuario`, `razao_sebo`, `nome_fantasia`, `cnpj_sebo`, `u
 CREATE TABLE `sebo_livro` (
   `id_usuario` int(11) NOT NULL,
   `isbn_livro` varchar(100) NOT NULL,
-  `qtd_estoque` int(11) DEFAULT NULL
+  `qtd_estoque` int(11) DEFAULT NULL,
+  `estado_livro` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `sebo_livro`
 --
 
-INSERT INTO `sebo_livro` (`id_usuario`, `isbn_livro`, `qtd_estoque`) VALUES
-(11, '9788516079444', 5),
-(11, '9788599296363', 7),
-(12, '9788516079444', 5),
-(14, '9788516079444', 4),
-(14, '9788599296363', 5),
-(35, '9788516079444', 10),
-(35, '9788599296363', 80);
+INSERT INTO `sebo_livro` (`id_usuario`, `isbn_livro`, `qtd_estoque`, `estado_livro`) VALUES
+(11, '9788516079444', 5, ''),
+(11, '9788599296363', 7, NULL),
+(12, '9788516079444', 5, NULL),
+(14, '9788516079444', 4, NULL),
+(14, '9788599296363', 5, NULL),
+(35, '9788501110367', 8, 'B'),
+(35, '9788516079444', 8, 'B'),
+(35, '9788535928204', 1, 'B');
 
 -- --------------------------------------------------------
 
@@ -611,7 +625,7 @@ INSERT INTO `usuario` (`id_usuario`, `nome_usuario`, `sobrenome_usuario`, `email
 (12, 'Mirian', 'Marinho da Silva Lima', 'sebosantafe@hotmail.com', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 5, '2019-09-18 00:00:00'),
 (13, 'Denis', 'Monteiro Guimaraes', 'denis.guimaraes@docente.fieb.edu.br', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 4, '2019-09-18 00:00:00'),
 (14, 'Priscilla', 'Nobre Lobo', 'globalnetconsultoria@globo.com', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 5, '2019-09-18 00:00:00'),
-(15, 'Master', 'adm ', 'master@outlook.com', '$2a$08$MjAyNDcxNzYzNTVkYjUwYe9vmq0joQxn3pX88hvrPWaKHUj/JEO9C', '1', 1, '2019-10-09 21:02:53'),
+(15, 'Master', 'of wizards', 'master@outlook.com', '$2a$08$MjAyNDcxNzYzNTVkYjUwYe9vmq0joQxn3pX88hvrPWaKHUj/JEO9C', '1', 1, '2019-10-09 21:02:53'),
 (16, 'Admin 1', 'adm', 'adm1@outlook.com', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 2, '2019-10-09 21:03:42'),
 (17, 'Admin 2', 'adm ', 'adm2@outlook.com', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 3, '2019-10-09 21:04:14'),
 (18, 'Usuario', 'Cliente', 'cliente@outlook.com', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 4, '2019-10-09 21:07:01'),
@@ -782,7 +796,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT for table `comentario`
 --
 ALTER TABLE `comentario`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `editora`
@@ -824,7 +838,7 @@ ALTER TABLE `perfil`
 -- AUTO_INCREMENT for table `postagem`
 --
 ALTER TABLE `postagem`
-  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `usuario`

@@ -127,7 +127,6 @@ $resultComentario = $comentarioDAO->listarComentarioPagina();
         <?php
         /*Inclui toda sessão de comentários*/
         $pagina = "paginaSebo";
-        $caminhoEnvia = "area/user/pages/pagSebo/";
         include "includes/comentarioTemplate.php";
         ?>
     </section>

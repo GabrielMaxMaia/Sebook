@@ -111,8 +111,7 @@ for ($i = 0; $i < count($resultLivro); $i++) {
 						$seboLivroDAO->excluirseboLivro();
 						//Recarrega a página
 
-						// header("Location:" . _URLBASE_ . $caminhoEnviaComentario . $GetPost);
-						echo "Excluirdsadsadd";
+						header('Refresh:0');
 					}
 				?>
 		<?php
@@ -126,7 +125,6 @@ for ($i = 0; $i < count($resultLivro); $i++) {
 
 	/*Inclui toda sessão de comentários*/
 	$pagina = "";
-	$caminhoEnvia = "area/user/pages/descLivro/";
 	include "includes/comentarioTemplate.php";
 	?>
 
