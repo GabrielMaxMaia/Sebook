@@ -47,7 +47,7 @@ class Upload
         if ($result == true) {
             //recuperar o caminho absoluto do projeto
             $caminho = getcwd();
-            var_dump($caminho);
+            //var_dump($caminho);
             //adicionando o caminho para salvar o arquivo
 
             //Tive que mudar o caminho pois estou usando
@@ -59,8 +59,9 @@ class Upload
                 $caminho = str_replace('\src\view\user\pages', '', $caminho);
             }
 
-
-            $caminho .= $this->caminhoArmazenamento; //no formato "/pasta/"
+            $caminho .= $this->caminhoArmazenamento; 
+            //no formato "/pasta/"
+            
             //adicionar o nome do arquivo;
             $caminho .= $this->arqUpload["name"];
 
