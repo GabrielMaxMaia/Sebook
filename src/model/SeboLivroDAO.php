@@ -11,6 +11,8 @@ class SeboLivroDAO extends SeboLivro
     //Atributos - serão os comandos SQL  + um objeto Sql
     private static $SELECT_ALL = "select * from sebo_livro";
 
+    private static $SELECT_TOT = "SELECT count(id_usuario) as tot from sebo_livro";
+
     private static $SELECT_ID = "SELECT * FROM sebo_livro WHERE id_usuario = :idUsuario";
 
     private static $SELECT_ID_ISBN = "SELECT * FROM sebo_livro WHERE id_usuario = :idUsuario and isbn_livro = :isbnLivro";
@@ -32,10 +34,16 @@ class SeboLivroDAO extends SeboLivro
     }
 
     //Métodos especialistas - irão executar os SQL dos Atributos
-    public function listarSeboLivro()
+    public function listarSeboLivro($ini = -1, $qtde = 1)
     {
+        if ($ini >= 0) {
+            $limit = " limit $ini , $qtde ";
+        } else {
+            $limit = "";
+        }
+
         //executar a consulta no banco
-        $result = $this->sql->query(SeboLivroDAO::$SELECT_ALL);
+        $result = $this->sql->query(SeboLivroDAO::$SELECT_ALL . $limit);
         //devolver o resultado
 
         if ($result->rowCount() > 0) {
@@ -51,6 +59,13 @@ class SeboLivroDAO extends SeboLivro
             $itens = null;
         }
         return $itens;
+    }
+
+    public function totalContar()
+    {
+        $result = $this->sql->query(SeboLivroDAO::$SELECT_TOT);
+        $linha = $result->fetch(\PDO::FETCH_OBJ);
+        return $linha->tot;
     }
 
     public function listarSeboLivroId()
