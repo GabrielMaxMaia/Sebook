@@ -1655,6 +1655,10 @@ form select {
     color: #c7c7c7;
 }
 
+label#postalFooter {
+    display: inline;
+}
+
 @media(min-width:700px) {
     .row2 label {
         max-width: 200px

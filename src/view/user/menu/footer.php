@@ -35,7 +35,7 @@
 				</div>
 			</div>
 			<div class="coluna3">
-				<h1>Entre em contato conosco</h1>
+				<h1>Entre em contato</h1>
 				<div class="row2">
 					<a href="#email">
 						<img src="<?= _URLBASE_ ?>public/icon/email.svg" alt="">
@@ -43,9 +43,9 @@
 					</a>
 				</div>
 				<div class="row2">
-					<a href="#email">
+					<a href="#postal">
 						<img src="<?= _URLBASE_ ?>public/icon/homeFooter.svg" alt="">
-						<label>
+						<label id=postalFooter>
 							Caixa Postal 5180,<br>
 							São Paulo - SP - Brasil<br>
 							CEP: 01311-100
