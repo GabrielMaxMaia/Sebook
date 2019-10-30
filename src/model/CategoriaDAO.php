@@ -9,7 +9,11 @@ class CategoriaDAO extends Categoria
 {
     //Atributos - serão os comandos SQL  + um objeto Sql
     private static $SELECT_ALL = "select * from categoria where cod_status_categoria = '1'";
+
+    private static $SELECT_TOT = "SELECT count(id_categoria) as tot from categoria where cod_status_categoria = '1'";
+
     private static $SELECT_ID = "select * from categoria where id_categoria = :idCategoria";
+    
     private static $INSERT = "INSERT INTO categoria
                                 (nome_categoria)
                                 VALUES (:nomeCategoria)";
@@ -35,10 +39,16 @@ class CategoriaDAO extends Categoria
 
     //Métodos especialistas - irão executar os SQL dos Atributos
 
-    public function listarCategorias()
+    public function listarCategorias($ini = -1, $qtde = 1)
     {
+        if ($ini >= 0) {
+            $limit = " limit $ini , $qtde ";
+        } else {
+            $limit = "";
+        }
+
         //executar a consulta no banco
-        $result = $this->sql->query(CategoriaDAO::$SELECT_ALL);
+        $result = $this->sql->query(CategoriaDAO::$SELECT_ALL . $limit);
         //devolver o resultado
         if ($result->rowCount() > 0) {
             while ($linha = $result->fetch(\PDO::FETCH_OBJ)) {
@@ -52,6 +62,13 @@ class CategoriaDAO extends Categoria
             $itens = null;
         }
         return $itens;
+    }
+
+    public function totalContar()
+    {
+        $result = $this->sql->query(CategoriaDAO::$SELECT_TOT);
+        $linha = $result->fetch(\PDO::FETCH_OBJ);
+        return $linha->tot;
     }
 
     public function listarCategoriaId()

@@ -11,6 +11,8 @@ class EditoraDAO extends Editora
     //Atributos - serão os comandos SQL  + um objeto Sql
     private static $SELECT_ALL = "select * from editora where cod_status_editora = '1'";
 
+    private static $SELECT_TOT = "SELECT count(id_editora) as tot from editora where cod_status_editora = '1'";
+
     private static $SELECT_ID = "select * from editora where id_editora = :idEditora";
 
     private static $INSERT = "INSERT INTO editora nome_editora VALUES :nomeEditora";
@@ -31,10 +33,16 @@ class EditoraDAO extends Editora
     }
 
     //Métodos especialistas - irão executar os SQL dos Atributos
-    public function listarEditoras()
+    public function listarEditoras($ini = -1, $qtde = 1)
     {
+        if ($ini >= 0) {
+            $limit = " limit $ini , $qtde ";
+        } else {
+            $limit = "";
+        }
+
         //executar a consulta no banco
-        $result = $this->sql->query(EditoraDAO::$SELECT_ALL);
+        $result = $this->sql->query(EditoraDAO::$SELECT_ALL . $limit);
         //devolver o resultado
 
         if ($result->rowCount() > 0) {
@@ -49,7 +57,13 @@ class EditoraDAO extends Editora
             $itens = null;
         }
         return $itens;
-        var_dump($itens);
+    }
+
+    public function totalContar()
+    {
+        $result = $this->sql->query(EditoraDAO::$SELECT_TOT);
+        $linha = $result->fetch(\PDO::FETCH_OBJ);
+        return $linha->tot;
     }
 
     public function listarEditoraId()

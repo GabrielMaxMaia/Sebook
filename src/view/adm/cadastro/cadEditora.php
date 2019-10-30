@@ -24,6 +24,15 @@
 			?>
 		</tbody>
 	</table>
+
+	<section class="notificador">
+		<?php
+		//Estou usando a Url da lista que quero controlar
+		$urlDoNotificador = "area/adm/cadastro/cadEditora";
+		echo $editoraController->exibirNotificador($urlDoNotificador);
+		?>
+	</section>
+	
 	 <input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadEditora/add'" value="Novo">
 
 </section>

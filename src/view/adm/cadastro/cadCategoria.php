@@ -26,6 +26,15 @@ $categoriaController->gravarAlterar();
 			?>
 		</tbody>
 	</table>
+
+	<section class="notificador">
+		<?php
+		//Estou usando a Url da lista que quero controlar
+		$urlDoNotificador = "area/adm/cadastro/cadCategoria";
+		echo $categoriaController->exibirNotificador($urlDoNotificador);
+		?>
+	</section>
+
 	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadCategoria/add'" value="Novo">
 
 </section>
@@ -42,8 +51,6 @@ $categoriaController->gravarAlterar();
 		<input class="button" type="submit" value="Enviar">
 	</form>
 	<br>
-	<br>
-	<br>
-	<br>
+
 	<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadCategoria">Voltar</a>
 </section>
