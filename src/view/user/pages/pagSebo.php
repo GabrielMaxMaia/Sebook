@@ -63,14 +63,17 @@ $resultComentario = $comentarioDAO->listarComentarioPagina();
                         <?php
                             switch ($seboLivro['estadoLivro']){
                                 case "B":
-                                    $msgEstado =  "Bom";
+                                    $msgEstado = "Bom";
                                     break;
                                 case "M":
                                      $msgEstado = "Médio";
+                                     break;
                                 case "O":
                                      $msgEstado = "Ótimo";
+                                     break;
                                 case "N":
                                      $msgEstado = "Novo";
+                                     break;
                                 default:
                                      $msgEstado = "Não informado";
                             }
