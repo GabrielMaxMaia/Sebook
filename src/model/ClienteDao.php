@@ -10,6 +10,8 @@ class ClienteDAO extends Cliente
     //Atributos - serão os comandos SQL  + um objeto Sql
     private static $SELECT_ALL = "select * from cliente where cod_status_cliente = '1'";
 
+    private static $SELECT_TOT = "SELECT count(id_usuario) as tot from cliente where cod_status_cliente = '1'";
+
     private static $SELECT_ID = "select * from cliente where id_usuario = :idUsuario";
 
     private static $INSERT = "INSERT INTO cliente (id_usuario,sexo_cliente,compl_end_cliente,logradouro_cliente,url_foto_cliente,num_compl_cliente,cpf_cliente,cep_cliente,dt_nasc_cliente) VALUES (:idUsuario,:sexoCliente,:complEndCliente,:logradouroCliente,:urlFotoCliente,:numComplCliente,:cpfCliente,:cepCliente,:nascCliente)";
@@ -33,10 +35,16 @@ class ClienteDAO extends Cliente
 
     //Métodos especialistas - irão executar os SQL dos Atributos
 
-    public function listarClientes()
+    public function listarClientes($ini = -1, $qtde = 1)
     {
+        if ($ini >= 0) {
+            $limit = " limit $ini , $qtde ";
+        } else {
+            $limit = "";
+        }
+
         //executar a consulta no banco
-        $result = $this->sql->query(ClienteDAO::$SELECT_ALL);
+        $result = $this->sql->query(ClienteDAO::$SELECT_ALL . $limit);
         //devolver o resultado
 
         if ($result->rowCount() > 0) {
@@ -58,6 +66,13 @@ class ClienteDAO extends Cliente
             $itens = null;
         }
         return $itens;
+    }
+
+    public function totalContar()
+    {
+        $result = $this->sql->query(ClienteDAO::$SELECT_TOT);
+        $linha = $result->fetch(\PDO::FETCH_OBJ);
+        return $linha->tot;
     }
 
     public function listarClienteId()

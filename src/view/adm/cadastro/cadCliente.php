@@ -27,6 +27,15 @@ $clienteController->gravarAlterar();
 			?>
 		</tbody>
 	</table>
+
+	<section class="notificador">
+		<?php
+		//Estou usando a Url da lista que quero controlar
+		$urlDoNotificador = "area/adm/cadastro/cadCliente";
+		echo $clienteController->exibirNotificador($urlDoNotificador);
+		?>
+	</section>
+
 	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadCliente/add'" value="Novo">
 </section>
 

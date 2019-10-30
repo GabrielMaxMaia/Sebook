@@ -12,6 +12,8 @@ class UsuarioDAO extends Usuario
 
     private static $SELECT_ALL = "select * from usuario where cod_status_Usuario = '1'";
 
+    private static $SELECT_TOT = "SELECT count(id_usuario) as tot from usuario where cod_status_usuario = '1'";
+
     private static $SELECT_EMAIL = "SELECT email_usuario from usuario where email_usuario =:emailUsuario";
 
     private static $SELECT_PERFIL = "select * from perfil where cod_status_perfil = '1'";
@@ -41,10 +43,16 @@ class UsuarioDAO extends Usuario
 
     //Métodos especialistas - irão executar os SQL dos Atributos
 
-    public function listarUsuarios()
+    public function listarUsuarios($ini = -1, $qtde = 1)
     {
+        if ($ini >= 0) {
+            $limit = " limit $ini , $qtde ";
+        } else {
+            $limit = "";
+        }
+
         //executar a consulta no banco
-        $result = $this->sql->query(UsuarioDAO::$SELECT_ALL);
+        $result = $this->sql->query(UsuarioDAO::$SELECT_ALL . $limit);
         //devolver o resultado
         if ($result->rowCount() > 0) {
             while ($linha = $result->fetch(\PDO::FETCH_OBJ)) {
@@ -60,6 +68,13 @@ class UsuarioDAO extends Usuario
             $itens = null;
         }
         return $itens;
+    }
+
+    public function totalContar()
+    {
+        $result = $this->sql->query(UsuarioDAO::$SELECT_TOT);
+        $linha = $result->fetch(\PDO::FETCH_OBJ);
+        return $linha->tot;
     }
 
     public function listarPerfil()
@@ -214,4 +229,5 @@ class UsuarioDAO extends Usuario
         );
         return $result;
     }
+
 }

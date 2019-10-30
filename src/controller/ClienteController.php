@@ -6,45 +6,108 @@ use Model\ClienteDAO;
 
 class ClienteController
 {
-//Atributos
+    //Atributos
     private $lista = 'on';
     private $formulario = 'off';
     private $acaoGET;
     private $acaoPOST;
 
     private $clienteDAO = null;
+    //Itens por página
+    private $itemPagina = 10;
+    //Página Atual de exibição
+    private $paginaAtual = 0;
+    //Registro inicial da paginação
+    private $regIni = 0;
 
-//Método Construtor
+    //Método Construtor
     public function __construct($sql)
     {
         $this->clienteDAO = new ClienteDAO($sql);
         $this->verificaExibicao();
+        $this->verificarPaginacao();
     }
 
-//Métodos GETTERS e SETTERS
+    //Métodos GETTERS e SETTERS
     public function getLista()
-    {return $this->lista;}
+    {
+        return $this->lista;
+    }
     public function getFormulario()
-    {return $this->formulario;}
+    {
+        return $this->formulario;
+    }
     public function getAcaoGET()
-    {return $this->acaoGET;}
+    {
+        return $this->acaoGET;
+    }
     public function getAcaoPOST()
-    {return $this->acaoPOST;}
+    {
+        return $this->acaoPOST;
+    }
     public function getClienteDAO()
-    {return $this->clienteDAO;}
+    {
+        return $this->clienteDAO;
+    }
 
     public function setLista($valor)
-    {$this->lista = $valor;}
+    {
+        $this->lista = $valor;
+    }
     public function setFormulario($valor)
-    {$this->formulario = $valor;}
+    {
+        $this->formulario = $valor;
+    }
     public function setAcaoGET($valor)
-    {$this->acaoGET = $valor;}
+    {
+        $this->acaoGET = $valor;
+    }
     public function setAcaoPOST($valor)
-    {$this->acaoPOST = $valor;}
-    public function setClienteDAO($valor)
-    {$this->clienteDAO = $valor;}
+    {
+        $this->acaoPOST = $valor;
+    }
 
-//Métodos Especialistas
+
+    //----Front Controller
+
+    public function getItemPagina()
+    {
+        return $this->itemPagina;
+    }
+
+    public function setItemPagina($itemPagina)
+    {
+        $this->itemPagina = $itemPagina;
+    }
+
+    public function setClienteDAO($ClienteDAO)
+    {
+        $this->ClienteDAO = $ClienteDAO;
+    }
+
+    public function getPaginaAtual()
+    {
+        return $this->paginaAtual;
+    }
+
+    public function setPaginaAtual($paginaAtual)
+    {
+        $this->paginaAtual = $paginaAtual;
+    }
+
+    public function getRegIni()
+    {
+        return $this->regIni;
+    }
+
+    public function setRegIni($regIni)
+    {
+        $this->regIni = $regIni;
+    }
+
+    //----Front Controller
+
+    //Métodos Especialistas
 
     public function recuperarAcaoPOST()
     {
@@ -95,37 +158,37 @@ class ClienteController
     // $_SESSION['var'] = 'valor';
     // echo $_SESSION['var'];
 
-    public function evitarReenvio(){
+    public function evitarReenvio()
+    {
         //verificar se existe uma variavel de sessão para os dados do form
-        if(isset($_SESSION['dadosForm'])){
+        if (isset($_SESSION['dadosForm'])) {
             //conteúdo armazenado sessão diferente do conteúdo atual --> ambos em forma de hash
-            if($_SESSION['dadosForm'] != md5(implode($_POST)) ){   //novo envio             
+            if ($_SESSION['dadosForm'] != md5(implode($_POST))) {   //novo envio             
                 //armazena conteúdo do formulário em forma de hash na varivel de sessao
                 $_SESSION['dadosForm'] = md5(implode($_POST)); // md5 cria um hash de uma string  --> implode converte array para string;
                 //indica que não há reenvio de dados
                 return true;
-            }else{ //reenvio
+            } else { //reenvio
                 //conteúdo armazenado sessão é igual do conteúdo atual --> ambos em forma de hash
                 //não atualizo a sessão
                 return false;
             }
-        } else{
+        } else {
             //armazena conteúdo do formulário em forma de hash na varivel de sessao
             $_SESSION['dadosForm'] = md5(implode($_POST)); // md5 cria um hash de uma string  --> implode converte array para string;
             //indica que não há reenvio de dados
             return true;
         }
     }
-    
+
     public function gravarAlterar()
     {
         $this->recuperarAcaoPOST();
         $this->recuperarDadosFormulario();
-        if ($this->acaoPOST == 1 && $this->evitarReenvio()) {            
+        if ($this->acaoPOST == 1 && $this->evitarReenvio()) {
             $this->clienteDAO->adicionarCliente();
         } else if ($this->acaoPOST == 2) {
             $this->clienteDAO->alterarCliente();
-
         }
     }
 
@@ -155,8 +218,8 @@ class ClienteController
 
     public function listarClientes()
     {
-        $result = $this->clienteDAO->listarClientes();
-       
+        $result = $this->clienteDAO->listarClientes($this->regIni, $this->itemPagina);
+
         $tabela = "";
         if ($result != null) {
             foreach ($result as $linha) {
@@ -167,23 +230,63 @@ class ClienteController
                 <td>" . $linha['sexoCliente'] . "</td>
                 <td>" . $linha['urlFotoCliente'] . "</td>
                 <td>" . $linha['codStatusCliente']
-                 . "</td>
+                    . "</td>
                         <td>
                             <a href='" . _URLBASE_ . "area/adm/cadastro/cadCliente/alter/" . $linha['idUsuario'] . "'>
-                                <img src='"._URLBASE_."public/icon/editar.svg'>
+                                <img src='" . _URLBASE_ . "public/icon/editar.svg'>
                             </a>
                         </td>
                         <td>
                             <a href='" . _URLBASE_ . "area/adm/cadastro/cadCliente/delete/" . $linha['idUsuario'] . "'>
-                                <img src='"._URLBASE_."public/icon/excluir.svg'>
+                                <img src='" . _URLBASE_ . "public/icon/excluir.svg'>
                             </a>
                         </td>
                     </tr>";
             }
         } else {
             $tabela = "<tr colspan='5'><td>Não há clientes registradas</td></tr>";
-        }        
+        }
         return $tabela;
     }
+
+
+    public function verificarPaginacao()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == "GET") {
+            $pagina = isset($_GET['pagina']) ? $_GET['pagina'] : 1;
+            $this->paginaAtual = $pagina;
+            //calculo do registro inicial;
+            $this->regIni = ($this->paginaAtual - 1) * $this->itemPagina;
+        }
+    }
+
+    public function exibirNotificador($urlDoNotificador)
+    {
+       // Passando a quantidade de paginas como parmetro
+        $qtdePaginas = ceil($this->clienteDAO->totalContar() / $this->itemPagina);
+
+        $notificador = "<ul>";
+        if ($this->paginaAtual >= 2) {
+            $notificador .= "<li><a href='" . _URLBASE_ . $urlDoNotificador . "/pagina/1'><<</a></li>";
+            $notificador .= "<li><a href='" . _URLBASE_ . $urlDoNotificador . "/pagina/" . ($this->paginaAtual - 1) . "'><</a> </li>";
+        }
+        for ($i = 1; $i <= $qtdePaginas; $i++) {
+            $active = "";
+            if ($this->paginaAtual == $i) {
+                $active = "class='active'";
+            }
+            $notificador .= "
+            <li>
+                <a $active href='" . _URLBASE_ . $urlDoNotificador . "/pagina/" . $i . "'>$i</a>
+            </li>";
+        }
+        if ($this->paginaAtual < $qtdePaginas) {
+            $notificador .= "<li><a $active href='" . _URLBASE_ . $urlDoNotificador . "/pagina/" . ($this->paginaAtual + 1) . "'>></a></li>";
+            $notificador .= "<li><a $active href='" . _URLBASE_ . $urlDoNotificador . "/pagina/" . $qtdePaginas . "'>>></a></li>";
+        }
+        $notificador .= "</ul>";
+        return $notificador;
+    }
+
 
 }

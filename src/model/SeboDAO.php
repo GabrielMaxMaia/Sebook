@@ -11,6 +11,8 @@ class SeboDAO extends Sebo
     //Atributos - serão os comandos SQL  + um objeto Sql
     private static $SELECT_ALL = "select * from sebo where cod_status_sebo = '1'";
 
+    private static $SELECT_TOT = "SELECT count(id_usuario) as tot from sebo where cod_status_sebo = '1'";
+
     private static $SELECT_ID = "select * from sebo where id_usuario = :idUsuario";
 
     private static $INSERT = "INSERT INTO sebo (id_usuario, razao_sebo, nome_fantasia, cnpj_sebo, url_foto_sebo, num_end_sebo,compl_end_sebo, logradouro_sebo, cep_end_sebo,num_tel_sebo, celular_1_sebo, celular_2_sebo,insc_estadual_sebo, url_site_sebo) VALUES (:idUsuario, :razaoSebo, :nomeFantasia, :cnpjSebo, :urlFotoSebo, :numEndSebo, :complEndSebo,:logradouroSebo, :cepEndSebo, :numTelSebo,:celular1Sebo, :celular2Sebo, :inscEstadualSebo, :urlSiteSebo)";
@@ -33,10 +35,16 @@ class SeboDAO extends Sebo
     }
 
     //Métodos especialistas - irão executar os SQL dos Atributos
-    public function listarSebos()
+    public function listarSebos($ini = -1, $qtde = 1)
     {
+        if ($ini >= 0) {
+            $limit = " limit $ini , $qtde ";
+        } else {
+            $limit = "";
+        }
+
         //executar a consulta no banco
-        $result = $this->sql->query(seboDAO::$SELECT_ALL);
+        $result = $this->sql->query(seboDAO::$SELECT_ALL . $limit);
         //devolver o resultado
 
         if ($result->rowCount() > 0) {
@@ -63,6 +71,13 @@ class SeboDAO extends Sebo
             $itens = null;
         }
         return $itens;
+    }
+
+    public function totalContar()
+    {
+        $result = $this->sql->query(SeboDAO::$SELECT_TOT);
+        $linha = $result->fetch(\PDO::FETCH_OBJ);
+        return $linha->tot;
     }
 
     public function listarSeboId()

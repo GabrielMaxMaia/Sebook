@@ -25,6 +25,15 @@ $SeboController->gravarAlterar();
 			?>
 		</tbody>
 	</table>
+
+	<section class="notificador">
+		<?php
+		//Estou usando a Url da lista que quero controlar
+		$urlDoNotificador = "area/adm/cadastro/cadSebo";
+		echo $SeboController->exibirNotificador($urlDoNotificador);
+		?>
+	</section>
+
 	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadSebo/add'" value="Novo">
 </section>
 
