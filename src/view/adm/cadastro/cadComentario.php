@@ -25,16 +25,17 @@ $comentarioController->gravarAlterar();
 			<?php
 			echo $comentarioController->listarComentario();
 			?>
-
-			<section class="notificador">
-				<?php
-				//Estou usando a Url da lista que quero controlar
-				$urlDoNotificador = "area/adm/cadastro/cadComentario";
-				echo $comentarioController->exibirNotificador($urlDoNotificador);
-				?>
-			</section>
 		</tbody>
 	</table>
+
+	<section class="notificador">
+		<?php
+		//Estou usando a Url da lista que quero controlar
+		$urlDoNotificador = "area/adm/cadastro/cadComentario";
+		echo $comentarioController->exibirNotificador($urlDoNotificador);
+		?>
+	</section>
+
 	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadComentario/add'" value="Novo">
 
 </section>
@@ -56,7 +57,8 @@ $comentarioController->gravarAlterar();
 		<label>Comentario</label>
 
 		<!-- 
-		<input class="grande" type="text" id="txtNome" name="txtNome" onblur="validarNomeComentario('". _URLBASE_ ."src/view/adm/cadastro/cadComentarioAjax.php', 'txtNomeCat='+this.value, 'txtNome')" value="<?php //echo $comentarioController->getComentarioDAO()->getNomeComentario(); ?>"> -->
+		<input class="grande" type="text" id="txtNome" name="txtNome" onblur="validarNomeComentario('". _URLBASE_ ."src/view/adm/cadastro/cadComentarioAjax.php', 'txtNomeCat='+this.value, 'txtNome')" value="<?php //echo $comentarioController->getComentarioDAO()->getNomeComentario(); 
+																																																				?>"> -->
 
 		<input class="grande" type="text" id="txtComentario" name="txtComentario" value="<?= $comentarioController->getComentarioDAO()->getTxtComentario(); ?>">
 
@@ -64,9 +66,6 @@ $comentarioController->gravarAlterar();
 		<input class="buttonCancel" type="reset" value="Limpar">
 		<input class="button" type="submit" value="Enviar">
 	</form>
-	<br>
-	<br>
-	<br>
-	<br>
+
 	<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadComentario">Voltar</a>
 </section>

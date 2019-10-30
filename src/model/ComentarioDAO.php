@@ -10,6 +10,8 @@ class ComentarioDAO extends Comentario
     //Atributos - serão os comandos SQL  + um objeto Sql
     private static $SELECT_ALL = "select * from comentario inner join usuario WHERE usuario.id_usuario = comentario.id_usuario and cod_status_comentario = '1' ORDER BY id_comentario DESC";
 
+    private static $SELECT_TOT = "SELECT count(id_comentario) as tot from comentario where cod_status_comentario = '1'";
+
     private static $SELECT_ID = "select * from comentario WHERE id_comentario =:idComentario";
 
     private static $SELECT_ID_POSTAGEM = "SELECT id_post, id_comentario, id_comentario_parente, txt_comentario, data_hora_comentario, cod_status_comentario, id_perfil, usuario.id_usuario, nome_usuario, email_usuario FROM comentario inner join usuario WHERE comentario.id_usuario = usuario.id_usuario AND id_post = :idPost AND cod_status_comentario = '1' ORDER BY id_comentario DESC";
@@ -34,10 +36,42 @@ class ComentarioDAO extends Comentario
     }
 
     //Métodos especialistas - irão executar os SQL dos Atributos    
-    public function listarComentario()
+    // public function listarComentario()
+    // {
+    //     //executar a consulta no banco
+    //     $result = $this->sql->query(ComentarioDAO::$SELECT_ALL);
+
+    //     //devolver o resultado
+    //     if ($result->rowCount() > 0) {
+    //         while ($linha = $result->fetch(\PDO::FETCH_OBJ)) {
+    //             $itens[] = array(
+    //                 'idComentario' => $linha->id_comentario,
+    //                 'idComentarioParente' => $linha->id_comentario_parente,
+    //                 'txtComentario' => $linha->txt_comentario,
+    //                 'dataHoraComentario' => $linha->data_hora_comentario,
+    //                 'codStatusComentario' => $linha->cod_status_comentario,
+    //                 'idPost' => $linha->id_post,
+    //                 'idPagina' => $linha->id_pagina,
+    //                 'idUsuario' => $linha->id_usuario,
+    //                 'nomeUsuario' => $linha->nome_usuario
+    //             );
+    //         }
+    //     } else {
+    //         $itens = null;
+    //     }
+    //     return $itens;
+    // }
+
+    public function listarComentario($ini = -1, $qtde = 1)
     {
+        if ($ini >= 0) {
+            $limit = " limit $ini , $qtde ";
+        } else {
+            $limit = "";
+        }
+
         //executar a consulta no banco
-        $result = $this->sql->query(ComentarioDAO::$SELECT_ALL);
+        $result = $this->sql->query(ComentarioDAO::$SELECT_ALL . $limit);
 
         //devolver o resultado
         if ($result->rowCount() > 0) {
@@ -58,6 +92,13 @@ class ComentarioDAO extends Comentario
             $itens = null;
         }
         return $itens;
+    }
+
+    public function totalContar()
+    {
+        $result = $this->sql->query(ComentarioDAO::$SELECT_TOT);
+        $linha = $result->fetch(\PDO::FETCH_OBJ);
+        return $linha->tot;
     }
 
     public function listarComentarioId()

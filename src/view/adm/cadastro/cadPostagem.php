@@ -7,8 +7,6 @@ $postagemController = new Controller\PostagemController($objSql);
 $postagemController->gravarAlterar();
 
 //$postagemDAO = new Model\PostagemDAO();
-
-
 //$frontController = new Controller\FrontController($postagemDAO);
 
 ?>

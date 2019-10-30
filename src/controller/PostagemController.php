@@ -68,7 +68,6 @@ class PostagemController
     }
 
 
-
     //----Front Controller
 
     public function getItemPagina()
@@ -106,11 +105,7 @@ class PostagemController
         $this->regIni = $regIni;
     }
 
-
-
     //----Front Controller
-
-
 
 
     //Métodos Especialistas
