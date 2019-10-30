@@ -23,6 +23,15 @@ $livroAutorController->gravarAlterar();
 			?>
 		</tbody>
 	</table>
+
+	<section class="notificador">
+		<?php
+		//Estou usando a Url da lista que quero controlar
+		$urlDoNotificador = "area/adm/cadastro/cadLivroAutor";
+		echo $livroAutorController->exibirNotificador($urlDoNotificador);
+		?>
+	</section>
+
 	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadLivroAutor/add'" value="Novo">
 </section>
 

@@ -12,6 +12,8 @@ class LivroDAO extends Livro
 
     private static $SELECT_ALL = "select * from livro where cod_status_livro = '1' order by id_editora";
 
+    private static $SELECT_TOT = "SELECT count(isbn_livro) as tot from livro where cod_status_livro = '1'";
+
     private static $SELECT_ALL_LIVRO = "SELECT * FROM livro where nome_livro like :parametro ORDER BY nome_livro ASC";
 
     private static $INSERT = "INSERT INTO livro (isbn_livro, id_categoria, ano_livro, nome_livro, sinopse_livro, id_editora, url_foto_livro) VALUES (:isbnLivro, :idCategoria, :anoLivro, :nomeLivro, :sinopseLivro, :idEditora, :urlFotoLivro)";
@@ -101,10 +103,16 @@ class LivroDAO extends Livro
         return $itens;
     }
 
-    public function listarLivros()
+    public function listarLivros($ini = -1, $qtde = 1)
     {
+        if ($ini >= 0) {
+            $limit = " limit $ini , $qtde ";
+        } else {
+            $limit = "";
+        }
+
         //executar a consulta no banco
-        $result = $this->sql->query(LivroDAO::$SELECT_ALL);
+        $result = $this->sql->query(LivroDAO::$SELECT_ALL . $limit);
         //devolver o resultado
 
         if ($result->rowCount() > 0) {
@@ -126,34 +134,12 @@ class LivroDAO extends Livro
         return $itens;
     }
 
-    // public function listarLivroIsbn()
-    // {
-    //     //executar a consulta no banco
-    //     $result = $this->sql->query(
-    //         LivroDAO::$SELECT_ID,
-    //         array(
-    //             'isbnLivro' => array(0 => $this->getIsbnLivro(), 1 => \PDO::PARAM_STR)
-    //         )
-    //     );
-    //     if ($result->rowCount() == 1) {
-    //         $linha = $result->fetch(\PDO::FETCH_OBJ);
-    //         $itens = array(
-    //             'isbnLivro' => $linha->isbn_livro,
-    //             'anoLivro' => $linha->ano_livro,
-    //             'urlFotoLivro' => $linha->url_foto_livro,
-    //             'nomeLivro' => $linha->nome_livro,
-    //             'sinopseLivro' => $linha->sinopse_livro,
-    //             'codStatusLivro' => $linha->cod_status_livro,
-    //             'idEditora' => $linha->id_editora,
-    //             'idCategoria' => $linha->id_categoria,
-    //             'idAutor' => $linha->id_autor
-    //         );
-    //     } else {
-    //         $itens = null;
-    //     }
-    //     //devolver o resultado     
-    //     return $itens;
-    // }
+    public function totalContar()
+    {
+        $result = $this->sql->query(LivroDAO::$SELECT_TOT);
+        $linha = $result->fetch(\PDO::FETCH_OBJ);
+        return $linha->tot;
+    }
 
     public function listarLivroIsbn()
     {

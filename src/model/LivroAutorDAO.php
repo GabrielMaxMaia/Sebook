@@ -11,6 +11,8 @@ class LivroAutorDAO extends LivroAutor
     //Atributos - serão os comandos SQL  + um objeto Sql
     private static $SELECT_ALL = "select * from livro_autor";
 
+    private static $SELECT_TOT = "SELECT count(id_autor) as tot from livro_autor";
+
     private static $SELECT_ID = "select * from livro_autor where id_autor = :idAutor";
     
     private static $SELECT_ISBN_AUTOR = "select * from livro_autor where isbn_livro = :isbnLivro";
@@ -32,10 +34,16 @@ class LivroAutorDAO extends LivroAutor
     }
 
     //Métodos especialistas - irão executar os SQL dos Atributos
-    public function listarLivroAutor()
+    public function listarLivroAutor($ini = -1, $qtde = 1)
     {
+        if ($ini >= 0) {
+            $limit = " limit $ini , $qtde ";
+        } else {
+            $limit = "";
+        }
+
         //executar a consulta no banco
-        $result = $this->sql->query(LivroAutorDAO::$SELECT_ALL);
+        $result = $this->sql->query(LivroAutorDAO::$SELECT_ALL . $limit);
         //devolver o resultado
 
         if ($result->rowCount() > 0) {
@@ -49,6 +57,13 @@ class LivroAutorDAO extends LivroAutor
             $itens = null;
         }
         return $itens;
+    }
+
+    public function totalContar()
+    {
+        $result = $this->sql->query(LivroAutorDAO::$SELECT_TOT);
+        $linha = $result->fetch(\PDO::FETCH_OBJ);
+        return $linha->tot;
     }
 
     public function listarLivroAutorId()

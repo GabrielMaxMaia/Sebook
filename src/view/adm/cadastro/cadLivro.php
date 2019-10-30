@@ -33,8 +33,8 @@ $livroController->gravarAlterar();
 	<section class="notificador">
 		<?php
 		//Estou usando a Url da lista que quero controlar
-		// $urlDoNotificador = "area/adm/cadastro/cadLivro";
-		// echo $livroController->exibirNotificador($urlDoNotificador);
+		$urlDoNotificador = "area/adm/cadastro/cadLivro";
+		echo $livroController->exibirNotificador($urlDoNotificador);
 		?>
 	</section>
 
