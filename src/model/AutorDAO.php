@@ -11,7 +11,7 @@ class AutorDAO extends Autor
     //Atributos - serão os comandos SQL  + um objeto Sql
     private static $SELECT_ALL = "select * from autor where cod_status_autor = '1'";
 
-    // private static $SELECT_ID = "SELECT * FROM Autor INNER JOIN nacionalidade AS Na  id_autor = :idAutor";
+    private static $SELECT_TOT = "SELECT count(id_autor) as tot from autor where cod_status_autor = '1'";
 
     private static $SELECT_ID = "SELECT * FROM autor INNER JOIN nacionalidade AS Na WHERE autor.id_nacionalidade = Na.id_nacionalidade AND id_autor = :idAutor";
 
@@ -37,10 +37,16 @@ class AutorDAO extends Autor
     }
 
     //Métodos especialistas - irão executar os SQL dos Atributos
-    public function listarAutores()
+    public function listarAutores($ini = -1, $qtde = 1)
     {
+        if ($ini >= 0) {
+            $limit = " limit $ini , $qtde ";
+        } else {
+            $limit = "";
+        }
+
         //executar a consulta no banco
-        $result = $this->sql->query(AutorDAO::$SELECT_ALL);
+        $result = $this->sql->query(AutorDAO::$SELECT_ALL . $limit);
         //devolver o resultado
 
         if ($result->rowCount() > 0) {
@@ -56,6 +62,13 @@ class AutorDAO extends Autor
             $itens = null;
         }
         return $itens;
+    }
+
+    public function totalContar()
+    {
+        $result = $this->sql->query(AutorDAO::$SELECT_TOT);
+        $linha = $result->fetch(\PDO::FETCH_OBJ);
+        return $linha->tot;
     }
 
     public function listarAutorId()

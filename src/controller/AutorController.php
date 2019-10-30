@@ -13,12 +13,19 @@ class AutorController
     private $acaoPOST;
 
     private $autorDAO = null;
+    //Itens por página
+    private $itemPagina = 10;
+    //Página Atual de exibição
+    private $paginaAtual = 0;
+    //Registro inicial da paginação
+    private $regIni = 0;
 
     //Método Construtor
     public function __construct($sql)
     {
         $this->autorDAO = new AutorDAO($sql);
         $this->verificaExibicao();
+        $this->verificarPaginacao();
     }
 
     //Métodos GETTERS e SETTERS
@@ -59,6 +66,45 @@ class AutorController
     {
         $this->acaoPOST = $valor;
     }
+
+    //----Front Controller
+
+    public function getItemPagina()
+    {
+        return $this->itemPagina;
+    }
+
+    public function setItemPagina($itemPagina)
+    {
+        $this->itemPagina = $itemPagina;
+    }
+
+    public function setAutorDAO($autorDAO)
+    {
+        $this->autorDAO = $autorDAO;
+    }
+
+    public function getPaginaAtual()
+    {
+        return $this->paginaAtual;
+    }
+
+    public function setPaginaAtual($paginaAtual)
+    {
+        $this->paginaAtual = $paginaAtual;
+    }
+
+    public function getRegIni()
+    {
+        return $this->regIni;
+    }
+
+    public function setRegIni($regIni)
+    {
+        $this->regIni = $regIni;
+    }
+
+    //----Front Controller
 
     //Métodos Especialistas
 
@@ -131,11 +177,10 @@ class AutorController
     {
         $this->recuperarAcaoPOST();
         $this->recuperarDadosFormulario();
-        if ($this->acaoPOST == 1 && $this->evitarReenvio()) {            
+        if ($this->acaoPOST == 1 && $this->evitarReenvio()) {
             $this->autorDAO->adicionarAutor();
         } else if ($this->acaoPOST == 2) {
             $this->autorDAO->alterarAutor();
-
         }
     }
 
@@ -152,15 +197,14 @@ class AutorController
         if ($this->acaoGET == 2) {
             $this->autorDAO->setIdAutor($_GET['id']);
             $autor = $this->autorDAO->listarAutorId();
-      
+
             $this->autorDAO->setNomeAutor($autor['nomeAutor']);
         }
-    
     }
 
     public function listarAutores()
     {
-        $result = $this->autorDAO->listarAutores();
+        $result = $this->autorDAO->listarAutores($this->regIni, $this->itemPagina);
 
         $tabela = "";
         if ($result != null) {
@@ -186,4 +230,45 @@ class AutorController
         }
         return $tabela;
     }
+
+
+    public function verificarPaginacao()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == "GET") {
+            $pagina = isset($_GET['pagina']) ? $_GET['pagina'] : 1;
+            $this->paginaAtual = $pagina;
+            //calculo do registro inicial;
+            $this->regIni = ($this->paginaAtual - 1) * $this->itemPagina;
+        }
+    }
+
+    public function exibirNotificador($urlDoNotificador)
+    {
+       // Passando a quantidade de paginas como parmetro
+        $qtdePaginas = ceil($this->autorDAO->totalContar() / $this->itemPagina);
+
+        $notificador = "<ul>";
+        if ($this->paginaAtual >= 2) {
+            $notificador .= "<li><a href='" . _URLBASE_ . $urlDoNotificador . "/pagina/1'><<</a></li>";
+            $notificador .= "<li><a href='" . _URLBASE_ . $urlDoNotificador . "/pagina/" . ($this->paginaAtual - 1) . "'><</a> </li>";
+        }
+        for ($i = 1; $i <= $qtdePaginas; $i++) {
+            $active = "";
+            if ($this->paginaAtual == $i) {
+                $active = "class='active'";
+            }
+            $notificador .= "
+            <li>
+                <a $active href='" . _URLBASE_ . $urlDoNotificador . "/pagina/" . $i . "'>$i</a>
+            </li>";
+        }
+        if ($this->paginaAtual < $qtdePaginas) {
+            $notificador .= "<li><a $active href='" . _URLBASE_ . $urlDoNotificador . "/pagina/" . ($this->paginaAtual + 1) . "'>></a></li>";
+            $notificador .= "<li><a $active href='" . _URLBASE_ . $urlDoNotificador . "/pagina/" . $qtdePaginas . "'>>></a></li>";
+        }
+        $notificador .= "</ul>";
+        return $notificador;
+    }
+
+
 }
