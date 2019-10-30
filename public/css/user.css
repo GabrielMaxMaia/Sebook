@@ -1800,7 +1800,9 @@ section.jumbotron{
 .containerResult{
     background-color:#fff;
     background: linear-gradient(45deg, #ffffffc7, #fffffff5);
-    border-radius:8px
+    border-radius:8px;
+    border-style: solid;
+    border-color: gainsboro
 }
 
 .containerResult li{

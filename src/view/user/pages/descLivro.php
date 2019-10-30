@@ -103,21 +103,20 @@ for ($i = 0; $i < count($resultLivro); $i++) {
 
 					<input type="submit" name="excluirLivro" value="Excluir do Acervo" onclick="if (confirm('Quer Mesmo retirar esse Livro do acervo?')) {return true;}else{return false;}">
 				</form>
-				<?php
-					if (isset($_POST['isbnLivroExcluir'])) {
-						$seboLivroDAO->setIdUsuario($IdUser);
-						$seboLivroDAO->setIsbnLivro($_POST['isbnLivroExcluir']);
-						//Excluir comentário
-						$seboLivroDAO->excluirseboLivro();
-						//Recarrega a página
+			<?php
+				if (isset($_POST['isbnLivroExcluir'])) {
+					$seboLivroDAO->setIdUsuario($IdUser);
+					$seboLivroDAO->setIsbnLivro($_POST['isbnLivroExcluir']);
+					//Excluir comentário
+					$seboLivroDAO->excluirseboLivro();
+					//Recarrega a página
 
-						header('Refresh:0');
-					}
-				?>
-		<?php
+					header('Refresh:0');
+				}
 			}
 		}
-		?>
+			?>
+			
 	</section>
 
 	<h3>Seção de Comentarios</h3>
