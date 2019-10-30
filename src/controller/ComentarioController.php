@@ -66,10 +66,6 @@ class ComentarioController
     {
         $this->acaoPOST = $valor;
     }
-    // public function setComentarioDAO($valor)
-    // {
-    //     $this->comentarioDAO = $valor;
-    // }
 
     //----Front Controller
 
@@ -215,6 +211,7 @@ class ComentarioController
     public function listarComentario()
     {
         $result = $this->comentarioDAO->listarComentario($this->regIni, $this->itemPagina);
+        
         $tabela = "";
         if ($result != null) {
             foreach ($result as $linha) {

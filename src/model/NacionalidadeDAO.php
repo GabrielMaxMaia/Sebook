@@ -11,12 +11,14 @@ class NacionalidadeDAO extends Nacionalidade
     //Atributos - serão os comandos SQL  + um objeto Sql
     private static $SELECT_ALL = "select * from nacionalidade";
 
+    private static $SELECT_TOT = "SELECT count(id_nacionalidade) as tot from nacionalidade";
+
     private static $SELECT_ID = "select * from nacionalidade where id_nacionalidade = :idNacionalidade";
 
     private static $INSERT = "INSERT INTO nacionalidade (nome_nacionalidade) VALUES (:nomeNacionalidade)";
 
     private static $UPDATE = "UPDATE nacionalidade SET nome_nacionalidade = :nomeNacionalidade WHERE id_nacionalidade = :idNacionalidade";
-                                     
+
     private static $DELETE = "UPDATE nacionalidade SET cod_status_nacionalidade = '0' WHERE id_nacionalidade = :idNacionalidade";
 
     //Atributo par armazenar o Objeto SQL 
@@ -31,10 +33,36 @@ class NacionalidadeDAO extends Nacionalidade
 
     //Métodos especialistas - irão executar os SQL dos Atributos
 
-    public function listarNacionalidades()
+    // public function listarNacionalidades()
+    // {
+    //     //executar a consulta no banco
+    //     $result = $this->sql->query(NacionalidadeDAO::$SELECT_ALL);
+    //     //devolver o resultado
+
+    //     if ($result->rowCount() > 0) {
+    //         while ($linha = $result->fetch(\PDO::FETCH_OBJ)) {
+    //             $itens[] = array(
+    //                 'idNacionalidade' => $linha->id_nacionalidade,
+    //                 'nomeNacionalidade' => $linha->nome_nacionalidade
+    //             );
+    //         }
+    //     } else {
+    //         $itens = null;
+    //     }
+    //     return $itens;
+
+    // }
+
+    public function listarNacionalidades($ini = -1, $qtde = 1)
     {
+        if ($ini >= 0) {
+            $limit = " limit $ini , $qtde ";
+        } else {
+            $limit = "";
+        }
+
         //executar a consulta no banco
-        $result = $this->sql->query(NacionalidadeDAO::$SELECT_ALL);
+        $result = $this->sql->query(NacionalidadeDAO::$SELECT_ALL . $limit);
         //devolver o resultado
 
         if ($result->rowCount() > 0) {
@@ -48,7 +76,13 @@ class NacionalidadeDAO extends Nacionalidade
             $itens = null;
         }
         return $itens;
-        
+    }
+
+    public function totalContar()
+    {
+        $result = $this->sql->query(NacionalidadeDAO::$SELECT_TOT);
+        $linha = $result->fetch(\PDO::FETCH_OBJ);
+        return $linha->tot;
     }
 
     public function listarNacionalidadeId()
