@@ -21,7 +21,7 @@ class AutentificadorController
     public function efetuarLogin()
     {   
         $acessoUser = $_SESSION['userLogado']['acesso'] ?? "";
-        
+
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $user = isset($_POST['txtUsuario']) ? $_POST['txtUsuario'] : null;
             $senha = isset($_POST['txtSenha']) ? $_POST['txtSenha'] : null;
@@ -117,10 +117,10 @@ class AutentificadorController
                         <div class='logItem'>
                             <a class='pefil' href='<?= $perfil ?>'>Perfil</a>
                             <?php
-                                        if (isset($adm)) {
-                                            echo "<a class='pefil' href='{$adm}'>Adm</a>";
-                                        }
-                                        ?>
+                                if (isset($adm)) {
+                                    echo "<a class='pefil' href='{$adm}'>Adm</a>";
+                                }
+                            ?>
                             <a href='<?= _URLBASE_ ?>area/adm/sair'>Sair</a>
                         </div>
                     </figcaption>

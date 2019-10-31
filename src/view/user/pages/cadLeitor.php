@@ -45,7 +45,9 @@ if (isset($_POST['enviar'])) {
 			$usuarioDAO->setSenhaUsuario($_POST['senhaUsuario']);
 		}
 
-		echo "<ul class='errorList'>$erroMen</ul>" ?? "";
+		if($erro == true){
+			echo "<ul class='errorList' style='display:block;'>$erroMen</ul>" ?? "";
+		}
 
 		if ($erro != true) {
 
