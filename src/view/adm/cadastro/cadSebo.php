@@ -134,9 +134,18 @@ $SeboController->gravarAlterar();
 		</form>
 		<iframe id="ifrmUpload" name="ifrmUpload" src="" frameborder="0"></iframe>
 	</div>
+
+	<?php
+	if ($SeboController->getseboDAO()->getUrlFotoSebo() != "") { 
+		$src = _URLBASE_ . $SeboController->getseboDAO()->getUrlFotoSebo();
+	} else {
+		$src = _URLBASE_ . "public/img/imgPerfilSebo/imgPadrao/padrao.png";
+	}
+	?>
+
 	<div class="imgCadastro">
 		<picture>
-			<img id="imgAvatar" src="<?= _URLBASE_ . $SeboController->getSeboDAO()->getUrlFotoSebo() ?>" alt="Avatar" class="avatar">
+			<img id="imgAvatar" src="<?= $src ?>" alt="Avatar" class="avatar">
 		</picture>
 	</div>
 

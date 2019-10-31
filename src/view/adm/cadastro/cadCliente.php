@@ -106,11 +106,20 @@ $clienteController->gravarAlterar();
 		</form>
 		<iframe id="ifrmUpload" name="ifrmUpload" src="" frameborder="0"></iframe>
 	</div>
+
+	<?php
+	if ($clienteController->getClienteDAO()->getUrlFotoCliente() != "") { 
+		$src = _URLBASE_ . $clienteController->getClienteDAO()->getUrlFotoCliente();
+	} else {
+		$src = _URLBASE_ . "public/img/imgPerfil/imgPadrao/padrao.png";
+	}
+	?>
 	<div class="imgCadastro">
 		<picture>
-			<img id="imgAvatar" src="<?= _URLBASE_ . $clienteController->getClienteDAO()->getUrlFotoCliente()  ?>" alt="Avatar" class="avatar">
+			<img id="imgAvatar" src="<?=$src?>" alt="Avatar" class="avatar">
 		</picture>
 	</div>
+
 
 	<br>
 	<br>
