@@ -19,7 +19,9 @@ class AutentificadorController
 
     //Métodos Autenticação e verificação de Acesso
     public function efetuarLogin()
-    {
+    {   
+        $acessoUser = $_SESSION['userLogado']['acesso'] ?? "";
+        
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $user = isset($_POST['txtUsuario']) ? $_POST['txtUsuario'] : null;
             $senha = isset($_POST['txtSenha']) ? $_POST['txtSenha'] : null;
@@ -49,7 +51,7 @@ class AutentificadorController
 
                     // var_dump($_SESSION['userLogdao']['acesso']);
                 }
-            } else {
+            } else if ($acessoUser != true) {
                 echo "<p class='errorCad'>Preencha todos campos!</p>";
             }
         }
