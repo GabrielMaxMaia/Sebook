@@ -12,6 +12,8 @@ class SeboLivroDAO extends SeboLivro
     private static $SELECT_ALL = "select * from sebo_livro";
 
     private static $SELECT_TOT = "SELECT count(id_usuario) as tot from sebo_livro";
+    
+    private static $SELECT_TOT_SEBO = "SELECT count(id_usuario) as tot from sebo_livro";
 
     private static $SELECT_ID = "SELECT * FROM sebo_livro WHERE id_usuario = :idUsuario";
 
@@ -67,12 +69,25 @@ class SeboLivroDAO extends SeboLivro
         $linha = $result->fetch(\PDO::FETCH_OBJ);
         return $linha->tot;
     }
-
-    public function listarSeboLivroId()
+    
+    public function totalContarSebo()
     {
+        $result = $this->sql->query(SeboLivroDAO::$SELECT_TOT_SEBO);
+        $linha = $result->fetch(\PDO::FETCH_OBJ);
+        return $linha->tot;
+    }
+
+    public function listarSeboLivroId($ini = -1, $qtde = 1)
+    {
+        if ($ini >= 0) {
+            $limit = " limit $ini, $qtde ";
+        } else {
+            $limit = "";
+        }
+
         //executar a consulta no banco
         $result = $this->sql->query(
-            SeboLivroDAO::$SELECT_ID,
+            SeboLivroDAO::$SELECT_ID . $limit,
             array(
                 ':idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT)
             )
@@ -95,6 +110,33 @@ class SeboLivroDAO extends SeboLivro
         //devolver o resultado     
         return $itens;
     }
+    // public function listarSeboLivroId()
+    // {
+    //     //executar a consulta no banco
+    //     $result = $this->sql->query(
+    //         SeboLivroDAO::$SELECT_ID,
+    //         array(
+    //             ':idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT)
+    //         )
+    //     );
+    //     if ($result->rowCount() > 0) {
+            
+    //         while($linha = $result->fetch(\PDO::FETCH_OBJ)){
+    //         $itens[] = array(
+    //             'idUsuario' => $linha->id_usuario,
+    //             'isbnLivro' => $linha->isbn_livro,
+    //             'qtdEstoque' => $linha->qtd_estoque,
+    //             'estadoLivro' => $linha->estado_livro
+    //         );
+    //     }
+
+    //         // var_dump($itens);
+    //     } else {
+    //         $itens = null;
+    //     }
+    //     //devolver o resultado     
+    //     return $itens;
+    // }
 
     public function listarSeboLivroIdIsbn()
     {

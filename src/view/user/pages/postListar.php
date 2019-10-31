@@ -35,7 +35,7 @@ var_dump($_GET);
         <h1>Postagens</h1>
         <?php
         //$_GET['pagina'] ?? 0;
-        $frontController->verificarPaginacao() ;
+        // $frontController->verificarPaginacao() ;
         $postagens = $postagemDAO->listarPostagem($frontController->getRegIni(), $frontController->getItemPagina());
         foreach ($postagens as $post) {
             ?>

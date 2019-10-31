@@ -102,12 +102,15 @@ class FrontController
         }
     }
 
-    public function exibirNotificador($urlDoNotificador)
+    public function exibirNotificador($urlDoNotificador, $totalSebo = false)
     {
         //
         //ceil($this->modoDAO->totalContar() / $this->itemPagina);
-        $qtdePaginas = ceil($this->modoDAO->totalContar() / $this->itemPagina);
-
+        if($totalSebo == false){
+            $qtdePaginas = ceil($this->modoDAO->totalContar() / $this->itemPagina);
+        }else{
+            $qtdePaginas = ceil($this->modoDAO->totalContarSebo() / $this->itemPagina);
+        }
         $notificador = "<ul>";
         if ($this->paginaAtual >= 2) {
             $notificador .= "<li><a href='" . _URLBASE_ . $urlDoNotificador . "/pagina/1'><<</a></li>";

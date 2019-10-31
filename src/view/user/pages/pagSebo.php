@@ -21,11 +21,17 @@ $seboDAO->setUrlFotoSebo($result['urlFotoSebo']);
 $seboDAO->setUrlSiteSebo($result['urlSiteSebo']);
 
 $seboLivroDAO->setIdUsuario($_GET['id']);
-$resultSeboLivro = $seboLivroDAO->listarSeboLivroId();
+// $resultSeboLivro = $seboLivroDAO->listarSeboLivroId();
 
 $GetPost = $_GET['id'];
 $comentarioDAO->setIdPagina($GetPost);
 $resultComentario = $comentarioDAO->listarComentarioPagina();
+
+/*Paginação*/
+$frontController = new Controller\FrontController($seboLivroDAO);
+$frontController->setItemPagina(4);
+$frontController->verificarPaginacao();
+$resultSeboLivro = $seboLivroDAO->listarSeboLivroId($frontController->getRegIni(), $frontController->getItemPagina());
 
 ?>
 <article class="acervo-sebo">
@@ -45,7 +51,10 @@ $resultComentario = $comentarioDAO->listarComentarioPagina();
             <h2>Acervo</h2>
         </header>
         <?php
+        
         if ($resultSeboLivro != null) {
+
+                       
             foreach ($resultSeboLivro as $seboLivro) {
                 //Seto isbn para listar os livros
                 $livroDAO->setIsbnLivro($seboLivro['isbnLivro']);
@@ -124,6 +133,15 @@ $resultComentario = $comentarioDAO->listarComentarioPagina();
             echo "<p>Sebo não possui livros cadastrados.</p>";
         }
         ?>
+    </section>
+
+    <section class="notificador">
+            <?php
+            //Estou usando a Url da lista que quero controlar
+            $urlDoNotificador = "area/user/pages/pagSebo/$GetPost";
+            $totalSebo = true;
+            echo $frontController->exibirNotificador($urlDoNotificador,$totalSebo);
+            ?>
     </section>
 
     <section>
