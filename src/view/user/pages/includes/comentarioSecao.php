@@ -10,6 +10,8 @@ if ($resultComentario != null || $resultComentario >= 1) {
             $pag = $comentario['idPost'];
         }
 
+        // $idPagina = $comentario['idPagina'] ?? "";
+
         //if ($comentario['idPost'] == $GetPost) {
         if ($pag == $GetPost) {
 
@@ -26,9 +28,10 @@ if ($resultComentario != null || $resultComentario >= 1) {
                         em <strong><?= date("d/m/Y - H:i", strtotime($comentario['dataHoraComentario'])); ?></strong>
                     </span>
                     <?php
-                        //Caso o id do usuário for o mesmo que está no comentário
+                        //Caso o id do usuário for o mesmo que está no comentário ou o id for Master ou ele for o dono da postagem
                         //Ele pode editar excluir o comentário
-                        if ($comentario['idUsuario'] == $usuarioDAO->getIdUsuario() || $acessoUser <= 3 && $acessoUser != "") {
+                        
+                        if ($comentario['idUsuario'] == $usuarioDAO->getIdUsuario() || $acessoUser <= 3 && $acessoUser != "" || $pag == $IdUser) {
 
                             $comentarioDAO->setIdUsuario($comentario['idUsuario']);
 
