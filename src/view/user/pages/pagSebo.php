@@ -53,8 +53,7 @@ $resultSeboLivro = $seboLivroDAO->listarSeboLivroId($frontController->getRegIni(
         <?php
         
         if ($resultSeboLivro != null) {
-
-                       
+              
             foreach ($resultSeboLivro as $seboLivro) {
                 //Seto isbn para listar os livros
                 $livroDAO->setIsbnLivro($seboLivro['isbnLivro']);
@@ -100,7 +99,7 @@ $resultSeboLivro = $seboLivroDAO->listarSeboLivroId($frontController->getRegIni(
 
 			?>
 
-			<label class="btn-modal-cadastre" for="livroAcervo" value="<?= $livroDAO->getIsbnLivro()  ?>" onclick="return pegaId(<?= $livroDAO->getIsbnLivro()  ?>,'<?= $seboLivro['qtdEstoque'] ?>')"><?= $value ?></label>
+			<label class="btn-modal-cadastre" for="livroAcervo" value="<?= $livroDAO->getIsbnLivro()  ?>" onclick="return pegaQtdEstoque(<?= $livroDAO->getIsbnLivro()  ?>,'<?= $seboLivro['qtdEstoque'] ?>')"><?= $value ?></label>
 
 			<?php
 				if ($excluir == true) {
@@ -120,7 +119,8 @@ $resultSeboLivro = $seboLivroDAO->listarSeboLivroId($frontController->getRegIni(
                         //Recarrega a página
 
                         // header("Location:" . _URLBASE_ . $caminhoEnviaComentario . $GetPost);
-                        echo "Excluirdsadsadd";
+                        //Recarrega a página
+                        header('Refresh:0');
                     }
                 ?>
 		<?php

@@ -22,7 +22,7 @@
 							return document.getElementById(id);
 						}
 
-						function pegaId(id, qtd) {
+						function pegaQtdEstoque(id, qtd) {
 							//gId(idComentario).setAttribute('value',id);
 							document.getElementById("isbnLivro").setAttribute("value", id);
 
