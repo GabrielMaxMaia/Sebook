@@ -11,9 +11,13 @@ class SeboLivroDAO extends SeboLivro
     //Atributos - serão os comandos SQL  + um objeto Sql
     private static $SELECT_ALL = "select * from sebo_livro";
 
-    private static $SELECT_TOT = "SELECT count(id_usuario) as tot from sebo_livro";
+    private static $SELECT_TOT = "SELECT count(id_usuario) as tot from sebo_livro INNER JOIN livro ON (sebo_livro.isbn_livro = livro.isbn_livro) 
+    WHERE livro.cod_status_livro = '1'";
     
-    private static $SELECT_TOT_SEBO = "SELECT count(id_usuario) as tot from sebo_livro";
+    private static $SELECT_TOT_SEBO = "SELECT count(id_usuario) as tot from sebo_livro INNER JOIN livro ON (sebo_livro.isbn_livro = livro.isbn_livro) 
+    WHERE livro.cod_status_livro = '1' AND sebo_livro.id_usuario = :idSebo";
+
+    private static $SELECT_ALL_SEBO_LIVRO = "SELECT * FROM sebo inner join sebo_livro ON (sebo.id_usuario = sebo_livro.id_usuario) WHERE isbn_livro = :isbnLivro";
 
     private static $SELECT_ID = "SELECT * FROM sebo_livro WHERE id_usuario = :idUsuario";
 
@@ -70,9 +74,12 @@ class SeboLivroDAO extends SeboLivro
         return $linha->tot;
     }
     
-    public function totalContarSebo()
+    public function totalContarSebo($id)
     {
-        $result = $this->sql->query(SeboLivroDAO::$SELECT_TOT_SEBO);
+        $result = $this->sql->query(SeboLivroDAO::$SELECT_TOT_SEBO,
+        array(
+            ':idSebo' => array(0 => $id, 1 => \PDO::PARAM_INT)
+        ));
         $linha = $result->fetch(\PDO::FETCH_OBJ);
         return $linha->tot;
     }
@@ -137,6 +144,35 @@ class SeboLivroDAO extends SeboLivro
     //     //devolver o resultado     
     //     return $itens;
     // }
+
+    public function listarSeboLivrosIsbn()
+    {
+        //executar a consulta no banco
+        $result = $this->sql->query(
+            SeboLivroDAO::$SELECT_ALL_SEBO_LIVRO,
+            array(
+                'isbnLivro' => array(0 => $this->getIsbnLivro(), 1 => \PDO::PARAM_INT)
+            )
+        );
+
+        if ($result->rowCount() > 0) {
+            
+            while($linha = $result->fetch(\PDO::FETCH_OBJ)){
+            $itens[] = array(
+                'idUsuario' => $linha->id_usuario,
+                'isbnLivro' => $linha->isbn_livro,
+                'qtdEstoque' => $linha->qtd_estoque,
+                'estadoLivro' => $linha->estado_livro,
+                'nomeFantasia' => $linha->nome_fantasia,
+                'urlFotoSebo' => $linha->url_foto_sebo,
+                'cepEndSebo' => $linha->cep_end_sebo
+            );
+        } 
+            return $itens;
+        } else {
+            $itens = null;
+        }
+    }
 
     public function listarSeboLivroIdIsbn()
     {

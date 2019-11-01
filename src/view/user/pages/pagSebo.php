@@ -14,16 +14,18 @@ $seboLivroDAO = new SeboLivroDAO($objSql);
 $comentarioDAO = new ComentarioDAO($objSql);
 $usuarioDAO = new UsuarioDAO($objSql);
 
-$seboDAO->setIdUsuario($_GET['id']);
+$GetPost = isset($_GET['id']) ? $_GET['id'] : false;
+
+$seboDAO->setIdUsuario($GetPost);
 $result = $seboDAO->listarSeboId();
 $seboDAO->setNomeFantasia($result['nomeFantasia']);
 $seboDAO->setUrlFotoSebo($result['urlFotoSebo']);
 $seboDAO->setUrlSiteSebo($result['urlSiteSebo']);
 
-$seboLivroDAO->setIdUsuario($_GET['id']);
+$seboLivroDAO->setIdUsuario($GetPost);
 // $resultSeboLivro = $seboLivroDAO->listarSeboLivroId();
 
-$GetPost = $_GET['id'];
+
 $comentarioDAO->setIdPagina($GetPost);
 $resultComentario = $comentarioDAO->listarComentarioPagina();
 
@@ -140,7 +142,7 @@ $resultSeboLivro = $seboLivroDAO->listarSeboLivroId($frontController->getRegIni(
             //Estou usando a Url da lista que quero controlar
             $urlDoNotificador = "area/user/pages/pagSebo/$GetPost";
             $totalSebo = true;
-            echo $frontController->exibirNotificador($urlDoNotificador,$totalSebo);
+            echo $frontController->exibirNotificador($urlDoNotificador,$totalSebo,$GetPost);
             ?>
     </section>
 

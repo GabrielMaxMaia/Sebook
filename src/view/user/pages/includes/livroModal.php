@@ -18,9 +18,6 @@
 				<form action="" method="post">
 
 					<script>
-						function gId(id) {
-							return document.getElementById(id);
-						}
 
 						function pegaQtdEstoque(id, qtd) {
 							//gId(idComentario).setAttribute('value',id);
@@ -32,7 +29,7 @@
 						}
 					</script>
 
-					<input type="hidden" name="isbnLivro" id="isbnLivro">
+					<input type="hidden" name="isbnLivro" id="isbnLivro" value="<?=$seboLivroDAO->getIsbnLivro()?>">
 
 					<label for="qtdEstoque">Quantidade</label>
 					<input type="number" name="qtdEstoque" id="qtdEstoque" value="<?= $seboLivroDAO->getQtdEstoque() ?>">

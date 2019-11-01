@@ -1,14 +1,16 @@
 <?php
 
 use Model\LivroDAO;
+use Model\SeboLivroDAO;
 use Model\AutorDAO;
+
 
 //Pega a conexão
 $objSql = new Util\Sql($conn);
 
 $livroDAO = new LivroDAO($objSql);
+$seboLivroDAO = new SeboLivroDAO($objSql);
 $autorDAO = new AutorDAO($objSql);
-$resultAutor = $autorDAO->listarAutores();
 
 //Seta armazena o idPost em setIdPost
 // $livroDAO->setIdUsuario($acessoUser);

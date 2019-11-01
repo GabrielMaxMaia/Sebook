@@ -25,6 +25,10 @@ $GetPost = $_GET['id'];
 $livroDAO->setIsbnLivro($isbn);
 $resultLivro = $livroDAO->listarLivroIsbn();
 
+//Lista os sebos que possuem determinado livro
+$seboLivroDAO->setIsbnLivro($isbn);
+$resultSeboLivroAcha = $seboLivroDAO->listarSeboLivrosIsbn();
+
 //Guarda o isbn no getPost
 $GetPost = $isbn;
 $comentarioDAO->setIdPost($GetPost);
@@ -117,6 +121,51 @@ for ($i = 0; $i < count($resultLivro); $i++) {
 		}
 			?>
 			
+	</section>
+	<!--Modal-->
+	<label class="btn-modal-cadastre" for="modalAchaSebo">Onde encontrar?</label>
+	<section class="modal">
+		<input class="modal-open" id="modalAchaSebo" type="checkbox" hidden>
+		<div class="modal-wrap" aria-hidden="true" role="dialog">
+			<label class="modal-overlay" for="modalAchaSebo"></label>
+			<div class="modal-dialog">
+				<div class="modal-header">
+					<h2>Sebos que possuem o Livro <?=$livroDAO->getNomeLivro()?></h2>
+					<label class="btn-close" for="modalAchaSebo" aria-hidden="true">×</label>
+				</div>
+				<div class="modal-body">
+				<?php
+					if($resultSeboLivroAcha > 0){
+						foreach($resultSeboLivroAcha as $seboLivroR){
+							?>
+							<ul>
+								<li>
+								<a href='<?=_URLBASE_."/area/user/pages/pagSebo/".$seboLivroR['idUsuario']?>'>	
+								<figure>
+									<img src="<?=_URLBASE_ . $seboLivroR['urlFotoSebo']?>" style="max-width:50px;">
+									<figcaption>
+										<p>
+											Nome: <?=$seboLivroR['nomeFantasia']?>
+											<br>
+											CEP: <?=$seboLivroR['cepEndSebo']?>
+										</p>
+									</figcaption>
+								</figure>
+								</a>
+								</li>
+							<ul>	
+							<?php
+						}
+					} else {
+						echo "Ainda não há sebos que possuem esse livro";
+					}
+					?>
+				</div>
+				<div class="modal-footer">
+					<label class="btn btn-primary" for="modalAchaSebo">Fechar</label>
+				</div>
+			</div>
+		</div>
 	</section>
 
 	<h3>Seção de Comentarios</h3>

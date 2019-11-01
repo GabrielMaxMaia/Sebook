@@ -16,16 +16,15 @@ $frontController = new Controller\FrontController($postagemDAO);
 $frontController->setItemPagina(3);
 $frontController->verificarPaginacao();
 
+$GetPost = isset($_GET['id']) ? $_GET['id'] : false;
 
-if (isset($_GET['id'])) {
+if ($GetPost) {
     //Ao passar idDelete seta o valor e executa exclusão em postagemDAO
-    $postagemDAO->setIdPostagem($_GET['id']);
+    $postagemDAO->setIdPostagem($GetPost);
     $postagemDAO->excluirPostagem();
     //header para recarregar a página
     header("Location:" . _URLBASE_ . "area/user/pages/postListar");
 }
-
-var_dump($_GET);
 
 ?>
 
@@ -69,8 +68,8 @@ var_dump($_GET);
         <?php
         //Estou usando a Url da lista que quero controlar
         $urlDoNotificador = "area/user/pages/postListar";
-
-        echo $frontController->exibirNotificador($urlDoNotificador);
+        $totalSebo = false;
+        echo $frontController->exibirNotificador($urlDoNotificador,$totalSebo,$GetPost);
         ?>
     </section>
 </main>

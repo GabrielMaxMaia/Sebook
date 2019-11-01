@@ -102,14 +102,14 @@ class FrontController
         }
     }
 
-    public function exibirNotificador($urlDoNotificador, $totalSebo = false)
+    public function exibirNotificador($urlDoNotificador, $totalSebo = false, $GetPost)
     {
         //
         //ceil($this->modoDAO->totalContar() / $this->itemPagina);
         if($totalSebo == false){
             $qtdePaginas = ceil($this->modoDAO->totalContar() / $this->itemPagina);
         }else{
-            $qtdePaginas = ceil($this->modoDAO->totalContarSebo() / $this->itemPagina);
+            $qtdePaginas = ceil($this->modoDAO->totalContarSebo($GetPost) / $this->itemPagina);
         }
         $notificador = "<ul>";
         if ($this->paginaAtual >= 2) {
