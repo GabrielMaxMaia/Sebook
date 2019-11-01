@@ -71,6 +71,11 @@ $SeboController->gravarAlterar();
 		<input type="hidden" class="grande" type="text" id="txtImg" name="txtImg" value="<?= $SeboController->getSeboDAO()->getUrlFotoSebo() ?>">
 
 		<br>
+		<label>Cidade</label>
+		<input class="grande" type="text" name="cidadeSebo" value="<?= $SeboController->getSeboDAO()->getCidadeSebo() ?>">
+
+		<br>
+
 		<label>Num Endereço</label>
 		<input class="grande" type="text" name="numEndSebo" value="<?= $SeboController->getSeboDAO()->getNumEndSebo() ?>">
 

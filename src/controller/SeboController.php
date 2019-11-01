@@ -145,6 +145,7 @@ class SeboController
             $this->seboDAO->setNomeFantasia($_POST['nomeFantasia']);
             $this->seboDAO->setCnpjSebo($_POST['cnpjSebo']);
             $this->seboDAO->setUrlFotoSebo($_POST['txtImg']);
+            $this->seboDAO->setCidadeSebo($_POST['cidadeSebo']);
             $this->seboDAO->setNumEndSebo($_POST['numEndSebo']);
             $this->seboDAO->setComplEndSebo($_POST['complEndSebo']);
             $this->seboDAO->setLogradouroSebo($_POST['logradouroSebo']);
@@ -213,6 +214,7 @@ class SeboController
             $this->seboDAO->setNomeFantasia($sebo['nomeFantasia']);
             $this->seboDAO->setCnpjSebo($sebo['cnpjSebo']);
             $this->seboDAO->setUrlFotoSebo($sebo['urlFotoSebo']);
+            $this->seboDAO->setCidadeSebo($sebo['cidadeSebo']);
             $this->seboDAO->setNumEndSebo($sebo['numEndSebo']);
             $this->seboDAO->setComplEndSebo($sebo['complEndSebo']);
             $this->seboDAO->setLogradouroSebo($sebo['logradouroSebo']);

@@ -23,6 +23,7 @@ if ($acessoUser != "") {
 	$seboDAO->setInscEstadualSebo($result['inscEstadualSebo']);
 	$seboDAO->setCepEndSebo($result['cepEndSebo']);
 	$seboDAO->setLogradouroSebo($result['logradouroSebo']);
+	$seboDAO->setCidadeSebo($result['cidadeSebo']);
 	$seboDAO->setNumEndSebo($result['numEndSebo']);
 	$seboDAO->setComplEndSebo($result['complEndSebo']);
 	$seboDAO->setUrlFotoSebo($result['urlFotoSebo']);
@@ -47,6 +48,7 @@ if ($acessoUser != "") {
 		$seboDAO->setInscEstadualSebo($_POST['inscEstadualSebo']);
 		$seboDAO->setCepEndSebo($_POST['cepEndSebo']);
 		$seboDAO->setLogradouroSebo($_POST['logradouroSebo']);
+		$seboDAO->setCidadeSebo($_POST['cidadeSebo']);
 		$seboDAO->setNumEndSebo($_POST['numEndSebo']);
 		$seboDAO->setComplEndSebo($_POST['complEndSebo']);
 		$seboDAO->setNumTelSebo($_POST['numTelSebo']);
@@ -120,6 +122,31 @@ if ($acessoUser != "") {
 				</div>
 
 				<div class="formItem">
+					<label for="cidadeSebo">Cidade</label>
+					<select name="cidadeSebo" id="cidadeSebo">
+						<optgroup label="Cidade">
+							<?php
+								 //Inclui o arquivo de array cidades
+								 include "src/view/user/pages/includes/arrayCidades.php";
+								 foreach ($cidades as $value) {
+									if ($value == $seboDAO->getCidadeSebo()) {
+										$select = 'selected';
+									} else {
+										$select = "";
+									}
+									echo "<option $select value='$value'>$value</option>";
+								}
+								?>
+						</optgroup>
+					</select>
+				</div>
+
+				<div class="formItem">
+					<label for="numEndSebo">Número</label>
+					<input type="text" name="numEndSebo" id="numEndSebo" required value="<?= $seboDAO->getNumEndSebo() ?>" onblur='valida_numerosebo(this.value)'>
+				</div>
+
+				<div class="formItem">
 					<label for="logradouroSebo">Logradouro</label>
 					<select name="logradouroSebo" id="logradouroSebo">
 						<?php
@@ -138,12 +165,7 @@ if ($acessoUser != "") {
 							?>
 					</select>
 				</div>
-
-				<div class="formItem">
-					<label for="numEndSebo">Número</label>
-					<input type="text" name="numEndSebo" id="numEndSebo" required value="<?= $seboDAO->getNumEndSebo() ?>" onblur='valida_numerosebo(this.value)'>
-				</div>
-
+				
 				<div class="formItem">
 					<label for="complEndSebo">Complemento</label>
 					<input type="text" name="complEndSebo" id="complEndSebo" value="<?= $seboDAO->getComplEndSebo() ?>">

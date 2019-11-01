@@ -11,7 +11,8 @@ class Sebo {
     private $razaoSebo;
     private $nomeFantasia;
     private $cnpjSebo;
-    private $urlFotoSebo;
+	private $urlFotoSebo;
+	private $cidadeSebo;
     private $numEndSebo;
     private $complEndSebo;
     private $logradouroSebo;
@@ -24,12 +25,13 @@ class Sebo {
     private $codStatusSebo;
 
     //Método construtor auxiliar de criação de objetos
-    public function __construct($idUsuario = "", $razaoSebo = "", $nomeFantasia = "", $cnpjSebo = "", $urlFotoSebo = "", $numEndSebo = "", $complEndSebo = "", $logradouroSebo = "", $cepEndSebo = "", $numTelSebo = "", $celular1Sebo = "", $celular2Sebo = "", $inscEstadualSebo = "", $urlSiteSebo = "", $codStatusSebo = "") {
+    public function __construct($idUsuario = "", $razaoSebo = "", $nomeFantasia = "", $cnpjSebo = "", $urlFotoSebo = "", $cidadeSebo = "", $numEndSebo = "", $complEndSebo = "", $logradouroSebo = "", $cepEndSebo = "", $numTelSebo = "", $celular1Sebo = "", $celular2Sebo = "", $inscEstadualSebo = "", $urlSiteSebo = "", $codStatusSebo = "") {
         $this->idUsuario = $idUsuario;
         $this->razaoSebo = $razaoSebo;
         $this->nomeFantasia = $nomeFantasia;
         $this->cnpjSebo = $cnpjSebo;
         $this->urlFotoSebo = $urlFotoSebo;
+        $this->cidadeSebo = $cidadeSebo;
         $this->numEndSebo = $numEndSebo;
         $this->complEndSebo = $complEndSebo;
         $this->logradouroSebo = $logradouroSebo;
@@ -81,6 +83,14 @@ class Sebo {
 
 	public function setUrlFotoSebo($urlFotoSebo){
 		$this->urlFotoSebo = $urlFotoSebo;
+	}
+
+	public function getCidadeSebo(){
+		return $this->cidadeSebo;
+	}
+
+	public function setCidadeSebo($cidadeSebo){
+		$this->cidadeSebo = $cidadeSebo;
 	}
 
 	public function getNumEndSebo(){
@@ -172,6 +182,7 @@ class Sebo {
             'cnpjSebo' => $this->cnpjSebo,
             'urlFotoSebo' => $this->urlFotoSebo,
             'numEndSebo' => $this->numEndSebo,
+            'cidadeSebo' => $this->cidadeSebo,
             'complEndSebo' => $this->complEndSebo,
             'logradouroSebo' => $this->logradouroSebo,
             'cepEndSebo' => $this->cepEndSebo,

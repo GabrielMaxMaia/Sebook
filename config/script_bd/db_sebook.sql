@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 29-Out-2019 às 22:36
--- Versão do servidor: 10.1.38-MariaDB
--- versão do PHP: 7.3.2
+-- Tempo de geração: 01-Nov-2019 às 15:19
+-- Versão do servidor: 10.3.16-MariaDB
+-- versão do PHP: 7.3.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_sebook`
+-- Banco de dados: `db_sebook`
 --
 
 -- --------------------------------------------------------
@@ -200,13 +200,20 @@ INSERT INTO `comentario` (`id_comentario`, `txt_comentario`, `data_hora_comentar
 (43, 'eae', '2019-10-29 01:09:35', '1', '0', 37, 0, '11', NULL),
 (41, 'let\'s rock', '2019-10-29 01:08:41', '1', '9788535928204', 37, 0, '', NULL),
 (42, 'Oi ', '2019-10-29 01:09:07', '1', '0', 37, 0, '35', NULL),
-(39, 'show de boloa', '2019-10-29 01:06:55', '1', '11', 35, 0, '11', NULL),
+(39, 'show de boloa', '2019-10-29 01:06:55', '0', '11', 35, 0, '11', NULL),
 (40, 'eae', '2019-10-29 01:07:47', '1', '0', 35, 0, '11', NULL),
 (38, 'eae', '2019-10-29 01:06:20', '1', '9788535928204', 35, 0, '', NULL),
-(50, 'dsadsa', '2019-10-29 01:17:47', '1', '0', 35, 0, '11', NULL),
+(50, 'dsadsa', '2019-10-29 01:17:47', '0', '0', 35, 0, '11', NULL),
 (49, 'adsad', '2019-10-29 01:17:31', '1', '9788516079444', 35, 0, '', NULL),
 (48, 'teste', '2019-10-29 01:17:24', '1', '5', 35, 0, '', NULL),
-(47, 'dsad', '2019-10-29 01:16:37', '1', '5', 35, 0, '', NULL);
+(47, 'dsad', '2019-10-29 01:16:37', '1', '5', 35, 0, '', NULL),
+(51, 'rrr', '2019-10-31 10:16:36', '1', '0', 15, 0, '35', NULL),
+(52, 'sad', '2019-10-31 10:22:26', '1', '0', 35, 0, '35', NULL),
+(53, 'rrr', '2019-10-31 10:52:57', '1', '0', 35, 0, '35', NULL),
+(54, 'rrr', '2019-10-31 11:02:53', '1', '9788501110367', 35, 0, '', NULL),
+(55, 'teste', '2019-10-31 11:25:34', '1', '0', 15, 0, '11', NULL),
+(56, 'eae', '2019-10-31 11:25:52', '1', '0', 37, 0, '11', NULL),
+(57, '', '2019-10-31 11:30:07', '1', '0', 0, 0, '', NULL);
 
 -- --------------------------------------------------------
 
@@ -293,7 +300,7 @@ CREATE TABLE `links_emails` (
   `id_link` int(11) NOT NULL,
   `link` varchar(520) NOT NULL,
   `id_emails_lidos` int(11) NOT NULL,
-  `situacao` int(11) NOT NULL DEFAULT '1'
+  `situacao` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -381,7 +388,8 @@ INSERT INTO `livro_autor` (`id_autor`, `isbn_livro`) VALUES
 (23, '9788584390670'),
 (24, '9788543104355'),
 (25, '8575421131'),
-(31, '9788516079444');
+(31, '9788516079444'),
+(31, '9788599296363');
 
 -- --------------------------------------------------------
 
@@ -496,8 +504,8 @@ CREATE TABLE `postagem` (
   `data_hora_post` datetime DEFAULT NULL,
   `link_post` varchar(100) DEFAULT NULL,
   `url_foto_post` varchar(100) DEFAULT 'public/imgPost/imgPadrao/padrao.jpg',
-  `txt_postagem` text,
-  `titulo_post` text,
+  `txt_postagem` text DEFAULT NULL,
+  `titulo_post` text DEFAULT NULL,
   `cod_status_post` varchar(10) DEFAULT '1',
   `id_usuario` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -523,7 +531,8 @@ INSERT INTO `postagem` (`id_post`, `data_hora_post`, `link_post`, `url_foto_post
 (14, '2019-10-27 01:03:50', NULL, '', 'tewtf', 'PHP', '1', 15),
 (15, '2019-10-27 01:04:01', NULL, '', 'dsad', 'dasd', '1', 15),
 (16, '2019-10-29 01:02:08', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', '                dsad            ', 'eaeeeeeeeea', '1', 35),
-(17, '2019-10-29 01:02:57', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', 'sadasas            ', 'PHPdsadsa', '1', 35);
+(17, '2019-10-29 01:02:57', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', 'sadasas            ', 'PHPdsadsa', '1', 35),
+(18, '2019-10-31 12:02:01', NULL, 'public/img/imgPost/Divulgac  a  o Face Panorama Especial Arte _Cultura.jpg', 'aaa', 'teste', '1', 15);
 
 -- --------------------------------------------------------
 
@@ -537,6 +546,7 @@ CREATE TABLE `sebo` (
   `nome_fantasia` varchar(100) DEFAULT NULL,
   `cnpj_sebo` varchar(30) DEFAULT NULL,
   `url_foto_sebo` varchar(100) DEFAULT NULL,
+  `cidade_sebo` varchar(45) DEFAULT NULL,
   `num_end_sebo` varchar(30) DEFAULT NULL,
   `compl_end_sebo` varchar(100) DEFAULT NULL,
   `logradouro_sebo` varchar(100) DEFAULT NULL,
@@ -553,15 +563,12 @@ CREATE TABLE `sebo` (
 -- Extraindo dados da tabela `sebo`
 --
 
-INSERT INTO `sebo` (`id_usuario`, `razao_sebo`, `nome_fantasia`, `cnpj_sebo`, `url_foto_sebo`, `num_end_sebo`, `compl_end_sebo`, `logradouro_sebo`, `cep_end_sebo`, `num_tel_sebo`, `celular_1_sebo`, `celular_2_sebo`, `insc_estadual_sebo`, `url_site_sebo`, `cod_status_sebo`) VALUES
-(11, 'Abigail de Queiroz Moreira Pereira', 'Sebo do Marcao', '20.035.914/0001-03', NULL, '111', NULL, NULL, '06410-080', '1141986832', NULL, NULL, NULL, NULL, '1'),
-(12, 'Mirian Marinho da Silva Lima', 'Sebo Marinho', '12.672.074/0001-53', NULL, '115', NULL, NULL, '06320-290', '1143867762', NULL, NULL, NULL, NULL, '1'),
-(14, 'Priscilla Nobre Lobo', 'Sebo e Livraria Corujinha', '21.100.930/0001-97', NULL, '179', NULL, NULL, '06448-020', '1128614286', NULL, NULL, NULL, NULL, '1'),
-(34, 'Pirate king', 'dasdgdfg', 'dfgdgdfg', 'public/img/imgPerfilSebo/1_1_1.jpg', 'dasdad', 'dsada', 'dsadsa', 'dasdsad', 'asdsad', 'dsadad', 'trhtrh', 'sadd', 'dsad', '1'),
-(35, 'Monkey D. Luffy', 'Reio dos piratas', '03.561.475/4516-97', 'public/img/imgPerfilSebo/luffy.jpg', 'dsa', 'dasdsa', 'AV', '', '(11) 4005-8799', '(11) 54879-9524', '', '', 'dsa', '1'),
-(36, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(39, NULL, NULL, NULL, 'public/img/imgPerfilSebo/imgPadrao/padrao.png', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(40, NULL, NULL, NULL, 'public/img/imgPerfilSebo/imgPadrao/padrao.png', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1');
+INSERT INTO `sebo` (`id_usuario`, `razao_sebo`, `nome_fantasia`, `cnpj_sebo`, `url_foto_sebo`, `cidade_sebo`, `num_end_sebo`, `compl_end_sebo`, `logradouro_sebo`, `cep_end_sebo`, `num_tel_sebo`, `celular_1_sebo`, `celular_2_sebo`, `insc_estadual_sebo`, `url_site_sebo`, `cod_status_sebo`) VALUES
+(11, 'Abigail de Queiroz Moreira Pereira', 'Abigail de Queiroz Moreira Pereira', '20.035.914/0001-03', '', 'Barueri', '111', '', '', '06410-080', '1141986832', '', '', '', '', '1'),
+(12, 'Mirian Marinho da Silva Lima', 'Mirian Marinho da Silva Lima', '12.672.074/0001-53', '', 'Osasco', '115', '', '', '06320-290', '1143867762', '', '', '', '', '1'),
+(14, 'Priscilla Nobre Lobo', 'Sebo e Livraria Corujinha', '21.100.930/0001-97', NULL, NULL, '179', NULL, NULL, '06448-020', '1128614286', NULL, NULL, NULL, NULL, '1'),
+(34, 'Pirate king', 'dasdgdfg', 'dfgdgdfg', 'public/img/imgPerfilSebo/1_1_1.jpg', NULL, 'dasdad', 'dsada', 'dsadsa', 'dasdsad', 'asdsad', 'dsadad', 'trhtrh', 'sadd', 'dsad', '1'),
+(35, 'Monkey D. Luffy', 'Reio dos piratas', '03.561.475/4516-97', 'public/img/imgPerfilSebo/luffy.jpg', 'Barrinha', 'dsa', 'dasdsa', 'AV', '', '(11) 4005-8799', '(11) 54879-9524', '', '', 'dsa', '1');
 
 -- --------------------------------------------------------
 
@@ -586,9 +593,16 @@ INSERT INTO `sebo_livro` (`id_usuario`, `isbn_livro`, `qtd_estoque`, `estado_liv
 (12, '9788516079444', 5, NULL),
 (14, '9788516079444', 4, NULL),
 (14, '9788599296363', 5, NULL),
-(35, '9788501110367', 8, 'B'),
-(35, '9788516079444', 8, 'B'),
-(35, '9788535928204', 1, 'B');
+(35, '8532511015', 3, 'B'),
+(35, '9780486421230', 5, 'B'),
+(35, '9788501110367', 8, 'O'),
+(35, '9788516079444', 8, 'O'),
+(35, '9788527311229', 8, 'B'),
+(35, '9788535929225', 23, 'B'),
+(35, '9788544001868', 7, 'B'),
+(35, '9788563560421', 5, 'B'),
+(35, '9788581863351', 7, 'B'),
+(35, '9788584390670', 4, 'B');
 
 -- --------------------------------------------------------
 
@@ -644,44 +658,44 @@ INSERT INTO `usuario` (`id_usuario`, `nome_usuario`, `sobrenome_usuario`, `email
 (44, 'Edward ', 'Elric', 'alquimista@outlook.com', '$2a$08$MTc4NjcwMTcyODVkYjYwYuHxj4Jud4SZqYftf86JacQj0wbk268FO', '1', 4, '2019-10-27 18:31:40');
 
 --
--- Indexes for dumped tables
+-- Índices para tabelas despejadas
 --
 
 --
--- Indexes for table `autor`
+-- Índices para tabela `autor`
 --
 ALTER TABLE `autor`
   ADD PRIMARY KEY (`id_autor`),
   ADD KEY `id_nacionalidade` (`id_nacionalidade`);
 
 --
--- Indexes for table `avaliacao_sebo`
+-- Índices para tabela `avaliacao_sebo`
 --
 ALTER TABLE `avaliacao_sebo`
   ADD PRIMARY KEY (`id_usuario_sebo`,`id_usuario`),
   ADD KEY `id_usuario` (`id_usuario`);
 
 --
--- Indexes for table `categoria`
+-- Índices para tabela `categoria`
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`id_categoria`);
 
 --
--- Indexes for table `cliente`
+-- Índices para tabela `cliente`
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id_usuario`);
 
 --
--- Indexes for table `cliente_sebo`
+-- Índices para tabela `cliente_sebo`
 --
 ALTER TABLE `cliente_sebo`
   ADD PRIMARY KEY (`id_usuario`,`id_usuario_sebo`),
   ADD KEY `id_usuario_sebo` (`id_usuario_sebo`);
 
 --
--- Indexes for table `comentario`
+-- Índices para tabela `comentario`
 --
 ALTER TABLE `comentario`
   ADD PRIMARY KEY (`id_comentario`),
@@ -689,33 +703,33 @@ ALTER TABLE `comentario`
   ADD KEY `id_usuario` (`id_usuario`);
 
 --
--- Indexes for table `editora`
+-- Índices para tabela `editora`
 --
 ALTER TABLE `editora`
   ADD PRIMARY KEY (`id_editora`);
 
 --
--- Indexes for table `emails_lidos`
+-- Índices para tabela `emails_lidos`
 --
 ALTER TABLE `emails_lidos`
   ADD PRIMARY KEY (`id_emails_lidos`);
 
 --
--- Indexes for table `eventos`
+-- Índices para tabela `eventos`
 --
 ALTER TABLE `eventos`
   ADD PRIMARY KEY (`id_evento`),
   ADD KEY `id_usuario` (`id_usuario`);
 
 --
--- Indexes for table `links_emails`
+-- Índices para tabela `links_emails`
 --
 ALTER TABLE `links_emails`
   ADD PRIMARY KEY (`id_link`),
   ADD KEY `id_emails_lidos` (`id_emails_lidos`);
 
 --
--- Indexes for table `livro`
+-- Índices para tabela `livro`
 --
 ALTER TABLE `livro`
   ADD PRIMARY KEY (`isbn_livro`),
@@ -723,7 +737,7 @@ ALTER TABLE `livro`
   ADD KEY `id_categoria` (`id_categoria`);
 
 --
--- Indexes for table `livro_autor`
+-- Índices para tabela `livro_autor`
 --
 ALTER TABLE `livro_autor`
   ADD PRIMARY KEY (`id_autor`,`isbn_livro`),
@@ -731,38 +745,38 @@ ALTER TABLE `livro_autor`
   ADD KEY `fk_livro_autor_livro1_idx` (`isbn_livro`);
 
 --
--- Indexes for table `mensagem`
+-- Índices para tabela `mensagem`
 --
 ALTER TABLE `mensagem`
   ADD PRIMARY KEY (`id_usuario`,`id_usuario_sebo`,`data_hora_msg`);
 
 --
--- Indexes for table `nacionalidade`
+-- Índices para tabela `nacionalidade`
 --
 ALTER TABLE `nacionalidade`
   ADD PRIMARY KEY (`id_nacionalidade`);
 
 --
--- Indexes for table `perfil`
+-- Índices para tabela `perfil`
 --
 ALTER TABLE `perfil`
   ADD PRIMARY KEY (`id_perfil`);
 
 --
--- Indexes for table `postagem`
+-- Índices para tabela `postagem`
 --
 ALTER TABLE `postagem`
   ADD PRIMARY KEY (`id_post`),
   ADD KEY `id_usuario` (`id_usuario`);
 
 --
--- Indexes for table `sebo`
+-- Índices para tabela `sebo`
 --
 ALTER TABLE `sebo`
   ADD PRIMARY KEY (`id_usuario`);
 
 --
--- Indexes for table `sebo_livro`
+-- Índices para tabela `sebo_livro`
 --
 ALTER TABLE `sebo_livro`
   ADD PRIMARY KEY (`id_usuario`,`isbn_livro`),
@@ -770,84 +784,84 @@ ALTER TABLE `sebo_livro`
   ADD KEY `fk_sebo_has_livro_sebo1_idx` (`id_usuario`);
 
 --
--- Indexes for table `usuario`
+-- Índices para tabela `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id_usuario`),
   ADD KEY `id_perfil` (`id_perfil`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT for table `autor`
+-- AUTO_INCREMENT de tabela `autor`
 --
 ALTER TABLE `autor`
   MODIFY `id_autor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
--- AUTO_INCREMENT for table `categoria`
+-- AUTO_INCREMENT de tabela `categoria`
 --
 ALTER TABLE `categoria`
   MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT for table `comentario`
+-- AUTO_INCREMENT de tabela `comentario`
 --
 ALTER TABLE `comentario`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
--- AUTO_INCREMENT for table `editora`
+-- AUTO_INCREMENT de tabela `editora`
 --
 ALTER TABLE `editora`
   MODIFY `id_editora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- AUTO_INCREMENT for table `emails_lidos`
+-- AUTO_INCREMENT de tabela `emails_lidos`
 --
 ALTER TABLE `emails_lidos`
   MODIFY `id_emails_lidos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
--- AUTO_INCREMENT for table `eventos`
+-- AUTO_INCREMENT de tabela `eventos`
 --
 ALTER TABLE `eventos`
   MODIFY `id_evento` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `links_emails`
+-- AUTO_INCREMENT de tabela `links_emails`
 --
 ALTER TABLE `links_emails`
   MODIFY `id_link` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
--- AUTO_INCREMENT for table `nacionalidade`
+-- AUTO_INCREMENT de tabela `nacionalidade`
 --
 ALTER TABLE `nacionalidade`
   MODIFY `id_nacionalidade` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
--- AUTO_INCREMENT for table `perfil`
+-- AUTO_INCREMENT de tabela `perfil`
 --
 ALTER TABLE `perfil`
   MODIFY `id_perfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `postagem`
+-- AUTO_INCREMENT de tabela `postagem`
 --
 ALTER TABLE `postagem`
-  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT for table `usuario`
+-- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
--- Constraints for dumped tables
+-- Restrições para despejos de tabelas
 --
 
 --
