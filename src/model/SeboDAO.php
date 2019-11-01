@@ -14,6 +14,8 @@ class SeboDAO extends Sebo
     private static $SELECT_TOT = "SELECT count(id_usuario) as tot from sebo where cod_status_sebo = '1'";
 
     private static $SELECT_ID = "select * from sebo where id_usuario = :idUsuario";
+    
+    private static $SELECT_CIDADE_SEBO = "select * from sebo where cidade_sebo = :cidadeSebo";
 
     private static $INSERT = "INSERT INTO sebo (id_usuario, razao_sebo, nome_fantasia, cnpj_sebo, url_foto_sebo, cidade_sebo. num_end_sebo,compl_end_sebo, logradouro_sebo, cep_end_sebo,num_tel_sebo, celular_1_sebo, celular_2_sebo,insc_estadual_sebo, url_site_sebo) VALUES (:idUsuario, :razaoSebo, :nomeFantasia, :cnpjSebo, :urlFotoSebo, :cidadeSebo,:numEndSebo, :complEndSebo,:logradouroSebo, :cepEndSebo, :numTelSebo,:celular1Sebo, :celular2Sebo, :inscEstadualSebo, :urlSiteSebo)";
 
@@ -35,6 +37,45 @@ class SeboDAO extends Sebo
     }
 
     //Métodos especialistas - irão executar os SQL dos Atributos
+    public function listarSebos($ini = -1, $qtde = 1)
+    {
+        if ($ini >= 0) {
+            $limit = " limit $ini , $qtde ";
+        } else {
+            $limit = "";
+        }
+
+        //executar a consulta no banco
+        $result = $this->sql->query(seboDAO::$SELECT_ALL . $limit);
+        //devolver o resultado
+
+        if ($result->rowCount() > 0) {
+            while ($linha = $result->fetch(\PDO::FETCH_OBJ)) {
+                $itens[] = array(
+                    'idUsuario' => $linha->id_usuario,
+                    'razaoSebo' => $linha->razao_sebo,
+                    'nomeFantasia' => $linha->nome_fantasia,
+                    'cnpjSebo' => $linha->cnpj_sebo,
+                    'urlFotoSebo' => $linha->url_foto_sebo,
+                    'cidadeSebo' => $linha->cidade_sebo,
+                    'numEndSebo' => $linha->num_end_sebo,
+                    'complEndSebo' => $linha->compl_end_sebo,
+                    'logradouroSebo' => $linha->logradouro_sebo,
+                    'cepEndSebo' => $linha->cep_end_sebo,
+                    'numTelSebo' => $linha->num_tel_sebo,
+                    'celular1Sebo' => $linha->celular_1_sebo,
+                    'celular2Sebo' => $linha->celular_2_sebo,
+                    'inscEstadualSebo' => $linha->insc_estadual_sebo,
+                    'urlSiteSebo' => $linha->url_site_sebo,
+                    'codStatusSebo' => $linha->cod_status_sebo
+                );
+            }
+        } else {
+            $itens = null;
+        }
+        return $itens;
+    }
+    
     public function listarSebos($ini = -1, $qtde = 1)
     {
         if ($ini >= 0) {

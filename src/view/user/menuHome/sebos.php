@@ -1,42 +1,89 @@
-<?php $title = "Sebos"; ?>
+<?php
+$title = "Sebos";
+//Arquivo de pesquisa para buscar dinamicamente
+$pesquisaSebo =  _URLBASE_ . "src/view/user/pages/includes/pesquisaSebo.php";
+?>
 <section class="sebos">
-    <div class="container">
-        <h1>SEBOS</h1>
-        <form action="">
-            <label for="">Buscas por Sebos</label>
-            <input type="text">
+    <p>SEBOS</p>
+    <form action="">
+        <label for="">Buscas por Sebos</label>
+        <input type="text">
 
-            <label for="">Encontre Sebos de sua Cidade</label>
-            <select name="cidadeSP">
-                <?php
-                //Inclui o arquivo de array cidades
-                include "src/view/user/pages/includes/arrayCidades.php";
-                foreach ($cidades as $cidade) {
-                    ?>
-                    <option value="<?= $cidade ?>"><?= $cidade ?></option>
-                <?php
-                }
+        <label for="">Encontre Sebos de sua Cidade</label>
+        <select name="cidadeSP">
+            <?php
+            //Inclui o arquivo de array cidades
+            include "src/view/user/pages/includes/arrayCidades.php";
+            foreach ($cidades as $cidade) {
                 ?>
-            </select>
-            <button>Pesquisar</button>
-        </form>
-        <a href="acervo-sebo.html">
-            <div class="box-sebo">
-                <strong>JULIO SEBOS</strong>
-                <p>5,000</p>
-            </div>
-        </a>
-        <a href="acervo-sebo.html">
-            <div class="box-sebo">
-                <strong>JULIO SEBOS</strong>
-                <p>5,000</p>
-            </div>
-        </a>
-        <a href="acervo-sebo.html">
-            <div class="box-sebo">
-                <strong>JULIO SEBOS</strong>
-                <p>5,000</p>
-            </div>
-        </a>
+                <option value="<?= $cidade ?>"><?= $cidade ?></option>
+            <?php
+            }
+            ?>
+        </select>
+        <button>Pesquisar</button>
+    </form>
+
+    <section class="jumbotron">
+        <div id="MostraPesq"></div>
+    </section>
+    <div id="contentLoading">
+        <div id="loading"></div>
     </div>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            //Aqui a ativa a imagem de load
+            function loading_show() {
+                $('#loading').html("<img class='loadGif' src='<?= _URLBASE_ ?>public/icon/loading.svg'/>").fadeIn('fast');
+            }
+
+            //Aqui desativa a imagem de loading
+            function loading_hide() {
+                $('#loading').fadeOut('fast');
+            }
+
+            // aqui a função ajax que busca os dados em outra pagina do tipo html, não é json
+            function load_dados(valores, page, div) {
+                $.ajax({
+                    type: 'POST',
+                    dataType: 'html',
+                    url: page,
+                    beforeSend: function() {
+                        //Chama o loading antes do carregamento
+                        loading_show();
+                    },
+                    data: valores,
+                    success: function(msg) {
+                        loading_hide();
+                        var data = msg;
+                        $(div).html(data).fadeIn();
+                    }
+                });
+            }
+
+            // src\view\user\pages\includes\pesquisa.php
+
+            //Aqui eu chamo o metodo de load pela primeira vez sem parametros para pode exibir todos
+            load_dados(null, '<?= $pesquisa ?>', '#MostraPesq');
+
+            //Aqui uso o evento key up para começar a pesquisar, se valor for maior q 0 ele faz a pesquisa
+            $('#pesquisaLivro').keyup(function() {
+
+                var valores = $('#form_pesquisa').serialize() //o serialize retorna uma string pronta para ser enviada
+
+                //pegando o valor do campo #pesquisaLivro
+                var $parametro = $(this).val();
+
+                if ($parametro.length >= 1) {
+                    load_dados(valores, '<?= $pesquisa ?>', '#MostraPesq');
+                } else {
+                    load_dados(null, '<?= $pesquisa ?>', '#MostraPesq');
+                }
+            });
+
+        });
+    </script>
+
 </section>

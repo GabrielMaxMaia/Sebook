@@ -1,6 +1,5 @@
 <?php
 $title = "Livros";
-
 //Arquivo de pesquisa para buscar dinamicamente
 $pesquisa =  _URLBASE_ . "src/view/user/pages/includes/pesquisa.php";
 ?>
