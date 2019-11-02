@@ -5,23 +5,28 @@ $pesquisaSebo =  _URLBASE_ . "src/view/user/pages/includes/pesquisaSebo.php";
 ?>
 <section class="sebos">
     <p>SEBOS</p>
-    <form action="">
+    <form action="search-box" name="form_pesquisa" id="form_pesquisa" method="post" action="">
         <label for="">Buscas por Sebos</label>
-        <input type="text">
+        <div class="input-prepend">
+            <input type="text" name="pesquisaSebo" id="pesquisaSebo" value="" tabindex="1" placeholder="Pesquisar Sebos...">
+        </div>
+    </form>
 
+    <form action="search-box" name="form_pesquisa" id="form_pesquisa" method="post" action="">
         <label for="">Encontre Sebos de sua Cidade</label>
-        <select name="cidadeSP">
-            <?php
-            //Inclui o arquivo de array cidades
-            include "src/view/user/pages/includes/arrayCidades.php";
-            foreach ($cidades as $cidade) {
+        <div class="input-prepend">
+            <select name="cidadeSP">
+                <?php
+                //Inclui o arquivo de array cidades
+                include "src/view/user/pages/includes/arrayCidades.php";
+                foreach ($cidades as $cidade) {
+                    ?>
+                    <option value="<?= $cidade ?>" name="pesquisaSebo" id="pesquisaSebo" value="" tabindex="1"><?= $cidade ?></option>
+                <?php
+                }
                 ?>
-                <option value="<?= $cidade ?>"><?= $cidade ?></option>
-            <?php
-            }
-            ?>
-        </select>
-        <button>Pesquisar</button>
+            </select>
+        </div>
     </form>
 
     <section class="jumbotron">
@@ -66,22 +71,37 @@ $pesquisaSebo =  _URLBASE_ . "src/view/user/pages/includes/pesquisaSebo.php";
             // src\view\user\pages\includes\pesquisa.php
 
             //Aqui eu chamo o metodo de load pela primeira vez sem parametros para pode exibir todos
-            load_dados(null, '<?= $pesquisa ?>', '#MostraPesq');
+            load_dados(null, '<?= $pesquisaSebo ?>', '#MostraPesq');
 
             //Aqui uso o evento key up para começar a pesquisar, se valor for maior q 0 ele faz a pesquisa
-            $('#pesquisaLivro').keyup(function() {
+            $('#pesquisaSebo').keyup(function() {
 
                 var valores = $('#form_pesquisa').serialize() //o serialize retorna uma string pronta para ser enviada
 
-                //pegando o valor do campo #pesquisaLivro
+                //pegando o valor do campo #pesquisaSebo
                 var $parametro = $(this).val();
 
                 if ($parametro.length >= 1) {
-                    load_dados(valores, '<?= $pesquisa ?>', '#MostraPesq');
+                    load_dados(valores, '<?= $pesquisaSebo ?>', '#MostraPesq');
                 } else {
-                    load_dados(null, '<?= $pesquisa ?>', '#MostraPesq');
+                    load_dados(null, '<?= $pesquisaSebo ?>', '#MostraPesq');
                 }
             });
+
+            $('#pesquisaSebo').change(function() {
+
+                var valores = $('#form_pesquisa').serialize() //o serialize retorna uma string pronta para ser enviada
+
+                //pegando o valor do campo #pesquisaSebo
+                var $parametro = $(this).val();
+
+                if ($parametro.length >= 1) {
+                    load_dados(valores, '<?= $pesquisaSebo ?>', '#MostraPesq');
+                } else {
+                    load_dados(null, '<?= $pesquisaSebo ?>', '#MostraPesq');
+                }
+            });
+
 
         });
     </script>

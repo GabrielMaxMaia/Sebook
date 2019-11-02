@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 01-Nov-2019 às 15:19
--- Versão do servidor: 10.3.16-MariaDB
--- versão do PHP: 7.3.7
+-- Generation Time: 02-Nov-2019 às 17:10
+-- Versão do servidor: 10.1.38-MariaDB
+-- versão do PHP: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `db_sebook`
+-- Database: `db_sebook`
 --
 
 -- --------------------------------------------------------
@@ -300,7 +300,7 @@ CREATE TABLE `links_emails` (
   `id_link` int(11) NOT NULL,
   `link` varchar(520) NOT NULL,
   `id_emails_lidos` int(11) NOT NULL,
-  `situacao` int(11) NOT NULL DEFAULT 1
+  `situacao` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -504,8 +504,8 @@ CREATE TABLE `postagem` (
   `data_hora_post` datetime DEFAULT NULL,
   `link_post` varchar(100) DEFAULT NULL,
   `url_foto_post` varchar(100) DEFAULT 'public/imgPost/imgPadrao/padrao.jpg',
-  `txt_postagem` text DEFAULT NULL,
-  `titulo_post` text DEFAULT NULL,
+  `txt_postagem` text,
+  `titulo_post` text,
   `cod_status_post` varchar(10) DEFAULT '1',
   `id_usuario` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -568,7 +568,7 @@ INSERT INTO `sebo` (`id_usuario`, `razao_sebo`, `nome_fantasia`, `cnpj_sebo`, `u
 (12, 'Mirian Marinho da Silva Lima', 'Mirian Marinho da Silva Lima', '12.672.074/0001-53', '', 'Osasco', '115', '', '', '06320-290', '1143867762', '', '', '', '', '1'),
 (14, 'Priscilla Nobre Lobo', 'Sebo e Livraria Corujinha', '21.100.930/0001-97', NULL, NULL, '179', NULL, NULL, '06448-020', '1128614286', NULL, NULL, NULL, NULL, '1'),
 (34, 'Pirate king', 'dasdgdfg', 'dfgdgdfg', 'public/img/imgPerfilSebo/1_1_1.jpg', NULL, 'dasdad', 'dsada', 'dsadsa', 'dasdsad', 'asdsad', 'dsadad', 'trhtrh', 'sadd', 'dsad', '1'),
-(35, 'Monkey D. Luffy', 'Reio dos piratas', '03.561.475/4516-97', 'public/img/imgPerfilSebo/luffy.jpg', 'Barrinha', 'dsa', 'dasdsa', 'AV', '', '(11) 4005-8799', '(11) 54879-9524', '', '', 'dsa', '1');
+(35, 'Monkey D. Luffy', 'Rei dos piratas', '03.561.475/4516-97', 'public/img/imgPerfilSebo/luffy.jpg', 'Barrinha', 'dsa', 'dasdsa', 'AV', '', '(11) 4005-8799', '(11) 54879-9524', '', '', 'dsa', '1');
 
 -- --------------------------------------------------------
 
@@ -658,44 +658,44 @@ INSERT INTO `usuario` (`id_usuario`, `nome_usuario`, `sobrenome_usuario`, `email
 (44, 'Edward ', 'Elric', 'alquimista@outlook.com', '$2a$08$MTc4NjcwMTcyODVkYjYwYuHxj4Jud4SZqYftf86JacQj0wbk268FO', '1', 4, '2019-10-27 18:31:40');
 
 --
--- Índices para tabelas despejadas
+-- Indexes for dumped tables
 --
 
 --
--- Índices para tabela `autor`
+-- Indexes for table `autor`
 --
 ALTER TABLE `autor`
   ADD PRIMARY KEY (`id_autor`),
   ADD KEY `id_nacionalidade` (`id_nacionalidade`);
 
 --
--- Índices para tabela `avaliacao_sebo`
+-- Indexes for table `avaliacao_sebo`
 --
 ALTER TABLE `avaliacao_sebo`
   ADD PRIMARY KEY (`id_usuario_sebo`,`id_usuario`),
   ADD KEY `id_usuario` (`id_usuario`);
 
 --
--- Índices para tabela `categoria`
+-- Indexes for table `categoria`
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`id_categoria`);
 
 --
--- Índices para tabela `cliente`
+-- Indexes for table `cliente`
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id_usuario`);
 
 --
--- Índices para tabela `cliente_sebo`
+-- Indexes for table `cliente_sebo`
 --
 ALTER TABLE `cliente_sebo`
   ADD PRIMARY KEY (`id_usuario`,`id_usuario_sebo`),
   ADD KEY `id_usuario_sebo` (`id_usuario_sebo`);
 
 --
--- Índices para tabela `comentario`
+-- Indexes for table `comentario`
 --
 ALTER TABLE `comentario`
   ADD PRIMARY KEY (`id_comentario`),
@@ -703,33 +703,33 @@ ALTER TABLE `comentario`
   ADD KEY `id_usuario` (`id_usuario`);
 
 --
--- Índices para tabela `editora`
+-- Indexes for table `editora`
 --
 ALTER TABLE `editora`
   ADD PRIMARY KEY (`id_editora`);
 
 --
--- Índices para tabela `emails_lidos`
+-- Indexes for table `emails_lidos`
 --
 ALTER TABLE `emails_lidos`
   ADD PRIMARY KEY (`id_emails_lidos`);
 
 --
--- Índices para tabela `eventos`
+-- Indexes for table `eventos`
 --
 ALTER TABLE `eventos`
   ADD PRIMARY KEY (`id_evento`),
   ADD KEY `id_usuario` (`id_usuario`);
 
 --
--- Índices para tabela `links_emails`
+-- Indexes for table `links_emails`
 --
 ALTER TABLE `links_emails`
   ADD PRIMARY KEY (`id_link`),
   ADD KEY `id_emails_lidos` (`id_emails_lidos`);
 
 --
--- Índices para tabela `livro`
+-- Indexes for table `livro`
 --
 ALTER TABLE `livro`
   ADD PRIMARY KEY (`isbn_livro`),
@@ -737,7 +737,7 @@ ALTER TABLE `livro`
   ADD KEY `id_categoria` (`id_categoria`);
 
 --
--- Índices para tabela `livro_autor`
+-- Indexes for table `livro_autor`
 --
 ALTER TABLE `livro_autor`
   ADD PRIMARY KEY (`id_autor`,`isbn_livro`),
@@ -745,38 +745,38 @@ ALTER TABLE `livro_autor`
   ADD KEY `fk_livro_autor_livro1_idx` (`isbn_livro`);
 
 --
--- Índices para tabela `mensagem`
+-- Indexes for table `mensagem`
 --
 ALTER TABLE `mensagem`
   ADD PRIMARY KEY (`id_usuario`,`id_usuario_sebo`,`data_hora_msg`);
 
 --
--- Índices para tabela `nacionalidade`
+-- Indexes for table `nacionalidade`
 --
 ALTER TABLE `nacionalidade`
   ADD PRIMARY KEY (`id_nacionalidade`);
 
 --
--- Índices para tabela `perfil`
+-- Indexes for table `perfil`
 --
 ALTER TABLE `perfil`
   ADD PRIMARY KEY (`id_perfil`);
 
 --
--- Índices para tabela `postagem`
+-- Indexes for table `postagem`
 --
 ALTER TABLE `postagem`
   ADD PRIMARY KEY (`id_post`),
   ADD KEY `id_usuario` (`id_usuario`);
 
 --
--- Índices para tabela `sebo`
+-- Indexes for table `sebo`
 --
 ALTER TABLE `sebo`
   ADD PRIMARY KEY (`id_usuario`);
 
 --
--- Índices para tabela `sebo_livro`
+-- Indexes for table `sebo_livro`
 --
 ALTER TABLE `sebo_livro`
   ADD PRIMARY KEY (`id_usuario`,`isbn_livro`),
@@ -784,84 +784,84 @@ ALTER TABLE `sebo_livro`
   ADD KEY `fk_sebo_has_livro_sebo1_idx` (`id_usuario`);
 
 --
--- Índices para tabela `usuario`
+-- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id_usuario`),
   ADD KEY `id_perfil` (`id_perfil`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `autor`
+-- AUTO_INCREMENT for table `autor`
 --
 ALTER TABLE `autor`
   MODIFY `id_autor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
--- AUTO_INCREMENT de tabela `categoria`
+-- AUTO_INCREMENT for table `categoria`
 --
 ALTER TABLE `categoria`
   MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT de tabela `comentario`
+-- AUTO_INCREMENT for table `comentario`
 --
 ALTER TABLE `comentario`
   MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
--- AUTO_INCREMENT de tabela `editora`
+-- AUTO_INCREMENT for table `editora`
 --
 ALTER TABLE `editora`
   MODIFY `id_editora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- AUTO_INCREMENT de tabela `emails_lidos`
+-- AUTO_INCREMENT for table `emails_lidos`
 --
 ALTER TABLE `emails_lidos`
   MODIFY `id_emails_lidos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
--- AUTO_INCREMENT de tabela `eventos`
+-- AUTO_INCREMENT for table `eventos`
 --
 ALTER TABLE `eventos`
   MODIFY `id_evento` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `links_emails`
+-- AUTO_INCREMENT for table `links_emails`
 --
 ALTER TABLE `links_emails`
   MODIFY `id_link` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
--- AUTO_INCREMENT de tabela `nacionalidade`
+-- AUTO_INCREMENT for table `nacionalidade`
 --
 ALTER TABLE `nacionalidade`
   MODIFY `id_nacionalidade` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
--- AUTO_INCREMENT de tabela `perfil`
+-- AUTO_INCREMENT for table `perfil`
 --
 ALTER TABLE `perfil`
   MODIFY `id_perfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT de tabela `postagem`
+-- AUTO_INCREMENT for table `postagem`
 --
 ALTER TABLE `postagem`
   MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT de tabela `usuario`
+-- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
--- Restrições para despejos de tabelas
+-- Constraints for dumped tables
 --
 
 --
