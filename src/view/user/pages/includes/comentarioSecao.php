@@ -59,7 +59,7 @@ if ($resultComentario != null || $resultComentario >= 1) {
                                     $comentarioDAO->setTxtComentario($resultComentarioId['txtComentario']);
                                     ?>
 
-                        <label class="btn-modal-cadastre modifica edit" for="modal-editar" value="<?= $comentario['idComentario'] ?>" onclick="return pegaId(<?= $comentario['idComentario'] ?>,'<?= $comentario['txtComentario'] ?>')">Editar</label>
+                        <label class="btn-modal-cadastre modifica edit" for="modal-editar" value="<?= $comentario['idComentario'] ?>" onclick="return pegaId(<?= $comentario['idComentario'] ?>,'<?= addslashes($comentario['txtComentario']) ?>')">Editar</label>
 
                         <!--Formulário para excluir-->
                         <form method="post" action="" name="exçluir">
