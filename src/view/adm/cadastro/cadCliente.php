@@ -4,7 +4,6 @@ use Controller\ClienteController;
 
 $objSql = new Util\Sql($conn);
 $clienteController = new Controller\ClienteController($objSql);
-$usuarioController = new Controller\UsuarioController($objSql);
 
 // var_dump($_POST);
 $clienteController->gravarAlterar();
@@ -93,7 +92,7 @@ $clienteController->gravarAlterar();
 
 		<!-- <input type="hidden" name="txtImg" id="txtImg" value="<?//= $clienteController->getClienteDAO()->getUrlFotoCliente() ?>"> -->
 
-		<input type="hidden" name="txtImg" id="txtImg" value="<?= $usuarioController->getUsuarioDAO()->getUrlFoto() ?>">
+		<input type="hidden" name="txtImg" id="txtImg" value="<?= $clienteController->getUsuarioDAO()->getUrlFoto() ?>">
 
 		<label> </label>
 		<input class="buttonCancel" type="reset" value="Limpar">
@@ -111,8 +110,8 @@ $clienteController->gravarAlterar();
 	</div>
 
 	<?php
-	if ($usuarioController->getUsuarioDAO()->getUrlFoto() != "") { 
-		$src = _URLBASE_ . $usuarioController->getUsuarioDAO()->getUrlFoto();
+	if ($clienteController->getUsuarioDAO()->getUrlFoto() != "") { 
+		$src = _URLBASE_ . $clienteController->getUsuarioDAO()->getUrlFoto();
 	} else {
 		$src = _URLBASE_ . "public/img/imgPerfil/imgPadrao/padrao.png";
 	}

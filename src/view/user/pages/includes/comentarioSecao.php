@@ -3,7 +3,7 @@
 if ($resultComentario != null || $resultComentario >= 1) {
 
     foreach ($resultComentario as $comentario) {
-       
+
         if ($pagina == "paginaSebo") {
             $pag = $comentario['idPagina'];
         } else {
@@ -18,42 +18,46 @@ if ($resultComentario != null || $resultComentario >= 1) {
             ?>
             <div class="comentarioContainer">
                 <?php
-                    $usuarioDAO->setIdUsuario($idUser);
-                ?>
-                <figure>
-                    <img src="<?//=_URLBASE_.$usuarioDAO->getUrlFotoUsuario()?>">
+                            $usuarioDAO->setIdUsuario($idUser);
+                            ?>
+                <figure class="userComent">
+                    <img src="<?= _URLBASE_ . $comentario['urlFoto'] ?>">
+                    <figcaption>
+                        <p>
+
+                            <?= $comentario['txtComentario'] ?>
+                            <br><br>
+                            <span>Por <?= $comentario['nomeUsuario'] ?>
+                                em <strong><?= date("d/m/Y - H:i", strtotime($comentario['dataHoraComentario'])); ?></strong>
+                            </span>
+                        </p>
+                    </figcaption>
+
                 </figure>
-                <p>
-                   
-                    <?= $comentario['txtComentario'] ?>
-                    <br><br>
-                    <span>Por <?= $comentario['nomeUsuario'] ?>
-                        em <strong><?= date("d/m/Y - H:i", strtotime($comentario['dataHoraComentario'])); ?></strong>
-                    </span>
-                </p>
-        <div class="itemEdit">
+
+                <div class="itemEdit">
                     <?php
-                        //Caso o id do usuário for o mesmo que está no comentário ou o id for Master ou ele for o dono da postagem
-                        //Ele pode editar excluir o comentário
-                        
-                        if ($comentario['idUsuario'] == $usuarioDAO->getIdUsuario() || $acessoUser <= 3 && $acessoUser != "" || $pag == $idUser) {
+                                //Caso o id do usuário for o mesmo que está no comentário ou o id for Master ou ele for o dono da postagem
+                                //Ele pode editar excluir o comentário
 
-                            $comentarioDAO->setIdUsuario($comentario['idUsuario']);
+                                if ($comentario['idUsuario'] == $usuarioDAO->getIdUsuario() || $acessoUser <= 3 && $acessoUser != "" || $pag == $idUser) {
 
-                            if ($pagina == "paginaSebo") {
-                                $comentarioDAO->setIdPagina($comentario['idPagina']);
-                            } else {
-                                $comentarioDAO->setIdPost($comentario['idPost']);
-                            }
+                                    $comentarioDAO->setIdUsuario($comentario['idUsuario']);
 
-                            $comentarioDAO->setIdComentario($comentario['idComentario']);
+                                    if ($pagina == "paginaSebo") {
+                                        $comentarioDAO->setIdPagina($comentario['idPagina']);
+                                    } else {
+                                        $comentarioDAO->setIdPost($comentario['idPost']);
+                                    }
 
-                            $comentarioDAO->setIdComentarioParente($comentario['idComentarioParente']);
+                                    $comentarioDAO->setIdComentario($comentario['idComentario']);
 
-                            $resultComentarioId = $comentarioDAO->listarComentarioId();
+                                    $comentarioDAO->setIdComentarioParente($comentario['idComentarioParente']);
 
-                            $comentarioDAO->setTxtComentario($resultComentarioId['txtComentario']);
-                        ?>
+                                    $resultComentarioId = $comentarioDAO->listarComentarioId();
+
+                                    $comentarioDAO->setTxtComentario($resultComentarioId['txtComentario']);
+                                    ?>
 
                         <label class="btn-modal-cadastre modifica edit" for="modal-editar" value="<?= $comentario['idComentario'] ?>" onclick="return pegaId(<?= $comentario['idComentario'] ?>,'<?= $comentario['txtComentario'] ?>')">Editar</label>
 
@@ -64,30 +68,34 @@ if ($resultComentario != null || $resultComentario >= 1) {
                             <input type="submit" name="excluirComentario" class="modifica danger" value="Excluir" onclick="if (confirm('Quer Mesmo excluir comentário?')) {return true;}else{return false;}">
                         </form>
                         <?php
-                            if (isset($_POST['excluirComentario'])) {
-                                $comentarioDAO->setIdComentario($_POST['comentarioExcluir']);
-                                //Excluir comentário
-                                $comentarioDAO->excluirComentario();
-                                
-                                //Recarrega a página
-                                header('Refresh:0');
-                            }
-                        ?>
+                                        if (isset($_POST['excluirComentario'])) {
+                                            $comentarioDAO->setIdComentario($_POST['comentarioExcluir']);
+                                            //Excluir comentário
+                                            $comentarioDAO->excluirComentario();
+
+                                            //Recarrega a página
+                                            header('Refresh:0');
+                                        }
+                                        ?>
                     <?php
                                 }
                                 ?>
                 </div>
 
                 <?php
-                    //A opção de responder só aparece para quem está logado
+                            //A opção de responder só aparece para quem está logado
                             // if ($IdUser != "") {
-                ?>
-                <!-- <label class="btn-modal-cadastre" for="modal-responder" value="<? //= $comentario['idComentario']?>" onclick="return pegaId(<? //= $comentario['idComentario']?>)">Responder</label> -->
+                            ?>
+                <!-- <label class="btn-modal-cadastre" for="modal-responder" value="<? //= $comentario['idComentario']
+                                                                                                ?>" onclick="return pegaId(<? //= $comentario['idComentario']
+                                                                                                                                        ?>)">Responder</label> -->
 
-                <!-- <label class="btn-modal-cadastre" for="modal-editar" value="<? //= $comentario['idComentario']?>" onclick="return pegaId(<? //= $comentario['idComentario']?>)">Editar</label> -->
+                <!-- <label class="btn-modal-cadastre" for="modal-editar" value="<? //= $comentario['idComentario']
+                                                                                                ?>" onclick="return pegaId(<? //= $comentario['idComentario']
+                                                                                                                                        ?>)">Editar</label> -->
                 <?php
-                    // }
-                ?>
+                            // }
+                            ?>
             </div>
 <?php
         }
@@ -136,7 +144,7 @@ if ($resultComentario != null || $resultComentario >= 1) {
                         $nome = "idPagina";
                     }
                     ?>
-                    <input type="hidden" name="<?=$nome?>" value="<?= $pagVal ?>">
+                    <input type="hidden" name="<?= $nome ?>" value="<?= $pagVal ?>">
 
                     <input type="hidden" name="idUsuario" id="idUsuario" value="<?= $comentarioDAO->getIdUsuario() ?>">
 

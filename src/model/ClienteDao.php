@@ -27,9 +27,9 @@ class ClienteDAO extends Cliente
     private $sql;
 
     //Método Construtor - setamos os parametros e passamos um obj SQL
-    public function __construct($objSql = "", $idUsuario = "", $sexoCliente = "", $complEndCliente = "", $logradouroCliente = "", $urlFotoCliente = "", $numComplCliente = "", $cpfCliente = "", $cepCliente = "", $dtNascCliente = "", $codStatusCliente = "")
+    public function __construct($objSql = "", $idUsuario = "", $sexoCliente = "", $complEndCliente = "", $logradouroCliente = "", $numComplCliente = "", $cpfCliente = "", $cepCliente = "", $dtNascCliente = "", $codStatusCliente = "")
     {
-        parent::__construct($idUsuario, $sexoCliente, $complEndCliente, $logradouroCliente, $urlFotoCliente, $numComplCliente, $cpfCliente, $cepCliente, $dtNascCliente, $codStatusCliente);
+        parent::__construct($idUsuario, $sexoCliente, $complEndCliente, $logradouroCliente, $numComplCliente, $cpfCliente, $cepCliente, $dtNascCliente, $codStatusCliente);
         $this->sql = $objSql;
     }
 
@@ -115,7 +115,6 @@ class ClienteDAO extends Cliente
                 ':sexoCliente' => array(0 => $this->getSexoCliente(), 1 => \PDO::PARAM_STR),
                 ':complEndCliente' => array(0 => $this->getComplementoCliente(), 1 => \PDO::PARAM_STR),
                 ':logradouroCliente' => array(0 => $this->getLogradouroCliente(), 1 => \PDO::PARAM_STR),
-                ':urlFotoCliente' => array(0 => $this->getUrlFotoCliente(), 1 => \PDO::PARAM_STR),
                 ':numComplCliente' => array(0 => $this->getNumComplCliente(), 1 => \PDO::PARAM_STR),
                 ':cpfCliente' => array(0 => $this->getCpfCliente(), 1 => \PDO::PARAM_STR),
                 ':cepCliente' => array(0 => $this->getCepCliente(), 1 => \PDO::PARAM_STR),
@@ -135,7 +134,6 @@ class ClienteDAO extends Cliente
                 ':sexoCliente' => array(0 => $this->getSexoCliente(), 1 => \PDO::PARAM_STR),
                 ':complEndCliente' => array(0 => $this->getComplementoCliente(), 1 => \PDO::PARAM_STR),
                 ':logradouroCliente' => array(0 => $this->getLogradouroCliente(), 1 => \PDO::PARAM_STR),
-                ':urlFotoCliente' => array(0 => $this->getUrlFotoCliente(), 1 => \PDO::PARAM_STR),
                 ':numComplCliente' => array(0 => $this->getNumComplCliente(), 1 => \PDO::PARAM_STR),
                 ':cpfCliente' => array(0 => $this->getCpfCliente(), 1 => \PDO::PARAM_STR),
                 ':cepCliente' => array(0 => $this->getCepCliente(), 1 => \PDO::PARAM_STR),

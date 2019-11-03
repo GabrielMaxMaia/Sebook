@@ -23,7 +23,7 @@ if ($resultado) {
             $msg .= "<a href='" . _URLBASE_ . "area/user/pages/pagSebo/" . $cidade['idUsuario'] . "'>";
 
             $msg .= "<figure>";
-            $msg .= "<img src='" . _URLBASE_ . $cidade['urlFotoSebo'] . "' alt='" . $cidade['urlFotoSebo'] . "' title='" . $cidade['urlFotoSebo'] . "'>";
+            $msg .= "<img src='" . _URLBASE_ . $cidade['urlFoto'] . "' alt='" . $cidade['urlFoto'] . "' title='" . $cidade['urlFoto'] . "'>";
             $msg .= "<figcaption>";
             $msg .=  "<p><b>Nome: </b>" . $cidade['nomeFantasia'] . "<br>";
             $msg .=  "<b>Cidade: </b>" . $cidade['cidadeSebo'] . "<br>";

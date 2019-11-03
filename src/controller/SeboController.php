@@ -70,11 +70,13 @@ class SeboController
         $this->acaoPOST = $valor;
     }
 
-    public function getUsuarioDAO(){
+    //Junção com usuario
+    public function getUsuarioDAO()
+    {
         return $this->usuarioDAO;
     }
-
-    public function setUsuarioDAO($usuarioDAO){
+    public function setUsuarioDAO($usuarioDAO)
+    {
         $this->usuarioDAO = $usuarioDAO;
     }
 

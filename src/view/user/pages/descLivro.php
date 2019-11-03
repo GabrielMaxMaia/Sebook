@@ -142,7 +142,7 @@ for ($i = 0; $i < count($resultLivro); $i++) {
 								<li>
 								<a href='<?=_URLBASE_."/area/user/pages/pagSebo/".$seboLivroR['idUsuario']?>'>	
 								<figure>
-									<img src="<?=_URLBASE_ . $seboLivroR['urlFotoSebo']?>" style="max-width:50px;">
+									<img src="<?=_URLBASE_ . $seboLivroR['urlFoto']?>" style="max-width:50px;">
 									<figcaption>
 										<p>
 											Nome: <?=$seboLivroR['nomeFantasia']?>

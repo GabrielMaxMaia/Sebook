@@ -132,7 +132,7 @@ class SeboDAO extends Sebo
                     'inscEstadualSebo' => $linha->insc_estadual_sebo,
                     'urlSiteSebo' => $linha->url_site_sebo,
                     'codStatusSebo' => $linha->cod_status_sebo,
-                    'urlFoto' => $linha->urlFoto
+                    'urlFoto' => $linha->url_foto
                 );
             }
         } else {

@@ -17,7 +17,7 @@ class SeboLivroDAO extends SeboLivro
     private static $SELECT_TOT_SEBO = "SELECT count(id_usuario) as tot from sebo_livro INNER JOIN livro ON (sebo_livro.isbn_livro = livro.isbn_livro) 
     WHERE livro.cod_status_livro = '1' AND sebo_livro.id_usuario = :idSebo";
 
-    private static $SELECT_ALL_SEBO_LIVRO = "SELECT * FROM sebo inner join sebo_livro ON (sebo.id_usuario = sebo_livro.id_usuario) WHERE isbn_livro = :isbnLivro";
+    private static $SELECT_ALL_SEBO_LIVRO = "SELECT * FROM sebo_livro inner join usuario ON (sebo_livro.id_usuario = usuario.id_usuario) INNER JOIN sebo ON  (sebo_livro.id_usuario = sebo.id_usuario) AND isbn_livro = :isbnLivro";
 
     private static $SELECT_ID = "SELECT * FROM sebo_livro WHERE id_usuario = :idUsuario";
 
@@ -164,8 +164,8 @@ class SeboLivroDAO extends SeboLivro
                 'qtdEstoque' => $linha->qtd_estoque,
                 'estadoLivro' => $linha->estado_livro,
                 'nomeFantasia' => $linha->nome_fantasia,
-                'urlFotoSebo' => $linha->url_foto_sebo,
-                'cepEndSebo' => $linha->cep_end_sebo
+                'cepEndSebo' => $linha->cep_end_sebo,
+                'urlFoto' => $linha->url_foto
             );
         } 
             return $itens;

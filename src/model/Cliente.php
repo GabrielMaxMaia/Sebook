@@ -12,7 +12,6 @@ class Cliente
 	private $sexoCliente;
 	private $complementoCliente;
 	private $logradouroCliente;
-	private $urlFotoCliente;
 	private $numComplCliente;
 	private $cpfCliente;
 	private $cepCliente;
@@ -20,13 +19,12 @@ class Cliente
 	private $codStatusCliente;
 
 	//Método construtor auxiliar de criação de objetos
-	public function __construct($idUsuario = "", $sexoCliente = "", $complementoCliente = "", $logradouroCliente = "", $urlFotoCliente = "", $numComplCliente = "", $cpfCliente = "", $cepCliente = "", $nascimentoCliente = "", $codStatusCliente = "")
+	public function __construct($idUsuario = "", $sexoCliente = "", $complementoCliente = "", $logradouroCliente = "",$numComplCliente = "", $cpfCliente = "", $cepCliente = "", $nascimentoCliente = "", $codStatusCliente = "")
 	{
 		$this->idUsuario = $idUsuario;
 		$this->sexoCliente = $sexoCliente;
 		$this->complementoCliente = $complementoCliente;
 		$this->logradouroCliente = $logradouroCliente;
-		$this->urlFotoCliente = $urlFotoCliente;
 		$this->numComplCliente = $numComplCliente;
 		$this->cpfCliente = $cpfCliente;
 		$this->cepCliente = $cepCliente;
@@ -73,16 +71,6 @@ class Cliente
 	public function setLogradouroCliente($logradouroCliente)
 	{
 		$this->logradouroCliente = $logradouroCliente;
-	}
-
-	public function getUrlFotoCliente()
-	{
-		return $this->urlFotoCliente;
-	}
-
-	public function setUrlFotoCliente($urlFotoCliente)
-	{
-		$this->urlFotoCliente = $urlFotoCliente;
 	}
 
 	public function getNumComplCliente()
@@ -143,7 +131,6 @@ class Cliente
 			'sexoCliente' => $this->sexoCliente,
 			'complementoCliente' => $this->complementoCliente,
 			'logradouroCliente' => $this->logradouroCliente,
-			'urlFotoCliente' => $this->urlFotoCliente,
 			'numComplCliente' => $this->numComplCliente,
 			'cpfCliente' => $this->cpfCliente,
 			'cepCliente' => $this->cepCliente,

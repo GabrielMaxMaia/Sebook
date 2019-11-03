@@ -17,6 +17,7 @@ if ($acessoUser != "") {
 
 	//Seta os valores para o dao
 	$result = $clienteDAO->listarClienteId();
+	//var_dump($result);
 	$clienteDAO->setSexoCliente($result['sexoCliente']);
 	$clienteDAO->setComplementoCliente($result['complEndCliente']);
 	$clienteDAO->setLogradouroCliente($result['logradouroCliente']);
@@ -24,7 +25,7 @@ if ($acessoUser != "") {
 	$clienteDAO->setCpfCliente($result['cpfCliente']);
 	$clienteDAO->setCepCliente($result['cepCliente']);
 	$clienteDAO->setNascimentoCliente($result['nascCliente']);
-	$clienteDAO->setUrlFotoCliente($result['urlFotoCliente']);
+	$usuarioDAO->setUrlFoto($result['urlFoto']);
 
 	//Retorna a que tem no listarUsuarioDaoId
 	$resultUsuario = $usuarioDAO->listarUsuarioId();
@@ -44,8 +45,6 @@ if ($acessoUser != "") {
 		$clienteDAO->setCpfCliente($_POST['cpfCliente']);
 		$clienteDAO->setCepCliente($_POST['cepCliente']);
 		
-		$clienteDAO->setUrlFotoCliente($_POST['txtImg']);
-
 		$date = date_create(str_replace('/', '-', $_POST['nascCliente']));
 		$newDate = date_format($date, "Y-m-d");
 
@@ -56,6 +55,7 @@ if ($acessoUser != "") {
 			$usuarioDAO->setNomeUsuario($_POST['nomeUsuario']);
 			$usuarioDAO->setSobrenomeUsuario($_POST['sobrenomeUsuario']);
 			$usuarioDAO->setEmailUsuario($_POST['emailUsuario']);
+			$usuarioDAO->setUrlFoto($_POST['txtImg']);
 
 			$usuarioDAO->alterarInfoUsuario();
 		}
@@ -86,7 +86,7 @@ if ($acessoUser != "") {
 				<input type="hidden" name="idUsuario" id="idUsuario" value="<?= $clienteDAO->getIdUsuario() ?>">
 
 				<!--Foto campo escondifo-->
-				<input type="hidden" name="txtImg" id="txtImg" value="<?= $clienteDAO->getUrlFotoCliente() ?>">
+				<input type="hidden" name="txtImg" id="txtImg" value="<?= $usuarioDAO->getUrlFoto() ?>">
 
 				<div class="formItem">
 					<label for="nomeUsuario">Nome</label>

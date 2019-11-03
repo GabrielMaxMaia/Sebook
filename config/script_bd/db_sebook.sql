@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 02-Nov-2019 às 17:10
+-- Generation Time: 03-Nov-2019 às 22:23
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.2
 
@@ -133,7 +133,6 @@ CREATE TABLE `cliente` (
   `sexo_cliente` char(1) DEFAULT NULL,
   `compl_end_cliente` varchar(100) DEFAULT NULL,
   `logradouro_cliente` varchar(50) DEFAULT NULL,
-  `url_foto_cliente` varchar(100) DEFAULT NULL,
   `num_compl_cliente` varchar(100) DEFAULT NULL,
   `cpf_cliente` varchar(30) DEFAULT NULL,
   `cep_cliente` varchar(30) DEFAULT NULL,
@@ -145,20 +144,20 @@ CREATE TABLE `cliente` (
 -- Extraindo dados da tabela `cliente`
 --
 
-INSERT INTO `cliente` (`id_usuario`, `sexo_cliente`, `compl_end_cliente`, `logradouro_cliente`, `url_foto_cliente`, `num_compl_cliente`, `cpf_cliente`, `cep_cliente`, `dt_nasc_cliente`, `cod_status_cliente`) VALUES
-(5, 'M', 'Inicio', 'AL', 'public/imgPerfil/1_1_3.jpg', '231', '489458945894', '0485416941894894', '1997-01-22', '1'),
-(9, 'F', NULL, NULL, NULL, NULL, '45687912587', '06589054', '1900-01-01', '1'),
-(10, 'M', NULL, NULL, NULL, NULL, '12378965878', '06545687', '1900-01-01', '1'),
-(13, 'M', '', '', 'public/img/imgPerfil/guts.png', '', '36574159866', '06512987', '1900-01-01', '1'),
-(15, 'M', 'yrty', 'AL', 'public/img/imgPerfil/Np9TNuLP_400x400.jpg', 'ytrydsad', '487.795.687-10', '06874-510', '2019-10-11', '1'),
-(26, 'M', '', '', 'public/img/imgPerfil/2_2_1.png', '', '', '', '2019-10-11', '1'),
-(27, 'M', '', 'FAZ', 'public/img/imgPerfil/1_1_1.jpg', '', '', '', '2019-10-12', '1'),
-(29, 'F', '', '', 'public/img/imgPerfil/bait.jpg', '', '', '', '2019-10-12', '1'),
-(37, 'M', '', 'AL', 'public/img/imgPerfil/sonic.png', '', '', '', '1992-01-01', '1'),
-(41, NULL, NULL, NULL, 'public/icon/user.svg', NULL, NULL, NULL, NULL, '1'),
-(42, NULL, NULL, NULL, 'public/icon/user.svg', NULL, NULL, NULL, NULL, '1'),
-(43, NULL, NULL, NULL, 'public/icon/user.svg', NULL, NULL, NULL, NULL, '1'),
-(44, 'M', '', 'PRQ', 'public/img/imgPerfil/edward-elric-l.jpg', '', '', '', '2019-10-27', '1');
+INSERT INTO `cliente` (`id_usuario`, `sexo_cliente`, `compl_end_cliente`, `logradouro_cliente`, `num_compl_cliente`, `cpf_cliente`, `cep_cliente`, `dt_nasc_cliente`, `cod_status_cliente`) VALUES
+(5, 'M', 'Inicio', 'AL', '231', '489458945894', '0485416941894894', '1997-01-22', '1'),
+(9, 'F', NULL, NULL, NULL, '45687912587', '06589054', '1900-01-01', '1'),
+(10, 'M', NULL, NULL, NULL, '12378965878', '06545687', '1900-01-01', '1'),
+(13, 'M', '', '', '', '36574159866', '06512987', '1900-01-01', '1'),
+(15, 'M', 'yrty', 'AL', 'ytrydsad', '487.795.687-10', '06874-510', '2019-10-11', '1'),
+(26, 'M', '', '', '', '', '', '2019-10-11', '1'),
+(27, 'M', '', 'FAZ', '', '', '', '2019-10-12', '1'),
+(29, 'F', '', '', '', '', '', '2019-10-12', '1'),
+(37, 'M', '', 'AL', '', '', '', '1992-01-01', '1'),
+(41, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(42, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(43, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(44, 'M', '', 'PRQ', '', '', '', '2019-10-27', '1');
 
 -- --------------------------------------------------------
 
@@ -213,7 +212,15 @@ INSERT INTO `comentario` (`id_comentario`, `txt_comentario`, `data_hora_comentar
 (54, 'rrr', '2019-10-31 11:02:53', '1', '9788501110367', 35, 0, '', NULL),
 (55, 'teste', '2019-10-31 11:25:34', '1', '0', 15, 0, '11', NULL),
 (56, 'eae', '2019-10-31 11:25:52', '1', '0', 37, 0, '11', NULL),
-(57, '', '2019-10-31 11:30:07', '1', '0', 0, 0, '', NULL);
+(57, '', '2019-10-31 11:30:07', '1', '0', 0, 0, '', NULL),
+(58, 'OlÃ¡ mundo', '2019-11-03 01:09:34', '1', '4', 15, 0, '', NULL),
+(59, 'eae', '2019-11-03 02:28:46', '1', '4', 35, 0, '', NULL),
+(60, 'fsdkmgnoismdigoviomfsdiogbmiofdmiombgiomdfiobmiomdfibbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb', '2019-11-03 03:06:53', '1', '4', 35, 0, '', NULL),
+(61, 'fsggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg', '2019-11-03 03:07:46', '1', '4', 35, 0, '', NULL),
+(62, 'sdfdfg', '2019-11-03 03:07:50', '1', '4', NULL, 0, '', NULL),
+(63, 'eae', '2019-11-03 03:12:32', '1', '9788535928204', NULL, 0, '', NULL),
+(64, 'teste', '2019-11-03 18:40:04', '0', '4', 35, 0, '', NULL),
+(65, 'Talvez vocÃª possa encontrar o caminho para casa lendo esse livro...', '2019-11-03 19:11:08', '1', '9788535928204', 15, 0, '', NULL);
 
 -- --------------------------------------------------------
 
@@ -518,8 +525,8 @@ INSERT INTO `postagem` (`id_post`, `data_hora_post`, `link_post`, `url_foto_post
 (1, '2019-10-09 21:08:03', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', 'PHP (um acrÃ´nimo recursivo para \"PHP: Hypertext Preprocessor\", originalmente Personal Home Page) Ã© uma linguagem interpretada livre, usada originalmente apenas para o desenvolvimento de aplicaÃ§Ãµes presentes e atuantes no lado do servidor, capazes de gerar conteÃºdo dinÃ¢mico na World Wide Web.[3] Figura entre as primeiras linguagens passÃ­veis de inserÃ§Ã£o em documentos HTML, dispensando em muitos casos o uso de arquivos externos para eventuais processamentos de dados. O cÃ³digo Ã© interpre', 'PHP', '0', 5),
 (2, '2019-10-09 21:08:23', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', '              JavaScript, frequentemente abreviado como JS, Ã© uma linguagem de programaÃ§Ã£o interpretada de alto nÃ­vel, caracterizada tambÃ©m, como dinÃ¢mica, fracamente tipificada, prototype-based e multi-paradigma.[2] Juntamente com HTML e CSS, o JavaScript Ã© uma das trÃªs principais tecnologias da World Wide Web. JavaScript permite pÃ¡ginas da Web interativas e, portanto, Ã© uma parte essencial dos aplicativos da web. A grande maioria dos sites usa, e todos os principais navegadores tÃªm um mecanismo JavaScript dedicado para executÃ¡-lo.  Ã‰ atualmente a principal linguagem para programaÃ§Ã£o client-side em navegadores web. Ã‰ tambÃ©m bastante utilizada do lado do servidor atravÃ©s de ambientes como o node.js.  Como uma linguagem multi-paradigma, o JavaScript suporta estilos de programaÃ§Ã£o orientados a eventos, funcionais e imperativos (incluindo orientado a objetos e prototype-based), apresentando recursos como fechamentos (closures) e funÃ§Ãµes de alta ordem comumente indisponÃ­veis em linguagens populares como Java e C++. PossuÃ­ APIs para trabalhar com texto, matrizes, datas, expressÃµes regulares e o DOM, mas a linguagem em si nÃ£o inclui nenhuma E/S, como instalaÃ§Ãµes de rede, armazenamento ou grÃ¡ficos, contando com isso no ambiente host em que estÃ¡ embutido.  Foi originalmente implementada como parte dos navegadores web para que scripts pudessem ser executados do lado do cliente e interagissem com o usuÃ¡rio sem a necessidade deste script passar pelo servidor, controlando o navegador, realizando comunicaÃ§Ã£o assÃ­ncrona e alterando o conteÃºdo do documento exibido, porÃ©m os mecanismos JavaScript agora estÃ£o incorporados em muitos outros tipos de software host, incluindo servidores em servidores e bancos de dados da Web e em programas que nÃ£o sÃ£o da Web, como processadores de texto e PDF, e em tempo de execuÃ§Ã£o ambientes que disponibilizam JavaScript para escrever aplicativos mÃ³veis e de desktop, incluindo widgets de Ã¡rea de trabalho.  Os termos Vanilla JavaScript e Vanilla JS se referem ao JavaScript nÃ£o estendido por qualquer estrutura ou biblioteca adicional. Scripts escritos em Vanilla JS sÃ£o cÃ³digos JavaScript simples.[3][4]  Embora existam semelhanÃ§as entre JavaScript e Java, incluindo o nome da linguagem, a sintaxe e as respectivas bibliotecas padrÃ£o, as duas linguagens sÃ£o distintas e diferem muito no design; JavaScript foi influenciado por linguagens de programaÃ§Ã£o como Self e Scheme.        ', 'Javascript', '0', 5),
 (3, '2019-10-13 00:52:42', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', 'Eu programo\r\n', 'OlÃ¡ mundosss', '0', 15),
-(4, '2019-10-13 17:16:01', NULL, '', '       eaess    ', 'asss', '1', 5),
-(5, '2019-10-13 17:49:23', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', '                                eae                        ', 'PHP', '1', 5),
+(4, '2019-10-13 17:16:01', NULL, 'public/img/imgPost/master.jpg', 'What is Lorem Ipsum?\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\n\r\nWhy do we use it?\r\nIt is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).\r\n\r\n\r\nWhere does it come from?\r\nContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.\r\n\r\nThe standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.\r\n\r\nWhere can I get some?                                    ', 'Mestre dos Magos', '1', 5),
+(5, '2019-10-13 17:49:23', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', 'OlÃ¡ mundo essa Ã© uma postagem de teste configurada simplemeste para teste.\r\nEsse texto Ã© um teste, obrigado por ler...                                                 ', 'PHP', '1', 5),
 (6, '2019-10-13 19:43:28', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', '           dsfs', 'segfs', '1', 5),
 (7, '2019-10-13 19:45:35', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', 'fsdafsdfsdf', 'teste', '1', 5),
 (8, '2019-10-13 19:45:42', NULL, 'public/img/imgPost/meetup-php-joinville.jpg', '                Os programadores ficam em roda e um deles fala: \r\nâ€“ Elefante colorido! Os outros perguntam: â€“ De que cor ele Ã©? O desenvolvedor deverÃ¡ escolher uma cor e as outros deverÃ£o saber que linguagem tem essa sintaxe. Se nÃ£o achar esta o elefantinho irÃ¡ pegÃ¡-lo (ATERRORIZA-LO) com o TCC.                        ', 'Elefante colorido', '1', 5),
@@ -545,7 +552,6 @@ CREATE TABLE `sebo` (
   `razao_sebo` varchar(100) DEFAULT NULL,
   `nome_fantasia` varchar(100) DEFAULT NULL,
   `cnpj_sebo` varchar(30) DEFAULT NULL,
-  `url_foto_sebo` varchar(100) DEFAULT NULL,
   `cidade_sebo` varchar(45) DEFAULT NULL,
   `num_end_sebo` varchar(30) DEFAULT NULL,
   `compl_end_sebo` varchar(100) DEFAULT NULL,
@@ -563,12 +569,12 @@ CREATE TABLE `sebo` (
 -- Extraindo dados da tabela `sebo`
 --
 
-INSERT INTO `sebo` (`id_usuario`, `razao_sebo`, `nome_fantasia`, `cnpj_sebo`, `url_foto_sebo`, `cidade_sebo`, `num_end_sebo`, `compl_end_sebo`, `logradouro_sebo`, `cep_end_sebo`, `num_tel_sebo`, `celular_1_sebo`, `celular_2_sebo`, `insc_estadual_sebo`, `url_site_sebo`, `cod_status_sebo`) VALUES
-(11, 'Abigail de Queiroz Moreira Pereira', 'Abigail de Queiroz Moreira Pereira', '20.035.914/0001-03', '', 'Barueri', '111', '', '', '06410-080', '1141986832', '', '', '', '', '1'),
-(12, 'Mirian Marinho da Silva Lima', 'Mirian Marinho da Silva Lima', '12.672.074/0001-53', '', 'Osasco', '115', '', '', '06320-290', '1143867762', '', '', '', '', '1'),
-(14, 'Priscilla Nobre Lobo', 'Sebo e Livraria Corujinha', '21.100.930/0001-97', NULL, NULL, '179', NULL, NULL, '06448-020', '1128614286', NULL, NULL, NULL, NULL, '1'),
-(34, 'Pirate king', 'dasdgdfg', 'dfgdgdfg', 'public/img/imgPerfilSebo/1_1_1.jpg', NULL, 'dasdad', 'dsada', 'dsadsa', 'dasdsad', 'asdsad', 'dsadad', 'trhtrh', 'sadd', 'dsad', '1'),
-(35, 'Monkey D. Luffy', 'Rei dos piratas', '03.561.475/4516-97', 'public/img/imgPerfilSebo/luffy.jpg', 'Barrinha', 'dsa', 'dasdsa', 'AV', '', '(11) 4005-8799', '(11) 54879-9524', '', '', 'dsa', '1');
+INSERT INTO `sebo` (`id_usuario`, `razao_sebo`, `nome_fantasia`, `cnpj_sebo`, `cidade_sebo`, `num_end_sebo`, `compl_end_sebo`, `logradouro_sebo`, `cep_end_sebo`, `num_tel_sebo`, `celular_1_sebo`, `celular_2_sebo`, `insc_estadual_sebo`, `url_site_sebo`, `cod_status_sebo`) VALUES
+(11, 'Abigail de Queiroz Moreira Pereira', 'Abigail de Queiroz Moreira Pereira', '20.035.914/0001-03', 'Barueri', '111', '', '', '06410-080', '1141986832', '', '', '', '', '1'),
+(12, 'Mirian Marinho da Silva Lima', 'Mirian Marinho da Silva Lima', '12.672.074/0001-53', 'Osasco', '115', '', '', '06320-290', '1143867762', '', '', '', '', '1'),
+(14, 'Priscilla Nobre Lobo', 'Sebo e Livraria Corujinha', '21.100.930/0001-97', NULL, '179', NULL, NULL, '06448-020', '1128614286', NULL, NULL, NULL, NULL, '1'),
+(34, 'Pirate king', 'dasdgdfg', 'dfgdgdfg', NULL, 'dasdad', 'dsada', 'dsadsa', 'dasdsad', 'asdsad', 'dsadad', 'trhtrh', 'sadd', 'dsad', '1'),
+(35, 'Monkey D. Luffy', 'Rei dos piratas', '03.561.475/4516-97', 'Barrinha', 'dsa', 'dasdsa', 'AV', '', '(11) 4005-8799', '(11) 54879-9524', '', '', 'dsa', '1');
 
 -- --------------------------------------------------------
 
@@ -593,7 +599,7 @@ INSERT INTO `sebo_livro` (`id_usuario`, `isbn_livro`, `qtd_estoque`, `estado_liv
 (12, '9788516079444', 5, NULL),
 (14, '9788516079444', 4, NULL),
 (14, '9788599296363', 5, NULL),
-(35, '8532511015', 3, 'B'),
+(35, '8532511015', 9, 'B'),
 (35, '9780486421230', 5, 'B'),
 (35, '9788501110367', 8, 'O'),
 (35, '9788516079444', 8, 'O'),
@@ -618,44 +624,46 @@ CREATE TABLE `usuario` (
   `senha_usuario` varchar(255) DEFAULT NULL,
   `cod_status_usuario` varchar(10) DEFAULT '1',
   `id_perfil` int(11) DEFAULT NULL,
-  `data_criacao` datetime NOT NULL
+  `data_criacao` datetime NOT NULL,
+  `url_foto` varchar(100) DEFAULT NULL,
+  `usuariocol` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `usuario`
 --
 
-INSERT INTO `usuario` (`id_usuario`, `nome_usuario`, `sobrenome_usuario`, `email_usuario`, `senha_usuario`, `cod_status_usuario`, `id_perfil`, `data_criacao`) VALUES
-(1, 'Ruan', 'Costa de Oliveira', 'ruanc_oliveira@hotmail.com', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 1, '2019-09-18 00:00:00'),
-(2, 'Divanilda', 'Cristina da Cruz', 'rm35615@estudante.fieb.edu.br', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 1, '2019-09-18 00:00:00'),
-(3, 'Gabriel Max', 'Maia do Carmo', 'rm35880@estudante.fieb.edu.br', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 1, '2019-09-18 00:00:00'),
-(5, 'Marcos', 'Santos Carvalho', 'marcos_sco@outlook.com', '$2y$08$5nGdB4I7yBlWv2.8n9MrWOPCVorkFQ4iMrN.2J.VfVL1sagCMhlnu', '1', 1, '2019-09-18 00:00:00'),
-(6, 'Joyce Victoria', 'Leite Oquendo', 'rm35881@estudante.fieb.edu.br', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 2, '2019-09-18 00:00:00'),
-(7, 'Daniele Maria', 'França', 'rm36113@estudante.fieb.edu.br', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 3, '2019-09-18 00:00:00'),
-(8, 'Jennifer', 'Keity Guimarães', 'rm36139@estudante.fieb.edu.br', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 3, '2019-09-18 00:00:00'),
-(9, 'Suelane', 'Garcia Fontes', 'suelane.fontes@docente.fieb.edu.br', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 4, '2019-09-18 00:00:00'),
-(10, 'Giovani', 'Barbosa Wingter', 'giovani.wingter@docente.fieb.edu.br', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 4, '2019-09-18 00:00:00'),
-(11, 'Abigail', 'Queiroz Moreira Pereira', 'sebodomarcao@uol.com.br', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 5, '2019-09-18 00:00:00'),
-(12, 'Mirian', 'Marinho da Silva Lima', 'sebosantafe@hotmail.com', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 5, '2019-09-18 00:00:00'),
-(13, 'Denis', 'Monteiro Guimaraes', 'denis.guimaraes@docente.fieb.edu.br', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 4, '2019-09-18 00:00:00'),
-(14, 'Priscilla', 'Nobre Lobo', 'globalnetconsultoria@globo.com', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 5, '2019-09-18 00:00:00'),
-(15, 'Master', 'of wizards', 'master@outlook.com', '$2a$08$MjAyNDcxNzYzNTVkYjUwYe9vmq0joQxn3pX88hvrPWaKHUj/JEO9C', '1', 1, '2019-10-09 21:02:53'),
-(16, 'Admin 1', 'adm', 'adm1@outlook.com', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 2, '2019-10-09 21:03:42'),
-(17, 'Admin 2', 'adm ', 'adm2@outlook.com', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 3, '2019-10-09 21:04:14'),
-(18, 'Usuario', 'Cliente', 'cliente@outlook.com', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 4, '2019-10-09 21:07:01'),
-(19, 'Sebo', 'usuario', 'sebo@outlook.com', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 5, '2019-10-09 21:07:27'),
-(26, 'Giorno', 'Giovana', 'stand@outlook.com', '$2y$08$5nGdB4I7yBlWv2.8n9MrWOPCVorkFQ4iMrN.2J.VfVL1sagCMhlnu', '1', 4, '2019-10-11 00:44:10'),
-(27, 'Viewtiful ', 'Joe', 'sixMachine@outlook.com', '$2a$08$NjMzNjExMjAyNWRhMjI4NOM8NjRbDElnWbDL0akjvLVnRCjQ.rr8K', '1', 5, '2019-10-12 16:24:05'),
-(29, 'teste', 'dsad', 'tes@outlook.com', '$2a$08$NDQ1MDQxMDk0NWRhMjQyM.TKV/JqfDZ2kebp4i5v1lOIPQl3jwb8C', '1', 4, '2019-10-12 18:13:40'),
-(34, 'Giorno', 'adm', 'gansd@outlook.com', '$2a$08$ODM1OTQwMzA2NWRhMjY2ZOwzpYYg.3K8eA9jZ1Fs8ZyQtICEg9/xG', '1', 5, '2019-10-12 20:51:08'),
-(35, 'Luffy', 'Mokey D.', 'luffy@outlook.com', '$2a$08$MTUxODIzNzQxNjVkYTI4YuU9atiqVfNVpSJd/jOjOHVSKPep7VaCO', '1', 5, '2019-10-12 23:13:39'),
-(36, 'Giorno', 'adm', 'gansd@outlook.com', '$2a$08$MzQ4OTMyMTA2NWRhMjkzM.ZGzBU38O/OEUz4PfisxN.wnt2YPt8Yi', '1', 5, '2019-10-12 23:59:18'),
-(37, 'Sonic', 'the headhog', 'sonic@outlook.com', '$2a$08$MTU2NjEwNDA5MjVkYTNkYuUazvVaSHQMYS.oLcepyoVE2Xq9HO2..', '1', 4, '2019-10-13 23:23:40'),
-(40, 'htfh', 'hgfh', 'luffyss@outlook.com', '$2a$08$Njg4NTczMTE1NWRiM2QxNOq/YkSoWfJRG87mdstZYr/FqeD0.BJay', '1', 5, '2019-10-26 01:53:44'),
-(41, 'Giorno', 'Giovana', 'standos@outlook.com', '$2a$08$ODI0NjI5MjM3NWRiNGYxO.xJmWDsqxGXJk1ueFvVYLhLvYKOY6NPK', '1', 4, '2019-10-26 22:23:23'),
-(42, 'Giorno', 'Giovana', 'standosd@outlook.com', '$2a$08$MTc0OTQyNDY5NDVkYjRmMOYHwkM80haZE8DltQg3b4Yc5NecosoPC', '1', 4, '2019-10-26 22:24:36'),
-(43, 'teste', 'sdad', 'gan@outlook.com', '$2a$08$OTQ0NjgxMjQyNWRiNTBhZOPhQMjBPC8hbwLrS4riZKpGZtZgWO1qi', '1', 4, '2019-10-27 00:11:36'),
-(44, 'Edward ', 'Elric', 'alquimista@outlook.com', '$2a$08$MTc4NjcwMTcyODVkYjYwYuHxj4Jud4SZqYftf86JacQj0wbk268FO', '1', 4, '2019-10-27 18:31:40');
+INSERT INTO `usuario` (`id_usuario`, `nome_usuario`, `sobrenome_usuario`, `email_usuario`, `senha_usuario`, `cod_status_usuario`, `id_perfil`, `data_criacao`, `url_foto`, `usuariocol`) VALUES
+(1, 'Ruan', 'Costa de Oliveira', 'ruanc_oliveira@hotmail.com', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 1, '2019-09-18 00:00:00', NULL, NULL),
+(2, 'Divanilda', 'Cristina da Cruz', 'rm35615@estudante.fieb.edu.br', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 1, '2019-09-18 00:00:00', NULL, NULL),
+(3, 'Gabriel Max', 'Maia do Carmo', 'rm35880@estudante.fieb.edu.br', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 1, '2019-09-18 00:00:00', NULL, NULL),
+(5, 'Marcos', 'Santos Carvalho', 'marcos_sco@outlook.com', '$2y$08$5nGdB4I7yBlWv2.8n9MrWOPCVorkFQ4iMrN.2J.VfVL1sagCMhlnu', '1', 1, '2019-09-18 00:00:00', 'public/img/imgPerfil/travis.png', NULL),
+(6, 'Joyce Victoria', 'Leite Oquendo', 'rm35881@estudante.fieb.edu.br', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 2, '2019-09-18 00:00:00', NULL, NULL),
+(7, 'Daniele Maria', 'França', 'rm36113@estudante.fieb.edu.br', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 3, '2019-09-18 00:00:00', NULL, NULL),
+(8, 'Jennifer', 'Keity Guimarães', 'rm36139@estudante.fieb.edu.br', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 3, '2019-09-18 00:00:00', NULL, NULL),
+(9, 'Suelane', 'Garcia Fontes', 'suelane.fontes@docente.fieb.edu.br', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 4, '2019-09-18 00:00:00', NULL, NULL),
+(10, 'Giovani', 'Barbosa Wingter', 'giovani.wingter@docente.fieb.edu.br', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 4, '2019-09-18 00:00:00', NULL, NULL),
+(11, 'Abigail', 'Queiroz Moreira Pereira', 'sebodomarcao@uol.com.br', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 5, '2019-09-18 00:00:00', 'public/img/imgPerfilSebo/BadGirl.jpg', NULL),
+(12, 'Mirian', 'Marinho da Silva Lima', 'sebosantafe@hotmail.com', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 5, '2019-09-18 00:00:00', NULL, NULL),
+(13, 'Denis', 'Monteiro Guimaraes', 'denis.guimaraes@docente.fieb.edu.br', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 4, '2019-09-18 00:00:00', NULL, NULL),
+(14, 'Priscilla', 'Nobre Lobo', 'globalnetconsultoria@globo.com', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 5, '2019-09-18 00:00:00', NULL, NULL),
+(15, 'Master', 'of wizards', 'master@outlook.com', '$2a$08$NDExNDEyMzUyNWRiZjM1Ze8Pq9ttlUyQKp8IaSnNvVIx6mNa.0sT2', '1', 1, '2019-10-09 21:02:53', 'public/img/imgPerfil/Np9TNuLP_400x400.jpg', NULL),
+(16, 'Admin 1', 'adm', 'adm1@outlook.com', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 2, '2019-10-09 21:03:42', NULL, NULL),
+(17, 'Admin 2', 'adm ', 'adm2@outlook.com', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 3, '2019-10-09 21:04:14', NULL, NULL),
+(18, 'Usuario', 'Cliente', 'cliente@outlook.com', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 4, '2019-10-09 21:07:01', NULL, NULL),
+(19, 'Sebo', 'usuario', 'sebo@outlook.com', '$2y$08$4chmBEvSw1/8MvLRtmi4teQimTgZvFWHdbN/FCsYNjRYZBt8Rvbwy', '1', 5, '2019-10-09 21:07:27', NULL, NULL),
+(26, 'Giorno', 'Giovana', 'stand@outlook.com', '$2y$08$5nGdB4I7yBlWv2.8n9MrWOPCVorkFQ4iMrN.2J.VfVL1sagCMhlnu', '1', 4, '2019-10-11 00:44:10', NULL, NULL),
+(27, 'Viewtiful ', 'Joe', 'sixMachine@outlook.com', '$2a$08$NjMzNjExMjAyNWRhMjI4NOM8NjRbDElnWbDL0akjvLVnRCjQ.rr8K', '1', 5, '2019-10-12 16:24:05', NULL, NULL),
+(29, 'teste', 'dsad', 'tes@outlook.com', '$2a$08$NDQ1MDQxMDk0NWRhMjQyM.TKV/JqfDZ2kebp4i5v1lOIPQl3jwb8C', '1', 4, '2019-10-12 18:13:40', NULL, NULL),
+(34, 'Giorno', 'adm', 'gansd@outlook.com', '$2a$08$ODM1OTQwMzA2NWRhMjY2ZOwzpYYg.3K8eA9jZ1Fs8ZyQtICEg9/xG', '1', 5, '2019-10-12 20:51:08', NULL, NULL),
+(35, 'Luffy', 'Mokey D.', 'luffy@outlook.com', '$2a$08$MTUxODIzNzQxNjVkYTI4YuU9atiqVfNVpSJd/jOjOHVSKPep7VaCO', '1', 5, '2019-10-12 23:13:39', 'public/img/imgPerfilSebo/luffy.jpg', NULL),
+(36, 'Giorno', 'adm', 'gansd@outlook.com', '$2a$08$MzQ4OTMyMTA2NWRhMjkzM.ZGzBU38O/OEUz4PfisxN.wnt2YPt8Yi', '1', 5, '2019-10-12 23:59:18', NULL, NULL),
+(37, 'Sonic', 'the headhog', 'sonic@outlook.com', '$2a$08$MTU2NjEwNDA5MjVkYTNkYuUazvVaSHQMYS.oLcepyoVE2Xq9HO2..', '1', 4, '2019-10-13 23:23:40', 'public/img/imgPerfil/sonic.png', NULL),
+(40, 'htfh', 'hgfh', 'luffyss@outlook.com', '$2a$08$Njg4NTczMTE1NWRiM2QxNOq/YkSoWfJRG87mdstZYr/FqeD0.BJay', '1', 5, '2019-10-26 01:53:44', NULL, NULL),
+(41, 'Giorno', 'Giovana', 'standos@outlook.com', '$2a$08$ODI0NjI5MjM3NWRiNGYxO.xJmWDsqxGXJk1ueFvVYLhLvYKOY6NPK', '1', 4, '2019-10-26 22:23:23', NULL, NULL),
+(42, 'Giorno', 'Giovana', 'standosd@outlook.com', '$2a$08$MTc0OTQyNDY5NDVkYjRmMOYHwkM80haZE8DltQg3b4Yc5NecosoPC', '1', 4, '2019-10-26 22:24:36', NULL, NULL),
+(43, 'teste', 'sdad', 'gan@outlook.com', '$2a$08$OTQ0NjgxMjQyNWRiNTBhZOPhQMjBPC8hbwLrS4riZKpGZtZgWO1qi', '1', 4, '2019-10-27 00:11:36', NULL, NULL),
+(44, 'Edward ', 'Elric', 'alquimista@outlook.com', '$2a$08$MTc4NjcwMTcyODVkYjYwYuHxj4Jud4SZqYftf86JacQj0wbk268FO', '1', 4, '2019-10-27 18:31:40', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -810,7 +818,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT for table `comentario`
 --
 ALTER TABLE `comentario`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `editora`

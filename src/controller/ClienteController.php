@@ -70,11 +70,11 @@ class ClienteController
         $this->acaoPOST = $valor;
     }
 
+    //Junção com usuario
     public function getUsuarioDAO()
     {
         return $this->usuarioDAO;
     }
-
     public function setUsuarioDAO($usuarioDAO)
     {
         $this->usuarioDAO = $usuarioDAO;
@@ -200,9 +200,12 @@ class ClienteController
         $this->recuperarDadosFormulario();
         if ($this->acaoPOST == 1 && $this->evitarReenvio()) {
             $this->clienteDAO->adicionarCliente();
+            $this->usuarioDAO->setIdUsuario($_GET['id']);
             $this->usuarioDAO->alterarFoto();
         } else if ($this->acaoPOST == 2) {
             $this->clienteDAO->alterarCliente();
+            $this->usuarioDAO->setIdUsuario($_GET['id']);
+            $this->usuarioDAO->alterarFoto();
         }
     }
 
@@ -226,6 +229,7 @@ class ClienteController
             $this->clienteDAO->setLogradouroCliente($cliente['logradouroCliente']);
             $this->clienteDAO->setComplementoCliente($cliente['complEndCliente']);
             $this->clienteDAO->setNumComplCliente($cliente['numComplCliente']);
+            
             $this->usuarioDAO->setUrlFoto($cliente['urlFoto']);
         }
     }

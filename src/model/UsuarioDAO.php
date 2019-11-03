@@ -229,7 +229,7 @@ class UsuarioDAO extends Usuario
                 ':nomeUsuario' => array(0 => $this->getNomeUsuario(), 1 => \PDO::PARAM_STR),
                 ':sobrenomeUsuario' => array(0 => $this->getSobrenomeUsuario(), 1 => \PDO::PARAM_STR),
                 ':emailUsuario' => array(0 => $this->getEmailUsuario(), 1 => \PDO::PARAM_STR),
-                ':idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT) ,
+                ':idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT),
                 ':urlFoto' => array(0 => $this->getUrlFoto(), 1 => \PDO::PARAM_STR)
             )
         );

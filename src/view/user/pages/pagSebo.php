@@ -19,7 +19,7 @@ $GetPost = isset($_GET['id']) ? $_GET['id'] : false;
 $seboDAO->setIdUsuario($GetPost);
 $result = $seboDAO->listarSeboId();
 $seboDAO->setNomeFantasia($result['nomeFantasia']);
-$seboDAO->setUrlFotoSebo($result['urlFotoSebo']);
+$usuarioDAO->setUrlFoto($result['urlFoto']);
 $seboDAO->setUrlSiteSebo($result['urlSiteSebo']);
 
 $seboLivroDAO->setIdUsuario($GetPost);
@@ -39,7 +39,7 @@ $resultSeboLivro = $seboLivroDAO->listarSeboLivroId($frontController->getRegIni(
 <article class="acervo-sebo">
     <header class="topo-acervo">
         <figure class="img-topo-acervo">
-            <img src="<?= _URLBASE_ . $seboDAO->getUrlFotoSebo() ?>" alt='fotoSebo'>
+            <img src="<?= _URLBASE_ . $usuarioDAO->getUrlFoto() ?>" alt='fotoSebo'>
             <figcaption class="info-topo-acervo">
                 <h1><?= $seboDAO->getNomeFantasia() ?></h1>
                 <p><a href="<?= $seboDAO->getUrlSiteSebo() ?>">Link Website</a></p>

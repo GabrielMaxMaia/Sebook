@@ -2007,17 +2007,27 @@ section.jumbotron{
 }
 .comentarioContainer {
     display: flex;
+    justify-content: left;
+    margin-top: .5rem;
     flex-direction: column;
-    justify-content: center;
-    padding: 1rem;
 }
-.comentarioContainer p{
+.userComent img{
+    width:80px;
+    margin: .5rem .5rem 0 0;
+    float: left;
+}
+.userComent figcaption{
+    margin-top: .4rem;
+}
+.userComent {
+    /* display: flex; */
+    /* flex-direction: column; */
     word-break: break-word;
     padding: 1rem;
     margin: 1rem 2rem 0 0;
     border: 1px solid #ccc;
     line-height: 1.3rem;
-    max-width: 610px;
+    max-width: 610px
 }
 .itemEdit {
     display: flex;
@@ -2029,7 +2039,7 @@ section.jumbotron{
     margin: 0 .5rem 0 0;
     color: #fff;
     font-size: .9rem;
-    border:1px solid #ccc
+    border:1px solid
 }
 .borderNone{
     border:none

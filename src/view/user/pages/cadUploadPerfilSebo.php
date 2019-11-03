@@ -9,7 +9,7 @@ $up = new Util\Upload(array(
 	2 => "image/jpeg", 3 => "image/bmp", 4 => "image/gif"
 ), "/public/img/imgPerfilSebo/");
 
-$result = $up->realizarUpload("urlFotoSebo");
+$result = $up->realizarUpload("urlFoto");
 
 if ($result === true) {
 	$arq = $up->getArqUpload();

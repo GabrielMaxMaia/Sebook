@@ -12,11 +12,11 @@ class ComentarioDAO extends Comentario
 
     private static $SELECT_TOT = "SELECT count(id_comentario) as tot from comentario where cod_status_comentario = '1'";
 
-    private static $SELECT_ID = "select * from comentario WHERE id_comentario =:idComentario";
+    private static $SELECT_ID = "SELECT * FROM comentario INNER JOIN usuario ON (comentario.id_usuario = usuario.id_usuario) AND comentario.id_comentario =:idComentario";
 
-    private static $SELECT_ID_POSTAGEM = "SELECT id_post, id_comentario, id_comentario_parente, txt_comentario, data_hora_comentario, cod_status_comentario, id_perfil, usuario.id_usuario, nome_usuario, email_usuario FROM comentario inner join usuario WHERE comentario.id_usuario = usuario.id_usuario AND id_post = :idPost AND cod_status_comentario = '1' ORDER BY id_comentario DESC";
+    private static $SELECT_ID_POSTAGEM = "SELECT * FROM comentario inner join usuario WHERE comentario.id_usuario = usuario.id_usuario AND id_post = :idPost AND cod_status_comentario = '1' ORDER BY id_comentario DESC";
     
-    private static $SELECT_ID_PAGINA = "SELECT id_pagina, id_comentario, id_comentario_parente, txt_comentario, data_hora_comentario, cod_status_comentario, id_perfil, usuario.id_usuario, nome_usuario, email_usuario FROM comentario inner join usuario WHERE comentario.id_usuario = usuario.id_usuario AND id_pagina = :idPagina AND cod_status_comentario = '1' ORDER BY id_comentario DESC";
+    private static $SELECT_ID_PAGINA = "SELECT * FROM comentario inner join usuario WHERE comentario.id_usuario = usuario.id_usuario AND id_pagina = :idPagina AND cod_status_comentario = '1' ORDER BY id_comentario DESC";
 
     private static $INSERT = "INSERT INTO comentario (id_comentario_parente, txt_comentario, data_hora_comentario, id_post, id_pagina, id_usuario) VALUES (:idComentarioParente, :txtComentario, :dataHoraComentario, :idPost, :idPagina, :idUsuario)";
 
@@ -85,7 +85,8 @@ class ComentarioDAO extends Comentario
                     'idPost' => $linha->id_post,
                     'idPagina' => $linha->id_pagina,
                     'idUsuario' => $linha->id_usuario,
-                    'nomeUsuario' => $linha->nome_usuario
+                    'nomeUsuario' => $linha->nome_usuario,
+                    'urlFoto' => $linha->url_foto
                 );
             }
         } else {
@@ -121,7 +122,8 @@ class ComentarioDAO extends Comentario
                 'codStatusComentario' => $linha->cod_status_comentario,
                 'idPost' => $linha->id_post,
                 'idPagina' => $linha->id_pagina,
-                'idUsuario' => $linha->id_usuario
+                'idUsuario' => $linha->id_usuario,
+                'urlFoto' => $linha->url_foto
             );
         } else {
             $itens = null;
@@ -150,7 +152,8 @@ class ComentarioDAO extends Comentario
                     'codStatusComentario' => $linha->cod_status_comentario,
                     'idPost' => $linha->id_post,
                     'idUsuario' => $linha->id_usuario,
-                    'nomeUsuario' => $linha->nome_usuario
+                    'nomeUsuario' => $linha->nome_usuario,
+                    'urlFoto' => $linha->url_foto
                 );
             }
         } else {
@@ -180,7 +183,8 @@ class ComentarioDAO extends Comentario
                     'codStatusComentario' => $linha->cod_status_comentario,
                     'idPagina' => $linha->id_pagina,
                     'idUsuario' => $linha->id_usuario,
-                    'nomeUsuario' => $linha->nome_usuario
+                    'nomeUsuario' => $linha->nome_usuario,
+                    'urlFoto' => $linha->url_foto
                 );
             }
         } else {
