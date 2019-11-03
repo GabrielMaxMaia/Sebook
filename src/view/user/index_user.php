@@ -21,7 +21,7 @@ $output = ob_get_clean();
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!--<link rel="stylesheet" href="". _URLBASE_ ."public/css/slick.css">-->
     <link rel="stylesheet" href="<?= _URLBASE_ ?>public/css/user.css">
-    <?= $mapa ?? ""?>
+    <?= $mapa ?? "" ?>
     <?= $styleSobrescrito ?? "" ?>
     <?= $cssCaminho ?? "" ?>
 
@@ -30,15 +30,15 @@ $output = ob_get_clean();
 
     <!-- https://code.jquery.com/jquery-2.1.1.js -->
     <script type="text/javascript" src="<?= _URLBASE_ ?>public/js/jquery-2.1.0.js"></script>
-    
+
     <script src='<?= _URLBASE_ ?>public/js/validacoes.js'></script>
     <!--<Máscara para o CNPJ>-->
-    <script src='https://www.geradorcnpj.com/assets/js/jquery-1.2.6.pack.js'></script> 
-    <!--<Máscara para o CNPJ>--> 
+    <script src='https://www.geradorcnpj.com/assets/js/jquery-1.2.6.pack.js'></script>
+    <!--<Máscara para o CNPJ>-->
     <script src='https://www.geradorcnpj.com/assets/js/jquery.maskedinput-1.1.4.pack.js'></script>
-     <!--<Máscara para o CPF>-->
+    <!--<Máscara para o CPF>-->
     <script src='https://www.geradorcpf.com/assets/js/jquery-1.2.6.pack.js'></script>
-    <!--<Máscara para o CPF>--> 
+    <!--<Máscara para o CPF>-->
     <script src='https://www.geradorcpf.com/assets/js/jquery.maskedinput-1.1.4.pack.js'></script>
 </head>
 
@@ -51,12 +51,10 @@ $output = ob_get_clean();
             <?php
             if (isset($menuHide) != true) {
                 require_once 'menu/social.php';
-            ?>
-                <article class="home">
-                    <section>
-                        <?= $output ?>
-                    </section>
-                </article>
+                ?>
+                <main>
+                    <?= $output ?>
+                </main>
             <?php
             } else {
                 echo $output;

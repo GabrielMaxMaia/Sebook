@@ -11,7 +11,6 @@
 					o consumo sustentável, pois, além de garantir economia ao leitor, trará visibilidade aos empreendedores desse mercado,
 					estimulando e fomentando de forma ecológica o consumo dessas obras dentro e fora dos grandes centros.
 				</p>
-
 			</div>
 			<div class="coluna2">
 				<h1>Redes Sociais</h1>
@@ -45,11 +44,7 @@
 				<div class="row2">
 					<a href="#postal">
 						<img src="<?= _URLBASE_ ?>public/icon/homeFooter.svg" alt="">
-						<label id=postalFooter>
-							Caixa Postal 5180,<br>
-							São Paulo - SP - Brasil<br>
-							CEP: 01311-100
-						</label>
+						<label id=postalFooter>Caixa Postal 5180<br>São Paulo - SP - Brasil<br>CEP: 01311-100</label>
 					</a>
 				</div>
 			</div>

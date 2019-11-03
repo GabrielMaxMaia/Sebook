@@ -13,7 +13,7 @@ $postagemController = new PostagemController($sql);
 $result = $postagemDAO->listarPostagem();
 
 $frontController = new Controller\FrontController($postagemDAO);
-$frontController->setItemPagina(3);
+$frontController->setItemPagina(4);
 $frontController->verificarPaginacao();
 
 $GetPost = isset($_GET['id']) ? $_GET['id'] : false;
@@ -27,49 +27,54 @@ if ($GetPost) {
 }
 
 ?>
-
-<main class="col-9">
-
-    <article class="grid-container">
-        <h1>Postagens</h1>
+<article>
+    <header class="headerPostagem">
+        <h1>Últimas Postagens</h1>
+    </header>
+    <div class="postagensContainer">
         <?php
-        //$_GET['pagina'] ?? 0;
-        // $frontController->verificarPaginacao() ;
         $postagens = $postagemDAO->listarPostagem($frontController->getRegIni(), $frontController->getItemPagina());
         foreach ($postagens as $post) {
             ?>
-            <section class=''>
-                <a href='<?= _URLBASE_ ?>area/user/pages/postVer/<?= $post['idPostagem'] ?>'>
-                    <figure>
-                        <img src='<?= _URLBASE_ . $post['urlFotoPost'] ?>' style='max-width:300px;'>
-                        <figcaption>
-                            <h1><?= $post['tituloPostagem'] ?></h1>
-                            <p><?= $post['txtPostagem'] ?></p>
-                        </figcaption>
-                    </figure>
-                </a>
+            <div class="postContainer">
+                <div class='postagemItem'>
+                    <div class="item">
+                        <a href='<?= _URLBASE_ ?>area/user/pages/postVer/<?= $post['idPostagem'] ?>'>
+                            <figure>
+                                <img src='<?= _URLBASE_ . $post['urlFotoPost'] ?>'>
+                                <figcaption>
+                                    <h1><?= $post['tituloPostagem'] ?></h1>
+                                    <p><?= $post['txtPostagem'] ?></p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
                 <?php
-                    if ($post['idUsuario'] == $IdUser || $acessoUser <= 3 && $IdUser != null) {
+                    if ($post['idUsuario'] == $idUser || $acessoUser <= 3 && $idUser != null) {
                         ?>
-                    <a href='<?= _URLBASE_ . "area/user/pages/postEditar/{$post['idPostagem']}" ?>'>
-                        Editar
-                    </a>
+                    <div class="itemModifica">
+                        <a href='<?= _URLBASE_ . "area/user/pages/postEditar/{$post['idPostagem']}" ?>' class="modifica edit">
+                            Editar
+                        </a>
 
-                    <a href="<?= _URLBASE_ . "area/user/pages/postListar/delete/{$post['idPostagem']}" ?>" onclick="return confirm('Tem Certeza que vai excluir?')">
-                        Excluir
-                    </a>
-            </section>
-        <?php } ?>
-    <?php
-    }
-    ?>
-    </article>
+                        <a href="<?= _URLBASE_ . "area/user/pages/postListar/delete/{$post['idPostagem']}" ?>" onclick="return confirm('Tem Certeza que vai excluir?')" class="modifica danger">
+                            Deletar
+                        </a>
+                    </div>
+                <?php } ?>
+            </div>
+        <?php
+        }
+        ?>
+
+    </div>
     <section class="notificador">
         <?php
         //Estou usando a Url da lista que quero controlar
         $urlDoNotificador = "area/user/pages/postListar";
         $totalSebo = false;
-        echo $frontController->exibirNotificador($urlDoNotificador,$totalSebo,$GetPost);
+        echo $frontController->exibirNotificador($urlDoNotificador, $totalSebo, $GetPost);
         ?>
     </section>
-</main>
+</article>

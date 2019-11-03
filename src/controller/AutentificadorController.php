@@ -98,6 +98,10 @@ class AutentificadorController
                 $adm = _URLBASE_ . "area/adm";
             }
 
+            if ($_SESSION['userLogado']['acesso'] == 5){
+                $minhaPag = _URLBASE_ . "area/user/pages/pagSebo/" . $_SESSION['userLogado']['idUsuario'];
+            }
+
             if ($_SESSION['userLogado']['acesso'] != 5) {
                 $perfil = _URLBASE_ . "area/user/pages/perfilLeitor";
             } else {
@@ -120,6 +124,9 @@ class AutentificadorController
                                 if (isset($adm)) {
                                     echo "<a class='pefil' href='{$adm}'>Adm</a>";
                                 }
+                                if (isset($minhaPag)) {
+                                    echo "<a href='{$minhaPag}'>Página</a>";
+                                }
                             ?>
                             <a href='<?= _URLBASE_ ?>area/adm/sair'>Sair</a>
                         </div>
@@ -129,7 +136,6 @@ class AutentificadorController
 <?php
         }
     }
-
 
     //listaNivelAcesso --> array de niveis autorrizados
     public function validarAcesso($nivelAcesso)

@@ -77,7 +77,7 @@ for ($i = 0; $i < count($resultLivro); $i++) {
 		</figure>
 		<?php
 		if ($acessoUser == 5) {
-			$seboLivroDAO->setIdUsuario($IdUser);
+			$seboLivroDAO->setIdUsuario($idUser);
 			$seboLivroDAO->setIsbnLivro($isbn);
 
 			$resultSeboLivro = $seboLivroDAO->listarSeboLivroIdIsbn();
@@ -109,7 +109,7 @@ for ($i = 0; $i < count($resultLivro); $i++) {
 				</form>
 			<?php
 				if (isset($_POST['isbnLivroExcluir'])) {
-					$seboLivroDAO->setIdUsuario($IdUser);
+					$seboLivroDAO->setIdUsuario($idUser);
 					$seboLivroDAO->setIsbnLivro($_POST['isbnLivroExcluir']);
 					//Excluir comentário
 					$seboLivroDAO->excluirseboLivro();

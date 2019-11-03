@@ -1,4 +1,4 @@
-<header>
+<header class="topoHeader">
 	<div class="menuGroup">
 		<a class="logo" href="<?= _URLBASE_ ?>">
 			<img src="<?= _URLBASE_ ?>public/icon/logoSebook.svg" alt="SebooK">
@@ -12,13 +12,13 @@
 
 		if($acessoUser != "" && $acessoUser != 5){
 			$clienteDAO = new Model\ClienteDAO($sql);
-			$clienteDAO->setIdUsuario($IdUser);
+			$clienteDAO->setIdUsuario($idUser);
 			$resultPerfil = $clienteDAO->listarClienteId();
 			$img = $resultPerfil['urlFotoCliente'];
 			// var_dump($resultUsarioPerfil);
 		}else if($acessoUser!= "" && $acessoUser == 5){
 			$seboDAO = new Model\SeboDAO($sql);
-			$seboDAO->setIdUsuario($IdUser);
+			$seboDAO->setIdUsuario($idUser);
 			$resultPerfil = $seboDAO->listarSeboId();
 			$img = $resultPerfil['urlFotoSebo'];
 		}else{

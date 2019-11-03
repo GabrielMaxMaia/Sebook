@@ -16,41 +16,45 @@ if (isset($_POST['enviarComentario'])) {
         } else {
             $comentarioDAO->setIdPagina($GetPost);
         }
-        
-        $comentarioDAO->setIdUsuario($IdUser);
+
+        $comentarioDAO->setIdUsuario($idUser);
         $comentarioDAO->setDataHoraComentario(date('Y-m-d H:i:s'));
         //Chama a função listaPostagemId
         $comentarioDAO->adicionarComentario();
 
-    
+
         //Recarrega a página
         header('Refresh:0');
-        
+
         echo $outputResult = "Comentário enviado";
     }
 }
 
 //Se Úsuario estiver logado então o form aparece
 //Caso contrário uma menssagem pedindo para logar
-if ($IdUser != "") {
+if ($idUser != "") {
     ?>
-    <form method="post" action="">
+    <form method="post" action="" class="formularioComment">
 
-        <span>Enviar comentário</span><br>
+        <label for="txtComentario">Enviar comentário</label><br>
 
-        <textarea name="txtComentario" cols="25" rows="5"></textarea>
+        <textarea name="txtComentario" id="txtComentario" cols="25" rows="5"></textarea>
 
         <input type="submit" name="enviarComentario" value="Comentar">
     </form>
 <?php
-} else {
-    echo "<br><br><p>Faça o Login para comentar.</p><br><br>";
 }
 ?>
 
-<p>Seção de comentários</p>
-
+<section class="secaoComment">
 <?php
-
-//Carrega aquivo para seção de comentários
-include_once "comentarioSecao.php";
+    if($idUser == "") {
+        echo "<p>Faça o Login para comentar.</p>";
+    }
+?>
+    <p class="">Seção de comentários</p>
+    <?php
+    //Carrega aquivo para seção de comentários
+    include_once "comentarioSecao.php";
+    ?>
+</section>

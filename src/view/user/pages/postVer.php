@@ -29,17 +29,17 @@ if ($result != null) {
     foreach ($result as $linha) {
         if ($linha['idPostagem'] == $GetPost) {
             ?>
-            <section>
+            <article class="postagemVerContainer">
                 <header>
-                    <picture>
+                    <picture class="imgPostagemVer">
                         <img src="<?= _URLBASE_ . $linha['urlFotoPost'] ?>">
                     </picture>
-                    <h2>
-                        <?= $linha['tituloPostagem'] ?>
-                    </h2>
                 </header>
-                <p><?= $linha['txtPostagem'] ?></p>
-            </section>
+                <section class="texto">
+                    <h1><?= $linha['tituloPostagem'] ?></h1>
+                    <p><?= $linha['txtPostagem'] ?></p>
+                </section>
+            </article>
 <?php
         }
     }

@@ -92,8 +92,8 @@ $resultSeboLivro = $seboLivroDAO->listarSeboLivroId($frontController->getRegIni(
                     </figcaption>
                 </figure>
                 <?php
-		if ($IdUser == $seboLivroDAO->getIdUsuario()) {
-            $seboLivroDAO->setIdUsuario($IdUser);
+		if ($idUser == $seboLivroDAO->getIdUsuario()) {
+            $seboLivroDAO->setIdUsuario($idUser);
             
             $value = "Atualizar";
             $excluir = true;
@@ -101,7 +101,7 @@ $resultSeboLivro = $seboLivroDAO->listarSeboLivroId($frontController->getRegIni(
 
 			?>
 
-			<label class="btn-modal-cadastre" for="livroAcervo" value="<?= $livroDAO->getIsbnLivro()  ?>" onclick="return pegaQtdEstoque(<?= $livroDAO->getIsbnLivro()  ?>,'<?= $seboLivro['qtdEstoque'] ?>')"><?= $value ?></label>
+			<label class="btn-modal-cadastre" for="livroAcervo" value="<?= $livroDAO->getIsbnLivro()  ?>" onclick="return pegaQtdEstoque(<?= $livroDAO->getIsbnLivro()?>,'<?= $seboLivro['qtdEstoque'] ?>')" class="modifica edit"><?= $value ?></label>
 
 			<?php
 				if ($excluir == true) {
@@ -110,11 +110,11 @@ $resultSeboLivro = $seboLivroDAO->listarSeboLivroId($frontController->getRegIni(
 				<form method="post" action="" name="excluirLivro">
 					<input type="hidden" name="isbnLivroExcluir" value="<?= $livroDAO->getIsbnLivro() ?>">
 
-					<input type="submit" name="excluirLivro" value="Excluir do Acervo" onclick="if (confirm('Quer Mesmo retirar esse Livro do acervo?')) {return true;}else{return false;}">
+					<input type="submit" name="excluirLivro" value="Excluir do Acervo" onclick="if (confirm('Quer Mesmo retirar esse Livro do acervo?')) {return true;}else{return false;}" class="modifica danger">
 				</form>
 				<?php
                     if (isset($_POST['isbnLivroExcluir'])) {
-                        $seboLivroDAO->setIdUsuario($IdUser);
+                        $seboLivroDAO->setIdUsuario($idUser);
                         $seboLivroDAO->setIsbnLivro($_POST['isbnLivroExcluir']);
                         //Excluir comentário
                         $seboLivroDAO->excluirseboLivro();

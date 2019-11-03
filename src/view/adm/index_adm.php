@@ -43,7 +43,7 @@
 
     if ($acessoUser != "" && $acessoUser != 5) {
         $clienteDAO = new Model\ClienteDAO($sql);
-        $clienteDAO->setIdUsuario($IdUser);
+        $clienteDAO->setIdUsuario($idUser);
         $resultPerfil = $clienteDAO->listarClienteId();
         $img = $resultPerfil['urlFotoCliente'];
     } else {

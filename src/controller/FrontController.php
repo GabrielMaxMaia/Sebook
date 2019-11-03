@@ -111,7 +111,7 @@ class FrontController
         }else{
             $qtdePaginas = ceil($this->modoDAO->totalContarSebo($GetPost) / $this->itemPagina);
         }
-        $notificador = "<ul>";
+        $notificador = "<ul class='ulNote'>";
         if ($this->paginaAtual >= 2) {
             $notificador .= "<li><a href='" . _URLBASE_ . $urlDoNotificador . "/pagina/1'><<</a></li>";
             $notificador .= "<li><a href='" . _URLBASE_ . $urlDoNotificador . "/pagina/" . ($this->paginaAtual - 1) . "'><</a> </li>";

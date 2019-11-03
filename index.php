@@ -4,7 +4,7 @@ session_start();
 //Variável para definir o nivel de acesso de cada úsuario
 $acessoUser = $_SESSION['userLogado']['acesso'] ?? "";
 //Variavel para definir o id do Usuario logado
-$IdUser = $_SESSION['userLogado']['idUsuario'] ?? "";
+$idUser = $_SESSION['userLogado']['idUsuario'] ?? "";
 
 $ajuste = "";
 require_once './config/config.php';
