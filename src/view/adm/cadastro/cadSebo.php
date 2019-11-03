@@ -4,6 +4,7 @@ use Controller\SeboController;
 
 $objSql = new Util\Sql($conn);
 $SeboController = new Controller\SeboController($objSql);
+
 $SeboController->gravarAlterar();
 ?>
 
@@ -68,7 +69,9 @@ $SeboController->gravarAlterar();
 
 		<label>Foto</label>
 
-		<input type="hidden" class="grande" type="text" id="txtImg" name="txtImg" value="<?= $SeboController->getSeboDAO()->getUrlFotoSebo() ?>">
+		<!-- <input type="hidden" class="grande" type="text" id="txtImg" name="txtImg" value="<?//= $SeboController->getSeboDAO()->getUrlFotoSebo() ?>"> -->
+
+		<input type="hidden" name="txtImg" id="txtImg" value="<?= $SeboController->getUsuarioDAO()->getUrlFoto() ?>">
 
 		<br>
 		<label>Cidade</label>
@@ -131,9 +134,9 @@ $SeboController->gravarAlterar();
 	</form>
 
 	<div class="img">
-		<form action="<?= _URLBASE_ ?>src/view/adm/cadastro/uploadAdm/seboPerfilUpload.php" method='post' enctype='multipart/form-data' target='ifrmUpload' name="urlFotoSebo">
+		<form action="<?= _URLBASE_ ?>src/view/adm/cadastro/uploadAdm/seboPerfilUpload.php" method='post' enctype='multipart/form-data' target='ifrmUpload' name="urlFoto">
 
-			<input type="file" name="urlFotoSebo">
+			<input type="file" name="urlFoto">
 
 			<input class="button" type="submit" value="Carregar">
 		</form>
@@ -141,8 +144,11 @@ $SeboController->gravarAlterar();
 	</div>
 
 	<?php
-	if ($SeboController->getseboDAO()->getUrlFotoSebo() != "") { 
-		$src = _URLBASE_ . $SeboController->getseboDAO()->getUrlFotoSebo();
+
+	$SeboController->getUsuarioDAO()->getUrlFoto();
+
+	if ($SeboController->getUsuarioDAO()->getUrlFoto() != "") { 
+		$src = _URLBASE_ . $SeboController->getUsuarioDAO()->getUrlFoto();
 	} else {
 		$src = _URLBASE_ . "public/img/imgPerfilSebo/imgPadrao/padrao.png";
 	}

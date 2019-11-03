@@ -14,13 +14,13 @@
 			$clienteDAO = new Model\ClienteDAO($sql);
 			$clienteDAO->setIdUsuario($idUser);
 			$resultPerfil = $clienteDAO->listarClienteId();
-			$img = $resultPerfil['urlFotoCliente'];
+			$img = $resultPerfil['urlFoto'];
 			// var_dump($resultUsarioPerfil);
 		}else if($acessoUser!= "" && $acessoUser == 5){
 			$seboDAO = new Model\SeboDAO($sql);
 			$seboDAO->setIdUsuario($idUser);
 			$resultPerfil = $seboDAO->listarSeboId();
-			$img = $resultPerfil['urlFotoSebo'];
+			$img = $resultPerfil['urlFoto'];
 		}else{
 			$img = "";
 		}

@@ -16,9 +16,10 @@ class Usuario
 	private $codStatusUsuario;
 	private $idPerfil;
 	private $dataCriacao;
+	private $urlFoto;
 
 	//Método construtor auxiliar de criação de objetos
-	public function __construct($idUsuario = "", $nomeUsuario = "", $sobrenomeUsuario = "", $emailUsuario = "", $senhaUsuario = "", $codStatusUsuario = "", $idPerfil = "", $dataCriacao = "")
+	public function __construct($idUsuario = "", $nomeUsuario = "", $sobrenomeUsuario = "", $emailUsuario = "", $senhaUsuario = "", $codStatusUsuario = "", $idPerfil = "", $dataCriacao = "", $urlFoto = "")
 	{
 		$this->idUsuario = $idUsuario;
 		$this->nomeUsuario = $nomeUsuario;
@@ -28,6 +29,7 @@ class Usuario
 		$this->codStatusUsuario = $codStatusUsuario;
 		$this->idPerfil = $idPerfil;
 		$this->dataCriacao = $dataCriacao;
+		$this->urlFoto = $urlFoto;
 	}
 
 	//getters e setters
@@ -111,6 +113,14 @@ class Usuario
 		$this->dataCriacao = $dataCriacao;
 	}
 
+	public function getUrlFoto(){
+		return $this->urlFoto;
+	}
+
+	public function setUrlFoto($urlFoto){
+		$this->urlFoto = $urlFoto;
+	}
+
 	//Método __toString()
 	public function __toString()
 	{
@@ -122,7 +132,8 @@ class Usuario
 			'senhaUsuario' => $this->senhaUsuario,
 			'codStatusUsuario' => $this->codStatusUsuario,
 			'idPerfil' => $this->idPerfil,
-			'dataCriacao' => $this->dataCriacao
+			'dataCriacao' => $this->dataCriacao,
+			'urlFoto' => $this->urlFoto
 		));
 	}
 }

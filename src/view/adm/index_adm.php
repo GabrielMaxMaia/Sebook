@@ -45,7 +45,7 @@
         $clienteDAO = new Model\ClienteDAO($sql);
         $clienteDAO->setIdUsuario($idUser);
         $resultPerfil = $clienteDAO->listarClienteId();
-        $img = $resultPerfil['urlFotoCliente'];
+        $img = $resultPerfil['urlFoto'];
     } else {
         $img = "";
     }

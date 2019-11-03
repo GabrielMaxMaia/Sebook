@@ -4,6 +4,7 @@ use Controller\ClienteController;
 
 $objSql = new Util\Sql($conn);
 $clienteController = new Controller\ClienteController($objSql);
+$usuarioController = new Controller\UsuarioController($objSql);
 
 // var_dump($_POST);
 $clienteController->gravarAlterar();
@@ -90,7 +91,9 @@ $clienteController->gravarAlterar();
 		<label>Número</label>
 		<input class="grande" type="text" name="numComplCliente" id="numComplCliente" value="<?= $clienteController->getClienteDAO()->getNumComplCliente() ?>">
 
-		<input type="hidden" name="txtImg" id="txtImg" value="<?= $clienteController->getClienteDAO()->getUrlFotoCliente() ?>">
+		<!-- <input type="hidden" name="txtImg" id="txtImg" value="<?//= $clienteController->getClienteDAO()->getUrlFotoCliente() ?>"> -->
+
+		<input type="hidden" name="txtImg" id="txtImg" value="<?= $usuarioController->getUsuarioDAO()->getUrlFoto() ?>">
 
 		<label> </label>
 		<input class="buttonCancel" type="reset" value="Limpar">
@@ -98,9 +101,9 @@ $clienteController->gravarAlterar();
 	</form>
 
 	<div class="img">
-		<form action="<?= _URLBASE_ ?>src/view/adm/cadastro/uploadAdm/clientePerfilUpload.php" method='post' enctype='multipart/form-data' target='ifrmUpload' name="urlFotoCliente">
+		<form action="<?= _URLBASE_ ?>src/view/adm/cadastro/uploadAdm/clientePerfilUpload.php" method='post' enctype='multipart/form-data' target='ifrmUpload' name="urlFoto">
 
-			<input type="file" name="urlFotoCliente">
+			<input type="file" name="urlFoto">
 
 			<input class="button" type="submit" value="Carregar">
 		</form>
@@ -108,8 +111,8 @@ $clienteController->gravarAlterar();
 	</div>
 
 	<?php
-	if ($clienteController->getClienteDAO()->getUrlFotoCliente() != "") { 
-		$src = _URLBASE_ . $clienteController->getClienteDAO()->getUrlFotoCliente();
+	if ($usuarioController->getUsuarioDAO()->getUrlFoto() != "") { 
+		$src = _URLBASE_ . $usuarioController->getUsuarioDAO()->getUrlFoto();
 	} else {
 		$src = _URLBASE_ . "public/img/imgPerfil/imgPadrao/padrao.png";
 	}

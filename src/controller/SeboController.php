@@ -3,6 +3,7 @@
 namespace Controller;
 
 use Model\SeboDAO;
+use  Model\UsuarioDAO;
 
 class SeboController
 {
@@ -13,6 +14,7 @@ class SeboController
     private $acaoPOST;
 
     private $seboDAO = null;
+    private $usuarioDAO = null;
     //Itens por página
     private $itemPagina = 5;
     //Página Atual de exibição
@@ -24,6 +26,7 @@ class SeboController
     public function __construct($sql)
     {
         $this->seboDAO = new SeboDAO($sql);
+        $this->usuarioDAO = new UsuarioDAO($sql);
         $this->verificaExibicao();
         $this->verificarPaginacao();
     }
@@ -65,6 +68,14 @@ class SeboController
     public function setAcaoPOST($valor)
     {
         $this->acaoPOST = $valor;
+    }
+
+    public function getUsuarioDAO(){
+        return $this->usuarioDAO;
+    }
+
+    public function setUsuarioDAO($usuarioDAO){
+        $this->usuarioDAO = $usuarioDAO;
     }
 
     //----Front Controller
@@ -144,7 +155,6 @@ class SeboController
             $this->seboDAO->setRazaoSebo($_POST['razaoSebo']);
             $this->seboDAO->setNomeFantasia($_POST['nomeFantasia']);
             $this->seboDAO->setCnpjSebo($_POST['cnpjSebo']);
-            $this->seboDAO->setUrlFotoSebo($_POST['txtImg']);
             $this->seboDAO->setCidadeSebo($_POST['cidadeSebo']);
             $this->seboDAO->setNumEndSebo($_POST['numEndSebo']);
             $this->seboDAO->setComplEndSebo($_POST['complEndSebo']);
@@ -155,6 +165,7 @@ class SeboController
             $this->seboDAO->setCelular2Sebo($_POST['celular2Sebo']);
             $this->seboDAO->setInscEstadualSebo($_POST['inscEstadualSebo']);
             $this->seboDAO->setUrlSiteSebo($_POST['urlSiteSebo']);
+            $this->usuarioDAO->setUrlFoto($_POST['txtImg']);
         }
     }
 
@@ -192,8 +203,12 @@ class SeboController
         $this->recuperarDadosFormulario();
         if ($this->acaoPOST == 1 && $this->evitarReenvio()) {
             $this->seboDAO->adicionarSebo();
+            $this->usuarioDAO->setIdUsuario($_GET['id']);
+            $this->usuarioDAO->alterarFoto();
         } else if ($this->acaoPOST == 2) {
             $this->seboDAO->alterarSebo();
+            $this->usuarioDAO->setIdUsuario($_GET['id']);
+            $this->usuarioDAO->alterarFoto();
         }
     }
 
@@ -210,10 +225,10 @@ class SeboController
         if ($this->acaoGET == 2) {
             $this->seboDAO->setIdUsuario($_GET['id']);
             $sebo = $this->seboDAO->listarSeboId();
+            //var_dump($sebo);
             $this->seboDAO->setRazaoSebo($sebo['razaoSebo']);
             $this->seboDAO->setNomeFantasia($sebo['nomeFantasia']);
             $this->seboDAO->setCnpjSebo($sebo['cnpjSebo']);
-            $this->seboDAO->setUrlFotoSebo($sebo['urlFotoSebo']);
             $this->seboDAO->setCidadeSebo($sebo['cidadeSebo']);
             $this->seboDAO->setNumEndSebo($sebo['numEndSebo']);
             $this->seboDAO->setComplEndSebo($sebo['complEndSebo']);
@@ -224,6 +239,9 @@ class SeboController
             $this->seboDAO->setCelular2Sebo($sebo['celular2Sebo']);
             $this->seboDAO->setInscEstadualSebo($sebo['inscEstadualSebo']);
             $this->seboDAO->setUrlSiteSebo($sebo['urlSiteSebo']);
+            // $this->usuarioDAO->setUrlFoto($sebo['txtImg']);
+            
+            $this->usuarioDAO->setUrlFoto($sebo['urlFoto']);
         }
     }
 

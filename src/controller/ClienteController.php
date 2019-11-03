@@ -3,6 +3,7 @@
 namespace Controller;
 
 use Model\ClienteDAO;
+use Model\UsuarioDAO;
 
 class ClienteController
 {
@@ -13,6 +14,7 @@ class ClienteController
     private $acaoPOST;
 
     private $clienteDAO = null;
+    private $usuarioDAO = null;
     //Itens por página
     private $itemPagina = 10;
     //Página Atual de exibição
@@ -24,6 +26,7 @@ class ClienteController
     public function __construct($sql)
     {
         $this->clienteDAO = new ClienteDAO($sql);
+        $this->usuarioDAO = new UsuarioDAO($sql);
         $this->verificaExibicao();
         $this->verificarPaginacao();
     }
@@ -65,6 +68,16 @@ class ClienteController
     public function setAcaoPOST($valor)
     {
         $this->acaoPOST = $valor;
+    }
+
+    public function getUsuarioDAO()
+    {
+        return $this->usuarioDAO;
+    }
+
+    public function setUsuarioDAO($usuarioDAO)
+    {
+        $this->usuarioDAO = $usuarioDAO;
     }
 
 
@@ -146,10 +159,10 @@ class ClienteController
             $this->clienteDAO->setNascimentoCliente($_POST['nascCliente']);
             $this->clienteDAO->setSexoCliente($_POST['selectSexo']);
             $this->clienteDAO->setCepCliente($_POST['cepCliente']);
-            $this->clienteDAO->setUrlFotoCliente($_POST['txtImg']);
             $this->clienteDAO->setNumComplCliente($_POST['numComplCliente']);
             $this->clienteDAO->setLogradouroCliente($_POST['logradouroCliente']);
             $this->clienteDAO->setComplementoCliente($_POST['complEndCliente']);
+            $this->usuarioDAO->setUrlFoto($_POST['txtImg']);
         }
     }
 
@@ -187,6 +200,7 @@ class ClienteController
         $this->recuperarDadosFormulario();
         if ($this->acaoPOST == 1 && $this->evitarReenvio()) {
             $this->clienteDAO->adicionarCliente();
+            $this->usuarioDAO->alterarFoto();
         } else if ($this->acaoPOST == 2) {
             $this->clienteDAO->alterarCliente();
         }
@@ -210,9 +224,9 @@ class ClienteController
             $this->clienteDAO->setSexoCliente($cliente['sexoCliente']);
             $this->clienteDAO->setCepCliente($cliente['cepCliente']);
             $this->clienteDAO->setLogradouroCliente($cliente['logradouroCliente']);
-            $this->clienteDAO->setUrlFotoCliente($cliente['urlFotoCliente']);
             $this->clienteDAO->setComplementoCliente($cliente['complEndCliente']);
             $this->clienteDAO->setNumComplCliente($cliente['numComplCliente']);
+            $this->usuarioDAO->setUrlFoto($cliente['urlFoto']);
         }
     }
 
@@ -228,7 +242,7 @@ class ClienteController
                 <td>" . $linha['idUsuario'] . "</td>
                 <td>" . $linha['cpfCliente'] . "</td>
                 <td>" . $linha['sexoCliente'] . "</td>
-                <td>" . $linha['urlFotoCliente'] . "</td>
+                <td>" . $linha['urlFoto'] . "</td>
                 <td>" . $linha['codStatusCliente']
                     . "</td>
                         <td>

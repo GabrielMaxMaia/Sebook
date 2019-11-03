@@ -11,7 +11,6 @@ class Sebo {
     private $razaoSebo;
     private $nomeFantasia;
     private $cnpjSebo;
-	private $urlFotoSebo;
 	private $cidadeSebo;
     private $numEndSebo;
     private $complEndSebo;
@@ -25,12 +24,11 @@ class Sebo {
     private $codStatusSebo;
 
     //Método construtor auxiliar de criação de objetos
-    public function __construct($idUsuario = "", $razaoSebo = "", $nomeFantasia = "", $cnpjSebo = "", $urlFotoSebo = "", $cidadeSebo = "", $numEndSebo = "", $complEndSebo = "", $logradouroSebo = "", $cepEndSebo = "", $numTelSebo = "", $celular1Sebo = "", $celular2Sebo = "", $inscEstadualSebo = "", $urlSiteSebo = "", $codStatusSebo = "") {
+    public function __construct($idUsuario = "", $razaoSebo = "", $nomeFantasia = "", $cnpjSebo = "", $cidadeSebo = "", $numEndSebo = "", $complEndSebo = "", $logradouroSebo = "", $cepEndSebo = "", $numTelSebo = "", $celular1Sebo = "", $celular2Sebo = "", $inscEstadualSebo = "", $urlSiteSebo = "", $codStatusSebo = "") {
         $this->idUsuario = $idUsuario;
         $this->razaoSebo = $razaoSebo;
         $this->nomeFantasia = $nomeFantasia;
         $this->cnpjSebo = $cnpjSebo;
-        $this->urlFotoSebo = $urlFotoSebo;
         $this->cidadeSebo = $cidadeSebo;
         $this->numEndSebo = $numEndSebo;
         $this->complEndSebo = $complEndSebo;
@@ -75,14 +73,6 @@ class Sebo {
 
 	public function setCnpjSebo($cnpjSebo){
 		$this->cnpjSebo = $cnpjSebo;
-	}
-
-	public function getUrlFotoSebo(){
-		return $this->urlFotoSebo;
-	}
-
-	public function setUrlFotoSebo($urlFotoSebo){
-		$this->urlFotoSebo = $urlFotoSebo;
 	}
 
 	public function getCidadeSebo(){
@@ -180,7 +170,6 @@ class Sebo {
             'razaoSebo' => $this->razaoSebo,
             'nomeFantasia' => $this->nomeFantasia,
             'cnpjSebo' => $this->cnpjSebo,
-            'urlFotoSebo' => $this->urlFotoSebo,
             'numEndSebo' => $this->numEndSebo,
             'cidadeSebo' => $this->cidadeSebo,
             'complEndSebo' => $this->complEndSebo,

@@ -8,15 +8,15 @@ namespace Model;
 class ClienteDAO extends Cliente
 {
     //Atributos - serão os comandos SQL  + um objeto Sql
-    private static $SELECT_ALL = "select * from cliente where cod_status_cliente = '1'";
+    private static $SELECT_ALL = "SELECT * FROM cliente INNER JOIN usuario ON cliente.id_usuario = usuario.id_usuario WHERE cod_status_cliente = '1'";
 
     private static $SELECT_TOT = "SELECT count(id_usuario) as tot from cliente where cod_status_cliente = '1'";
 
-    private static $SELECT_ID = "select * from cliente where id_usuario = :idUsuario";
+    private static $SELECT_ID = "SELECT * FROM cliente INNER JOIN usuario ON (cliente.id_usuario = usuario.id_usuario) AND cliente.id_usuario = :idUsuario";
 
-    private static $INSERT = "INSERT INTO cliente (id_usuario,sexo_cliente,compl_end_cliente,logradouro_cliente,url_foto_cliente,num_compl_cliente,cpf_cliente,cep_cliente,dt_nasc_cliente) VALUES (:idUsuario,:sexoCliente,:complEndCliente,:logradouroCliente,:urlFotoCliente,:numComplCliente,:cpfCliente,:cepCliente,:nascCliente)";
+    private static $INSERT = "INSERT INTO cliente (id_usuario,sexo_cliente,compl_end_cliente,logradouro_cliente,num_compl_cliente,cpf_cliente,cep_cliente,dt_nasc_cliente) VALUES (:idUsuario,:sexoCliente,:complEndCliente,:logradouroCliente,:numComplCliente,:cpfCliente,:cepCliente,:nascCliente)";
 
-    private static $UPDATE = "UPDATE cliente SET sexo_cliente = :sexoCliente, compl_end_cliente = :complEndCliente, logradouro_cliente = :logradouroCliente, url_foto_cliente = :urlFotoCliente, num_compl_cliente = :numComplCliente, cpf_cliente = :cpfCliente,cep_cliente =:cepCliente, dt_nasc_cliente = :nascCliente
+    private static $UPDATE = "UPDATE cliente SET sexo_cliente = :sexoCliente, compl_end_cliente = :complEndCliente, logradouro_cliente = :logradouroCliente, num_compl_cliente = :numComplCliente, cpf_cliente = :cpfCliente,cep_cliente =:cepCliente, dt_nasc_cliente = :nascCliente
     WHERE id_usuario = :idUsuario";
 
 
@@ -38,7 +38,7 @@ class ClienteDAO extends Cliente
     public function listarClientes($ini = -1, $qtde = 1)
     {
         if ($ini >= 0) {
-            $limit = " limit $ini , $qtde ";
+            $limit = " limit $ini, $qtde ";
         } else {
             $limit = "";
         }
@@ -54,12 +54,12 @@ class ClienteDAO extends Cliente
                     'sexoCliente' => $linha->sexo_cliente,
                     'complEndCliente' => $linha->compl_end_cliente,
                     'logradouroCliente' => $linha->logradouro_cliente,
-                    'urlFotoCliente' => $linha->url_foto_cliente,
                     'numComplCliente' => $linha->num_compl_cliente,
                     'cpfCliente' => $linha->cpf_cliente,
                     'cepCliente' => $linha->cep_cliente,
                     'nascCliente' => $linha->dt_nasc_cliente,
-                    'codStatusCliente' => $linha->cod_status_cliente
+                    'codStatusCliente' => $linha->cod_status_cliente,
+                    'urlFoto' => $linha->url_foto
                 );
             }
         } else {
@@ -95,9 +95,9 @@ class ClienteDAO extends Cliente
                 'nascCliente' => $linha->dt_nasc_cliente,
                 'cepCliente' => $linha->cep_cliente,
                 'logradouroCliente' => $linha->logradouro_cliente,
-                'urlFotoCliente' => $linha->url_foto_cliente,
                 'complEndCliente' => $linha->compl_end_cliente,
-                'numComplCliente' => $linha->num_compl_cliente
+                'numComplCliente' => $linha->num_compl_cliente,
+                'urlFoto' => $linha->url_foto
             );
         } else {
             $itens = null;

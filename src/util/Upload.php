@@ -54,7 +54,7 @@ class Upload
             //Xampp, depois colocar esse caminho comentado
             //'G:\sebook\src\view\adm\cadastro\uploadAdm'
             //C:\xampp\htdocs\sebook\src\view\adm\cadastro\uploadAdm
-            if ($caminho == 'C:\xampp\htdocs\sebook\src\view\adm\cadastro\uploadAdm') {
+            if ($caminho == 'D:\xampp\htdocs\sebook\src\view\adm\cadastro\uploadAdm') {
                 $caminho = str_replace('\src\view\adm\cadastro\uploadAdm', '', $caminho);
             } else {
                 $caminho = str_replace('\src\view\user\pages', '', $caminho);

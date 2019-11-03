@@ -1,4 +1,5 @@
 <?php
+
 //Processsa formulário que envia comentário
 if (isset($_POST['enviarComentario'])) {
 
