@@ -14,7 +14,7 @@
 <?php
 ?>
 <div class="formFotoContainer">
-    <form action="<?= _URLBASE_ ?>src/view/user/pages/cadUploadPerfilSebo.php" method=' post' enctype='multipart/form-data' target='ifrmUpload' name="urlFoto">
+    <form action="<?= _URLBASE_ ?>src/view/user/pages/cadUploadPerfilSebo.php" method='post' enctype='multipart/form-data' target='ifrmUpload' name="urlFoto">
             <input type="file" name="urlFoto">
             <input class="inputTrocaFoto" type="submit" value="Trocar Foto">
             </form>

@@ -19,7 +19,9 @@ class SeboDAO extends Sebo
     
     private static $SELECT_CIDADE_SEBO = "SELECT * FROM sebo INNER JOIN usuario ON sebo.id_usuario = usuario.id_usuario AND cidade_sebo like :cidadeSebo OR nome_fantasia = :nomeFantasia ORDER BY nome_fantasia ASC";
 
-    private static $INSERT = "INSERT INTO sebo (id_usuario, razao_sebo, nome_fantasia, cnpj_sebo, cidade_sebo. num_end_sebo,compl_end_sebo, logradouro_sebo, cep_end_sebo,num_tel_sebo, celular_1_sebo, celular_2_sebo,insc_estadual_sebo, url_site_sebo) VALUES (:idUsuario, :razaoSebo, :nomeFantasia, :cnpjSebo, :cidadeSebo,:numEndSebo, :complEndSebo,:logradouroSebo, :cepEndSebo, :numTelSebo,:celular1Sebo, :celular2Sebo, :inscEstadualSebo, :urlSiteSebo)";
+    // $this->sql, $usuario->last_id, null, null, null, null, null, null, null, null, null, null, null, null, null, '1'
+
+    private static $INSERT = "INSERT INTO sebo (id_usuario, razao_sebo, nome_fantasia, cnpj_sebo, cidade_sebo, num_end_sebo,compl_end_sebo, logradouro_sebo, cep_end_sebo,num_tel_sebo, celular_1_sebo, celular_2_sebo,insc_estadual_sebo, url_site_sebo) VALUES (:idUsuario, :razaoSebo, :nomeFantasia, :cnpjSebo, :cidadeSebo,:numEndSebo, :complEndSebo,:logradouroSebo, :cepEndSebo, :numTelSebo,:celular1Sebo, :celular2Sebo, :inscEstadualSebo, :urlSiteSebo)";
 
     private static $UPDATE = "UPDATE sebo SET
     razao_sebo = :razaoSebo, nome_fantasia =:nomeFantasia, cnpj_sebo =:cnpjSebo, cidade_sebo = :cidadeSebo, num_end_sebo =:numEndSebo, compl_end_sebo =:complEndSebo, logradouro_sebo =:logradouroSebo, cep_end_sebo =:cepEndSebo, num_tel_sebo =:numTelSebo, celular_1_sebo =:celular1Sebo, celular_2_sebo =:celular2Sebo, insc_estadual_sebo =:inscEstadualSebo, url_site_sebo =:urlSiteSebo WHERE id_usuario = :idUsuario";

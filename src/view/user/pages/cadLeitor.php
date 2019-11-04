@@ -53,7 +53,7 @@ if (isset($_POST['enviar'])) {
 
 			$usuarioDAO->setIdPerfil(4);
 			$usuarioDAO->setDataCriacao(date('Y-m-d H:i:s'));
-			$clienteDAO->setUrlFotoCliente('public/icon/user.svg');
+			$usuarioDAO->setUrlFoto('public/icon/user.svg');
 			if (evitarReenvio()) {
 				$success = true;
 				$usuarioDAO->adicionarUsuario();

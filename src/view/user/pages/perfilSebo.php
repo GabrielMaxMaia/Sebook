@@ -55,7 +55,7 @@ if ($acessoUser != "") {
 		$seboDAO->setCelular1Sebo($_POST['celular1Sebo']);
 		$seboDAO->setCelular2Sebo($_POST['celular2Sebo']);
 		$seboDAO->setUrlSiteSebo($_POST['urlSiteSebo']);
-		$seboDAO->setUrlFotoSebo($_POST['txtImg']);
+		$usuarioDAO->setUrlFoto($_POST['txtImg']);
 
 		if (isset($_POST['nomeUsuario']) || isset($_POST['sobrenomeUsuario']) || isset($_POST['emailUsuario'])) {
 
@@ -117,7 +117,7 @@ if ($acessoUser != "") {
 
 			<div class="formItem">
 				<label for="cnpjSebo">CNPJ</label>
-				<input type="text" name="cnpjSebo" id="cnpjSebo" required value="<?= $seboDAO->getCnpjSebo() ?>" onblur='valida_cnpj(this)'>
+				<input type="text" name="cnpjSebo" id="cnpjSebo" value="<?= $seboDAO->getCnpjSebo() ?>" onblur='valida_cnpj(this)'>
 			</div>
 
 			<div class="formItem">
@@ -127,7 +127,7 @@ if ($acessoUser != "") {
 
 			<div class="formItem">
 				<label for="cepEndSebo">CEP</label>
-				<input type="text" name="cepEndSebo" id="cepEndSebo" require value="<?= $seboDAO->getCepEndSebo() ?>" onblur="pesquisacepsebo(this.value);">
+				<input type="text" name="cepEndSebo" id="cepEndSebo" value="<?= $seboDAO->getCepEndSebo() ?>" onblur="pesquisacepsebo(this.value);">
 			</div>
 
 			<div class="formItem">
@@ -152,7 +152,7 @@ if ($acessoUser != "") {
 
 			<div class="formItem">
 				<label for="numEndSebo">Número</label>
-				<input type="text" name="numEndSebo" id="numEndSebo" required value="<?= $seboDAO->getNumEndSebo() ?>" onblur='valida_numerosebo(this.value)'>
+				<input type="text" name="numEndSebo" id="numEndSebo" value="<?= $seboDAO->getNumEndSebo() ?>" onblur='valida_numerosebo(this.value)'>
 			</div>
 
 			<div class="formItem">
@@ -182,12 +182,12 @@ if ($acessoUser != "") {
 
 			<div class="formItem">
 				<label for="numTelSebo">Telefone</label>
-				<input type="text" name="numTelSebo" id="numTelSebo" placeholder='(00) 0000-0000' required value="<?= $seboDAO->getNumTelSebo() ?>" onblur='mascaraTel(this)'>
+				<input type="text" name="numTelSebo" id="numTelSebo" placeholder='(00) 0000-0000' value="<?= $seboDAO->getNumTelSebo() ?>" onblur='mascaraTel(this)'>
 			</div>
 
 			<div class="formItem">
 				<label for="celular1Sebo">Celular 1</label>
-				<input type="text" name="celular1Sebo" id="celular1Sebo" placeholder='(00) 00000-0000' required value="<?= $seboDAO->getCelular1Sebo() ?>" onblur='mascaraTel(this)'>
+				<input type="text" name="celular1Sebo" id="celular1Sebo" placeholder='(00) 00000-0000' value="<?= $seboDAO->getCelular1Sebo() ?>" onblur='mascaraTel(this)'>
 			</div>
 
 			<div class="formItem">

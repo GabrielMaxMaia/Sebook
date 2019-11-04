@@ -16,63 +16,61 @@ if (isset($_POST['enviar'])) {
 	$usuarioDAO->setEmailUsuario($_POST['emailUsuario']);
 	$usuarioDAO->listarEmailUsuario();
 
-	if($usuarioDAO->listarEmailUsuario() > 0){
+	if ($usuarioDAO->listarEmailUsuario() > 0) {
 
 		echo "<p class='errorCad'>Email já cadastrado, verifique seus dados.</p>";
-
-	}else{
-
-	$erro = false;
-	$erroMen = "";
-	//Nome
-	if ($_POST['nomeUsuario'] != "") {
-		$usuarioDAO->setNomeUsuario($_POST['nomeUsuario']);
 	} else {
-		$erro = true;
-		$erroMen .= "<li>Prencha o nome</li>";
-	}
-	//Sobrenome
-	if ($_POST['sobrenomeUsuario'] != "") {
-		$usuarioDAO->setSobrenomeUsuario($_POST['sobrenomeUsuario']);
-	} else {
-		$erro = true;
-		$erroMen .= "<li>Prencha o Sobrenome</li>";
-	}
-	//Email
-	if ($_POST['emailUsuario'] != "") {
-		$usuarioDAO->setEmailUsuario($_POST['emailUsuario']);
-	} else {
-		$erro = true;
-		$erroMen .= "<li>Prencha o E-mail</li>";
-	}
-	//Senha
-	if (($_POST['senhaUsuario'] != $_POST['repeteSenhaUsuario']) != null || $_POST['senhaUsuario'] == "") {
-		$erro = true;
-		$erroMen .= "<li>Senhas diferem</li>";
-	} else {
-		$usuarioDAO->setSenhaUsuario($_POST['senhaUsuario']);
-	}
 
-	if($erro == true){
-		echo "<ul class='errorList' style='display:block;'>$erroMen</ul>" ?? "";
-	}
+		$erro = false;
+		$erroMen = "";
+		//Nome
+		if ($_POST['nomeUsuario'] != "") {
+			$usuarioDAO->setNomeUsuario($_POST['nomeUsuario']);
+		} else {
+			$erro = true;
+			$erroMen .= "<li>Prencha o nome</li>";
+		}
+		//Sobrenome
+		if ($_POST['sobrenomeUsuario'] != "") {
+			$usuarioDAO->setSobrenomeUsuario($_POST['sobrenomeUsuario']);
+		} else {
+			$erro = true;
+			$erroMen .= "<li>Prencha o Sobrenome</li>";
+		}
+		//Email
+		if ($_POST['emailUsuario'] != "") {
+			$usuarioDAO->setEmailUsuario($_POST['emailUsuario']);
+		} else {
+			$erro = true;
+			$erroMen .= "<li>Prencha o E-mail</li>";
+		}
+		//Senha
+		if (($_POST['senhaUsuario'] != $_POST['repeteSenhaUsuario']) != null || $_POST['senhaUsuario'] == "") {
+			$erro = true;
+			$erroMen .= "<li>Senhas diferem</li>";
+		} else {
+			$usuarioDAO->setSenhaUsuario($_POST['senhaUsuario']);
+		}
 
-	if ($erro != true) {
-	
-		$usuarioDAO->setIdPerfil(5);
-		$usuarioDAO->setDataCriacao(date('Y-m-d H:i:s'));
-		if(evitarReenvio()){
-			$success = true;
-			$usuarioDAO->adicionarUsuario();
-		}else{
-			echo "<p class='errorCad'>Usuário já cadastrado.</p>";
+		if ($erro == true) {
+			echo "<ul class='errorList' style='display:block;'>$erroMen</ul>" ?? "";
+		}
+
+		if ($erro != true) {
+			if (evitarReenvio()) {
+				$success = true;
+				$usuarioDAO->setIdPerfil(5);
+				$usuarioDAO->setDataCriacao(date('Y-m-d H:i:s'));
+				$usuarioDAO->setUrlFoto('public/icon/user.svg');
+				$usuarioDAO->adicionarUsuario();
+			} else {
+				echo "<p class='errorCad'>Usuário já cadastrado.</p>";
+			}
+		}
+		if (isset($success)) {
+			echo "<p class='successCad'>Cadastrado com sucesso.</p>";
 		}
 	}
-	if(isset($success)){
-		echo "<p class='successCad'>Cadastrado com sucesso.</p>";
-	}
-}
-
 }
 
 ?>
@@ -97,8 +95,7 @@ if (isset($_POST['enviar'])) {
 
 			<div class="formItem">
 				<label for="emailUsuario">E-mail</label>
-				<input type="text" name="emailUsuario" id="emailUsuario" required value="<?= $_POST['emailUsuario'] ?? '' ?>"
-				onblur='mascaraEmail(this)'>
+				<input type="text" name="emailUsuario" id="emailUsuario" required value="<?= $_POST['emailUsuario'] ?? '' ?>" onblur='mascaraEmail(this)'>
 			</div>
 
 			<div class="formItem">

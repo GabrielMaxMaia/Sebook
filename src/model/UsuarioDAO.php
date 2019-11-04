@@ -172,7 +172,7 @@ class UsuarioDAO extends Usuario
 
             $clienteDAO->adicionarCliente();
         }else{
-            $seboDAO = new SeboDAO($this->sql, $usuario->last_id, null, null, null, null, null, null, null, null, null, null, null, null, '1');
+            $seboDAO = new SeboDAO($this->sql, $usuario->last_id, null, null, null, null, null, null, null, null, null, null, null, null, null, '1');
 
             $seboDAO->adicionarSebo();
         }
