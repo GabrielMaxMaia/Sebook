@@ -28,7 +28,7 @@ if ($GetPost) {
 
 ?>
 <article>
-    <header class="headerPostagem">
+    <header class="headerPagina">
         <h1>Últimas Postagens</h1>
     </header>
     <div class="postagensContainer">

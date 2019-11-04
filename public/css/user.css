@@ -188,7 +188,7 @@ div#containerTemplate {
     max-height: 174px;
 }
 
-/*===================AREA DO CADASTRO====================*/
+/*===================AREA DE ATULIZAçÃO DE CADASTRO====================*/
 
 .cadastro {
     padding: 1rem 0 2rem;
@@ -198,97 +198,111 @@ div#containerTemplate {
     box-sizing: border-box
 }
 
-.cadastro .container figure {
-    margin: 0 auto;
-    display: flex;
-    width: 208px
-}
-
-.cadastro .container img {
-    width: 40px
-}
-
-.cadastro .container figure figcaption {
-    float: left;
-    font-size: 25px;
-    margin-top: 14px;
-    margin-left: 10px
-}
-
-.cadastro .container p {
-    float: left;
+.cadastro header p {
     width: 100%;
     text-align: center;
-    height: 20px;
     position: relative;
-    margin: 1rem 0
+    margin: 1rem 0;
+    font-size: 1.65rem
 }
 
-.cadastro .container p:before {
-    content: '';
+.cadastro  header p:after {
+    content: "";
+    margin: .1rem auto;
+    border-bottom: 2px solid #99e7aa;
+    padding: 0 0 .6rem;
+    max-width: 160px;
+    display: block
+}
+
+.imgContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top:2rem
+}
+.imgCadastro{
+    max-width:250px;
+}
+.imgCadastro img{
+    border-radius:50%
+}
+.imgCadastro .imgInfo p{
+    text-align:center;
+}
+.cadastro figure .imgInfo {
+    margin: auto;
+    font-size: 1.65rem;
+    margin-top: 1.2rem;
+}
+[type="file"] {
+    color: rgb(153,153,153);
+}
+.formFotoContainer .inputTrocaFoto{
+    padding: .5rem;
+    max-width: 116px;
+    border: none;
+    background: #63b5ce;
+    color: #fff;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.formFotoContainer iframe{
+    display:none;
+}
+
+.formPefil{
+    padding:1rem;
+}
+.formPerfil input{
     width: 100%;
-    height: 1px;
-    background-color: #999;
-    position: absolute;
-    left: 0;
-    top: 10px
+    display: block;
+    margin: 1rem auto;
+    border: 1px solid #999;
+    padding: .5rem;
+    outline: none;
+    font-size: 16px;
 }
 
-.cadastro .container p span {
-    position: absolute;
-    z-index: 1;
-    width: 250px;
-    left: 50%;
-    margin-left: -125px
-}
-
-.cadastro .container p:after {
-    content: '';
-    width: 250px;
-    height: 20px;
-    background: #fff;
-    position: absolute;
-    z-index: 0;
-    left: 50%;
-    margin-left: -125px
-}
-
-.cadastro .container form {
+.cadastro form {
     width: 100%;
     margin-top: 20px;
     display: flex;
     flex-direction: column
 }
 
-.cadastro .container form label,
-.cadastro .container form input {
+.cadastro form label,
+.cadastro form input {
     width: 100%;
     float: left
 }
 
-.cadastro .container form label {
+.cadastro form label {
     margin-bottom: 5px
 }
 
-.cadastro .container form label[for=feminino],
-.cadastro .container form label[for=masculino] {
+.cadastro form label[for=feminino],
+.cadastro form label[for=masculino] {
     width: auto;
     margin-right: 10px;
     margin-bottom: 15px
 }
 
-.cadastro .container form input[type=radio] {
+.cadastro form input[type=radio] {
     width: auto
 }
 
-.cadastro .container form input[type=text],
-.cadastro .container form input[type=password] {
+.cadastro form input[type=text],
+.cadastro form input[type=password] {
     height: 30px;
     margin-bottom: 10px;
-    border: 1px solid #999
+    border: 1px solid #999;
+    padding:.5rem;
 }
 
-.cadastro .container form button {
+.cadastro form button {
     width: 35%;
     margin: 0 auto;
     margin: 1rem 0;
@@ -297,11 +311,11 @@ div#containerTemplate {
     background: #fff
 }
 
-.cadastro .container form .password2 {
+.cadastro form .password2 {
     margin-bottom: 20px !important
 }
 
-.cadastro .container form hr {
+.cadastro form hr {
     margin: 25px 0
 }
 
@@ -332,30 +346,30 @@ div#containerTemplate {
 
 /*===================AREA DO DESCRIÇÃO LIVRO====================*/
 
-.livros .container .box-descricao-livro {
+.livros .box-descricao-livro {
     display: grid;
     grid-template-columns: 120px 1fr;
     grid-gap: 10px;
     margin: 20px 0
 }
 
-.livros .container .box-descricao-livro img {
+.livros .box-descricao-livro img {
     width: 100%
 }
 
-.livros .container .box-descricao-livro .descricaoLivro h1 {
+.livros .box-descricao-livro .descricaoLivro h1 {
     margin: 0;
     font-size: 20px
 }
 
-.livros .container .sinopse {
+.livros .sinopse {
     width: 100%;
     border: 1px solid #ccc;
     padding: 10px;
     background-color: #f1f1f1
 }
 
-.livros .container .sinopse .comentario {
+.livros .sinopse .comentario {
     width: 100%;
     background-color: #86c3cb;
     border-radius: 4px;
@@ -363,18 +377,18 @@ div#containerTemplate {
     margin-top: 10px
 }
 
-.livros .container .sinopse .comentario:first-child {
+.livros .sinopse .comentario:first-child {
     margin-top: 0
 }
 
-.livros .container .sinopse .comentario .person {
+.livros .sinopse .comentario .person {
     width: 100%;
     display: grid;
     grid-template-columns: 24px 1fr;
     grid-gap: 10px
 }
 
-.livros .container .sinopse .comentario .person .descricao-person strong {
+.livros .sinopse .comentario .person .descricao-person strong {
     margin-bottom: 5px;
     display: block
 }
@@ -835,85 +849,6 @@ div#contentLoading{
     padding: 1rem
 }
 
-.sebos .container {
-    background: #5cccb3;
-    padding: 15px;
-    margin-top: 25px;
-    width: 100%;
-    height: 100%;
-    max-width: 700px;
-    margin: 3% auto;
-    box-sizing: border-box
-}
-
-.sebos .container h1 {
-    font-size: 25px;
-    text-align: center;
-    margin: 0 0 25px 0
-}
-
-.sebos .container form {
-    width: 100%;
-    height: 240px;
-    border: 1px solid #111;
-    background: #fff;
-    padding: 10px
-}
-
-.sebos .container form label {
-    width: 100%;
-    font-weight: bold
-}
-
-.sebos .container form input {
-    width: 100%;
-    height: 35px;
-    border: 1px solid #222;
-    margin: 10px 0 20px 0
-}
-
-.sebos .container form select {
-    width: 100%;
-    height: 35px;
-    border: 1px solid #222;
-    margin: 10px 0 20px 0
-}
-
-.sebos .container form select option {
-    width: 50px
-}
-
-.sebos .container form button {
-    width: 100px;
-    height: 35px;
-    float: right
-}
-
-.sebos .container a {
-    text-decoration: none
-}
-
-.sebos .container a .box-sebo {
-    width: 100%;
-    height: 80px;
-    background: #fff;
-    margin-top: 15px;
-    border: 1px solid #000;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr)
-}
-
-.sebos .container a .box-sebo strong {
-    padding-left: 10px;
-    line-height: 80px;
-    color: #000
-}
-
-.sebos .container a .box-sebo p {
-    color: red;
-    line-height: 50px;
-    text-align: center
-}
 
 /*===================AREA DO STYLE====================*/
 
@@ -1907,15 +1842,22 @@ section.jumbotron{
     background: #111;
 }
 
-/*Pagina de postagens*/
-.headerPostagem{
-    font-size: 1.25rem;
-    margin: 2.5rem auto 1rem;
-    text-align: center;
+/*Header de páginas*/
+.headerPagina{
+    font-size: 1.1rem;
+    text-align:center;
+    margin-top:1rem;
+}
+.headerPagina::after{
+    content: "";
+    margin: .1rem auto;
     border-bottom: 2px solid #99e7aa;
     padding: 0 0 .6rem;
-    max-width: 300px
+    max-width: 120px;
+    display: block;
 }
+
+/*Pagina de postagens*/
 .postagensContainer{
     display: flex;
     flex-wrap: wrap;
@@ -2050,3 +1992,4 @@ section.jumbotron{
 .modifica.danger{
     background:#b22;
 }
+
