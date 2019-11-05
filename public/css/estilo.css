@@ -369,7 +369,7 @@ a:hover{
         font-weight: bolder;
 }
 
-.postagemItem a img{
+.postagemItem a img, .eventoItem a img{
     max-width:20px;
 }
 

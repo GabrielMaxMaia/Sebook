@@ -10,18 +10,17 @@ class EventoDAO extends Evento
     //Atributos - serão os comandos SQL  + um objeto Sql
     private static $SELECT_ALL = "select * from evento";
 
-    private static $SELECT_TOT = "SELECT count(id_post) as tot from evento";
+    private static $SELECT_TOT = "SELECT count(id_evento) as tot from evento";
 
     private static $SELECT_ID = "SELECT * from evento where id_evento = :idEvento";
 
-    private static $INSERT = "INSERT INTO evento
-    (nome_evento,txt_evento,data_hora_evento, url_foto_evento, id_usuario)
+    private static $INSERT = "INSERT INTO evento (nome_evento,txt_evento,data_hora_evento, url_foto_evento, id_usuario)
     VALUES (:nomeEvento, :txtEvento, :dataHoraEvento, :urlFotoEvento, :idUsuario)";
 
-    private static $UPDATE = "UPDATE evento SET nome_evento = :nomeEvento, txt_evento = :txtEvento, url_foto_post = :urlFotoPost WHERE id_evento = :idEvento AND id_usuario = :idUsuario";
+    private static $UPDATE = "UPDATE evento SET nome_evento = :nomeEvento, txt_evento = :txtEvento, data_hora_evento = :dataHoraEvento,url_foto_evento = :urlFotoEvento WHERE id_evento = :idEvento AND id_usuario = :idUsuario";
 
     //DELETE lógico -> altera status
-    private static $DELETE = "DELETE evento WHERE id_evento = :idEvento AND id_usuario = :idUsuario";
+    private static $DELETE = "DELETE FROM evento WHERE id_evento = :idEvento";
 
     //Atributo par armazenar o Objeto SQL 
     private $sql;
@@ -74,7 +73,7 @@ class EventoDAO extends Evento
         return $linha->tot;
     }
 
-    public function listareventoId()
+    public function listarEventoId()
     {
         //executar a consulta no banco
 
@@ -82,7 +81,7 @@ class EventoDAO extends Evento
             EventoDAO::$SELECT_ID,
             array(
                 ':idEvento' => array(
-                    0 => $this->getIdevento(),
+                    0 => $this->getIdEvento(),
                     1 => \PDO::PARAM_INT
                 )
             )
@@ -105,7 +104,7 @@ class EventoDAO extends Evento
         return $itens;
     }
 
-    public function adicionarevento()
+    public function adicionarEvento()
     {
         $result = $this->sql->execute(
             EventoDAO::$INSERT,
@@ -121,11 +120,12 @@ class EventoDAO extends Evento
         return $result;
     }
 
-    public function alterarevento()
+    public function alterarEvento()
     {
         $result = $this->sql->execute(
             EventoDAO::$UPDATE,
             array(
+                ':idEvento' => array(0 => $this->getIdEvento(), 1 => \PDO::PARAM_INT),
                 ':nomeEvento' => array(0 => $this->getNomeEvento(), 1 => \PDO::PARAM_STR),
                 ':txtEvento' => array(0 => $this->getTxtEvento(), 1 => \PDO::PARAM_STR),
                 ':dataHoraEvento' => array(0 => $this->getDataHoraEvento(), 1 => \PDO::PARAM_STR),
@@ -136,12 +136,12 @@ class EventoDAO extends Evento
         return $result;
     }
 
-    public function excluirevento()
+    public function excluirEvento()
     {
         $result = $this->sql->execute(
             EventoDAO::$DELETE,
             array(
-                'idEvento' => array(0 => $this->getIdEvento(), 1 => \PDO::PARAM_INT)
+                ':idEvento' => array(0 => $this->getIdEvento(), 1 => \PDO::PARAM_INT)
             )
         );
         return $result;

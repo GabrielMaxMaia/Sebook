@@ -7,6 +7,9 @@
 			<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadPostagem">Postagem</a>
 		</li>
 		<li>
+			<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadEvento">Eventos</a>
+		</li>
+		<li>
 			<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadComentario">Comentários</a>
 		</li>
 		<li>
@@ -42,7 +45,7 @@
 		<li>
 			<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadEditora">Editoras</a>
 		</li>
-		
+
 		<li><a href="<?= _URLBASE_ ?>area/adm/sair">Sair</a></li>
 	</ul>
 </nav>
