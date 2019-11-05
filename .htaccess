@@ -22,7 +22,7 @@ RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)\/([\d]+)\/pagina\/([0-9]+)$ http
 
 
 #Regra para excluirPost
-#RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)\/delete\/([\d]+)$ http://localhost/sebook/index.php?area=$1&pasta=$2&page=$3&acao=3&idDelete=$4 [NC,L]
+#RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)\/delete\/([\d]+)$ http://localhost/sebook/index.php?area=$1&pasta=$2&page=$3&acao=3&id=$4 [NC,L]
 
 
 #regra para chegar nas pastas de adm

@@ -1,7 +1,7 @@
 <?php
 
 use Model\SeboDAO;
-use Model\livroDAO;
+use Model\LivroDAO;
 use Model\SeboLivroDAO;
 use Model\ComentarioDAO;
 use Model\UsuarioDAO;
@@ -9,7 +9,7 @@ use Model\UsuarioDAO;
 //Pega a conexão
 $objSql = new Util\Sql($conn);
 $seboDAO = new SeboDAO($objSql);
-$livroDAO = new livroDAO($objSql);
+$livroDAO = new LivroDAO($objSql);
 $seboLivroDAO = new SeboLivroDAO($objSql);
 $comentarioDAO = new ComentarioDAO($objSql);
 $usuarioDAO = new UsuarioDAO($objSql);

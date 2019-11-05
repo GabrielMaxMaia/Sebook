@@ -10,7 +10,7 @@ $parametro = isset($_POST['pesquisaSebo']) ? $_POST['pesquisaSebo'] : false;
 $seboDAO->setCidadeSebo($parametro);
 //$resultado = $seboDAO->listarNomeSebos();
 $resultado = $seboDAO->listarSebosCidade();
-
+var_dump($resultado);
 //recebemos nosso parâmetro vindo do form
 $msg = "";
 

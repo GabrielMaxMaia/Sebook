@@ -1,11 +1,11 @@
 <?php
 
-use Model\livroDAO;
+use Model\LivroDAO;
 
 //Pega a conexão
 $objSql = new Util\Sql($conn);
 
-$livroDAO = new livroDAO($objSql);
+$livroDAO = new LivroDAO($objSql);
 
 $resultLivro = $livroDAO->listarLivros();
 
