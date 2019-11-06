@@ -94,20 +94,41 @@ div#containerTemplate {
     max-width: 460px;
     align-self: center
 }
-
+ 
 .ajuda .container h1 {
     font-size: 30px;
     text-align: center;
     margin-top: 25px
 }
-
-.ajuda .container p {
+.pergunta{
+    max-width: 690px;
+    margin: auto
+}
+.pergunta .container p {
     margin: .5rem 0;
     font-size: .95rem;
     text-align: center;
     line-height: 1.3rem
 }
+.pergunta .container  h1 {
+    font-size: 25px;
+    text-align: center;
+    margin: 1rem 0 0
+}
 
+.pergunta .container .containerText {
+    border: 1px solid #ccc
+}
+.pergunta .container p{
+    line-height: 1.35rem;
+    padding: 1rem;
+    text-align: justify
+}
+.ajuda .container p {
+    line-height: 1.35rem;
+    padding: 1rem;
+    text-align: center
+}
 .ajuda .container hr {
     margin-bottom: 25px
 }
@@ -130,6 +151,8 @@ div#containerTemplate {
     border: 1px solid #ccc;
     background: #fff
 }
+
+
 
 /*===================AREA DO BUSCA====================*/
 
