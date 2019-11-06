@@ -1881,31 +1881,31 @@ section.jumbotron{
 }
 
 /*Pagina de postagens*/
-.postagensContainer{
+.itemContentContainer{
     display: flex;
     flex-wrap: wrap;
     justify-content:center;
     margin: 2rem auto;
     padding: 1rem;
 }
-.postagemItem img{
+.contentItem img{
     min-height:250px;
     max-height:250px;
     max-width:348px;
 }
 
-.postagemItem{
+.contentItem{
     border: 1px solid #ccc;
     margin: 1rem;
     min-width: 350px;
     max-width: 350px;
 }
-.postagemItem figcaption{
+.contentItem figcaption{
     margin: 1rem auto;
     padding: 1rem;
     max-height: 101px;
 }
-.postagemItem figcaption p{
+.contentItem figcaption p{
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -1914,19 +1914,19 @@ section.jumbotron{
     margin:1rem
 }
 /*Post ver*/
-.postagemVerContainer {
+.itemVerContainer {
     padding:1rem;
 }
-.postagemVerContainer header{
+.itemVerContainer header{
     /* float: left; */
 }
-.imgPostagemVer img{
+.imgItemVer img{
     width:100%;
     max-width:350px;
     margin:auto;
     padding: .9rem;
 }
-.postagemVerContainer .texto h1{
+.itemVerContainer .texto h1{
     font-size:2.5rem;
     color:#111;
 }

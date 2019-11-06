@@ -29,9 +29,9 @@ if ($result != null) {
     foreach ($result as $linha) {
         if ($linha['idPostagem'] == $GetPost) {
             ?>
-            <article class="postagemVerContainer">
+            <article class="itemVerContainer">
                 <header>
-                    <picture class="imgPostagemVer">
+                    <picture class="imgItemVer">
                         <img src="<?= _URLBASE_ . $linha['urlFotoPost'] ?>">
                     </picture>
                 </header>

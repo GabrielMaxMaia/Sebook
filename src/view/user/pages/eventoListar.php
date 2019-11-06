@@ -31,13 +31,13 @@ if ($GetPost) {
     <header class="headerPagina">
         <h1>Últimas Eventos</h1>
     </header>
-    <div class="postagensContainer">
+    <div class="itemContentContainer">
         <?php
         $eventos = $eventoDAO->listarEvento($frontController->getRegIni(), $frontController->getItemPagina());
         foreach ($eventos as $event) {
             ?>
             <div class="postContainer">
-                <div class='postagemItem'>
+                <div class='contentItem'>
                     <div class="item">
                         <a href='<?= _URLBASE_ ?>area/user/pages/eventoVer/<?= $event['idEvento'] ?>'>
                             <figure>

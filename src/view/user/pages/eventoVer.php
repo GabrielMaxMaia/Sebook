@@ -34,9 +34,9 @@ if ($resultEvento != null) {
     // foreach ($result as $linha) {
         if ($eventoDAO->getIdEvento() == $GetPost) {
             ?>
-            <article class="postagemVerContainer">
+            <article class="itemVerContainer">
                 <header>
-                    <picture class="imgPostagemVer">
+                    <picture class="imgItemVer">
                         <img src="<?= _URLBASE_ . $eventoDAO->getUrlFotoEvento() ?>">
                     </picture>
                 </header>

@@ -31,13 +31,13 @@ if ($GetPost) {
     <header class="headerPagina">
         <h1>Últimas Postagens</h1>
     </header>
-    <div class="postagensContainer">
+    <div class="itemContentContainer">
         <?php
         $postagens = $postagemDAO->listarPostagem($frontController->getRegIni(), $frontController->getItemPagina());
         foreach ($postagens as $post) {
             ?>
             <div class="postContainer">
-                <div class='postagemItem'>
+                <div class='contentItem'>
                     <div class="item">
                         <a href='<?= _URLBASE_ ?>area/user/pages/postVer/<?= $post['idPostagem'] ?>'>
                             <figure>
