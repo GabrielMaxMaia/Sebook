@@ -172,7 +172,7 @@ for ($i = 0; $i < count($resultLivro); $i++) {
 	<?php
 
 	/*Inclui toda sessão de comentários*/
-	$pagina = "";
+	$pagina = "paginaLivro";
 	include "includes/comentarioTemplate.php";
 	?>
 

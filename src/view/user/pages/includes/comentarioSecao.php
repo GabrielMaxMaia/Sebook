@@ -1,12 +1,15 @@
 <?php
 // var_dump($resultComentario);
 if ($resultComentario != null || $resultComentario >= 1) {
-
     foreach ($resultComentario as $comentario) {
-
+        // var_dump($comentario);
+ 
         if ($pagina == "paginaSebo") {
             $pag = $comentario['idPagina'];
-        } else {
+        } else if ($pagina == "paginaEvento") {
+            // $comentarioDAO->setIdEvento($GetPost);
+            $pag = $comentario['idEvento'];
+        } else if ($pagina == "paginaLivro" || $pagina == "paginaPost") {
             $pag = $comentario['idPost'];
         }
 
@@ -18,13 +21,12 @@ if ($resultComentario != null || $resultComentario >= 1) {
             ?>
             <div class="comentarioContainer">
                 <?php
-                            $usuarioDAO->setIdUsuario($idUser);
-                            ?>
+                    $usuarioDAO->setIdUsuario($idUser);
+                ?>
                 <figure class="userComent">
                     <img src="<?= _URLBASE_ . $comentario['urlFoto'] ?>">
                     <figcaption>
                         <p>
-
                             <?= $comentario['txtComentario'] ?>
                             <br><br>
                             <span>Por <?= $comentario['nomeUsuario'] ?>
@@ -44,11 +46,21 @@ if ($resultComentario != null || $resultComentario >= 1) {
 
                                     $comentarioDAO->setIdUsuario($comentario['idUsuario']);
 
+                                    // if ($pagina == "paginaSebo") {
+                                    //     $comentarioDAO->setIdPagina($comentario['idPagina']);
+                                    // } else {
+                                    //     $comentarioDAO->setIdPost($comentario['idPost']);
+                                    // }
+
                                     if ($pagina == "paginaSebo") {
-                                        $comentarioDAO->setIdPagina($comentario['idPagina']);
-                                    } else {
-                                        $comentarioDAO->setIdPost($comentario['idPost']);
+                                        $setModo = "setIdPagina";
+                                    } else if ($pagina == "paginaEvento") {
+                                        $setModo = "setIdEvento";
+                                    } else if ($pagina == "paginaLivro" || $pagina == "paginaPost") {
+                                        $setModo = "setIdPost";
                                     }
+                                    // var_dump($pagina);
+                                    $comentarioDAO->$setModo($GetPost);
 
                                     $comentarioDAO->setIdComentario($comentario['idComentario']);
 
@@ -68,18 +80,18 @@ if ($resultComentario != null || $resultComentario >= 1) {
                             <input type="submit" name="excluirComentario" class="modifica danger" value="Excluir" onclick="if (confirm('Quer Mesmo excluir comentário?')) {return true;}else{return false;}">
                         </form>
                         <?php
-                                        if (isset($_POST['excluirComentario'])) {
-                                            $comentarioDAO->setIdComentario($_POST['comentarioExcluir']);
-                                            //Excluir comentário
-                                            $comentarioDAO->excluirComentario();
+                            if (isset($_POST['excluirComentario'])) {
+                                $comentarioDAO->setIdComentario($_POST['comentarioExcluir']);
+                                //Excluir comentário
+                                $comentarioDAO->excluirComentario();
 
-                                            //Recarrega a página
-                                            header('Refresh:0');
-                                        }
-                                        ?>
+                                //Recarrega a página
+                                header('Refresh:0');
+                            }
+                        ?>
                     <?php
-                                }
-                                ?>
+                        }
+                    ?>
                 </div>
 
                 <?php
@@ -136,12 +148,15 @@ if ($resultComentario != null || $resultComentario >= 1) {
                     <input type="hidden" name="idComentario" id="idComentario">
 
                     <?php
-                    if ($pagina != "paginaSebo") {
+                    if ($pagina == "paginaLivro" || $pagina == "paginaPost") {
                         $pagVal = $comentarioDAO->getIdPost();
                         $nome = "idPost";
-                    } else {
+                    } else if ($pagina == "paginaSebo"){
                         $pagVal = $comentarioDAO->getIdPagina();
                         $nome = "idPagina";
+                    } else if ($pagina == "paginaEvento"){
+                        $pagVal = $comentarioDAO->getIdEvento();
+                        $nome = "idEvento";
                     }
                     ?>
                     <input type="hidden" name="<?= $nome ?>" value="<?= $pagVal ?>">
@@ -166,11 +181,21 @@ if ($resultComentario != null || $resultComentario >= 1) {
 <?php
 if (isset($_POST['txtComentarioAtualiza'])) {
 
-    if ($pagina != "paginaSebo") {
-        $comentarioDAO->setIdPost($_POST['idPost']);
-    } else {
-        $comentarioDAO->setIdPagina($_POST['idPagina']);
+    // if ($pagina != "paginaSebo") {
+    //     $comentarioDAO->setIdPost($_POST['idPost']);
+    // } else {
+    //     $comentarioDAO->setIdPagina($_POST['idPagina']);
+    // }
+
+    if ($pagina == "paginaSebo") {
+        $setModo = "setIdPagina";
+    } else if ($pagina == "paginaEvento") {
+        $setModo = "setIdEvento";
+    } else if ($pagina == "paginaLivro" || $pagina == "paginaPost") {
+        $setModo = "setIdPost";
     }
+    // var_dump($pagina);
+    $comentarioDAO->$setModo($GetPost);
 
     // $comentarioDAO->setIdUsuario($_POST['idUsuario']);
     $comentarioDAO->setIdComentario($_POST['idComentario']);

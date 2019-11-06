@@ -13,11 +13,12 @@ class Comentario
     private $codStatusComentario;
     private $idPost;
     private $idPagina;
+    private $idEvento;
     private $idUsuario;
     private $idComentarioParente;
 
     //Método construtor auxiliar de criação de objetos
-    public function __construct($idComentario = "", $txtComentario = "", $dataHoraComentario = "", $codStatusComentario = "", $idPost = "", $idPagina= "", $idUsuario = "", $idComentarioParente = "")
+    public function __construct($idComentario = "", $txtComentario = "", $dataHoraComentario = "", $codStatusComentario = "", $idPost = "", $idPagina= "", $idEvento="", $idUsuario = "", $idComentarioParente = "")
     {
         $this->idComentario = $idComentario;
         $this->txtComentario = $txtComentario;
@@ -25,6 +26,7 @@ class Comentario
         $this->codStatusComentario = $codStatusComentario;
         $this->idPost = $idPost;
         $this->idPagina = $idPagina;
+        $this->idEvento = $idEvento;
         $this->idUsuario = $idUsuario;
         $this->idComentarioParente = $idComentarioParente;
     }
@@ -80,6 +82,14 @@ class Comentario
         $this->idPost = $idPost;
     }
 
+    public function getIdEvento(){
+		return $this->idEvento;
+	}
+
+	public function setIdEvento($idEvento){
+		$this->idEvento = $idEvento;
+	}
+
     public function getIdPagina(){
 		return $this->idPagina;
 	}
@@ -117,6 +127,7 @@ class Comentario
             'dataHoraComentario' => $this->dataHoraComentario,
             'codStatusComentario' => $this->codStatusComentario,
             'idPost' => $this->idPost,
+            'idEvento' => $this->idEvento,
             'idUsuario' => $this->idUsuario,
             'idComentarioParente' => $this->idComentarioParente
         ));

@@ -17,8 +17,10 @@ class ComentarioDAO extends Comentario
     private static $SELECT_ID_POSTAGEM = "SELECT * FROM comentario inner join usuario WHERE comentario.id_usuario = usuario.id_usuario AND id_post = :idPost AND cod_status_comentario = '1' ORDER BY id_comentario DESC";
     
     private static $SELECT_ID_PAGINA = "SELECT * FROM comentario inner join usuario WHERE comentario.id_usuario = usuario.id_usuario AND id_pagina = :idPagina AND cod_status_comentario = '1' ORDER BY id_comentario DESC";
+    
+    private static $SELECT_ID_EVENTO = "SELECT * FROM comentario inner join usuario WHERE comentario.id_usuario = usuario.id_usuario AND id_evento = :idEvento AND cod_status_comentario = '1' ORDER BY id_comentario DESC";
 
-    private static $INSERT = "INSERT INTO comentario (id_comentario_parente, txt_comentario, data_hora_comentario, id_post, id_pagina, id_usuario) VALUES (:idComentarioParente, :txtComentario, :dataHoraComentario, :idPost, :idPagina, :idUsuario)";
+    private static $INSERT = "INSERT INTO comentario (id_comentario_parente, txt_comentario, data_hora_comentario, id_post, id_pagina, id_evento, id_usuario) VALUES (:idComentarioParente, :txtComentario, :dataHoraComentario, :idPost, :idPagina, :idEvento, :idUsuario)";
 
     private static $UPDATE = "UPDATE comentario SET txt_comentario = :txtComentario WHERE id_comentario = :idComentario";
 
@@ -29,9 +31,9 @@ class ComentarioDAO extends Comentario
     private $sql;
 
     //Método Construtor - setamos os parametros e passamos um obj SQL
-    public function __construct($objSql = "", $idComentario = "", $txtComentario = "", $dataHoraComentario = "", $codStatusComentario = "", $idPost = "", $idPagina= "", $idUsuario = "", $idComentarioParente = "")
+    public function __construct($objSql = "", $idComentario = "", $txtComentario = "", $dataHoraComentario = "", $codStatusComentario = "", $idPost = "", $idPagina= "", $idEvento="", $idUsuario = "", $idComentarioParente = "")
     {
-        parent::__construct($idComentario, $txtComentario, $dataHoraComentario, $codStatusComentario, $idPost, $idPagina, $idUsuario, $idComentarioParente);
+        parent::__construct($idComentario, $txtComentario, $dataHoraComentario, $codStatusComentario, $idPost, $idPagina, $idEvento, $idUsuario, $idComentarioParente);
         $this->sql = $objSql;
     }
 
@@ -84,6 +86,7 @@ class ComentarioDAO extends Comentario
                     'codStatusComentario' => $linha->cod_status_comentario,
                     'idPost' => $linha->id_post,
                     'idPagina' => $linha->id_pagina,
+                    'idEvento' => $linha->id_evento,
                     'idUsuario' => $linha->id_usuario,
                     'nomeUsuario' => $linha->nome_usuario,
                     'urlFoto' => $linha->url_foto
@@ -122,6 +125,7 @@ class ComentarioDAO extends Comentario
                 'codStatusComentario' => $linha->cod_status_comentario,
                 'idPost' => $linha->id_post,
                 'idPagina' => $linha->id_pagina,
+                'idEvento' => $linha->id_evento,
                 'idUsuario' => $linha->id_usuario,
                 'urlFoto' => $linha->url_foto
             );
@@ -194,6 +198,37 @@ class ComentarioDAO extends Comentario
         return $itens;
     }
 
+    public function listarComentarioEvento()
+    {
+        //executar a consulta no banco
+        $result = $this->sql->query(
+            ComentarioDAO::$SELECT_ID_EVENTO,
+            array(
+                ':idEvento' => array(0 => $this->getIdEvento(), 1 => \PDO::PARAM_INT)
+            )
+        );
+        if ($result->rowCount() > 0) {
+
+            while ($linha = $result->fetch(\PDO::FETCH_OBJ)) {
+                $itens[] = array(
+                    'idComentario' => $linha->id_comentario,
+                    'idComentarioParente' => $linha->id_comentario_parente,
+                    'txtComentario' => $linha->txt_comentario,
+                    'dataHoraComentario' => $linha->data_hora_comentario,
+                    'codStatusComentario' => $linha->cod_status_comentario,
+                    'idEvento' => $linha->id_evento,
+                    'idUsuario' => $linha->id_usuario,
+                    'nomeUsuario' => $linha->nome_usuario,
+                    'urlFoto' => $linha->url_foto
+                );
+            }
+        } else {
+            $itens = null;
+        }
+        //devolver o resultado     
+        return $itens;
+    }
+
     public function adicionarComentario()
     {
         $result = $this->sql->execute(
@@ -201,11 +236,11 @@ class ComentarioDAO extends Comentario
             array(
                 ':idPost' => array(0 => $this->getIdPost(), 1 => \PDO::PARAM_INT),
                 ':idPagina' => array(0 => $this->getIdPagina(), 1 => \PDO::PARAM_STR),
+                ':idEvento' => array(0 => $this->getIdEvento(), 1 => \PDO::PARAM_INT),
                 ':idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT),
                 ':idComentarioParente' => array(0 => 0, 1 => \PDO::PARAM_INT),
                 ':txtComentario' => array(0 => $this->getTxtComentario(), 1 => \PDO::PARAM_STR),
                 ':dataHoraComentario' => array(0 => $this->getDataHoraComentario(), 1 => \PDO::PARAM_STR)
-
             )
         );
         return $result;

@@ -46,5 +46,5 @@ if ($result != null) {
 }
 
 /*Inclui toda sessão de comentários*/
-$pagina = "";
+$pagina = "paginaPost";
 include "includes/comentarioTemplate.php";

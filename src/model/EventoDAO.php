@@ -17,7 +17,7 @@ class EventoDAO extends Evento
     private static $INSERT = "INSERT INTO evento (nome_evento,txt_evento,data_hora_evento, url_foto_evento, id_usuario)
     VALUES (:nomeEvento, :txtEvento, :dataHoraEvento, :urlFotoEvento, :idUsuario)";
 
-    private static $UPDATE = "UPDATE evento SET nome_evento = :nomeEvento, txt_evento = :txtEvento, data_hora_evento = :dataHoraEvento,url_foto_evento = :urlFotoEvento WHERE id_evento = :idEvento AND id_usuario = :idUsuario";
+    private static $UPDATE = "UPDATE evento SET nome_evento = :nomeEvento, txt_evento = :txtEvento, data_hora_evento = :dataHoraEvento,url_foto_evento = :urlFotoEvento WHERE id_evento = :idEvento";
 
     //DELETE lógico -> altera status
     private static $DELETE = "DELETE FROM evento WHERE id_evento = :idEvento";
@@ -129,7 +129,6 @@ class EventoDAO extends Evento
                 ':nomeEvento' => array(0 => $this->getNomeEvento(), 1 => \PDO::PARAM_STR),
                 ':txtEvento' => array(0 => $this->getTxtEvento(), 1 => \PDO::PARAM_STR),
                 ':dataHoraEvento' => array(0 => $this->getDataHoraEvento(), 1 => \PDO::PARAM_STR),
-                ':idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT),
                 ':urlFotoEvento' => array(0 => $this->getUrlFotoEvento(), 1 => \PDO::PARAM_STR)
             )
         );

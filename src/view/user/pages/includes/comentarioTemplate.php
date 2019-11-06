@@ -12,11 +12,15 @@ if (isset($_POST['enviarComentario'])) {
     }
     if ($erro == false) {
 
-        if ($pagina != "paginaSebo") {
-            $comentarioDAO->setIdPost($GetPost);
-        } else {
-            $comentarioDAO->setIdPagina($GetPost);
+        if ($pagina == "paginaSebo") {
+            $setModo = "setIdPagina";
+        } else if ($pagina == "paginaEvento") {
+            $setModo = "setIdEvento";
+        } else if ($pagina == "paginaLivro" || $pagina == "paginaPost") {
+            $setModo = "setIdPost";
         }
+        // var_dump($pagina);
+        $comentarioDAO->$setModo($GetPost);
 
         $comentarioDAO->setIdUsuario($idUser);
         $comentarioDAO->setDataHoraComentario(date('Y-m-d H:i:s'));
