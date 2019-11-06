@@ -49,7 +49,7 @@ $usuarioController->gravarAlterar();
 		<label>Usuario</label>
 		<input class="grande" type="text" id="nomeUsuario" name="nomeUsuario" onblur="validarNomeUsuario('<?= _URLBASE_ ?>src/view/adm/cadastro/cadUsuarioAjax.php', 'txtNomeCat='+this.value, 'nomeUsuario')" value="<?= $usuarioController->getUsuarioDAO()->getNomeUsuario(); ?>" placeholder='Nome'>
 
-		<input class="grande" type="text" id="sobrenomeUsuario" name="sobrenomeUsuario" value="<?= $usuarioController->getUsuarioDAO()->getSobrenomeUsuario();?>" placeholder='Sobrenome'>
+		<input class="grande" type="text" id="sobrenomeUsuario" name="sobrenomeUsuario" value="<?= $usuarioController->getUsuarioDAO()->getSobrenomeUsuario(); ?>" placeholder='Sobrenome'>
 
 		<input class="grande" type="text" id="emailUsuario" name="emailUsuario" value="<?= $usuarioController->getUsuarioDAO()->getEmailUsuario(); ?>" placeholder='E-mail'>
 
@@ -60,7 +60,7 @@ $usuarioController->gravarAlterar();
 				<?php
 				//Listagem de perfis
 				$result = $usuarioController->getUsuarioDAO()->listarPerfil();
-				
+
 				foreach ($result as $linha) {
 
 					//  if($linha['idPerfil'] == $perfilCrontoller->getPerfilDAO()->getIdPerfil()){
@@ -75,13 +75,10 @@ $usuarioController->gravarAlterar();
 			</optgroup>
 		</select>
 
-		<label> </label>
+
 		<input class="buttonCancel" type="reset" value="Limpar">
 		<input class="button" type="submit" value="Enviar">
 	</form>
-	<br>
-	<br>
-	<br>
-	<br>
+
 	<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadUsuario">Voltar</a>
 </section>

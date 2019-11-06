@@ -113,7 +113,7 @@ class EventoDAO extends Evento
                 ':txtEvento' => array(0 => $this->getTxtEvento(), 1 => \PDO::PARAM_STR),
                 ':dataHoraEvento' => array(0 => $this->getDataHoraEvento(), 1 => \PDO::PARAM_STR),
                 ':idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT),
-                ':urlFotoEvento' => array(0 => $this->getUrlFotoEvento(), 1 => \PDO::PARAM_INT)
+                ':urlFotoEvento' => array(0 => $this->getUrlFotoEvento(), 1 => \PDO::PARAM_STR)
             )
         );
         //var_dump($result);
@@ -130,7 +130,7 @@ class EventoDAO extends Evento
                 ':txtEvento' => array(0 => $this->getTxtEvento(), 1 => \PDO::PARAM_STR),
                 ':dataHoraEvento' => array(0 => $this->getDataHoraEvento(), 1 => \PDO::PARAM_STR),
                 ':idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT),
-                ':urlFotoEvento' => array(0 => $this->getUrlFotoEvento(), 1 => \PDO::PARAM_INT)
+                ':urlFotoEvento' => array(0 => $this->getUrlFotoEvento(), 1 => \PDO::PARAM_STR)
             )
         );
         return $result;

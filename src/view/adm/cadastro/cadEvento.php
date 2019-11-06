@@ -6,6 +6,11 @@ $objSql = new Util\Sql($conn);
 $eventoController = new Controller\EventoController($objSql);
 $eventoController->gravarAlterar();
 
+//Caso evento ainda não ter foto seta a foto padrão
+if($eventoController->getEventoDAO()->getUrlFotoEvento() == ""){
+	$eventoController->getEventoDAO()->setUrlFotoEvento('public/img/imgEvento/imgPadrao/imgEventopadrao.jpg');
+}
+
 //$postagemDAO = new Model\PostagemDAO();
 //$frontController = new Controller\FrontController($postagemDAO);
 
@@ -36,8 +41,11 @@ $eventoController->gravarAlterar();
 	<form method="post" action="">
 		<h4 class="cadCat">Cadastro de Eventos</h4>
 
+		<label for="txtId">Id Evento</label>
 		<input type="text" name="txtId" id="txtId" value="<?php echo $eventoController->getEventoDAO()->getIdEvento() ?>">
+		<br>
 
+		<label for="idUsuario">Id Usuario</label>
 		<input type="text" name="idUsuario" id="idUsuario" value="<?php echo $eventoController->getEventoDAO()->getIdUsuario(); ?>">
 
 		<!-- <input type="text" name="dataHoraEvento" id="dataHoraEvento" value="<?//= date('Y-m-d H:i:s') ?>"> -->
@@ -49,7 +57,7 @@ $eventoController->gravarAlterar();
 		<!-- <input class="grande" type="text" id="txtNome" name="txtNome" onblur="validarNomeUsuario('". _URLBASE_ ."src/view/adm/cadastro/cadUsuarioAjax.php', 'txtNomeCat='+this.value, 'txtNome')"
 		 value="<?php //echo $eventoController->getEventoDAO()->getNomeUsuario(); 
 				?>"> -->
-
+		<br>
 		<label>Titulo</label>
 		<input class="grande" type="text" name="txtNome" value="<?= $eventoController->getEventoDAO()->getNomeEvento() ?>">
 		<br>
@@ -68,7 +76,7 @@ $eventoController->gravarAlterar();
 	</form>
 
 	<div class="img">
-		<form action="<?= _URLBASE_ ?>src/view/adm/cadastro/uploadAdm/postUploadImg.php" method='post' enctype='multipart/form-data' target='ifrmUpload' name="urlFotoEvento">
+		<form action="<?= _URLBASE_ ?>src/view/adm/cadastro/uploadAdm/eventoUploadImg.php" method='post' enctype='multipart/form-data' target='ifrmUpload' name="urlFotoEvento">
 
 			<input type="file" name="urlFotoEvento">
 
