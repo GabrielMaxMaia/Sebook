@@ -5,11 +5,17 @@
 			<div class="coluna1">
 				<h1>Mais Informações do site</h1>
 				<p>
-					SebooK é uma Plataforma Web dedicada aos amantes de livros usados com a principal missão de fornecer acesso ágil e eficiente
-					aos leitores na busca por livros em sua região. Oferecemos um sistema de Gestão de Acervos para os donos de sebos parceiros.
-					Promovemos interação entre sebos e leitores sob um enfoque social - através da Economia Solidária - incentivando assim
-					o consumo sustentável, pois, além de garantir economia ao leitor, trará visibilidade aos empreendedores desse mercado,
-					estimulando e fomentando de forma ecológica o consumo dessas obras dentro e fora dos grandes centros.
+					Sebook é uma plataforma web voltada aos amantes de livros
+					usados. Acreditamos na força da economia solidária e com isso
+					damos visibilidade aos empreendedores,incentivamos o consumo
+					sustentável de recursos  auxiliamos os leitores a pouparem tempo
+					e dinheiro ao comprar pela internet. A missão do Sebook é enriquecer 
+					culturalmente toda a comunidade com uma ação de baixo custo econômico,
+					viabilizando a interação leitor-sebo com nossa ferramenta de busca regionalizada.
+					Promovemos e incentivamos reciclagens de livros inservíveis para serem transformados em 
+					artesanatos e outras artes. Oferecemos um sistema de Gestão de Acervos para os sebos parceiros
+					do Sebook.
+
 				</p>
 			</div>
 			<div class="coluna2">
@@ -60,9 +66,9 @@
 			</div>
 
 			<div class="informar">
-				<a href="">Informação Companhia </a> |
-				<a href="">Privações e Politica </a> |
-				<a href="">Termos e Condições</a>
+				<a href="<?= _URLBASE_ ?>area/user/pages/centralDeAjuda" class="ajuda">Central de Ajuda </a> |
+				<a href="">Politica de Segurança </a> |
+				<a href="">Termos de Uso</a>
 			</div>
 		</div>
 	</div>
