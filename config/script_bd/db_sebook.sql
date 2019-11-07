@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 06-Nov-2019 às 05:07
+-- Generation Time: 07-Nov-2019 às 04:44
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.2
 
@@ -181,37 +181,47 @@ CREATE TABLE `comentario` (
   `txt_comentario` varchar(500) CHARACTER SET latin1 DEFAULT NULL,
   `data_hora_comentario` datetime DEFAULT NULL,
   `cod_status_comentario` varchar(10) CHARACTER SET latin1 DEFAULT '1',
-  `id_usuario` int(11) DEFAULT NULL,
   `id_post` varchar(255) COLLATE latin1_danish_ci DEFAULT NULL,
-  `id_pagina` varchar(255) COLLATE latin1_danish_ci DEFAULT NULL,
-  `id_comentario_parente` int(11) DEFAULT NULL,
   `id_evento` int(11) DEFAULT NULL,
-  `comentariocol` varchar(45) COLLATE latin1_danish_ci DEFAULT NULL
+  `id_usuario` int(11) DEFAULT NULL,
+  `id_comentario_parente` int(11) DEFAULT NULL,
+  `id_pagina` varchar(255) COLLATE latin1_danish_ci DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_danish_ci;
 
 --
 -- Extraindo dados da tabela `comentario`
 --
 
-INSERT INTO `comentario` (`id_comentario`, `txt_comentario`, `data_hora_comentario`, `cod_status_comentario`, `id_usuario`, `id_post`, `id_pagina`, `id_comentario_parente`, `id_evento`, `comentariocol`) VALUES
-(46, 'dsad', '2019-10-29 01:16:31', '1', 35, '9788535929225', '', 0, NULL, NULL),
-(45, 'muito bom', '2019-10-29 01:10:36', '1', 37, '9788573264241', '', 0, NULL, NULL),
-(44, 'Livro show', '2019-10-29 01:09:46', '1', 37, '9788516079444', '', 0, NULL, NULL),
-(43, 'eae', '2019-10-29 01:09:35', '1', 37, '0', '11', 0, NULL, NULL),
-(41, 'let\'s rock', '2019-10-29 01:08:41', '1', 37, '9788535928204', '', 0, NULL, NULL),
-(42, 'Oi ', '2019-10-29 01:09:07', '1', 37, '0', '35', 0, NULL, NULL),
-(39, 'show de boloa', '2019-10-29 01:06:55', '0', 35, '11', '11', 0, NULL, NULL),
-(40, 'eae', '2019-10-29 01:07:47', '1', 35, '0', '11', 0, NULL, NULL),
-(38, 'eae', '2019-10-29 01:06:20', '1', 35, '9788535928204', '', 0, NULL, NULL),
-(50, 'dsadsa', '2019-10-29 01:17:47', '0', 35, '0', '11', 0, NULL, NULL),
-(49, 'adsad', '2019-10-29 01:17:31', '1', 35, '9788516079444', '', 0, NULL, NULL),
-(51, 'dads', '2019-11-06 01:57:37', '1', 15, '0', '0', 0, 35, NULL),
-(52, 'er', '2019-11-06 02:00:24', '1', 15, '0', '35', 0, 0, NULL),
-(53, 'testes', '2019-11-06 02:00:56', '1', 15, '0', '', 0, 10, NULL),
-(54, 'teste em livro', '2019-11-06 02:03:19', '1', 15, '9788535928204', '', 0, 0, NULL),
-(55, 'teste em Sebo', '2019-11-06 02:03:47', '1', 15, '0', '35', 0, 0, NULL),
-(56, 'teste em postagem', '2019-11-06 02:04:21', '1', 15, '6', '', 0, 0, NULL),
-(57, 'teste em Eventos', '2019-11-06 02:05:11', '1', 15, '0', '', 0, 2, NULL);
+INSERT INTO `comentario` (`id_comentario`, `txt_comentario`, `data_hora_comentario`, `cod_status_comentario`, `id_post`, `id_evento`, `id_usuario`, `id_comentario_parente`, `id_pagina`) VALUES
+(46, 'dsad', '2019-10-29 01:16:31', '1', '9788535929225', NULL, 35, 0, ''),
+(45, 'muito bom', '2019-10-29 01:10:36', '1', '9788573264241', NULL, 37, 0, ''),
+(44, 'Livro show', '2019-10-29 01:09:46', '1', '9788516079444', NULL, 37, 0, ''),
+(43, 'eae', '2019-10-29 01:09:35', '1', '0', NULL, 37, 0, '11'),
+(41, 'let\'s rock', '2019-10-29 01:08:41', '1', '9788535928204', NULL, 37, 0, ''),
+(42, 'Oi ', '2019-10-29 01:09:07', '1', '0', NULL, 37, 0, '35'),
+(39, 'show de boloa', '2019-10-29 01:06:55', '0', '11', NULL, 35, 0, '11'),
+(40, 'eae', '2019-10-29 01:07:47', '1', '0', NULL, 35, 0, '11'),
+(38, 'eae', '2019-10-29 01:06:20', '1', '9788535928204', NULL, 35, 0, ''),
+(50, 'dsadsa', '2019-10-29 01:17:47', '0', '0', NULL, 35, 0, '11'),
+(49, 'adsad', '2019-10-29 01:17:31', '1', '9788516079444', NULL, 35, 0, ''),
+(48, 'teste', '2019-10-29 01:17:24', '1', '5', NULL, 35, 0, ''),
+(47, 'dsad', '2019-10-29 01:16:37', '1', '5', NULL, 35, 0, ''),
+(51, 'rrr', '2019-10-31 10:16:36', '1', '0', NULL, 15, 0, '35'),
+(52, 'sad', '2019-10-31 10:22:26', '1', '0', NULL, 35, 0, '35'),
+(53, 'rrr', '2019-10-31 10:52:57', '1', '0', NULL, 35, 0, '35'),
+(54, 'rrr', '2019-10-31 11:02:53', '1', '9788501110367', NULL, 35, 0, ''),
+(55, 'teste', '2019-10-31 11:25:34', '1', '0', NULL, 15, 0, '11'),
+(56, 'eae', '2019-10-31 11:25:52', '1', '0', NULL, 37, 0, '11'),
+(57, '', '2019-10-31 11:30:07', '1', '0', NULL, 0, 0, ''),
+(58, 'OlÃ¡ mundo', '2019-11-03 01:09:34', '1', '4', NULL, 15, 0, ''),
+(59, 'eae', '2019-11-03 02:28:46', '1', '4', NULL, 35, 0, ''),
+(60, 'fsdkmgnoismdigoviomfsdiogbmiofdmiombgiomdfiobmiomdfibbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb', '2019-11-03 03:06:53', '1', '4', NULL, 35, 0, ''),
+(61, 'fsggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg', '2019-11-03 03:07:46', '1', '4', NULL, 35, 0, ''),
+(62, 'sdfdfg', '2019-11-03 03:07:50', '1', '4', NULL, NULL, 0, ''),
+(63, 'eae', '2019-11-03 03:12:32', '1', '9788535928204', NULL, NULL, 0, ''),
+(64, 'teste', '2019-11-03 18:40:04', '0', '4', NULL, 35, 0, ''),
+(65, 'Talvez vocÃª possa encontrar o caminho para casa lendo esse livro...', '2019-11-03 19:11:08', '1', '9788535928204', NULL, 15, 0, ''),
+(66, 'teste', '2019-11-07 01:23:30', '1', '0', 3, 15, 0, '');
 
 -- --------------------------------------------------------
 
@@ -284,22 +294,20 @@ CREATE TABLE `evento` (
   `id_evento` int(11) NOT NULL,
   `nome_evento` varchar(255) DEFAULT NULL,
   `txt_evento` varchar(255) DEFAULT NULL,
-  `data_hora_evento` datetime DEFAULT NULL,
+  `data_evento` date DEFAULT NULL,
+  `hora_evento` time DEFAULT NULL,
   `id_usuario` int(11) DEFAULT NULL,
-  `url_foto_evento` varchar(255) DEFAULT 'public/img/imgEvento/imgPadrao/imgEventopadrao.jpg'
+  `url_foto_evento` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `evento`
 --
 
-INSERT INTO `evento` (`id_evento`, `nome_evento`, `txt_evento`, `data_hora_evento`, `id_usuario`, `url_foto_evento`) VALUES
-(2, 'Estudandos', '                                                                                                                              OlÃ¡                                                                                              ', '0000-00-00 00:00:00', 11, 'public/img/imgEvento/Big_MASK.jpg'),
-(3, 'Estudando Psssrogramaï¿½ï¿½o atï¿½ nï¿½o aguentar mais', 'Olï¿½ mundo', '2019-11-04 00:00:00', 1, 'public/img/imgEvento/imgPadrao/imgEventopadrao.jpg'),
-(5, 'asfsdggdgdfg', '                fdsfsd            ', '2019-11-13 00:00:00', 14, 'public/img/imgEvento/imgPadrao/imgEventopadrao.jpg'),
-(8, 'teste', '8', '2019-11-04 22:00:00', 35, 'public/img/imgEvento/imgPadrao/imgEventopadrao.jpg'),
-(9, 'teste', 'eae', '2019-11-06 00:00:00', 15, 'public/img/imgEvento/imgPadrao/imgEventopadrao.jpg'),
-(10, 'testeCriando', 'rerasrfsfesdf', '2019-07-09 00:00:00', 15, 'public/img/imgEvento/danSmith.jpg');
+INSERT INTO `evento` (`id_evento`, `nome_evento`, `txt_evento`, `data_evento`, `hora_evento`, `id_usuario`, `url_foto_evento`) VALUES
+(1, 'Estudando Programaï¿½ï¿½o atï¿½ nï¿½o aguentar mais', 'Olï¿½ mundo            ', '2019-11-04', '04:05:00', 35, 'public/img/imgEvento/Big_Dan.jpg'),
+(2, 'Estudando', 'OlÃ¡                      ', '2019-11-04', '02:06:00', 11, 'public/img/imgEvento/Big_Harman.jpg'),
+(3, 'Estudando Programaï¿½ï¿½o atï¿½ nï¿½o aguentar mais', '                Olï¿½ mundo            ', '2019-11-04', '00:00:00', 1, 'public/img/imgEvento/Big_MASK.jpg');
 
 -- --------------------------------------------------------
 
@@ -542,9 +550,9 @@ INSERT INTO `postagem` (`id_post`, `data_hora_post`, `link_post`, `url_foto_post
 (14, '2019-10-27 01:03:50', NULL, '', 'tewtf', 'PHP', '1', 15),
 (15, '2019-10-27 01:04:01', NULL, '', 'dsad', 'dasd', '1', 15),
 (16, '2019-10-29 01:02:08', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', '                dsad            ', 'eaeeeeeeeea', '1', 35),
-(17, '2019-10-29 01:02:57', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', 'sadasas            ', 'PHPdsadsa', '0', 35),
+(17, '2019-10-29 01:02:57', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', 'sadasas            ', 'PHPdsadsa', '1', 35),
 (18, '2019-10-31 12:02:01', NULL, 'public/img/imgPost/Divulgac  a  o Face Panorama Especial Arte _Cultura.jpg', 'aaa', 'teste', '1', 15),
-(19, '2019-11-05 22:05:58', NULL, 'public/img/imgPost/imgPadrao/padrao.jpg', 'Hello there...s', 'PHP', '1', 15);
+(19, '2019-11-07 01:35:24', NULL, 'public/img/imgPost/Russianroulette.jpg', 'aaa', 'teste', '1', 15);
 
 -- --------------------------------------------------------
 
@@ -822,7 +830,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT for table `comentario`
 --
 ALTER TABLE `comentario`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT for table `editora`
@@ -840,7 +848,7 @@ ALTER TABLE `emails_lidos`
 -- AUTO_INCREMENT for table `evento`
 --
 ALTER TABLE `evento`
-  MODIFY `id_evento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_evento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `links_emails`

@@ -8,7 +8,7 @@ namespace Model;
 class PostagemDAO extends Postagem
 {
     //Atributos - serão os comandos SQL  + um objeto Sql
-    private static $SELECT_ALL = "select * from postagem where cod_status_post = '1'";
+    private static $SELECT_ALL = "SELECT * FROM postagem WHERE cod_status_post = '1' ORDER BY id_post DESC";
 
     private static $SELECT_TOT = "SELECT count(id_post) as tot from postagem where cod_status_post = '1'";
 
