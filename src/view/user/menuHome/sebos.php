@@ -10,6 +10,9 @@ $pesquisaSebo =  _URLBASE_ . "src/view/user/pages/includes/pesquisaSebo.php";
         <div class="input-prepend">
             <input type="text" name="pesquisaSebo" id="pesquisaSebo" value="" tabindex="1" placeholder="Pesquisar Sebos...">
         </div>
+        <div class="input-prepend">
+            <input type="text" name="pesquisaCidade" id="pesquisaCidade" value="" tabindex="1" placeholder="Digite a cidade...">
+        </div>
     </form>
 
     <form action="search-box" name="form_pesquisa" id="form_pesquisa" method="post" action="">
@@ -89,6 +92,33 @@ $pesquisaSebo =  _URLBASE_ . "src/view/user/pages/includes/pesquisaSebo.php";
             });
 
             $('#pesquisaSebo').change(function() {
+
+                var valores = $('#form_pesquisa').serialize() //o serialize retorna uma string pronta para ser enviada
+
+                //pegando o valor do campo #pesquisaSebo
+                var $parametro = $(this).val();
+
+                if ($parametro.length >= 1) {
+                    load_dados(valores, '<?= $pesquisaSebo ?>', '#MostraPesq');
+                } else {
+                    load_dados(null, '<?= $pesquisaSebo ?>', '#MostraPesq');
+                }
+            });
+            $('#pesquisaCidade').keyup(function() {
+
+                var valores = $('#form_pesquisa').serialize() //o serialize retorna uma string pronta para ser enviada
+
+                //pegando o valor do campo #pesquisaSebo
+                var $parametro = $(this).val();
+
+                if ($parametro.length >= 1) {
+                    load_dados(valores, '<?= $pesquisaSebo ?>', '#MostraPesq');
+                } else {
+                    load_dados(null, '<?= $pesquisaSebo ?>', '#MostraPesq');
+                }
+            });
+
+            $('#pesquisaCidade').change(function() {
 
                 var valores = $('#form_pesquisa').serialize() //o serialize retorna uma string pronta para ser enviada
 
