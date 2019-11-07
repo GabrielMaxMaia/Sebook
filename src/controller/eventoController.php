@@ -145,7 +145,8 @@ class EventoController
             $this->eventoDAO->setIdUsuario($_POST['idUsuario']);
             $this->eventoDAO->setNomeEvento($_POST['txtNome']);
             $this->eventoDAO->setTxtEvento($_POST['txtEvento']);
-            $this->eventoDAO->setDataHoraEvento($_POST['dataHoraEvento']);
+            $this->eventoDAO->setDataEvento($_POST['dataEvento']);
+            $this->eventoDAO->setHoraEvento($_POST['horaEvento']);
             $this->eventoDAO->setUrlFotoEvento($_POST['txtImg']);
         }
     }
@@ -206,7 +207,8 @@ class EventoController
             $this->eventoDAO->setIdUsuario($evento['idUsuario']);
             $this->eventoDAO->setTxtEvento($evento['txtEvento']);
             $this->eventoDAO->setUrlFotoEvento($evento['urlFotoEvento']);
-            $this->eventoDAO->setDataHoraEvento($evento['dataHoraEvento']);
+            $this->eventoDAO->setDataEvento($evento['dataEvento']);
+            $this->eventoDAO->setHoraEvento($evento['horaEvento']);
         }
     }
 

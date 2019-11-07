@@ -17,7 +17,9 @@ class SeboDAO extends Sebo
 
     // private static $SELECT_NOME_SEBO = "SELECT * FROM sebo WHERE nome_fantasia like :nomeFantasia ORDER BY nome_fantasia ASC";
     
-    private static $SELECT_CIDADE_SEBO = "SELECT * FROM sebo INNER JOIN usuario ON sebo.id_usuario = usuario.id_usuario AND cidade_sebo like :cidadeSebo OR nome_fantasia = :nomeFantasia ORDER BY nome_fantasia ASC";
+    private static $SELECT_NOME_SEBO = "SELECT * FROM sebo INNER JOIN usuario ON sebo.id_usuario = usuario.id_usuario AND nome_fantasia like :nomeFantasia ORDER BY nome_fantasia ASC";
+
+    private static $SELECT_CIDADE_SEBO = "SELECT * FROM sebo INNER JOIN usuario ON sebo.id_usuario = usuario.id_usuario AND cidade_sebo like :cidadeSebo OR nome_fantasia like :nomeFantasia ORDER BY id_usuario ASC";
 
     // $this->sql, $usuario->last_id, null, null, null, null, null, null, null, null, null, null, null, null, null, '1'
 
@@ -108,10 +110,59 @@ class SeboDAO extends Sebo
         //     )
         // );
         $result = $this->sql->query(
+            seboDAO::$SELECT_NOME_SEBO
+            ,array(
+                // ':cidadeSebo' => array(0 => $this->getCidadeSebo() . "%", 1 => \PDO::PARAM_STR),
+                ':nomeFantasia' => array(0 => $this->getNomeFantasia() . "%", 1 => \PDO::PARAM_STR)
+            )
+        );
+        //devolver o resultado
+
+        if ($result->rowCount() > 0) {
+            while ($linha = $result->fetch(\PDO::FETCH_OBJ)) {
+                $itens[] = array(
+                    'idUsuario' => $linha->id_usuario,
+                    'razaoSebo' => $linha->razao_sebo,
+                    'nomeFantasia' => $linha->nome_fantasia,
+                    'cnpjSebo' => $linha->cnpj_sebo,
+                    'cidadeSebo' => $linha->cidade_sebo,
+                    'numEndSebo' => $linha->num_end_sebo,
+                    'complEndSebo' => $linha->compl_end_sebo,
+                    'logradouroSebo' => $linha->logradouro_sebo,
+                    'cepEndSebo' => $linha->cep_end_sebo,
+                    'numTelSebo' => $linha->num_tel_sebo,
+                    'celular1Sebo' => $linha->celular_1_sebo,
+                    'celular2Sebo' => $linha->celular_2_sebo,
+                    'inscEstadualSebo' => $linha->insc_estadual_sebo,
+                    'urlSiteSebo' => $linha->url_site_sebo,
+                    'codStatusSebo' => $linha->cod_status_sebo,
+                    'urlFoto' => $linha->url_foto
+                );
+            }
+        } else {
+            $itens = null;
+        }
+        return $itens;
+    }
+    public function listarCidade()
+    {
+        // if ($ini >= 0) {
+        //     $limit = " limit $ini , $qtde ";
+        // } else {
+        //     $limit = "";
+        // }
+
+        //executar a consulta no banco
+        // $result = $this->sql->query(
+        //     seboDAO::$SELECT_CIDADE_SEBO . $limit,
+        //     array(
+        //         ':cidadeSebo' => array(0 => "%" . $this->getCidadeSebo() . "%", 1 => \PDO::PARAM_STR)
+        //     )
+        // );
+        $result = $this->sql->query(
             seboDAO::$SELECT_CIDADE_SEBO
             ,array(
-                ':cidadeSebo' => array(0 => $this->getCidadeSebo() . "%", 1 => \PDO::PARAM_STR),
-                ':nomeFantasia' => array(0 => $this->getCidadeSebo() . "%", 1 => \PDO::PARAM_STR)
+                ':cidadeSebo' => array(0 => $this->getCidadeSebo() . "%", 1 => \PDO::PARAM_STR)
             )
         );
         //devolver o resultado

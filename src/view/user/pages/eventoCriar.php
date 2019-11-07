@@ -23,7 +23,8 @@ include "includes/evitarReenvio.php";
 if (isset($_POST['enviar']) != null || "") {
 	$eventoDAO->setNomeEvento($_POST['nomeEvento']);
 	$eventoDAO->setTxtEvento($_POST['txtEvento']);
-	$eventoDAO->setDataHoraEvento($_POST['dataHoraEvento']);
+	$eventoDAO->setDataEvento($_POST['dataEvento']);
+    $eventoDAO->setHoraEvento($_POST['horaEvento']);
 	$eventoDAO->setUrlFotoEvento($_POST['txtImg']);
 
 	//Chama a função listaPostagemId
@@ -40,8 +41,9 @@ if ($IdSessaoUser != null || "") {
 		<span>Nome do Evento</span><br>
 		<input type="text" name="nomeEvento"><br><br>
 
-		<span>Data<span>
-		<input type="date" name="dataHoraEvento" id="dataHoraEvento">
+		<input class="grande" type="date" name="dataEvento" id="dataEvento" value="<?= $eventoDAO->getDataEvento() ?>">
+		
+		<input class="grande" type="time" name="horaEvento" id="horaEvento" min="00:00" max="23:59" value="<?= $eventoDAO->getHoraEvento() ?>">
 
 		<span>Descrição</span><br>
 		<textarea name="txtEvento" cols="25" rows="5"></textarea>

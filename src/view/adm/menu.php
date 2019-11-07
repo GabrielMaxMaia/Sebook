@@ -28,7 +28,7 @@
 			<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadSebo">Sebos</a>
 		</li>
 		<li>
-			<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadSeboLivro">SeboLivro</a>
+			<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadSeboLivro">Acervo</a>
 		</li>
 		<li>
 			<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadAutor">Autor</a>

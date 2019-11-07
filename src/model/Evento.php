@@ -10,17 +10,19 @@ class Evento
 	private $idEvento;
 	private $nomeEvento;
 	private $txtEvento;
-	private $dataHoraEvento;
+	private $dataEvento;
+	private $horaEvento;
 	private $idUsuario;
 	private $urlFotoEvento;
 
 	//Método construtor auxiliar de criação de objetos
-	public function __construct($idEvento = "", $nomeEvento = "", $txtEvento = "", $dataHoraEvento = "", $idUsuario = "", $urlFotoEvento = "")
+	public function __construct($idEvento = "", $nomeEvento = "", $txtEvento = "", $dataEvento = "", $horaEvento = "", $idUsuario = "", $urlFotoEvento = "")
 	{
 		$this->idEvento = $idEvento;
 		$this->nomeEvento = $nomeEvento;
 		$this->txtEvento = $txtEvento;
-		$this->dataHoraEvento = $dataHoraEvento;
+		$this->dataEvento = $dataEvento;
+		$this->horaEvento = $horaEvento;
 		$this->idUsuario = $idUsuario;
 		$this->urlFotoEvento = $urlFotoEvento;
 	}
@@ -50,12 +52,20 @@ class Evento
 		$this->txtEvento = $txtEvento;
 	}
 
-	public function getDataHoraEvento(){
-		return $this->dataHoraEvento;
+	public function getDataEvento(){
+		return $this->dataEvento;
 	}
 
-	public function setDataHoraEvento($dataHoraEvento){
-		$this->dataHoraEvento = $dataHoraEvento;
+	public function setDataEvento($dataEvento){
+		$this->dataEvento = $dataEvento;
+	}
+
+	public function getHoraEvento(){
+		return $this->horaEvento;
+	}
+
+	public function setHoraEvento($horaEvento){
+		$this->horaEvento = $horaEvento;
 	}
 
 	public function getIdUsuario(){
@@ -81,7 +91,8 @@ class Evento
 			'idEvento' => $this->idEvento,
 			'nomeEvento' => $this->nomeEvento,
 			'txtEvento' => $this->txtEvento,
-			'dataHoraEvento' => $this->dataHoraEvento,
+			'dataEvento' => $this->dataEvento,
+			'horaEvento' => $this->horaEvento,
 			'idUsuario' => $this->idUsuario,
 			'urlFotoEvento' => $this->urlFotoEvento
 		));

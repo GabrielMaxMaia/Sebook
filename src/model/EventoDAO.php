@@ -8,16 +8,16 @@ namespace Model;
 class EventoDAO extends Evento
 {
     //Atributos - serão os comandos SQL  + um objeto Sql
-    private static $SELECT_ALL = "select * from evento";
+    private static $SELECT_ALL = "SELECT * FROM evento ORDER BY id_evento DESC";
 
     private static $SELECT_TOT = "SELECT count(id_evento) as tot from evento";
 
     private static $SELECT_ID = "SELECT * from evento where id_evento = :idEvento";
 
-    private static $INSERT = "INSERT INTO evento (nome_evento,txt_evento,data_hora_evento, url_foto_evento, id_usuario)
-    VALUES (:nomeEvento, :txtEvento, :dataHoraEvento, :urlFotoEvento, :idUsuario)";
+    private static $INSERT = "INSERT INTO evento (nome_evento,txt_evento,data_evento,hora_evento, url_foto_evento, id_usuario)
+    VALUES (:nomeEvento, :txtEvento, :dataEvento,:horaEvento, :urlFotoEvento, :idUsuario)";
 
-    private static $UPDATE = "UPDATE evento SET nome_evento = :nomeEvento, txt_evento = :txtEvento, data_hora_evento = :dataHoraEvento,url_foto_evento = :urlFotoEvento WHERE id_evento = :idEvento";
+    private static $UPDATE = "UPDATE evento SET nome_evento = :nomeEvento, txt_evento = :txtEvento, data_evento = :dataEvento, hora_evento = :horaEvento,url_foto_evento = :urlFotoEvento WHERE id_evento = :idEvento";
 
     //DELETE lógico -> altera status
     private static $DELETE = "DELETE FROM evento WHERE id_evento = :idEvento";
@@ -26,9 +26,9 @@ class EventoDAO extends Evento
     private $sql;
 
     //Método Construtor - setamos os parametros e passamos um obj SQL
-    public function __construct($objSql = "", $idEvento = "", $nomeEvento = "", $txtEvento = "", $dataHoraEvento = "", $idUsuario = "", $urlFotoEvento = "")
+    public function __construct($objSql = "", $idEvento = "", $nomeEvento = "", $txtEvento = "", $dataEvento = "", $horaEvento = "", $idUsuario = "", $urlFotoEvento = "")
     {
-        parent::__construct($idEvento, $nomeEvento, $txtEvento, $dataHoraEvento, $idUsuario, $urlFotoEvento);
+        parent::__construct($idEvento, $nomeEvento, $txtEvento, $dataEvento, $horaEvento, $idUsuario, $urlFotoEvento);
         $this->sql = $objSql;
     }
 
@@ -54,7 +54,8 @@ class EventoDAO extends Evento
                     'idEvento' => $linha->id_evento,
                     'nomeEvento' => $linha->nome_evento,
                     'txtEvento' => $linha->txt_evento,
-                    'dataHoraEvento' => $linha->data_hora_evento,
+                    'dataEvento' => $linha->data_evento,
+                    'horaEvento' => $linha->hora_evento,
                     'idUsuario' => $linha->id_usuario,
                     'urlFotoEvento' => $linha->url_foto_evento
                 );
@@ -92,7 +93,8 @@ class EventoDAO extends Evento
                 'idEvento' => $linha->id_evento,
                 'nomeEvento' => $linha->nome_evento,
                 'txtEvento' => $linha->txt_evento,
-                'dataHoraEvento' => $linha->data_hora_evento,
+                'dataEvento' => $linha->data_evento,
+                'horaEvento' => $linha->hora_evento,
                 'idUsuario' => $linha->id_usuario,
                 'urlFotoEvento' => $linha->url_foto_evento
             );
@@ -111,7 +113,8 @@ class EventoDAO extends Evento
             array(
                 ':nomeEvento' => array(0 => $this->getNomeEvento(), 1 => \PDO::PARAM_STR),
                 ':txtEvento' => array(0 => $this->getTxtEvento(), 1 => \PDO::PARAM_STR),
-                ':dataHoraEvento' => array(0 => $this->getDataHoraEvento(), 1 => \PDO::PARAM_STR),
+                ':dataEvento' => array(0 => $this->getDataEvento(), 1 => \PDO::PARAM_STR),
+                ':horaEvento' => array(0 => $this->getHoraEvento(), 1 => \PDO::PARAM_STR),
                 ':idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT),
                 ':urlFotoEvento' => array(0 => $this->getUrlFotoEvento(), 1 => \PDO::PARAM_STR)
             )
@@ -128,7 +131,8 @@ class EventoDAO extends Evento
                 ':idEvento' => array(0 => $this->getIdEvento(), 1 => \PDO::PARAM_INT),
                 ':nomeEvento' => array(0 => $this->getNomeEvento(), 1 => \PDO::PARAM_STR),
                 ':txtEvento' => array(0 => $this->getTxtEvento(), 1 => \PDO::PARAM_STR),
-                ':dataHoraEvento' => array(0 => $this->getDataHoraEvento(), 1 => \PDO::PARAM_STR),
+                ':dataEvento' => array(0 => $this->getDataEvento(), 1 => \PDO::PARAM_STR),
+                ':horaEvento' => array(0 => $this->getHoraEvento(), 1 => \PDO::PARAM_STR),
                 ':urlFotoEvento' => array(0 => $this->getUrlFotoEvento(), 1 => \PDO::PARAM_STR)
             )
         );

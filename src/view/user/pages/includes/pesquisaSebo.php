@@ -8,8 +8,9 @@ $seboDAO = new Model\SeboDAO($objSql);
 
 $parametro = isset($_POST['pesquisaSebo']) ? $_POST['pesquisaSebo'] : false;
 $seboDAO->setCidadeSebo($parametro);
+// $seboDAO->setNomeFantasia($parametro);
 //$resultado = $seboDAO->listarNomeSebos();
-$resultado = $seboDAO->listarSebosCidade();
+$resultado = $seboDAO->listarSebos();
 var_dump($resultado);
 //recebemos nosso parâmetro vindo do form
 $msg = "";

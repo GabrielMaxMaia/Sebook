@@ -18,6 +18,8 @@ $eventoDAO->setIdUsuario($resultEvento['idUsuario']);
 $eventoDAO->setNomeEvento($resultEvento['nomeEvento']);
 $eventoDAO->setTxtEvento($resultEvento['txtEvento']);
 $eventoDAO->setUrlFotoEvento($resultEvento['urlFotoEvento']);
+$eventoDAO->setDataEvento($resultEvento['dataEvento']);
+$eventoDAO->setHoraEvento($resultEvento['horaEvento']);
 // var_dump($resultEvento);
 
 $comentarioDAO->setIdEvento($GetPost);

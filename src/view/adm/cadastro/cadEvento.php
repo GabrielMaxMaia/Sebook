@@ -18,7 +18,7 @@ if($eventoController->getEventoDAO()->getUrlFotoEvento() == ""){
 
 <section class="<?php echo $eventoController->getLista(); ?>">
 
-	<h2>Postagens</h2>
+	<h2>Eventos</h2>
 	<tbody>
 		<?php
 			echo $eventoController->listarEvento();
@@ -66,11 +66,14 @@ if($eventoController->getEventoDAO()->getUrlFotoEvento() == ""){
 		<br>
 		
 		<label>Data</label>
-		<input class="grande" type="text" name="dataHoraEvento" id="dataHoraEvento" value="<?= $eventoController->getEventoDAO()->getDataHoraEvento() ?>">
+		<input class="grande" type="date" name="dataEvento" id="dataEvento" value="<?= $eventoController->getEventoDAO()->getDataEvento() ?>">
+		<br>
+		<label>Hora</label>
+		<input class="grande" type="time" name="horaEvento" id="horaEvento" min="00:00" max="23:59" value="<?= $eventoController->getEventoDAO()->getHoraEvento() ?>">
 		<br>
 
 		<input type="hidden" name="txtImg" id="txtImg" value="<?= $eventoController->getEventoDAO()->getUrlFotoEvento() ?>">
-
+		<br>
 		<input class="buttonCancel" type="reset" value="Limpar">
 		<input class="button" type="submit" value="Enviar">
 	</form>

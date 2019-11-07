@@ -85,6 +85,21 @@ div#containerTemplate {
 }
 
 /*===================AREA DO AJUDA====================*/
+
+.ajuda {
+    width: 100%;
+    position: relative;
+    margin: auto;
+    box-sizing: border-box;
+    max-width: 460px;
+    align-self: center
+}
+ 
+.ajuda .container h1 {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 25px
+}
 .pergunta{
     max-width: 690px;
     margin: auto
@@ -105,27 +120,10 @@ div#containerTemplate {
     border: 1px solid #ccc
 }
 .pergunta .container p{
-    line-height: 1.3rem;
+    line-height: 1.35rem;
     padding: 1rem;
-    text-align: justify;
-    font-family:Arial, Helvetica, sans-serif;
+    text-align: justify
 }
-
-.ajuda {
-    width: 100%;
-    position: relative;
-    margin: auto;
-    box-sizing: border-box;
-    max-width: 460px;
-    align-self: center
-}
- 
-.ajuda .container h1 {
-    font-size: 30px;
-    text-align: center;
-    margin-top: 25px
-}
-
 .ajuda .container p {
     line-height: 1.35rem;
     padding: 1rem;
@@ -2017,3 +2015,4 @@ section.jumbotron{
 .modifica.danger{
     background:#b22;
 }
+
