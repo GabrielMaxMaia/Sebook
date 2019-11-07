@@ -10,21 +10,17 @@ $pesquisaSebo =  _URLBASE_ . "src/view/user/pages/includes/pesquisaSebo.php";
         <div class="input-prepend">
             <input type="text" name="pesquisaSebo" id="pesquisaSebo" value="" tabindex="1" placeholder="Pesquisar Sebos...">
         </div>
-        <div class="input-prepend">
+        <!-- <div class="input-prepend">
             <input type="text" name="pesquisaCidade" id="pesquisaCidade" value="" tabindex="1" placeholder="Digite a cidade...">
-        </div>
-    </form>
-
-    <form action="search-box" name="form_pesquisa" id="form_pesquisa" method="post" action="">
-        <label for="">Encontre Sebos de sua Cidade</label>
+        </div> -->
         <div class="input-prepend">
-            <select name="cidadeSP">
+            <select name="pesquisaCidade" id="pesquisaCidade">
                 <?php
                 //Inclui o arquivo de array cidades
                 include "src/view/user/pages/includes/arrayCidades.php";
                 foreach ($cidades as $cidade) {
                     ?>
-                    <option value="<?= $cidade ?>" name="pesquisaSebo" id="pesquisaSebo" value="" tabindex="1"><?= $cidade ?></option>
+                    <option value="<?= $cidade ?>" name="pesquisaCidade" id="pesquisaCidade" value="" tabindex="1"><?= $cidade ?></option>
                 <?php
                 }
                 ?>
