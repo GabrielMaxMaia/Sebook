@@ -98,7 +98,6 @@ class FrontController
             $this->paginaAtual = $pagina;
             //calculo do registro inicial;
             $this->regIni = ($this->paginaAtual - 1) * $this->itemPagina;
-           
         }
     }
 
@@ -106,9 +105,13 @@ class FrontController
     {
         //
         //ceil($this->modoDAO->totalContar() / $this->itemPagina);
-        if($totalSebo == false){
-            $qtdePaginas = ceil($this->modoDAO->totalContar() / $this->itemPagina);
-        }else{
+        if ($totalSebo == false) {
+            if (isset($totalUser)) {
+                $qtdePaginas = ceil($this->modoDAO->totalContarUser() / $this->itemPagina);
+            } else {
+                $qtdePaginas = ceil($this->modoDAO->totalContar() / $this->itemPagina);
+            }
+        } else {
             $qtdePaginas = ceil($this->modoDAO->totalContarSebo($GetPost) / $this->itemPagina);
         }
         $notificador = "<ul class='ulNote'>";
