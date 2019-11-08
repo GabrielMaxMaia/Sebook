@@ -1,14 +1,16 @@
 <?php
 
 use Model\PostagemDAO;
-use Controller\PostagemController;
+//use Controller\PostagemController;
 
 //Pega a conexão
 $sql = new \Util\Sql($conn);
 //Passa a conexão para o dao
 $postagemDAO = new PostagemDAO($sql);
+
 //Passa a conexão para o controller
-$postagemController = new PostagemController($sql);
+//$postagemController = new PostagemController($sql);
+
 //Armazena em result para o laço
 $result = $postagemDAO->listarPostagem();
 

@@ -1,14 +1,16 @@
 <?php
 
 use Model\EventoDAO;
-use Controller\EventoController;
+// use Controller\EventoController;
 
 //Pega a conexão
 $sql = new \Util\Sql($conn);
 //Passa a conexão para o dao
 $eventoDAO = new EventoDAO($sql);
+
 //Passa a conexão para o controller
-$eventoController = new EventoController($sql);
+//$eventoController = new EventoController($sql);
+
 //Armazena em result para o laço
 $result = $eventoDAO->listarEvento();
 

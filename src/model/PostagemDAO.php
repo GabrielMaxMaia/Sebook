@@ -10,6 +10,8 @@ class PostagemDAO extends Postagem
     //Atributos - serão os comandos SQL  + um objeto Sql
     private static $SELECT_ALL = "SELECT * FROM postagem WHERE cod_status_post = '1' ORDER BY id_post DESC";
 
+    private static $SELECT_ULTIMOS = "SELECT * FROM postagem WHERE cod_status_post = '1' ORDER BY id_post DESC LIMIT 2";
+
     private static $SELECT_TOT = "SELECT count(id_post) as tot from postagem where cod_status_post = '1'";
 
     private static $SELECT_ID = "SELECT * from postagem where id_post = :idPostagem";
@@ -46,6 +48,33 @@ class PostagemDAO extends Postagem
         //executar a consulta no banco
         $result = $this->sql->query(
             PostagemDAO::$SELECT_ALL . $limit);
+
+        //var_dump($result);
+        //devolver o resultado
+        if ($result->rowCount() > 0) {
+            while ($linha = $result->fetch(\PDO::FETCH_OBJ)) {
+                $itens[] = array(
+                    'idPostagem' => $linha->id_post,
+                    'tituloPostagem' => $linha->titulo_post,
+                    'txtPostagem' => $linha->txt_postagem,
+                    'datahoraPost' => $linha->data_hora_post,
+                    'idUsuario' => $linha->id_usuario,
+                    'datahoraPost' => $linha->data_hora_post,
+                    'urlFotoPost' => $linha->url_foto_post
+                );
+            }
+            //var_dump($itens);
+        } else {
+            $itens = null;
+        }
+        return $itens;
+    }
+
+    public function listarUltimasPostagens()
+    {
+        //executar a consulta no banco
+        $result = $this->sql->query(
+            PostagemDAO::$SELECT_ULTIMOS);
 
         //var_dump($result);
         //devolver o resultado
