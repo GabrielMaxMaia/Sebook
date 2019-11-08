@@ -5,13 +5,15 @@
 			<div class="coluna1">
 				<h1>Mais Informações do site</h1>
 				<p>
-					Sebook é uma plataforma web voltada aos amantes de livros usados. Acreditamos na força da economia solidária
-					e com isso damos visibilidade aos empreendedores, incentivamos o consumo sustentável de recursos e auxiliamos
-					os leitores a pouparem tempo e dinheiro ao comprar pela internet.
-					A missão do Sebook é enriquecer culturalmente toda a comunidade com uma ação de baixo custo econômico, viabilizando
-					a interação leitor-sebo com nossa ferramenta de busca regionalizada.
-					Promovemos e incentivamos reciclagens de livros inservíveis para serem transformados em artesanatos e outras artes.
-					Oferecemos um sistema de Gestão de Acervos para os sebos parceiros do Sebook.
+				Sebook é uma plataforma web voltada aos amantes de livros usados. Acreditamos na força da economia solidária
+				e com isso damos visibilidade aos empreendedores, incentivamos o consumo sustentável de recursos e auxiliamos
+				os leitores a pouparem tempo e dinheiro ao comprar pela internet. 
+				A missão do Sebook é enriquecer culturalmente toda a comunidade com uma ação de baixo custo econômico, viabilizando
+				a interação leitor-sebo com nossa ferramenta de busca regionalizada. 
+				Promovemos e incentivamos reciclagens de livros inservíveis para serem transformados em artesanatos e outras artes.
+				Oferecemos um sistema de Gestão de Acervos para os sebos parceiros do Sebook.
+				
+
 				</p>
 			</div>
 			<div class="coluna2">
@@ -35,6 +37,13 @@
 					</a>
 				</div>
 			</div>
+			<h1 class="intro-copy"></h1>
+      
+      	<a class="top-link hide" href="" id="js-top">
+		  <img src="<?= _URLBASE_ ?>public/icon/arrow.svg" viewBox="0 0 12 6" ><path d="M12 6H0l6-6z" alt="Sebook">
+		<span class="screen-reader-text"></span>
+		
+      </a>
 			<div class="coluna3">
 				<h1>Entre em contato</h1>
 				<div class="row2">
@@ -63,8 +72,8 @@
 
 			<div class="informar">
 				<a href="<?= _URLBASE_ ?>area/user/pages/centralDeAjuda" class="ajuda">Central de Ajuda </a> |
-				<a href="">Politica de Segurança </a> |
-				<a href="">Termos de Uso</a>
+				<a href="<?= _URLBASE_ ?>area/user/pages/politicaDePrivacidade" class="Seguranca">Politica de Privacidade </a> |
+				<a href="<?= _URLBASE_ ?>area/user/pages/termosDeUso" class="Termos ">Termos de Uso</a>
 			</div>
 		</div>
 	</div>
@@ -86,6 +95,11 @@
 			</label>
 			<div class="ulCenter">
 				<ul>
+					<!--<li><a href="<?php
+										// echo _URLBASE_ 
+										?>src/view/user/pages/menu/sebos.php">SEBOS</a>
+					</li>-->
+					<ul>
 					<li>
 						<a href="<?= _URLBASE_ ?>">HOME</a>
 					</li>
@@ -100,20 +114,23 @@
 					</li>
 					<?php
 					if ($acessoUser != 4 && $acessoUser != null && $acessoUser != "") {
-						echo "<li><a href='" . _URLBASE_ . "area/user/pages/postCriar'>CRIAR POSTAGEM</a></a></li>";
+						echo "<li>
+								<a href='"._URLBASE_."area/user/pages/postCriar'>CRIAR POSTAGEM</a></a>
+							 </li>";
 					}
 					?>
 					<li>
-						<a href="<?= _URLBASE_ ?>area/user/menuHome/quemSomos">QUEM SOMOS</a>
+					<!--	<a href="<?= _URLBASE_ ?>area/user/menuHome/quemSomos">QUEM SOMOS</a>
 					</li>
 					<li>
 						<a href="<?= _URLBASE_ ?>area/user/menuHome/ajuda">FAQ</a>
 					</li>
-					<li>
+					<li>-->
 						<a href="<?= _URLBASE_ ?>area/user/geoLocalizacao/maisProximo">MAPA</a>
 					</li>
 				</ul>
 				</ul>
+				 
 			</div>
 		</div>
 	</nav>
