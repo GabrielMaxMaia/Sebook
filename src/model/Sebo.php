@@ -10,7 +10,9 @@ class Sebo {
     private $idUsuario;
     private $razaoSebo;
     private $nomeFantasia;
-    private $cnpjSebo;
+	private $cnpjSebo;
+	private $latitudeSebo;
+	private $longitudeSebo;
 	private $cidadeSebo;
     private $numEndSebo;
     private $complEndSebo;
@@ -24,11 +26,18 @@ class Sebo {
     private $codStatusSebo;
 
     //Método construtor auxiliar de criação de objetos
-    public function __construct($idUsuario = "", $razaoSebo = "", $nomeFantasia = "", $cnpjSebo = "", $cidadeSebo = "", $numEndSebo = "", $complEndSebo = "", $logradouroSebo = "", $cepEndSebo = "", $numTelSebo = "", $celular1Sebo = "", $celular2Sebo = "", $inscEstadualSebo = "", $urlSiteSebo = "", $codStatusSebo = "") {
+	public function __construct($idUsuario = "", $razaoSebo = "",
+					$nomeFantasia = "", $cnpjSebo = "", $cidadeSebo = "",
+					$latitudeSebo = "", $longitudeSebo = "", $numEndSebo = "",
+					$complEndSebo = "", $logradouroSebo = "", $cepEndSebo = "",
+					$numTelSebo = "", $celular1Sebo = "", $celular2Sebo = "",
+					$inscEstadualSebo = "", $urlSiteSebo = "", $codStatusSebo = "") {
         $this->idUsuario = $idUsuario;
         $this->razaoSebo = $razaoSebo;
         $this->nomeFantasia = $nomeFantasia;
-        $this->cnpjSebo = $cnpjSebo;
+		$this->cnpjSebo = $cnpjSebo;
+		$this->latitudeSebo = $latitudeSebo;
+		$this->longitudeSebo = $longitudeSebo;
         $this->cidadeSebo = $cidadeSebo;
         $this->numEndSebo = $numEndSebo;
         $this->complEndSebo = $complEndSebo;
@@ -73,6 +82,22 @@ class Sebo {
 
 	public function setCnpjSebo($cnpjSebo){
 		$this->cnpjSebo = $cnpjSebo;
+	}
+
+	public function getLatitudeSebo(){
+		return $this->latitudeSebo;
+	}
+
+	public function setLatitudeSebo($latitudeSebo){
+		$this->latitudeSebo = $latitudeSebo;
+	}
+
+	public function getLongitudeSebo(){
+		return $this->longitudeSebo;
+	}
+
+	public function setLongitudeSebo($logitudeSebo){
+		$this->longitudeSebo = $longitudeSebo;
 	}
 
 	public function getCidadeSebo(){
@@ -169,7 +194,9 @@ class Sebo {
             'idUsuario' => $this->idUsuario,
             'razaoSebo' => $this->razaoSebo,
             'nomeFantasia' => $this->nomeFantasia,
-            'cnpjSebo' => $this->cnpjSebo,
+			'cnpjSebo' => $this->cnpjSebo,
+			'latitudeSebo' => $this->latitudeSebo,
+			'logitudeSebo' => $this->logitudeSebo,
             'numEndSebo' => $this->numEndSebo,
             'cidadeSebo' => $this->cidadeSebo,
             'complEndSebo' => $this->complEndSebo,
