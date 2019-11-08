@@ -17,15 +17,16 @@ class SeboDAO extends Sebo
 
     // private static $SELECT_NOME_SEBO = "SELECT * FROM sebo WHERE nome_fantasia like :nomeFantasia ORDER BY nome_fantasia ASC";
     
-    private static $SELECT_NOME_SEBO = "SELECT * FROM sebo INNER JOIN usuario ON (sebo.id_usuario = usuario.id_usuario) WHERE nome_fantasia like :nomeFantasia AND cidade_sebo like :cidadeSebo ORDER BY nome_fantasia ASC";
+    private static $SELECT_NOME_SEBO = "SELECT * FROM sebo INNER JOIN usuario ON sebo.id_usuario = usuario.id_usuario AND nome_fantasia like :nomeFantasia ORDER BY nome_fantasia ASC";
 
-    private static $SELECT_CIDADE_SEBO = "SELECT * FROM sebo INNER JOIN 
-    usuario ON sebo.id_usuario = usuario.id_usuario AND cidade_sebo like :cidadeSebo ORDER BY sebo.id_usuario ASC";
+    private static $SELECT_CIDADE_SEBO = "SELECT * FROM sebo INNER JOIN usuario ON sebo.id_usuario = usuario.id_usuario AND cidade_sebo like :cidadeSebo OR nome_fantasia like :nomeFantasia ORDER BY id_usuario ASC";
 
-    private static $INSERT = "INSERT INTO sebo (id_usuario, razao_sebo, nome_fantasia, cnpj_sebo, cidade_sebo, num_end_sebo,compl_end_sebo, logradouro_sebo, cep_end_sebo,num_tel_sebo, celular_1_sebo, celular_2_sebo,insc_estadual_sebo, url_site_sebo) VALUES (:idUsuario, :razaoSebo, :nomeFantasia, :cnpjSebo, :cidadeSebo,:numEndSebo, :complEndSebo,:logradouroSebo, :cepEndSebo, :numTelSebo,:celular1Sebo, :celular2Sebo, :inscEstadualSebo, :urlSiteSebo)";
+    // $this->sql, $usuario->last_id, null, null, null, null, null, null, null, null, null, null, null, null, null, '1'
+
+    private static $INSERT = "INSERT INTO sebo (id_usuario, razao_sebo, nome_fantasia, cnpj_sebo, latitude_sebo, longitude_sebo, cidade_sebo, num_end_sebo,compl_end_sebo, logradouro_sebo, cep_end_sebo,num_tel_sebo, celular_1_sebo, celular_2_sebo,insc_estadual_sebo, url_site_sebo) VALUES (:idUsuario, :razaoSebo, :nomeFantasia, :cnpjSebo, :cidadeSebo,:numEndSebo, :complEndSebo,:logradouroSebo, :cepEndSebo, :numTelSebo,:celular1Sebo, :celular2Sebo, :inscEstadualSebo, :urlSiteSebo)";
 
     private static $UPDATE = "UPDATE sebo SET
-    razao_sebo = :razaoSebo, nome_fantasia =:nomeFantasia, cnpj_sebo =:cnpjSebo, cidade_sebo = :cidadeSebo, num_end_sebo =:numEndSebo, compl_end_sebo =:complEndSebo, logradouro_sebo =:logradouroSebo, cep_end_sebo =:cepEndSebo, num_tel_sebo =:numTelSebo, celular_1_sebo =:celular1Sebo, celular_2_sebo =:celular2Sebo, insc_estadual_sebo =:inscEstadualSebo, url_site_sebo =:urlSiteSebo WHERE id_usuario = :idUsuario";
+    razao_sebo = :razaoSebo, nome_fantasia =:nomeFantasia, cnpj_sebo =:cnpjSebo, latitude_sebo = :latitudeSebo, longitude_sebo = :longitudeSebo, cidade_sebo = :cidadeSebo, num_end_sebo =:numEndSebo, compl_end_sebo =:complEndSebo, logradouro_sebo =:logradouroSebo, cep_end_sebo =:cepEndSebo, num_tel_sebo =:numTelSebo, celular_1_sebo =:celular1Sebo, celular_2_sebo =:celular2Sebo, insc_estadual_sebo =:inscEstadualSebo, url_site_sebo =:urlSiteSebo WHERE id_usuario = :idUsuario";
 
 
     //DELETE lógico -> altera status    
@@ -35,9 +36,19 @@ class SeboDAO extends Sebo
     private $sql;
 
     //Método Construtor - setamos os parametros e passamos um obj SQL
-    public function __construct($objSql = "", $idUsuario = "", $razaoSebo = "", $nomeFantasia = "", $cnpjSebo = "", $cidadeSebo = "", $numEndSebo = "", $complEndSebo = "", $logradouroSebo = "", $cepEndSebo = "", $numTelSebo = "", $celular1Sebo = "", $celular2Sebo = "", $inscEstadualSebo = "", $urlSiteSebo = "", $codStatusSebo = "")
+    public function __construct($objSql = "", $idUsuario = "", $razaoSebo = "",
+                     $nomeFantasia = "", $cnpjSebo = "", $cidadeSebo = "",
+                     $latitudeSebo = "", $longitudeSebo = "", $numEndSebo = "",
+                     $complEndSebo = "", $logradouroSebo = "", $cepEndSebo = "",
+                     $numTelSebo = "", $celular1Sebo = "", $celular2Sebo = "",
+                     $inscEstadualSebo = "", $urlSiteSebo = "", $codStatusSebo = "")
     {
-        parent::__construct($idUsuario, $razaoSebo, $nomeFantasia, $cnpjSebo, $cidadeSebo, $numEndSebo, $complEndSebo, $logradouroSebo, $cepEndSebo, $numTelSebo, $celular1Sebo, $celular2Sebo, $inscEstadualSebo, $urlSiteSebo, $codStatusSebo);
+        parent::__construct($idUsuario, $razaoSebo, $nomeFantasia,
+                $cnpjSebo, $latitudeSebo, $longitudeSebo,
+                $cidadeSebo, $numEndSebo, $complEndSebo,
+                $logradouroSebo, $cepEndSebo, $numTelSebo,
+                $celular1Sebo, $celular2Sebo, $inscEstadualSebo,
+                $urlSiteSebo, $codStatusSebo);
         $this->sql = $objSql;
     }
 
@@ -111,8 +122,8 @@ class SeboDAO extends Sebo
         $result = $this->sql->query(
             seboDAO::$SELECT_NOME_SEBO
             ,array(
-                ':nomeFantasia' => array(0 => $this->getNomeFantasia() . "%", 1 => \PDO::PARAM_STR),
-                ':cidadeSebo' => array(0 => $this->getCidadeSebo() . "%", 1 => \PDO::PARAM_STR)
+                // ':cidadeSebo' => array(0 => $this->getCidadeSebo() . "%", 1 => \PDO::PARAM_STR),
+                ':nomeFantasia' => array(0 => $this->getNomeFantasia() . "%", 1 => \PDO::PARAM_STR)
             )
         );
         //devolver o resultado
@@ -124,6 +135,8 @@ class SeboDAO extends Sebo
                     'razaoSebo' => $linha->razao_sebo,
                     'nomeFantasia' => $linha->nome_fantasia,
                     'cnpjSebo' => $linha->cnpj_sebo,
+                    'latitudeSebo' => $linha->latitude_sebo,
+                    'longitudeSebo' => $linha->longitude_sebo,
                     'cidadeSebo' => $linha->cidade_sebo,
                     'numEndSebo' => $linha->num_end_sebo,
                     'complEndSebo' => $linha->compl_end_sebo,
@@ -173,6 +186,8 @@ class SeboDAO extends Sebo
                     'razaoSebo' => $linha->razao_sebo,
                     'nomeFantasia' => $linha->nome_fantasia,
                     'cnpjSebo' => $linha->cnpj_sebo,
+                    'latitudeSebo' => $linha->latitude_sebo,
+                    'longitudeSebo' => $linha->longitude_sebo,
                     'cidadeSebo' => $linha->cidade_sebo,
                     'numEndSebo' => $linha->num_end_sebo,
                     'complEndSebo' => $linha->compl_end_sebo,
@@ -212,6 +227,8 @@ class SeboDAO extends Sebo
                     'razaoSebo' => $linha->razao_sebo,
                     'nomeFantasia' => $linha->nome_fantasia,
                     'cnpjSebo' => $linha->cnpj_sebo,
+                    'latitudeSebo' => $linha->latitude_sebo,
+                    'longitudeSebo' => $linha->longitude_sebo,
                     'cidadeSebo' => $linha->cidade_sebo,
                     'numEndSebo' => $linha->num_end_sebo,
                     'complEndSebo' => $linha->compl_end_sebo,
@@ -256,6 +273,8 @@ class SeboDAO extends Sebo
                 'razaoSebo' => $linha->razao_sebo,
                 'nomeFantasia' => $linha->nome_fantasia,
                 'cnpjSebo' => $linha->cnpj_sebo,
+                'latitudeSebo' => $linha->latitude_sebo,
+                'longitudeSebo' => $linha->longitude_sebo,
                 'cidadeSebo' => $linha->cidade_sebo,
                 'numEndSebo' => $linha->num_end_sebo,
                 'complEndSebo' => $linha->compl_end_sebo,
@@ -285,6 +304,8 @@ class SeboDAO extends Sebo
                 ':razaoSebo' => array(0 => $this->getRazaoSebo(), 1 => \PDO::PARAM_STR),
                 ':nomeFantasia' => array(0 => $this->getNomeFantasia(), 1 => \PDO::PARAM_STR),
                 ':cnpjSebo' => array(0 => $this->getCnpjSebo(), 1 => \PDO::PARAM_STR),
+                ':latitudeSebo' => array(0 => $this->getLatitudeSebo(), 1 => \PDO::PARAM_STR),
+                ':longitudeSebo' => array(0 => $this->getLongitudeSebo(), 1 => \PDO::PARAM_STR),
                 ':cidadeSebo' => array(0 => $this->getCidadeSebo(), 1 => \PDO::PARAM_STR),
                 ':numEndSebo' => array(0 => $this->getNumEndSebo(), 1 => \PDO::PARAM_STR),
                 ':complEndSebo' => array(0 => $this->getComplEndSebo(), 1 => \PDO::PARAM_STR),
@@ -309,6 +330,8 @@ class SeboDAO extends Sebo
                 ':razaoSebo' => array(0 => $this->getRazaoSebo(), 1 => \PDO::PARAM_STR),
                 ':nomeFantasia' => array(0 => $this->getNomeFantasia(), 1 => \PDO::PARAM_STR),
                 ':cnpjSebo' => array(0 => $this->getCnpjSebo(), 1 => \PDO::PARAM_STR),
+                ':latitudeSebo' => array(0 => $this->getLatitudeSebo(), 1 => \PDO::PARAM_STR),
+                ':longitudeSebo' => array(0 => $this->getLongitudeSebo(), 1 => \PDO::PARAM_STR),
                 ':cidadeSebo' => array(0 => $this->getCidadeSebo(), 1 => \PDO::PARAM_STR),
                 ':numEndSebo' => array(0 => $this->getNumEndSebo(), 1 => \PDO::PARAM_STR),
                 ':complEndSebo' => array(0 => $this->getComplEndSebo(), 1 => \PDO::PARAM_STR),

@@ -113,7 +113,7 @@ if ($resultComentario != null || $resultComentario >= 1) {
         }
     }
 } else {
-    echo "<p>Seja o primeiro o primeiro a comentar.</p>";
+    echo "<p>Seja o primeiro a comentar.</p>";
 }
 ?>
 

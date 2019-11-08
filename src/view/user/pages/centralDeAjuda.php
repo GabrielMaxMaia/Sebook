@@ -89,7 +89,6 @@ $title = "Dúvidas";
 
                    <details>
                         <summary><span> 8. O que é um número de ISBN?</span></summary>
-                        <img src="<?= _URLBASE_ ?>public/img/imgSite/Isbn.png" alt="Isbn">
                          <p> Criado em 1967 e oficializado como norma internacional em 1972, o ISBN (International Standard Book Number) é um sistema
                           que identifica numericamente os livros segundo o título, o autor, o país e a editora, individualizando, inclusive, por edição.   
                          A partir de 1º de janeiro de 2007, o ISBN passou de 10 para 13 dígitos, com a adoção do prefixo 978. O objetivo foi aumentar 

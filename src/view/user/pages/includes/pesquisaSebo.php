@@ -7,15 +7,46 @@ $objSql = new Util\Sql($conn);
 $seboDAO = new Model\SeboDAO($objSql);
 
 if ($_POST != "") {
-    if (isset($_POST['pesquisaSebo'])) {
-        $parametro = $_POST['pesquisaSebo'];
-        $seboDAO->setNomeFantasia($parametro);
-        $resultado = $seboDAO->listarSebos();
-    } else if (isset($_POST['pesquisaCidade'])) {
-        $parametro = $_POST['pesquisaCidade'];
-        $seboDAO->setCidadeSebo($parametro);
-        $resultado = $seboDAO->listarNomeSebos();
+
+    $parametro = $_POST['pesquisaSebo'] ?? false;
+    $parametroCidade = $_POST['pesquisaCidade'] ?? false;
+
+    if($parametroCidade == "Sebos Parceiros encontrados no estado de SP"){
+        if($parametro == ""){
+            //Pesquisar sebos em qualquer cidade
+            $resultado = $seboDAO->listarSebos();
+        }else{
+            //Pesuisar sebo parametro  em qualquer cidade
+            $seboDAO->setNomeFantasia($parametro);
+            $seboDAO->setCidadeSebo("");
+            $resultado = $seboDAO->listarSebosCidade();
+        }
+    } else{
+        if($parametro == ""){
+            //Pesquisar qualquer s sebos na cidade parametroCidade
+            $seboDAO->setCidadeSebo($parametroCidade);
+            $resultado = $seboDAO->listarCidade();
+            
+        }else{
+            //Pesuisar sebo parametro na cidade parametroCidade
+            $seboDAO->setNomeFantasia($parametro);
+            $seboDAO->setCidadeSebo($parametroCidade);
+            $resultado = $seboDAO->listarSebosCidade();
+        }
     }
+    
+    // if (isset($_POST['pesquisaSebo'])) {
+    //     $parametro = $_POST['pesquisaSebo'];
+    //     $parametroCidade = $_POST['pesquisaCidade'];
+        // $seboDAO->setNomeFantasia($parametro);
+        // $seboDAO->setCidadeSebo($parametroCidade);
+        // $resultado = $seboDAO->listarSebosCidade();
+
+    // } else if (isset($_POST['pesquisaCidade'])) {
+    //     $parametro = $_POST['pesquisaCidade'];
+    //     $seboDAO->setCidadeSebo($parametro);
+    //     $resultado = $seboDAO->listarCidade();
+    // }
 
     var_dump($_POST);
 
@@ -23,10 +54,10 @@ if ($_POST != "") {
     $msg = "";
 
     $msg .= "<ul class='containerResult'>";
-    if (isset($resultado)) {
+    if ($resultado != null) {
         foreach ($resultado as $cidade) {
 
-            if ($parametro != false) {
+            // if ($resultado != null) {
                 $msg .= "<li>";
                 $msg .= "<a href='" . _URLBASE_ . "area/user/pages/pagSebo/" . $cidade['idUsuario'] . "'>";
 
@@ -41,12 +72,15 @@ if ($_POST != "") {
 
                 $msg .= "</a>";
                 $msg .= "</li>";
-            } else {
-                $msg = "";
-                $msg .= "<p class='noResult'>Nenhum resultado foi encontrado...</p>";
+            // } else {
+            //     $msg = "";
+            //     $msg .= "<p class='noResult'>Nenhum resultado foi encontrado...</p>";
             }
+        } else {
+            $msg = "";
+            $msg .= "<p class='noResult'>Nenhum resultado foi encontrado...</p>";
         }
-    }
+    
     $msg .= "</ul>";
     // $msg .= "    </tbody>";
     // $msg .= "</table>";

@@ -37,6 +37,13 @@
 					</a>
 				</div>
 			</div>
+			<h1 class="intro-copy"></h1>
+      
+      	<a class="top-link hide" href="" id="js-top">
+		  <img src="<?= _URLBASE_ ?>public/icon/arrow.svg" viewBox="0 0 12 6" ><path d="M12 6H0l6-6z" alt="Sebook">
+		<span class="screen-reader-text"></span>
+		
+      </a>
 			<div class="coluna3">
 				<h1>Entre em contato</h1>
 				<div class="row2">
@@ -65,8 +72,8 @@
 
 			<div class="informar">
 				<a href="<?= _URLBASE_ ?>area/user/pages/centralDeAjuda" class="ajuda">Central de Ajuda </a> |
-				<a href="">Politica de Segurança </a> |
-				<a href="">Termos de Uso</a>
+				<a href="<?= _URLBASE_ ?>area/user/pages/politicaDePrivacidade" class="Seguranca">Politica de Privacidade </a> |
+				<a href="<?= _URLBASE_ ?>area/user/pages/termosDeUso" class="Termos ">Termos de Uso</a>
 			</div>
 		</div>
 	</div>

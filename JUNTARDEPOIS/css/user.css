@@ -89,12 +89,7 @@ div#containerTemplate {
     max-width: 690px;
     margin: auto
 }
-.pergunta .container p {
-    margin: .5rem 0;
-    font-size: .95rem;
-    text-align: center;
-    line-height: 1.3rem
-}
+ 
 .pergunta .container  h1 {
     font-size: 25px;
     text-align: center;
@@ -105,12 +100,18 @@ div#containerTemplate {
     border: 1px solid #ccc
 }
 .pergunta .container p{
+    margin: .5rem 0;
     line-height: 1.3rem;
     padding: 1rem;
     text-align: justify;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: sans-serif;
+    font-size: .95rem;
 }
-
+.pergunta .container img{
+    width:200px;
+    margin: .5rem .5rem 0 0;
+    float: left;
+}
 .ajuda {
     width: 100%;
     position: relative;
@@ -1535,7 +1536,25 @@ form select {
     background: #202020;
     color: #fff;
 }
-
+ 
+  
+  #rodape .top-link {
+    transition: all .25s ease-in-out;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: inline-flex;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      margin: 0 3em 3em 0;
+      border-radius: 50%;
+      padding: .25em;
+      width: 60px;
+      height: 60px;
+      background-color: rgb(200, 239, 204);
+    
+  }
 #rodape .container-body a,
 #rodape label {
     color: #c7c7c7;
@@ -1565,6 +1584,11 @@ form select {
     #rodape p {
         text-align: left
     }
+    #rodape .top-link {
+        margin: 0 1em 5em 0;
+    }
+     
+ 
 }
 
 .container-body {
