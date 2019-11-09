@@ -101,12 +101,12 @@ class FrontController
         }
     }
 
-    public function exibirNotificador($urlDoNotificador, $totalSebo = false, $GetPost)
+    public function exibirNotificador($urlDoNotificador, $totalSebo = false, $totalUser = false, $GetPost)
     {
         //
         //ceil($this->modoDAO->totalContar() / $this->itemPagina);
         if ($totalSebo == false) {
-            if (isset($totalUser)) {
+            if ($totalUser == true) {
                 $qtdePaginas = ceil($this->modoDAO->totalContarUser() / $this->itemPagina);
             } else {
                 $qtdePaginas = ceil($this->modoDAO->totalContar() / $this->itemPagina);
@@ -114,26 +114,30 @@ class FrontController
         } else {
             $qtdePaginas = ceil($this->modoDAO->totalContarSebo($GetPost) / $this->itemPagina);
         }
-        $notificador = "<ul class='ulNote'>";
-        if ($this->paginaAtual >= 2) {
-            $notificador .= "<li><a href='" . _URLBASE_ . $urlDoNotificador . "/pagina/1'><<</a></li>";
-            $notificador .= "<li><a href='" . _URLBASE_ . $urlDoNotificador . "/pagina/" . ($this->paginaAtual - 1) . "'><</a> </li>";
-        }
-        for ($i = 1; $i <= $qtdePaginas; $i++) {
-            $active = "";
-            if ($this->paginaAtual == $i) {
-                $active = "class='active'";
+
+        if ($qtdePaginas > 1) {
+            
+            $notificador = "<ul class='ulNote'>";
+            if ($this->paginaAtual >= 2) {
+                $notificador .= "<li><a href='" . _URLBASE_ . $urlDoNotificador . "/pagina/1'><<</a></li>";
+                $notificador .= "<li><a href='" . _URLBASE_ . $urlDoNotificador . "/pagina/" . ($this->paginaAtual - 1) . "'><</a> </li>";
             }
-            $notificador .= "
+            for ($i = 1; $i <= $qtdePaginas; $i++) {
+                $active = "";
+                if ($this->paginaAtual == $i) {
+                    $active = "class='active'";
+                }
+                $notificador .= "
             <li>
                 <a $active href='" . _URLBASE_ . $urlDoNotificador . "/pagina/" . $i . "'>$i</a>
             </li>";
+            }
+            if ($this->paginaAtual < $qtdePaginas) {
+                $notificador .= "<li><a $active href='" . _URLBASE_ . $urlDoNotificador . "/pagina/" . ($this->paginaAtual + 1) . "'>></a></li>";
+                $notificador .= "<li><a $active href='" . _URLBASE_ . $urlDoNotificador . "/pagina/" . $qtdePaginas . "'>>></a></li>";
+            }
+            $notificador .= "</ul>";
+            return $notificador;
         }
-        if ($this->paginaAtual < $qtdePaginas) {
-            $notificador .= "<li><a $active href='" . _URLBASE_ . $urlDoNotificador . "/pagina/" . ($this->paginaAtual + 1) . "'>></a></li>";
-            $notificador .= "<li><a $active href='" . _URLBASE_ . $urlDoNotificador . "/pagina/" . $qtdePaginas . "'>>></a></li>";
-        }
-        $notificador .= "</ul>";
-        return $notificador;
     }
 }

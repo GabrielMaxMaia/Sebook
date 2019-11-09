@@ -8,26 +8,15 @@ $sql = new \Util\Sql($conn);
 //Passa a conexão para o dao
 $postagemDAO = new PostagemDAO($sql);
 
-//Passa a conexão para o controller
-//$postagemController = new PostagemController($sql);
+$GetPost = isset($_GET['id']) ? $_GET['id'] : false;
 
-//Armazena em result para o laço
-$postagemDAO->setIdUsuario($idUser);
-$result = $postagemDAO->listarUserPost();
+$postagemDAO->setIdUsuario($GetPost);
 
 $frontController = new Controller\FrontController($postagemDAO);
 $frontController->setItemPagina(4);
 $frontController->verificarPaginacao();
 
-$GetPost = isset($_GET['id']) ? $_GET['id'] : false;
-
-if ($GetPost) {
-    //Ao passar idDelete seta o valor e executa exclusão em postagemDAO
-    $postagemDAO->setIdPostagem($GetPost);
-    $postagemDAO->excluirPostagem();
-    //header para recarregar a página
-    header("Location:" . _URLBASE_ . "area/user/pages/postListar");
-}
+var_dump($_GET);
 
 ?>
 <article>
@@ -37,6 +26,8 @@ if ($GetPost) {
     <div class="itemContentContainer">
         <?php
         $postagens = $postagemDAO->listarUserPost($frontController->getRegIni(), $frontController->getItemPagina());
+        if($postagens > 0){
+  
         foreach ($postagens as $post) {
             ?>
             <div class="postContainer">
@@ -61,7 +52,7 @@ if ($GetPost) {
                             Editar
                         </a>
 
-                        <a href="<?= _URLBASE_ . "area/user/pages/postListar/delete/{$post['idPostagem']}" ?>" onclick="return confirm('Tem Certeza que vai excluir?')" class="modifica danger">
+                        <a href="<?= _URLBASE_ . "area/user/pages/postDoUser/delete/{$post['idPostagem']}" ?>" onclick="return confirm('Tem Certeza que vai excluir?')" class="modifica danger">
                             Deletar
                         </a>
                     </div>
@@ -75,9 +66,15 @@ if ($GetPost) {
     <section class="notificador">
         <?php
         //Estou usando a Url da lista que quero controlar
-        $urlDoNotificador = "area/user/pages/postDoUser";
+        $urlDoNotificador = "area/user/pages/postDoUser/$GetPost";
         $totalSebo = false;
-        echo $frontController->exibirNotificador($urlDoNotificador, $totalSebo, $GetPost);
+        $totalUser = true;
+        echo $frontController->exibirNotificador($urlDoNotificador, $totalSebo, $totalUser, $GetPost);
         ?>
     </section>
 </article>
+<?php          
+}
+else{
+    echo "<p>Usuário não possui postagens</p>";
+}

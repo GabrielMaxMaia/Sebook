@@ -10,9 +10,13 @@ class EventoDAO extends Evento
     //Atributos - serão os comandos SQL  + um objeto Sql
     private static $SELECT_ALL = "SELECT * FROM evento ORDER BY id_evento DESC";
 
+    private static $SELECT_ID_USER_EVENTO = "SELECT * from evento WHERE id_usuario = :idUsuario ORDER BY id_evento DESC";
+
     private static $SELECT_ULTIMOS = "SELECT * FROM evento ORDER BY id_evento DESC LIMIT 2";
 
     private static $SELECT_TOT = "SELECT count(id_evento) as tot from evento";
+
+    private static $SELECT_TOT_CONT_USER = "SELECT count(id_evento) as tot from evento where id_usuario = :idUsuario";
 
     private static $SELECT_ID = "SELECT * from evento where id_evento = :idEvento";
 
@@ -46,7 +50,8 @@ class EventoDAO extends Evento
 
         //executar a consulta no banco
         $result = $this->sql->query(
-            EventoDAO::$SELECT_ALL . $limit);
+            EventoDAO::$SELECT_ALL . $limit
+        );
 
         //var_dump($result);
         //devolver o resultado
@@ -68,12 +73,51 @@ class EventoDAO extends Evento
         }
         return $itens;
     }
-    
+
+    public function listarEventoUser($ini = -1, $qtde = 1)
+    {
+        if ($ini >= 0) {
+            $limit = " limit $ini , $qtde ";
+        } else {
+            $limit = "";
+        }
+        //executar a consulta no banco
+        $result = $this->sql->query(
+            EventoDAO::$SELECT_ID_USER_EVENTO . $limit,
+            array(
+                ':idUsuario' => array(
+                    0 => $this->getIdUsuario(),
+                    1 => \PDO::PARAM_INT
+                )
+            )
+        );
+
+        //devolver o resultado
+        if ($result->rowCount() > 0) {
+            while ($linha = $result->fetch(\PDO::FETCH_OBJ)) {
+                $itens[] = array(
+                    'idEvento' => $linha->id_evento,
+                    'nomeEvento' => $linha->nome_evento,
+                    'txtEvento' => $linha->txt_evento,
+                    'dataEvento' => $linha->data_evento,
+                    'horaEvento' => $linha->hora_evento,
+                    'idUsuario' => $linha->id_usuario,
+                    'urlFotoEvento' => $linha->url_foto_evento
+                );
+            }
+            //var_dump($itens);
+        } else {
+            $itens = null;
+        }
+        return $itens;
+    }
+
     public function listarUltimos()
     {
         //executar a consulta no banco
         $result = $this->sql->query(
-            EventoDAO::$SELECT_ULTIMOS);
+            EventoDAO::$SELECT_ULTIMOS
+        );
 
         //var_dump($result);
         //devolver o resultado
@@ -99,6 +143,21 @@ class EventoDAO extends Evento
     public function totalContar()
     {
         $result = $this->sql->query(EventoDAO::$SELECT_TOT);
+        $linha = $result->fetch(\PDO::FETCH_OBJ);
+        return $linha->tot;
+    }
+
+    public function totalContarUser()
+    {
+        $result = $this->sql->query(
+            EventoDAO::$SELECT_TOT_CONT_USER,
+            array(
+                ':idUsuario' => array(
+                    0 => $this->getIdUsuario(),
+                    1 => \PDO::PARAM_INT
+                )
+            )
+        );
         $linha = $result->fetch(\PDO::FETCH_OBJ);
         return $linha->tot;
     }

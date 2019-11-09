@@ -76,7 +76,8 @@ if ($GetPost) {
         //Estou usando a Url da lista que quero controlar
         $urlDoNotificador = "area/user/pages/eventoListar";
         $totalSebo = false;
-        echo $frontController->exibirNotificador($urlDoNotificador, $totalSebo, $GetPost);
+        $totalUser = false;
+        echo $frontController->exibirNotificador($urlDoNotificador, $totalSebo, $totalUser, $GetPost);
         ?>
     </section>
 </article>

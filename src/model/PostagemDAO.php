@@ -151,7 +151,7 @@ class PostagemDAO extends Postagem
             PostagemDAO::$SELECT_TOT_CONT_USER,
             array(
                 ':idUsuario' => array(
-                    o => $this->getIdUsuario(),
+                    0 => $this->getIdUsuario(),
                     1 => \PDO::PARAM_INT
                 )
             )
