@@ -147,7 +147,7 @@ class EventoDAO extends Evento
         return $linha->tot;
     }
 
-    public function totalContarUser()
+    public function totalContarId()
     {
         $result = $this->sql->query(
             EventoDAO::$SELECT_TOT_CONT_ID,

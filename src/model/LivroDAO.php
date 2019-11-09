@@ -141,7 +141,7 @@ class LivroDAO extends Livro
         return $linha->tot;
     }
     
-    public function totalContarUser()
+    public function totalContarId()
     {
         $result = $this->sql->query(
             LivroDAO::$SELECT_TOT_CONT_ID,

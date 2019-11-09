@@ -107,7 +107,7 @@ class FrontController
         //ceil($this->modoDAO->totalContar() / $this->itemPagina);
         if ($totalSebo == false) {
             if ($totalUser == true) {
-                $qtdePaginas = ceil($this->modoDAO->totalContarUser() / $this->itemPagina);
+                $qtdePaginas = ceil($this->modoDAO->totalContarId() / $this->itemPagina);
             } 
             else {
                 $qtdePaginas = ceil($this->modoDAO->totalContar() / $this->itemPagina);

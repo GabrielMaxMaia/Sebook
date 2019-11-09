@@ -145,7 +145,7 @@ class PostagemDAO extends Postagem
         return $linha->tot;
     }
 
-    public function totalContarUser()
+    public function totalContarId()
     {
         $result = $this->sql->query(
             PostagemDAO::$SELECT_TOT_CONT_ID,
