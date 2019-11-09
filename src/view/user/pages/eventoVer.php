@@ -34,21 +34,26 @@ include "includes/evitarReenvio.php";
 //Postagem
 if ($resultEvento != null) {
     // foreach ($result as $linha) {
-        if ($eventoDAO->getIdEvento() == $GetPost) {
-            ?>
-            <article class="itemVerContainer">
-                <header>
-                    <picture class="imgItemVer">
-                        <img src="<?= _URLBASE_ . $eventoDAO->getUrlFotoEvento() ?>">
-                    </picture>
-                </header>
-                <section class="texto">
-                    <h1><?= $eventoDAO->getNomeEvento() ?></h1>
-                    <p><?= $eventoDAO->getTxtEvento() ?></p>
-                </section>
-            </article>
+    if ($eventoDAO->getIdEvento() == $GetPost) {
+        ?>
+        <article class="itemVerContainer">
+            <header>
+                <picture class="imgItemVer">
+                    <img src="<?= _URLBASE_ . $eventoDAO->getUrlFotoEvento() ?>">
+                </picture>
+            </header>
+            <section class="texto">
+                <h1><?= $eventoDAO->getNomeEvento() ?></h1>
+                <p><?= $eventoDAO->getTxtEvento() ?></p>
+                <p>
+                    <?php $data = date_create($eventoDAO->getDataEvento()); ?>
+                    Data: <?=date_format($data, "d/m/Y")?><br>
+                    Hora: <?=$eventoDAO->getHoraEvento()?>
+                </p>
+            </section>
+        </article>
 <?php
-        }
+    }
     // }
 }
 

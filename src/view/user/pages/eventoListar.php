@@ -31,7 +31,7 @@ if ($GetPost) {
 ?>
 <article>
     <header class="headerPagina">
-        <h1>Últimas Eventos</h1>
+        <h1>Últimos Eventos</h1>
     </header>
     <div class="itemContentContainer">
         <?php
