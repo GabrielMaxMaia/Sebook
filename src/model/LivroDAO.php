@@ -10,7 +10,7 @@ class LivroDAO extends Livro
     //Atributos - serão os comandos SQL  + um objeto Sql
     private static $SELECT_LAST_ID = "SELECT last_insert_id() as last_id FROM db_sebook.livro limit 0,1";
 
-    private static $SELECT_ALL = "select * from livro where cod_status_livro = '1' order by id_editora";
+    private static $SELECT_ALL = "SELECT * FROM livro WHERE cod_status_livro = '1' order by id_editora";
 
     private static $SELECT_TOT = "SELECT count(isbn_livro) as tot from livro where cod_status_livro = '1'";
 

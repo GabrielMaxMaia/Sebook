@@ -1,4 +1,16 @@
 <?php
+
+use Model\LivroDAO;
+
+//Pega a conexão
+$objSql = new Util\Sql($conn);
+
+$livroDAO = new LivroDAO($objSql);
+
+$frontController = new Controller\FrontController($livroDAO);
+$frontController->setItemPagina(8);
+$frontController->verificarPaginacao();
+
 $title = "Livros";
 //Arquivo de pesquisa para buscar dinamicamente
 $pesquisa =  _URLBASE_ . "src/view/user/pages/includes/pesquisa.php";
@@ -80,19 +92,53 @@ $pesquisa =  _URLBASE_ . "src/view/user/pages/includes/pesquisa.php";
         });
     </script>
 
-    <div class="estante-slider">
+    <!-- <div class="estante-slider">
         <div class="titulo-estante-slider">Mais procurados</div>
-        <?php require('src/view/user/util/slick.php'); ?>
+        <?php //require('src/view/user/util/slick.php'); 
+        ?>
     </div>
 
     <div class="estante-slider">
         <div class="titulo-estante-slider">Lançamentos</div>
-        <?php require('src/view/user/util/slick.php'); ?>
+        <?php //require('src/view/user/util/slick.php'); 
+        ?>
     </div>
 
     <div class="estante-slider">
         <div class="titulo-estante-slider">Recomendados</div>
-        <?php require('src/view/user/util/slick.php'); ?>
+        <?php //require('src/view/user/util/slick.php'); 
+        ?>
+    </div> -->
+
+</section>
+<section class="busca">
+
+    <div class="searchBooks">
+        <?php
+        $resultLivro = $livroDAO->listarLivros($frontController->getRegIni(), $frontController->getItemPagina());
+        foreach ($resultLivro as $livro) {
+            ?>
+            <a href="<?= _URLBASE_ ?>area/user/pages/descLivro/<?= $livro['isbnLivro'] ?>">
+                <figure>
+                    <img src="<?= _URLBASE_ . $livro['urlFotoLivro'] ?>" alt="<?= $livro['nomeLivro'] ?>" title="<?= $livro['nomeLivro'] ?>">
+                    <figcaption>
+                        <p>Nome: <?= $livro['nomeLivro'] ?></p>
+                    </figcaption>
+                </figure>
+            </a>
+        <?php
+        }
+        ?>
     </div>
 
+</section>
+<section class="notificador">
+    <?php
+    //Estou usando a Url da lista que quero controlar
+    $urlDoNotificador = "area/user/menuHome/livros";
+    $totalSebo = false;
+    $totalUser = false;
+    $GetPost = null;
+    echo $frontController->exibirNotificador($urlDoNotificador, $totalSebo, $totalUser, $GetPost);
+    ?>
 </section>
