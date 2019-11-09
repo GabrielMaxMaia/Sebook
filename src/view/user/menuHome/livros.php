@@ -1,11 +1,14 @@
 <?php
 
 use Model\LivroDAO;
+use Model\CategoriaDAO;
 
 //Pega a conexão
 $objSql = new Util\Sql($conn);
 
 $livroDAO = new LivroDAO($objSql);
+$categoriaDAO = new CategoriaDAO($objSql);
+$resultCategoria = $categoriaDAO->listarCategorias();
 
 $frontController = new Controller\FrontController($livroDAO);
 $frontController->setItemPagina(8);
@@ -91,25 +94,6 @@ $pesquisa =  _URLBASE_ . "src/view/user/pages/includes/pesquisa.php";
 
         });
     </script>
-
-    <!-- <div class="estante-slider">
-        <div class="titulo-estante-slider">Mais procurados</div>
-        <?php //require('src/view/user/util/slick.php'); 
-        ?>
-    </div>
-
-    <div class="estante-slider">
-        <div class="titulo-estante-slider">Lançamentos</div>
-        <?php //require('src/view/user/util/slick.php'); 
-        ?>
-    </div>
-
-    <div class="estante-slider">
-        <div class="titulo-estante-slider">Recomendados</div>
-        <?php //require('src/view/user/util/slick.php'); 
-        ?>
-    </div> -->
-
 </section>
 <section class="busca">
 
@@ -142,3 +126,16 @@ $pesquisa =  _URLBASE_ . "src/view/user/pages/includes/pesquisa.php";
     echo $frontController->exibirNotificador($urlDoNotificador, $totalSebo, $totalUser, $GetPost);
     ?>
 </section>
+<aside>
+    <ul>
+        <?php
+        foreach ($resultCategoria as $categorias) {
+            ?>
+            <li>
+                <a href="<?=_URLBASE_ . "area/user/pages/categoriaListar/" . $categorias['idCategoria']?>"><?=$categorias['nomeCategoria']?></a>
+            </li>
+        <?php
+        }
+        ?>
+    </ul>
+</aside>

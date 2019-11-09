@@ -14,7 +14,7 @@ class PostagemDAO extends Postagem
 
     private static $SELECT_TOT = "SELECT count(id_post) as tot from postagem where cod_status_post = '1'";
 
-    private static $SELECT_TOT_CONT_USER = "SELECT count(id_post) as tot from postagem where cod_status_post = '1' AND id_usuario = :idUsuario";
+    private static $SELECT_TOT_CONT_ID = "SELECT count(id_post) as tot from postagem where cod_status_post = '1' AND id_usuario = :idUsuario";
 
     private static $SELECT_ULTIMOS = "SELECT * FROM postagem WHERE cod_status_post = '1' ORDER BY id_post DESC LIMIT 2";
 
@@ -148,7 +148,7 @@ class PostagemDAO extends Postagem
     public function totalContarUser()
     {
         $result = $this->sql->query(
-            PostagemDAO::$SELECT_TOT_CONT_USER,
+            PostagemDAO::$SELECT_TOT_CONT_ID,
             array(
                 ':idUsuario' => array(
                     0 => $this->getIdUsuario(),

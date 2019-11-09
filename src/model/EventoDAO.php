@@ -16,7 +16,7 @@ class EventoDAO extends Evento
 
     private static $SELECT_TOT = "SELECT count(id_evento) as tot from evento";
 
-    private static $SELECT_TOT_CONT_USER = "SELECT count(id_evento) as tot from evento where id_usuario = :idUsuario";
+    private static $SELECT_TOT_CONT_ID = "SELECT count(id_evento) as tot from evento where id_usuario = :idUsuario";
 
     private static $SELECT_ID = "SELECT * from evento where id_evento = :idEvento";
 
@@ -150,7 +150,7 @@ class EventoDAO extends Evento
     public function totalContarUser()
     {
         $result = $this->sql->query(
-            EventoDAO::$SELECT_TOT_CONT_USER,
+            EventoDAO::$SELECT_TOT_CONT_ID,
             array(
                 ':idUsuario' => array(
                     0 => $this->getIdUsuario(),

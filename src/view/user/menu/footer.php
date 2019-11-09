@@ -1,19 +1,16 @@
 <footer id="rodape">
 	<div class="container-footer-all">
-
 		<div class="container-body">
 			<div class="coluna1">
 				<h1>Mais Informações do site</h1>
 				<p>
-				Sebook é uma plataforma web voltada aos amantes de livros usados. Acreditamos na força da economia solidária
-				e com isso damos visibilidade aos empreendedores, incentivamos o consumo sustentável de recursos e auxiliamos
-				os leitores a pouparem tempo e dinheiro ao comprar pela internet. 
-				A missão do Sebook é enriquecer culturalmente toda a comunidade com uma ação de baixo custo econômico, viabilizando
-				a interação leitor-sebo com nossa ferramenta de busca regionalizada. 
-				Promovemos e incentivamos reciclagens de livros inservíveis para serem transformados em artesanatos e outras artes.
-				Oferecemos um sistema de Gestão de Acervos para os sebos parceiros do Sebook.
-				
-
+					Sebook é uma plataforma web voltada aos amantes de livros usados. Acreditamos na força da economia solidária
+					e com isso damos visibilidade aos empreendedores, incentivamos o consumo sustentável de recursos e auxiliamos
+					os leitores a pouparem tempo e dinheiro ao comprar pela internet.
+					A missão do Sebook é enriquecer culturalmente toda a comunidade com uma ação de baixo custo econômico, viabilizando
+					a interação leitor-sebo com nossa ferramenta de busca regionalizada.
+					Promovemos e incentivamos reciclagens de livros inservíveis para serem transformados em artesanatos e outras artes.
+					Oferecemos um sistema de Gestão de Acervos para os sebos parceiros do Sebook.
 				</p>
 			</div>
 			<div class="coluna2">
@@ -78,7 +75,7 @@
 		<a href="<?= _URLBASE_ ?>" class="home">
 			<img src="<?= _URLBASE_ ?>public/icon/home.svg" alt="Home" title="Página inicial">
 		</a>
-		<a href="<?= _URLBASE_ ?>area/user/pages/busca" class="search">
+		<a href="<?= _URLBASE_ ?>area/user/menuHome/livros" class="search">
 			<img src="<?= _URLBASE_ ?>public/icon/busca.svg" alt="Buscar" title="Buscar">
 		</a>
 		<div class="menu">
@@ -93,37 +90,37 @@
 										?>src/view/user/pages/menu/sebos.php">SEBOS</a>
 					</li>-->
 					<ul>
-					<li>
-						<a href="<?= _URLBASE_ ?>">HOME</a>
-					</li>
-					<li>
-						<a href="<?= _URLBASE_ ?>area/user/menuHome/sebos">SEBOS</a>
-					</li>
-					<li>
-						<a href="<?= _URLBASE_ ?>area/user/menuHome/livros">LIVROS</a>
-					</li>
-					<li>
-						<a href="<?= _URLBASE_ ?>area/user/pages/postListar">POSTAGENS</a>
-					</li>
-					<?php
-					if ($acessoUser != 4 && $acessoUser != null && $acessoUser != "") {
-						echo "<li>
-								<a href='"._URLBASE_."area/user/pages/postCriar'>CRIAR POSTAGEM</a></a>
+						<li>
+							<a href="<?= _URLBASE_ ?>">HOME</a>
+						</li>
+						<li>
+							<a href="<?= _URLBASE_ ?>area/user/menuHome/sebos">SEBOS</a>
+						</li>
+						<li>
+							<a href="<?= _URLBASE_ ?>area/user/menuHome/livros">LIVROS</a>
+						</li>
+						<li>
+							<a href="<?= _URLBASE_ ?>area/user/pages/postListar">POSTAGENS</a>
+						</li>
+						<?php
+						if ($acessoUser != 4 && $acessoUser != null && $acessoUser != "") {
+							echo "<li>
+								<a href='" . _URLBASE_ . "area/user/pages/postCriar'>CRIAR POSTAGEM</a></a>
 							 </li>";
-					}
-					?>
-					<li>
-					<!--	<a href="<?= _URLBASE_ ?>area/user/menuHome/quemSomos">QUEM SOMOS</a>
+						}
+						?>
+						<li>
+							<!--	<a href="<?= _URLBASE_ ?>area/user/menuHome/quemSomos">QUEM SOMOS</a>
 					</li>
 					<li>
 						<a href="<?= _URLBASE_ ?>area/user/menuHome/ajuda">FAQ</a>
 					</li>
 					<li>-->
-						<a href="<?= _URLBASE_ ?>area/user/geoLocalizacao/maisProximo">MAPA</a>
-					</li>
+							<a href="<?= _URLBASE_ ?>area/user/geoLocalizacao/maisProximo">MAPA</a>
+						</li>
+					</ul>
 				</ul>
-				</ul>
-				 
+
 			</div>
 		</div>
 	</nav>
