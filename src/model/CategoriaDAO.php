@@ -8,7 +8,7 @@ namespace Model;
 class CategoriaDAO extends Categoria
 {
     //Atributos - serão os comandos SQL  + um objeto Sql
-    private static $SELECT_ALL = "select * from categoria where cod_status_categoria = '1'";
+    private static $SELECT_ALL = "SELECT * FROM categoria WHERE cod_status_categoria = '1' ORDER BY nome_categoria ASC";
 
     private static $SELECT_TOT = "SELECT count(id_categoria) as tot from categoria where cod_status_categoria = '1'";
 
