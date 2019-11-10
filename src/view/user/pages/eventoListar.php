@@ -45,7 +45,7 @@ if ($GetPost) {
                             <figure>
                                 <img src='<?= _URLBASE_ . $event['urlFotoEvento'] ?>'>
                                 <figcaption>
-                                    <h1><?= $event['nomeEvento'] ?></h1>
+                                    <p class="titulo"><?= $event['nomeEvento'] ?></p>
                                     <p><?= $event['txtEvento'] ?></p>
                                 </figcaption>
                             </figure>

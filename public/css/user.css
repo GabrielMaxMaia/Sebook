@@ -450,45 +450,83 @@ div#containerTemplate {
     padding: 0
 }
 
-/*===================AREA DO EVENTOS====================*/
-
-.eventos .container {
-    border: 1px solid #ccc;
-    margin-top: 20px;
-    padding: 20px
+/*===================AREA DE FEEDS====================*/
+.feedItem{
+    margin: 0 auto 2rem;
+    display: flex;
+    flex-direction: column;
+}
+.feedItem header{
+    margin-left: .65rem;
+    border-left: .2rem solid #99e7aa;
+    padding-left: .5rem;
+}
+.feedItem figure{
+    overflow: hidden;
+    max-height: 260px;
+    max-width: 350px;
+}
+@media (min-width:997px){
+    .feedItem figure{
+        min-width: 481px;
+        max-width: 459px;
+    }
+}
+.feedItem figure figcaption{
+    position: relative;
+    z-index: 99;
+    background-color: #000;
+    background: linear-gradient(45deg, #000000d4, #19181691);
+    width: 100%;
+    bottom: 4.7rem;
+    padding: 1rem;
+    color: #fff;
+}
+.feedItem figcaption h3, .feedItem figcaption p{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.feedItem img{
+    min-width: 100%;
+    min-height: 260px;
+    max-height: 260px;
+    overflow: hidden;
+    transition:.3s all ease-in-out;
+    object-position: top;
 }
 
-.eventos .container h1 {
-    font-size: 25px;
+.feedItem img:hover{
+    transform: scale(1.2);
+    max-height: 260px;
+    transition:.3s all ease-in-out;
+ 
+}
+.feedContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding:.5rem;
+    padding-bottom: 1rem;
+}
+.feedContainer figure{
+    margin: 1rem auto 0;
+}
+.linkDestaque{
+    margin-right: 1rem;
+    margin-left: 1rem;
+    padding: 1rem;
+    border: 1.1px solid #252222;
     text-align: center;
-    margin: 0
+    /* color: #5ea070; */
+    text-transform: uppercase;
+    font-size: .85rem;
 }
 
-.eventos .container figure {
-    width: 100%;
-    height: 250px;
-    margin: 20px 0 20px 0
+.titulo{
+    font-size: 1.45rem;
+    font-weight:bold;
 }
-
-.eventos .container figure .img-eventos {
-    width: 100%;
-    height: 240px;
-    overflow: hidden
-}
-
-.eventos .container figure .img-eventos img {
-    height: 100%
-}
-
-.eventos .container figure figcaption {
-    font-weight: bold;
-    margin-top: 5px
-}
-
-.eventos .container hr {
-    margin: 25px 0 30px 0
-}
-
 /*===================AREA DO LIVRO====================*/
 
 /*Gif de carregamento na busca de livros*/
@@ -1890,31 +1928,49 @@ section.jumbotron{
     margin: 2rem auto;
     padding: 1rem;
 }
-.contentItem img{
-    min-height:250px;
-    max-height:250px;
-    max-width:348px;
-}
-
 .contentItem{
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     margin: 1rem;
     min-width: 350px;
     max-width: 350px;
+    overflow: hidden;
+}
+.contentItem .item{
+    max-height: 243px;
+}
+.contentItem img{
+    min-height:250px;
+    max-height:250px;
+    /* max-width:348px; */
+    transition:.3s all ease-in-out;
+    object-position: top;
+}
+.contentItem img:hover{
+    transform: scale(1.2);
+    transition:.3s all ease-in-out;
 }
 .contentItem figcaption{
     margin: 1rem auto;
     padding: 1rem;
     max-height: 101px;
+    position: relative;
+    top: -6.5rem;
+    background-color: #000;
+    background: linear-gradient(45deg, #000000d4, #19181691);
+    width: 100%;
+    color: #fff;
 }
-.contentItem figcaption p{
+.contentItem figcaption p, .titulo{
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 .itemModifica{
-    margin:1rem
+    margin: 1.5rem 1rem 3rem;
 }
+/* .itemModifica{
+    margin:1rem
+} */
 /*Post ver*/
 .itemVerContainer {
     padding:1rem;

@@ -1,6 +1,6 @@
 <?php
 $cidades = [
-    "Sebos Parceiros encontrados no estado de SP",
+    "Econtrar por Cidade",
     "Adamantina",
     "Adolfo",
     "Aguaí",

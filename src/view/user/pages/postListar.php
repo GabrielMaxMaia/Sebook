@@ -45,7 +45,7 @@ if ($GetPost) {
                             <figure>
                                 <img src='<?= _URLBASE_ . $post['urlFotoPost'] ?>'>
                                 <figcaption>
-                                    <h1><?= $post['tituloPostagem'] ?></h1>
+                                    <p class="titulo"><?= $post['tituloPostagem'] ?></p>
                                     <p><?= $post['txtPostagem'] ?></p>
                                 </figcaption>
                             </figure>

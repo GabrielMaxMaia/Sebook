@@ -111,7 +111,7 @@ class SeboDAO extends Sebo
         $result = $this->sql->query(
             seboDAO::$SELECT_NOME_SEBO
             ,array(
-                ':nomeFantasia' => array(0 => $this->getNomeFantasia() . "%", 1 => \PDO::PARAM_STR),
+                ':nomeFantasia' => array(0 => "%".$this->getNomeFantasia() . "%", 1 => \PDO::PARAM_STR),
                 ':cidadeSebo' => array(0 => $this->getCidadeSebo() . "%", 1 => \PDO::PARAM_STR)
             )
         );

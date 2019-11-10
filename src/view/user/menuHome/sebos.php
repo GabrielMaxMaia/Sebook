@@ -6,12 +6,8 @@ $pesquisaSebo =  _URLBASE_ . "src/view/user/pages/includes/pesquisaSebo.php";
 <section class="sebos">
 	<p>SEBOS</p>
 	<form action="search-box" name="form_pesquisa" id="form_pesquisa" method="post" action="">
-		<label for="">Buscas por Sebos</label>
-        <div class="input-prepend">
-			<input type="text" name="pesquisaSebo" id="pesquisaSebo" value="" tabindex="1" placeholder="Pesquisar Sebos...">
-		</div>
+		<label for="pesquisaCidade">Localizar Sebos</label>
 		<div class="input-prepend">
-       
 			<select name="pesquisaCidade" id="pesquisaCidade">
 				<optgroup label="Selecione a Cidade">
 					<?php
@@ -28,13 +24,11 @@ $pesquisaSebo =  _URLBASE_ . "src/view/user/pages/includes/pesquisaSebo.php";
                 ?>
 				</optgroup>
 			</select>
-
 		</div>
-	
-		<!-- <div class="input-prepend">
-            <input type="text" name="pesquisaCidade" id="pesquisaCidade" value="" tabindex="1" placeholder="Digite a cidade...">
-        </div> -->
-
+		<label for="pesquisaSebo">Encontrar por Nome</label>
+        <div class="input-prepend">
+			<input type="text" name="pesquisaSebo" id="pesquisaSebo" value="" tabindex="1" placeholder="Pesquisar Sebos...">
+		</div>
 	</form>
 
 	<section class="jumbotron">

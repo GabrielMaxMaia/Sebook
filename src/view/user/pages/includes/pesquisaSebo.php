@@ -11,7 +11,7 @@ if ($_POST != "") {
     $parametro = $_POST['pesquisaSebo'] ?? false;
     $parametroCidade = $_POST['pesquisaCidade'] ?? false;
 
-    if($parametroCidade == "Sebos Parceiros encontrados no estado de SP"){
+    if($parametroCidade == "Econtrar por Cidade"){
         if($parametro == ""){
             //Pesquisar sebos em qualquer cidade
             $resultado = $seboDAO->listarSebos();
