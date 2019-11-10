@@ -223,23 +223,6 @@ div#containerTemplate {
     box-sizing: border-box
 }
 
-.cadastro header p {
-    width: 100%;
-    text-align: center;
-    position: relative;
-    margin: 1rem 0;
-    font-size: 1.65rem
-}
-
-.cadastro  header p:after {
-    content: "";
-    margin: .1rem auto;
-    border-bottom: 2px solid #99e7aa;
-    padding: 0 0 .6rem;
-    max-width: 160px;
-    display: block
-}
-
 .imgContainer{
     display: flex;
     flex-direction: column;
@@ -251,15 +234,16 @@ div#containerTemplate {
     max-width:250px;
 }
 .imgCadastro img{
-    border-radius:50%
+    border-radius:50%;
+    min-height:240px
 }
-.imgCadastro .imgInfo p{
-    text-align:center;
-}
-.cadastro figure .imgInfo {
+.imgInfo {
     margin: auto;
-    font-size: 1.65rem;
-    margin-top: 1.2rem;
+    font-size: 1.6rem;
+    margin-top: .6rem;
+}
+.imgInfo p{
+    text-align:center;
 }
 [type="file"] {
     color: rgb(153,153,153);
@@ -323,7 +307,7 @@ div#containerTemplate {
 .cadastro form input[type=password] {
     height: 30px;
     margin-bottom: 10px;
-    border: 1px solid #999;
+    border: 1px solid #ccc;
     padding:.5rem;
 }
 
@@ -1919,6 +1903,18 @@ section.jumbotron{
     max-width: 120px;
     display: block;
 }
+.headerPagina p {
+    /* width: 100%;
+    text-align: center;
+    position: relative;
+    margin: 1rem 0 .3rem;
+    font-size: 1.65rem */
+}
+.headerPagina h1{
+   font-weight: 500;
+   margin: 1rem 0 .3rem;
+   font-size: 1.65rem
+}
 
 /*Pagina de postagens*/
 .itemContentContainer{
@@ -2073,4 +2069,42 @@ section.jumbotron{
 }
 .modifica.danger{
     background:#b22;
+}
+
+/*Criar postagens ou eventos*/
+.containerCriacao{
+    padding:2rem;
+}
+.formCriacao{
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 2rem auto;
+}
+.formCriacao input{
+    display: block;
+}
+.formCriacao input[type=text], .formCriacao input[type=password], .formCriacao input[type=date], .formCriacao input[type=time]{
+    height: 30px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: .5rem
+}
+.formCriacao textarea{
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 600px;
+    height: 150px;
+    font-size: 1.4rem;
+    padding: 1rem;
+} 
+.formCriacao label{
+    margin-bottom: 5px;
+}
+.formCriacao input[type="submit"] {
+    max-width: 100px;
+    padding: .5rem;
+    border: 1px solid #ccc;
+    background: #fff;
+    margin: 1rem 0;
 }

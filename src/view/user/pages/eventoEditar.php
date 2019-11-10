@@ -17,6 +17,8 @@ $eventoDAO->setIdEvento($_GET['id']);
 $resultEvento = $eventoDAO->listarEventoId();
 $eventoDAO->setDataEvento($resultEvento['dataEvento']);
 $eventoDAO->setHoraEvento($resultEvento['horaEvento']);
+$eventoDAO->setNomeEvento($resultEvento['nomeEvento']);
+$eventoDAO->setTxtEvento($resultEvento['txtEvento']);
 
 $eventoDAO->setUrlFotoEvento($resultEvento['urlFotoEvento']);
 
@@ -24,51 +26,86 @@ $eventoDAO->setUrlFotoEvento($resultEvento['urlFotoEvento']);
 include "includes/evitarReenvio.php";
 
 if (isset($_POST['update'])) {
-    var_dump($_POST);
-    $eventoDAO->setIdEvento($_POST['idEvento']);
-    $eventoDAO->setIdUsuario($IdSessaoUser);
-    $eventoDAO->setNomeEvento($_POST['nomeEvento']);
-    $eventoDAO->setTxtEvento($_POST['txtEvento']);
-    $eventoDAO->setDataEvento($_POST['dataEvento']);
-    $eventoDAO->setHoraEvento($_POST['horaEvento']);
-    $eventoDAO->setUrlFotoEvento($_POST['txtImg']);
-    $eventoDAO->alterarEvento();
+    $erro = false;
+    $erroMen = "";
+    if ($_POST['nomeEvento'] != "") {
+        $eventoDAO->setNomeEvento(trim($_POST['nomeEvento']));
+    } else {
+        $erro = true;
+        $erroMen .= "<li>Prencha o Nome do evento</li>";
+    }
 
-    header("Location:" . _URLBASE_ . "area/user/pages/eventoListar");
+    if ($_POST['txtEvento'] != "") {
+        $eventoDAO->setTxtEvento(trim($_POST['txtEvento']));
+    } else {
+        $erro = true;
+        $erroMen .= "<li>Prencha a descrição</li>";
+    }
+
+    if ($_POST['dataEvento'] != "" || $_POST['dataEvento'] != null) {
+        $eventoDAO->setDataEvento(trim($_POST['dataEvento']));
+    } else {
+        $erro = true;
+        $erroMen .= "<li>Prencha a data</li>";
+    }
+
+    if ($_POST['horaEvento'] != "" || $_POST['horaEvento'] != null) {
+        $eventoDAO->setHoraEvento(trim($_POST['horaEvento']));
+    } else {
+        $erro = true;
+        $erroMen .= "<li>Prencha a hora</li>";
+    }
+
+    if ($erro == true) {
+        echo "<ul class='errorList' style='display:block;'>$erroMen</ul>" ?? "";
+    }
+
+    if ($erro != true) {
+        $eventoDAO->setUrlFotoEvento($_POST['txtImg']);
+
+        //Chama a função listaPostagemId
+        $eventoDAO->setIdUsuario($IdSessaoUser);
+        $eventoDAO->alterarEvento();
+        header("Location:" . _URLBASE_ . "area/user/pages/eventoListar");
+    }
 }
-
 ?>
-<h1>Alterar Evento</h1>
 
 <?php
-
 if ($resultEvento != null) {
 
     if ($resultEvento['idUsuario'] == $IdSessaoUser || $acessoUser <= 3) {
         ?>
-        <form method="post" action="">
+        <section class="containerCriacao">
+            <header class="headerPagina">
+                <h1>Atualizar Evento</h1>
+            </header>
+            <?php
+                    //Chama estrutura para formulário de img 
+                    include "includes/formEventoImg.php";
+                    ?>
+            <form method="post" action="" class="formCriacao">
+                <label for="nomeEvento">Nome do Evento</label>
+                <input type="text" name="nomeEvento" id="nomeEvento" value="<?= $eventoDAO->getNomeEvento() ?>">
 
-            <input type="hidden" name="txtImg" id="txtImg" value="<?= $eventoDAO->getUrlFotoEvento() ?>">
+                <label for="dataEvento">Data</label>
+                <input class="grande" type="date" name="dataEvento" id="dataEvento" value="<?= $eventoDAO->getDataEvento() ?>">
 
-            <input type="text" name="nomeEvento" value="<?= $resultEvento['nomeEvento'] ?>">
-   
-            <input class="grande" type="date" name="dataEvento" id="dataEvento" value="<?= $eventoDAO->getDataEvento() ?>">
-   
-            <input class="grande" type="time" name="horaEvento" id="horaEvento" min="00:00" max="23:59" value="<?= $eventoDAO->getHoraEvento() ?>">
-    
-            <textarea name="txtEvento" cols="25" rows="5">
-                <?= $resultEvento['txtEvento'] ?>
-            </textarea>
+                <label for="horaEvento">Hora</label>
+                <input class="grande" type="time" name="horaEvento" id="horaEvento" min="00:00" max="23:59" value="<?= $eventoDAO->getHoraEvento() ?>">
 
-            <input type="hidden" name="idEvento" value="<?= $resultEvento['idEvento'] ?>">
+                <label for="txtEvento">Descrição</label>
+                <textarea name="txtEvento" id="txtEvento"><?= $eventoDAO->getTxtEvento() ?></textarea>
 
-            <input type="submit" name="update" value="Alterar">
-        </form>
+                <input type="hidden" name="txtImg" id="txtImg" value="<?= $eventoDAO->getUrlFotoEvento() ?>">
+
+                <input type="hidden" name="idEvento" value="<?= $resultEvento['idEvento'] ?>">
+
+                <input type="submit" name="update" value="Alterar">
+            </form>
+        </section>
 <?php
     } else {
-        echo "Esse evento não pertence a você";
+        echo "<p>Esse evento não pertence a você</p>";
     }
 }
-
-//Chama estrutura para formulário de img 
-include "includes/formEventoImg.php";

@@ -1,16 +1,19 @@
 <!--Formulário de foto-->
 <div class="imgContainer">
     <div class="imgCadastro">
-        <picture>
+        <figure>
             <img id="imgAvatar" src='<?= _URLBASE_ . $eventoDAO->getUrlFotoEvento() ?>' alt="Avatar" class="avatar">
-        </picture>
+            <figcaption class="imgInfo">
+                <p>Escolha a foto</p>
+            </figcaption>
+        </figure>
     </div>
     <div class="formFotoContainer">
         <form action="<?= _URLBASE_ ?>src/view/user/pages/cadUploadEvento.php" method='post' enctype='multipart/form-data' target='ifrmUpload' name="urlFotoEvento">
 
             <input type="file" name="urlFotoEvento">
 
-            <input class="button" type="submit" value="Carregar">
+            <input class="inputTrocaFoto" type="submit" value="Enviar Foto">
         </form>
         <iframe id="ifrmUpload" name="ifrmUpload" src="" frameborder="0"></iframe>
     </div>

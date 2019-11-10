@@ -73,8 +73,8 @@ if ($acessoUser != "") {
 	<!-- Perfil -->
 	<section class="cadastro">
 
-		<header>
-			<p>Atualizar meus dados</p>
+		<header class="headerPagina">
+			<h1>Atualizar meus dados</h1>
 		</header>
 
 		<?php

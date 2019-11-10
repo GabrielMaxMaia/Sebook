@@ -21,15 +21,36 @@ $postagemDAO->setUrlFotoPostagem($result['urlFotoPost']);
 include "includes/evitarReenvio.php";
 
 if (isset($_POST['update'])) {
-    $postagemDAO->setTituloPostagem($_POST['titulo']);
-    $postagemDAO->setTxtPostagem($_POST['conteudo']);
-    $postagemDAO->setUrlFotoPostagem($_POST['txtImg']);
-    $postagemDAO->alterarPostagem();
-    header("Location:" . _URLBASE_ . "area/user/pages/postListar");
+    $erro = false;
+	$erroMen = "";
+	if ($_POST['titulo'] != "") {
+		$postagemDAO->setTituloPostagem(trim($_POST['titulo']));
+	}else {
+		$erro = true;
+		$erroMen .="<li>Prencha o Titulo</li>";
+	}
+	if ($_POST['conteudo'] != "") {
+		$postagemDAO->setTxtPostagem(trim($_POST['conteudo']));
+	}else {
+		$erro = true;
+		$erroMen .="<li>Digite o conteudo</li>";
+	}
+
+	if($erro == true){
+		echo "<ul class='errorList' style='display:block;'>$erroMen</ul>" ?? "";
+	}
+
+	if ($erro != true) {
+		$postagemDAO->setDatahoraPostagem(date('Y-m-d H:i:s'));
+		$postagemDAO->setUrlFotoPostagem($_POST['txtImg']);
+
+		//Chama a função listaPostagemId
+		$postagemDAO->alterarPostagem();
+		header("Location:" . _URLBASE_ . "area/user/pages/postListar");
+	}
 }
 
 ?>
-<h1>Alterar Publicação</h1>
 
 <?php
 
@@ -37,25 +58,32 @@ if ($result != null) {
 
     if ($result['idUsuario'] == $IdSessaoUser || $acessoUser <= 3) {
         ?>
-        <form method="post" action="">
+        <section class="containerCriacao">
+            <header class="headerPagina">
+                <h1>Alterar Publicação</h1>
+            </header>
+            <?php
+                //Chama estrutura para formulário de img 
+                include "includes/formPostImg.php";
+            ?>
+            <form method="post" action="" class="formCriacao">
+                <label for="titulo">Titulo</label>
+                <input type="text" name="titulo" id="titulo" value="<?= $result['tituloPostagem'] ?>">
 
-            <input type="hidden" name="txtImg" id="txtImg" value="<?= $postagemDAO->getUrlFotoPostagem() ?>">
+                <label for="conteudo">Conteúdo</label>
+                <textarea name="conteudo" cols="25" rows="5" id="conteudo">
+                    <?= $result['txtPostagem'] ?>
+                </textarea>
+                
+                <input type="hidden" name="txtImg" id="txtImg" value="<?= $postagemDAO->getUrlFotoPostagem() ?>">
+                
+                <input type="hidden" name="id" value="<?= $result['idPostagem'] ?>">
 
-            <input type="text" name="titulo" value="<?= $result['tituloPostagem'] ?>">
-
-            <textarea name="conteudo" cols="25" rows="5">
-                <?= $result['txtPostagem'] ?>
-            </textarea>
-
-            <input type="hidden" name="id" value="<?= $result['idPostagem'] ?>">
-
-            <input type="submit" name="update" value="Alterar">
-        </form>
+                <input type="submit" name="update" value="Atualizar">
+            </form>
+        </section>
 <?php
     } else {
-        echo "Essa postagem não pertence a você";
+        echo "<p>Essa postagem não pertence a você</p>";
     }
 }
-
-//Chama estrutura para formulário de img 
-include "includes/formPostImg.php";
