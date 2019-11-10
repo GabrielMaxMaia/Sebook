@@ -1936,7 +1936,8 @@ section.jumbotron{
     overflow: hidden;
 }
 .contentItem .item{
-    max-height: 243px;
+    max-height: 242px;
+    overflow: hidden;
 }
 .contentItem img{
     min-height:250px;
