@@ -4,7 +4,7 @@ $mapa = "<script type='text/javascript' src='https://js.api.here.com/v3/3.1/maps
         <script type='text/javascript' src='https://js.api.here.com/v3/3.1/mapsjs-service.js'></script>
         <script type='text/javascript' src='https://js.api.here.com/v3/3.1/mapsjs-ui.js'></script>
         <script type='text/javascript' src='https://js.api.here.com/v3/3.1/mapsjs-mapevents.js'></script>
-        <link rel='stylesheet type='text/css' href='https://js.api.here.com/v3/3.1/mapsjs-ui.css'>";
+        <link rel='stylesheet' type='text/css' href='https://js.api.here.com/v3/3.1/mapsjs-ui.css'>";
 
 $styleSobrescrito =
 "<style>
@@ -15,9 +15,11 @@ $styleSobrescrito =
         margin-left: -50%;
     }
 </style>";
+
+$testeInsert = -23.487558;
 ?>
     <div id="msg"></div>
-	<div style="width: 1000px; height: 480px; border: solid gainsboro;" id="mapContainer"></div>
+	<div style="width: 100%; height: 480px; border: solid gainsboro;" id="mapContainer"></div>
 	<script>
 		// Instantiate a map and platform object:
 		var platform = new H.service.Platform({
@@ -38,7 +40,7 @@ $styleSobrescrito =
 		});
 
 		//Criando Marcadores
-		var itbEngenho = new H.map.Marker({lat:-23.487558, lng:-46.888370});
+		var itbEngenho = new H.map.Marker({lat:<?= $testeInsert ?>, lng:-46.888370});
         itbEngenho.setData("Engenho");
 		map.addObject(itbEngenho);
 

@@ -578,6 +578,10 @@ CREATE TABLE `sebo` (
   `cod_status_sebo` varchar(10) DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+ALTER TABLE `db_sebook`.`sebo` 
+ADD COLUMN `latitude_sebo` DOUBLE(10,7) NULL DEFAULT NULL AFTER `cnpj_sebo`,
+ADD COLUMN `longitude_sebo` DOUBLE(10,7) NULL DEFAULT NULL AFTER `latitude_sebo`;
+
 --
 -- Extraindo dados da tabela `sebo`
 --

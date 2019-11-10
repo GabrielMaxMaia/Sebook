@@ -23,6 +23,8 @@ if ($acessoUser != "") {
 	$seboDAO->setInscEstadualSebo($result['inscEstadualSebo']);
 	$seboDAO->setCepEndSebo($result['cepEndSebo']);
 	$seboDAO->setLogradouroSebo($result['logradouroSebo']);
+	$seboDAO->setLatitudeSebo($result['latitudeSebo']);
+	$seboDAO->setLongitudeSebo($result['longitudeSebo']);
 	$seboDAO->setCidadeSebo($result['cidadeSebo']);
 	$seboDAO->setNumEndSebo($result['numEndSebo']);
 	$seboDAO->setComplEndSebo($result['complEndSebo']);
@@ -48,6 +50,8 @@ if ($acessoUser != "") {
 		$seboDAO->setInscEstadualSebo($_POST['inscEstadualSebo']);
 		$seboDAO->setCepEndSebo($_POST['cepEndSebo']);
 		$seboDAO->setLogradouroSebo($_POST['logradouroSebo']);
+		$seboDAO->setLatitudeSebo($_POST['latitudeSebo']);
+		$seboDAO->setLongitudeSebo($_POST['longitudeSebo']);
 		$seboDAO->setCidadeSebo($_POST['cidadeSebo']);
 		$seboDAO->setNumEndSebo($_POST['numEndSebo']);
 		$seboDAO->setComplEndSebo($_POST['complEndSebo']);
@@ -104,7 +108,6 @@ if ($acessoUser != "") {
 				<input type="text" name="emailUsuario" id="emailUsuario" required value='<?= $usuarioDAO->getEmailUsuario() ?>' onblur='mascaraEmail(this)'>
 			</div>
 
-
 			<div class="formItem">
 				<label for="nomeFantasia">Nome Fantasia</label>
 				<input type="text" name="nomeFantasia" id="nomeFantasia" value="<?= $seboDAO->getNomeFantasia() ?>">
@@ -130,6 +133,20 @@ if ($acessoUser != "") {
 				<input type="text" name="cepEndSebo" id="cepEndSebo" value="<?= $seboDAO->getCepEndSebo() ?>" onblur="pesquisacepsebo(this.value);">
 			</div>
 
+			<span>
+				<div class="formItem">
+					<label for="latitudeSebo">Latitude</label>
+					<input type="text" name="latitudeSebo" id="latitudeSebo" value="<?= $seboDAO->getLatitudeSebo() ?>">
+				</div>
+			</span>
+
+			<span>
+				<div class="formItem">
+					<label for="longitudeSebo">Longitude</label>
+					<input type="text" name="longitudeSebo" id="longitudeSebo" value="<?= $seboDAO->getLongitudeSebo() ?>">
+				</div>
+			</span>
+			
 			<div class="formItem">
 				<label for="cidadeSebo">Cidade</label>
 				<select name="cidadeSebo" id="cidadeSebo">
