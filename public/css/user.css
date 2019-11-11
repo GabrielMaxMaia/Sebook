@@ -207,21 +207,35 @@ div#containerTemplate {
 .busca .searchBooks {
     width: 100%;
     display: flex;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center
+    align-items: center;
+    max-width: 605px;
+    margin: 2rem auto;
 }
 
 .busca .searchBooks a {
     display: block;
-    width: 100%;
+    /* width: 100%; */
     padding: .105rem
 }
 
-.busca .searchBooks a img {
+.searchBooks a img {
     width: 100%;
     max-width: 120px;
     max-height: 174px;
+}
+@media (max-width:490px){
+    .searchBooks a img{
+        margin: 0 .45rem
+    }
+}
+
+.searchBooks figcaption{
+    max-width: 120px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 /*===================AREA DE ATULIZAçÃO DE CADASTRO====================*/
