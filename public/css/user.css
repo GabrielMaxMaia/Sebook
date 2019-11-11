@@ -2017,7 +2017,7 @@ section.jumbotron{
 }
 .texto p{
     white-space: pre-wrap;
-    word-break: break-all;
+    word-break:break-word;
     text-align: justify;
     line-height: 1.3rem;
 }
@@ -2152,7 +2152,7 @@ section.jumbotron{
 }
 
 .containerCentralizado{
-    max-width: 550px;
+    max-width: 744px;
     margin:auto;
 }
 textarea:focus, input:focus {
