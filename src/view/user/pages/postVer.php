@@ -29,7 +29,7 @@ $resultComentario = $comentarioDAO->listarComentarioPost();
             if ($linha['idPostagem'] == $GetPost) {
                 ?>
                 <article class="itemVerContainer">
-                    <header>
+                    <header class="headerPost">
                         <picture class="imgItemVer">
                             <img src="<?= _URLBASE_ . $linha['urlFotoPost'] ?>">
                         </picture>

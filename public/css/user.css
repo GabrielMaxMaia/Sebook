@@ -2000,10 +2000,23 @@ section.jumbotron{
 }
 .imgItemVer img{
     width:100%;
-    max-width:350px;
+    /* max-width:350px; */
     margin:auto;
     padding: .9rem;
 }
+@media (max-width:400px){
+    .imgItemVer img{
+        max-width:350px;
+    }
+}
+@media (min-width:400px){
+    .headerPost img{
+        min-width: 715px;
+        max-width:715px;
+        object-fit: cover;
+    }
+}
+
 .itemVerContainer .texto h1{
     font-size:2.5rem;
     color:#111;
@@ -2113,6 +2126,7 @@ section.jumbotron{
 }
 
 /*Criar postagens ou eventos*/
+
 .containerCriacao{
     padding:2rem;
 }
