@@ -2000,16 +2000,12 @@ section.jumbotron{
 }
 .imgItemVer img{
     width:100%;
-    /* max-width:350px; */
+    max-width: 600px;
     margin:auto;
     padding: .9rem;
 }
-@media (max-width:400px){
-    .imgItemVer img{
-        max-width:350px;
-    }
-}
-@media (min-width:400px){
+
+@media (min-width:782px){
     .headerPost img{
         min-width: 715px;
         max-width:715px;
