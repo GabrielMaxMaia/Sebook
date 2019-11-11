@@ -170,9 +170,10 @@ header .menuGroup {
 .icon {
     color: white;
     text-decoration: none;
-    padding: .7rem;
+    padding: .8rem;
     display: flex;
-    transition: all .5s
+    transition: all ease-in-out .5s;
+    margin: .025rem 0;
 }
 
 .icon-facebook {

@@ -64,7 +64,7 @@ $output = ob_get_clean();
     </div>
 
     <!--IREI MEXER POSTERIORMENTE-->
-    <style>
+    <!-- <style>
         #btnTop {
             position: fixed;
             bottom: 58px;
@@ -83,9 +83,9 @@ $output = ob_get_clean();
         #btnTop img {
             max-width: 36px;
         }
-    </style>
+    </style> -->
     <!-- <button id="btnTop" onclick="backToTop()">&#8593;</button> -->
-    <button id="btnTop" onclick="backToTop()"><img src="<?= _URLBASE_ ?>public/icon/arrow-up.svg"></button>
+    <!-- <button id="btnTop" onclick="backToTop()"><img src="<?//= _URLBASE_ ?>public/icon/arrow-up.svg"></button>
     <script>
         window.onscroll = function() {
             scroll();
@@ -105,7 +105,7 @@ $output = ob_get_clean();
         function backToTop() {
             document.documentElement.scrollTop = 0;
         }
-    </script>
+    </script> -->
 </body>
 
 </html>

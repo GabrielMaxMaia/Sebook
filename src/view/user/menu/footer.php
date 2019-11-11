@@ -18,12 +18,11 @@
 				<h1>Redes Sociais</h1>
 				<div class="row">
 					<a href="#face">
-						<img src="<?= _URLBASE_ ?>public/icon/facebook.svg" alt="">
+						<img src="<?= _URLBASE_ ?>public/icon/facebookLogo.png" alt="">
 						<label>Facebook</label>
 					</a>
 				</div>
 
-				<!--Nanikore?-->
 				<!-- <h1 class="intro-copy"></h1>
 
 				<a class="top-link hide" href="" id="js-top">
@@ -36,13 +35,13 @@
 
 				<div class="row">
 					<a href="#instagram">
-						<img src="<?= _URLBASE_ ?>public/icon/instagram.svg" alt="">
+						<img src="<?= _URLBASE_ ?>public/icon/instagramLogo.png" alt="">
 						<label>Instagram</label>
 					</a>
 				</div>
 				<div class="row">
 					<a href="#twitter">
-						<img src="<?= _URLBASE_ ?>public/icon/twitter.svg" alt="">
+						<img src="<?= _URLBASE_ ?>public/icon/twitterLogo.png" alt="">
 						<label>Twitter</label>
 					</a>
 				</div>
@@ -75,7 +74,7 @@
 
 			<div class="informar">
 				<a href="<?= _URLBASE_ ?>area/user/pages/centralDeAjuda" class="ajuda">Central de Ajuda </a> |
-				<a href="<?= _URLBASE_ ?>area/user/pages/politicaDePrivacidade" class="Seguranca">Politica de Privacidade </a> |
+				<a href="<?= _URLBASE_ ?>area/user/pages/politicaDePrivacidade" class="Seguranca">Politica de Privacidade </a> | 
 				<a href="<?= _URLBASE_ ?>area/user/pages/termosDeUso" class="Termos ">Termos de Uso</a>
 			</div>
 		</div>
