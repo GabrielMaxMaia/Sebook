@@ -171,7 +171,10 @@ div#containerTemplate {
 
 .busca {
     box-sizing: border-box;
-    padding: 1 !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .busca .container {

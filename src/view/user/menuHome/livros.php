@@ -114,8 +114,21 @@ $pesquisa =  _URLBASE_ . "src/view/user/pages/includes/pesquisa.php";
         }
         ?>
     </div>
-
+    <aside>
+        <ul>
+            <?php
+            foreach ($resultCategoria as $categorias) {
+                ?>
+                <li>
+                    <a href="<?= _URLBASE_ . "area/user/pages/categoriaListar/" . $categorias['idCategoria'] ?>"><?= $categorias['nomeCategoria'] ?></a>
+                </li>
+            <?php
+            }
+            ?>
+        </ul>
+    </aside>
 </section>
+
 <section class="notificador">
     <?php
     //Estou usando a Url da lista que quero controlar
@@ -126,16 +139,3 @@ $pesquisa =  _URLBASE_ . "src/view/user/pages/includes/pesquisa.php";
     echo $frontController->exibirNotificador($urlDoNotificador, $totalSebo, $totalUser, $GetPost);
     ?>
 </section>
-<aside>
-    <ul>
-        <?php
-        foreach ($resultCategoria as $categorias) {
-            ?>
-            <li>
-                <a href="<?=_URLBASE_ . "area/user/pages/categoriaListar/" . $categorias['idCategoria']?>"><?=$categorias['nomeCategoria']?></a>
-            </li>
-        <?php
-        }
-        ?>
-    </ul>
-</aside>
