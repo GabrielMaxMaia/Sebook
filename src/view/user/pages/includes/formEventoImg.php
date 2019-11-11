@@ -13,7 +13,7 @@
 
             <input type="file" name="urlFotoEvento">
 
-            <input class="inputTrocaFoto" type="submit" value="Enviar Foto">
+            <input class="inputTrocaFoto" type="submit" value="Enviar Foto" class="inputEnvia">
         </form>
         <iframe id="ifrmUpload" name="ifrmUpload" src="" frameborder="0"></iframe>
     </div>

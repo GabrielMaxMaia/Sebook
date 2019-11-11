@@ -19,7 +19,8 @@ $eventoDAO->setDataEvento($resultEvento['dataEvento']);
 $eventoDAO->setHoraEvento($resultEvento['horaEvento']);
 $eventoDAO->setNomeEvento($resultEvento['nomeEvento']);
 $eventoDAO->setTxtEvento($resultEvento['txtEvento']);
-
+$eventoDAO->setLocalEvento($resultEvento['localEvento']);
+$eventoDAO->setCidadeEvento($resultEvento['cidadeEvento']);
 $eventoDAO->setUrlFotoEvento($resultEvento['urlFotoEvento']);
 
 //Include para evitar reenvio
@@ -55,6 +56,21 @@ if (isset($_POST['update'])) {
         $erro = true;
         $erroMen .= "<li>Prencha a hora</li>";
     }
+
+    if ($_POST['eventoLocal'] != "" || $_POST['eventoLocal'] != null) {
+		$eventoDAO->setLocalEvento(trim($_POST['eventoLocal']));
+	} else {
+		$erro = true;
+		$erroMen .= "<li>Prencha o Endereço</li>";
+	}
+
+	if ($_POST['eventoCidade'] != "" || $_POST['eventoCidade'] != null) {
+		$eventoDAO->setCidadeEvento(trim($_POST['eventoCidade']));
+	} else {
+		$erro = true;
+		$erroMen .= "<li>Selecione a Cidade</li>";
+	}
+
 
     if ($erro == true) {
         echo "<ul class='errorList' style='display:block;'>$erroMen</ul>" ?? "";
@@ -94,14 +110,40 @@ if ($resultEvento != null) {
                 <label for="horaEvento">Hora</label>
                 <input class="grande" type="time" name="horaEvento" id="horaEvento" min="00:00" max="23:59" value="<?= $eventoDAO->getHoraEvento() ?>">
 
+                <label for="eventoLocal">Endereço</label>
+                <input class="grande" type="text" name="eventoLocal" id="eventoLocal" value="<?= $eventoDAO->getLocalEvento() ?>">
+
+                <label for="eventoCidade">Cidade</label>
+                <select name="eventoCidade" id="eventoCidade">
+                    <optgroup label="Selecione a Cidade">
+                        <?php
+                            //Inclui o arquivo de array cidades
+                            include "src/view/user/pages/includes/arrayCidades.php";
+
+                            foreach ($cidades as $cidade) {
+                                if ($cidade == $eventoDAO->getCidadeEvento()) {
+                                    $select = 'selected';
+                                } else {
+                                    $select = "";
+                                }
+                        ?>
+                            <option <?=$select?> value="<?= $cidade ?>" name="eventoCidade" id="eventoCidade" value="">
+                                <?= $cidade ?>
+                            </option>
+                        <?php
+                            }
+                        ?>
+                    </optgroup>
+                </select>
+
                 <label for="txtEvento">Descrição</label>
-                <textarea name="txtEvento" id="txtEvento"><?= $eventoDAO->getTxtEvento() ?></textarea>
+                <textarea name="txtEvento" id="txtEvento" maxlength="255"><?= $eventoDAO->getTxtEvento() ?></textarea>
 
                 <input type="hidden" name="txtImg" id="txtImg" value="<?= $eventoDAO->getUrlFotoEvento() ?>">
 
                 <input type="hidden" name="idEvento" value="<?= $resultEvento['idEvento'] ?>">
 
-                <input type="submit" name="update" value="Alterar">
+                <input type="submit" name="update" value="Alterar" class="inputEnvia">
             </form>
         </section>
 <?php

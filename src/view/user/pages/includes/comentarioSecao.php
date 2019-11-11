@@ -39,37 +39,37 @@ if ($resultComentario != null || $resultComentario >= 1) {
 
                 <div class="itemEdit">
                     <?php
-                                //Caso o id do usuário for o mesmo que está no comentário ou o id for Master ou ele for o dono da postagem
-                                //Ele pode editar excluir o comentário
+                        //Caso o id do usuário for o mesmo que está no comentário ou o id for Master ou ele for o dono da postagem
+                        //Ele pode editar excluir o comentário
 
-                                if ($comentario['idUsuario'] == $usuarioDAO->getIdUsuario() || $acessoUser <= 3 && $acessoUser != "" || $pag == $idUser) {
+                        if ($comentario['idUsuario'] == $usuarioDAO->getIdUsuario() || $acessoUser <= 3 && $acessoUser != "" || $pag == $idUser) {
 
-                                    $comentarioDAO->setIdUsuario($comentario['idUsuario']);
+                            $comentarioDAO->setIdUsuario($comentario['idUsuario']);
 
-                                    // if ($pagina == "paginaSebo") {
-                                    //     $comentarioDAO->setIdPagina($comentario['idPagina']);
-                                    // } else {
-                                    //     $comentarioDAO->setIdPost($comentario['idPost']);
-                                    // }
+                            // if ($pagina == "paginaSebo") {
+                            //     $comentarioDAO->setIdPagina($comentario['idPagina']);
+                            // } else {
+                            //     $comentarioDAO->setIdPost($comentario['idPost']);
+                            // }
 
-                                    if ($pagina == "paginaSebo") {
-                                        $setModo = "setIdPagina";
-                                    } else if ($pagina == "paginaEvento") {
-                                        $setModo = "setIdEvento";
-                                    } else if ($pagina == "paginaLivro" || $pagina == "paginaPost") {
-                                        $setModo = "setIdPost";
-                                    }
-                                    // var_dump($pagina);
-                                    $comentarioDAO->$setModo($GetPost);
+                            if ($pagina == "paginaSebo") {
+                                $setModo = "setIdPagina";
+                            } else if ($pagina == "paginaEvento") {
+                                $setModo = "setIdEvento";
+                            } else if ($pagina == "paginaLivro" || $pagina == "paginaPost") {
+                                $setModo = "setIdPost";
+                            }
+                            // var_dump($pagina);
+                            $comentarioDAO->$setModo($GetPost);
 
-                                    $comentarioDAO->setIdComentario($comentario['idComentario']);
+                            $comentarioDAO->setIdComentario($comentario['idComentario']);
 
-                                    $comentarioDAO->setIdComentarioParente($comentario['idComentarioParente']);
+                            $comentarioDAO->setIdComentarioParente($comentario['idComentarioParente']);
 
-                                    $resultComentarioId = $comentarioDAO->listarComentarioId();
+                            $resultComentarioId = $comentarioDAO->listarComentarioId();
 
-                                    $comentarioDAO->setTxtComentario($resultComentarioId['txtComentario']);
-                                    ?>
+                            $comentarioDAO->setTxtComentario($resultComentarioId['txtComentario']);
+                    ?>
 
                         <label class="btn-modal-cadastre modifica edit" for="modal-editar" value="<?= $comentario['idComentario'] ?>" onclick="return pegaId(<?= $comentario['idComentario'] ?>,'<?= addslashes($comentario['txtComentario']) ?>')">Editar</label>
 
@@ -113,7 +113,7 @@ if ($resultComentario != null || $resultComentario >= 1) {
         }
     }
 } else {
-    echo "<p>Seja o primeiro a comentar.</p>";
+    echo "<p class='commentMenssagem'>Seja o primeiro a comentar.</p>";
 }
 ?>
 

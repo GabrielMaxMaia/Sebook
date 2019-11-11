@@ -18,12 +18,12 @@ class EventoDAO extends Evento
 
     private static $SELECT_TOT_CONT_ID = "SELECT count(id_evento) as tot from evento where id_usuario = :idUsuario";
 
-    private static $SELECT_ID = "SELECT * from evento where id_evento = :idEvento";
+    private static $SELECT_ID = "SELECT * from evento INNER JOIN usuario ON (evento.id_usuario = usuario.id_usuario) where id_evento = :idEvento";
 
-    private static $INSERT = "INSERT INTO evento (nome_evento,txt_evento,data_evento,hora_evento, url_foto_evento, id_usuario)
-    VALUES (:nomeEvento, :txtEvento, :dataEvento,:horaEvento, :urlFotoEvento, :idUsuario)";
+    private static $INSERT = "INSERT INTO evento (nome_evento,txt_evento,data_evento,hora_evento, local_evento, cidade_evento, url_foto_evento, id_usuario)
+    VALUES (:nomeEvento, :txtEvento, :dataEvento,:horaEvento,:localEvento, :cidadeEvento, :urlFotoEvento, :idUsuario)";
 
-    private static $UPDATE = "UPDATE evento SET nome_evento = :nomeEvento, txt_evento = :txtEvento, data_evento = :dataEvento, hora_evento = :horaEvento,url_foto_evento = :urlFotoEvento WHERE id_evento = :idEvento";
+    private static $UPDATE = "UPDATE evento SET nome_evento = :nomeEvento, txt_evento = :txtEvento, data_evento = :dataEvento, hora_evento = :horaEvento,local_evento = :localEvento,cidade_evento = :cidadeEvento,url_foto_evento = :urlFotoEvento WHERE id_evento = :idEvento";
 
     //DELETE lógico -> altera status
     private static $DELETE = "DELETE FROM evento WHERE id_evento = :idEvento";
@@ -32,9 +32,9 @@ class EventoDAO extends Evento
     private $sql;
 
     //Método Construtor - setamos os parametros e passamos um obj SQL
-    public function __construct($objSql = "", $idEvento = "", $nomeEvento = "", $txtEvento = "", $dataEvento = "", $horaEvento = "", $idUsuario = "", $urlFotoEvento = "")
+    public function __construct($objSql = "", $idEvento = "", $nomeEvento = "", $txtEvento = "", $dataEvento = "", $horaEvento = "", $localEvento = "", $cidadeEvento = "",$idUsuario = "", $urlFotoEvento = "")
     {
-        parent::__construct($idEvento, $nomeEvento, $txtEvento, $dataEvento, $horaEvento, $idUsuario, $urlFotoEvento);
+        parent::__construct($idEvento, $nomeEvento, $txtEvento, $dataEvento, $horaEvento, $localEvento, $cidadeEvento,$idUsuario, $urlFotoEvento);
         $this->sql = $objSql;
     }
 
@@ -63,6 +63,8 @@ class EventoDAO extends Evento
                     'txtEvento' => $linha->txt_evento,
                     'dataEvento' => $linha->data_evento,
                     'horaEvento' => $linha->hora_evento,
+                    'localEvento' => $linha->local_evento,
+                    'cidadeEvento' => $linha->cidade_evento,
                     'idUsuario' => $linha->id_usuario,
                     'urlFotoEvento' => $linha->url_foto_evento
                 );
@@ -100,6 +102,8 @@ class EventoDAO extends Evento
                     'nomeEvento' => $linha->nome_evento,
                     'txtEvento' => $linha->txt_evento,
                     'dataEvento' => $linha->data_evento,
+                    'localEvento' => $linha->local_evento,
+                    'cidadeEvento' => $linha->cidade_evento,
                     'horaEvento' => $linha->hora_evento,
                     'idUsuario' => $linha->id_usuario,
                     'urlFotoEvento' => $linha->url_foto_evento
@@ -129,6 +133,8 @@ class EventoDAO extends Evento
                     'txtEvento' => $linha->txt_evento,
                     'dataEvento' => $linha->data_evento,
                     'horaEvento' => $linha->hora_evento,
+                    'localEvento' => $linha->local_evento,
+                    'cidadeEvento' => $linha->cidade_evento,
                     'idUsuario' => $linha->id_usuario,
                     'urlFotoEvento' => $linha->url_foto_evento
                 );
@@ -183,8 +189,12 @@ class EventoDAO extends Evento
                 'txtEvento' => $linha->txt_evento,
                 'dataEvento' => $linha->data_evento,
                 'horaEvento' => $linha->hora_evento,
+                'localEvento' => $linha->local_evento,
+                'cidadeEvento' => $linha->cidade_evento,
                 'idUsuario' => $linha->id_usuario,
-                'urlFotoEvento' => $linha->url_foto_evento
+                'urlFotoEvento' => $linha->url_foto_evento,
+                'nomeUsuario' => $linha->nome_usuario,
+                'idPerfil' => $linha->id_perfil
             );
             // var_dump($itens);
         } else {
@@ -203,6 +213,8 @@ class EventoDAO extends Evento
                 ':txtEvento' => array(0 => $this->getTxtEvento(), 1 => \PDO::PARAM_STR),
                 ':dataEvento' => array(0 => $this->getDataEvento(), 1 => \PDO::PARAM_STR),
                 ':horaEvento' => array(0 => $this->getHoraEvento(), 1 => \PDO::PARAM_STR),
+                ':localEvento' => array(0 => $this->getLocalEvento(),1 => \PDO::PARAM_STR),
+                ':cidadeEvento' => array(0 => $this->getCidadeEvento(),1 => \PDO::PARAM_STR),
                 ':idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT),
                 ':urlFotoEvento' => array(0 => $this->getUrlFotoEvento(), 1 => \PDO::PARAM_STR)
             )
@@ -220,6 +232,8 @@ class EventoDAO extends Evento
                 ':nomeEvento' => array(0 => $this->getNomeEvento(), 1 => \PDO::PARAM_STR),
                 ':txtEvento' => array(0 => $this->getTxtEvento(), 1 => \PDO::PARAM_STR),
                 ':dataEvento' => array(0 => $this->getDataEvento(), 1 => \PDO::PARAM_STR),
+                ':localEvento' => array(0 => $this->getLocalEvento(),1 => \PDO::PARAM_STR),
+                ':cidadeEvento' => array(0 => $this->getCidadeEvento(),1 => \PDO::PARAM_STR),
                 ':horaEvento' => array(0 => $this->getHoraEvento(), 1 => \PDO::PARAM_STR),
                 ':urlFotoEvento' => array(0 => $this->getUrlFotoEvento(), 1 => \PDO::PARAM_STR)
             )

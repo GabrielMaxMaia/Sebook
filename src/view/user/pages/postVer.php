@@ -18,33 +18,34 @@ $result = $postagemDAO->listarPostagem();
 $comentarioDAO->setIdPost($GetPost);
 $resultComentario = $comentarioDAO->listarComentarioPost();
 
-//Include para evitar reenvio
-include "includes/evitarReenvio.php";
-
+// //Include para evitar reenvio
+// include "includes/evitarReenvio.php";
 ?>
-<!-- <article> -->
-<?php
-//Postagem
-if ($result != null) {
-    foreach ($result as $linha) {
-        if ($linha['idPostagem'] == $GetPost) {
-            ?>
-            <article class="itemVerContainer">
-                <header>
-                    <picture class="imgItemVer">
-                        <img src="<?= _URLBASE_ . $linha['urlFotoPost'] ?>">
-                    </picture>
-                </header>
-                <section class="texto">
-                    <h1><?= $linha['tituloPostagem'] ?></h1>
-                    <p><?= $linha['txtPostagem'] ?></p>
-                </section>
-            </article>
-<?php
+<div class="containerCentralizado">
+    <?php
+    //Postagem
+    if ($result != null) {
+        foreach ($result as $linha) {
+            if ($linha['idPostagem'] == $GetPost) {
+                ?>
+                <article class="itemVerContainer">
+                    <header>
+                        <picture class="imgItemVer">
+                            <img src="<?= _URLBASE_ . $linha['urlFotoPost'] ?>">
+                        </picture>
+                    </header>
+                    <section class="texto">
+                        <h1><?= $linha['tituloPostagem'] ?></h1>
+                        <p><?= $linha['txtPostagem'] ?></p>
+                    </section>
+                </article>
+    <?php
+            }
         }
     }
-}
 
-/*Inclui toda sessão de comentários*/
-$pagina = "paginaPost";
-include "includes/comentarioTemplate.php";
+    /*Inclui toda sessão de comentários*/
+    $pagina = "paginaPost";
+    include "includes/comentarioTemplate.php";
+    ?>
+</div>

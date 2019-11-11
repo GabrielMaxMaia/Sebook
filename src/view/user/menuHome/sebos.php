@@ -12,7 +12,11 @@ $pesquisaSebo =  _URLBASE_ . "src/view/user/pages/includes/pesquisaSebo.php";
 				<optgroup label="Selecione a Cidade">
 					<?php
                 //Inclui o arquivo de array cidades
-                include "src/view/user/pages/includes/arrayCidades.php";
+				include "src/view/user/pages/includes/arrayCidades.php";
+
+				//Adiciona o elemento do array somente nessa página
+				array_unshift($cidades, "Econtrar por Cidade");
+				
                 foreach ($cidades as $cidade) {
                     ?>
 					<option value="<?= $cidade ?>" name="pesquisaCidade" id="pesquisaCidade" value=""

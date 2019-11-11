@@ -72,7 +72,7 @@ if ($IdSessaoUser != null || "") {
 
 			<input type="hidden" name="txtImg" id="txtImg" value="<?= $postagemDAO->getUrlFotoPostagem() ?>">
 
-			<input type="submit" name="enviar" value="Publicar">
+			<input type="submit" name="enviar" value="Publicar" class="inputEnvia">
 		</form>
 	</section>
 <?php

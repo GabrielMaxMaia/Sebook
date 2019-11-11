@@ -8,7 +8,7 @@ if (isset($_POST['enviarComentario'])) {
         $comentarioDAO->setTxtComentario($_POST['txtComentario']);
     } else {
         $erro = true;
-        echo "Escreva Algo antes de enviar";
+        echo "<p class='errorCad' style='margin-left: 1rem;'>Escreva Algo antes de enviar</p>";
     }
     if ($erro == false) {
 
@@ -45,19 +45,25 @@ if ($idUser != "") {
 
         <textarea name="txtComentario" id="txtComentario" cols="25" rows="5"></textarea>
 
-        <input type="submit" name="enviarComentario" value="Comentar">
+        <input type="submit" name="enviarComentario" value="Comentar" class="inputEnvia">
     </form>
 <?php
 }
 ?>
 
 <section class="secaoComment">
-<?php
-    if($idUser == "") {
-        echo "<p>Faça o Login para comentar.</p>";
-    }
-?>
-    <p class="">Seção de comentários</p>
+    <header class="headerComentario">
+        <p>Seção de comentários</p>
+    </header>
+    <?php
+    if ($idUser == "") {
+        ?>
+
+        <p class='commentMenssagem'>Faça <a href="<?=_URLBASE_?>area/user/login/logar"><b>Login</b></a> para comentar.</p>
+
+        <?php
+        }
+    ?>
     <?php
     //Carrega aquivo para seção de comentários
     include_once "comentarioSecao.php";

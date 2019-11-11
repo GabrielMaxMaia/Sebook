@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 08-Nov-2019 às 04:35
+-- Generation Time: 11-Nov-2019 às 05:03
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.2
 
@@ -296,18 +296,27 @@ CREATE TABLE `evento` (
   `txt_evento` varchar(255) DEFAULT NULL,
   `data_evento` date DEFAULT NULL,
   `hora_evento` time DEFAULT NULL,
+  `local_evento` varchar(255) DEFAULT NULL,
+  `cidade_evento` varchar(255) DEFAULT NULL,
   `id_usuario` int(11) DEFAULT NULL,
-  `url_foto_evento` varchar(255) DEFAULT NULL
+  `url_foto_evento` varchar(255) DEFAULT NULL,
+  `eventocol` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `evento`
 --
 
-INSERT INTO `evento` (`id_evento`, `nome_evento`, `txt_evento`, `data_evento`, `hora_evento`, `id_usuario`, `url_foto_evento`) VALUES
-(1, 'Estudando Programaï¿½ï¿½o atï¿½ nï¿½o aguentar mais', 'Olï¿½ mundo            ', '2019-11-04', '04:05:00', 35, 'public/img/imgEvento/Big_Dan.jpg'),
-(2, 'Estudando', 'OlÃ¡                      ', '2019-11-04', '02:06:00', 11, 'public/img/imgEvento/Big_Harman.jpg'),
-(3, 'Estudando Programaï¿½ï¿½o atï¿½ nï¿½o aguentar mais', '                Olï¿½ mundo            ', '2019-11-04', '00:00:00', 1, 'public/img/imgEvento/Big_MASK.jpg');
+INSERT INTO `evento` (`id_evento`, `nome_evento`, `txt_evento`, `data_evento`, `hora_evento`, `local_evento`, `cidade_evento`, `id_usuario`, `url_foto_evento`, `eventocol`) VALUES
+(1, 'Estudando Programaï¿½ï¿½o atï¿½ nï¿½o aguentar mais', 'Olï¿½ mundo            ', '2019-11-04', '04:05:00', NULL, NULL, 35, 'public/img/imgEvento/Big_Dan.jpg', NULL),
+(2, 'Estudando', 'OlÃ¡                      ', '2019-11-04', '02:06:00', NULL, NULL, 11, 'public/img/imgEvento/Big_Harman.jpg', NULL),
+(3, 'Estudando Programaï¿½ï¿½o atï¿½ nï¿½o aguentar mais', '                                Olï¿½ mundo                        ', '2019-11-04', '07:00:00', NULL, NULL, 1, 'public/img/imgEvento/Big_MASK.jpg', NULL),
+(4, 'teste', 'eae', '2019-11-19', '23:59:00', NULL, NULL, 15, 'public/img/imgEvento/imgPadrao/imgEventopadrao.jpg', NULL),
+(5, 'testeCriando', 'sda', '2019-11-12', '01:01:00', NULL, NULL, 15, 'public/img/imgEvento/imgPadrao/imgEventopadrao.jpg', NULL),
+(6, 'teste', 'olÃ¡ \r\nmundo \r\neee', '2019-11-16', '02:02:00', NULL, NULL, 15, 'public/img/imgEvento/Big_KAEDE.jpg', NULL),
+(10, 'teste', 'ddsaioÃ§', '2019-11-04', '02:06:00', 'Rua das Pedras NÂº 231', 'Barueri', 15, 'public/img/imgEvento/Big_Con.jpg', NULL),
+(14, 'Estudandosss', 'eae', '2019-11-20', '22:05:00', 'Rua  da pontes 231', 'AlvinlÃ¢ndia', 35, 'public/img/imgEvento/imgPadrao/imgEventopadrao.jpg', NULL),
+(15, 'Estudandos', 'reaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', '2019-11-22', '02:04:00', 'Rua das pontes 23', 'Adolfo', 35, 'public/img/imgEvento/Big_Garcian.jpg', NULL);
 
 -- --------------------------------------------------------
 
@@ -565,6 +574,8 @@ CREATE TABLE `sebo` (
   `razao_sebo` varchar(100) DEFAULT NULL,
   `nome_fantasia` varchar(100) DEFAULT NULL,
   `cnpj_sebo` varchar(30) DEFAULT NULL,
+  `latitude_sebo` double(10,7) DEFAULT NULL,
+  `longitude_sebo` double(10,7) DEFAULT NULL,
   `cidade_sebo` varchar(45) DEFAULT NULL,
   `num_end_sebo` varchar(30) DEFAULT NULL,
   `compl_end_sebo` varchar(100) DEFAULT NULL,
@@ -578,20 +589,16 @@ CREATE TABLE `sebo` (
   `cod_status_sebo` varchar(10) DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-ALTER TABLE `db_sebook`.`sebo` 
-ADD COLUMN `latitude_sebo` DOUBLE(10,7) NULL DEFAULT NULL AFTER `cnpj_sebo`,
-ADD COLUMN `longitude_sebo` DOUBLE(10,7) NULL DEFAULT NULL AFTER `latitude_sebo`;
-
 --
 -- Extraindo dados da tabela `sebo`
 --
 
-INSERT INTO `sebo` (`id_usuario`, `razao_sebo`, `nome_fantasia`, `cnpj_sebo`, `cidade_sebo`, `num_end_sebo`, `compl_end_sebo`, `logradouro_sebo`, `cep_end_sebo`, `num_tel_sebo`, `celular_1_sebo`, `celular_2_sebo`, `insc_estadual_sebo`, `url_site_sebo`, `cod_status_sebo`) VALUES
-(11, 'Abigail de Queiroz Moreira Pereira', 'Abigail de Queiroz Moreira Pereira', '20.035.914/0001-03', 'Barueri', '111', '', '', '06410-080', '1141986832', '', '', '', '', '1'),
-(12, 'Mirian Marinho da Silva Lima', 'Mirian Marinho da Silva Lima', '12.672.074/0001-53', 'Osasco', '115', '', '', '06320-290', '1143867762', '', '', '', '', '1'),
-(14, 'Priscilla Nobre Lobo', 'Sebo e Livraria Corujinha', '21.100.930/0001-97', NULL, '179', NULL, NULL, '06448-020', '1128614286', NULL, NULL, NULL, NULL, '1'),
-(34, 'Pirate king', 'dasdgdfg', 'dfgdgdfg', NULL, 'dasdad', 'dsada', 'dsadsa', 'dasdsad', 'asdsad', 'dsadad', 'trhtrh', 'sadd', 'dsad', '1'),
-(35, 'Monkey D. Luffy', 'Rei dos piratas', '03.561.475/4516-97', 'Santana de Parnaíba', 'dsa', 'dasdsa', 'AV', '', '(11) 4005-8799', '(11) 54879-9524', '', '', 'dsa', '1');
+INSERT INTO `sebo` (`id_usuario`, `razao_sebo`, `nome_fantasia`, `cnpj_sebo`, `latitude_sebo`, `longitude_sebo`, `cidade_sebo`, `num_end_sebo`, `compl_end_sebo`, `logradouro_sebo`, `cep_end_sebo`, `num_tel_sebo`, `celular_1_sebo`, `celular_2_sebo`, `insc_estadual_sebo`, `url_site_sebo`, `cod_status_sebo`) VALUES
+(11, 'Abigail de Queiroz Moreira Pereira', 'Abigail de Queiroz Moreira Pereira', '20.035.914/0001-03', NULL, NULL, 'Barueri', '111', '', '', '06410-080', '1141986832', '', '', '', '', '1'),
+(12, 'Mirian Marinho da Silva Lima', 'Mirian Marinho da Silva Lima', '12.672.074/0001-53', NULL, NULL, 'Osasco', '115', '', '', '06320-290', '1143867762', '', '', '', '', '1'),
+(14, 'Priscilla Nobre Lobo', 'Sebo e Livraria Corujinha', '21.100.930/0001-97', NULL, NULL, NULL, '179', NULL, NULL, '06448-020', '1128614286', NULL, NULL, NULL, NULL, '1'),
+(34, 'Pirate king', 'dasdgdfg', 'dfgdgdfg', NULL, NULL, NULL, 'dasdad', 'dsada', 'dsadsa', 'dasdsad', 'asdsad', 'dsadad', 'trhtrh', 'sadd', 'dsad', '1'),
+(35, 'Monkey D. Luffy', 'Rei dos piratas', '03.561.475/4516-97', NULL, NULL, 'Santana de Parnaíba', 'dsa', 'dasdsa', 'AV', '', '(11) 4005-8799', '(11) 54879-9524', '', '', 'dsa', '1');
 
 -- --------------------------------------------------------
 
@@ -852,7 +859,7 @@ ALTER TABLE `emails_lidos`
 -- AUTO_INCREMENT for table `evento`
 --
 ALTER TABLE `evento`
-  MODIFY `id_evento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_evento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `links_emails`

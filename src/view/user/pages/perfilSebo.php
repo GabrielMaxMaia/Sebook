@@ -20,11 +20,11 @@ if ($acessoUser != "") {
 	$seboDAO->setNomeFantasia($result['nomeFantasia']);
 	$seboDAO->setRazaoSebo($result['razaoSebo']);
 	$seboDAO->setCnpjSebo($result['cnpjSebo']);
+	$seboDAO->setLatitudeSebo($result['latitudeSebo']);
+	$seboDAO->setLongitudeSebo($result['longitudeSebo']);
 	$seboDAO->setInscEstadualSebo($result['inscEstadualSebo']);
 	$seboDAO->setCepEndSebo($result['cepEndSebo']);
 	$seboDAO->setLogradouroSebo($result['logradouroSebo']);
-	$seboDAO->setLatitudeSebo($result['latitudeSebo']);
-	$seboDAO->setLongitudeSebo($result['longitudeSebo']);
 	$seboDAO->setCidadeSebo($result['cidadeSebo']);
 	$seboDAO->setNumEndSebo($result['numEndSebo']);
 	$seboDAO->setComplEndSebo($result['complEndSebo']);
@@ -47,11 +47,11 @@ if ($acessoUser != "") {
 		$seboDAO->setNomeFantasia($_POST['nomeFantasia']);
 		$seboDAO->setRazaoSebo($_POST['razaoSebo']);
 		$seboDAO->setCnpjSebo($_POST['cnpjSebo']);
+		$seboDAO->setLatitudeSebo($_POST['latitudeSebo']);
+		$seboDAO->setLongitudeSebo($_POST['longitudeSebo']);
 		$seboDAO->setInscEstadualSebo($_POST['inscEstadualSebo']);
 		$seboDAO->setCepEndSebo($_POST['cepEndSebo']);
 		$seboDAO->setLogradouroSebo($_POST['logradouroSebo']);
-		$seboDAO->setLatitudeSebo($_POST['latitudeSebo']);
-		$seboDAO->setLongitudeSebo($_POST['longitudeSebo']);
 		$seboDAO->setCidadeSebo($_POST['cidadeSebo']);
 		$seboDAO->setNumEndSebo($_POST['numEndSebo']);
 		$seboDAO->setComplEndSebo($_POST['complEndSebo']);
@@ -84,7 +84,7 @@ if ($acessoUser != "") {
 		<?php
 			//Chama estrutura para formulário de img
 			include "includes/perfilImgSebo.php";
-		?>
+			?>
 
 		<form action="" method="post" name="atualizarCampos" class="formPefil">
 
@@ -108,6 +108,7 @@ if ($acessoUser != "") {
 				<input type="text" name="emailUsuario" id="emailUsuario" required value='<?= $usuarioDAO->getEmailUsuario() ?>' onblur='mascaraEmail(this)'>
 			</div>
 
+
 			<div class="formItem">
 				<label for="nomeFantasia">Nome Fantasia</label>
 				<input type="text" name="nomeFantasia" id="nomeFantasia" value="<?= $seboDAO->getNomeFantasia() ?>">
@@ -124,6 +125,16 @@ if ($acessoUser != "") {
 			</div>
 
 			<div class="formItem">
+				<label for="latitudeSebo">Latitude</label>
+				<input type="text" name="latitudeSebo" id="latitudeSebo" value="<?= $seboDAO->getLatitudeSebo() ?>">
+			</div>
+
+			<div class="formItem">
+				<label for="longitudeSebo">Longitude</label>
+				<input type="text" name="longitudeSebo" id="longitudeSebo" value="<?= $seboDAO->getLongitudeSebo() ?>">
+			</div>
+
+			<div class="formItem">
 				<label for="inscEstadualSebo">Inscrição Estadual</label>
 				<input type="text" name="inscEstadualSebo" id="inscEstadualSebo" value="<?= $seboDAO->getInscEstadualSebo() ?>" onblur='CheckIE(this)'>
 			</div>
@@ -133,20 +144,6 @@ if ($acessoUser != "") {
 				<input type="text" name="cepEndSebo" id="cepEndSebo" value="<?= $seboDAO->getCepEndSebo() ?>" onblur="pesquisacepsebo(this.value);">
 			</div>
 
-			<span>
-				<div class="formItem">
-					<label for="latitudeSebo">Latitude</label>
-					<input type="text" name="latitudeSebo" id="latitudeSebo" value="<?= $seboDAO->getLatitudeSebo() ?>">
-				</div>
-			</span>
-
-			<span>
-				<div class="formItem">
-					<label for="longitudeSebo">Longitude</label>
-					<input type="text" name="longitudeSebo" id="longitudeSebo" value="<?= $seboDAO->getLongitudeSebo() ?>">
-				</div>
-			</span>
-			
 			<div class="formItem">
 				<label for="cidadeSebo">Cidade</label>
 				<select name="cidadeSebo" id="cidadeSebo">
@@ -217,7 +214,7 @@ if ($acessoUser != "") {
 				<input type="text" name="urlSiteSebo" id="urlSiteSebo" Placeholder="Campo Opcional" value="<?= $seboDAO->getUrlSiteSebo() ?>">
 			</div>
 
-			<input type="submit" name="atualizar" value="Atualizar">
+			<input type="submit" name="atualizar" value="Atualizar" class="inputEnvia">
 		</form>
 
 		<?php

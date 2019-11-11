@@ -30,7 +30,7 @@ if (isset($_POST['enviar']) != null || "") {
 		$erroMen .= "<li>Prencha o Nome do evento</li>";
 	}
 
-	if ($_POST['nomeEvento'] != "") {
+	if ($_POST['txtEvento'] != "") {
 		$eventoDAO->setTxtEvento(trim($_POST['txtEvento']));
 	} else {
 		$erro = true;
@@ -51,13 +51,26 @@ if (isset($_POST['enviar']) != null || "") {
 		$erroMen .= "<li>Prencha a hora</li>";
 	}
 
+	if ($_POST['eventoLocal'] != "" || $_POST['eventoLocal'] != null) {
+		$eventoDAO->setLocalEvento(trim($_POST['eventoLocal']));
+	} else {
+		$erro = true;
+		$erroMen .= "<li>Prencha o Endereço</li>";
+	}
+
+	if ($_POST['eventoCidade'] != "" || $_POST['eventoCidade'] != null) {
+		$eventoDAO->setCidadeEvento(trim($_POST['eventoCidade']));
+	} else {
+		$erro = true;
+		$erroMen .= "<li>Selecione a Cidade</li>";
+	}
+
 	if ($erro == true) {
 		echo "<ul class='errorList' style='display:block;'>$erroMen</ul>" ?? "";
 	}
 
 	if ($erro != true) {
 		$eventoDAO->setUrlFotoEvento($_POST['txtImg']);
-
 		//Chama a função listaPostagemId
 		$eventoDAO->adicionarEvento();
 		header("Location:" . _URLBASE_ . "area/user/pages/eventoListar");
@@ -84,18 +97,39 @@ if ($IdSessaoUser != null || "") {
 			<label for="horaEvento">Hora</label>
 			<input class="grande" type="time" name="horaEvento" id="horaEvento" min="00:00" max="23:59" value="<?= $_POST['horaEvento'] ?? "" ?>">
 
+			<label for="eventoLocal">Endereço</label>
+			<input class="grande" type="text" name="eventoLocal" id="eventoLocal" value="<?= $_POST['eventoLocal'] ?? "" ?>">
+
+			<label for="eventoCidade">Cidade</label>
+			<select name="eventoCidade" id="eventoCidade">
+				<optgroup label="Selecione a Cidade">
+					<?php
+                //Inclui o arquivo de array cidades
+				include "src/view/user/pages/includes/arrayCidades.php";
+				
+                foreach ($cidades as $cidade) {
+                    ?>
+					<option value="<?= $cidade ?>" name="eventoCidade" id="eventoCidade" value="">
+						<?= $cidade ?>
+					</option>
+					<?php
+                }
+                ?>
+				</optgroup>
+			</select>
+
 			<label for="txtEvento">Descrição</label>
-			<textarea name="txtEvento" id="txtEvento"><?= $_POST['txtEvento']?? "" ?></textarea>
+			<textarea name="txtEvento" id="txtEvento" maxlength="255"><?= $_POST['txtEvento']?? "" ?></textarea>
 
 			<input type="hidden" name="txtImg" id="txtImg" value="<?= $eventoDAO->getUrlFotoEvento() ?>">
 
-			<input type="submit" name="enviar" value="Cadastrar">
+			<input type="submit" name="enviar" value="Cadastrar" class="inputEnvia">
 		</form>
 	</section>
 <?php
 
 } else {
-	echo "<p>É necessário estar Logado para criar uma Publicação</p>";
+	echo "<p class='commentMenssagem'>É necessário estar Logado para criar uma Publicação</p>";
 }
 
 ?>

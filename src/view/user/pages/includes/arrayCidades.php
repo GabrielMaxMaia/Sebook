@@ -1,6 +1,5 @@
 <?php
 $cidades = [
-    "Econtrar por Cidade",
     "Adamantina",
     "Adolfo",
     "Aguaí",

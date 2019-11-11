@@ -16,8 +16,6 @@ $frontController = new Controller\FrontController($postagemDAO);
 $frontController->setItemPagina(4);
 $frontController->verificarPaginacao();
 
-var_dump($_GET);
-
 ?>
 <article>
     <header class="headerPagina">

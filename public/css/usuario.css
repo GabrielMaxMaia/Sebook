@@ -1,36 +1,18 @@
-/* USER */
-
 @import './slick.css';
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0
-}
-
-html{
-    scroll-behavior:smooth;
-}
 
 body {
     padding: 0;
     margin: 0;
+    /* font-family: Arial, Helvetica, sans-serif; */
     font-family: sans-serif;
     margin: auto;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
-.containerScroll{
-    height:100vh;
-    /* overflow: hidden;
-    overflow-y: scroll */
-}
-@media (max-width: 780px){
-    .containerScroll{
-    height:100vh;
+.containerScroll {
+    height: 100vh;
     overflow: hidden;
     overflow-y: scroll
-}
 }
 
 div#containerTemplate::before {
@@ -39,9 +21,10 @@ div#containerTemplate::before {
     position: relative;
     min-height: 2rem
 }
+
 @media (max-width:779.99px) {
     div#containerTemplate::before {
-        min-height: 125.8px
+        min-height: 90px
     }
 }
 
@@ -50,14 +33,15 @@ div#containerTemplate {
     max-width: 1000px;
     margin: 0 auto 4%;
     box-sizing: border-box;
-    position: relative;
-    min-height: 600px;
+    min-height: 500px
 }
-@media (max-width:750px){
-    div#containerTemplate{
-        min-height:100%
-    }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
 }
+
 
 /*===================AREA DO ACERVO SEBO====================*/
 
@@ -95,32 +79,8 @@ div#containerTemplate {
     margin-bottom: 10px
 }
 
-/*===================AREA DO AJUDA====================*/
-.pergunta{
-    max-width: 690px;
-    margin: auto
-}
-.pergunta .container p {
-    margin: .5rem 0;
-    font-size: .95rem;
-    text-align: center;
-    line-height: 1.3rem
-}
-.pergunta .container  h1 {
-    font-size: 25px;
-    text-align: center;
-    margin: 1rem 0 0
-}
 
-.pergunta .container .containerText {
-    border: 1px solid #ccc
-}
-.pergunta .container p{
-    line-height: 1.3rem;
-    padding: 1rem;
-    text-align: justify;
-    font-family:Arial, Helvetica, sans-serif;
-}
+/*===================AREA DO AJUDA====================*/
 
 .ajuda {
     width: 100%;
@@ -130,7 +90,7 @@ div#containerTemplate {
     max-width: 460px;
     align-self: center
 }
- 
+
 .ajuda .container h1 {
     font-size: 30px;
     text-align: center;
@@ -138,10 +98,12 @@ div#containerTemplate {
 }
 
 .ajuda .container p {
-    line-height: 1.35rem;
-    padding: 1rem;
-    text-align: center
+    margin: .5rem 0;
+    font-size: .95rem;
+    text-align: center;
+    line-height: 1.3rem
 }
+
 .ajuda .container hr {
     margin-bottom: 25px
 }
@@ -164,7 +126,6 @@ div#containerTemplate {
     border: 1px solid #ccc;
     background: #fff
 }
-
 
 
 /*===================AREA DO BUSCA====================*/
@@ -224,105 +185,108 @@ div#containerTemplate {
     max-height: 174px;
 }
 
-/*===================AREA DE ATULIZAçÃO DE CADASTRO====================*/
+
+/*===================AREA DO CADASTRO====================*/
 
 .cadastro {
-    padding: 1rem 0 2rem;
+    padding: 2rem 0;
     width: 100%;
     max-width: 400px;
     margin: auto;
     box-sizing: border-box
 }
 
-.imgContainer{
+.cadastro .container figure {
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top:2rem
-}
-.imgCadastro{
-    max-width:250px;
-}
-.imgCadastro img{
-    border-radius:50%;
-    min-height:240px
-}
-.imgInfo {
-    margin: auto;
-    font-size: 1.6rem;
-    margin-top: .6rem;
-}
-.imgInfo p{
-    text-align:center;
-}
-[type="file"] {
-    color: rgb(153,153,153);
-}
-.formFotoContainer .inputTrocaFoto{
-    padding: .5rem;
-    max-width: 116px;
-    border: none;
-    background: #63b5ce;
-    color: #fff;
-    font-size: 1rem;
-    margin-top: 1rem;
+    width: 208px
 }
 
-.formFotoContainer iframe{
-    display:none;
+.cadastro .container img {
+    width: 40px
 }
 
-.formPefil{
-    padding:1rem;
+.cadastro .container figure figcaption {
+    float: left;
+    font-size: 25px;
+    margin-top: 14px;
+    margin-left: 10px
 }
-.formPerfil input{
+
+.cadastro .container p {
+    float: left;
     width: 100%;
-    display: block;
-    margin: 1rem auto;
-    border: 1px solid #999;
-    padding: .5rem;
-    outline: none;
-    font-size: 16px;
+    text-align: center;
+    height: 20px;
+    position: relative;
+    margin: 1rem 0
 }
 
-.cadastro form {
+.cadastro .container p:before {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #999;
+    position: absolute;
+    left: 0;
+    top: 10px
+}
+
+.cadastro .container p span {
+    position: absolute;
+    z-index: 1;
+    width: 250px;
+    left: 50%;
+    margin-left: -125px
+}
+
+.cadastro .container p:after {
+    content: '';
+    width: 250px;
+    height: 20px;
+    background: #fff;
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    margin-left: -125px
+}
+
+.cadastro .container form {
     width: 100%;
     margin-top: 20px;
     display: flex;
     flex-direction: column
 }
 
-.cadastro form label,
-.cadastro form input {
+.cadastro .container form label,
+.cadastro .container form input {
     width: 100%;
     float: left
 }
 
-.cadastro form label {
+.cadastro .container form label {
     margin-bottom: 5px
 }
 
-.cadastro form label[for=feminino],
-.cadastro form label[for=masculino] {
+.cadastro .container form label[for=feminino],
+.cadastro .container form label[for=masculino] {
     width: auto;
     margin-right: 10px;
     margin-bottom: 15px
 }
 
-.cadastro form input[type=radio] {
+.cadastro .container form input[type=radio] {
     width: auto
 }
 
-.cadastro form input[type=text],
-.cadastro form input[type=password] {
+.cadastro .container form input[type=text],
+.cadastro .container form input[type=password] {
     height: 30px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
-    padding:.5rem;
+    border: 1px solid #999
 }
 
-.cadastro form button {
+.cadastro .container form button {
     width: 35%;
     margin: 0 auto;
     margin: 1rem 0;
@@ -331,13 +295,14 @@ div#containerTemplate {
     background: #fff
 }
 
-.cadastro form .password2 {
+.cadastro .container form .password2 {
     margin-bottom: 20px !important
 }
 
-.cadastro form hr {
+.cadastro .container form hr {
     margin: 25px 0
 }
+
 
 /*===================AREA DO CARROUSEL====================*/
 
@@ -350,6 +315,7 @@ div#containerTemplate {
     text-align: center;
     font-size: 18px;
     background: #fff;
+    /* Center slide text vertically */
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -364,32 +330,33 @@ div#containerTemplate {
     align-items: center
 }
 
+
 /*===================AREA DO DESCRIÇÃO LIVRO====================*/
 
-/* .livros .box-descricao-livro {
+.livros .container .box-descricao-livro {
     display: grid;
     grid-template-columns: 120px 1fr;
     grid-gap: 10px;
     margin: 20px 0
 }
 
-.livros .box-descricao-livro img {
+.livros .container .box-descricao-livro img {
     width: 100%
 }
 
-.livros .box-descricao-livro .descricaoLivro h1 {
+.livros .container .box-descricao-livro .descricaoLivro h1 {
     margin: 0;
     font-size: 20px
 }
 
-.livros .sinopse {
+.livros .container .sinopse {
     width: 100%;
     border: 1px solid #ccc;
     padding: 10px;
     background-color: #f1f1f1
 }
 
-.livros .sinopse .comentario {
+.livros .container .sinopse .comentario {
     width: 100%;
     background-color: #86c3cb;
     border-radius: 4px;
@@ -397,18 +364,18 @@ div#containerTemplate {
     margin-top: 10px
 }
 
-.livros .sinopse .comentario:first-child {
+.livros .container .sinopse .comentario:first-child {
     margin-top: 0
 }
 
-.livros .sinopse .comentario .person {
+.livros .container .sinopse .comentario .person {
     width: 100%;
     display: grid;
     grid-template-columns: 24px 1fr;
     grid-gap: 10px
 }
 
-.livros .sinopse .comentario .person .descricao-person strong {
+.livros .container .sinopse .comentario .person .descricao-person strong {
     margin-bottom: 5px;
     display: block
 }
@@ -443,145 +410,144 @@ div#containerTemplate {
 
 .livros .Cont {
     padding: 0
-} */
-
-/*===================AREA DE FEEDS====================*/
-.feedItem{
-    margin: 0 auto 2rem;
-    display: flex;
-    flex-direction: column;
-}
-.feedItem header{
-    margin-left: .65rem;
-    border-left: .2rem solid #99e7aa;
-    padding-left: .5rem;
-}
-.feedItem figure{
-    overflow: hidden;
-    max-height: 260px;
-    max-width: 350px;
-}
-@media (min-width:997px){
-    .feedItem figure{
-        min-width: 481px;
-        max-width: 459px;
-    }
-}
-.feedItem figure figcaption{
-    position: relative;
-    z-index: 99;
-    background-color: #000;
-    background: linear-gradient(45deg, #000000d4, #19181691);
-    width: 100%;
-    bottom: 4.7rem;
-    padding: 1rem;
-    color: #fff;
-}
-.feedItem figcaption h3, .feedItem figcaption p{
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-.feedItem img{
-    min-width: 100%;
-    min-height: 260px;
-    max-height: 260px;
-    overflow: hidden;
-    transition:.3s all ease-in-out;
-    object-position: top;
 }
 
-.feedItem img:hover{
-    transform: scale(1.2);
-    max-height: 260px;
-    transition:.3s all ease-in-out;
- 
+
+/*===================AREA DO EVENTOS====================*/
+
+.eventos .container {
+    background: #f1f1f1;
+    margin-top: 20px;
+    padding: 20px
 }
-.feedContainer{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding:.5rem;
-    padding-bottom: 1rem;
-}
-.feedContainer figure{
-    margin: 1rem auto 0;
-}
-.linkDestaque{
-    margin-right: 1rem;
-    margin-left: 1rem;
-    padding: 1rem;
-    border: 1.1px solid #252222;
+
+.eventos .container h1 {
+    font-size: 25px;
     text-align: center;
-    /* color: #5ea070; */
-    text-transform: uppercase;
-    font-size: .85rem;
+    margin: 0
 }
 
-.titulo{
-    font-size: 1.45rem;
-    font-weight:bold;
+.eventos .container figure {
+    width: 100%;
+    height: 250px;
+    margin: 20px 0 20px 0
 }
+
+.eventos .container figure .img-eventos {
+    width: 100%;
+    height: 240px;
+    overflow: hidden
+}
+
+.eventos .container figure .img-eventos img {
+    height: 100%
+}
+
+.eventos .container figure figcaption {
+    font-weight: bold;
+    margin-top: 5px
+}
+
+.eventos .container hr {
+    margin: 25px 0 30px 0
+}
+
+
 /*===================AREA DO LIVRO====================*/
 
-/*Gif de carregamento na busca de livros*/
-#loading{  
-    position: absolute;
-    top: 31.5%;
-    margin: auto
-}
-div#contentLoading{
-    display:flex;
-    justify-content:center;
-}
-.loadGif{
-    max-width: 91px;
-    margin: 4% auto 0
-}
-
-/*Sem resultado*/
-.noResult{
-    padding: .5rem 1rem;
-}
-
 .pagLivro {
-    padding: 10% 0;
-    position: relative
+    padding: 10% 0
 }
 
-.input-prepend {
-    display:flex;
-    padding:1rem
+.pagLivro .search-box {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #2f3640;
+    height: 40px;
+    border-radius: 40px;
+    padding: 4px
 }
 
-.pagLivro .input-prepend input{
-    background: #fff;
-    border-radius: 24px;
-    padding: 0.5rem 1rem;
-    margin: auto;
+.pagLivro .search-box:hover>.search-btn {
+    background: white;
+}
+
+.pagLivro .search-btn {
+    color: #e84118;
+    float: right;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #2f3640;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.pagLivro .search-txt {
+    border: none;
+    background: none;
     outline: none;
-    border: 1px solid #111;
-    width: 100%;
-    max-width: 542px;
-    font-size: 1rem
+    float: left;
+    padding: 0 6px;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 400px;
+
 }
 
-.input-prepend input::placeholder {
-    color:#000
+.pagLivro .search-box img {
+    height: 40px;
+}
+
+@media (max-width:900px) {
+    .pagLivro .search-box {
+        height: 40px;
+
+    }
+
+    .pagLivro .search-btn {
+        top: -43px
+    }
+
+    .pagLivro .search-txt {
+        width: 0px;
+        padding: 0px;
+
+    }
+
+    .pagLivro .search-box:hover>.search-txt {
+        width: 300px;
+
+    }
+
+    .pagLivro .search-box:hover>.search-btn {
+        background: white;
+        position: relative
+    }
 }
 
 .pagLivro .estante-slider {
     width: 100%;
-    margin: 3rem 0
+    margin-bottom: 20px
 }
+
 .pagLivro .estante-slider .titulo-estante-slider {
-    padding: 0 1rem;
-    margin: -1rem 0
+    margin-bottom: 10px
 }
+
+
+/*===================AREA DO LO(?) DESCRIÇÃO LIVRO====================*/
+
+
 /*===================AREA DO LOGIN====================*/
 
 .containerLogin {
-    padding: 0 1rem;
+    padding: 1rem;
     width: 100%;
     align-self: center;
     margin: 0 auto
@@ -598,8 +564,6 @@ div#contentLoading{
     margin: 2% auto 0;
     border: 1px solid #ccc;
     border-radius: .4rem;
-    position: relative;
-    top: 1rem;
 }
 
 .containerLogin figure {
@@ -663,6 +627,7 @@ div#contentLoading{
     display: block;
     margin: 1rem auto;
     border: 1px solid #999;
+    /* height: 30px; */
     padding: .5rem;
     outline: none;
     font-size: 16px
@@ -716,6 +681,7 @@ div#contentLoading{
     z-index: 0
 }
 
+
 /*===================AREA DO MODAL====================*/
 
 .modal .btn-close {
@@ -763,14 +729,7 @@ div#contentLoading{
 .modal-open:checked~.modal-wrap .modal-dialog {
     transform: translate(-50%, -50%);
     position: fixed;
-    top: 45%
-}
-@media (max-width:740px){
-    .modal-open:checked~.modal-wrap .modal-dialog {
-        transform: translate(-50%, -50%);
-        position: fixed;
-        top: 54%
-    }
+    top: 40%
 }
 
 .modal-dialog {
@@ -863,16 +822,18 @@ div#contentLoading{
     color: #fff
 }
 
+
+/*===================AREA DO PERFIL====================*/
+
+
+/* O perfil.css está vazio*/
+
+
 /*===================AREA DO QUEM SOMOS====================*/
 
 .quemSomos {
-    max-width: 690px;
-    margin: auto
-}
-
-.quemSomos .container{
-    margin:auto;
-    padding:1rem
+    max-width: 650px;
+    margin: auto;
 }
 
 .quemSomos .container h1 {
@@ -890,6 +851,7 @@ div#contentLoading{
     padding: 1rem;
     text-align: justify
 }
+
 @media (max-width:700px) {
     .quemSomos .container p {
         text-align: left
@@ -901,14 +863,98 @@ div#contentLoading{
     width: 100%
 }
 
+
 /*===================AREA DO SEBOS====================*/
 
 .sebos {
     padding: 1rem
 }
 
+.sebos .container {
+    background: #5cccb3;
+    padding: 15px;
+    margin-top: 25px;
+    width: 100%;
+    height: 100%;
+    max-width: 700px;
+    margin: 3% auto;
+    box-sizing: border-box
+}
+
+.sebos .container h1 {
+    font-size: 25px;
+    text-align: center;
+    margin: 0 0 25px 0
+}
+
+.sebos .container form {
+    width: 100%;
+    height: 240px;
+    border: 1px solid #111;
+    background: #fff;
+    padding: 10px
+}
+
+.sebos .container form label {
+    width: 100%;
+    font-weight: bold
+}
+
+.sebos .container form input {
+    width: 100%;
+    height: 35px;
+    border: 1px solid #222;
+    margin: 10px 0 20px 0
+}
+
+.sebos .container form select {
+    width: 100%;
+    height: 35px;
+    border: 1px solid #222;
+    margin: 10px 0 20px 0
+}
+
+.sebos .container form select option {
+    width: 50px
+}
+
+.sebos .container form button {
+    width: 100px;
+    height: 35px;
+    float: right
+}
+
+.sebos .container a {
+    text-decoration: none
+}
+
+.sebos .container a .box-sebo {
+    width: 100%;
+    height: 80px;
+    background: #fff;
+    margin-top: 15px;
+    border: 1px solid #000;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr)
+}
+
+.sebos .container a .box-sebo strong {
+    padding-left: 10px;
+    line-height: 80px;
+    color: #000
+}
+
+.sebos .container a .box-sebo p {
+    color: red;
+    line-height: 50px;
+    text-align: center
+}
+
 
 /*===================AREA DO STYLE====================*/
+
+
+/*Container pai de todos, centraliza tudo*/
 
 img {
     width: 100%;
@@ -1006,15 +1052,13 @@ header #Logado .ulCenter2 ul li a {
 .master1 nav .menu ul li:last-child {
     border-bottom: 0
 }
-.master1 nav .menu ul li:last-child a{
-    border:none
-}
 
 .master1 #menuH:checked~.ulCenter ul {
     display: flex
 }
 
-/*Nessa parte foi removido a media query para que o layou expandisse na tela*/
+
+/*Nessa parte foi removido a media query para que o layou espandisse na tela*/
 
 .master1 header {
     width: 100%;
@@ -1026,9 +1070,32 @@ header #Logado .ulCenter2 ul li a {
     border-bottom: 1px solid #111
 }
 
+
+/*.master1 header .perfil {
+
+     width: 40px;
+    height: 40px;
+    display: block;
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px 
+
+  }*/
+
 .master1 header .perfil img {
     height: 100%
 }
+
+
+/*.master1 header .logo {
+
+     width: 125px;
+    height: 60px;
+    position: absolute;
+    left: 20px;
+    top: 10px; 
+
+  }*/
 
 .master1 header .logo img {
     width: 100%
@@ -1119,8 +1186,7 @@ header #Logado .ulCenter2 ul li a {
     top: 89px;
     left: 0;
     padding: 0;
-    background-color: #a1b99c;
-    /* background: linear-gradient(45deg, #548f96, #8adce6); */
+    background: linear-gradient(45deg, #548f96, #8adce6);
     z-index: 1;
     flex-flow: column;
     margin-top: 0
@@ -1133,11 +1199,9 @@ header #Logado .ulCenter2 ul li a {
     -ms-flex-align: center;
     align-items: center;
     color: #fff;
-    padding:24px;
-    font-size: 1.4rem;
+    padding: 7% 3%;
+    font-size: 1.1rem;
     border-bottom: 1px solid #fff;
-    max-width:420px;
-    max-height:320px;
 }
 
 .master1 nav .menu ul li:last-child {
@@ -1145,17 +1209,17 @@ header #Logado .ulCenter2 ul li a {
 }
 
 .master1 #menuH:checked~.ulCenter ul {
-    display: flex;
-    margin-top: -19%;
-    overflow-y: scroll!important;
-    justify-content: center
+    display: fleX;
+    margin-top: 34px;
 }
+
+
 /*Menu mobile desaparece quando a resolução for maior que 780px*/
 
-.topoHeader,
+header,
 .master1 nav {
-    background-color: rgb(200, 239, 204);
-    /* background: linear-gradient(45deg, #008a9b47, #06cc3e26); */
+    background: linear-gradient(45deg, #008a9b47, #06cc3e26);
+    background-color: #fff;
     z-index: 9999
 }
 
@@ -1164,8 +1228,7 @@ header #Logado .ulCenter2 ul li a {
     justify-content: center;
     align-items: center;
     align-self: flex-end;
-    /* background: #222; */
-    background:#505050;
+    background: #222;
     z-index: 1;
     position: relative;
     margin: auto;
@@ -1183,17 +1246,17 @@ header #Logado .ulCenter2 ul li a {
     padding: 0 .5rem
 }
 
-.topoHeader img {
+header img {
     max-width: 130px;
     margin-top: 1.75rem;
 }
 
-.topoHeader .perfil {
+header .perfil {
     max-width: 40px;
-    margin-top: 1.4%
+    margin-top: 1.4%;
 }
 
-.topoHeader .menuGroup {
+header .menuGroup {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -1201,7 +1264,7 @@ header #Logado .ulCenter2 ul li a {
     box-sizing: border-box;
     align-items: center;
     min-height: 110px;
-    max-height: 110px
+    max-height: 110px;
 }
 
 .navDesk {
@@ -1209,14 +1272,12 @@ header #Logado .ulCenter2 ul li a {
 }
 
 @media (max-width: 780px) {
-    .topoHeader {
+    header {
         position: fixed;
         width: 100%;
         top: 0;
         z-index: 99999;
         padding-bottom: 4%;
-        min-height:125px;
-        max-height:126px
     }
 
     .headerStatic {
@@ -1226,9 +1287,11 @@ header #Logado .ulCenter2 ul li a {
     .busca .container {
         padding: 3%
     }
+ 
 }
 
 @media (min-width:780px) {
+
     .master1 nav:after,
     .menuMobile,
     .menuMobile img {
@@ -1286,35 +1349,45 @@ header #Logado .ulCenter2 ul li a {
 
 section {
     width: 100%;
-    /* position: relative; */
+    position: relative;
+    /* padding: 60px 0 0 0 */
 }
 @media(min-width:700px){
-    .banner{
+    section .banner{
     margin-top: .65rem;
-    }
+}
 }   
 
-.banner {
+section .banner {
     width: 100%;
     min-height: 184px;
+    /* Move slides overflowed container */
+    /* Color of bullets */
+    /* Color of bullets - END */
+    /* Text of slides - END */
+    /* Calculate AUTOPLAY for BULLETS */
+    /* Calculate AUTOPLAY for BULLETS - END */
+    /* Calculate AUTOPLAY for SLIDES */
+    /* Calculate AUTOPLAY for SLIDES - END */
+    /* Calculate AUTOPLAY for CAPTION */
 }
 
-.banner img {
+section .banner img {
     width: 100%;
     height: 100%
 }
 
-.banner .image {
+section .banner .image {
     width: 100%;
     height: 100%;
     max-height:300px
 }
 
-.banner .radio {
+section .banner .radio {
     display: none
 }
 
-.banner .images {
+section .banner .images {
     overflow: hidden;
     top: 0;
     bottom: 0;
@@ -1323,47 +1396,47 @@ section {
     width: 100%
 }
 
-.banner .images-inner {
+section .banner .images-inner {
     width: 500%;
     transition: all 800ms cubic-bezier(0.77, 0, 0.175, 1);
     transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1)
 }
 
-.banner .image-slide {
+section .banner .image-slide {
     width: 20%;
     float: left
 }
 
-.banner .image-slide,
-.banner .fake-radio,
-.banner .radio-btn {
+section .banner .image-slide,
+section .banner .fake-radio,
+section .banner .radio-btn {
     transition: all 0.5s ease-out
 }
 
-.banner .fake-radio {
+section .banner .fake-radio {
     text-align: center;
     margin: -20px 0 0 0
 }
 
-.banner #slide1:checked~.images .images-inner {
+section .banner #slide1:checked~.images .images-inner {
     margin-left: 0
 }
 
-.banner #slide2:checked~.images .images-inner {
+section .banner #slide2:checked~.images .images-inner {
     margin-left: -100%
 }
 
-.banner #slide3:checked~.images .images-inner {
+section .banner #slide3:checked~.images .images-inner {
     margin-left: -200%
 }
 
-.banner #slide1:checked~div .fake-radio .radio-btn:nth-child(1),
-.banner #slide2:checked~div .fake-radio .radio-btn:nth-child(2),
-.banner #slide3:checked~div .fake-radio .radio-btn:nth-child(3) {
+section .banner #slide1:checked~div .fake-radio .radio-btn:nth-child(1),
+section .banner #slide2:checked~div .fake-radio .radio-btn:nth-child(2),
+section .banner #slide3:checked~div .fake-radio .radio-btn:nth-child(3) {
     background: #000
 }
 
-.banner .radio-btn {
+section .banner .radio-btn {
     width: 20px;
     height: 10px;
     border-radius: 20px;
@@ -1374,7 +1447,7 @@ section {
     border: 2px solid #FFF
 }
 
-.banner .label {
+section .banner .label {
     opacity: 0;
     position: absolute
 }
@@ -1392,15 +1465,15 @@ section {
     }
 }
 
-.banner #play1:checked~div .fake-radio .radio-btn:nth-child(1) {
+section .banner #play1:checked~div .fake-radio .radio-btn:nth-child(1) {
     animation: bullet 12300ms infinite -1000ms
 }
 
-.banner #play1:checked~div .fake-radio .radio-btn:nth-child(2) {
+section .banner #play1:checked~div .fake-radio .radio-btn:nth-child(2) {
     animation: bullet 12300ms infinite 3100ms
 }
 
-.banner #play1:checked~div .fake-radio .radio-btn:nth-child(3) {
+section .banner #play1:checked~div .fake-radio .radio-btn:nth-child(3) {
     animation: bullet 12300ms infinite 7200ms
 }
 
@@ -1422,7 +1495,7 @@ section {
     }
 }
 
-.banner .st-slider>#play1:checked~.images .images-inner {
+section .banner .st-slider>#play1:checked~.images .images-inner {
     animation: slide 12300ms infinite
 }
 
@@ -1439,66 +1512,60 @@ section {
     }
 }
 
-.banner #play1:checked~.labels .label:nth-child(1) {
+section .banner #play1:checked~.labels .label:nth-child(1) {
     animation: caption 12300ms infinite -1000ms
 }
 
-.banner #play1:checked~.labels .label:nth-child(2) {
+section .banner #play1:checked~.labels .label:nth-child(2) {
     animation: caption 12300ms infinite 3100ms
 }
 
-.banner #play1:checked~.labels .label:nth-child(3) {
+section .banner #play1:checked~.labels .label:nth-child(3) {
     animation: caption 12300ms infinite 7200ms
 }
 
-.maisProcurados h1 {
+section .maisProcurados h1 {
     font-size: 20px;
     color: #665;
     margin-top: 30px;
     margin-left: 15px
 }
 
-.maisProcurados .books {
+section .maisProcurados .books {
     width: 100%;
     height: 180px
 }
 
-.maisProcurados .books img {
+section .maisProcurados .books img {
     width: 100%;
     max-width: 120px
 }
 
-.eventos {
+section .eventos {
     width: 100%
 }
 
-.eventos h2 {
+section .eventos h2 {
     font-size: 20px;
     text-align: center;
     margin: 20px 0 10px 0
 }
 
-.eventos figure {
+section .eventos figure {
     margin: 0
 }
 
-.eventos figure img {
+section .eventos figure img {
     width: 100%;
     height: 200px
 }
 
-.eventos figure figcaption {
+section .eventos figure figcaption {
     font-size: 15px
 }
 
-.eventos figure:last-child {
+section .eventos figure:last-child {
     margin-top: 20px
-}
-
-.eventoInfo{
-    margin-top:1rem;
-    font-size: 1.17rem;
-    line-height: 1.5rem
 }
 
 form select {
@@ -1507,31 +1574,31 @@ form select {
     width: 100%
 }
 
+
 /*===========================================Icone laterais*/
 
 .Social-Bar {
     position: fixed;
     right: 0;
-    top: 49%;
+    top: 60%;
     font-size: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     z-index: 100;
-    display:none
+    display:none;
 }
-
 @media (min-width:1100px){
     .Social-Bar{
         display:flex;
     }
 }
 
-/* @media (min-width:420px) {
+@media (min-width:420px) {
     .Social-Bar {
         right: 18px;
     }
-} */
+}
 
 .icon {
     color: white;
@@ -1564,11 +1631,10 @@ form select {
 
 .icon:hover {
     padding-right: 5rem;
-    border-radius: .5rem 0 0 1rem
+    border-radius: .5rem 0 0 1rem;
 }
 
 /*=====================AREA DO RODAPE===============*/
-
 #rodape {
     width: 100%;
     background: #202020;
@@ -1577,11 +1643,7 @@ form select {
 
 #rodape .container-body a,
 #rodape label {
-    color: #c7c7c7;
-    vertical-align: 10px;
-    display: flex;
-    align-items: center;
-    margin-left: .7rem
+    color: #c7c7c7
 }
 
 #rodape a:hover,
@@ -1613,6 +1675,7 @@ form select {
 }
 
 @media (max-width:701px) {
+
     .container-body,
     .footer {
         flex-direction: column
@@ -1659,13 +1722,16 @@ form select {
     fill: #fff;
 }
 
-.row label .row2 label {
+.row label {
+    margin-top: 10px;
     margin-left: 20px;
     color: #c7c7c7;
 }
 
-label#postalFooter {
-    display: inline;
+.row2 label {
+    margin-top: 10px;
+    margin-left: 20px;
+
 }
 
 @media(min-width:700px) {
@@ -1722,23 +1788,19 @@ label#postalFooter {
 }
 
 /*formatação de links para usuario logado*/
-
 .logGroup{
     display: flex;
     align-items: flex-end
 }
-
 .logGroup a{
-    margin: .4rem .4rem
+    margin: .4rem .4rem;
 }
-
 .circle{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 3%
 }
-
 .circle img{
     overflow: hidden;
     padding: .1rem;
@@ -1746,10 +1808,8 @@ label#postalFooter {
     border-radius: 50%;
     height: 80px;
     width: 80px;
-    margin-top: 40%;
-    object-fit:contain
+    margin-top: 40%
 }
-
 .circle p{
     position: relative;
     top: -.9rem;
@@ -1759,12 +1819,11 @@ label#postalFooter {
     text-align: center
 }
 
-/* @media(min-width:782px){
+@media(min-width:782px){
     .logItem{
         right: 17px!important
     }
-} */
-
+}
 .logItem{
     display: flex;
     flex-direction: column;
@@ -1775,15 +1834,27 @@ label#postalFooter {
     font-size: 1.1rem;
     padding: .4rem;
     z-index: 999;
-    right: 0
+    right: 0;
 }
 
-#logFig figcaption{
-    display:none;
-    z-index:999
-}
+/* input[type=checkbox]{
+    display:none
+}  */
+/* input[type=checkbox]:checked + figure figcaption { */
+    /* color: #f00;
+    font-style: normal; */
+    /* display:flex; */
+/* }  */
+
 #logFig:hover figcaption{
     display: block;
+}
+.logGroup figcaption{
+    display:none;
+    z-index:999;
+}
+.logGroup figcaption{
+    display:block;
 }
 
 /*Busca dinâmica formatação*/
@@ -1791,39 +1862,28 @@ label#postalFooter {
 #MostraPesq{
     display: flex;
     flex-direction: column;
-    max-width: 546px;
+    max-width: 500px;
     justify-content: center;
-    margin: auto;
-   
-}
-section.jumbotron{
-    position: absolute;
-    z-index: 999;
+    margin: auto
 }
 #MostraPesq img{
     width: 100%;
     max-width: 75px;
     object-fit: contain
 }
-
 .containerResult{
-    background-color:#fff;
-    background: linear-gradient(45deg, #ffffffc7, #fffffff5);
-    border-radius:8px;
-    border-style: solid;
-    border-color: #ccc;
-    border:1px solid #ccc
+    background: linear-gradient(45deg, black, #d2f1da);
 }
-
 .containerResult li{
     list-style:none;
-    color:#111
-}
+    color:#fff;
 
+}
 .containerResult figure{
     display: flex;
     align-items: flex-start;
-    padding:.5rem
+    padding:.5rem;
+    
 }
 
 .containerResult figcaption{
@@ -1831,341 +1891,11 @@ section.jumbotron{
     width: 100%;
     padding: 1rem;
     min-height: 100px;
-    color:#111;
-    background: #f9f9f9a8 fixed no-repeat;
+    color:azure;
+    background: #cc000012 fixed no-repeat;
 }
 .containerResult figcaption:hover{
-    background:#eaeaeac9;
-    transition:.1s all ease-in-out
+    background:#0000002b;
+    transition:.1s;
 }
 
-/*Erro de validação para os formulários*/
-.error{
-    border: solid 1px rgb(148,18,23);
-    box-shadow: 3px 3px 10px rgb(148, 18, 23);
-}
-
-/*Erro de campos não digitados*/
-.errorList{
-    text-align: left;
-    padding: 2rem;
-    position: absolute;
-    background: #ffa;
-    color: #b22;
-    line-height: 1.5rem;
-    border-radius: .5rem;
-    z-index: 99
-}
-
-@media (max-width:780px){
-    .successCad, .errorCad{
-        margin: 1.2rem auto -1rem
-    }
-}
-@media (min-width: 300px) and (max-width:360px){
-    .containerScroll{
-        overflow-Y:scroll!important
-    }
-    .successCad, .errorCad{
-        margin: -15% auto 0!important;
-    }
-}
-.successCad, .errorCad{
-    margin: 4% auto 0;
-    text-align: center;
-    padding: .65rem;
-    color: #fff;
-    max-width: 303px;
-    border-radius: 34px;
-    font-size: .9rem
-}
-.successCad{
-    background: #70b771
-}
-.errorCad{
-    background-color:#b22;
-    background: #d01919d9
-}
-
-/*Notificador páginação*/
-.notificador .ulNote{
-    display: flex;
-    list-style: none;
-    justify-content: center;
-    align-items: center;
-    margin: 2rem 1rem;
-}
-.ulNote a{
-    padding: .35rem .65rem;
-    margin: 0 .3rem;
-    background: #505050;
-    color: #fff;
-    border-radius: 20px;
-}
-.ulNote .active{
-    background: #111;
-}
-
-/*Header de páginas*/
-.headerPagina{
-    font-size: 1.1rem;
-    text-align:center;
-    margin-top:1rem;
-}
-.headerPagina::after{
-    content: "";
-    margin: .1rem auto;
-    border-bottom: 2px solid #99e7aa;
-    padding: 0 0 .6rem;
-    max-width: 120px;
-    display: block;
-}
-.headerPagina p {
-    /* width: 100%;
-    text-align: center;
-    position: relative;
-    margin: 1rem 0 .3rem;
-    font-size: 1.65rem */
-}
-.headerPagina h1{
-   font-weight: 500;
-   margin: 1rem 0 .3rem;
-   font-size: 1.65rem
-}
-
-/*Pagina de postagens*/
-.itemContentContainer{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:center;
-    margin: 2rem auto;
-    padding: 1rem;
-}
-.contentItem{
-    /* border: 1px solid #ccc; */
-    margin: 1rem;
-    min-width: 350px;
-    max-width: 350px;
-    overflow: hidden;
-}
-.contentItem .item{
-    max-height: 242px;
-    overflow: hidden;
-}
-.contentItem img{
-    min-height:250px;
-    max-height:250px;
-    /* max-width:348px; */
-    transition:.3s all ease-in-out;
-    object-position: top;
-}
-.contentItem img:hover{
-    transform: scale(1.2);
-    transition:.3s all ease-in-out;
-}
-.contentItem figcaption{
-    margin: 1rem auto;
-    padding: 1rem;
-    max-height: 101px;
-    position: relative;
-    top: -6.5rem;
-    background-color: #000;
-    background: linear-gradient(45deg, #000000d4, #19181691);
-    width: 100%;
-    color: #fff;
-}
-.contentItem figcaption p, .titulo{
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-.itemModifica{
-    margin: 1.5rem 1rem 3rem;
-}
-/* .itemModifica{
-    margin:1rem
-} */
-/*Post ver*/
-.itemVerContainer {
-    padding:1rem;
-}
-.itemVerContainer header{
-    /* float: left; */
-}
-.imgItemVer img{
-    width:100%;
-    max-width:350px;
-    margin:auto;
-    padding: .9rem;
-}
-.itemVerContainer .texto h1{
-    font-size:2.5rem;
-    color:#111;
-}
-.texto h1::after {
-    content: "";
-    border-bottom: .4rem solid #4CAF50;
-    width: 10rem;
-    display: block;
-    margin: .7rem 0 1rem;
-}
-.texto p{
-    white-space: pre-wrap;
-    word-break: break-all;
-    text-align: justify;
-    line-height: 1.3rem;
-}
-
-/*Formulário*/
-.formularioComment {
-    padding: 1rem;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-.formularioComment label{
-    font-size:1.3rem;
-}
-.formularioComment textarea{
-    border: 1px solid #ccc;
-    width: 100%;
-    max-width: 600px;
-    height: 150px;
-    font-size: 1.4rem;
-    padding: 1rem;
-}
-/* .formularioComment input[type="submit"]{
-    max-width: 100px;
-    padding: .5rem;
-    border: 1px solid #ccc;
-    background: #fff;
-    margin: 1rem 0;
-} */
-
-/*Comentários*/
-.secaoComment{
-    margin:1rem
-}
-.headerComentario{
-    content: "";
-    border-left: .4rem solid #4CAF50;
-    width: 22rem;
-    display: block;
-    margin: 1rem 0;
-    padding-left: 1rem;
-    font-size: 1.9rem;
-}
-
-.comentarioContainer {
-    display: flex;
-    justify-content: left;
-    margin-top: .5rem;
-    flex-direction: column;
-}
-.userComent img{
-    width:80px;
-    margin: .5rem .5rem 0 0;
-    float: left;
-}
-.userComent figcaption{
-    margin-top: .4rem;
-}
-.userComent {
-    /* display: flex; */
-    /* flex-direction: column; */
-    word-break: break-word;
-    padding: 1rem;
-    margin: 1rem 2rem 0 0;
-    border: 1px solid #ccc;
-    line-height: 1.3rem;
-    max-width: 610px
-}
-.itemEdit {
-    display: flex;
-    margin: 1rem;
-}
-/*Botões de edição*/
-.modifica{
-    padding: .5rem;
-    margin: 0 .5rem 0 0;
-    color: #fff;
-    font-size: .9rem;
-    border:1px solid
-}
-.borderNone{
-    border:none
-}
-.modifica.edit{
-    background: #f4a920;
-}
-.modifica.danger{
-    background:#b22;
-}
-.commentMenssagem{
-    font-size: 1.15rem;
-    margin: 1.3rem 0
-}
-
-/*Criar postagens ou eventos*/
-.containerCriacao{
-    padding:2rem;
-}
-.formCriacao{
-    display: flex;
-    flex-direction: column;
-    max-width: 500px;
-    margin: 2rem auto;
-}
-.formCriacao input{
-    display: block;
-}
-.formCriacao input[type=text], .formCriacao input[type=password], .formCriacao input[type=date], .formCriacao input[type=time]{
-    height: 30px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    padding: .5rem
-}
-.formCriacao textarea{
-    border: 1px solid #ccc;
-    width: 100%;
-    max-width: 600px;
-    height: 150px;
-    font-size: 1.4rem;
-    padding: 1rem;
-} 
-.formCriacao label{
-    margin-bottom: 5px;
-}
-
-.inputEnvia{
-    max-width: 100px;
-    padding: .5rem;
-    border: 1px solid #ccc;
-    background: #fff;
-    margin: 1rem 0;
-}
-
-.containerCentralizado{
-    max-width: 550px;
-    margin:auto;
-}
-textarea:focus, input:focus {
-    outline: 1px solid #c8efcc;
-}
-
-/*Botão top Hover*/
-#topBtn {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    font-size: 22px;
-    width: 50px;
-    height: 50px;
-    background: #111;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    display: none;
-    border:1px solid #000
-  }

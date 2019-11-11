@@ -72,6 +72,14 @@ if($eventoController->getEventoDAO()->getUrlFotoEvento() == ""){
 		<input class="grande" type="time" name="horaEvento" id="horaEvento" min="00:00" max="23:59" value="<?= $eventoController->getEventoDAO()->getHoraEvento() ?>">
 		<br>
 
+		<label>Local</label>
+		<input class="grande" type="text" name="localEvento" id="localEvento" min="00:00" max="23:59" value="<?= $eventoController->getEventoDAO()->getLocalEvento() ?>">
+		<br>
+
+		<label>Cidade</label>
+		<input class="grande" type="text" name="cidadeEvento" id="cidadeEvento" min="00:00" max="23:59" value="<?= $eventoController->getEventoDAO()->getCidadeEvento() ?>">
+		<br>
+
 		<input type="hidden" name="txtImg" id="txtImg" value="<?= $eventoController->getEventoDAO()->getUrlFotoEvento() ?>">
 		<br>
 		<input class="buttonCancel" type="reset" value="Limpar">

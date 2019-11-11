@@ -79,7 +79,7 @@ if ($result != null) {
                 
                 <input type="hidden" name="id" value="<?= $result['idPostagem'] ?>">
 
-                <input type="submit" name="update" value="Atualizar">
+                <input type="submit" name="update" value="Atualizar" class="inputEnvia">
             </form>
         </section>
 <?php
