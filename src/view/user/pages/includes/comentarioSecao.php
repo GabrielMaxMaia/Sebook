@@ -11,9 +11,12 @@ if ($resultComentario != null || $resultComentario >= 1) {
             // $comentarioDAO->setIdEvento($GetPost);
             $pag = $comentario['idEvento'];
             $pagIdUsuario = $eventoDAO->getIdUsuario();
-        } else if ($pagina == "paginaLivro" || $pagina == "paginaPost") {
+        } else if ($pagina == "paginaLivro") {
             $pag = $comentario['idPost'];
-            $pagIdUsuario = $usuarioDAO->getIdUsuario();
+            $pagIdUsuario = null;
+        } else if ($pagina == "paginaPost"){
+            $pag = $comentario['idPost'];
+            $pagIdUsuario = $postagemDAO->getIdUsuario();
         }
     
         // $idPagina = $comentario['idPagina'] ?? "";

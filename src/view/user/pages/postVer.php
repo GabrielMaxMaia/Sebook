@@ -12,35 +12,35 @@ $comentarioDAO = new ComentarioDAO($objSql);
 $usuarioDAO = new UsuarioDAO($objSql);
 
 $GetPost = $_GET['id'] ?? "";
-
-$result = $postagemDAO->listarPostagem();
+$postagemDAO->setIdPostagem($GetPost);
+$result = $postagemDAO->listarPostagemId();
+$postagemDAO->setIdUsuario($result['idUsuario']);
+$postagemDAO->setTituloPostagem($result['tituloPostagem']);
+$postagemDAO->setTxtPostagem($result['txtPostagem']);
+$postagemDAO->setUrlFotoPostagem($result['urlFotoPost']);
 
 $comentarioDAO->setIdPost($GetPost);
 $resultComentario = $comentarioDAO->listarComentarioPost();
 
-// //Include para evitar reenvio
-// include "includes/evitarReenvio.php";
 ?>
 <div class="containerCentralizado">
     <?php
     //Postagem
     if ($result != null) {
-        foreach ($result as $linha) {
-            if ($linha['idPostagem'] == $GetPost) {
-                ?>
-                <article class="itemVerContainer">
-                    <header class="headerPost">
-                        <picture class="imgItemVer">
-                            <img src="<?= _URLBASE_ . $linha['urlFotoPost'] ?>">
-                        </picture>
-                    </header>
-                    <section class="texto">
-                        <h1><?= $linha['tituloPostagem'] ?></h1>
-                        <p><?= $linha['txtPostagem'] ?></p>
-                    </section>
-                </article>
+        if ($postagemDAO->getIdPostagem() == $GetPost) {
+            ?>
+            <article class="itemVerContainer">
+                <header class="headerPost">
+                    <picture class="imgItemVer">
+                        <img src="<?= _URLBASE_ . $postagemDAO->getUrlFotoPostagem() ?>">
+                    </picture>
+                </header>
+                <section class="texto">
+                    <h1><?= $postagemDAO->getTituloPostagem() ?></h1>
+                    <p><?= $postagemDAO->getTxtPostagem() ?></p>
+                </section>
+            </article>
     <?php
-            }
         }
     }
 
