@@ -115,7 +115,8 @@ $pesquisa =  _URLBASE_ . "src/view/user/pages/includes/pesquisa.php";
         ?>
     </div>
     <aside>
-        <ul>
+        <p>Categorias</p>
+        <ul class="catContainer">
             <?php
             foreach ($resultCategoria as $categorias) {
                 ?>

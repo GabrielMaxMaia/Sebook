@@ -2,10 +2,11 @@
 $title = "Dúvidas";
 ?>
 <article class="pergunta">
-                <section class="container">
-                    
+                <header class="headerPagina">
                     <h1>Dúvidas Frequentes</h1>
-                        <details>
+                </header>
+                <section class="sumarioContainer">
+                    <details>
                         <summary><span> 1. O que é Sebook?</span></summary>
                          <p> Sebook não é um site de venda de livros, mas um agregador de sebos e também um portal,
                         um espaço onde os sebos exibem seus produtos te ajudando a localizar o seu livro pertinho de você por um preço super acessível. 

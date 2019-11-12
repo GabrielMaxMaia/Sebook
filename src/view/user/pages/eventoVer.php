@@ -4,6 +4,10 @@ $styleSobrescrito = "
 <style>
 .itemVerContainer{
     display: flex;
+    padding: 2rem;
+}
+@media (max-width:760px){
+.itemVerContainer{
     flex-wrap: wrap;
 }
 .texto{

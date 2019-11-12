@@ -175,7 +175,7 @@ if ($acessoUser != "") {
 				<input type="text" name="complEndCliente" id="complEndCliente" value="<?= $clienteDAO->getComplementoCliente() ?>">
 			</div>
 
-			<input type="submit" name="atualizar" value="Atualizar">
+			<input type="submit" name="atualizar" value="Atualizar" class="inputEnvia">
 		</form>
 
 		<!--Modal-->

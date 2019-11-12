@@ -100,7 +100,7 @@ if (isset($_POST['enviar'])) {
 				<label for="">Repita a senha</label>
 				<input type="password" name="repeteSenhaUsuario" id="repeteSenhaUsuario" value="<?= $_POST['repeteSenhaUsuario'] ?? '' ?>">
 			</div>
-			<input type="submit" name="enviar" value="Cadastrar">
+			<input type="submit" name="enviar" value="Cadastrar" class="inputEnvia">
 		</form>
 	</div>
 </section>

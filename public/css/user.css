@@ -98,7 +98,8 @@ div#containerTemplate {
 /*===================AREA DO AJUDA====================*/
 .pergunta{
     max-width: 690px;
-    margin: auto
+    margin: auto;
+    padding: 2rem;
 }
 .pergunta .container p {
     margin: .5rem 0;
@@ -163,6 +164,11 @@ div#containerTemplate {
     padding: .6rem;
     border: 1px solid #ccc;
     background: #fff
+}
+
+
+.sumarioContainer{
+    margin-top:2rem
 }
 
 
@@ -903,9 +909,11 @@ div#contentLoading{
 }
 
 .quemSomos .container p {
-    line-height: 1.35rem;
+    line-height: 1.65rem;
     padding: 1rem;
-    text-align: justify
+    text-align: justify;
+    line-height: 1.6rem;
+    word-break: break-word;
 }
 @media (max-width:700px) {
     .quemSomos .container p {
@@ -2187,18 +2195,19 @@ textarea:focus, input:focus {
 }
 
 /*Botão top Hover*/
-#topBtn {
+#btnTop {
     position: fixed;
-    bottom: 40px;
-    right: 40px;
-    font-size: 22px;
-    width: 50px;
-    height: 50px;
-    background: #111;
-    color: #fff;
+    bottom: 82px;
+    right: -9px;
+    background: none;
     border: none;
-    cursor: pointer;
-    outline: none;
     display: none;
-    border:1px solid #000
-  }
+    z-index: 99;
+    font-weight: bolder;
+    padding: 7px 18px;
+    transition: .3s all ease-in-out;
+    outline: none
+}
+#btnTop img {
+    max-width: 50px
+}
