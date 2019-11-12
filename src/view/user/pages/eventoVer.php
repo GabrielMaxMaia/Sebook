@@ -47,7 +47,6 @@ $resultComentario = $comentarioDAO->listarComentarioEvento();
 
 ?>
 
-<!-- <div class="containerCentralizado"> -->
 <?php
 //Postagem
 if ($resultEvento != null) {

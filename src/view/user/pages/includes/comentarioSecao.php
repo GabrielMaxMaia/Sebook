@@ -6,13 +6,16 @@ if ($resultComentario != null || $resultComentario >= 1) {
  
         if ($pagina == "paginaSebo") {
             $pag = $comentario['idPagina'];
+            $pagIdUsuario = $seboDAO->getIdUsuario();
         } else if ($pagina == "paginaEvento") {
             // $comentarioDAO->setIdEvento($GetPost);
             $pag = $comentario['idEvento'];
+            $pagIdUsuario = $eventoDAO->getIdUsuario();
         } else if ($pagina == "paginaLivro" || $pagina == "paginaPost") {
             $pag = $comentario['idPost'];
+            $pagIdUsuario = $usuarioDAO->getIdUsuario();
         }
-
+    
         // $idPagina = $comentario['idPagina'] ?? "";
 
         //if ($comentario['idPost'] == $GetPost) {
@@ -42,7 +45,7 @@ if ($resultComentario != null || $resultComentario >= 1) {
                         //Caso o id do usuário for o mesmo que está no comentário ou o id for Master ou ele for o dono da postagem
                         //Ele pode editar excluir o comentário
 
-                        if ($comentario['idUsuario'] == $usuarioDAO->getIdUsuario() || $acessoUser <= 3 && $acessoUser != "" || $pag == $idUser) {
+                        if ($comentario['idUsuario'] == $usuarioDAO->getIdUsuario() || $acessoUser <= 3 && $acessoUser != "" || $pagIdUsuario == $idUser) {
 
                             $comentarioDAO->setIdUsuario($comentario['idUsuario']);
 
