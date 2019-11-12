@@ -218,9 +218,10 @@ div#containerTemplate {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     max-width: 605px;
-    margin: 2rem auto;
+    margin: 2rem .5rem;
+    min-height: 402px;
 }
 
 .busca .searchBooks a {
@@ -231,13 +232,22 @@ div#containerTemplate {
 
 .searchBooks a img {
     width: 100%;
+    min-width:120px;
     max-width: 120px;
+    min-height:174px;
     max-height: 174px;
 }
 @media (max-width:490px){
-    .searchBooks a img{
-        margin: 0 .45rem
+    .searchBooks figure{
+        margin: .3rem .45rem;
     }
+}
+
+.searchBooks figure{
+    /* padding: .16rem; */
+    border: 1px solid #ccc;
+    background: #fff;
+    color: #111;
 }
 
 .searchBooks figcaption{
@@ -245,6 +255,7 @@ div#containerTemplate {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    padding: .15rem;
 }
 
 /*===================AREA DE ATULIZAçÃO DE CADASTRO====================*/
@@ -585,7 +596,7 @@ div#contentLoading{
     outline: none;
     border: 1px solid #111;
     width: 100%;
-    max-width: 542px;
+    max-width: 500px;
     font-size: 1rem
 }
 
@@ -1818,14 +1829,18 @@ label#postalFooter {
 }
 
 /*Busca dinâmica formatação*/
-
 #MostraPesq{
     display: flex;
     flex-direction: column;
     max-width: 546px;
     justify-content: center;
     margin: auto;
-   
+    padding:1rem
+}
+@media (max-width:780px){
+    #MostraPesq{
+        max-width: 374px;
+    }
 }
 section.jumbotron{
     position: absolute;
@@ -2210,4 +2225,25 @@ textarea:focus, input:focus {
 }
 #btnTop img {
     max-width: 50px
+}
+
+/*Categorias*/
+.categoriaContainer {
+    background: #fff;
+    padding: 1rem 1.5rem;
+    line-height: 1.18rem;
+    margin-top: 3.5rem;
+    border:1px solid #ccc;
+}
+.categoriaContainer p{
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+}
+.catContainer li{
+    list-style: none;
+    font-size: 1rem;
+    line-height: 1.25rem;
+}
+.catContainer a:hover{
+    color:#a52a2a;
 }

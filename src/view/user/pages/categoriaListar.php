@@ -13,7 +13,7 @@ $GetPost = isset($_GET['id']) ? $_GET['id'] : false;
 $livroDAO->setIdCategoria($GetPost);
 
 $frontController = new Controller\FrontController($livroDAO);
-$frontController->setItemPagina(4);
+$frontController->setItemPagina(8);
 $frontController->verificarPaginacao();
 
 $resultLivro = $livroDAO->listarLivroCategoria($frontController->getRegIni(), $frontController->getItemPagina());
@@ -33,7 +33,6 @@ if ($resultLivro > 0) {
 
             <div class="searchBooks">
                 <?php
-
                     foreach ($resultLivro as $livro) {
                         ?>
                     <a href="<?= _URLBASE_ ?>area/user/pages/descLivro/<?= $livro['isbnLivro'] ?>">
@@ -48,6 +47,25 @@ if ($resultLivro > 0) {
                     }
                     ?>
             </div>
+            <aside class="categoriaContainer">
+                <p>Categorias</p>
+                <ul class="catContainer">
+                    <li>
+                        <a href='<?= _URLBASE_ ?>area/user/menuHome/livros'>
+                            Todas
+                        </a>
+                    </li>
+                    <?php
+                        foreach ($resultCategoria as $categorias) {
+                            ?>
+                        <li>
+                            <a href="<?= _URLBASE_ . "area/user/pages/categoriaListar/" . $categorias['idCategoria'] ?>"><?= $categorias['nomeCategoria'] ?></a>
+                        </li>
+                    <?php
+                        }
+                        ?>
+                </ul>
+            </aside>
 
         </section>
         <section class="notificador">
@@ -62,22 +80,12 @@ if ($resultLivro > 0) {
     </article>
 <?php
 } else {
-    echo "<p>Ainda não possuimos livros cadastrados de " . $categoriaDAO->getNomeCategoria() . "</p>";
+    echo "<p>
+            Ainda não possuimos livros cadastrados de " . $categoriaDAO->getNomeCategoria() . "
+            <br> 
+            <a href='" . _URLBASE_ . "area/user/menuHome/livros'>
+                <b>Voltar</b>
+            </a>
+        </p>";
 }
 ?>
-<aside>
-    <ul>
-        <li>
-            <a href="<?= _URLBASE_ .'area/user/menuHome/livros'?>">Todas</a>
-        </li>
-        <?php
-        foreach ($resultCategoria as $categorias) {
-            ?>
-            <li>
-                <a href="<?= _URLBASE_ . "area/user/pages/categoriaListar/" . $categorias['idCategoria'] ?>"><?= $categorias['nomeCategoria'] ?></a>
-            </li>
-        <?php
-        }
-        ?>
-    </ul>
-</aside>
