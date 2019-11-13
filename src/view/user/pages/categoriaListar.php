@@ -47,6 +47,7 @@ if ($resultLivro > 0) {
                     }
                     ?>
             </div>
+
             <aside class="categoriaContainer">
                 <p>Categorias</p>
                 <ul class="catContainer">
@@ -66,6 +67,42 @@ if ($resultLivro > 0) {
                         ?>
                 </ul>
             </aside>
+
+            <!--Modal-->
+            <label class="btn-modal-cadastre modalCategoria" for="modal-categorias">Listar Categorias</label>
+            <section class="modal">
+                <input class="modal-open" id="modal-categorias" type="checkbox" hidden>
+                <div class="modal-wrap" aria-hidden="true" role="dialog">
+                    <label class="modal-overlay" for="modal-categorias"></label>
+                    <div class="modal-dialog">
+                        <div class="modal-header">
+                            <p>Lista de categorias</p>
+                            <label class="btn-close" for="modal-categorias" aria-hidden="true">×</label>
+                        </div>
+                        <div class="modal-body">
+                            <ul class="catContainer">
+                                <li>
+                                    <a href='<?= _URLBASE_ ?>area/user/menuHome/livros'>
+                                        Todas
+                                    </a>
+                                </li>
+                                <?php
+                                    foreach ($resultCategoria as $categorias) {
+                                        ?>
+                                    <li>
+                                        <a href="<?= _URLBASE_ . "area/user/pages/categoriaListar/" . $categorias['idCategoria'] ?>"><?= $categorias['nomeCategoria'] ?></a>
+                                    </li>
+                                <?php
+                                    }
+                                    ?>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <label class="btn btn-primary" for="modal-categorias">Fechar</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
         </section>
         <section class="notificador">

@@ -8,8 +8,8 @@
     padding: 0
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -20,17 +20,18 @@ body {
     overflow-x: hidden;
 }
 
-.containerScroll{
-    height:100vh;
+.containerScroll {
+    height: 100vh;
     /* overflow: hidden;
     overflow-y: scroll */
 }
-@media (max-width: 780px){
-    .containerScroll{
-    height:100vh;
-    overflow: hidden;
-    overflow-y: scroll
-}
+
+@media (max-width: 780px) {
+    .containerScroll {
+        height: 100vh;
+        overflow: hidden;
+        overflow-y: scroll
+    }
 }
 
 div#containerTemplate::before {
@@ -39,6 +40,7 @@ div#containerTemplate::before {
     position: relative;
     min-height: 2rem
 }
+
 @media (max-width:779.99px) {
     div#containerTemplate::before {
         min-height: 62.8px;
@@ -53,9 +55,10 @@ div#containerTemplate {
     position: relative;
     min-height: 600px;
 }
-@media (max-width:750px){
-    div#containerTemplate{
-        min-height:100%
+
+@media (max-width:750px) {
+    div#containerTemplate {
+        min-height: 100%
     }
 }
 
@@ -96,18 +99,20 @@ div#containerTemplate {
 }
 
 /*===================AREA DO AJUDA====================*/
-.pergunta{
+.pergunta {
     max-width: 690px;
     margin: auto;
     padding: 2rem;
 }
+
 .pergunta .container p {
     margin: .5rem 0;
     font-size: .95rem;
     text-align: center;
     line-height: 1.3rem
 }
-.pergunta .container  h1 {
+
+.pergunta .container h1 {
     font-size: 25px;
     text-align: center;
     margin: 1rem 0 0
@@ -116,11 +121,12 @@ div#containerTemplate {
 .pergunta .container .containerText {
     border: 1px solid #ccc
 }
-.pergunta .container p{
+
+.pergunta .container p {
     line-height: 1.3rem;
     padding: 1rem;
     text-align: justify;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .ajuda {
@@ -131,7 +137,7 @@ div#containerTemplate {
     max-width: 460px;
     align-self: center
 }
- 
+
 .ajuda .container h1 {
     font-size: 30px;
     text-align: center;
@@ -143,6 +149,7 @@ div#containerTemplate {
     padding: 1rem;
     text-align: center
 }
+
 .ajuda .container hr {
     margin-bottom: 25px
 }
@@ -167,8 +174,8 @@ div#containerTemplate {
 }
 
 
-.sumarioContainer{
-    margin-top:2rem
+.sumarioContainer {
+    margin-top: 2rem
 }
 
 
@@ -232,25 +239,26 @@ div#containerTemplate {
 
 .searchBooks a img {
     width: 100%;
-    min-width:120px;
+    min-width: 120px;
     max-width: 120px;
-    min-height:174px;
+    min-height: 174px;
     max-height: 174px;
 }
-@media (max-width:490px){
-    .searchBooks figure{
+
+@media (max-width:490px) {
+    .searchBooks figure {
         margin: .3rem .45rem;
     }
 }
 
-.searchBooks figure{
+.searchBooks figure {
     /* padding: .16rem; */
     border: 1px solid #ccc;
     background: #fff;
     color: #111;
 }
 
-.searchBooks figcaption{
+.searchBooks figcaption {
     max-width: 120px;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -268,32 +276,38 @@ div#containerTemplate {
     box-sizing: border-box
 }
 
-.imgContainer{
+.imgContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top:2rem
+    margin-top: 2rem
 }
-.imgCadastro{
-    max-width:250px;
+
+.imgCadastro {
+    max-width: 250px;
 }
-.imgCadastro img{
-    border-radius:50%;
-    min-height:240px
+
+.imgCadastro img {
+    border-radius: 50%;
+    min-height: 240px
 }
+
 .imgInfo {
     margin: auto;
     font-size: 1.6rem;
     margin-top: .6rem;
 }
-.imgInfo p{
-    text-align:center;
+
+.imgInfo p {
+    text-align: center;
 }
+
 [type="file"] {
-    color: rgb(153,153,153);
+    color: rgb(153, 153, 153);
 }
-.formFotoContainer .inputTrocaFoto{
+
+.formFotoContainer .inputTrocaFoto {
     padding: .5rem;
     max-width: 116px;
     border: none;
@@ -303,14 +317,15 @@ div#containerTemplate {
     margin-top: 1rem;
 }
 
-.formFotoContainer iframe{
-    display:none;
+.formFotoContainer iframe {
+    display: none;
 }
 
-.formPefil{
-    padding:1rem;
+.formPefil {
+    padding: 1rem;
 }
-.formPerfil input{
+
+.formPerfil input {
     width: 100%;
     display: block;
     margin: 1rem auto;
@@ -353,7 +368,7 @@ div#containerTemplate {
     height: 30px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
-    padding:.5rem;
+    padding: .5rem;
 }
 
 .cadastro form button {
@@ -480,28 +495,32 @@ div#containerTemplate {
 } */
 
 /*===================AREA DE FEEDS====================*/
-.feedItem{
+.feedItem {
     margin: 0 auto 2rem;
     display: flex;
     flex-direction: column;
 }
-.feedItem header{
+
+.feedItem header {
     margin-left: .65rem;
     border-left: .2rem solid #99e7aa;
     padding-left: .5rem;
 }
-.feedItem figure{
+
+.feedItem figure {
     overflow: hidden;
     max-height: 260px;
     max-width: 310px;
 }
-@media (min-width:997px){
-    .feedItem figure{
+
+@media (min-width:997px) {
+    .feedItem figure {
         min-width: 481px;
         max-width: 459px;
     }
 }
-.feedItem figure figcaption{
+
+.feedItem figure figcaption {
     position: relative;
     z-index: 99;
     background-color: #000;
@@ -511,37 +530,43 @@ div#containerTemplate {
     padding: 1rem;
     color: #fff;
 }
-.feedItem figcaption h3, .feedItem figcaption p{
+
+.feedItem figcaption h3,
+.feedItem figcaption p {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-.feedItem img{
+
+.feedItem img {
     min-width: 100%;
     min-height: 260px;
     max-height: 260px;
     overflow: hidden;
-    transition:.3s all ease-in-out;
+    transition: .3s all ease-in-out;
     object-position: top;
 }
 
-.feedItem img:hover{
+.feedItem img:hover {
     transform: scale(1.2);
     max-height: 260px;
-    transition:.3s all ease-in-out;
- 
+    transition: .3s all ease-in-out;
+
 }
-.feedContainer{
+
+.feedContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding:.5rem;
+    padding: .5rem;
     padding-bottom: 1rem;
 }
-.feedContainer figure{
+
+.feedContainer figure {
     margin: 1rem auto 0;
 }
-.linkDestaque{
+
+.linkDestaque {
     margin-right: 1rem;
     margin-left: 1rem;
     padding: 1rem;
@@ -552,29 +577,32 @@ div#containerTemplate {
     font-size: .85rem;
 }
 
-.titulo{
+.titulo {
     font-size: 1.45rem;
-    font-weight:bold;
+    font-weight: bold;
 }
+
 /*===================AREA DO LIVRO====================*/
 
 /*Gif de carregamento na busca de livros*/
-#loading{  
+#loading {
     position: absolute;
     top: 31.5%;
     margin: auto
 }
-div#contentLoading{
-    display:flex;
-    justify-content:center;
+
+div#contentLoading {
+    display: flex;
+    justify-content: center;
 }
-.loadGif{
+
+.loadGif {
     max-width: 91px;
     margin: 4% auto 0
 }
 
 /*Sem resultado*/
-.noResult{
+.noResult {
     padding: .5rem 1rem;
 }
 
@@ -584,11 +612,11 @@ div#contentLoading{
 }
 
 .input-prepend {
-    display:flex;
-    padding:1rem
+    display: flex;
+    padding: 1rem
 }
 
-.pagLivro .input-prepend input{
+.pagLivro .input-prepend input {
     background: #fff;
     border-radius: 24px;
     padding: 0.5rem 1rem;
@@ -601,17 +629,19 @@ div#contentLoading{
 }
 
 .input-prepend input::placeholder {
-    color:#000
+    color: #000
 }
 
 .pagLivro .estante-slider {
     width: 100%;
     margin: 3rem 0
 }
+
 .pagLivro .estante-slider .titulo-estante-slider {
     padding: 0 1rem;
     margin: -1rem 0
 }
+
 /*===================AREA DO LOGIN====================*/
 
 .containerLogin {
@@ -799,7 +829,8 @@ div#contentLoading{
     position: fixed;
     top: 45%
 }
-@media (max-width:740px){
+
+@media (max-width:740px) {
     .modal-open:checked~.modal-wrap .modal-dialog {
         transform: translate(-50%, -50%);
         position: fixed;
@@ -904,9 +935,9 @@ div#contentLoading{
     margin: auto
 }
 
-.quemSomos .container{
-    margin:auto;
-    padding:1rem
+.quemSomos .container {
+    margin: auto;
+    padding: 1rem
 }
 
 .quemSomos .container h1 {
@@ -926,6 +957,7 @@ div#contentLoading{
     line-height: 1.6rem;
     word-break: break-word;
 }
+
 @media (max-width:700px) {
     .quemSomos .container p {
         text-align: left
@@ -1042,8 +1074,9 @@ header #Logado .ulCenter2 ul li a {
 .master1 nav .menu ul li:last-child {
     border-bottom: 0
 }
-.master1 nav .menu ul li:last-child a{
-    border:none
+
+.master1 nav .menu ul li:last-child a {
+    border: none
 }
 
 .master1 #menuH:checked~.ulCenter ul {
@@ -1170,11 +1203,11 @@ header #Logado .ulCenter2 ul li a {
     -ms-flex-align: center;
     align-items: center;
     color: #fff;
-    padding:24px;
+    padding: 24px;
     font-size: 1.4rem;
     border-bottom: 1px solid #fff;
-    max-width:420px;
-    max-height:320px;
+    max-width: 420px;
+    max-height: 320px;
 }
 
 .master1 nav .menu ul li:last-child {
@@ -1184,9 +1217,10 @@ header #Logado .ulCenter2 ul li a {
 .master1 #menuH:checked~.ulCenter ul {
     display: flex;
     margin-top: -19%;
-    overflow-y: scroll!important;
+    overflow-y: scroll !important;
     justify-content: center
 }
+
 /*Menu mobile desaparece quando a resolução for maior que 780px*/
 
 .topoHeader,
@@ -1202,7 +1236,7 @@ header #Logado .ulCenter2 ul li a {
     align-items: center;
     align-self: flex-end;
     /* background: #222; */
-    background:#505050;
+    background: #505050;
     z-index: 1;
     position: relative;
     margin: auto;
@@ -1237,13 +1271,15 @@ header #Logado .ulCenter2 ul li a {
     padding: .1rem 1.1rem 0rem 1.2rem;
     box-sizing: border-box;
     align-items: center;
-    
+
 }
-@media (min-width: 780px){
+
+@media (min-width: 780px) {
     .topoHeader .menuGroup {
         min-height: 110px;
         max-height: 110px
     }
+
     .topoHeader img {
         max-width: 130px;
         margin-top: 1.75rem;
@@ -1255,9 +1291,8 @@ header #Logado .ulCenter2 ul li a {
 }
 
 @media (max-width: 780px) {
-    .topoHeader .menuGroup {
-        
-    }
+    .topoHeader .menuGroup {}
+
     .topoHeader {
         position: fixed;
         width: 100%;
@@ -1269,9 +1304,11 @@ header #Logado .ulCenter2 ul li a {
         align-items: center;
         max-height: 67px;
     }
+
     .topoHeader img {
         max-width: 100px;
     }
+
     .topoHeader .perfil {
         max-width: 37px;
     }
@@ -1286,6 +1323,7 @@ header #Logado .ulCenter2 ul li a {
 }
 
 @media (min-width:780px) {
+
     .master1 nav:after,
     .menuMobile,
     .menuMobile img {
@@ -1345,11 +1383,12 @@ section {
     width: 100%;
     /* position: relative; */
 }
-@media(min-width:700px){
-    .banner{
-    margin-top: .65rem;
+
+@media(min-width:700px) {
+    .banner {
+        margin-top: .65rem;
     }
-}   
+}
 
 .banner {
     width: 100%;
@@ -1364,7 +1403,7 @@ section {
 .banner .image {
     width: 100%;
     height: 100%;
-    max-height:300px
+    max-height: 300px
 }
 
 .banner .radio {
@@ -1552,8 +1591,8 @@ section {
     margin-top: 20px
 }
 
-.eventoInfo{
-    margin-top:1rem;
+.eventoInfo {
+    margin-top: 1rem;
     font-size: 1.17rem;
     line-height: 1.5rem
 }
@@ -1575,12 +1614,12 @@ form select {
     flex-direction: column;
     align-items: flex-end;
     z-index: 100;
-    display:none
+    display: none
 }
 
-@media (min-width:1100px){
-    .Social-Bar{
-        display:flex;
+@media (min-width:1100px) {
+    .Social-Bar {
+        display: flex;
     }
 }
 
@@ -1670,6 +1709,7 @@ form select {
 }
 
 @media (max-width:701px) {
+
     .container-body,
     .footer {
         flex-direction: column
@@ -1708,9 +1748,11 @@ form select {
     display: flex;
     align-items: center
 }
-.row img{
-   width: 32px;
+
+.row img {
+    width: 32px;
 }
+
 .row2 img {
     width: 36px;
     height: 36px;
@@ -1778,42 +1820,45 @@ label#postalFooter {
     text-decoration: none;
     color: #c7c7c7
 }
-@media (max-width:780px){
-    .informar a{
+
+@media (max-width:780px) {
+    .informar a {
         font-size: .91rem;
     }
 }
 
 /*formatação de links para usuario logado*/
 
-.logGroup{
+.logGroup {
     display: flex;
     align-items: flex-end
 }
 
-.logGroup a{
+.logGroup a {
     margin: .4rem .4rem
 }
 
-.circle{
+.circle {
     display: flex;
     flex-direction: column;
     align-items: center;
     /* margin-bottom: 3% */
 }
 
-.circle img{
+.circle img {
     overflow: hidden;
     padding: .1rem;
     background: #fff;
     border-radius: 50%;
-    object-fit:contain
+    object-fit: contain
 }
-.circle p{
+
+.circle p {
     background: #fff;
     text-align: center
 }
-.logItem{
+
+.logItem {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -1824,46 +1869,55 @@ label#postalFooter {
     z-index: 999;
     right: 0
 }
-#logFig figcaption{
-    display:none;
-    z-index:999
+
+#logFig figcaption {
+    display: none;
+    z-index: 999
 }
-#logFig:hover figcaption{
+
+#logFig:hover figcaption {
     display: block;
 }
-@media (min-width:780px){
-    .circle img{
+
+@media (min-width:780px) {
+    .circle img {
         height: 80px;
         width: 80px;
         margin-top: 40%
     }
-    .circle p{
+
+    .circle p {
         position: relative;
         top: -.9rem;
         padding: .1rem;
         width: 92%;
     }
-    .logItem{
+
+    .logItem {
         top: 109.3px;
     }
 }
-@media (max-width:780px){
-    .circle{
+
+@media (max-width:780px) {
+    .circle {
         top: .35rem;
         position: relative;
     }
+
     .circle p {
         position: relative;
         top: -.93rem;
         padding: .1rem;
         width: 100%;
     }
+
     .circle img {
         max-width: 51px;
         top: 7%;
         right: 4%;
     }
-    .logItem{
+
+    .logItem {
         top: 79.3px;
 
     }
@@ -1880,70 +1934,74 @@ label#postalFooter {
 
 
 /*Busca dinâmica formatação*/
-#MostraPesq{
+#MostraPesq {
     display: flex;
     flex-direction: column;
     max-width: 546px;
     justify-content: center;
     margin: auto;
-    padding:1rem
+    padding: 1rem
 }
-@media (max-width:780px){
-    #MostraPesq{
+
+@media (max-width:780px) {
+    #MostraPesq {
         max-width: 374px;
     }
 }
-section.jumbotron{
+
+section.jumbotron {
     position: absolute;
     z-index: 999;
 }
-#MostraPesq img{
+
+#MostraPesq img {
     width: 100%;
     max-width: 75px;
     object-fit: contain
 }
 
-.containerResult{
-    background-color:#fff;
+.containerResult {
+    background-color: #fff;
     background: linear-gradient(45deg, #ffffffc7, #fffffff5);
-    border-radius:8px;
+    border-radius: 8px;
     border-style: solid;
     border-color: #ccc;
-    border:1px solid #ccc
+    border: 1px solid #ccc
 }
 
-.containerResult li{
-    list-style:none;
-    color:#111
+.containerResult li {
+    list-style: none;
+    color: #111
 }
 
-.containerResult figure{
+.containerResult figure {
     display: flex;
     align-items: flex-start;
-    padding:.5rem
+    padding: .5rem
 }
 
-.containerResult figcaption{
+.containerResult figcaption {
     line-height: 1.4rem;
     width: 100%;
     padding: 1rem;
     min-height: 100px;
-    color:#111;
+    color: #111;
     background: #f9f9f9a8 fixed no-repeat;
 }
-.containerResult figcaption:hover{
-    background:#eaeaeac9;
-    transition:.1s all ease-in-out
+
+.containerResult figcaption:hover {
+    background: #eaeaeac9;
+    transition: .1s all ease-in-out
 }
 
 /*Erro de validação para os formulários*/
-.error{
-    border: solid 1px rgb(148,18,23);
+.error {
+    border: solid 1px rgb(148, 18, 23);
     box-shadow: 3px 3px 10px rgb(148, 18, 23);
 }
 
 /*Erro de campos não digitados*/
-.errorList{
+.errorList {
     text-align: left;
     padding: 2rem;
     position: absolute;
@@ -1954,20 +2012,27 @@ section.jumbotron{
     z-index: 99
 }
 
-@media (max-width:780px){
-    .successCad, .errorCad{
+@media (max-width:780px) {
+
+    .successCad,
+    .errorCad {
         margin: 1.2rem auto -1rem
     }
 }
-@media (min-width: 300px) and (max-width:360px){
-    .containerScroll{
-        overflow-Y:scroll!important
+
+@media (min-width: 300px) and (max-width:360px) {
+    .containerScroll {
+        overflow-Y: scroll !important
     }
-    .successCad, .errorCad{
-        margin: -15% auto 0!important;
+
+    .successCad,
+    .errorCad {
+        margin: -15% auto 0 !important;
     }
 }
-.successCad, .errorCad{
+
+.successCad,
+.errorCad {
     margin: 4% auto 0;
     text-align: center;
     padding: .65rem;
@@ -1976,40 +2041,45 @@ section.jumbotron{
     border-radius: 34px;
     font-size: .9rem
 }
-.successCad{
+
+.successCad {
     background: #70b771
 }
-.errorCad{
-    background-color:#b22;
+
+.errorCad {
+    background-color: #b22;
     background: #d01919d9
 }
 
 /*Notificador páginação*/
-.notificador .ulNote{
+.notificador .ulNote {
     display: flex;
     list-style: none;
     justify-content: center;
     align-items: center;
     margin: 2rem 1rem;
 }
-.ulNote a{
+
+.ulNote a {
     padding: .35rem .65rem;
     margin: 0 .3rem;
     background: #505050;
     color: #fff;
     border-radius: 20px;
 }
-.ulNote .active{
+
+.ulNote .active {
     background: #111;
 }
 
 /*Header de páginas*/
-.headerPagina{
+.headerPagina {
     font-size: 1.1rem;
-    text-align:center;
-    margin-top:1rem;
+    text-align: center;
+    margin-top: 1rem;
 }
-.headerPagina::after{
+
+.headerPagina::after {
     content: "";
     margin: .1rem auto;
     border-bottom: 2px solid #99e7aa;
@@ -2017,6 +2087,7 @@ section.jumbotron{
     max-width: 120px;
     display: block;
 }
+
 .headerPagina p {
     /* width: 100%;
     text-align: center;
@@ -2024,43 +2095,49 @@ section.jumbotron{
     margin: 1rem 0 .3rem;
     font-size: 1.65rem */
 }
-.headerPagina h1{
-   font-weight: 500;
-   margin: 1rem 0 .3rem;
-   font-size: 1.65rem
+
+.headerPagina h1 {
+    font-weight: 500;
+    margin: 1rem 0 .3rem;
+    font-size: 1.65rem
 }
 
 /*Pagina de postagens*/
-.itemContentContainer{
+.itemContentContainer {
     display: flex;
     flex-wrap: wrap;
-    justify-content:center;
+    justify-content: center;
     margin: 2rem auto;
     padding: 1rem;
 }
-.contentItem{
+
+.contentItem {
     /* border: 1px solid #ccc; */
     margin: 1rem;
     min-width: 350px;
     max-width: 350px;
     overflow: hidden;
 }
-.contentItem .item{
+
+.contentItem .item {
     max-height: 242px;
     overflow: hidden;
 }
-.contentItem img{
-    min-height:250px;
-    max-height:250px;
+
+.contentItem img {
+    min-height: 250px;
+    max-height: 250px;
     /* max-width:348px; */
-    transition:.3s all ease-in-out;
+    transition: .3s all ease-in-out;
     object-position: top;
 }
-.contentItem img:hover{
+
+.contentItem img:hover {
     transform: scale(1.2);
-    transition:.3s all ease-in-out;
+    transition: .3s all ease-in-out;
 }
-.contentItem figcaption{
+
+.contentItem figcaption {
     margin: 1rem auto;
     padding: 1rem;
     max-height: 101px;
@@ -2071,43 +2148,50 @@ section.jumbotron{
     width: 100%;
     color: #fff;
 }
-.contentItem figcaption p, .titulo{
+
+.contentItem figcaption p,
+.titulo {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-.itemModifica{
+
+.itemModifica {
     margin: 1.5rem 1rem 3rem;
 }
+
 /* .itemModifica{
     margin:1rem
 } */
 /*Post ver*/
 .itemVerContainer {
-    padding:1rem;
+    padding: 1rem;
 }
-.itemVerContainer header{
+
+.itemVerContainer header {
     /* float: left; */
 }
-.imgItemVer img{
-    width:100%;
+
+.imgItemVer img {
+    width: 100%;
     max-width: 600px;
-    margin:auto;
+    margin: auto;
     padding: .9rem;
 }
 
-@media (min-width:782px){
-    .headerPost img{
+@media (min-width:782px) {
+    .headerPost img {
         min-width: 715px;
-        max-width:715px;
+        max-width: 715px;
         object-fit: cover;
     }
 }
 
-.itemVerContainer .texto h1{
-    font-size:2.5rem;
-    color:#111;
+.itemVerContainer .texto h1 {
+    font-size: 2.5rem;
+    color: #111;
 }
+
 .texto h1::after {
     content: "";
     border-bottom: .4rem solid #4CAF50;
@@ -2115,9 +2199,10 @@ section.jumbotron{
     display: block;
     margin: .7rem 0 1rem;
 }
-.texto p{
+
+.texto p {
     white-space: pre-wrap;
-    word-break:break-word;
+    word-break: break-word;
     text-align: justify;
     line-height: 1.3rem;
 }
@@ -2129,10 +2214,12 @@ section.jumbotron{
     display: flex;
     flex-direction: column;
 }
-.formularioComment label{
-    font-size:1.3rem;
+
+.formularioComment label {
+    font-size: 1.3rem;
 }
-.formularioComment textarea{
+
+.formularioComment textarea {
     border: 1px solid #ccc;
     width: 100%;
     max-width: 600px;
@@ -2140,6 +2227,7 @@ section.jumbotron{
     font-size: 1.4rem;
     padding: 1rem;
 }
+
 /* .formularioComment input[type="submit"]{
     max-width: 100px;
     padding: .5rem;
@@ -2149,10 +2237,11 @@ section.jumbotron{
 } */
 
 /*Comentários*/
-.secaoComment{
-    margin:1rem
+.secaoComment {
+    margin: 1rem
 }
-.headerComentario{
+
+.headerComentario {
     content: "";
     border-left: .4rem solid #4CAF50;
     width: 22rem;
@@ -2168,14 +2257,17 @@ section.jumbotron{
     margin-top: .5rem;
     flex-direction: column;
 }
-.userComent img{
-    width:80px;
+
+.userComent img {
+    width: 80px;
     margin: .5rem .5rem 0 0;
     float: left;
 }
-.userComent figcaption{
+
+.userComent figcaption {
     margin-top: .4rem;
 }
+
 .userComent {
     /* display: flex; */
     /* flex-direction: column; */
@@ -2186,65 +2278,79 @@ section.jumbotron{
     line-height: 1.3rem;
     max-width: 610px
 }
+
 .itemEdit {
     display: flex;
     margin: 1rem;
 }
+
 /*Botões de edição*/
-.modifica{
+.modifica {
     padding: .5rem;
     margin: 0 .5rem 0 0;
     color: #fff;
     font-size: .9rem;
-    border:1px solid
+    border: 1px solid
 }
-.borderNone{
-    border:none
+
+.borderNone {
+    border: none
 }
-.modifica.edit{
+
+.modifica.edit {
     background: #f4a920;
 }
-.modifica.danger{
-    background:#b22;
+
+.modifica.danger {
+    background: #b22;
 }
-.commentMenssagem{
+
+.commentMenssagem {
     font-size: 1.15rem;
     margin: 1.3rem 0
 }
 
 /*Criar postagens ou eventos*/
 
-.containerCriacao{
-    padding:2rem;
+.containerCriacao {
+    padding: 2rem;
 }
-.formCriacao{
+
+.formCriacao {
     display: flex;
     flex-direction: column;
     max-width: 500px;
     margin: 2rem auto;
 }
-.formCriacao input{
+
+.formCriacao input {
     display: block;
 }
-.formCriacao input[type=text], .formCriacao input[type=password], .formCriacao input[type=date], .formCriacao input[type=time]{
+
+.formCriacao input[type=text],
+.formCriacao input[type=password],
+.formCriacao input[type=date],
+.formCriacao input[type=time] {
     height: 30px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     padding: .5rem
 }
-.formCriacao textarea{
+
+.formCriacao textarea {
     border: 1px solid #ccc;
     width: 100%;
     max-width: 600px;
     height: 150px;
     font-size: 1.4rem;
     padding: 1rem;
-} 
-.formCriacao label{
+}
+
+.formCriacao label {
     margin-bottom: 5px;
 }
 
-.inputEnvia{
+.inputEnvia {
     max-width: 100px;
     padding: .5rem;
     border: 1px solid #ccc;
@@ -2252,11 +2358,13 @@ section.jumbotron{
     margin: 1rem 0;
 }
 
-.containerCentralizado{
+.containerCentralizado {
     max-width: 744px;
-    margin:auto;
+    margin: auto;
 }
-textarea:focus, input:focus {
+
+textarea:focus,
+input:focus {
     outline: 1px solid #c8efcc;
 }
 
@@ -2274,27 +2382,38 @@ textarea:focus, input:focus {
     transition: .3s all ease-in-out;
     outline: none
 }
+
 #btnTop img {
     max-width: 50px
 }
 
 /*Categorias*/
-.categoriaContainer {
+.categoriaContainer{
+    display:none;
     background: #fff;
     padding: 1rem 1.5rem;
     line-height: 1.18rem;
     margin-top: 3.5rem;
-    border:1px solid #ccc;
+    border: 1px solid #ccc;
 }
-.categoriaContainer p{
+.categoriaContainer p {
     font-size: 1.5rem;
     margin-bottom: .5rem;
 }
-.catContainer li{
+.catContainer li {
     list-style: none;
     font-size: 1rem;
     line-height: 1.25rem;
 }
-.catContainer a:hover{
-    color:#a52a2a;
+
+.catContainer a:hover {
+    color: #a52a2a;
+}
+@media (min-width:780px) {
+    .categoriaContainer {
+        display:block
+    } 
+    .modalCategoria{
+        display:none;
+    }   
 }
