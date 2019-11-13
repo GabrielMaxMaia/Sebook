@@ -1849,17 +1849,17 @@ label#postalFooter {
 }
 @media (max-width:780px){
     .circle{
-        top: .9rem;
+        top: .35rem;
         position: relative;
     }
     .circle p {
         position: relative;
-        top: -1.1rem;
+        top: -.93rem;
         padding: .1rem;
         width: 100%;
     }
     .circle img {
-        max-width: 63px;
+        max-width: 51px;
         top: 7%;
         right: 4%;
     }
