@@ -17,8 +17,7 @@ if (isset($_POST['enviar'])) {
 	$usuarioDAO->listarEmailUsuario();
 
 	if ($usuarioDAO->listarEmailUsuario() > 0) {
-
-		echo "<p class='errorCad'>Email já cadastrado, verifique seus dados.</p>";
+		$mensagem = "<p class='errorCad'>Email já cadastrado, verifique seus dados.</p>";
 	} else {
 
 		$erro = false;
@@ -64,11 +63,11 @@ if (isset($_POST['enviar'])) {
 				$usuarioDAO->setUrlFoto('public/icon/user.svg');
 				$usuarioDAO->adicionarUsuario();
 			} else {
-				echo "<p class='errorCad'>Usuário já cadastrado.</p>";
+				$mensagem = "<p class='errorCad'>Usuário já cadastrado.</p>";
 			}
 		}
 		if (isset($success)) {
-			echo "<p class='successCad'>Cadastrado com sucesso.</p>";
+			$mensagem = "<p class='successCad'>Cadastrado com sucesso.</p>";
 		}
 	}
 }
@@ -83,6 +82,7 @@ if (isset($_POST['enviar'])) {
 		<p>
 			<span>Preencha o formulário abaixo</span>
 		</p>
+		<?=$mensagem ?? "" ?>
 		<form action="" method="post">
 			<div class="formItem">
 				<label for="nomeUsuario">Nome</label>

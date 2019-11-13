@@ -31,10 +31,10 @@ class AutentificadorController
                 $resultado = $this->admDAO->autenticarAdm($user, $senha);
                 if ($resultado == false) {
                     //Senha inválida
-                    echo "<p class='errorCad'>Senha ou e-mail inválidos</p>";
+                    echo $mensagem = "<p class='errorCad'>Senha ou e-mail inválidos</p>";
                 } else if ($resultado == null) {
                     //email inválido
-                    echo "<p class='errorCad'>Senha ou e-mail inválidos</p>";
+                    echo $mensagem = "<p class='errorCad'>Senha ou e-mail inválidos</p>";
                 } else {
 
                     $_SESSION['userLogado']['nome'] = $resultado['nomeUsuario'];
@@ -52,7 +52,7 @@ class AutentificadorController
                     // var_dump($_SESSION['userLogdao']['acesso']);
                 }
             } else if ($acessoUser != true) {
-                echo "<p class='errorCad'>Preencha todos campos!</p>";
+                echo $mensagem = "<p class='errorCad'>Preencha todos campos!</p>";
             }
         }
     }

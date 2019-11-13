@@ -16,7 +16,9 @@ if (isset($_POST['enviarComentario'])) {
             $setModo = "setIdPagina";
         } else if ($pagina == "paginaEvento") {
             $setModo = "setIdEvento";
-        } else if ($pagina == "paginaLivro" || $pagina == "paginaPost") {
+        } else if ($pagina == "paginaLivro") {
+            $setModo = "setIdPost";
+        } else if ($pagina == "paginaPost") {
             $setModo = "setIdPost";
         }
         // var_dump($pagina);
@@ -29,7 +31,7 @@ if (isset($_POST['enviarComentario'])) {
 
 
         //Recarrega a página
-        header('Refresh:0');
+       header('Refresh:0');
 
         echo $outputResult = "Comentário enviado";
     }

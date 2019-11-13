@@ -71,9 +71,9 @@ if ($acessoUser != "") {
 			if (password_verify($senhaAtual,  $usuarioDAO->getSenhaUsuario())) {
 				$usuarioDAO->setSenhaUsuario($_POST['senhaNova']);
 				$usuarioDAO->alterarSenhaUsuario();
-				echo "<p class='successCad'>senha trocada com sucesso!</p>";
+				$menssagem =  "<p class='successCad'>senha trocada com sucesso!</p>";
 			} else {
-				echo "<p class='errorCad'>Senha não confere</p>";
+				$menssagem = "<p class='errorCad'>Senha não confere</p>";
 			}
 		}
 		?>
@@ -85,6 +85,8 @@ if ($acessoUser != "") {
 		</header>
 
 		<?php include "includes/perfilImg.php"; ?>
+
+		<?=$menssagem ?? "" ?>
 
 		<form action="" method="post" class="formPefil">
 

@@ -41,7 +41,7 @@ div#containerTemplate::before {
 }
 @media (max-width:779.99px) {
     div#containerTemplate::before {
-        min-height: 125.8px
+        min-height: 62.8px;
     }
 }
 
@@ -493,7 +493,7 @@ div#containerTemplate {
 .feedItem figure{
     overflow: hidden;
     max-height: 260px;
-    max-width: 350px;
+    max-width: 310px;
 }
 @media (min-width:997px){
     .feedItem figure{
@@ -1072,7 +1072,7 @@ header #Logado .ulCenter2 ul li a {
 
 .master1 nav {
     width: 100%;
-    height: 60px;
+    height: 45px;
     position: fixed;
     bottom: 0;
     background: aliceblue
@@ -1081,23 +1081,23 @@ header #Logado .ulCenter2 ul li a {
 .master1 nav:after {
     content: '';
     width: 100%;
-    height: 60px;
+    height: 45px;
     background: inherit;
     position: fixed;
     bottom: 0;
     left: 0;
     z-index: 8;
-    border-top: 1px solid #111
+    /* border-top: 1px solid #111 */
 }
 
 .master1 nav .home {
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
     display: block;
     position: absolute;
     z-index: 9;
-    top: 20px;
-    left: 20px
+    top: 11px;
+    left: 20px;
 }
 
 .master1 nav .home img {
@@ -1106,18 +1106,18 @@ header #Logado .ulCenter2 ul li a {
 
 .master1 nav .search {
     width: 25px;
-    height: 25px;
+    height: 27px;
     display: block;
     position: absolute;
     z-index: 9;
-    left: 50%;
-    top: 23px;
-    margin-left: -14px
+    left: 50.98%;
+    top: 13px;
+    margin-left: -14px;
 }
 
-.master1 nav .search img {
+/* .master1 nav .search img {
     height: 100%
-}
+} */
 
 .master1 nav .menu {
     float: right;
@@ -1129,12 +1129,13 @@ header #Logado .ulCenter2 ul li a {
 }
 
 .master1 nav .menu label {
-    width: 25px;
-    height: 25px;
+    width: 28px;
+    height: 20px;
     display: block;
     position: absolute;
     right: 20px;
-    z-index: 9
+    z-index: 9;
+    top: 14px;
 }
 
 .master1 nav .menu label img {
@@ -1219,10 +1220,10 @@ header #Logado .ulCenter2 ul li a {
     padding: 0 .5rem
 }
 
-.topoHeader img {
+/* .topoHeader img {
     max-width: 130px;
     margin-top: 1.75rem;
-}
+} */
 
 .topoHeader .perfil {
     max-width: 46px;
@@ -1236,8 +1237,17 @@ header #Logado .ulCenter2 ul li a {
     padding: .1rem 1.1rem 0rem 1.2rem;
     box-sizing: border-box;
     align-items: center;
-    min-height: 110px;
-    max-height: 110px
+    
+}
+@media (min-width: 780px){
+    .topoHeader .menuGroup {
+        min-height: 110px;
+        max-height: 110px
+    }
+    .topoHeader img {
+        max-width: 130px;
+        margin-top: 1.75rem;
+    }
 }
 
 .navDesk {
@@ -1245,14 +1255,25 @@ header #Logado .ulCenter2 ul li a {
 }
 
 @media (max-width: 780px) {
+    .topoHeader .menuGroup {
+        
+    }
     .topoHeader {
         position: fixed;
         width: 100%;
         top: 0;
         z-index: 99999;
-        padding-bottom: 4%;
-        min-height:125px;
-        max-height:126px
+        padding: 2%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-height: 67px;
+    }
+    .topoHeader img {
+        max-width: 100px;
+    }
+    .topoHeader .perfil {
+        max-width: 37px;
     }
 
     .headerStatic {
@@ -1778,7 +1799,7 @@ label#postalFooter {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 3%
+    /* margin-bottom: 3% */
 }
 
 .circle img{
@@ -1786,32 +1807,16 @@ label#postalFooter {
     padding: .1rem;
     background: #fff;
     border-radius: 50%;
-    height: 80px;
-    width: 80px;
-    margin-top: 40%;
     object-fit:contain
 }
-
 .circle p{
-    position: relative;
-    top: -.9rem;
     background: #fff;
-    padding: .1rem;
-    width: 92%;
     text-align: center
 }
-
-/* @media(min-width:782px){
-    .logItem{
-        right: 17px!important
-    }
-} */
-
 .logItem{
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 109.3px;
     width: 95px;
     background: #fff;
     font-size: 1.1rem;
@@ -1819,7 +1824,6 @@ label#postalFooter {
     z-index: 999;
     right: 0
 }
-
 #logFig figcaption{
     display:none;
     z-index:999
@@ -1827,6 +1831,53 @@ label#postalFooter {
 #logFig:hover figcaption{
     display: block;
 }
+@media (min-width:780px){
+    .circle img{
+        height: 80px;
+        width: 80px;
+        margin-top: 40%
+    }
+    .circle p{
+        position: relative;
+        top: -.9rem;
+        padding: .1rem;
+        width: 92%;
+    }
+    .logItem{
+        top: 109.3px;
+    }
+}
+@media (max-width:780px){
+    .circle{
+        top: .9rem;
+        position: relative;
+    }
+    .circle p {
+        position: relative;
+        top: -1.1rem;
+        padding: .1rem;
+        width: 100%;
+    }
+    .circle img {
+        max-width: 63px;
+        top: 7%;
+        right: 4%;
+    }
+    .logItem{
+        top: 79.3px;
+
+    }
+}
+
+
+
+/* @media(min-width:782px){
+    .logItem{
+        right: 17px!important
+    }
+} */
+
+
 
 /*Busca dinâmica formatação*/
 #MostraPesq{

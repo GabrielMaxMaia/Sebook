@@ -235,7 +235,7 @@ class ComentarioDAO extends Comentario
             ComentarioDAO::$INSERT,
             array(
                 ':idPost' => array(0 => $this->getIdPost(), 1 => \PDO::PARAM_INT),
-                ':idPagina' => array(0 => $this->getIdPagina(), 1 => \PDO::PARAM_STR),
+                ':idPagina' => array(0 => $this->getIdPagina(), 1 => \PDO::PARAM_INT),
                 ':idEvento' => array(0 => $this->getIdEvento(), 1 => \PDO::PARAM_INT),
                 ':idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT),
                 ':idComentarioParente' => array(0 => 0, 1 => \PDO::PARAM_INT),

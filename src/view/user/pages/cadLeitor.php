@@ -17,7 +17,7 @@ if (isset($_POST['enviar'])) {
 	$usuarioDAO->listarEmailUsuario();
 
 	if ($usuarioDAO->listarEmailUsuario() > 0) {
-		echo "<p class='errorCad'>Email já cadastrado, verifique seus dados.</p>";
+		$menssagem = "<p class='errorCad'>Email já cadastrado, verifique seus dados.</p>";
 	} else {
 
 		$erro = false;
@@ -77,6 +77,7 @@ if (isset($_POST['enviar'])) {
 		<p>
 			<span>Preencha o formulário abaixo</span>
 		</p>
+		<?=$menssagem ?? "" ?>
 		<form action="" method="post">
 			<div class="formItem">
 				<label for="nomeUsuario">Nome</label>

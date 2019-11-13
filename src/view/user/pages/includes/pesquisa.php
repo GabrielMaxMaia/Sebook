@@ -4,7 +4,7 @@ require_once $ajuste . 'config/config.php';
 
 $conn = \Util\FabricaConexao::getConexao($ajuste . 'config/bd_mysql.ini');
 $objSql = new Util\Sql($conn);
-$livroDAO = new Model\livroDAO($objSql);
+$livroDAO = new Model\LivroDAO($objSql);
 
 $parametro = isset($_POST['pesquisaLivro']) ? $_POST['pesquisaLivro'] : false;
 $livroDAO->setNomeLivro($parametro);

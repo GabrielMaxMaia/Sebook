@@ -4,9 +4,9 @@ $title = "Sebos";
 $pesquisaSebo =  _URLBASE_ . "src/view/user/pages/includes/pesquisaSebo.php";
 ?>
 <section class="sebos">
-	<p>SEBOS</p>
+	<p>LOCALIZAR SEBOS</p>
 	<form action="search-box" name="form_pesquisa" id="form_pesquisa" method="post" action="">
-		<label for="pesquisaCidade">Localizar Sebos</label>
+		<!-- <label for="pesquisaCidade">Encontrar</label> -->
 		<div class="input-prepend">
 			<select name="pesquisaCidade" id="pesquisaCidade">
 				<optgroup label="Selecione a Cidade">
@@ -15,7 +15,7 @@ $pesquisaSebo =  _URLBASE_ . "src/view/user/pages/includes/pesquisaSebo.php";
 				include "src/view/user/pages/includes/arrayCidades.php";
 
 				//Adiciona o elemento do array somente nessa página
-				array_unshift($cidades, "Econtrar por Cidade");
+				array_unshift($cidades, "Escolha a cidade");
 				
                 foreach ($cidades as $cidade) {
                     ?>
@@ -29,9 +29,9 @@ $pesquisaSebo =  _URLBASE_ . "src/view/user/pages/includes/pesquisaSebo.php";
 				</optgroup>
 			</select>
 		</div>
-		<label for="pesquisaSebo">Encontrar por Nome</label>
+		<label for="pesquisaSebo">ou</label>
         <div class="input-prepend">
-			<input type="text" name="pesquisaSebo" id="pesquisaSebo" value="" tabindex="1" placeholder="Pesquisar Sebos...">
+			<input type="text" name="pesquisaSebo" id="pesquisaSebo" value="" tabindex="1" placeholder="Digite aqui o nome do Sebo...">
 		</div>
 	</form>
 

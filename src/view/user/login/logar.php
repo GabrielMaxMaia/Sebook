@@ -22,7 +22,7 @@ $styleSobrescrito =
 
    // $autenticadorController->validarAcesso('" ._URLBASE_. "area/adm',array(0=>1, 1=>2));
 
-    $autenticadorController->efetuarLogin();
+	$autenticadorController->efetuarLogin();
     $autenticadorController->efetuarLogOut();
 
 ?>
@@ -52,6 +52,8 @@ $styleSobrescrito =
 				<a href="">Esqueci minha senha</a>
 			</div>
 		</section>
+
+		<?= $mensagem ?? ""?>
 
 		<!--Modal-->
 		<section class="modal">
