@@ -41,38 +41,44 @@ $resultSeboLivro = $seboLivroDAO->listarSeboLivroId($frontController->getRegIni(
 
 ?>
 <article class="acervo-sebo">
-    <header class="topo-acervo">
+    <header class="headerPagina">
+        <h1><?= $seboDAO->getNomeFantasia() ?></h1>
+    </header>
+    <section class="topo-acervo">
+        
         <figure class="img-topo-acervo">
             <img src="<?= _URLBASE_ . $usuarioDAO->getUrlFoto() ?>" alt='fotoSebo'>
             <figcaption class="info-topo-acervo">
-                <h1><?= $seboDAO->getNomeFantasia() ?></h1>
+
                 <?php
+                $infoSebo = "";
                 if ($seboDAO->getCidadeSebo() != "") {
-                    echo "<p>Cidade: {$seboDAO->getCidadeSebo()}</p>";
+                    $infoSebo .= "Cidade: {$seboDAO->getCidadeSebo()}";
                 }
                 if ($seboDAO->getCepEndSebo() != "") {
-                    echo "<p>CEP: {$seboDAO->getCepEndSebo()}</p>";
+                    $infoSebo .= "<br>CEP: {$seboDAO->getCepEndSebo()}";
                 }
                 if ($seboDAO->getNumTelSebo() != "") {
-                    echo "<p>Telfone: {$seboDAO->getNumTelSebo()}";
+                    $infoSebo .= "<br>Telfone: {$seboDAO->getNumTelSebo()}";
                 }
                 if ($seboDAO->getCelular1Sebo() != "") {
-                    echo "<p>Celular: {$seboDAO->getCelular1Sebo()}";
+                    $infoSebo .= "<br>Celular: {$seboDAO->getCelular1Sebo()}";
                 }
                 if ($seboDAO->getCelular1Sebo() != "") {
-                    echo "<p>Celular II: {$seboDAO->getCelular1Sebo()}";
+                    $infoSebo .= "<br>Celular II: {$seboDAO->getCelular1Sebo()}";
                 }
                 if ($seboDAO->getCnpjSebo() != "") {
-                    echo "<p>CNPJ: {$seboDAO->getCnpjSebo()}</p>";
+                    $infoSebo .= "<br>CNPJ: {$seboDAO->getCnpjSebo()}";
                 }
                 if ($seboDAO->getUrlSiteSebo() != "") {
-                    echo "<p><a href={$seboDAO->getUrlSiteSebo()}' target='_blank'>Link Website</a></p>";
+                    $infoSebo .= "<br><a href={$seboDAO->getUrlSiteSebo()}' target='_blank'>Link Website</a>";
                 }
+                echo "<p>{$infoSebo}</p>";
                 ?>
             </figcaption>
         </figure>
 
-    </header>
+    </section>
     <section class="acervo">
         <header>
             <p>Acervo de <?= $seboDAO->getNomeFantasia() ?></p>
@@ -83,9 +89,9 @@ $resultSeboLivro = $seboLivroDAO->listarSeboLivroId($frontController->getRegIni(
                 //Seto isbn para listar os livros
                 $livroDAO->setIsbnLivro($seboLivro['isbnLivro']);
                 $resultLivro = $livroDAO->listarLivroSebo();
-                
+
                 // $livroDAO->setNomeLivro($resultLivro[0]['nomeLivro']);
-                
+
                 ?>
                 <figure>
                     <a href="<?= _URLBASE_ ?>area/user/pages/descLivro/<?= $seboLivro['isbnLivro'] ?>">
@@ -98,7 +104,7 @@ $resultSeboLivro = $seboLivroDAO->listarSeboLivroId($frontController->getRegIni(
                         <p>Quantidade em Estoque: <?= $seboLivro['qtdEstoque'] ?></p>
                     </figcaption>
                 </figure>
-                    <?php
+                <?php
                         if ($idUser == $seboLivroDAO->getIdUsuario()) {
                             $seboLivroDAO->setIdUsuario($idUser);
 
@@ -106,13 +112,13 @@ $resultSeboLivro = $seboLivroDAO->listarSeboLivroId($frontController->getRegIni(
                             $excluir = true;
                             $name = "atualizarLivro";
 
-                    ?>
+                            ?>
 
                     <label class="btn-modal-cadastre" for="livroAcervo" value="<?= $livroDAO->getIsbnLivro()  ?>" onclick="return pegaQtdEstoque(<?= $livroDAO->getIsbnLivro() ?>,'<?= $seboLivro['qtdEstoque'] ?>')" class="modifica edit"><?= $value ?></label>
 
                     <?php
-                        if ($excluir == true) {
-                    ?>
+                                if ($excluir == true) {
+                                    ?>
                         <!--Formulário para excluir-->
                         <form method="post" action="" name="excluirLivro">
                             <input type="hidden" name="isbnLivroExcluir" value="<?= $livroDAO->getIsbnLivro() ?>">
@@ -120,21 +126,21 @@ $resultSeboLivro = $seboLivroDAO->listarSeboLivroId($frontController->getRegIni(
                             <input type="submit" name="excluirLivro" value="Deletar" onclick="if (confirm('Quer Mesmo retirar esse Livro do acervo?')) {return true;}else{return false;}" class="modifica danger">
                         </form>
                         <?php
-                            if (isset($_POST['isbnLivroExcluir'])) {
-                                $seboLivroDAO->setIdUsuario($idUser);
-                                $seboLivroDAO->setIsbnLivro($_POST['isbnLivroExcluir']);
+                                        if (isset($_POST['isbnLivroExcluir'])) {
+                                            $seboLivroDAO->setIdUsuario($idUser);
+                                            $seboLivroDAO->setIsbnLivro($_POST['isbnLivroExcluir']);
 
-                                //Excluir comentário
-                                $seboLivroDAO->excluirseboLivro();
+                                            //Excluir comentário
+                                            $seboLivroDAO->excluirseboLivro();
 
-                                //Recarrega a página
-                                header('Refresh:0');
-                            }
-                        ?>
+                                            //Recarrega a página
+                                            header('Refresh:0');
+                                        }
+                                        ?>
                 <?php
+                            }
                         }
-                    }
-                ?>
+                        ?>
         <?php
             }
         } else {

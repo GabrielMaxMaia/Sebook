@@ -63,38 +63,55 @@ div#containerTemplate {
 }
 
 /*===================AREA DO ACERVO SEBO====================*/
-
-.acervo-sebo .container .topo-acervo {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 150px 1fr;
-    grid-gap: 10px;
-    margin: 20px 0;
-    background-color: #f1f1f1
+.acervo-sebo{
+    padding:1rem
+}
+.img-topo-acervo {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin:2rem 0;;
+    flex-wrap: wrap;
 }
 
-.acervo-sebo .container .topo-acervo .img-topo-acervo {
-    width: 100%;
-    height: 140px;
-    overflow: hidden;
-    padding: 10px
-}
-
-.acervo-sebo .container .topo-acervo .img-topo-acervo img {
+.img-topo-acervo img {
     height: 100%;
-    width: 100%
+    width: 100%;
+    min-width: 290px;
+    max-width: 290px;
+    /* margin: auto; */
+}
+.img-topo-acervo figcaption{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 290px;
+    min-width: 290px;
+    max-width: 290px;
+    border: 1px solid #ccc
+}
+.img-topo-acervo p{
+    padding: 1rem;
+    line-height: 1.5rem;
+    font-size: 1.13rem;
 }
 
-.acervo-sebo .container .acervo h2 {
+@media(min-width:780px){
+    .img-topo-acervo img{
+        margin:0;
+    }
+}
+
+.acervo-sebo .acervo h2 {
     text-align: center
 }
 
-.acervo-sebo .container .acervo .estante-slider {
+.acervo-sebo .acervo .estante-slider {
     width: 100%;
     margin-bottom: 20px
 }
 
-.acervo-sebo .container .acervo .estante-slider .titulo-estante-slider {
+.acervo-sebo .acervo .estante-slider .titulo-estante-slider {
     margin-bottom: 10px
 }
 
