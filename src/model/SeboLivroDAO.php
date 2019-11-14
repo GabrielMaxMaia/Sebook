@@ -23,9 +23,9 @@ class SeboLivroDAO extends SeboLivro
 
     private static $SELECT_ID_ISBN = "SELECT * FROM sebo_livro WHERE id_usuario = :idUsuario and isbn_livro = :isbnLivro";
 
-    private static $INSERT = "INSERT INTO sebo_livro (id_usuario, isbn_livro, qtd_estoque, estado_livro) VALUES (:idUsuario, :isbnLivro, :qtdEstoque, :estadoLivro)";
+    private static $INSERT = "INSERT INTO sebo_livro (id_usuario, isbn_livro, qtd_estoque) VALUES (:idUsuario, :isbnLivro, :qtdEstoque)";
 
-    private static $UPDATE = "UPDATE sebo_livro SET qtd_estoque =:qtdEstoque, estado_livro =:estadoLivro WHERE isbn_livro = :isbnLivro and id_usuario = :idUsuario";
+    private static $UPDATE = "UPDATE sebo_livro SET qtd_estoque =:qtdEstoque WHERE isbn_livro = :isbnLivro and id_usuario = :idUsuario";
 
     private static $DELETE = "DELETE FROM sebo_livro WHERE isbn_livro = :isbnLivro and id_usuario = :idUsuario";
 
@@ -57,8 +57,7 @@ class SeboLivroDAO extends SeboLivro
                 $itens[] = array(
                     'idUsuario' => $linha->id_usuario,
                     'isbnLivro' => $linha->isbn_livro,
-                    'qtdEstoque' => $linha->qtd_estoque,
-                    'estadoLivro' => $linha->estado_livro
+                    'qtdEstoque' => $linha->qtd_estoque
                 );
             }
         } else {
@@ -105,8 +104,7 @@ class SeboLivroDAO extends SeboLivro
             $itens[] = array(
                 'idUsuario' => $linha->id_usuario,
                 'isbnLivro' => $linha->isbn_livro,
-                'qtdEstoque' => $linha->qtd_estoque,
-                'estadoLivro' => $linha->estado_livro
+                'qtdEstoque' => $linha->qtd_estoque
             );
         }
 
@@ -162,7 +160,6 @@ class SeboLivroDAO extends SeboLivro
                 'idUsuario' => $linha->id_usuario,
                 'isbnLivro' => $linha->isbn_livro,
                 'qtdEstoque' => $linha->qtd_estoque,
-                'estadoLivro' => $linha->estado_livro,
                 'nomeFantasia' => $linha->nome_fantasia,
                 'cepEndSebo' => $linha->cep_end_sebo,
                 'urlFoto' => $linha->url_foto
@@ -189,8 +186,7 @@ class SeboLivroDAO extends SeboLivro
             $itens = array(
                 'idUsuario' => $linha->id_usuario,
                 'isbnLivro' => $linha->isbn_livro,
-                'qtdEstoque' => $linha->qtd_estoque,
-                'estadoLivro' => $linha->estado_livro
+                'qtdEstoque' => $linha->qtd_estoque
             );
             // var_dump($itens);
         } else {
@@ -207,8 +203,7 @@ class SeboLivroDAO extends SeboLivro
             array(
                 ':idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT),
                 ':isbnLivro' => array(0 => $this->getIsbnLivro(), 1 => \PDO::PARAM_STR),
-                ':qtdEstoque' => array(0 => $this->getQtdEstoque(), 1 => \PDO::PARAM_STR),
-                ':estadoLivro' => array(0 => $this->getEstadoLivro(), 1 => \PDO::PARAM_STR)   
+                ':qtdEstoque' => array(0 => $this->getQtdEstoque(), 1 => \PDO::PARAM_STR) 
             )
         );
         return $result;
@@ -221,8 +216,7 @@ class SeboLivroDAO extends SeboLivro
             array(
                 ':idUsuario' => array(0 => $this->getIdUsuario(), 1 => \PDO::PARAM_INT),
                 ':isbnLivro' => array(0 => $this->getIsbnLivro(), 1 => \PDO::PARAM_STR),
-                ':qtdEstoque' => array(0 => $this->getQtdEstoque(), 1 => \PDO::PARAM_STR),
-                ':estadoLivro' => array(0 => $this->getEstadoLivro(), 1 => \PDO::PARAM_STR) 
+                ':qtdEstoque' => array(0 => $this->getQtdEstoque(), 1 => \PDO::PARAM_STR)
             )
         );
         return $result;

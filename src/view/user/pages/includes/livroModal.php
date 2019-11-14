@@ -4,12 +4,22 @@
 	<div class="modal-wrap" aria-hidden="true" role="dialog">
 		<label class="modal-overlay" for="livroAcervo"></label>
 		<div class="modal-dialog">
+
+			<script>
+				function pegaQtdEstoque(id, qtd) {
+					//gId(idComentario).setAttribute('value',id);
+					document.getElementById("isbnLivro").setAttribute("value", id);
+
+					document.getElementById("qtdEstoque").setAttribute("value", qtd);
+
+					return
+				}
+			</script>
+
 			<div class="modal-header">
 				<p>
-					<?= $value ?>
-					<br>
-					Livro:
-					<b><?= $livroDAO->getNomeLivro() ?></b>
+					<?= $value ?> livro no Acervo	
+				</b>
 				</p>
 				<label class="btn-close" for="livroAcervo" aria-hidden="true">×</label>
 			</div>
@@ -17,40 +27,10 @@
 				<!--Formulário de acervo-->
 				<form action="" method="post">
 
-					<script>
-
-						function pegaQtdEstoque(id, qtd) {
-							//gId(idComentario).setAttribute('value',id);
-							document.getElementById("isbnLivro").setAttribute("value", id);
-
-							document.getElementById("qtdEstoque").setAttribute("value", qtd);
-
-							return
-						}
-					</script>
-
-					<input type="hidden" name="isbnLivro" id="isbnLivro" value="<?=$seboLivroDAO->getIsbnLivro()?>">
+					<input type="hidden" name="isbnLivro" id="isbnLivro" value="<?= $seboLivroDAO->getIsbnLivro() ?>">
 
 					<label for="qtdEstoque">Quantidade</label>
 					<input type="number" name="qtdEstoque" id="qtdEstoque" value="<?= $seboLivroDAO->getQtdEstoque() ?>">
-
-					<label for="estadoLivro">Estado de conservação</label>
-					<select name="estadoLivro" id="estadoLivro">
-						<?php
-						$estadoDoLivro = ['B' => 'Bom', 'M' => 'Mediano', 'O' => 'Ótimo', 'N' => 'Novo'];
-
-						foreach ($estadoDoLivro as $key => $value) {
-							if ($key == $seboLivroDAO->getEstadoLivro()) {
-								$select = 'selected';
-							} else {
-								$select = "";
-							}
-							echo 
-							"<option $select value='$key'>$value</option>";
-						}
-
-						?>
-					</select>
 
 					<input type="submit" name="<?= $name ?>" value="<?= $value ?>">
 				</form>
@@ -63,23 +43,21 @@
 </section>
 <?php
 if (isset($_POST['atualizarLivro'])) {
-	$seboLivroDAO->setIdUsuario($IdUser);
+	$seboLivroDAO->setIdUsuario($idUser);
 	$seboLivroDAO->setIsbnLivro($_POST['isbnLivro']);
 	$seboLivroDAO->setQtdEstoque($_POST['qtdEstoque']);
-	$seboLivroDAO->setEstadoLivro($_POST['estadoLivro']);
 
 	$seboLivroDAO->alterarSeboLivro();
-  
-    header('Refresh:0');
+
+	header('Refresh:0');
 }
 if (isset($_POST['adicionarLivro'])) {
-	$seboLivroDAO->setIdUsuario($IdUser);
+	$seboLivroDAO->setIdUsuario($idUser);
 	$seboLivroDAO->setIsbnLivro($_POST['isbnLivro']);
 	$seboLivroDAO->setQtdEstoque($_POST['qtdEstoque']);
-	$seboLivroDAO->setEstadoLivro($_POST['estadoLivro']);
 
-    $seboLivroDAO->adicionarSeboLivro();
-    
-    header('Refresh:0');
+	$seboLivroDAO->adicionarSeboLivro();
+
+	header('Refresh:0');
 }
 ?>

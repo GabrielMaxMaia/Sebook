@@ -82,15 +82,15 @@ for ($i = 0; $i < count($resultLivro); $i++) {
 
 			$resultSeboLivro = $seboLivroDAO->listarSeboLivroIdIsbn();
 			$seboLivroDAO->setQtdEstoque($resultSeboLivro['qtdEstoque']);
-			$seboLivroDAO->setEstadoLivro($resultSeboLivro['estadoLivro']);
+			
 			//var_dump($resultSeboLivro);
 
 			if ($resultSeboLivro > 0) {
-				$value = "Atualizar";
+				$value = "Editar";
 				$excluir = true;
 				$name = "atualizarLivro";
 			} else {
-				$value = "Adicionar ao Acervo";
+				$value = "Adicionar";
 				$excluir = false;
 				$name = "adicionarLivro";
 			}
@@ -105,7 +105,7 @@ for ($i = 0; $i < count($resultLivro); $i++) {
 				<form method="post" action="" name="excluirLivro">
 					<input type="hidden" name="isbnLivroExcluir" value="<?= $livroDAO->getIsbnLivro() ?>">
 
-					<input type="submit" name="excluirLivro" value="Excluir do Acervo" onclick="if (confirm('Quer Mesmo retirar esse Livro do acervo?')) {return true;}else{return false;}">
+					<input type="submit" name="excluirLivro" value="Deletar" onclick="if (confirm('Quer Mesmo retirar esse Livro do acervo?')) {return true;}else{return false;}">
 				</form>
 			<?php
 				if (isset($_POST['isbnLivroExcluir'])) {
