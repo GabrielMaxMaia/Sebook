@@ -92,13 +92,28 @@ div#containerTemplate {
 }
 .img-topo-acervo p{
     padding: 1rem;
-    line-height: 1.5rem;
+    line-height: 2.3rem;
     font-size: 1.13rem;
+}
+.img-topo-acervo a{
+    color:#24773b;
+}
+.img-topo-acervo a:hover {
+    color: #20ad47;
 }
 
 @media(min-width:780px){
     .img-topo-acervo img{
         margin:0;
+    }
+    .img-topo-acervo figcaption{
+        min-width: 423px;
+        max-width: 423px;
+    }
+    .img-topo-acervo p {
+        padding: 1rem;
+        line-height: 2.3rem;
+        font-size: 1.27rem;
     }
 }
 

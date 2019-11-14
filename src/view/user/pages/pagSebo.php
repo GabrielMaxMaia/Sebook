@@ -59,7 +59,7 @@ $resultSeboLivro = $seboLivroDAO->listarSeboLivroId($frontController->getRegIni(
                     $infoSebo .= "<br>CEP: {$seboDAO->getCepEndSebo()}";
                 }
                 if ($seboDAO->getNumTelSebo() != "") {
-                    $infoSebo .= "<br>Telfone: {$seboDAO->getNumTelSebo()}";
+                    $infoSebo .= "<br>Telefone: {$seboDAO->getNumTelSebo()}";
                 }
                 if ($seboDAO->getCelular1Sebo() != "") {
                     $infoSebo .= "<br>Celular: {$seboDAO->getCelular1Sebo()}";
