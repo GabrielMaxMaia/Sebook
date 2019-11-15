@@ -10,7 +10,7 @@ class EventoDAO extends Evento
     //Atributos - serão os comandos SQL  + um objeto Sql
     private static $SELECT_ALL = "SELECT * FROM evento ORDER BY id_evento DESC";
 
-    private static $SELECT_ID_USER_EVENTO = "SELECT * from evento WHERE id_usuario = :idUsuario ORDER BY id_evento DESC";
+    private static $SELECT_ID_USER_EVENTO = "SELECT * from evento INNER JOIN usuario WHERE evento.id_usuario = usuario.id_usuario AND evento.id_usuario = :idUsuario ORDER BY evento.id_evento DESC";
 
     private static $SELECT_ULTIMOS = "SELECT * FROM evento ORDER BY id_evento DESC LIMIT 2";
 
@@ -106,7 +106,8 @@ class EventoDAO extends Evento
                     'cidadeEvento' => $linha->cidade_evento,
                     'horaEvento' => $linha->hora_evento,
                     'idUsuario' => $linha->id_usuario,
-                    'urlFotoEvento' => $linha->url_foto_evento
+                    'urlFotoEvento' => $linha->url_foto_evento,
+                    'nomeUsuario' => $linha->nome_usuario
                 );
             }
             //var_dump($itens);

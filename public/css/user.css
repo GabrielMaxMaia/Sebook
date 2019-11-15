@@ -70,7 +70,7 @@ div#containerTemplate {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    margin:2rem 0;;
+    margin:2rem 0 0;
     flex-wrap: wrap;
 }
 
@@ -100,6 +100,14 @@ div#containerTemplate {
 }
 .img-topo-acervo a:hover {
     color: #20ad47;
+}
+
+.feedLink{
+    text-align: center;
+    padding: 1rem 0 0;
+    /* border: 1px solid; */
+    max-width: 529px;
+    font-size: 1.7rem;
 }
 
 @media(min-width:780px){
@@ -132,14 +140,25 @@ div#containerTemplate {
 
 .acervo{
     padding:1rem 0!important;
+    max-width: 870px;
+    margin: auto;
 }
 .headerAcervo{
-    font-size: 1.3rem;
-    margin: 2.3rem 0 2rem;
-    border-left: 8px solid #99e7aa;
-    max-width: 273px;
-    padding-left: 0.5rem;
-    text-align:center;
+    font-size: 1.2rem;
+    margin: 2rem auto;
+    /* margin-left: 6.4%; */
+    /* border-left: 8px solid #99e7aa; */
+    max-width: 294px;
+    /* padding-left: 0.5rem; */
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: .5rem 1rem;
+    /* height: 2rem; */
+}
+@media (min-width:613px){
+    .headerAcervo{
+        max-width: 848px
+    }
 }
 .acervoContainer{
     display: flex;
@@ -149,6 +168,7 @@ div#containerTemplate {
 }
 .acervoItem{
     max-width:200px;
+    margin: .5rem;
 }
 .acervoItem p{
     overflow: hidden;
@@ -162,6 +182,15 @@ div#containerTemplate {
     min-height: 300px;
     max-height: 300px;
     overflow: hidden;
+}
+.acervoItem figcaption{
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+}
+
+.seboBtnContainer{
+    display: flex;
+    margin: .5rem 0;
 }
 
 
@@ -2310,12 +2339,12 @@ section.jumbotron {
 
 .headerComentario {
     content: "";
-    border-left: .4rem solid #4CAF50;
+    border-left: .4rem solid #99e7aa;
     width: 22rem;
     display: block;
     margin: 1rem 0;
     padding-left: 1rem;
-    font-size: 1.7rem;
+    font-size: 1.45rem;
 }
 
 .comentarioContainer {

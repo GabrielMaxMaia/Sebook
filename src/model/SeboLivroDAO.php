@@ -19,7 +19,7 @@ class SeboLivroDAO extends SeboLivro
 
     private static $SELECT_ALL_SEBO_LIVRO = "SELECT * FROM sebo_livro inner join usuario ON (sebo_livro.id_usuario = usuario.id_usuario) INNER JOIN sebo ON  (sebo_livro.id_usuario = sebo.id_usuario) AND isbn_livro = :isbnLivro";
 
-    private static $SELECT_ID = "SELECT * FROM sebo_livro WHERE id_usuario = :idUsuario";
+    private static $SELECT_ID = "SELECT * FROM sebo_livro WHERE id_usuario = :idUsuario ORDER BY qtd_estoque DESC";
 
     private static $SELECT_ID_ISBN = "SELECT * FROM sebo_livro WHERE id_usuario = :idUsuario and isbn_livro = :isbnLivro";
 

@@ -15,7 +15,7 @@ $eventoDAO->setIdUsuario($GetPost);
 $frontController = new Controller\FrontController($eventoDAO);
 $frontController->setItemPagina(4);
 $frontController->verificarPaginacao();
-var_dump($_GET);
+
 ?>
 <article>
     <header class="headerPagina">
@@ -42,8 +42,8 @@ var_dump($_GET);
                         </div>
                     </div>
                     <?php
-                            if ($event['idUsuario'] == $idUser || $acessoUser <= 3 && $idUser != null) {
-                                ?>
+                        if ($event['idUsuario'] == $idUser || $acessoUser <= 3 && $idUser != null) {
+                    ?>
                         <div class="itemModifica">
                             <a href='<?= _URLBASE_ . "area/user/pages/eventoEditar/{$event['idEvento']}" ?>' class="modifica edit">
                                 Editar
@@ -57,8 +57,7 @@ var_dump($_GET);
                 </div>
             <?php
                 }
-                ?>
-
+            ?>
     </div>
     <section class="notificador">
         <?php
