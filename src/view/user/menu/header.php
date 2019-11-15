@@ -51,14 +51,16 @@
 			}
 			?>
 			<li>
-			<!--	<a href="<?= _URLBASE_ ?>area/user/menuHome/quemSomos">QUEM SOMOS</a>
-			</li>
-			<li>
-				<a href="<?= _URLBASE_ ?>area/user/menuHome/ajuda">FAQ</a>
-			</li>
-			<li>-->
-				<a href="<?= _URLBASE_ ?>area/user/geoLocalizacao/maisProximo">MAPA</a>
-			</li>
+			<!--	
+				<a href="<?= _URLBASE_ ?>area/user/menuHome/quemSomos">QUEM SOMOS</a>
+				</li>
+				<li>
+					<a href="<?= _URLBASE_ ?>area/user/menuHome/ajuda">FAQ</a>
+				</li>
+				<li>
+					<a href="<?= _URLBASE_ ?>area/user/geoLocalizacao/maisProximo">MAPA</a>
+				</li>
+			!-->
 		</ul>
 		</ul>
 	</nav>

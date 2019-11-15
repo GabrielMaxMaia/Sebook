@@ -1,4 +1,3 @@
-
 <footer id="rodape">
 	<div class="container-footer-all">
 		<div class="container-body">
@@ -74,7 +73,7 @@
 
 			<div class="informar">
 				<a href="<?= _URLBASE_ ?>area/user/pages/centralDeAjuda" class="ajuda">Central de Ajuda </a> |
-				<a href="<?= _URLBASE_ ?>area/user/pages/politicaDePrivacidade" class="Seguranca">Politica de Privacidade </a> | 
+				<a href="<?= _URLBASE_ ?>area/user/pages/politicaDePrivacidade" class="Seguranca">Politica de Privacidade </a> |
 				<a href="<?= _URLBASE_ ?>area/user/pages/termosDeUso" class="Termos ">Termos de Uso</a>
 			</div>
 		</div>
@@ -120,12 +119,12 @@
 							 </li>";
 						}
 						?>
-						<li>
+						<!--<li>
 							<a href="<?= _URLBASE_ ?>area/user/menuHome/quemSomos">QUEM SOMOS</a>
 						</li>
 						<li>
 							<a href="<?= _URLBASE_ ?>area/user/menuHome/ajuda">FAQ</a>
-						</li>
+						</li>-->
 						<li>
 							<a href="<?= _URLBASE_ ?>area/user/geoLocalizacao/maisProximo">MAPA</a>
 						</li>
@@ -136,4 +135,3 @@
 		</div>
 	</nav>
 </div>
-

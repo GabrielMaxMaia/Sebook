@@ -273,7 +273,10 @@ div#containerTemplate {
 .sumarioContainer {
     margin-top: 2rem
 }
-
+.sumarioContainer p{
+    margin: 10px;
+    
+}
 
 
 /*===================AREA DO BUSCA====================*/

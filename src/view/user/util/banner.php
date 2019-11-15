@@ -10,7 +10,7 @@
             <div class="images-inner">
                 <div class="image-slide">
                     <div class="image">
-                        <img src="<?= _URLBASE_ ?>public/img/imgBanner/banner1.jpg" alt="">
+                    <a href="<?=_URLBASE_?>area/user/pages/artesoesDoacao"><img src="<?= _URLBASE_ ?>public/img/imgBanner/banner1.jpg" alt=""></a>
                     </div>
                 </div>
                 <div class="image-slide">
@@ -20,7 +20,7 @@
                 </div>
                 <div class="image-slide">
                     <div class="image">
-                        <img src="<?= _URLBASE_ ?>public/img/imgBanner/banner3.jpg" alt="">
+                    <a href="<?=_URLBASE_?>area/user/pages/artesoes"><img src="<?= _URLBASE_ ?>public/img/imgBanner/banner3.jpg" alt=""></a>
                     </div>
                 </div>
             </div>
