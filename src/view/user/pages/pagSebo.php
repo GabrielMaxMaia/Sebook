@@ -35,7 +35,7 @@ $resultComentario = $comentarioDAO->listarComentarioPagina();
 
 /*Paginação*/
 $frontController = new Controller\FrontController($seboLivroDAO);
-$frontController->setItemPagina(4);
+$frontController->setItemPagina(8);
 $frontController->verificarPaginacao();
 $resultSeboLivro = $seboLivroDAO->listarSeboLivroId($frontController->getRegIni(), $frontController->getItemPagina());
 
