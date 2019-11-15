@@ -39,7 +39,7 @@ if ($resultLivro > 0) {
                         <figure>
                             <img src="<?= _URLBASE_ . $livro['urlFotoLivro'] ?>" alt="<?= $livro['nomeLivro'] ?>" title="<?= $livro['nomeLivro'] ?>">
                             <figcaption>
-                                <p>Nome: <?= $livro['nomeLivro'] ?></p>
+                                <p style="text-align:center;"><?= $livro['nomeLivro'] ?></p>
                             </figcaption>
                         </figure>
                     </a>

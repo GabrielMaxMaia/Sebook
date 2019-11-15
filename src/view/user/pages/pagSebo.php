@@ -45,7 +45,7 @@ $resultSeboLivro = $seboLivroDAO->listarSeboLivroId($frontController->getRegIni(
         <h1><?= $seboDAO->getNomeFantasia() ?></h1>
     </header>
     <section class="topo-acervo">
-        
+
         <figure class="img-topo-acervo">
             <img src="<?= _URLBASE_ . $usuarioDAO->getUrlFoto() ?>" alt='fotoSebo'>
             <figcaption class="info-topo-acervo">
@@ -80,31 +80,32 @@ $resultSeboLivro = $seboLivroDAO->listarSeboLivroId($frontController->getRegIni(
 
     </section>
     <section class="acervo">
-        <header>
-            <p>Acervo de <?= $seboDAO->getNomeFantasia() ?></p>
+        <header class="headerAcervo">
+            <p>Acervo de <b><?= $seboDAO->getNomeFantasia() ?></b></p>
         </header>
-        <?php
-        if ($resultSeboLivro != null) {
-            foreach ($resultSeboLivro as $seboLivro) {
-                //Seto isbn para listar os livros
-                $livroDAO->setIsbnLivro($seboLivro['isbnLivro']);
-                $resultLivro = $livroDAO->listarLivroSebo();
+        <div class="acervoContainer">
+            <?php
+            if ($resultSeboLivro != null) {
+                foreach ($resultSeboLivro as $seboLivro) {
+                    //Seto isbn para listar os livros
+                    $livroDAO->setIsbnLivro($seboLivro['isbnLivro']);
+                    $resultLivro = $livroDAO->listarLivroSebo();
 
-                // $livroDAO->setNomeLivro($resultLivro[0]['nomeLivro']);
+                    // $livroDAO->setNomeLivro($resultLivro[0]['nomeLivro']);
 
-                ?>
-                <figure>
-                    <a href="<?= _URLBASE_ ?>area/user/pages/descLivro/<?= $seboLivro['isbnLivro'] ?>">
-                        <img src="<?= _URLBASE_ . $resultLivro[0]['urlFotoLivro'] ?>" alt="<?= $resultLivro[0]['nomeLivro'] ?>" title="<?= $resultLivro[0]['nomeLivro'] ?>" style="max-width:200px;">
-                        <!--Posteriormente remover ccs inline-->
-                    </a>
-                    <figcaption>
-                        <p>Titulo: <?= $resultLivro[0]['nomeLivro'] ?></p>
-                        <p>Isbn: <?= $seboLivro['isbnLivro'] ?></p>
-                        <p>Quantidade em Estoque: <?= $seboLivro['qtdEstoque'] ?></p>
-                    </figcaption>
-                </figure>
-                <?php
+                    ?>
+                    <figure class="acervoItem">
+                        <a href="<?= _URLBASE_ ?>area/user/pages/descLivro/<?= $seboLivro['isbnLivro'] ?>">
+                            <img src="<?= _URLBASE_ . $resultLivro[0]['urlFotoLivro'] ?>" alt="<?= $resultLivro[0]['nomeLivro'] ?>" title="<?= $resultLivro[0]['nomeLivro'] ?>" style="max-width:200px;">
+                            <!--Posteriormente remover ccs inline-->
+                        </a>
+                        <figcaption>
+                            <p><?= $resultLivro[0]['nomeLivro'] ?></p>
+                            <p>Isbn: <?= $seboLivro['isbnLivro'] ?></p>
+                            <p>Qtde em Estoque: <?= $seboLivro['qtdEstoque'] ?></p>
+                        </figcaption>
+                    </figure>
+                    <?php
                         if ($idUser == $seboLivroDAO->getIdUsuario()) {
                             $seboLivroDAO->setIdUsuario($idUser);
 
@@ -112,41 +113,41 @@ $resultSeboLivro = $seboLivroDAO->listarSeboLivroId($frontController->getRegIni(
                             $excluir = true;
                             $name = "atualizarLivro";
 
-                            ?>
+                    ?>
+                        <label class="btn-modal-cadastre" for="livroAcervo" value="<?= $livroDAO->getIsbnLivro()  ?>" onclick="return pegaQtdEstoque(<?= $livroDAO->getIsbnLivro() ?>,'<?= $seboLivro['qtdEstoque'] ?>')" class="modifica edit"><?= $value ?></label>
 
-                    <label class="btn-modal-cadastre" for="livroAcervo" value="<?= $livroDAO->getIsbnLivro()  ?>" onclick="return pegaQtdEstoque(<?= $livroDAO->getIsbnLivro() ?>,'<?= $seboLivro['qtdEstoque'] ?>')" class="modifica edit"><?= $value ?></label>
-
-                    <?php
-                                if ($excluir == true) {
-                                    ?>
-                        <!--Formulário para excluir-->
-                        <form method="post" action="" name="excluirLivro">
-                            <input type="hidden" name="isbnLivroExcluir" value="<?= $livroDAO->getIsbnLivro() ?>">
-
-                            <input type="submit" name="excluirLivro" value="Deletar" onclick="if (confirm('Quer Mesmo retirar esse Livro do acervo?')) {return true;}else{return false;}" class="modifica danger">
-                        </form>
                         <?php
-                                        if (isset($_POST['isbnLivroExcluir'])) {
-                                            $seboLivroDAO->setIdUsuario($idUser);
-                                            $seboLivroDAO->setIsbnLivro($_POST['isbnLivroExcluir']);
-
-                                            //Excluir comentário
-                                            $seboLivroDAO->excluirseboLivro();
-
-                                            //Recarrega a página
-                                            header('Refresh:0');
-                                        }
-                                        ?>
-                <?php
-                            }
-                        }
+                            if ($excluir == true) {
                         ?>
-        <?php
+                            <!--Formulário para excluir-->
+                            <form method="post" action="" name="excluirLivro">
+                                <input type="hidden" name="isbnLivroExcluir" value="<?= $livroDAO->getIsbnLivro() ?>">
+
+                                <input type="submit" name="excluirLivro" value="Deletar" onclick="if (confirm('Quer Mesmo retirar esse Livro do acervo?')) {return true;}else{return false;}" class="modifica danger">
+                            </form>
+                            <?php
+                                if (isset($_POST['isbnLivroExcluir'])) {
+                                    $seboLivroDAO->setIdUsuario($idUser);
+                                    $seboLivroDAO->setIsbnLivro($_POST['isbnLivroExcluir']);
+
+                                    //Excluir comentário
+                                    $seboLivroDAO->excluirseboLivro();
+
+                                    //Recarrega a página
+                                    header('Refresh:0');
+                                }
+                            ?>
+                    <?php
+                        }
+                    }
+                    ?>
+            <?php
+                }
+            } else {
+                echo "<p>Sebo não possui livros cadastrados.</p>";
             }
-        } else {
-            echo "<p>Sebo não possui livros cadastrados.</p>";
-        }
-        ?>
+            ?>
+        </div>
     </section>
 
     <section class="notificador">

@@ -130,6 +130,28 @@ div#containerTemplate {
     margin-bottom: 10px
 }
 
+.headerAcervo{
+    font-size: 1.3rem;
+    margin: 2.3rem 0 2rem;
+    border-left: 8px solid #99e7aa;
+    max-width: 273px;
+    padding-left: 0.5rem;
+    text-align:center;
+}
+.acervoContainer{
+    
+}
+.acervoItem{
+    max-width:200px;
+}
+.acervoItem p{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: 1.37rem
+}
+
+
 /*===================AREA DO AJUDA====================*/
 .pergunta {
     max-width: 690px;
