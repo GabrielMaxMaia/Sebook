@@ -63,13 +63,14 @@ $usuarioController->gravarAlterar();
 
 				foreach ($result as $linha) {
 
-					//  if($linha['idPerfil'] == $perfilCrontoller->getPerfilDAO()->getIdPerfil()){
-					// 	$select = "select";
-					// 	echo "encontrou";
-					//  }
+					 if($linha['idPerfil'] == $usuarioController->getUsuarioDAO()->getIdPerfil()){
+						$select = "selected";
+					 }else{
+						 $select = "";
+					 }
 					//  var_dump($perfilCrontoller->getPerfilDAO());
 
-					echo "<option value='{$linha['idPerfil']}'>{$linha['nomePerfil']}</option>";
+					echo "<option $select value='{$linha['idPerfil']}'>{$linha['nomePerfil']}</option>";
 				}
 				?>
 			</optgroup>

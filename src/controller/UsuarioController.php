@@ -204,6 +204,7 @@ class UsuarioController
         if ($this->acaoGET == 2) {
             $this->usuarioDAO->setIdUsuario($_GET['id']);
             $Usuario = $this->usuarioDAO->listarUsuarioId();
+            $this->usuarioDAO->setIdPerfil($Usuario['idPerfil']);
             $this->usuarioDAO->setNomeUsuario($Usuario['nomeUsuario']);
             $this->usuarioDAO->setSobrenomeUsuario($Usuario['sobrenomeUsuario']);
             $this->usuarioDAO->setEmailUsuario($Usuario['emailUsuario']);
