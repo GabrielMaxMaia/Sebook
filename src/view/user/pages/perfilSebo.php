@@ -20,8 +20,6 @@ if ($acessoUser != "") {
 	$seboDAO->setNomeFantasia($result['nomeFantasia']);
 	$seboDAO->setRazaoSebo($result['razaoSebo']);
 	$seboDAO->setCnpjSebo($result['cnpjSebo']);
-	$seboDAO->setLatitudeSebo($result['latitudeSebo']);
-	$seboDAO->setLongitudeSebo($result['longitudeSebo']);
 	$seboDAO->setInscEstadualSebo($result['inscEstadualSebo']);
 	$seboDAO->setCepEndSebo($result['cepEndSebo']);
 	$seboDAO->setLogradouroSebo($result['logradouroSebo']);
@@ -47,8 +45,6 @@ if ($acessoUser != "") {
 		$seboDAO->setNomeFantasia($_POST['nomeFantasia']);
 		$seboDAO->setRazaoSebo($_POST['razaoSebo']);
 		$seboDAO->setCnpjSebo($_POST['cnpjSebo']);
-		$seboDAO->setLatitudeSebo($_POST['latitudeSebo']);
-		$seboDAO->setLongitudeSebo($_POST['longitudeSebo']);
 		$seboDAO->setInscEstadualSebo($_POST['inscEstadualSebo']);
 		$seboDAO->setCepEndSebo($_POST['cepEndSebo']);
 		$seboDAO->setLogradouroSebo($_POST['logradouroSebo']);
@@ -122,16 +118,6 @@ if ($acessoUser != "") {
 			<div class="formItem">
 				<label for="cnpjSebo">CNPJ</label>
 				<input type="text" name="cnpjSebo" id="cnpjSebo" value="<?= $seboDAO->getCnpjSebo() ?>" onblur='valida_cnpj(this)'>
-			</div>
-
-			<div class="formItem">
-				<label for="latitudeSebo">Latitude</label>
-				<input type="text" name="latitudeSebo" id="latitudeSebo" value="<?= $seboDAO->getLatitudeSebo() ?>">
-			</div>
-
-			<div class="formItem">
-				<label for="longitudeSebo">Longitude</label>
-				<input type="text" name="longitudeSebo" id="longitudeSebo" value="<?= $seboDAO->getLongitudeSebo() ?>">
 			</div>
 
 			<div class="formItem">

@@ -8,7 +8,7 @@ namespace Model;
 class UsuarioDAO extends Usuario
 {
     //Atributos - serão os comandos SQL  + um objeto Sql
-    private static $SELECT_LAST_ID = "SELECT last_insert_id() as last_id FROM db_sebook.usuario limit 0,1";
+    private static $SELECT_LAST_ID = "SELECT last_insert_id() as last_id FROM usuario limit 0,1";
 
     private static $SELECT_ALL = "select * from usuario where cod_status_Usuario = '1'";
 
