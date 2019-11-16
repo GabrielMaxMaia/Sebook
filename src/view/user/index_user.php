@@ -18,7 +18,7 @@ $output = ob_get_clean();
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <link rel="shortcut icon" type="image/png" href="<?= _URLBASE_ ?>public/icon/faviSebook.png">
+    <link rel="shortcut icon" type="image/png" href="<?= _URLBASE_ ?>public/icon/favIconSebook.png">
     <!--<link rel="stylesheet" href="". _URLBASE_ ."public/css/slick.css">-->
     <link rel="stylesheet" href="<?= _URLBASE_ ?>public/css/user.css">
     <?= $mapa ?? "" ?>

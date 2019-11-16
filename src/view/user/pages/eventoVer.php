@@ -50,7 +50,6 @@ $resultComentario = $comentarioDAO->listarComentarioEvento();
 <?php
 //Postagem
 if ($resultEvento != null) {
-    // foreach ($result as $linha) {
     if ($eventoDAO->getIdEvento() == $GetPost) {
         ?>
         <article class="itemVerContainer">
@@ -84,22 +83,9 @@ if ($resultEvento != null) {
                     </a> 
                 </p>
             </section>
-            <!-- <section class="eventoInfo">
-                <p>
-                    <?php// $data = date_create($eventoDAO->getDataEvento()); ?>
-                    <b>Data:</b> <?//= date_format($data, "d/m/Y") ?> |
-                    <?php
-                        //$hora = date_create($eventoDAO->getHoraEvento());
-                    ?>
-                    <b>Hora:</b> <?//= date_format($hora, "H:i") ?>
-                    <br>
-                    <b>Endereço:</b> <?//= $eventoDAO->getLocalEvento() ?> - <?//= $eventoDAO->getCidadeEvento() ?> - SP
-                </p>
-            </section> -->
         </article>
 <?php
     }
-    // }
 }
 
 /*Inclui toda sessão de comentários*/

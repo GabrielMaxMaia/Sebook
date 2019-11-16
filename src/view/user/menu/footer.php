@@ -96,41 +96,36 @@
 			</label>
 			<div class="ulCenter">
 				<ul>
-					<!--<li><a href="<? php // echo _URLBASE_ 
-										?>src/view/user/pages/menu/sebos.php">SEBOS</a>
-					</li>-->
-					<ul>
-						<li>
-							<a href="<?= _URLBASE_ ?>">HOME</a>
-						</li>
-						<li>
-							<a href="<?= _URLBASE_ ?>area/user/menuHome/sebos">SEBOS</a>
-						</li>
-						<li>
-							<a href="<?= _URLBASE_ ?>area/user/menuHome/livros">LIVROS</a>
-						</li>
-						<li>
-							<a href="<?= _URLBASE_ ?>area/user/pages/postListar">POSTAGENS</a>
-						</li>
-						<?php
-						if ($acessoUser != 4 && $acessoUser != null && $acessoUser != "") {
-							echo "<li>
+					<li>
+						<a href="<?= _URLBASE_ ?>">HOME</a>
+					</li>
+					<li>
+						<a href="<?= _URLBASE_ ?>area/user/menuHome/sebos">SEBOS</a>
+					</li>
+					<li>
+						<a href="<?= _URLBASE_ ?>area/user/menuHome/livros">LIVROS</a>
+					</li>
+					<li>
+						<a href="<?= _URLBASE_ ?>area/user/pages/postListar">POSTAGENS</a>
+					</li>
+					<?php
+					if ($acessoUser != 4 && $acessoUser != null && $acessoUser != "") {
+						echo "<li>
 								<a href='" . _URLBASE_ . "area/user/pages/postCriar'>CRIAR POSTAGEM</a></a>
 							 </li>";
-						}
-						?>
-						<!--<li>
+					}
+					?>
+					<!--<li>
 							<a href="<?= _URLBASE_ ?>area/user/menuHome/quemSomos">QUEM SOMOS</a>
 						</li>
 						<li>
 							<a href="<?= _URLBASE_ ?>area/user/menuHome/ajuda">FAQ</a>
-						</li>-->
+						</li>
 						<li>
 							<a href="<?= _URLBASE_ ?>area/user/geoLocalizacao/maisProximo">MAPA</a>
 						</li>
-					</ul>
+						-->
 				</ul>
-
 			</div>
 		</div>
 	</nav>

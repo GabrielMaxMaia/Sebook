@@ -71,7 +71,7 @@ $resultSeboLivro = $seboLivroDAO->listarSeboLivroId($frontController->getRegIni(
                     $infoSebo .= "<br>CNPJ: {$seboDAO->getCnpjSebo()}";
                 }
                 if ($seboDAO->getUrlSiteSebo() != "") {
-                    $infoSebo .= "<br><a href={$seboDAO->getUrlSiteSebo()}' target='_blank'>Link Website</a>";
+                    $infoSebo .= "<br><a href='{$seboDAO->getUrlSiteSebo()}' target='_blank'>Link Website</a>";
                 }
                 echo "<p>
                         {$infoSebo}<br>
@@ -111,20 +111,20 @@ $resultSeboLivro = $seboLivroDAO->listarSeboLivroId($frontController->getRegIni(
                         </figcaption>
                         <div class="seboBtnContainer">
                             <?php
-                                if ($idUser == $seboLivroDAO->getIdUsuario()) {
-                                    $seboLivroDAO->setIdUsuario($idUser);
+                                    if ($idUser == $seboLivroDAO->getIdUsuario()) {
+                                        $seboLivroDAO->setIdUsuario($idUser);
 
-                                    $value = "Editar";
-                                    $excluir = true;
-                                    $name = "atualizarLivro";
-                                    $class = "modifica edit";
-                                    //class="btn-modal-cadastre" 
-                            ?>
-                                <label class="<?=$class ?? ""?>" for="livroAcervo" value="<?= $livroDAO->getIsbnLivro()  ?>" onclick="return pegaQtdEstoque(<?= $livroDAO->getIsbnLivro() ?>,'<?= $seboLivro['qtdEstoque'] ?>')"><?= $value ?></label>
+                                        $value = "Editar";
+                                        $excluir = true;
+                                        $name = "atualizarLivro";
+                                        $class = "modifica edit";
+                                        //class="btn-modal-cadastre" 
+                                        ?>
+                                <label class="<?= $class ?? "" ?>" for="livroAcervo" value="<?= $livroDAO->getIsbnLivro()  ?>" onclick="return pegaQtdEstoque(<?= $livroDAO->getIsbnLivro() ?>,'<?= $seboLivro['qtdEstoque'] ?>')"><?= $value ?></label>
 
-                            <?php
-                                if ($excluir == true) {
-                            ?>
+                                <?php
+                                            if ($excluir == true) {
+                                                ?>
                                     <!--Formulário para excluir-->
                                     <form method="post" action="" name="excluirLivro">
                                         <input type="hidden" name="isbnLivroExcluir" value="<?= $livroDAO->getIsbnLivro() ?>">
@@ -132,19 +132,19 @@ $resultSeboLivro = $seboLivroDAO->listarSeboLivroId($frontController->getRegIni(
                                         <input type="submit" name="excluirLivro" value="Deletar" onclick="if (confirm('Quer Mesmo retirar esse Livro do acervo?')) {return true;}else{return false;}" class="modifica danger">
                                     </form>
                             <?php
-                                if (isset($_POST['isbnLivroExcluir'])) {
-                                            $seboLivroDAO->setIdUsuario($idUser);
-                                            $seboLivroDAO->setIsbnLivro($_POST['isbnLivroExcluir']);
+                                            if (isset($_POST['isbnLivroExcluir'])) {
+                                                $seboLivroDAO->setIdUsuario($idUser);
+                                                $seboLivroDAO->setIsbnLivro($_POST['isbnLivroExcluir']);
 
-                                            //Excluir comentário
-                                            $seboLivroDAO->excluirseboLivro();
+                                                //Excluir comentário
+                                                $seboLivroDAO->excluirseboLivro();
 
-                                            //Recarrega a página
-                                            header('Refresh:0');
+                                                //Recarrega a página
+                                                header('Refresh:0');
+                                            }
                                         }
                                     }
-                                }
-                            ?>
+                                    ?>
                         </div>
                     </figure>
             <?php

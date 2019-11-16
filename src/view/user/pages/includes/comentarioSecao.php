@@ -48,7 +48,7 @@ if ($resultComentario != null || $resultComentario >= 1) {
                         //Caso o id do usuário for o mesmo que está no comentário ou o id for Master ou ele for o dono da postagem
                         //Ele pode editar excluir o comentário
 
-                        if ($comentario['idUsuario'] == $usuarioDAO->getIdUsuario() || $acessoUser <= 3 && $acessoUser != "" || $pagIdUsuario == $idUser) {
+                        if ($comentario['idUsuario'] == $usuarioDAO->getIdUsuario() || $acessoUser <= 3 && $acessoUser != "" || $pagIdUsuario == $idUser && $idUser != "") {
 
                             $comentarioDAO->setIdUsuario($comentario['idUsuario']);
 
