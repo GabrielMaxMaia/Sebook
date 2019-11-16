@@ -3,7 +3,7 @@
 use Controller\EventoController;
 
 $objSql = new Util\Sql($conn);
-$eventoController = new Controller\EventoController($objSql);
+$eventoController = new Controller\EventoController($conn);
 $eventoController->gravarAlterar();
 
 //Caso evento ainda não ter foto seta a foto padrão

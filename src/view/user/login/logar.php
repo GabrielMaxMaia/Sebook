@@ -3,7 +3,7 @@ $title = "Login";
 $menuHide = true;
 $cssCaminho = "<link rel='stylesheet' href='" . _URLBASE_ . "public/css/login.css'>";
 $styleSobrescrito =
-"<style>
+	"<style>
 	.containerScroll{
     	display:flex;
     	overflow:hidden
@@ -12,19 +12,6 @@ $styleSobrescrito =
     	align-self:center
 	}
 </style>";
-?>
-
-<?php
-
-    $sql = new \Util\Sql($conn);
-
-    $autenticadorController = new \Controller\AutentificadorController($sql);
-
-   // $autenticadorController->validarAcesso('" ._URLBASE_. "area/adm',array(0=>1, 1=>2));
-
-	$autenticadorController->efetuarLogin();
-    $autenticadorController->efetuarLogOut();
-
 ?>
 
 <div class="linkTop">
@@ -45,15 +32,13 @@ $styleSobrescrito =
 
 				<label for="senha">Senha:</label>
 				<input class='inputLogin' type='password' placeholder='Senha' name='txtSenha' id='senha' value="<?= $_POST['txtSenha'] ?? '' ?>">
-                
-                <input class='button' type='submit' value='Entrar'>
+
+				<input class='button' type='submit' value='Entrar'>
 			</form>
 			<div class="linkGroup">
 				<a href="">Esqueci minha senha</a>
 			</div>
 		</section>
-
-		<?= $mensagem ?? ""?>
 
 		<!--Modal-->
 		<section class="modal">
@@ -67,9 +52,9 @@ $styleSobrescrito =
 					</div>
 					<div class="modal-body">
 						<div class="content-modal-cadastre">
-							<a class="btn-modal" href="<?= _URLBASE_?>area/user/pages/cadLeitor">Sou Leitor</a>
+							<a class="btn-modal" href="<?= _URLBASE_ ?>area/user/pages/cadLeitor">Sou Leitor</a>
 							<span>OU</span>
-							<a class="btn-modal blue" href="<?= _URLBASE_?>area/user/pages/cadSebo">Sou Sebo</a>
+							<a class="btn-modal blue" href="<?= _URLBASE_ ?>area/user/pages/cadSebo">Sou Sebo</a>
 						</div>
 					</div>
 					<div class="modal-footer">
@@ -80,3 +65,12 @@ $styleSobrescrito =
 		</section>
 	</article>
 </div>
+<?php
+
+$sql = new \Util\Sql($conn);
+
+$autenticadorController = new \Controller\AutentificadorController($sql);
+
+echo $autenticadorController->efetuarLogin();
+echo $autenticadorController->efetuarLogOut();
+?>

@@ -29,13 +29,11 @@ class AutentificadorController
             if ($user !== null && $senha != null) {
 
                 $resultado = $this->admDAO->autenticarAdm($user, $senha);
-                if ($resultado == false) {
+                if ($resultado == false || $resultado == null) {
                     //Senha inválida
-                    echo $mensagem = "<p class='errorCad'>Senha ou e-mail inválidos</p>";
-                } else if ($resultado == null) {
-                    //email inválido
-                    echo $mensagem = "<p class='errorCad'>Senha ou e-mail inválidos</p>";
-                } else {
+                  $mensagem = "<p class='errorCad'>Senha ou e-mail inválidos</p>";
+                }
+                else {
 
                     $_SESSION['userLogado']['nome'] = $resultado['nomeUsuario'];
                     $_SESSION['userLogado']['idUsuario'] = $resultado['idUsuario'];
@@ -44,17 +42,21 @@ class AutentificadorController
                     if (($_SESSION['userLogado']['acesso']) <= 3) {
                         echo "ADM";
                         header("Location: " . _URLBASE_);
+                        // echo "<script>window.location.href = '"._URLBASE_."';</script>";
                     } else {
                         echo "Login usuário";
                         header("location: " . _URLBASE_);
+                        // echo "<script>window.location.href = '"._URLBASE_."';</script>";
                     }
 
                     // var_dump($_SESSION['userLogdao']['acesso']);
                 }
             } else if ($acessoUser != true) {
-                echo $mensagem = "<p class='errorCad'>Preencha todos campos!</p>";
+                $mensagem = "<p class='errorCad'>Preencha todos campos!</p>";
             }
         }
+
+      return $mensagem ?? "";
     }
 
     public function efetuarLogOut()
@@ -66,7 +68,8 @@ class AutentificadorController
 
                 unset($_SESSION['userLogado']);
 
-                header("location:" . _URLBASE_);
+                // header("location:" . _URLBASE_);
+                echo "<script>window.location.href = '"._URLBASE_."';</script>";
             }
         }
     }
@@ -142,7 +145,7 @@ class AutentificadorController
     {
         $sessao = isset($_SESSION['userLogado']) ? $_SESSION['userLogado'] : null;
         if ($sessao == null || $nivelAcesso > 3) {
-            header("Location: " . _URLBASE_);
+            echo "<script>window.location.href = '"._URLBASE_."';</script>";
         }
     }
 }

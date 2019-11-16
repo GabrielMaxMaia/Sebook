@@ -11,6 +11,12 @@ require_once './config/config.php';
 
 $conn = \Util\FabricaConexao::getConexao('./config/bd_mysql.ini');
 
+//Autentificação para logar
+$sql = new \Util\Sql($conn);
+$autenticadorController = new \Controller\AutentificadorController($sql);
+$autenticadorController->efetuarLogin();
+$autenticadorController->efetuarLogOut();
+
 if (isset($_GET['area']) && $_GET['area'] == "adm") {
 
     require_once "./src/view/adm/index_adm.php";
