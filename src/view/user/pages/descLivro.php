@@ -41,40 +41,50 @@ for ($i = 0; $i < count($resultLivro); $i++) {
 	$livroDAO->setSinopseLivro($resultLivro[$i]['sinopseLivro']);
 	$livroDAO->setIdCategoria($resultLivro[$i]['idCategoria']);
 	$livroDAO->setIdEditora($resultLivro[$i]['idEditora']);
+	$categoria = $resultLivro[$i]['nomeCategoria'];
 
 	$autorDAO->setIdAutor($resultLivro[$i]['idAutor']);
 	$resultAutor[$i] = $autorDAO->listarAutorId();
 }
 ?>
 
-<article class="livrosL">
-	<section class="box-descricao-livro">
-		<figure>
-			<img src="<?= _URLBASE_ . $livroDAO->getUrlFotoLivro() ?>" alt="<?= $livroDAO->getNomeLivro() ?>" title="<?= $livroDAO->getNomeLivro() ?>" style="max-width:200px;">
-			<figcaption class="descricaoLivro">
-				<h1><?= $livroDAO->getNomeLivro() ?></h1>
-				<p>
-					<strong>Ano: <?= $livroDAO->getAnoLivro() ?></strong>
-					<br>
-					<?php
-					foreach ($resultAutor as $autor) {
-						?>
-						<strong>Autor: <?= $autor['nomeAutor'] ?></strong>
-						| <strong>Nacionalidade:
-							<?= $autor['nomeNacionalidade'] ?>
-						</strong>
+<article class="livroArticle">
+	<section>
+		<div class="containerInfoLivro">
+			<figure class="livroContainer">
+				<img src="<?= _URLBASE_ . $livroDAO->getUrlFotoLivro() ?>" alt="<?= $livroDAO->getNomeLivro() ?>" title="<?= $livroDAO->getNomeLivro() ?>">
+				<figcaption class="descricaoLivro">
+					<h1><?= $livroDAO->getNomeLivro() ?></h1>
+					<p>
+						<b>Ano:</b> <?= $livroDAO->getAnoLivro() ?>
 						<br>
-						<?php $autor['idNacionalidade'] ?>
-					<?php
-					}
-					?>
-				</p>
+						<?php
+						foreach ($resultAutor as $autor) {
+							?>
+							<b>Autor:</b> <?= $autor['nomeAutor'] ?>
+							<br>
+							<b>Nacionalidade: </b>
+							<?= $autor['nomeNacionalidade'] ?>
+							<br>
+							<?php $autor['idNacionalidade'] ?>
+						<?php
+						}
+						?>
+						<b>Categoria: </b><a href=''><?=$categoria?></a>
+						<!--Modal-->
+						<br>
+						<b>Encontre esse livro: </b>
+						<label class="btn-modal-cadastre" for="modalAchaSebo" style="color:#24773b;">Aqui</label>
+					</p>
+				</figcaption>
+			</figure>
+			<div class="sinopseContainer">
+				<p class="sinopse">SINOPSE</p>
 				<p>
-					<strong>SINOPSE</strong><br>
-					<?= $livroDAO->getSinopseLivro() ?>
+				<?= $livroDAO->getSinopseLivro() ?>
 				</p>
-			</figcaption>
-		</figure>
+			</div>
+		</div>
 		<?php
 		if ($acessoUser == 5) {
 			$seboLivroDAO->setIdUsuario($idUser);
@@ -82,7 +92,7 @@ for ($i = 0; $i < count($resultLivro); $i++) {
 
 			$resultSeboLivro = $seboLivroDAO->listarSeboLivroIdIsbn();
 			$seboLivroDAO->setQtdEstoque($resultSeboLivro['qtdEstoque']);
-			
+
 			//var_dump($resultSeboLivro);
 
 			if ($resultSeboLivro > 0) {
@@ -107,7 +117,7 @@ for ($i = 0; $i < count($resultLivro); $i++) {
 
 					<input type="submit" name="excluirLivro" value="Deletar" onclick="if (confirm('Quer Mesmo retirar esse Livro do acervo?')) {return true;}else{return false;}">
 				</form>
-			<?php
+		<?php
 				if (isset($_POST['isbnLivroExcluir'])) {
 					$seboLivroDAO->setIdUsuario($idUser);
 					$seboLivroDAO->setIsbnLivro($_POST['isbnLivroExcluir']);
@@ -119,47 +129,45 @@ for ($i = 0; $i < count($resultLivro); $i++) {
 				}
 			}
 		}
-			?>
-			
+		?>
+
 	</section>
-	<!--Modal-->
-	<label class="btn-modal-cadastre" for="modalAchaSebo">Onde encontrar?</label>
 	<section class="modal">
 		<input class="modal-open" id="modalAchaSebo" type="checkbox" hidden>
 		<div class="modal-wrap" aria-hidden="true" role="dialog">
 			<label class="modal-overlay" for="modalAchaSebo"></label>
 			<div class="modal-dialog">
 				<div class="modal-header">
-					<h2>Sebos que possuem o Livro <?=$livroDAO->getNomeLivro()?></h2>
+					<h2>Sebos que possuem o Livro <?= $livroDAO->getNomeLivro() ?></h2>
 					<label class="btn-close" for="modalAchaSebo" aria-hidden="true">×</label>
 				</div>
 				<div class="modal-body">
-				<?php
-					if($resultSeboLivroAcha > 0){
-						foreach($resultSeboLivroAcha as $seboLivroR){
+					<?php
+					if ($resultSeboLivroAcha > 0) {
+						foreach ($resultSeboLivroAcha as $seboLivroR) {
 							?>
 							<ul>
 								<li>
-								<a href='<?=_URLBASE_."/area/user/pages/pagSebo/".$seboLivroR['idUsuario']?>'>	
-								<figure>
-									<img src="<?=_URLBASE_ . $seboLivroR['urlFoto']?>" style="max-width:50px;">
-									<figcaption>
-										<p>
-											Nome: <?=$seboLivroR['nomeFantasia']?>
-											<br>
-											CEP: <?=$seboLivroR['cepEndSebo']?>
-										</p>
-									</figcaption>
-								</figure>
-								</a>
+									<a href='<?= _URLBASE_ . "/area/user/pages/pagSebo/" . $seboLivroR['idUsuario'] ?>'>
+										<figure>
+											<img src="<?= _URLBASE_ . $seboLivroR['urlFoto'] ?>" style="max-width:50px;">
+											<figcaption>
+												<p>
+													Nome: <?= $seboLivroR['nomeFantasia'] ?>
+													<br>
+													CEP: <?= $seboLivroR['cepEndSebo'] ?>
+												</p>
+											</figcaption>
+										</figure>
+									</a>
 								</li>
-							<ul>	
+								<ul>
 							<?php
-						}
-					} else {
-						echo "Ainda não há sebos que possuem esse livro";
-					}
-					?>
+								}
+							} else {
+								echo "Ainda não há sebos que possuem esse livro";
+							}
+							?>
 				</div>
 				<div class="modal-footer">
 					<label class="btn btn-primary" for="modalAchaSebo">Fechar</label>
@@ -167,8 +175,6 @@ for ($i = 0; $i < count($resultLivro); $i++) {
 			</div>
 		</div>
 	</section>
-
-	<h3>Seção de Comentarios</h3>
 	<?php
 
 	/*Inclui toda sessão de comentários*/
@@ -178,7 +184,6 @@ for ($i = 0; $i < count($resultLivro); $i++) {
 
 </article>
 
-<?php 
-	include "includes/livroModal.php";
+<?php
+include "includes/livroModal.php";
 ?>
-

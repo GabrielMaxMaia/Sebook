@@ -22,7 +22,7 @@ class LivroDAO extends Livro
 
     private static $INSERT = "INSERT INTO livro (isbn_livro, id_categoria, ano_livro, nome_livro, sinopse_livro, id_editora, url_foto_livro) VALUES (:isbnLivro, :idCategoria, :anoLivro, :nomeLivro, :sinopseLivro, :idEditora, :urlFotoLivro)";
 
-    private static $SELECT_ID = "SELECT * FROM livro INNER JOIN livro_autor as La WHERE La.isbn_livro = livro.isbn_livro AND livro.isbn_livro = :isbnLivro";
+    private static $SELECT_ID = "SELECT * FROM livro INNER JOIN livro_autor as La ON (La.isbn_livro = livro.isbn_livro) INNER JOIN categoria ON livro.id_categoria = categoria.id_categoria AND livro.isbn_livro = :isbnLivro";
 
     private static $SELECT_LIVRO_SEBO = "SELECT * FROM livro WHERE isbn_livro = :isbnLivro";
 
@@ -176,7 +176,8 @@ class LivroDAO extends Livro
                     'codStatusLivro' => $linha->cod_status_livro,
                     'idEditora' => $linha->id_editora,
                     'idCategoria' => $linha->id_categoria,
-                    'idAutor' => $linha->id_autor
+                    'idAutor' => $linha->id_autor,
+                    'nomeCategoria' => $linha->nome_categoria
                 );
             }
         } else {
