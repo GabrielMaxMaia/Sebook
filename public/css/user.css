@@ -515,22 +515,20 @@ div#containerTemplate {
 /*===================AREA DO DESCRIÇÃO LIVRO====================*/
 .livroArticle{
     margin:auto;
-    max-width:900px;
+    max-width: 738px
 }
 .containerInfoLivro{
     padding:1rem;
 }
 .livroContainer{
     display: flex;
-    /* align-items: center; */
+    justify-content:center
 }
 
 @media (max-width:530px){
     .livroContainer{
         flex-wrap: wrap;
-        padding: 1rem;
-        /* background: #c8efcc;
-        border-radius: 10rem 33rem; */
+        padding: 1rem
     }
    .livroContainer figcaption, .livroContainer img{
         margin:auto;
@@ -538,32 +536,24 @@ div#containerTemplate {
         max-width:276px;
    }
 }
+.livroContainer:before,.livroContainer:after{
+    content: "";
+    display: block;
+    height: 300px;
+    width: 300px;
+    border-radius: 30rem;
+    z-index: -1;
+    position: absolute;
+}
 @media (min-width:344px) and (max-width:530px){
     .livroContainer:before{
-        height: 300px;
-        display: block;
-        /* height: 100px; */
         background: #c8efcc;
-        width: 300px;
-        content: "";
-        border-radius: -4rem;
-        z-index: -1;
-        position: absolute;
         right: 10px;
-        border-radius: 30rem;
         top: 6rem;
    }
    .livroContainer:after{
-        height: 300px;
-        display: block;
         background: #6bd8df;
-        width: 300px;
-        content: "";
-        border-radius: -4rem;
-        z-index: -1;
-        position: absolute;
         left: 10px;
-        border-radius: 30rem;
         top: 22rem;
    }
 }
@@ -576,6 +566,7 @@ div#containerTemplate {
     }
 }
 
+
 .livroContainer a{
     color: #24773b;
 }
@@ -587,9 +578,8 @@ div#containerTemplate {
     border: 1px solid #ccc;
     line-height: 1.7rem;
     font-size: 1.05rem;
-    /* flex-wrap: wrap; */
-    width: 630px;
-    background:#fff;
+    width: 500px;
+    background:#fff
 }
 
 .sinopseContainer{
@@ -1358,6 +1348,7 @@ header #Logado .ulCenter2 ul li a {
     margin: auto;
     width: 100%;
     top: .8rem;
+    z-index: 999
 }
 
 .navDesk ul li {

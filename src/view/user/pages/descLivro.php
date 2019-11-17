@@ -70,7 +70,7 @@ for ($i = 0; $i < count($resultLivro); $i++) {
 						<?php
 						}
 						?>
-						<b>Categoria: </b><a href=''><?=$categoria?></a>
+						<b>Categoria: </b><a href="<?=_URLBASE_.'area/user/pages/categoriaListar/'.$livroDAO->getIdCategoria()?>"><?=$categoria?></a>
 						<!--Modal-->
 						<br>
 						<b>Encontre esse livro: </b>
