@@ -8,6 +8,10 @@
     padding: 0
 }
 
+::-webkit-scrollbar {
+    width: 0px;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -958,6 +962,26 @@ div#contentLoading {
     z-index: 103
 }
 
+.livro .modal-dialog{
+    background: #fefefe;
+    border: #555 solid 1px;
+    border-radius: 5px;
+    position: fixed;
+    left: 50%;
+    top: -100%;
+    transform: translate(-50%, -150%);
+    transition: transform 0.6s ease-in-out;
+    width: 92%;
+    max-width: 600px;
+    z-index: 103;
+    overflow-y: scroll;
+    max-height: 299px;
+}
+
+.livro .modal-open:checked~.modal-wrap .modal-dialog{
+    top: 48%;
+}
+
 .modal-body {
     padding: 50px 20px
 }
@@ -1032,6 +1056,17 @@ div#contentLoading {
     background: #428bca;
     border-color: #3885c7;
     color: #fff
+}
+
+.livroModalContainer{
+    list-style:none
+}
+.livroModalItem figure{
+    display: flex;
+    align-items: center;
+}
+.livroModalItem figcaption{
+    padding: .5rem
 }
 
 /*===================AREA DO QUEM SOMOS====================*/
@@ -1347,8 +1382,7 @@ header #Logado .ulCenter2 ul li a {
     position: relative;
     margin: auto;
     width: 100%;
-    top: .8rem;
-    z-index: 999
+    top: .8rem
 }
 
 .navDesk ul li {

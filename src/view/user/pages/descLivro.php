@@ -70,7 +70,7 @@ for ($i = 0; $i < count($resultLivro); $i++) {
 						<?php
 						}
 						?>
-						<b>Categoria: </b><a href="<?=_URLBASE_.'area/user/pages/categoriaListar/'.$livroDAO->getIdCategoria()?>"><?=$categoria?></a>
+						<b>Categoria: </b><a href="<?= _URLBASE_ . 'area/user/pages/categoriaListar/' . $livroDAO->getIdCategoria() ?>"><?= $categoria ?></a>
 						<!--Modal-->
 						<br>
 						<b>Encontre esse livro: </b>
@@ -81,10 +81,11 @@ for ($i = 0; $i < count($resultLivro); $i++) {
 			<div class="sinopseContainer">
 				<p class="sinopse">SINOPSE</p>
 				<p>
-				<?= $livroDAO->getSinopseLivro() ?>
+					<?= $livroDAO->getSinopseLivro() ?>
 				</p>
 			</div>
 		</div>
+
 		<?php
 		if ($acessoUser == 5) {
 			$seboLivroDAO->setIdUsuario($idUser);
@@ -93,81 +94,94 @@ for ($i = 0; $i < count($resultLivro); $i++) {
 			$resultSeboLivro = $seboLivroDAO->listarSeboLivroIdIsbn();
 			$seboLivroDAO->setQtdEstoque($resultSeboLivro['qtdEstoque']);
 
-			//var_dump($resultSeboLivro);
-
 			if ($resultSeboLivro > 0) {
+				$mensagem = "Possui livro em <strong>Acervo</strong>, quer atualizar?";
 				$value = "Editar";
 				$excluir = true;
 				$name = "atualizarLivro";
 			} else {
+				$mensagem = "Ainda não possui livro no <strong>Acervo</strong>";
 				$value = "Adicionar";
 				$excluir = false;
 				$name = "adicionarLivro";
 			}
 			?>
+			<p style="padding-left:1rem;">
+				<?=$mensagem ?? ""?>
+			</p>
+			<div class="itemEdit">
+				<label class="btn-modal-cadastre modifica edit" for="livroAcervo" value="<?= $livroDAO->getIsbnLivro()  ?>" onclick="return pegaId(<?= $livroDAO->getIsbnLivro()  ?>,'<?= $seboLivroDAO->getQtdEstoque() ?>')"><?= $value ?></label>
 
-			<label class="btn-modal-cadastre" for="livroAcervo" value="<?= $livroDAO->getIsbnLivro()  ?>" onclick="return pegaId(<?= $livroDAO->getIsbnLivro()  ?>,'<?= $seboLivroDAO->getQtdEstoque() ?>')"><?= $value ?></label>
+				<?php
+					if ($excluir == true) {
+						?>
+					<!--Formulário para excluir-->
+					<form method="post" action="" name="excluirLivro">
+						<input type="hidden" name="isbnLivroExcluir" value="<?= $livroDAO->getIsbnLivro() ?>">
 
-			<?php
-				if ($excluir == true) {
+						<input type="submit" class="modifica danger" name="excluirLivro" value="Deletar" onclick="if (confirm('Quer Mesmo retirar esse Livro do acervo?')) {return true;}else{return false;}">
+					</form>
+				<?php
+						if (isset($_POST['isbnLivroExcluir'])) {
+							$seboLivroDAO->setIdUsuario($idUser);
+							$seboLivroDAO->setIsbnLivro($_POST['isbnLivroExcluir']);
+							//Excluir comentário
+							$seboLivroDAO->excluirseboLivro();
+							//Recarrega a página
+
+							header('Refresh:0');
+						}
+					}
 					?>
-				<!--Formulário para excluir-->
-				<form method="post" action="" name="excluirLivro">
-					<input type="hidden" name="isbnLivroExcluir" value="<?= $livroDAO->getIsbnLivro() ?>">
-
-					<input type="submit" name="excluirLivro" value="Deletar" onclick="if (confirm('Quer Mesmo retirar esse Livro do acervo?')) {return true;}else{return false;}">
-				</form>
+			</div>
 		<?php
-				if (isset($_POST['isbnLivroExcluir'])) {
-					$seboLivroDAO->setIdUsuario($idUser);
-					$seboLivroDAO->setIsbnLivro($_POST['isbnLivroExcluir']);
-					//Excluir comentário
-					$seboLivroDAO->excluirseboLivro();
-					//Recarrega a página
-
-					header('Refresh:0');
-				}
-			}
 		}
 		?>
-
 	</section>
-	<section class="modal">
+	<section class="modal livro">
 		<input class="modal-open" id="modalAchaSebo" type="checkbox" hidden>
 		<div class="modal-wrap" aria-hidden="true" role="dialog">
 			<label class="modal-overlay" for="modalAchaSebo"></label>
 			<div class="modal-dialog">
 				<div class="modal-header">
-					<h2>Sebos que possuem o Livro <?= $livroDAO->getNomeLivro() ?></h2>
+					<p>
+						Sebos que possuem o Livro<br>
+						<b><?= $livroDAO->getNomeLivro() ?></b>
+					</p>
 					<label class="btn-close" for="modalAchaSebo" aria-hidden="true">×</label>
 				</div>
 				<div class="modal-body">
-					<?php
-					if ($resultSeboLivroAcha > 0) {
-						foreach ($resultSeboLivroAcha as $seboLivroR) {
-							?>
-							<ul>
-								<li>
+					<ul class="livroModalContainer">
+						<?php
+						if ($resultSeboLivroAcha > 0) {
+							foreach ($resultSeboLivroAcha as $seboLivroR) {
+								?>
+								<li class="livroModalItem">
 									<a href='<?= _URLBASE_ . "/area/user/pages/pagSebo/" . $seboLivroR['idUsuario'] ?>'>
 										<figure>
 											<img src="<?= _URLBASE_ . $seboLivroR['urlFoto'] ?>" style="max-width:50px;">
 											<figcaption>
 												<p>
-													Nome: <?= $seboLivroR['nomeFantasia'] ?>
-													<br>
-													CEP: <?= $seboLivroR['cepEndSebo'] ?>
+													<?php
+															if ($seboLivroR['nomeFantasia'] != "") {
+																echo 'Nome: ' . $seboLivroR['nomeFantasia'] . '<br>';
+															}
+															if ($seboLivroR['cepEndSebo'] != "") {
+																echo 'CEP: ' . $seboLivroR['cepEndSebo'];
+															}
+															?>
 												</p>
 											</figcaption>
 										</figure>
 									</a>
 								</li>
-								<ul>
-							<?php
-								}
-							} else {
-								echo "Ainda não há sebos que possuem esse livro";
+						<?php
 							}
-							?>
+						} else {
+							echo "<p>Infelizmente, ainda não há <b>sebos</b> que possuam este livro cadastrado.<p>";
+						}
+						?>
+					</ul>
 				</div>
 				<div class="modal-footer">
 					<label class="btn btn-primary" for="modalAchaSebo">Fechar</label>
