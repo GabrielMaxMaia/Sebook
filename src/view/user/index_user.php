@@ -65,7 +65,9 @@ $output = ob_get_clean();
     </div>
     
     <!--Botão de Topo-->
-    <button dispçay="none" id="btnTop" onclick="backToTop()"><img src="<?= _URLBASE_ ?>public/icon/arrowTopGreen.svg"></button>
+    <button dispçay="none" id="btnTop" onclick="backToTop()">
+        <img dispçay="none" src="<?= _URLBASE_ ?>public/icon/arrowTopGreen.svg">
+    </button>
     <script>
         window.onscroll = function() {
             scroll();
@@ -73,7 +75,7 @@ $output = ob_get_clean();
         }
         function scroll() {
             let btn = document.getElementById('btnTop');
-            if (document.documentElement.scrollTop > 50) {
+            if (document.documentElement.scrollTop > 50 && window.innerWidth >= 780) {
                 btn.style.display = "block";
             } else {
                 btn.style.display = "none";
