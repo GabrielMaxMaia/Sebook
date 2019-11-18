@@ -7,9 +7,14 @@
     margin: 0;
     padding: 0
 }
+@media (max-width:780px){
+    ::-webkit-scrollbar {
+        width: 0px;
+    }
+}
 
-::-webkit-scrollbar {
-    width: 0px;
+.modal-dialog::-webkit-scrollbar {
+    width: 0
 }
 
 html {
@@ -1966,10 +1971,14 @@ label#postalFooter {
     text-decoration: none;
     color: #c7c7c7
 }
-
-@media (max-width:780px) {
-    .informar a {
-        font-size: .91rem;
+@media (max-width:367px){
+    .footer {
+        font-size: .673rem;
+    }
+}
+@media (min-width:367px) and (max-width:780px) {
+    .footer {
+        font-size: .8rem;
     }
 }
 
