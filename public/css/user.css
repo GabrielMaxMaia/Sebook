@@ -197,6 +197,11 @@ div#containerTemplate {
     margin: .5rem 0;
 }
 
+.mensagemAcervo{
+    padding-left: 1rem;
+    margin-top: 1rem;
+}
+
 
 /*===================AREA DO AJUDA====================*/
 .pergunta {
@@ -2510,23 +2515,26 @@ input:focus {
 }
 
 /*Botão top Hover*/
-#btnTop {
-    position: fixed;
-    bottom: 82px;
-    right: -9px;
-    background: none;
-    border: none;
-    display: none;
-    z-index: 99;
-    font-weight: bolder;
-    padding: 7px 18px;
-    transition: .3s all ease-in-out;
-    outline: none
+@media (min-width:780px){
+    #btnTop {
+        position: fixed;
+        bottom: 82px;
+        right: -9px;
+        background: none;
+        border: none;
+        display: none;
+        z-index: 99;
+        font-weight: bolder;
+        padding: 7px 18px;
+        transition: .3s all ease-in-out;
+        outline: none
+    }
+    
+    #btnTop img {
+        max-width: 50px
+    }
 }
 
-#btnTop img {
-    max-width: 50px
-}
 
 /*Categorias*/
 .categoriaContainer{

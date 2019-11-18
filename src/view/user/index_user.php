@@ -65,7 +65,7 @@ $output = ob_get_clean();
     </div>
     
     <!--Botão de Topo-->
-    <button id="btnTop" onclick="backToTop()"><img src="<?= _URLBASE_ ?>public/icon/arrowTopGreen.svg"></button>
+    <button dispçay="none" id="btnTop" onclick="backToTop()"><img src="<?= _URLBASE_ ?>public/icon/arrowTopGreen.svg"></button>
     <script>
         window.onscroll = function() {
             scroll();

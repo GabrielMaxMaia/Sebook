@@ -78,6 +78,57 @@ for ($i = 0; $i < count($resultLivro); $i++) {
 					</p>
 				</figcaption>
 			</figure>
+			<?php
+			if ($acessoUser == 5) {
+				$seboLivroDAO->setIdUsuario($idUser);
+				$seboLivroDAO->setIsbnLivro($isbn);
+
+				$resultSeboLivro = $seboLivroDAO->listarSeboLivroIdIsbn();
+				$seboLivroDAO->setQtdEstoque($resultSeboLivro['qtdEstoque']);
+
+				if ($resultSeboLivro > 0) {
+					$mensagem = "Possui livro em <strong>Acervo</strong>, quer atualizar?";
+					$value = "Editar";
+					$excluir = true;
+					$name = "atualizarLivro";
+				} else {
+					$mensagem = "Ainda não possui livro no <strong>Acervo</strong>";
+					$value = "Adicionar";
+					$excluir = false;
+					$name = "adicionarLivro";
+				}
+				?>
+				<p class="mensagemAcervo">
+					<?= $mensagem ?? "" ?>
+				</p>
+				<div class="itemEdit">
+					<label class="btn-modal-cadastre modifica edit" for="livroAcervo" value="<?= $livroDAO->getIsbnLivro()  ?>" onclick="return pegaId(<?= $livroDAO->getIsbnLivro()  ?>,'<?= $seboLivroDAO->getQtdEstoque() ?>')"><?= $value ?></label>
+
+					<?php
+						if ($excluir == true) {
+							?>
+						<!--Formulário para excluir-->
+						<form method="post" action="" name="excluirLivro">
+							<input type="hidden" name="isbnLivroExcluir" value="<?= $livroDAO->getIsbnLivro() ?>">
+
+							<input type="submit" class="modifica danger" name="excluirLivro" value="Deletar" onclick="if (confirm('Quer Mesmo retirar esse Livro do acervo?')) {return true;}else{return false;}">
+						</form>
+					<?php
+							if (isset($_POST['isbnLivroExcluir'])) {
+								$seboLivroDAO->setIdUsuario($idUser);
+								$seboLivroDAO->setIsbnLivro($_POST['isbnLivroExcluir']);
+								//Excluir comentário
+								$seboLivroDAO->excluirseboLivro();
+								//Recarrega a página
+
+								header('Refresh:0');
+							}
+						}
+						?>
+				</div>
+			<?php
+			}
+			?>
 			<div class="sinopseContainer">
 				<p class="sinopse">SINOPSE</p>
 				<p>
@@ -85,58 +136,6 @@ for ($i = 0; $i < count($resultLivro); $i++) {
 				</p>
 			</div>
 		</div>
-
-		<?php
-		if ($acessoUser == 5) {
-			$seboLivroDAO->setIdUsuario($idUser);
-			$seboLivroDAO->setIsbnLivro($isbn);
-
-			$resultSeboLivro = $seboLivroDAO->listarSeboLivroIdIsbn();
-			$seboLivroDAO->setQtdEstoque($resultSeboLivro['qtdEstoque']);
-
-			if ($resultSeboLivro > 0) {
-				$mensagem = "Possui livro em <strong>Acervo</strong>, quer atualizar?";
-				$value = "Editar";
-				$excluir = true;
-				$name = "atualizarLivro";
-			} else {
-				$mensagem = "Ainda não possui livro no <strong>Acervo</strong>";
-				$value = "Adicionar";
-				$excluir = false;
-				$name = "adicionarLivro";
-			}
-			?>
-			<p style="padding-left:1rem;">
-				<?=$mensagem ?? ""?>
-			</p>
-			<div class="itemEdit">
-				<label class="btn-modal-cadastre modifica edit" for="livroAcervo" value="<?= $livroDAO->getIsbnLivro()  ?>" onclick="return pegaId(<?= $livroDAO->getIsbnLivro()  ?>,'<?= $seboLivroDAO->getQtdEstoque() ?>')"><?= $value ?></label>
-
-				<?php
-					if ($excluir == true) {
-						?>
-					<!--Formulário para excluir-->
-					<form method="post" action="" name="excluirLivro">
-						<input type="hidden" name="isbnLivroExcluir" value="<?= $livroDAO->getIsbnLivro() ?>">
-
-						<input type="submit" class="modifica danger" name="excluirLivro" value="Deletar" onclick="if (confirm('Quer Mesmo retirar esse Livro do acervo?')) {return true;}else{return false;}">
-					</form>
-				<?php
-						if (isset($_POST['isbnLivroExcluir'])) {
-							$seboLivroDAO->setIdUsuario($idUser);
-							$seboLivroDAO->setIsbnLivro($_POST['isbnLivroExcluir']);
-							//Excluir comentário
-							$seboLivroDAO->excluirseboLivro();
-							//Recarrega a página
-
-							header('Refresh:0');
-						}
-					}
-					?>
-			</div>
-		<?php
-		}
-		?>
 	</section>
 	<section class="modal livro">
 		<input class="modal-open" id="modalAchaSebo" type="checkbox" hidden>
