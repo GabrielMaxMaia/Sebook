@@ -12,6 +12,11 @@
         width: 0px;
     }
 }
+@media (orientation: landscape) {
+    .topoHeader, .menuMobile {
+      display: none!important;
+    }
+}
 
 .modal-dialog::-webkit-scrollbar {
     width: 0
