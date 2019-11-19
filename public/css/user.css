@@ -1352,11 +1352,11 @@ header #Logado .ulCenter2 ul li a {
     top: 28px;
     left: 0;
     padding: 0;
-    background-color: #a1b99c;
-    /* background: linear-gradient(45deg, #548f96, #8adce6); */
+    background-color: #c8efcc;
+    background: linear-gradient(724deg, #c8efcc, #98e0e8);
     z-index: 1;
     flex-flow: column;
-    margin-top: 0
+    margin-top: 0;
 }
 
 .master1 nav .menu ul li a {
@@ -1365,10 +1365,10 @@ header #Logado .ulCenter2 ul li a {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    color: #fff;
+    color: #111;
     padding: 5%;
     font-size: 1.4rem;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #111;
     max-width: 420px;
     max-height: 320px;
 }
