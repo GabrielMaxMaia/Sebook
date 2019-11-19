@@ -30,6 +30,8 @@ $seboDAO->setUrlSiteSebo($result['urlSiteSebo']);
 $seboLivroDAO->setIdUsuario($GetPost);
 // $resultSeboLivro = $seboLivroDAO->listarSeboLivroId();
 
+if($seboDAO->getCnpjSebo() != "" && $seboDAO->getNomeFantasia() != "" && $seboDAO->getCepEndSebo() != ""){
+
 $comentarioDAO->setIdPagina($GetPost);
 $resultComentario = $comentarioDAO->listarComentarioPagina();
 
@@ -177,4 +179,23 @@ $resultSeboLivro = $seboLivroDAO->listarSeboLivroId($frontController->getRegIni(
 
 <?php
 include "includes/livroModal.php";
+
+//Se não tiver cnpj aparece essa mensagem
+} else{
+    if($seboDAO->getIdUsuario($GetPost) == $idUser){
+        echo "<p>
+        É preciso concluir seu cadastro para ter todas funcionalidades dentro da plataforma.
+        <br>
+        <a href='"._URLBASE_."area/user/pages/perfilSebo'><Atualizar><b>Atualizar agora</b></a>
+        </p>";
+    } else {
+        echo "<p>
+                Sentimos muito, no momento essa página se encontra bloqueada.
+                <br>
+                O sebo <b>{$seboDAO->getNomeFantasia()}</b>, ainda não nos forneceu todas informações de cadastro.
+                <br>
+                Mas você pode encontrar outros locais clicando <a href='"._URLBASE_."area/user/menuHome/sebos'><b>Aqui</b></a>
+            </p>";
+    }
+}
 ?>

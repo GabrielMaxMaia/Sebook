@@ -5,6 +5,7 @@ use Model\AutorDAO;
 use Model\LivroAutorDAO;
 use Model\ComentarioDAO;
 use Model\UsuarioDAO;
+use Model\SeboDAO;
 use Model\SeboLivroDAO;
 
 //Pega a conexão
@@ -14,6 +15,7 @@ $livroDAO = new LivroDAO($objSql);
 $autorDAO = new AutorDAO($objSql);
 $livroAutorDAO = new LivroAutorDAO($objSql);
 $comentarioDAO = new ComentarioDAO($objSql);
+$seboDAO = new SeboDAO($objSql);
 $seboLivroDAO = new SeboLivroDAO($objSql);
 
 //Pega o isbn pela url
@@ -26,6 +28,8 @@ $livroDAO->setIsbnLivro($isbn);
 $resultLivro = $livroDAO->listarLivroIsbn();
 
 //Lista os sebos que possuem determinado livro
+$seboDAO->setIdUsuario($idUser);
+
 $seboLivroDAO->setIsbnLivro($isbn);
 $resultSeboLivroAcha = $seboLivroDAO->listarSeboLivrosIsbn();
 
@@ -86,17 +90,21 @@ for ($i = 0; $i < count($resultLivro); $i++) {
 				$resultSeboLivro = $seboLivroDAO->listarSeboLivroIdIsbn();
 				$seboLivroDAO->setQtdEstoque($resultSeboLivro['qtdEstoque']);
 
-				if ($resultSeboLivro > 0) {
-					$mensagem = "Possui livro em <strong>Acervo</strong>, quer atualizar?";
-					$value = "Editar";
-					$excluir = true;
-					$name = "atualizarLivro";
-				} else {
-					$mensagem = "Ainda não possui livro no <strong>Acervo</strong>";
-					$value = "Adicionar";
-					$excluir = false;
-					$name = "adicionarLivro";
-				}
+				$resultSebo = $seboDAO->listarSeboId();
+
+				if ($resultSebo['cnpjSebo'] != "" && $resultSebo['nomeFantasia'] != "" && $resultSebo['cepEndSebo'] != "") {
+
+					if ($resultSeboLivro > 0) {
+						$mensagem = "Possui livro em <strong>Acervo</strong>, quer atualizar?";
+						$value = "Editar";
+						$excluir = true;
+						$name = "atualizarLivro";
+					} else {
+						$mensagem = "Ainda não possui livro no <strong>Acervo</strong>";
+						$value = "Adicionar";
+						$excluir = false;
+						$name = "adicionarLivro";
+					}
 				?>
 				<p class="mensagemAcervo">
 					<?= $mensagem ?? "" ?>
@@ -127,6 +135,11 @@ for ($i = 0; $i < count($resultLivro); $i++) {
 						?>
 				</div>
 			<?php
+			}else{
+				echo "<p>É preciso concluir seu cadastro para ter todas funcionalidades dentro da plataforma.<br>
+        			<a href='"._URLBASE_."area/user/pages/perfilSebo'><Atualizar><b>Atualizar agora</b></a>
+					</p>";
+			}
 			}
 			?>
 			<div class="sinopseContainer">

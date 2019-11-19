@@ -1,6 +1,7 @@
 <?php
 
 use Model\PostagemDAO;
+use Model\SeboDAO;
 
 //Pega a conexão
 $sql = new \Util\Sql($conn);
@@ -57,6 +58,22 @@ if (isset($_POST['update'])) {
 if ($result != null) {
 
     if ($result['idUsuario'] == $IdSessaoUser || $acessoUser <= 3) {
+
+        $block = false;
+		if($acessoUser == 5){
+
+			$seboDAO = new SeboDAO($sql);
+			$seboDAO->setIdUsuario($idUser);
+			$resultSebo = $seboDAO->listarSeboId();
+
+			if ($resultSebo['cnpjSebo'] == "" || $resultSebo['nomeFantasia'] == "" || $resultSebo['cepEndSebo'] == "") {
+				$block = true;
+				echo "<p>É preciso concluir seu cadastro para ter todas funcionalidades dentro da plataforma.<br>
+				<a href='"._URLBASE_."area/user/pages/perfilSebo'><Atualizar><b>Atualizar agora</b></a>
+						</p>";
+			}
+		}
+		if ($block != true){ 
         ?>
         <section class="containerCriacao">
             <header class="headerPagina">
@@ -83,6 +100,7 @@ if ($result != null) {
             </form>
         </section>
 <?php
+        }
     } else {
         echo "<p>Essa postagem não pertence a você</p>";
     }

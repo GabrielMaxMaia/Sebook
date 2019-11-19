@@ -161,6 +161,7 @@ class SeboLivroDAO extends SeboLivro
                 'isbnLivro' => $linha->isbn_livro,
                 'qtdEstoque' => $linha->qtd_estoque,
                 'nomeFantasia' => $linha->nome_fantasia,
+                'cnpjSebo' => $linha->cnpj_sebo,
                 'cepEndSebo' => $linha->cep_end_sebo,
                 'urlFoto' => $linha->url_foto
             );
