@@ -1264,16 +1264,17 @@ header #Logado .ulCenter2 ul li a {
 
 .master1 nav {
     width: 100%;
-    height: 45px;
+    height:11%;
     position: fixed;
     bottom: 0;
-    background: aliceblue
+    background: aliceblue;
+    max-height: 51px;
 }
 
 .master1 nav:after {
     content: '';
     width: 100%;
-    height: 45px;
+    height: 8%;
     background: inherit;
     position: fixed;
     bottom: 0;
@@ -1288,12 +1289,13 @@ header #Logado .ulCenter2 ul li a {
     display: block;
     position: absolute;
     z-index: 9;
-    top: 11px;
+    top: 25%;
     left: 20px;
+    z-index:999;
 }
 
 .master1 nav .home img {
-    height: 100%
+    height: 100%;
 }
 
 .master1 nav .search {
@@ -1303,8 +1305,9 @@ header #Logado .ulCenter2 ul li a {
     position: absolute;
     z-index: 9;
     left: 50.98%;
-    top: 13px;
+    top: 30%;
     margin-left: -14px;
+    z-index:999;
 }
 
 /* .master1 nav .search img {
@@ -1327,7 +1330,8 @@ header #Logado .ulCenter2 ul li a {
     position: absolute;
     right: 20px;
     z-index: 9;
-    top: 14px;
+    top: 34%;
+    z-index:999
 }
 
 .master1 nav .menu label img {
@@ -1345,7 +1349,7 @@ header #Logado .ulCenter2 ul li a {
     position: fixed;
     width: 100%;
     height: 100%;
-    top: 89px;
+    top: 28px;
     left: 0;
     padding: 0;
     background-color: #a1b99c;
@@ -1362,7 +1366,7 @@ header #Logado .ulCenter2 ul li a {
     -ms-flex-align: center;
     align-items: center;
     color: #fff;
-    padding: 24px;
+    padding: 5%;
     font-size: 1.4rem;
     border-bottom: 1px solid #fff;
     max-width: 420px;
