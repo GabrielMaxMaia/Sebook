@@ -136,7 +136,7 @@ $pesquisa =  _URLBASE_ . "src/view/user/pages/includes/pesquisa.php";
 
     <!--Modal-->
     <label class="btn-modal-cadastre modalCategoria" for="modal-categorias">Listar Categorias</label>
-    <section class="modal">
+    <section class="modal categoriaM">
         <input class="modal-open" id="modal-categorias" type="checkbox" hidden>
         <div class="modal-wrap" aria-hidden="true" role="dialog">
             <label class="modal-overlay" for="modal-categorias"></label>

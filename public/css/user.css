@@ -782,7 +782,7 @@ div#contentLoading {
 
 .containerLogin .login {
     background-color: #fff;
-    padding: 3rem 1rem !important;
+    padding: 10% 1% !important;
     max-width: 500px;
     margin: 2% auto 0;
     border: 1px solid #ccc;
@@ -803,8 +803,10 @@ div#contentLoading {
 
 .containerLogin figure figcaption {
     font-weight: 700;
-    font-size: 18px;
-    margin: 10px 0 20px
+    font-size: 1rem;
+    margin: 1% 0 2%;
+    color: #111;
+    margin-left: -.6rem;
 }
 
 .containerLogin .btn-modal-cadastre {
@@ -814,7 +816,7 @@ div#contentLoading {
     color: blue;
     text-decoration: none;
     font-size: 14px;
-    margin: 5% auto
+    margin: 1% auto 2%
 }
 
 .containerLogin .btn-modal-cadastre:hover {
@@ -835,9 +837,9 @@ div#contentLoading {
 }
 
 .containerLogin form {
-    padding: 2% 0 7%;
+    padding: 2% 5%;
     max-width: 330px;
-    margin: auto
+    margin: auto;
 }
 
 .containerLogin form label {
@@ -977,7 +979,7 @@ div#contentLoading {
     z-index: 103
 }
 
-.livro .modal-dialog{
+.livro .modal-dialog, .categoriaM .modal-dialog{
     background: #fefefe;
     border: #555 solid 1px;
     border-radius: 5px;
@@ -989,16 +991,17 @@ div#contentLoading {
     width: 92%;
     max-width: 600px;
     z-index: 103;
-    overflow-y: scroll;
-    max-height: 299px;
+    overflow-y: scroll
 }
 
-.livro .modal-open:checked~.modal-wrap .modal-dialog{
+/* .livro .modal-open:checked~.modal-wrap .modal-dialog{
     top: 48%;
-}
+} */
 
 .modal-body {
-    padding: 50px 20px
+    padding: 5% 10%;
+    overflow-y: scroll;
+    max-height: 187px;
 }
 
 .modal-body p {
@@ -2567,6 +2570,11 @@ input:focus {
     list-style: none;
     font-size: 1rem;
     line-height: 1.25rem;
+}
+
+.categoriaM .catContainer li{
+    font-size: 1.18rem;
+    line-height: 1.9rem;
 }
 
 .catContainer a:hover {
