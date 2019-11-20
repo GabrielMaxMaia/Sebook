@@ -1,7 +1,9 @@
 <?php
+$title = "Criar Evento";
 
 use Model\EventoDAO;
 use Model\UsuarioDAO;
+use Model\SeboDAO;
 use Model\ComentarioDAO;
 
 //Pega a conexão
@@ -77,7 +79,23 @@ if (isset($_POST['enviar']) != null || "") {
 	}
 }
 
-if ($IdSessaoUser != null || "") {
+if ($idUser != null && $idUser != "") {
+	if ($acessoUser != 4) {
+		$block = false;
+		if($acessoUser == 5){
+
+			$seboDAO = new SeboDAO($objSql);
+			$seboDAO->setIdUsuario($idUser);
+			$resultSebo = $seboDAO->listarSeboId();
+
+			if ($resultSebo['cnpjSebo'] == "" || $resultSebo['nomeFantasia'] == "" || $resultSebo['cepEndSebo'] == "") {
+				$block = true;
+				echo "<p>É preciso concluir seu cadastro para ter todas funcionalidades dentro da plataforma.<br>
+				<a href='"._URLBASE_."area/user/pages/perfilSebo'><Atualizar><b>Atualizar agora</b></a>
+						</p>";
+			}
+		}
+		if ($block != true){
 	?>
 	<section class="containerCriacao">
 		<header class="headerPagina">
@@ -126,6 +144,12 @@ if ($IdSessaoUser != null || "") {
 			<input type="submit" name="enviar" value="Cadastrar" class="inputEnvia">
 		</form>
 	</section>
+	<?php
+		} 
+	}else{
+			echo "<p>Sua conta não permite criar Eventos</p>";
+		}
+	?>
 <?php
 
 } else {

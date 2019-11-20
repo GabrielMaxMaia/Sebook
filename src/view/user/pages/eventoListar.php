@@ -1,5 +1,11 @@
 <?php
 
+$styleSobrescrito .= "
+div#containerTemplate{
+    max-width:2000px
+}
+";
+
 use Model\EventoDAO;
 // use Controller\EventoController;
 
@@ -15,7 +21,7 @@ $eventoDAO = new EventoDAO($sql);
 $result = $eventoDAO->listarEvento();
 
 $frontController = new Controller\FrontController($eventoDAO);
-$frontController->setItemPagina(4);
+$frontController->setItemPagina(6);
 $frontController->verificarPaginacao();
 
 $GetPost = isset($_GET['id']) ? $_GET['id'] : false;

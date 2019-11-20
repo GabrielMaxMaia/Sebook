@@ -1,5 +1,9 @@
 <?php
-
+$styleSobrescrito .= "
+div#containerTemplate{
+    max-width:2000px
+}
+";
 use Model\PostagemDAO;
 //use Controller\PostagemController;
 
@@ -15,7 +19,7 @@ $postagemDAO = new PostagemDAO($sql);
 $result = $postagemDAO->listarPostagem();
 
 $frontController = new Controller\FrontController($postagemDAO);
-$frontController->setItemPagina(4);
+$frontController->setItemPagina(6);
 $frontController->verificarPaginacao();
 
 $GetPost = isset($_GET['id']) ? $_GET['id'] : false;

@@ -1,16 +1,29 @@
 @charset 'UTF-8';
 .containerSlick{
-    margin:2rem auto
+    margin: -5% auto 3rem;
 }
 @media (min-width:780px){
     .containerSlick{
-        margin:3rem auto
+        margin: -1.5rem auto 2rem;
     }
 }
 .slider {
     width: 100%;
     margin: 5% auto 0;
 
+}
+
+.containerSlick header{
+    margin-left: 11px;
+    border-left: .2rem solid #99e7aa;
+    padding-left: 0.5rem;
+
+    margin-top: 5%;
+}
+@media (max-width:780px){
+    .containerSlick header{
+        margin-bottom: 5%;
+    }
 }
 
 .slick-slide img {

@@ -6,7 +6,7 @@ $mapa = "<script type='text/javascript' src='https://js.api.here.com/v3/3.1/maps
         <script type='text/javascript' src='https://js.api.here.com/v3/3.1/mapsjs-mapevents.js'></script>
         <link rel='stylesheet' type='text/css' href='https://js.api.here.com/v3/3.1/mapsjs-ui.css'>";
 
-$styleSobrescrito =
+$styleSobrescrito .=
 "<style>
     section {
         width: 100%;

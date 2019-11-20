@@ -22,7 +22,15 @@ $output = ob_get_clean();
     <!--<link rel="stylesheet" href="". _URLBASE_ ."public/css/slick.css">-->
     <link rel="stylesheet" href="<?= _URLBASE_ ?>public/css/user.css">
     <?= $mapa ?? "" ?>
-    <?= $styleSobrescrito ?? "" ?>
+    <?php
+        if(isset($styleSobrescrito) && $styleSobrescrito != ""){
+            ?>
+            <style>
+                <?=$styleSobrescrito?>
+            </style>
+        <?php
+        } 
+    ?>
     <?= $cssCaminho ?? "" ?>
 
     <title><?= isset($title) ? 'Sebook | ' . $title : 'Sebook' ?></title>
@@ -46,6 +54,10 @@ $output = ob_get_clean();
     <div class="containerScroll">
         <?php
         $menuHide ?? require_once 'menu/header.php';
+        if (isset($title) && $title == "Melhor agregador de acervos"){
+            //BANNER
+            require_once  'src/view/user/util/banner.php';
+        }
         ?>
         <div id="containerTemplate">
             <?php

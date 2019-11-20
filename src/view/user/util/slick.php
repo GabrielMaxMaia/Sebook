@@ -12,6 +12,9 @@ $resultLivro = $livroDAO->listarLivros();
 ?>
 
 <div class="containerSlick">
+	<header>
+        <h2>Últimos Livros</h2>
+    </header>
 	<section class="regular slider">
 		<?php
 		foreach ($resultLivro as $livro) {

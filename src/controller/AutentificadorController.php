@@ -40,13 +40,13 @@ class AutentificadorController
                     $_SESSION['userLogado']['acesso'] = $resultado['idPerfil'];
                     // var_dump($_SESSION['userLogado']['acesso']);
                     if (($_SESSION['userLogado']['acesso']) <= 3) {
-                        echo "ADM";
-                        header("Location: " . _URLBASE_);
-                        // echo "<script>window.location.href = '"._URLBASE_."';</script>";
+                        //echo "ADM";
+                        // header("Location: " . _URLBASE_);
+                        echo "<script>window.location.href = '"._URLBASE_."';</script>";
                     } else {
-                        echo "Login usuário";
-                        header("location: " . _URLBASE_);
-                        // echo "<script>window.location.href = '"._URLBASE_."';</script>";
+                        //echo "Login usuário";
+                        //header("location: " . _URLBASE_);
+                        echo "<script>window.location.href = '"._URLBASE_."';</script>";
                     }
 
                     // var_dump($_SESSION['userLogdao']['acesso']);
@@ -117,11 +117,10 @@ class AutentificadorController
                 <figure id="logFig">
                     <label for="ossm" class="circle" href="">
                         <img src="<?= _URLBASE_ . $img ?>">
-
-                        <p><?= $_SESSION['userLogado']['nome'] ?></p>
                     </label>
                     <figcaption>
                         <div class='logItem'>
+                            <p><?= $_SESSION['userLogado']['nome'] ?></p>
                             <a class='pefil' href='<?= $perfil ?>'>Perfil</a>
                             <?php
                                 if (isset($adm)) {

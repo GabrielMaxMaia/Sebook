@@ -55,12 +55,12 @@ div#containerTemplate::before {
     content: "";
     display: block;
     position: relative;
-    min-height: 2rem
+    min-height: 1rem
 }
 
 @media (max-width:779.99px) {
     div#containerTemplate::before {
-        min-height: 62.8px;
+        min-height: 32.8px;
     }
 }
 
@@ -628,6 +628,11 @@ div#containerTemplate {
     display: flex;
     flex-direction: column;
 }
+@media (max-width:780px){
+    .feedItem{
+        max-width: 600px
+    }
+}
 
 .feedItem header {
     margin-left: .65rem;
@@ -638,13 +643,34 @@ div#containerTemplate {
 .feedItem figure {
     overflow: hidden;
     max-height: 260px;
-    max-width: 310px;
+    min-width:311px;
+    max-width: 556px;
 }
 
-@media (min-width:997px) {
+@media (min-width:701px) and (max-width:780px) {
+    .feedItem figure{
+        min-width: 555px;
+        max-width: 555px;
+    }
+}
+@media (min-width:781px) and (max-width:833px) {
+    .feedItem figure{
+        min-width: 364px;
+        max-width: 364px;
+    }
+}
+
+@media (min-width:834px) and (max-width:999px){
     .feedItem figure {
-        min-width: 481px;
-        max-width: 459px;
+        min-width: 389px;
+        max-width: 389px;
+    }
+}
+
+@media (min-width:1000px) {
+    .feedItem figure {
+        min-width: 479px;
+        max-width: 479px;
     }
 }
 
@@ -664,6 +690,7 @@ div#containerTemplate {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    max-width: 281px;
 }
 
 .feedItem img {
@@ -686,7 +713,7 @@ div#containerTemplate {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: .5rem;
+    padding: 1rem;
     padding-bottom: 1rem;
 }
 
@@ -1352,7 +1379,7 @@ header #Logado .ulCenter2 ul li a {
     position: fixed;
     width: 100%;
     height: 100%;
-    top: 28px;
+    top: -17px;
     left: 0;
     padding: 0;
     background-color: #c8efcc;
@@ -1404,10 +1431,10 @@ header #Logado .ulCenter2 ul li a {
     /* background: #222; */
     background: #505050;
     z-index: 1;
-    position: relative;
     margin: auto;
     width: 100%;
-    top: .8rem
+    /* top: .8rem */
+    position: relative;
 }
 
 .navDesk ul li {
@@ -1436,8 +1463,7 @@ header #Logado .ulCenter2 ul li a {
     justify-content: space-between;
     padding: .1rem 1.1rem 0rem 1.2rem;
     box-sizing: border-box;
-    align-items: center;
-
+    align-items: flex-start
 }
 
 @media (min-width: 780px) {
@@ -1457,18 +1483,17 @@ header #Logado .ulCenter2 ul li a {
 }
 
 @media (max-width: 780px) {
-    .topoHeader .menuGroup {}
-
     .topoHeader {
-        position: fixed;
+        /* position: relative; */
         width: 100%;
-        top: 0;
+        /* top: 0; */
         z-index: 99999;
         padding: 2%;
-        display: flex;
+        /* display: flex; */
         justify-content: center;
         align-items: center;
         max-height: 67px;
+        height: 6rem
     }
 
     .topoHeader img {
@@ -1550,11 +1575,11 @@ section {
     /* position: relative; */
 }
 
-@media(min-width:700px) {
+/* @media(min-width:700px) {
     .banner {
         margin-top: .65rem;
     }
-}
+} */
 
 .banner {
     width: 100%;
@@ -1566,12 +1591,26 @@ section {
     height: 100%
 }
 
-.banner .image {
-    width: 100%;
-    height: 100%;
-    max-height: 529px;
-    max-width: 959px;
-    margin: auto;
+.bannerHeader{
+    font-size: 2.5rem;
+    color: #545454;
+}
+@media (max-width:780px){
+    .bannerHeader{
+        font-size: 1.5rem;
+    }
+}
+.bannerHeaderSub{
+    font-size: 1.3rem;
+    max-width: 370px;
+    margin: 1rem auto;
+    text-align: center;
+    color: #fff;
+}
+.bannerBtn{
+    padding: .5rem 1rem;
+    background: #fff;
+    border: 1px solid #ccc;
 }
 
 .banner .radio {
@@ -1579,12 +1618,22 @@ section {
 }
 
 .banner .images {
-    overflow: hidden;
+    /* overflow: hidden;
     top: 0;
     bottom: 0;
     left: 0;
-    right: 0;
-    width: 100%
+    right: 0; */
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner .image{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 1rem
 }
 
 .banner .images-inner {
@@ -1595,7 +1644,42 @@ section {
 
 .banner .image-slide {
     width: 20%;
-    float: left
+    float: left;
+    height:70vh
+}
+@media (max-width:780px){
+    .banner .image-slide{
+        height:75vh
+    }
+}
+
+
+.background1{
+    background-image: url(../img/imgBanner/livroEstante.png);
+    background-color:#0000003d;
+    background-size: cover;
+    background-blend-mode:darken;
+    /* background: #000; */
+    color: #fff;
+    background-position:right;
+}
+.background2{
+    background-image: url(../img/imgBanner/livroEstante.png);
+    background-color:#0000003d;
+    background-size: cover;
+    background-blend-mode:darken;
+    /* background: #000; */
+    color: #fff;
+    background-position:right;
+}
+.background3{
+    background-image: url(../img/imgBanner/livroEstante.png);
+    background-color:#0000003d;
+    background-size: cover;
+    background-blend-mode:darken;
+    /* background: #000; */
+    color: #fff;
+    background-position:right;
 }
 
 .banner .image-slide,
@@ -1606,7 +1690,7 @@ section {
 
 .banner .fake-radio {
     text-align: center;
-    margin: -35px 0 0 0
+    margin: -35px 0 0 0;
 }
 
 .banner #slide1:checked~.images .images-inner {
@@ -1617,9 +1701,13 @@ section {
     margin-left: -100%
 }
 
-/* .banner #slide3:checked~.images .images-inner {
+.banner #slide3:checked~.images .images-inner {
     margin-left: -200%
-} */
+}
+label.radio-btn{
+    position: relative;
+    /* top: -10rem */
+}
 
 .banner #slide1:checked~div .fake-radio .radio-btn:nth-child(1),
 .banner #slide2:checked~div .fake-radio .radio-btn:nth-child(2),
@@ -1664,9 +1752,9 @@ section {
     animation: bullet 12300ms infinite 1100ms
 }
 
-/* .banner #play1:checked~div .fake-radio .radio-btn:nth-child(3) {
+.banner #play1:checked~div .fake-radio .radio-btn:nth-child(3) {
     animation: bullet 12300ms infinite 7200ms
-} */
+}
 
 @keyframes slide {
 
@@ -1682,7 +1770,7 @@ section {
 
     66.66666666666667%,
     91.869918699187% {
-        margin-right: -200%
+        margin-left: -200%
     }
 }
 
@@ -1711,9 +1799,9 @@ section {
     animation: caption 12300ms infinite 3100ms
 }
 
-/* .banner #play1:checked~.labels .label:nth-child(3) {
+.banner #play1:checked~.labels .label:nth-child(3) {
     animation: caption 12300ms infinite 7200ms
-} */
+}
 
 .maisProcurados h1 {
     font-size: 20px;
@@ -2006,6 +2094,19 @@ label#postalFooter {
     align-items: flex-end
 }
 
+.logGroup:after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    content: "";
+    border-top-style: solid;
+    border-top-width: 4px;
+    border-right: 4px solid transparent;
+    border-bottom: 0 solid transparent;
+    border-left: 4px solid transparent;
+}
+
 .logGroup a {
     margin: .4rem .4rem
 }
@@ -2022,7 +2123,9 @@ label#postalFooter {
     padding: .1rem;
     background: #fff;
     border-radius: 50%;
-    object-fit: contain
+    object-fit: contain;
+    width:40px;
+    height:40px;
 }
 
 .circle p {
@@ -2034,12 +2137,12 @@ label#postalFooter {
     display: flex;
     flex-direction: column;
     position: absolute;
-    width: 95px;
     background: #fff;
     font-size: 1.1rem;
-    padding: .4rem;
+    padding: 0.4rem 1rem;
     z-index: 999;
-    right: 0
+    right: 0;
+    width: 107px;
 }
 
 #logFig figcaption {
@@ -2049,25 +2152,6 @@ label#postalFooter {
 
 #logFig:hover figcaption {
     display: block;
-}
-
-@media (min-width:780px) {
-    .circle img {
-        height: 80px;
-        width: 80px;
-        margin-top: 40%
-    }
-
-    .circle p {
-        position: relative;
-        top: -.9rem;
-        padding: .1rem;
-        width: 92%;
-    }
-
-    .logItem {
-        top: 109.3px;
-    }
 }
 
 @media (max-width:780px) {
@@ -2090,12 +2174,29 @@ label#postalFooter {
     }
 
     .logItem {
-        top: 79.3px;
-
+        top: 66.3px;
+        width: 50%;
     }
 }
 
+@media (min-width:780px) {
+    .circle img {
+        height: 60px;
+        width: 60px;
+        margin-top: 40%
+    }
 
+    .circle p {
+        position: relative;
+        top: -.9rem;
+        padding: .1rem;
+        width: 92%;
+    }
+
+    .logItem {
+        top: 86.5px;
+    }
+}
 
 /* @media(min-width:782px){
     .logItem{
@@ -2279,13 +2380,12 @@ section.jumbotron {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 2rem auto;
-    padding: 1rem;
+    margin: 2rem auto
 }
 
 .contentItem {
     /* border: 1px solid #ccc; */
-    margin: 1rem;
+    padding: .65rem;
     min-width: 350px;
     max-width: 350px;
     overflow: hidden;
