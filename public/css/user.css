@@ -12,6 +12,9 @@
         width: 0px;
     }
 }
+.modal-body::-webkit-scrollbar {
+    width: 0px;
+}
 @media (max-width: 700px) and (orientation: landscape) {
     .topoHeader, .menuMobile {
       display: none!important;
@@ -1566,7 +1569,9 @@ section {
 .banner .image {
     width: 100%;
     height: 100%;
-    max-height: 300px
+    max-height: 529px;
+    max-width: 959px;
+    margin: auto;
 }
 
 .banner .radio {
@@ -1601,7 +1606,7 @@ section {
 
 .banner .fake-radio {
     text-align: center;
-    margin: -20px 0 0 0
+    margin: -35px 0 0 0
 }
 
 .banner #slide1:checked~.images .images-inner {
@@ -1612,9 +1617,9 @@ section {
     margin-left: -100%
 }
 
-.banner #slide3:checked~.images .images-inner {
+/* .banner #slide3:checked~.images .images-inner {
     margin-left: -200%
-}
+} */
 
 .banner #slide1:checked~div .fake-radio .radio-btn:nth-child(1),
 .banner #slide2:checked~div .fake-radio .radio-btn:nth-child(2),
@@ -1656,12 +1661,12 @@ section {
 }
 
 .banner #play1:checked~div .fake-radio .radio-btn:nth-child(2) {
-    animation: bullet 12300ms infinite 3100ms
+    animation: bullet 12300ms infinite 1100ms
 }
 
-.banner #play1:checked~div .fake-radio .radio-btn:nth-child(3) {
+/* .banner #play1:checked~div .fake-radio .radio-btn:nth-child(3) {
     animation: bullet 12300ms infinite 7200ms
-}
+} */
 
 @keyframes slide {
 
@@ -1677,7 +1682,7 @@ section {
 
     66.66666666666667%,
     91.869918699187% {
-        margin-left: -200%
+        margin-right: -200%
     }
 }
 
@@ -1706,9 +1711,9 @@ section {
     animation: caption 12300ms infinite 3100ms
 }
 
-.banner #play1:checked~.labels .label:nth-child(3) {
+/* .banner #play1:checked~.labels .label:nth-child(3) {
     animation: caption 12300ms infinite 7200ms
-}
+} */
 
 .maisProcurados h1 {
     font-size: 20px;

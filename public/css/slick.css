@@ -1,6 +1,11 @@
 @charset 'UTF-8';
 .containerSlick{
-    margin:3rem auto
+    margin:2rem auto
+}
+@media (min-width:780px){
+    .containerSlick{
+        margin:3rem auto
+    }
 }
 .slider {
     width: 100%;
