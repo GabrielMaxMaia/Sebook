@@ -67,7 +67,10 @@ if (isset($_POST['enviar'])) {
 			}
 		}
 		if (isset($success)) {
-			$mensagem = "<p class='successCad'>Cadastrado com sucesso.</p>";
+			echo "<p class='successCad'>Cadastrado com sucesso.</p>";
+			echo "<p class='sucessCadInfo'>
+					Faça <a href='"._URLBASE_."area/user/login/logar'><b>login</b></a> e atualize seus dados para uma experiencia completa na plataforma.
+				</p>";
 		}
 	}
 }
@@ -75,13 +78,14 @@ if (isset($_POST['enviar'])) {
 ?>
 <section class="cadastro">
 	<div class="container">
-		<figure>
+		<figure class="cadFotoContainer">
 			<img src="<?= _URLBASE_ ?>public/icon/user.svg" alt="">
-			<figcaption>Cadastre-se</figcaption>
+			<figcaption>
+				<p>Cadastre-se</p>
+				<p style="margin:1rem 0;">Preencha o formulário abaixo</p>
+			</figcaption>
 		</figure>
-		<p>
-			<span>Preencha o formulário abaixo</span>
-		</p>
+
 		<?=$mensagem ?? "" ?>
 		<form action="" method="post">
 			<div class="formItem">

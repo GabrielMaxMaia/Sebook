@@ -1,5 +1,5 @@
 <!--Modal-->
-<label class="btn-modal-cadastre" for="modal-cadastre">Trocar senha?</label>
+<label style="padding:1rem;" class="btn-modal-cadastre" for="modal-cadastre">Clique para trocar <b>senha</b></label>
 <section class="modal">
     <input class="modal-open" id="modal-cadastre" type="checkbox" hidden>
     <div class="modal-wrap" aria-hidden="true" role="dialog">
@@ -15,7 +15,7 @@
                     <input type="password" name="senhaAtual" id="senhaAtual">
                     <label for="senhaNova">Nova senha</label>
                     <input type="password" name="senhaNova">
-                    <input type="submit" name="trocarSenha">
+                    <input type="submit" class="inputEnvia" style="margin:0;" name="trocarSenha">
                 </form>
             </div>
             <div class="modal-footer">
@@ -24,15 +24,3 @@
         </div>
     </div>
 </section>
-<?php
-if (isset($_POST['senhaNova'])) {
-    $senhaAtual = $_POST['senhaAtual'] ?? null;
-    if (password_verify($senhaAtual,  $usuarioDAO->getSenhaUsuario())) {
-        $usuarioDAO->setSenhaUsuario($_POST['senhaNova']);
-        $usuarioDAO->alterarSenhaUsuario();
-        echo "senha trocada";
-    } else {
-        echo 'Senha não confere';
-    }
-}
-?>

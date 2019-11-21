@@ -27,25 +27,25 @@ if (isset($_POST['enviar'])) {
 			$usuarioDAO->setNomeUsuario($_POST['nomeUsuario']);
 		} else {
 			$erro = true;
-			$erroMen .="<li>Prencha o nome</li>";
+			$erroMen .= "<li>Prencha o nome</li>";
 		}
 		//Sobrenome
 		if ($_POST['sobrenomeUsuario'] != "") {
 			$usuarioDAO->setSobrenomeUsuario($_POST['sobrenomeUsuario']);
 		} else {
 			$erro = true;
-			$erroMen .="<li>Prencha o Sobrenome</li>";
+			$erroMen .= "<li>Prencha o Sobrenome</li>";
 		}
 
 		//Senha
 		if (($_POST['senhaUsuario'] != $_POST['repeteSenhaUsuario']) != null || $_POST['repeteSenhaUsuario'] == "") {
 			$erro = true;
-			$erroMen .="<li>Senhas diferem</li>";
+			$erroMen .= "<li>Senhas diferem</li>";
 		} else {
 			$usuarioDAO->setSenhaUsuario($_POST['senhaUsuario']);
 		}
 
-		if($erro == true){
+		if ($erro == true) {
 			echo "<ul class='errorList' style='display:block;'>$erroMen</ul>" ?? "";
 		}
 
@@ -63,6 +63,9 @@ if (isset($_POST['enviar'])) {
 		}
 		if (isset($success)) {
 			echo "<p class='successCad'>Cadastrado com sucesso.</p>";
+			echo "<p class='sucessCadInfo'>
+					Faça <a href='"._URLBASE_."area/user/login/logar'><b>login</b></a> e atualize seus dados para uma experiencia completa na plataforma.
+				</p>";
 		}
 	}
 }
@@ -70,14 +73,15 @@ if (isset($_POST['enviar'])) {
 ?>
 <section class="cadastro">
 	<div class="container">
-		<figure>
+		<figure class="cadFotoContainer">
 			<img src="<?= _URLBASE_ ?>public/icon/user.svg" alt="">
-			<figcaption>Cadastre-se</figcaption>
+			<figcaption>
+				<p>Cadastre-se</p>
+				<p style="margin:1rem 0;">Preencha o formulário abaixo</p>
+			</figcaption>
 		</figure>
-		<p>
-			<span>Preencha o formulário abaixo</span>
-		</p>
-		<?=$menssagem ?? "" ?>
+
+		<?= $menssagem ?? "" ?>
 		<form action="" method="post">
 			<div class="formItem">
 				<label for="nomeUsuario">Nome</label>

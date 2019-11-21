@@ -106,6 +106,16 @@
 						<a href="<?= _URLBASE_ ?>area/user/menuHome/livros">LIVROS</a>
 					</li>
 					<li>
+						<a href="<?= _URLBASE_ ?>area/user/pages/eventoListar">EVENTOS</a>
+					</li>
+					<?php
+					if ($acessoUser != 4 && $acessoUser != null && $acessoUser != "") {
+						echo "<li>
+								<a href='" . _URLBASE_ . "area/user/pages/eventoCriar'>CRIAR EVENTO</a></a>
+							 </li>";
+					}
+					?>
+					<li>
 						<a href="<?= _URLBASE_ ?>area/user/pages/postListar">POSTAGENS</a>
 					</li>
 					<?php
@@ -115,16 +125,6 @@
 							 </li>";
 					}
 					?>
-					<!--<li>
-							<a href="<?= _URLBASE_ ?>area/user/menuHome/quemSomos">QUEM SOMOS</a>
-						</li>
-						<li>
-							<a href="<?= _URLBASE_ ?>area/user/menuHome/ajuda">FAQ</a>
-						</li>
-						<li>
-							<a href="<?= _URLBASE_ ?>area/user/geoLocalizacao/maisProximo">MAPA</a>
-						</li>
-						-->
 				</ul>
 			</div>
 		</div>

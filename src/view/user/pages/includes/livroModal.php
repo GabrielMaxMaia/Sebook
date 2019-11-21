@@ -30,9 +30,9 @@
 					<input type="hidden" name="isbnLivro" id="isbnLivro" value="<?= $seboLivroDAO->getIsbnLivro() ?>">
 
 					<label for="qtdEstoque">Quantidade</label>
-					<input type="number" name="qtdEstoque" id="qtdEstoque" value="<?= $seboLivroDAO->getQtdEstoque() ?>">
+					<input style="padding:.3rem .5rem;margin-top:.5rem;border:1px solid #ccc" type="number" name="qtdEstoque" id="qtdEstoque" value="<?= $seboLivroDAO->getQtdEstoque() ?>">
 
-					<input type="submit" name="<?= $name ?>" value="<?= $value ?>">
+					<input class="inputEnvia" type="submit" name="<?= $name ?>" value="<?= $value ?>">
 				</form>
 			</div>
 			<div class="modal-footer">

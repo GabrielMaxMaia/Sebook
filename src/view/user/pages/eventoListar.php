@@ -2,7 +2,7 @@
 
 $styleSobrescrito .= "
 div#containerTemplate{
-    max-width:2000px
+    max-width:1290px
 }
 ";
 

@@ -13,10 +13,6 @@ $styleSobrescrito =
 	}
 </style>";
 ?>
-
-<div class="linkTop">
-	<a href="<?= _URLBASE_ ?>">Voltar | Home</a>
-</div>
 <div class="containerLogin">
 	<article class="loginSpace">
 		<section class="login">
@@ -34,10 +30,16 @@ $styleSobrescrito =
 				<input class='inputLogin' type='password' placeholder='Senha' name='txtSenha' id='senha' value="<?= $_POST['txtSenha'] ?? '' ?>">
 
 				<input class='button' type='submit' value='Entrar'>
+
+				<?php
+				$sql = new \Util\Sql($conn);
+
+				$autenticadorController = new \Controller\AutentificadorController($sql);
+
+				echo $autenticadorController->efetuarLogin();
+				echo $autenticadorController->efetuarLogOut();
+				?>
 			</form>
-			<div class="linkGroup">
-				<a href="">Esqueci minha senha</a>
-			</div>
 		</section>
 
 		<!--Modal-->
@@ -64,13 +66,7 @@ $styleSobrescrito =
 			</div>
 		</section>
 	</article>
+	<div class="linkTop">
+		<a href="<?= _URLBASE_ ?>">Voltar | Home</a>
+	</div>
 </div>
-<?php
-
-$sql = new \Util\Sql($conn);
-
-$autenticadorController = new \Controller\AutentificadorController($sql);
-
-echo $autenticadorController->efetuarLogin();
-echo $autenticadorController->efetuarLogOut();
-?>

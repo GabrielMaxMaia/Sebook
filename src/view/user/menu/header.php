@@ -10,18 +10,18 @@
 
 		// $IdSessaoUser = $_SESSION['userLogado']['acesso'] ?? "";
 
-		if($acessoUser != "" && $acessoUser != 5){
+		if ($acessoUser != "" && $acessoUser != 5) {
 			$clienteDAO = new Model\ClienteDAO($sql);
 			$clienteDAO->setIdUsuario($idUser);
 			$resultPerfil = $clienteDAO->listarClienteId();
 			$img = $resultPerfil['urlFoto'];
 			// var_dump($resultUsarioPerfil);
-		}else if($acessoUser!= "" && $acessoUser == 5){
+		} else if ($acessoUser != "" && $acessoUser == 5) {
 			$seboDAO = new Model\SeboDAO($sql);
 			$seboDAO->setIdUsuario($idUser);
 			$resultPerfil = $seboDAO->listarSeboId();
 			$img = $resultPerfil['urlFoto'];
-		}else{
+		} else {
 			$img = "";
 		}
 		$autenticadorController->toggleLogin($img);
@@ -40,18 +40,35 @@
 			<li>
 				<a href="<?= _URLBASE_ ?>area/user/menuHome/livros">LIVROS</a>
 			</li>
-			<li>
+			<li class="A">
 				<a href="<?= _URLBASE_ ?>area/user/pages/postListar">POSTAGENS</a>
+
+				<?php
+				if ($acessoUser != 4 && $acessoUser != null && $acessoUser != "") {
+					echo "<ul class='listaMenuA'>
+						<li class='listaMenuA'>
+							<a href='" . _URLBASE_ . "area/user/pages/postCriar'>CRIAR POSTAGEM</a></a>
+						</li>
+						</ul>";
+				}
+				?>
 			</li>
-			<?php
-			if ($acessoUser != 4 && $acessoUser != null && $acessoUser != "") {
-				echo "<li>
-						<a href='"._URLBASE_."area/user/pages/postCriar'>CRIAR POSTAGEM</a></a>
-					 </li>";
-			}
-			?>
-			<li>
-			<!--	
+			<li class="B">
+				<a href="<?= _URLBASE_ ?>area/user/pages/postListar">EVENTOS</a>
+
+				<?php
+				if ($acessoUser != 4 && $acessoUser != null && $acessoUser != "") {
+					echo "<ul class='listaMenuB'>
+						<li class='listaMenuB'>
+							<a href='" . _URLBASE_ . "area/user/pages/eventoCriar'>CRIAR EVENTO</a></a>
+						</li>
+						</ul>";
+				}
+				?>
+			</li>
+
+			<!--
+				<li>	
 				<a href="<?= _URLBASE_ ?>area/user/menuHome/quemSomos">QUEM SOMOS</a>
 				</li>
 				<li>

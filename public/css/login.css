@@ -8,31 +8,45 @@ body {
 }
 
 .containerScroll{
-    display:flex;
-    overflow:hidden
+    /* display:flex; */
+    overflow-x:hidden
 }
 
 @media (max-width:780px){
-    div#containerTemplate{
-        align-self:flex-start!important;
+    .containerLogin figure img{
+        max-width: 38px;
+    }
+    .containerLogin figure figcaption{
+        font-size:.8rem;
+    }
+    .containerLogin form{
+        padding: .1% 5%;
+    }
+    div#containerTemplate::before{
+        min-height:3%;
     }
 }
+@media (max-width: 360px) and (min-width: 300px){
+    .successCad, .errorCad {
+        margin:0;
+    }
+}
+
 div#containerTemplate{
-    align-self:center
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .linkTop {
-    position: absolute;
-    left: 2%;
-    top: 5%;
-    /* transform: rotate(-49deg); */
+    margin:1rem
 }
 .linkTop a{
     color: #fff;
     font-size: 1.4rem;
     text-transform: uppercase;
     padding: 1rem;
-    max-width: 200px;
+    max-width: 206px;
 }
 
 header img {

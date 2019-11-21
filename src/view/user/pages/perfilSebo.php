@@ -70,6 +70,19 @@ if ($acessoUser != "") {
 	}
 
 	?>
+
+	<?php
+		if (isset($_POST['senhaNova'])) {
+			$senhaAtual = $_POST['senhaAtual'] ?? null;
+			if (password_verify($senhaAtual,  $usuarioDAO->getSenhaUsuario())) {
+				$usuarioDAO->setSenhaUsuario($_POST['senhaNova']);
+				$usuarioDAO->alterarSenhaUsuario();
+				$menssagem =  "<p class='successCad'>senha trocada com sucesso!</p>";
+			} else {
+				$menssagem = "<p class='errorCad'>Senha não confere</p>";
+			}
+		}
+	?>
 	<!-- Perfil -->
 	<section class="cadastro">
 
@@ -80,7 +93,9 @@ if ($acessoUser != "") {
 		<?php
 			//Chama estrutura para formulário de img
 			include "includes/perfilImgSebo.php";
-			?>
+		?>
+
+		<?=$menssagem ?? "" ?>
 
 		<form action="" method="post" name="atualizarCampos" class="formPefil">
 
@@ -206,7 +221,7 @@ if ($acessoUser != "") {
 		<?php
 			//Chama estrutura para trocar senha
 			include "includes/trocarSenha.php"
-			?>
+		?>
 
 	</section>
 

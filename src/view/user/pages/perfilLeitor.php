@@ -76,7 +76,7 @@ if ($acessoUser != "") {
 				$menssagem = "<p class='errorCad'>Senha não confere</p>";
 			}
 		}
-		?>
+	?>
 
 	<!-- Perfil -->
 	<section class="cadastro">
@@ -181,7 +181,7 @@ if ($acessoUser != "") {
 		</form>
 
 		<!--Modal-->
-		<label class="btn-modal-cadastre" for="modal-cadastre">Trocar senha?</label>
+		<label style="padding:1rem;" class="btn-modal-cadastre" for="modal-cadastre">Clique para trocar <b>senha</b></label>
 		<section class="modal">
 			<input class="modal-open" id="modal-cadastre" type="checkbox" hidden>
 
@@ -198,7 +198,7 @@ if ($acessoUser != "") {
 							<input type="password" name="senhaAtual" id="senhaAtual">
 							<label for="senhaNova">Nova senha</label>
 							<input type="password" name="senhaNova">
-							<input type="submit" name="trocarSenha">
+							<input type="submit" class="inputEnvia" style="margin:0;" name="trocarSenha">
 						</form>
 					</div>
 					<div class="modal-footer">

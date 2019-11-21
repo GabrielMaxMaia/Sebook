@@ -456,9 +456,14 @@ div#containerTemplate {
     font-size: 16px;
 }
 
+.cadFotoContainer img{
+    max-width:100px;
+    margin:auto;
+}
+
 .cadastro form {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 30px;
     display: flex;
     flex-direction: column
 }
@@ -817,8 +822,14 @@ div#contentLoading {
     margin: 2% auto 0;
     border: 1px solid #ccc;
     border-radius: .4rem;
-    position: relative;
-    top: 1rem;
+    /* position: relative;
+    top: 1rem; */
+}
+
+@media (max-width:780px){
+    .containerLogin .login {
+      padding: 5% 1% !important;
+    }
 }
 
 .containerLogin figure {
@@ -904,9 +915,7 @@ div#contentLoading {
 .containerLogin p {
     width: 100%;
     text-align: center;
-    position: relative;
-    height: 20px;
-    margin: 1rem 0
+    margin: .7rem 0 0;
 }
 
 .containerLogin p span {
@@ -921,7 +930,7 @@ div#contentLoading {
     position: absolute;
     width: 100%;
     height: 1px;
-    background-color: #CCC;
+    /* background-color: #CCC; */
     left: 0;
     top: 7px
 }
@@ -931,7 +940,7 @@ div#contentLoading {
     position: absolute;
     width: 40px;
     height: 20px;
-    background-color: #eee;
+    /* background-color: #eee; */
     left: 50%;
     margin-left: -20px;
     z-index: 0
@@ -991,7 +1000,7 @@ div#contentLoading {
     .modal-open:checked~.modal-wrap .modal-dialog {
         transform: translate(-50%, -50%);
         position: fixed;
-        top: 54%
+        top: 44%
     }
 }
 
@@ -1029,9 +1038,9 @@ div#contentLoading {
 } */
 
 .modal-body {
-    padding: 5% 10%;
+    padding: 0% 10%;
     overflow-y: scroll;
-    max-height: 187px;
+    max-height: 194px;
 }
 
 .modal-body p {
@@ -1396,7 +1405,7 @@ header #Logado .ulCenter2 ul li a {
     -ms-flex-align: center;
     align-items: center;
     color: #111;
-    padding: 5%;
+    padding: 3%;
     font-size: 1.4rem;
     border-bottom: 1px solid #111;
     max-width: 420px;
@@ -1445,6 +1454,22 @@ header #Logado .ulCenter2 ul li a {
 .navDesk ul a {
     color: #fff;
     padding: 0 .5rem
+}
+
+ul.listaMenuA, ul.listaMenuB{
+    display:none;
+    position: absolute;
+    /* left: 1%; */
+    /* top: 2%; */
+    margin-top: .5rem;
+    background-color: #505050;
+    background: #505050e3;
+}
+.A:hover ul.listaMenuA{ 
+    display:block!important;
+}
+.B:hover ul.listaMenuB{ 
+    display:block!important;
 }
 
 /* .topoHeader img {
@@ -2282,11 +2307,12 @@ section.jumbotron {
     color: #b22;
     line-height: 1.5rem;
     border-radius: .5rem;
-    z-index: 99
+    z-index: 99;
+    right: 0;
+    top: 0;
 }
 
 @media (max-width:780px) {
-
     .successCad,
     .errorCad {
         margin: 1.2rem auto -1rem
@@ -2298,30 +2324,44 @@ section.jumbotron {
         overflow-Y: scroll !important
     }
 
-    .successCad,
+    /* .successCad,
     .errorCad {
         margin: -15% auto 0 !important;
-    }
+    } */
 }
 
 .successCad,
 .errorCad {
-    margin: 4% auto 0;
+    /* margin: 4% auto 0;
     text-align: center;
     padding: .65rem;
     color: #fff;
     max-width: 303px;
     border-radius: 34px;
-    font-size: .9rem
+    font-size: .9rem */
 }
 
+.successCad, .sucessCadInfo{
+    padding:0 1rem
+}
 .successCad {
-    background: #70b771
+    color: #048c9c;
+    text-align: center;
+    font-size: 1.2rem;
+    text-transform: uppercase
+}
+.sucessCadInfo{
+    text-align: center;
+    margin: 1rem 0 0;
+    font-size: 1.1rem;
+    max-width: 378px;
+    margin: 2rem auto 0
 }
 
 .errorCad {
-    background-color: #b22;
-    background: #d01919d9
+    color: #b22;
+    text-align:center;
+    margin-top:1rem 0 0
 }
 
 /*Notificador páginação*/
