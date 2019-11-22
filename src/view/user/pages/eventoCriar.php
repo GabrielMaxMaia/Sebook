@@ -90,9 +90,13 @@ if ($idUser != null && $idUser != "") {
 
 			if ($resultSebo['cnpjSebo'] == "" || $resultSebo['nomeFantasia'] == "" || $resultSebo['cepEndSebo'] == "") {
 				$block = true;
-				echo "<p>É preciso concluir seu cadastro para ter todas funcionalidades dentro da plataforma.<br>
-				<a href='"._URLBASE_."area/user/pages/perfilSebo'><Atualizar><b>Atualizar agora</b></a>
-						</p>";
+				echo "<section class='mensagemParaSebo'>
+						<p>
+						Conclua seu cadastro para ter todas funcionalidades dentro da plataforma.
+						<br>
+						<a href='"._URLBASE_."area/user/pages/perfilSebo'><Atualizar><b>Atualizar agora</b></a>
+						</p>
+					</section>";
 			}
 		}
 		if ($block != true){

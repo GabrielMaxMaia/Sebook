@@ -2737,3 +2737,17 @@ input:focus {
         display:none;
     }   
 }
+
+.mensagemParaSebo{
+    display: flex;
+    justify-content: center;
+    line-height: 2.1rem;
+    font-size: 1.02rem;
+    max-width: 613px;
+    margin: auto;
+    padding:1rem
+}
+.mensagemParaSebo p{
+    padding: 1rem;
+    border: 1px solid #ccc;
+}

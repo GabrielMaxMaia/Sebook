@@ -180,11 +180,12 @@ $resultSeboLivro = $seboLivroDAO->listarSeboLivroId($frontController->getRegIni(
 <?php
 include "includes/livroModal.php";
 
-//Se não tiver cnpj aparece essa mensagem
+//Se não tiver as informações minimas aparece essa mensagem
 } else{
+    echo "<section class='mensagemParaSebo'>";
     if($seboDAO->getIdUsuario($GetPost) == $idUser){
         echo "<p>
-        É preciso concluir seu cadastro para ter todas funcionalidades dentro da plataforma.
+        Conclua seu cadastro para ter todas funcionalidades dentro da plataforma.
         <br>
         <a href='"._URLBASE_."area/user/pages/perfilSebo'><Atualizar><b>Atualizar agora</b></a>
         </p>";
@@ -197,5 +198,6 @@ include "includes/livroModal.php";
                 Mas você pode encontrar outros locais clicando <a href='"._URLBASE_."area/user/menuHome/sebos'><b>Aqui</b></a>
             </p>";
     }
+    echo "</section>";
 }
 ?>

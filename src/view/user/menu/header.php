@@ -54,7 +54,7 @@
 				?>
 			</li>
 			<li class="B">
-				<a href="<?= _URLBASE_ ?>area/user/pages/postListar">EVENTOS</a>
+				<a href="<?= _URLBASE_ ?>area/user/pages/eventoListar">EVENTOS</a>
 
 				<?php
 				if ($acessoUser != 4 && $acessoUser != null && $acessoUser != "") {

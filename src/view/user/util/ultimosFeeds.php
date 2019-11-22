@@ -34,7 +34,7 @@ $resultUltimasPostagens = $postagemDAO->listarUltimasPostagens();
         }
         ?>
     </div>
-    <a href="<?= _URLBASE_ ?>area/user/pages/eventoListar" class="linkDestaque">Ver todos eventos</a>
+    <a href="<?= _URLBASE_ ?>area/user/pages/eventoListar" class="linkDestaque">Ver todos os eventos</a>
 </section>
 
 <section class="feedItem">
@@ -58,5 +58,5 @@ $resultUltimasPostagens = $postagemDAO->listarUltimasPostagens();
         }
         ?>
     </div>
-    <a href="<?= _URLBASE_ ?>area/user/pages/postListar" class="linkDestaque">Ver todas postagens</a>
+    <a href="<?= _URLBASE_ ?>area/user/pages/postListar" class="linkDestaque">Ver todas as postagens</a>
 </section>
