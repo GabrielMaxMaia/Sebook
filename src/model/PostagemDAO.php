@@ -18,7 +18,7 @@ class PostagemDAO extends Postagem
 
     private static $SELECT_ULTIMOS = "SELECT * FROM postagem WHERE cod_status_post = '1' ORDER BY id_post DESC LIMIT 2";
 
-    private static $SELECT_ID = "SELECT * from postagem where id_post = :idPostagem";
+    private static $SELECT_ID = "SELECT * from postagem INNER JOIN usuario ON (postagem.id_usuario = usuario.id_usuario) where id_post = :idPostagem";
 
     private static $INSERT = "INSERT INTO postagem
     (titulo_post,txt_postagem,data_hora_post, url_foto_post, id_usuario)
@@ -180,7 +180,9 @@ class PostagemDAO extends Postagem
                 'tituloPostagem' => $linha->titulo_post,
                 'txtPostagem' => $linha->txt_postagem,
                 'idUsuario' => $linha->id_usuario,
-                'urlFotoPost' => $linha->url_foto_post
+                'urlFotoPost' => $linha->url_foto_post,
+                'nomeUsuario' => $linha->nome_usuario,
+                'idPerfil' => $linha->id_perfil
             );
             // var_dump($itens);
         } else {

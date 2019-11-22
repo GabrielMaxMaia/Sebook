@@ -2517,6 +2517,9 @@ section.jumbotron {
     word-break: break-word;
     text-align: justify;
     line-height: 1.3rem;
+    max-width: 650px;
+    border: 1px solid #ccc;
+    padding: 1rem;
 }
 
 /*Formulário*/

@@ -21,7 +21,6 @@ $postagemDAO->setUrlFotoPostagem($result['urlFotoPost']);
 
 $comentarioDAO->setIdPost($GetPost);
 $resultComentario = $comentarioDAO->listarComentarioPost();
-
 ?>
 <div class="containerCentralizado">
     <?php
@@ -38,6 +37,17 @@ $resultComentario = $comentarioDAO->listarComentarioPost();
                 <section class="texto">
                     <h1><?= $postagemDAO->getTituloPostagem() ?></h1>
                     <p><?= $postagemDAO->getTxtPostagem() ?></p>
+                    <p class="eventoInfo" style="white-space: normal;">
+                        <b>Autor da Postagem:</b>
+                        <?php
+                                if ($result['idPerfil'] == 5) {
+                                    $url = _URLBASE_ . "area/user/pages/pagSebo/" . $postagemDAO->getIdUsuario();
+                                }
+                                ?>
+                        <a href="<?= $url ?? '' ?>">
+                            <?= $result['nomeUsuario'] ?>
+                        </a>
+                    </p>
                 </section>
             </article>
     <?php

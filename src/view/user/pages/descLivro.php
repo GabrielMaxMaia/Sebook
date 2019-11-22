@@ -136,7 +136,7 @@ for ($i = 0; $i < count($resultLivro); $i++) {
 				</div>
 			<?php
 			}else{
-				echo "<p style='padding:1rem;line-height:1.4rem;    margin: 0 .5rem;'>Para retirar ou incluir um livro de seu acervo é preciso concluir o cadastro<br>
+				echo "<p style='padding:1rem;line-height:1.4rem;    margin: 0 .5rem;'>Para atualizar seu acervo é preciso concluir o cadastro<br>
         			<a href='"._URLBASE_."area/user/pages/perfilSebo'><Atualizar><b>Atualizar agora</b></a>
 					</p>";
 			}

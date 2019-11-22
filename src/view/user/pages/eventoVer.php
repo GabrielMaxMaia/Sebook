@@ -61,18 +61,21 @@ if ($resultEvento != null) {
             <section class="texto">
                 <h1><?= $eventoDAO->getNomeEvento() ?></h1>
                 <p><?= $eventoDAO->getTxtEvento() ?></p>
-                <p class="eventoInfo" style="white-space: normal;">
+                <p class="eventoInfo" style="white-space: normal;line-height: 1.9rem;">
+                    <span>Informações sobre Evento</span>
+                    <br>
                     <?php $data = date_create($eventoDAO->getDataEvento()); ?>
-                    <b>Data:</b> <?= date_format($data, "d/m/Y") ?> |
+                    <b>Data:</b> <?= date_format($data, "d/m/Y") ?>
                     <?php
                         $hora = date_create($eventoDAO->getHoraEvento());
                     ?>
+                    <br>
                     <b>Hora:</b> <?= date_format($hora, "H:i") ?>
                     <br>
                     <b>Endereço:</b> <?= $eventoDAO->getLocalEvento() ?> - <?= $eventoDAO->getCidadeEvento() ?> - SP
                 </p>
                 <p class="eventoInfo" style="white-space: normal;">
-                    <b>Autor:</b>
+                    <b>Autor do Evento:</b>
                     <?php
                         if($resultEvento['idPerfil'] == 5){
                             $url = _URLBASE_ ."area/user/pages/pagSebo/" .$eventoDAO->getIdUsuario();
