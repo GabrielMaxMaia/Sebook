@@ -56,7 +56,8 @@ $output = ob_get_clean();
         $menuHide ?? require_once 'menu/header.php';
         if (isset($title) && $title == "Melhor agregador de acervos"){
             //BANNER
-            require_once  'src/view/user/util/banner.php';
+            //require_once  'src/view/user/util/banner.php';
+            require_once  'src/view/user/util/bannerChamadaCad.php';
         }
         ?>
         <div id="containerTemplate">
@@ -75,29 +76,6 @@ $output = ob_get_clean();
         </div>
         <?php $menuHide ?? require_once 'menu/footer.php'; ?>
     </div>
-    
-    <!--Botão de Topo-->
-    <!-- <button dispçay="none" id="btnTop" onclick="backToTop()">
-        <img dispçay="none" src="public/icon/arrowTopGreen.svg">
-    </button>
-    <script>
-        window.onscroll = function() {
-            scroll();
-            console.log('olá');
-        }
-        function scroll() {
-            let btn = document.getElementById('btnTop');
-            if (document.documentElement.scrollTop > 50 && window.innerWidth >= 780) {
-                btn.style.display = "block";
-            } else {
-                btn.style.display = "none";
-                btn.style.transition = "transition:.3s all ease-in-out";
-            }
-        }
-        function backToTop() {
-            document.documentElement.scrollTop = 0;
-        }
-    </script> -->
 </body>
 
 </html>

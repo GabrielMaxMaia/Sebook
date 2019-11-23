@@ -57,7 +57,7 @@ if (isset($_POST['update'])) {
 
 if ($result != null) {
 
-    if ($result['idUsuario'] == $IdSessaoUser || $acessoUser <= 3) {
+    if ($result['idUsuario'] == $IdSessaoUser || $acessoUser <= 2 && $idUser != "") {
 
         $block = false;
 		if($acessoUser == 5){
@@ -106,6 +106,6 @@ if ($result != null) {
 <?php
         }
     } else {
-        echo "<p>Essa postagem não pertence a você</p>";
+        echo "<p class='mensagemParaEspertinhos'>Essa postagem não pertence a você</p>";
     }
 }

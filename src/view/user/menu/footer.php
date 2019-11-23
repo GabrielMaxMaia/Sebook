@@ -109,7 +109,7 @@
 						<a href="<?= _URLBASE_ ?>area/user/pages/eventoListar">EVENTOS</a>
 					</li>
 					<?php
-					if ($acessoUser != 4 && $acessoUser != null && $acessoUser != "") {
+					if ($acessoUser != 4 && $acessoUser != 3 && $acessoUser != null && $acessoUser != "") {
 						echo "<li>
 								<a href='" . _URLBASE_ . "area/user/pages/eventoCriar'>CRIAR EVENTO</a></a>
 							 </li>";
@@ -119,7 +119,7 @@
 						<a href="<?= _URLBASE_ ?>area/user/pages/postListar">POSTAGENS</a>
 					</li>
 					<?php
-					if ($acessoUser != 4 && $acessoUser != null && $acessoUser != "") {
+					if ($acessoUser != 4 && $acessoUser != 3 && $acessoUser != null && $acessoUser != "") {
 						echo "<li>
 								<a href='" . _URLBASE_ . "area/user/pages/postCriar'>CRIAR POSTAGEM</a></a>
 							 </li>";

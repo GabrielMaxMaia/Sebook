@@ -44,7 +44,7 @@
 				<a href="<?= _URLBASE_ ?>area/user/pages/postListar">POSTAGENS</a>
 
 				<?php
-				if ($acessoUser != 4 && $acessoUser != null && $acessoUser != "") {
+				if ($acessoUser != 4 && $acessoUser != 3 && $acessoUser != null && $acessoUser != "") {
 					echo "<ul class='listaMenuA'>
 						<li class='listaMenuA'>
 							<a href='" . _URLBASE_ . "area/user/pages/postCriar'>CRIAR POSTAGEM</a></a>
@@ -57,7 +57,7 @@
 				<a href="<?= _URLBASE_ ?>area/user/pages/eventoListar">EVENTOS</a>
 
 				<?php
-				if ($acessoUser != 4 && $acessoUser != null && $acessoUser != "") {
+				if ($acessoUser != 4 && $acessoUser != 3 && $acessoUser != null && $acessoUser != "") {
 					echo "<ul class='listaMenuB'>
 						<li class='listaMenuB'>
 							<a href='" . _URLBASE_ . "area/user/pages/eventoCriar'>CRIAR EVENTO</a></a>
@@ -66,7 +66,6 @@
 				}
 				?>
 			</li>
-
 			<!--
 				<li>	
 				<a href="<?= _URLBASE_ ?>area/user/menuHome/quemSomos">QUEM SOMOS</a>

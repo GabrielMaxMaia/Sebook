@@ -57,7 +57,7 @@ if ($GetPost) {
                     </div>
                 </div>
                 <?php
-                    if ($post['idUsuario'] == $idUser || $acessoUser <= 3 && $idUser != null) {
+                    if ($post['idUsuario'] == $idUser || $acessoUser <= 2 && $idUser != null) {
                         ?>
                     <div class="itemModifica">
                         <a href='<?= _URLBASE_ . "area/user/pages/postEditar/{$post['idPostagem']}" ?>' class="modifica edit">

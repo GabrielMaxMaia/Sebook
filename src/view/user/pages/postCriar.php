@@ -54,7 +54,7 @@ if (isset($_POST['enviar']) != "") {
 }
 
 if ($idUser != null && $idUser != "") {
-	if ($acessoUser != 4) {
+	if ($acessoUser != 4 && $acessoUser != 3) {
 		$block = false;
 		if($acessoUser == 5){
 

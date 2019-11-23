@@ -59,7 +59,7 @@ if ($GetPost) {
                     </div>
                 </div>
                 <?php
-                    if ($event['idUsuario'] == $idUser || $acessoUser <= 3 && $idUser != null) {
+                    if ($event['idUsuario'] == $idUser || $acessoUser <= 2 && $idUser != null) {
                         ?>
                     <div class="itemModifica">
                         <a href='<?= _URLBASE_ . "area/user/pages/eventoEditar/{$event['idEvento']}" ?>' class="modifica edit">

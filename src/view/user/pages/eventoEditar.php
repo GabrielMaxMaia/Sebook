@@ -91,7 +91,7 @@ if (isset($_POST['update'])) {
 <?php
 if ($resultEvento != null) {
 
-    if ($resultEvento['idUsuario'] == $IdSessaoUser || $acessoUser <= 3) {
+    if ($resultEvento['idUsuario'] == $IdSessaoUser || $acessoUser <= 2 && $idUser != "") {
         $block = false;
 		if($acessoUser == 5){
 
@@ -169,6 +169,6 @@ if ($resultEvento != null) {
 <?php
         }
     } else {
-        echo "<p>Esse evento não pertence a você</p>";
+        echo "<p class='mensagemParaEspertinhos'>Esse evento não pertence a você</p>";
     }
 }

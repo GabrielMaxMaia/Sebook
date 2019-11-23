@@ -80,7 +80,7 @@ if (isset($_POST['enviar']) != null || "") {
 }
 
 if ($idUser != null && $idUser != "") {
-	if ($acessoUser != 4) {
+	if ($acessoUser != 4 && $acessoUser != 3) {
 		$block = false;
 		if($acessoUser == 5){
 
@@ -151,7 +151,7 @@ if ($idUser != null && $idUser != "") {
 	<?php
 		} 
 	}else{
-			echo "<p>Sua conta não permite criar Eventos</p>";
+			echo "<p class='class='mensagemParaEspertinhos''>Sua conta não permite criar Eventos</p>";
 		}
 	?>
 <?php
