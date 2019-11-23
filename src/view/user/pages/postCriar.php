@@ -98,12 +98,12 @@ if ($idUser != null && $idUser != "") {
 	<?php
 		} 
 	}else{
-			echo "<p>Sua conta não permite criar posts</p>";
+		echo "<p class='mensagemParaEspertinhos'>Sua conta não pode criar Postagens</p>";
 		}
 	?>
 <?php
 } else {
-	echo "<p>É necessário estar Logado para criar uma Publicação</p>";
+	echo "<p class='mensagemParaEspertinhos'>É necessário estar logado para criar postagens</p>";
 }
 
 ?>

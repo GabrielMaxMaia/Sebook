@@ -151,13 +151,13 @@ if ($idUser != null && $idUser != "") {
 	<?php
 		} 
 	}else{
-			echo "<p class='class='mensagemParaEspertinhos''>Sua conta não permite criar Eventos</p>";
+			echo "<p class='mensagemParaEspertinhos'>Sua conta não permite criar Eventos</p>";
 		}
 	?>
 <?php
 
 } else {
-	echo "<p class='commentMenssagem'>É necessário estar Logado para criar uma Publicação</p>";
+	echo "<p class='mensagemParaEspertinhos'>É necessário estar Logado para criar um evento!</p>";
 }
 
 ?>

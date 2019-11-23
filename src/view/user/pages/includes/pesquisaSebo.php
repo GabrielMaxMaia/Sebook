@@ -48,7 +48,7 @@ if ($_POST != "") {
     //     $resultado = $seboDAO->listarCidade();
     // }
 
-    var_dump($_POST);
+    // var_dump($_POST);
 
     //recebemos nosso parâmetro vindo do form
     $msg = "";
@@ -60,15 +60,18 @@ if ($_POST != "") {
             // if ($resultado != null) {
                 $msg .= "<li>";
                 $msg .= "<a href='" . _URLBASE_ . "area/user/pages/pagSebo/" . $cidade['idUsuario'] . "'>";
-
-                $msg .= "<figure>";
-                $msg .= "<img src='" . _URLBASE_ . $cidade['urlFoto'] . "' alt='" . $cidade['urlFoto'] . "' title='" . $cidade['urlFoto'] . "'>";
-                $msg .= "<figcaption>";
-                $msg .=  "<p><b>Nome: </b>" . $cidade['nomeFantasia'] . "<br>";
-                $msg .=  "<b>Cidade: </b>" . $cidade['cidadeSebo'] . "<br>";
-                $msg .=  "<b>CEP: </b>" . $cidade['cepEndSebo'] . "<br>";
-                $msg .= "</figcaption>";
-                $msg .= "</figure>";
+        
+                if($cidade['nomeFantasia'] != "" && $cidade['cidadeSebo'] != "" && $cidade['cepEndSebo'] != ""){
+                    $msg .= "<figure>";
+                    $msg .= "<img src='" . _URLBASE_ . $cidade['urlFoto'] . "' alt='" . $cidade['urlFoto'] . "' title='" . $cidade['urlFoto'] . "'>";
+                    $msg .= "<figcaption>";
+                    $msg .=  "<p><b>Nome: </b>" . $cidade['nomeFantasia'] . "<br>";
+                    $msg .=  "<b>Cidade: </b>" . $cidade['cidadeSebo'] . "<br>";
+                    $msg .=  "<b>CEP: </b>" . $cidade['cepEndSebo'] . "<br>";
+                    $msg .= "</figcaption>";
+                    $msg .= "</figure>";
+                }
+                
 
                 $msg .= "</a>";
                 $msg .= "</li>";

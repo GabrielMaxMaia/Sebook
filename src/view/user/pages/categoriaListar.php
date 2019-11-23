@@ -117,12 +117,10 @@ if ($resultLivro > 0) {
     </article>
 <?php
 } else {
-    echo "<p>
-            Ainda não possuimos livros cadastrados de " . $categoriaDAO->getNomeCategoria() . "
-            <br> 
-            <a href='" . _URLBASE_ . "area/user/menuHome/livros'>
-                <b>Voltar</b>
-            </a>
+    echo "<p class='infoUserDesculpas'>
+            Ainda não possuimos livros cadastrados de " . $categoriaDAO->getNomeCategoria() . " <a href='" . _URLBASE_ . "area/user/menuHome/livros'>
+            <b>Voltar</b>
+         </a>
         </p>";
 }
 ?>

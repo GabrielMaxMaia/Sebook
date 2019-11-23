@@ -2773,6 +2773,12 @@ input:focus {
     }   
 }
 
+.infoUserDesculpas{
+    line-height: 1.4rem;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin: 1rem;
+}
 .mensagemParaSebo, .mensagemParaEspertinhos{
     display: flex;
     justify-content: center;
@@ -2784,5 +2790,11 @@ input:focus {
 }
 .mensagemParaSebo p, .mensagemParaEspertinhos{
     padding: 1rem;
+    margin:auto;
     border: 1px solid #ccc;
+}
+@media (max-width:624px){
+    .mensagemParaSebo p, .mensagemParaEspertinhos{
+        margin:1rem
+    }
 }
