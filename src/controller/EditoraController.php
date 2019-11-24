@@ -247,7 +247,7 @@ class EditoraController
        // Passando a quantidade de paginas como parmetro
         $qtdePaginas = ceil($this->editoraDAO->totalContar() / $this->itemPagina);
 
-        $notificador = "<ul>";
+        $notificador = "<ul class='ulNote'>";
         if ($this->paginaAtual >= 2) {
             $notificador .= "<li><a href='" . _URLBASE_ . $urlDoNotificador . "/pagina/1'><<</a></li>";
             $notificador .= "<li><a href='" . _URLBASE_ . $urlDoNotificador . "/pagina/" . ($this->paginaAtual - 1) . "'><</a> </li>";

@@ -19,7 +19,7 @@ $frontController->verificarPaginacao();
 ?>
 <article>
     <header class="headerPagina">
-        <h1>Últimas Postagens</h1>
+        <h1>Últimas Publicações deste Usuário</h1>
     </header>
     <div class="itemContentContainer">
         <?php
@@ -74,5 +74,5 @@ $frontController->verificarPaginacao();
 <?php          
 }
 else{
-    echo "<p>Usuário não possui postagens</p>";
+    echo "<p>Usuário não possui Publicações</p>";
 }

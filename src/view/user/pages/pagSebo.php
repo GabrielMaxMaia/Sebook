@@ -83,7 +83,7 @@ $resultSeboLivro = $seboLivroDAO->listarSeboLivroId($frontController->getRegIni(
         </figure>
         <div class="feedLink">
             <a href='<?= _URLBASE_ ?>area/user/pages/eventoDoUser/<?= $GetPost ?>'>Eventos</a> |
-            <a href='<?= _URLBASE_ ?>area/user/pages/postDoUser/<?= $GetPost ?>'>Postagens</a>
+            <a href='<?= _URLBASE_ ?>area/user/pages/postDoUser/<?= $GetPost ?>'>Publicações</a>
         </div>
     </section>
     <section class="acervo">

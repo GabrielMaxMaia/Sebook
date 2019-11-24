@@ -11,7 +11,7 @@ $acessoUser = $_SESSION['userLogado']['acesso'] ?? "";
 		if ($acessoUser != 3) {
 			?>
 			<li>
-				<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadPostagem">Postagem</a>
+				<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadPostagem">Publicações</a>
 			</li>
 			<li>
 				<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadEvento">Eventos</a>
@@ -26,10 +26,10 @@ $acessoUser = $_SESSION['userLogado']['acesso'] ?? "";
 		if ($acessoUser == 1) {
 		?>
 		<li>
-			<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadNacionalidade">Nacionalidade</a>
+			<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadNacionalidade">Nacionalidades</a>
 		</li>
 		<li>
-			<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadPerfil">Perfil</a>
+			<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadPerfil">Perfis de usuário</a>
 		</li>
 		<li>
 			<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadUsuario">Usuários</a>
@@ -44,7 +44,7 @@ $acessoUser = $_SESSION['userLogado']['acesso'] ?? "";
 			<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadSeboLivro">Acervo</a>
 		</li>
 		<li>
-			<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadAutor">Autor</a>
+			<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadAutor">Autores</a>
 		</li>
 		<li>
 			<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadLivro">Livros</a>

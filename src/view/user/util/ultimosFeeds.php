@@ -39,7 +39,7 @@ $resultUltimasPostagens = $postagemDAO->listarUltimasPostagens();
 
 <section class="feedItem">
     <header>
-        <h2>Últimas Postagens</h2>
+        <h2>Últimas Publicações</h2>
     </header>
     <div class="feedContainer">
         <?php
@@ -58,5 +58,5 @@ $resultUltimasPostagens = $postagemDAO->listarUltimasPostagens();
         }
         ?>
     </div>
-    <a href="<?= _URLBASE_ ?>area/user/pages/postListar" class="linkDestaque">Ver todas as postagens</a>
+    <a href="<?= _URLBASE_ ?>area/user/pages/postListar" class="linkDestaque">Ver todas as Publicações</a>
 </section>

@@ -15,15 +15,15 @@ $comentarioController->gravarAlterar();
 		<caption>Lista de comentarios</caption>
 		<thead>
 			<tr>
-				<th>Id</th>
-				<th>Nome</th>
+				<th>Id comentário</th>
+				<th>Comentário</th>
 				<th>Status</th>
 				<th colspan="2">Ação</th>
 			</tr>
 		</thead>
 		<tbody>
 			<?php
-			echo $comentarioController->listarComentario();
+			echo $comentarioController->listarComentarioAdm();
 			?>
 		</tbody>
 	</table>
@@ -44,7 +44,14 @@ $comentarioController->gravarAlterar();
 	<form method="post" action="">
 		<h4 class="cadCat">Cadastro de Comentarios</h4>
 
-		<input type="hidden" name="idPost" id="idPost" value="<?php echo $comentarioController->getComentarioDAO()->getIdPost(); ?>">
+		<label>Post</label>
+		<input type="text" name="idPost" id="idPost" value="<?php echo $comentarioController->getComentarioDAO()->getIdPost(); ?>">
+		
+		<label>Pagina</label>
+		<input type="text" name="idPagina" id="idPagina" value="<?php echo $comentarioController->getComentarioDAO()->getIdPagina(); ?>">
+		
+		<label>Evento</label>
+		<input type="text" name="idEvento" id="idEvento" value="<?php echo $comentarioController->getComentarioDAO()->getIdEvento(); ?>">
 
 		<label>Id usuario</label>
 		<input type="text" name="idUsuario" id="idUsuario" value="<?php echo $comentarioController->getComentarioDAO()->getIdUsuario(); ?>">

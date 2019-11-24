@@ -203,6 +203,7 @@ class EventoController
     public function listarEventoId()
     {
         if ($this->acaoGET == 2) {
+            // $this->eventoDAO->setIdEvento($_GET['id']);
             $this->eventoDAO->setIdEvento($_GET['id']);
             $evento = $this->eventoDAO->listarEventoId();
             $this->eventoDAO->setNomeEvento($evento['nomeEvento']);
@@ -216,33 +217,6 @@ class EventoController
         }
     }
 
-    // public function listarPostagem()
-    // {
-    //     $result = $this->eventoDAO->listarPostagem();
-
-    //     $evento = "";
-    //     if ($result != null) {
-    //         foreach ($result as $linha) {
-
-    //             $evento .= "<div>
-    //                            <h3> id da evento {$linha['idPostagem']} </h3>
-    //                            <h3> id usuario {$linha['idUsuario']} </h3>
-    //                            <h1> Titulo {$linha['tituloPostagem']} </h1>
-    //                            <p> Post {$linha['txtPostagem']} </p>
-    //                            <a href='". _URLBASE_ ."area/adm/cadastro/cadEvento/alter/" . $linha['idPostagem'] . "'>
-    //                                 <img src='" . _URLBASE_ . "public/icon/editar.svg'>
-    //                             </a>
-    //                             <a href='". _URLBASE_ ."area/adm/cadastro/cadEvento/delete/" . $linha['idPostagem'] . "'>
-    //                                 <img src='" . _URLBASE_ . "public/icon/excluir.svg'>
-    //                             </a>
-    //                         </div><hr>";
-    //         }
-    //     } else {
-    //         $evento = "<tr colspan='5'><td>Não há Postagens registradas</td></tr>";
-    //     }
-    //     return $evento;
-    // }
-
     public function listarEvento()
     {
         $result = $this->eventoDAO->listarEvento($this->regIni, $this->itemPagina);
@@ -250,20 +224,19 @@ class EventoController
 
         if ($result != null) {
             foreach ($result as $post) {
-                $evento .= "
-                <div class='eventoItem'>
-                    <figure>
-                       <img src='" . _URLBASE_ . $post['urlFotoEvento'] . "' style='max-width:300px;'>
-                       <figcaption>
-                        <h1>" . $post['nomeEvento'] . "</h1>
-                        <p>" . $post['txtEvento'] . "</p>
-                        </figcaption>
-                    </figure>
+                $evento .= "<tr>
+                <td>" . $post['nomeEvento'] . "</td>
+                <td>" . $post['txtEvento'] . "</td>
+                <td>
                     <a href='" . _URLBASE_ . "area/adm/cadastro/cadEvento/alter/" . $post['idEvento'] . "'>
-                    <img src='" . _URLBASE_ . "public/icon/editar.svg'></a>
+                        <img src='" . _URLBASE_ . "public/icon/editar.svg'>
+                    </a>
+                </td>
+                <td>
                     <a href='" . _URLBASE_ . "area/adm/cadastro/cadEvento/delete/" . $post['idEvento'] . "'>
-                     <img src='" . _URLBASE_ . "public/icon/excluir.svg'></a>
-                </div>";
+                        <img src='" . _URLBASE_ . "public/icon/excluir.svg'></a>
+                    </td>
+                </tr>";
             }
         } else {
             $evento = "<tr colspan='5'><td>Não há Postagens registradas</td></tr>";
@@ -286,7 +259,7 @@ class EventoController
        // Passando a quantidade de paginas como parmetro
         $qtdePaginas = ceil($this->eventoDAO->totalContar() / $this->itemPagina);
 
-        $notificador = "<ul>";
+        $notificador = "<ul class='ulNote'>";
         if ($this->paginaAtual >= 2) {
             $notificador .= "<li><a href='" . _URLBASE_ . $urlDoNotificador . "/pagina/1'><<</a></li>";
             $notificador .= "<li><a href='" . _URLBASE_ . $urlDoNotificador . "/pagina/" . ($this->paginaAtual - 1) . "'><</a> </li>";

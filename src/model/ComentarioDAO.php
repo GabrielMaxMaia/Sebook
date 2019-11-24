@@ -8,7 +8,9 @@ namespace Model;
 class ComentarioDAO extends Comentario
 {
     //Atributos - serão os comandos SQL  + um objeto Sql
-    private static $SELECT_ALL = "select * from comentario inner join usuario WHERE usuario.id_usuario = comentario.id_usuario and cod_status_comentario = '1' ORDER BY id_comentario DESC";
+    private static $SELECT_ALL = "SELECT * FROM comentario inner join usuario WHERE usuario.id_usuario = comentario.id_usuario and cod_status_comentario = '1' ORDER BY id_comentario DESC";
+
+    private static $SELECT_ALL_ADM = "SELECT * FROM comentario where cod_status_comentario = '1' ORDER BY id_comentario DESC";
 
     private static $SELECT_TOT = "SELECT count(id_comentario) as tot from comentario where cod_status_comentario = '1'";
 
@@ -91,6 +93,37 @@ class ComentarioDAO extends Comentario
                     'nomeUsuario' => $linha->nome_usuario,
                     'urlFoto' => $linha->url_foto
                 );
+            }
+        } else {
+            $itens = null;
+        }
+        return $itens;
+    }
+
+    public function listarComentarioAdm($ini = -1, $qtde = 1)
+    {
+        if ($ini >= 0) {
+            $limit = " limit $ini , $qtde ";
+        } else {
+            $limit = "";
+        }
+
+        //executar a consulta no banco
+        $result = $this->sql->query(ComentarioDAO::$SELECT_ALL_ADM . $limit);
+
+        //devolver o resultado
+        if ($result->rowCount() > 0) {
+            while ($linha = $result->fetch(\PDO::FETCH_OBJ)) {
+                $itens[] = array(
+                    'idComentario' => $linha->id_comentario,
+                    'idComentarioParente' => $linha->id_comentario_parente,
+                    'txtComentario' => $linha->txt_comentario,
+                    'dataHoraComentario' => $linha->data_hora_comentario,
+                    'codStatusComentario' => $linha->cod_status_comentario,
+                    'idPost' => $linha->id_post,
+                    'idPagina' => $linha->id_pagina,
+                    'idEvento' => $linha->id_evento,
+                    );
             }
         } else {
             $itens = null;

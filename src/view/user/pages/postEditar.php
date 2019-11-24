@@ -106,6 +106,6 @@ if ($result != null) {
 <?php
         }
     } else {
-        echo "<p class='mensagemParaEspertinhos'>Essa postagem não pertence a você</p>";
+        echo "<p class='mensagemParaEspertinhos'>Essa publicação não pertence a você</p>";
     }
 }

@@ -141,8 +141,15 @@ class ComentarioController
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $this->comentarioDAO->setIdPost($_POST['idPost']);
+
+            $this->comentarioDAO->setIdPagina($_POST['idPagina']);
+
+            $this->comentarioDAO->setIdEvento($_POST['idEvento']);
+            
             $this->comentarioDAO->setIdUsuario($_POST['idUsuario']);
             $this->comentarioDAO->setIdComentarioParente($_POST['idComentarioParente']);
+
+            $this->comentarioDAO->setIdComentario($_POST['idComentario']);
             $this->comentarioDAO->setTxtComentario($_POST['txtComentario']);
             $this->comentarioDAO->setDataHoraComentario(date('Y-m-d H:i:s'));
         }
@@ -201,16 +208,20 @@ class ComentarioController
             $this->comentarioDAO->setIdComentario($_GET['id']);
             $Comentario = $this->comentarioDAO->listarComentarioId();
             $this->comentarioDAO->setIdComentarioParente($Comentario['idComentarioParente']);
+
+            $this->comentarioDAO->setIdPost($Comentario['idPost']);
+            $this->comentarioDAO->setIdPagina($Comentario['idPagina']);
+            $this->comentarioDAO->setIdEvento($Comentario['idEvento']);
             $this->comentarioDAO->setTxtComentario($Comentario['txtComentario']);
             $this->comentarioDAO->setDataHoraComentario($Comentario['dataHoraComentario']);
-            $this->comentarioDAO->setIdPost($Comentario['idComentario']);
+            $this->comentarioDAO->setIdComentario($Comentario['idComentario']);
             $this->comentarioDAO->setIdUsuario($Comentario['idUsuario']);
         }
     }
 
-    public function listarComentario()
+    public function listarComentarioAdm()
     {
-        $result = $this->comentarioDAO->listarComentario($this->regIni, $this->itemPagina);
+        $result = $this->comentarioDAO->listarComentarioAdm($this->regIni, $this->itemPagina);
         
         $tabela = "";
         if ($result != null) {
@@ -253,7 +264,7 @@ class ComentarioController
        // Passando a quantidade de paginas como parmetro
         $qtdePaginas = ceil($this->comentarioDAO->totalContar() / $this->itemPagina);
 
-        $notificador = "<ul>";
+        $notificador = "<ul class='ulNote'>";
         if ($this->paginaAtual >= 2) {
             $notificador .= "<li><a href='" . _URLBASE_ . $urlDoNotificador . "/pagina/1'><<</a></li>";
             $notificador .= "<li><a href='" . _URLBASE_ . $urlDoNotificador . "/pagina/" . ($this->paginaAtual - 1) . "'><</a> </li>";

@@ -402,3 +402,23 @@ a:hover{
     text-align:center
 }
 
+/*Notificador páginação*/
+.notificador .ulNote {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 1rem;
+}
+
+.ulNote a {
+    padding: .35rem .65rem;
+    margin: 0 .3rem;
+    background: #505050;
+    color: #fff;
+    border-radius: 20px;
+}
+
+.ulNote .active {
+    background: #111;
+}

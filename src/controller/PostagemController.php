@@ -208,33 +208,6 @@ class PostagemController
         }
     }
 
-    // public function listarPostagem()
-    // {
-    //     $result = $this->postagemDAO->listarPostagem();
-
-    //     $postagem = "";
-    //     if ($result != null) {
-    //         foreach ($result as $linha) {
-
-    //             $postagem .= "<div>
-    //                            <h3> id da postagem {$linha['idPostagem']} </h3>
-    //                            <h3> id usuario {$linha['idUsuario']} </h3>
-    //                            <h1> Titulo {$linha['tituloPostagem']} </h1>
-    //                            <p> Post {$linha['txtPostagem']} </p>
-    //                            <a href='". _URLBASE_ ."area/adm/cadastro/cadPostagem/alter/" . $linha['idPostagem'] . "'>
-    //                                 <img src='" . _URLBASE_ . "public/icon/editar.svg'>
-    //                             </a>
-    //                             <a href='". _URLBASE_ ."area/adm/cadastro/cadPostagem/delete/" . $linha['idPostagem'] . "'>
-    //                                 <img src='" . _URLBASE_ . "public/icon/excluir.svg'>
-    //                             </a>
-    //                         </div><hr>";
-    //         }
-    //     } else {
-    //         $postagem = "<tr colspan='5'><td>Não há Postagens registradas</td></tr>";
-    //     }
-    //     return $postagem;
-    // }
-
     public function listarPostagem()
     {
         $result = $this->postagemDAO->listarPostagem($this->regIni, $this->itemPagina);
@@ -243,22 +216,23 @@ class PostagemController
         if ($result != null) {
             foreach ($result as $post) {
                 $postagem .= "
-                <div class='postagemItem'>
-                    <figure>
-                       <img src='" . _URLBASE_ . $post['urlFotoPost'] . "' style='max-width:300px;'>
-                       <figcaption>
-                        <h1>" . $post['tituloPostagem'] . "</h1>
-                        <p>" . $post['txtPostagem'] . "</p>
-                        </figcaption>
-                    </figure>
-                    <a href='" . _URLBASE_ . "area/adm/cadastro/cadPostagem/alter/" . $post['idPostagem'] . "'>
-                    <img src='" . _URLBASE_ . "public/icon/editar.svg'></a>
-                    <a href='" . _URLBASE_ . "area/adm/cadastro/cadPostagem/delete/" . $post['idPostagem'] . "'>
-                     <img src='" . _URLBASE_ . "public/icon/excluir.svg'></a>
-                </div>";
+                    <tr>
+                    <td>" . $post['tituloPostagem'] . "</td>
+                    <td>" . $post['txtPostagem'] . "</td>
+                    <td>
+                        <a href='" . _URLBASE_ . "area/adm/cadastro/cadPostagem/alter/" . $post['idPostagem'] . "'>
+                            <img src='" . _URLBASE_ . "public/icon/editar.svg'>
+                        </a>
+                    </td>
+                    <td>
+                        <a href='" . _URLBASE_ . "area/adm/cadastro/cadPostagem/delete/" . $post['idPostagem'] . "'>
+                            <img src='" . _URLBASE_ . "public/icon/excluir.svg'>
+                        </a>
+                    </td>
+                </tr>";
             }
         } else {
-            $postagem = "<tr colspan='5'><td>Não há Postagens registradas</td></tr>";
+            $postagem = "<tr colspan='5'><td>Não há Publicações registradas</td></tr>";
         }
         return $postagem;
     }
@@ -275,10 +249,10 @@ class PostagemController
 
     public function exibirNotificador($urlDoNotificador)
     {
-       // Passando a quantidade de paginas como parmetro
+        // Passando a quantidade de paginas como parmetro
         $qtdePaginas = ceil($this->postagemDAO->totalContar() / $this->itemPagina);
 
-        $notificador = "<ul>";
+        $notificador = "<ul class='ulNote'>";
         if ($this->paginaAtual >= 2) {
             $notificador .= "<li><a href='" . _URLBASE_ . $urlDoNotificador . "/pagina/1'><<</a></li>";
             $notificador .= "<li><a href='" . _URLBASE_ . $urlDoNotificador . "/pagina/" . ($this->paginaAtual - 1) . "'><</a> </li>";

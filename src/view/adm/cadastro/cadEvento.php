@@ -3,11 +3,11 @@
 use Controller\EventoController;
 
 $objSql = new Util\Sql($conn);
-$eventoController = new Controller\EventoController($conn);
+$eventoController = new Controller\EventoController($objSql);
 $eventoController->gravarAlterar();
 
 //Caso evento ainda não ter foto seta a foto padrão
-if($eventoController->getEventoDAO()->getUrlFotoEvento() == ""){
+if ($eventoController->getEventoDAO()->getUrlFotoEvento() == "") {
 	$eventoController->getEventoDAO()->setUrlFotoEvento('public/img/imgEvento/imgPadrao/imgEventopadrao.jpg');
 }
 
@@ -18,22 +18,34 @@ if($eventoController->getEventoDAO()->getUrlFotoEvento() == ""){
 
 <section class="<?php echo $eventoController->getLista(); ?>">
 
-	<h2>Eventos</h2>
-	<tbody>
-		<?php
-			echo $eventoController->listarEvento();
-		?>
-		<section class="notificador">
+	<table>
+		<caption>Listar Eventos</caption>
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Descrição</th>
+				<th colspan="2">Ação</th>
+			</tr>
+		</thead>
+		<tbody>
 			<?php
-			//Estou usando a Url da lista que quero controlar
-			$urlDoNotificador = "area/adm/cadastro/cadEvento";
-			echo $eventoController->exibirNotificador($urlDoNotificador);
+			echo $eventoController->listarEvento();
 			?>
-		</section>
-
-	</tbody>
+		</tbody>
 	</table>
+
 	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadEvento/add'" value="Novo">
+
+	<section class="notificador">
+		<?php
+		//Estou usando a Url da lista que quero controlar
+		$urlDoNotificador = "area/adm/cadastro/cadEvento";
+		echo $eventoController->exibirNotificador($urlDoNotificador);
+		?>
+	</section>
+
+
+
 
 </section>
 
@@ -48,9 +60,11 @@ if($eventoController->getEventoDAO()->getUrlFotoEvento() == ""){
 		<label for="idUsuario">Id Usuario</label>
 		<input type="text" name="idUsuario" id="idUsuario" value="<?php echo $eventoController->getEventoDAO()->getIdUsuario(); ?>">
 
-		<!-- <input type="text" name="dataHoraEvento" id="dataHoraEvento" value="<?//= date('Y-m-d H:i:s') ?>"> -->
-		
-		<!-- <input type="hidden" name="dataPost" id="dataPost" value="<?php //echo $eventoController->getEventoDAO()->getDatahoraPostagem();?>"> -->
+		<!-- <input type="text" name="dataHoraEvento" id="dataHoraEvento" value="<? //= date('Y-m-d H:i:s') 
+																					?>"> -->
+
+		<!-- <input type="hidden" name="dataPost" id="dataPost" value="<?php //echo $eventoController->getEventoDAO()->getDatahoraPostagem();
+																		?>"> -->
 
 		<input type="hidden" name="txtAcao" id="txtAcao" value="<?php echo $eventoController->getAcaoGET(); ?>">
 
@@ -61,10 +75,10 @@ if($eventoController->getEventoDAO()->getUrlFotoEvento() == ""){
 		<label>Titulo</label>
 		<input class="grande" type="text" name="txtNome" value="<?= $eventoController->getEventoDAO()->getNomeEvento() ?>">
 		<br>
-		<label>Post</label>
+		<label>Descrição</label>
 		<input class="grande" type="text" name="txtEvento" value="<?= $eventoController->getEventoDAO()->getTxtEvento() ?>">
 		<br>
-		
+
 		<label>Data</label>
 		<input class="grande" type="date" name="dataEvento" id="dataEvento" value="<?= $eventoController->getEventoDAO()->getDataEvento() ?>">
 		<br>

@@ -7,7 +7,7 @@ $postagemController = new Controller\PostagemController($objSql);
 $postagemController->gravarAlterar();
 
 //Caso postagem ainda não ter foto seta a foto padrão
-if($postagemController->getPostagemDAO()->getUrlFotoPostagem() == ""){
+if ($postagemController->getPostagemDAO()->getUrlFotoPostagem() == "") {
 	$postagemController->getPostagemDAO()->setUrlFotoPostagem('public/img/imgPost/imgPadrao/padrao.jpg');
 }
 
@@ -15,22 +15,32 @@ if($postagemController->getPostagemDAO()->getUrlFotoPostagem() == ""){
 
 <section class="<?php echo $postagemController->getLista(); ?>">
 
-	<h2>Postagens</h2>
-	<tbody>
-		<?php
-			echo $postagemController->listarPostagem();
-		?>
-		<section class="notificador">
+	<table>
+		<caption>Listar Publicações</caption>
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Descrição</th>
+				<th colspan="2">Ação</th>
+			</tr>
+		</thead>
+		<tbody>
 			<?php
-			//Estou usando a Url da lista que quero controlar
-			$urlDoNotificador = "area/adm/cadastro/cadPostagem";
-			echo $postagemController->exibirNotificador($urlDoNotificador);
+			echo $postagemController->listarPostagem();
 			?>
-		</section>
-
-	</tbody>
+		</tbody>
 	</table>
+
+	
 	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadPostagem/add'" value="Novo">
+
+	<section class="notificador">
+		<?php
+		//Estou usando a Url da lista que quero controlar
+		$urlDoNotificador = "area/adm/cadastro/cadPostagem";
+		echo $postagemController->exibirNotificador($urlDoNotificador);
+		?>
+	</section>
 
 </section>
 
@@ -43,8 +53,9 @@ if($postagemController->getPostagemDAO()->getUrlFotoPostagem() == ""){
 		<input type="hidden" name="idUsuario" id="idUsuario" value="<?php echo $postagemController->getPostagemDAO()->getIdUsuario(); ?>">
 
 		<input type="hidden" name="dataPost" id="dataPost" value="<?= date('Y-m-d H:i:s') ?>">
-		
-		<!-- <input type="hidden" name="dataPost" id="dataPost" value="<?php //echo $postagemController->getPostagemDAO()->getDatahoraPostagem();?>"> -->
+
+		<!-- <input type="hidden" name="dataPost" id="dataPost" value="<?php //echo $postagemController->getPostagemDAO()->getDatahoraPostagem();
+																		?>"> -->
 
 		<input type="hidden" name="txtAcao" id="txtAcao" value="<?php echo $postagemController->getAcaoGET(); ?>">
 

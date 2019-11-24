@@ -127,7 +127,7 @@ class AutentificadorController
                                     echo "<a class='pefil' href='{$adm}'>Adm</a>";
                                 }
                                 if (isset($minhaPag)) {
-                                    echo "<a href='{$minhaPag}'>Página</a>";
+                                    echo "<a href='{$minhaPag}'>Meu Acervo</a>";
                                 }
                             ?>
                             <a href='<?= _URLBASE_ ?>area/adm/sair'>Sair</a>

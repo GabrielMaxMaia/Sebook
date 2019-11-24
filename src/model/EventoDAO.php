@@ -20,8 +20,7 @@ class EventoDAO extends Evento
 
     private static $SELECT_ID = "SELECT * from evento INNER JOIN usuario ON (evento.id_usuario = usuario.id_usuario) where id_evento = :idEvento";
 
-    private static $INSERT = "INSERT INTO evento (nome_evento,txt_evento,data_evento,hora_evento, local_evento, cidade_evento, url_foto_evento, id_usuario)
-    VALUES (:nomeEvento, :txtEvento, :dataEvento,:horaEvento,:localEvento, :cidadeEvento, :urlFotoEvento, :idUsuario)";
+    private static $INSERT = "INSERT INTO evento (nome_evento,txt_evento, data_evento, hora_evento, local_evento, cidade_evento, url_foto_evento, id_usuario) VALUES (:nomeEvento, :txtEvento, :dataEvento, :horaEvento, :localEvento, :cidadeEvento, :urlFotoEvento, :idUsuario)";
 
     private static $UPDATE = "UPDATE evento SET nome_evento = :nomeEvento, txt_evento = :txtEvento, data_evento = :dataEvento, hora_evento = :horaEvento,local_evento = :localEvento,cidade_evento = :cidadeEvento,url_foto_evento = :urlFotoEvento WHERE id_evento = :idEvento";
 
@@ -220,6 +219,7 @@ class EventoDAO extends Evento
                 ':urlFotoEvento' => array(0 => $this->getUrlFotoEvento(), 1 => \PDO::PARAM_STR)
             )
         );
+        var_dump($result);
         //var_dump($result);
         return $result;
     }

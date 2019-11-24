@@ -8,7 +8,7 @@ $seboDAO = new Model\SeboDAO($objSql);
 
 if ($_POST != "") {
 
-    $parametro = $_POST['pesquisaSebo'] ?? false;
+    $parametro = $_POST['pesquisa Sebo'] ?? false;
     $parametroCidade = $_POST['pesquisaCidade'] ?? false;
 
     if($parametroCidade == "Escolha a cidade"){
