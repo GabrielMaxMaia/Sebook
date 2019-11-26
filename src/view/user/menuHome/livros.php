@@ -20,16 +20,16 @@ $pesquisa =  _URLBASE_ . "src/view/user/pages/includes/pesquisa.php";
 ?>
 
 <section class="pagLivro">
+    <header class="headerPagina">
+        <h1>Encontre seus Livros</h1>
+    </header>
+    
     <article>
         <form class="search-box" name="form_pesquisa" id="form_pesquisa" method="post" action="">
             <div class="input-prepend">
                 <span class="add-on"><i class="icon-search"></i></span>
-                <input type="text" name="pesquisaLivro" id="pesquisaLivro" value="" tabindex="1" placeholder="Pesquisar Livros..." />
+                <input type="text" name="pesquisaLivro" id="pesquisaLivro" value="" tabindex="1" placeholder="Pesquisar..." />
             </div>
-            <!-- <a class="search-btn" href="#">
-                <img src="<? //= _ICONBASE_ 
-                            ?>busca.svg" alt="">
-            </a> -->
         </form>
 
         <section class="jumbotron">

@@ -10,7 +10,7 @@
     width: 100%;
     margin: 0 auto;
     /* max-width:1200px; */
-    background:#CCC;
+    overflow: hidden;
 }
 
 #container::after {
@@ -21,61 +21,18 @@
 }
 
 #ifrmUpload{
-    display:block;
-    position: absolute;
-    width:100%
+    display: block;
+    /* position: absolute; */
+    width: 100%;
 }
 
 html {
     font-family: "Lucida Sans", sans-serif;
 }
-header {    
-    background-color: #05514E;
-    /*background-color: #0099cc;*/
-    width: 90%;
-    margin: 0 auto;
-    padding: 0;
-    height:150px; 
-    display: flex;
-}
-header section:nth-child(1){
-    width: 55%;
-    display: block;
-    background-image: url(http://localhost/plao3_2sem/Modelo/public/img/capa_small.png);
-    margin: 10px;
-}
-header section:nth-child(2){
-    width: 45%;
-    display: block;
-    text-align: right;
-    margin-top: 15px;
-    margin-right: 15px;}
 
-header h1{
-    font-family: 'Monoton', cursive;
-    padding-left: 20px;
-    color: burlywood;
-    font-size: 2rem;
-}
-header h2{
-    padding-top: 25px;
-    padding-right: 10px;
-    color: #fff;
-    text-align: right
-}
-
-header h1 sub{
-    color: brown;
-    font-size: 3rem;
-}
-header form{
-    margin: 15px;
-    text-align: right;
-    padding: 5px;
-    color: white;
-    font-weight: bold;
-
-    display: inline
+body{
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .inputLogin{
@@ -138,6 +95,7 @@ p a:hover{
     border-color: #4cae4c;
     margin-right: 5px;
     margin-top: 5px;
+    margin-bottom:1rem
 }
 
 .buttonCancel{
@@ -172,8 +130,9 @@ main{
 }
 main aside {
     width:100%;
+    min-width: 300px;
     max-width:300px;
-    background-color: #BAB01D
+    /* background-color: #BAB01D */
 }
 @media (max-width:750px){
     main{
@@ -198,8 +157,11 @@ ul {
     padding: 12px;
     text-decoration: none;
 }
+nav{
+    border: 1px solid #ccc;
+}
 nav h4 {
-    background-color: #BAB01D;
+    background-color: #494946;
     color: white
 }
 
@@ -215,9 +177,9 @@ nav h4 {
 
 main article{
     width: 100%;
-    /* display: block; */
+    height:100%;
+    padding:1rem;
 }
-
 
 /* Footer */
 footer {
@@ -259,9 +221,7 @@ footer {
 
 /* -------------------------------- Tabela ---------------------------------- */
 
-main article{
-    padding:10px;
-}
+
 table {
     width: 100%;
     border-collapse : collapse;
@@ -270,12 +230,12 @@ table {
 caption {
     -moz-border-radius : 4px;
     -webkit-border-radius : 4px;
-    background : #05514E;
+    background :#494946;;
     color : #FFF;
     font-weight : bold;
 }
 tr{
-    border : 2px solid #BAB01D;
+    border : 2px solid #ccc;
 }
 tr:nth-child(odd) { 
     background : #FFF;
@@ -295,19 +255,23 @@ td, th {
     text-align: center;
     vertical-align:middle;               
     font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 th {
     padding: 2px 0;
-    background : #BAB01D;
-    border-bottom : 2px solid #BAB01D;
-    color : #000;
+    background: #c8efcc;
+    /* border-bottom: 2px solid #FF5722; */
+    color: #000;
     font-size: 0.7em;
-    font-weight : bold;
+    font-weight: bold;
     text-align: center;
 }
 td {
-    border-bottom : 1px solid #CCC;
-    font-size : 10px;
+    border-bottom: 1px solid #CCC;
+    font-size: 10px;
+    max-width: 80px
 }
 td a img{
     padding-bottom: 2px;
@@ -337,7 +301,7 @@ label {
     margin: 5px 0;
 }
 
-.grande{
+/* .grande{
     width: 200px;
     font-size: 14px;
     font-weight: 400;
@@ -347,7 +311,7 @@ label {
     -ms-touch-action: manipulation;
     touch-action: manipulation;
     margin: 5px 0;  
-}
+} */
 
 .cadCat{
     -webkit-border-radius: 4px;
@@ -402,6 +366,42 @@ a:hover{
     text-align:center
 }
 
+/*Header de páginas*/
+.headerPagina {
+    font-size: 1.1rem;
+    text-align: center;
+    margin: 1rem auto;
+}
+
+.headerPagina::after {
+    content: "";
+    margin: .1rem auto;
+    border-bottom: 2px solid #99e7aa;
+    padding: 0 0 .6rem;
+    max-width: 120px;
+    display: block;
+}
+
+.headerPagina h1 {
+    font-weight: 500;
+    margin: 1rem 0 .3rem;
+    font-size: 1.65rem
+}
+
+form input, form textarea, select{
+    display:block;
+    padding: 0.30rem 1rem;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: #52575C;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    width:50%;
+    margin:.5rem 0;
+}
+
 /*Notificador páginação*/
 .notificador .ulNote {
     display: flex;
@@ -421,4 +421,54 @@ a:hover{
 
 .ulNote .active {
     background: #111;
+}
+
+.inputEnvia {
+    max-width: 100px;
+    padding: .5rem;
+    border: 1px solid #ccc;
+    background: #fff;
+    margin: 1rem 0;
+}
+
+/*Botões de edição*/
+.modifica {
+    padding: .5rem;
+    margin: 0 .5rem 0 0;
+    color: #fff;
+    font-size: .9rem;
+    border: 1px solid
+}
+
+.borderNone {
+    border: none
+}
+
+.modifica.edit {
+    background: #63b5ce
+}
+
+.modifica.danger {
+    background: #e64d4d
+}
+.modifica.new {
+    background: #56b056
+}
+
+.containerCadAdm{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: stretch;
+    max-width: 500px;
+} 
+.containerCadAdm img{
+    margin:1rem 0;
+    max-width:500px
+}
+
+section img{
+    margin:1rem;
+    max-width:500px;
+    border: 1px solid #ccc;
 }

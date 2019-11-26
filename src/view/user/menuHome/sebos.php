@@ -4,34 +4,36 @@ $title = "Sebos";
 $pesquisaSebo =  _URLBASE_ . "src/view/user/pages/includes/pesquisaSebo.php";
 ?>
 <section class="sebos">
-	<p>LOCALIZAR SEBOS</p>
-	<form action="search-box" name="form_pesquisa" id="form_pesquisa" method="post" action="">
+	<header class="headerPagina">
+		<h1>Localizar Sebos</h1>
+	</header>
+	<form action="search-box" name="form_pesquisa" id="form_pesquisa" method="post" action="" style="max-width:500px;margin:auto">
 		<!-- <label for="pesquisaCidade">Encontrar</label> -->
 		<div class="input-prepend">
 			<select name="pesquisaCidade" id="pesquisaCidade">
 				<optgroup label="Selecione a Cidade">
 					<?php
-                //Inclui o arquivo de array cidades
-				include "src/view/user/pages/includes/arrayCidades.php";
+					//Inclui o arquivo de array cidades
+					include "src/view/user/pages/includes/arrayCidades.php";
 
-				//Adiciona o elemento do array somente nessa página
-				array_unshift($cidades, "Escolha a cidade");
-				
-                foreach ($cidades as $cidade) {
-                    ?>
-					<option value="<?= $cidade ?>" name="pesquisaCidade" id="pesquisaCidade" value=""
-					 tabindex="">
-						<?= $cidade ?>
-					</option>
+					//Adiciona o elemento do array somente nessa página
+					array_unshift($cidades, "Escolha a cidade");
+
+					foreach ($cidades as $cidade) {
+						?>
+						<option value="<?= $cidade ?>" name="pesquisaCidade" id="pesquisaCidade" value="" tabindex="">
+							<?= $cidade ?>
+						</option>
 					<?php
-                }
-                ?>
+					}
+					?>
 				</optgroup>
 			</select>
 		</div>
-		<label for="pesquisaSebo">ou</label>
-        <div class="input-prepend">
-			<input type="text" name="pesquisaSebo" id="pesquisaSebo" value="" tabindex="1" placeholder="Digite aqui o nome do Sebo...">
+		<label for="pesquisaSebo" style="color: #608494;
+    font-size: 2.14rem;">ou</label>
+		<div class="input-prepend">
+			<input type="text" name="pesquisaSebo" id="pesquisaSebo" value="" class="inputSebo" tabindex="1" placeholder="Digite aqui o nome do Sebo...">
 		</div>
 	</form>
 
@@ -79,7 +81,8 @@ $pesquisaSebo =  _URLBASE_ . "src/view/user/pages/includes/pesquisaSebo.php";
 			// src\view\user\pages\includes\pesquisa.php
 
 			//Aqui eu chamo o metodo de load pela primeira vez sem parametros para pode exibir todos
-			// load_dados(null, '<?//= $pesquisaSebo ?>', '#MostraPesq');
+			// load_dados(null, '<? //= $pesquisaSebo 
+									?>', '#MostraPesq');
 
 			//Aqui uso o evento key up para começar a pesquisar, se valor for maior q 0 ele faz a pesquisa
 			$('#pesquisaSebo').keyup(function() {
@@ -90,9 +93,11 @@ $pesquisaSebo =  _URLBASE_ . "src/view/user/pages/includes/pesquisaSebo.php";
 				// var $parametro = $(this).val();
 
 				// if ($parametro.length >= 1) {
-				//     load_dados(valores, '<?//= $pesquisaSebo ?>', '#MostraPesq');
+				//     load_dados(valores, '<? //= $pesquisaSebo 
+											?>', '#MostraPesq');
 				// } else {
-				//     load_dados(null, '<?//= $pesquisaSebo ?>', '#MostraPesq');
+				//     load_dados(null, '<? //= $pesquisaSebo 
+											?>', '#MostraPesq');
 				// }
 			});
 
@@ -104,9 +109,11 @@ $pesquisaSebo =  _URLBASE_ . "src/view/user/pages/includes/pesquisaSebo.php";
 				// var $parametro = $(this).val();
 
 				// if ($parametro.length >= 1) {
-				//     load_dados(valores, '<?//= $pesquisaSebo ?>', '#MostraPesq');
+				//     load_dados(valores, '<? //= $pesquisaSebo 
+											?>', '#MostraPesq');
 				// } else {
-				//     load_dados(null, '<?//= $pesquisaSebo ?>', '#MostraPesq');
+				//     load_dados(null, '<? //= $pesquisaSebo 
+											?>', '#MostraPesq');
 				// }
 			});
 

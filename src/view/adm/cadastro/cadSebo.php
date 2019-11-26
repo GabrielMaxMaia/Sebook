@@ -27,6 +27,8 @@ $SeboController->gravarAlterar();
 		</tbody>
 	</table>
 
+	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadSebo/add'" value="Novo">
+
 	<section class="notificador">
 		<?php
 		//Estou usando a Url da lista que quero controlar
@@ -34,8 +36,6 @@ $SeboController->gravarAlterar();
 		echo $SeboController->exibirNotificador($urlDoNotificador);
 		?>
 	</section>
-
-	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadSebo/add'" value="Novo">
 </section>
 
 <section class="<?php echo $SeboController->getFormulario(); ?>">
@@ -128,7 +128,6 @@ $SeboController->gravarAlterar();
 		<input class="grande" type="text" name="urlSiteSebo" value="<?= $SeboController->getSeboDAO()->getUrlSiteSebo() ?>">
 		<br>
 
-		<label> </label>
 		<input class="buttonCancel" type="reset" value="Limpar">
 		<input class="button" type="submit" value="Enviar">
 	</form>

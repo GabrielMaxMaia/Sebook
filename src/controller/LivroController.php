@@ -231,19 +231,19 @@ class LivroController
                 <td>" . $linha['idCategoria'] . "</td>      
 
                         <td>
-                            <a href='" . _URLBASE_ . "area/adm/cadastro/cadlivro/alter/" . $linha['isbnLivro'] . "'>
+                            <a href='" . _URLBASE_ . "area/adm/cadastro/cadLivro/alter/" . $linha['isbnLivro'] . "'>
                                 <img src='" . _URLBASE_ . "public/icon/editar.svg'>
                             </a>
                         </td>
                         <td>
-                            <a href='" . _URLBASE_ . "area/adm/cadastro/cadlivro/delete/" . $linha['isbnLivro'] . "'>
+                            <a href='" . _URLBASE_ . "area/adm/cadastro/cadLivro/delete/" . $linha['isbnLivro'] . "'>
                                 <img src='" . _URLBASE_ . "public/icon/excluir.svg'>
                             </a>
                         </td>
                     </tr>";
             }
         } else {
-            $tabela = "<tr colspan='5'><td>Não há livros registradas</td></tr>";
+            $tabela = "<tr colspan='5'><td>Não há livros registrados</td></tr>";
         }
         return $tabela;
     }

@@ -221,7 +221,7 @@ class LivroAutorController
                     </tr>";
             }
         } else {
-            $tabela = "<tr colspan='5'><td>Não há Sebos registradas</td></tr>";
+            $tabela = "<tr colspan='5'><td>Não há autores resgistrados</td></tr>";
         }
         return $tabela;
     }

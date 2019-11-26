@@ -47,26 +47,27 @@ class Upload
         if ($result == true) {
             //recuperar o caminho absoluto do projeto
             $caminho = getcwd();
-            //var_dump($caminho);
+            // var_dump($caminho);
             //adicionando o caminho para salvar o arquivo
 
             //Tive que mudar o caminho pois estou usando
             //Xampp, depois colocar esse caminho comentado
             //'G:\sebook\src\view\adm\cadastro\uploadAdm'
-            if ($caminho == 'D:\xampp\htdocs\sebook\src\view\adm\cadastro\uploadAdm') {
-                $caminho = str_replace('\src\view\adm\cadastro\uploadAdm', '', $caminho);
+            //C:\xampp\htdocs\sebook\src\view\adm\cadastro\uploadAdm
+            if ($caminho == '/home1/sebook24/public_html/src/view/adm/cadastro/uploadAdm') {
+                $caminho = str_replace('/src/view/adm/cadastro/uploadAdm', '', $caminho);
             } else {
-                $caminho = str_replace('\src\view\user\pages', '', $caminho);
+                $caminho = str_replace('/src/view/user/pages', '', $caminho);
             }
 
-            $caminho .= $this->caminhoArmazenamento; 
-            //no formato "/pasta/"
-            
+            $caminho .= $this->caminhoArmazenamento; //no formato "/pasta/"
             //adicionar o nome do arquivo;
             $caminho .= $this->arqUpload["name"];
-
+            
+            // var_dump($caminho);
             //verificando se já existe um arquivo com este nome
             if (!file_exists($caminho)) {
+                            
                 if (in_array($this->arqUpload['type'], $this->listaPermitidos)) {
                     //Efetuando o upload - mover o arquivo da pasta temporária
                     // para a pasta de destino

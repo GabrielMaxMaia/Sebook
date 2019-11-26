@@ -123,9 +123,5 @@ $clienteController->gravarAlterar();
 	</div>
 
 
-	<br>
-	<br>
-	<br>
-	<br>
 	<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadCliente">Voltar</a>
 </section>

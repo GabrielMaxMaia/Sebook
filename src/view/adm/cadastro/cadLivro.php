@@ -30,6 +30,8 @@ $livroController->gravarAlterar();
 		</tbody>
 	</table>
 
+	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadLivro/add'" value="Novo">
+
 	<section class="notificador">
 		<?php
 		//Estou usando a Url da lista que quero controlar
@@ -37,8 +39,6 @@ $livroController->gravarAlterar();
 		echo $livroController->exibirNotificador($urlDoNotificador);
 		?>
 	</section>
-
-	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadLivro/add'" value="Novo">
 
 </section>
 
@@ -75,7 +75,6 @@ $livroController->gravarAlterar();
 		<textarea class="grande" name="sinopseLivro" id="sinopseLivro"><?php echo $livroController->getLivroDAO()->getSinopseLivro(); ?></textarea>
 		<br>
 
-		<label> </label>
 		<input class="buttonCancel" type="reset" value="Limpar">
 		<input class="button" type="submit" value="Enviar">
 	</form>

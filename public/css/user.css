@@ -614,6 +614,7 @@ div#containerTemplate {
     line-height: 1.4rem;
     text-align: justify;
 }
+
 .sinopse{
     font-size: 1.3rem;
     /* font-weight: bold; */
@@ -773,19 +774,21 @@ div#contentLoading {
 
 .input-prepend {
     display: flex;
-    padding: 1rem
+    padding: 1rem 2rem;
+    margin: 4% auto 0;
+    max-width: 500px;
 }
 
-.pagLivro .input-prepend input {
+.pagLivro .input-prepend input, .inputSebo{
     background: #fff;
     border-radius: 24px;
     padding: 0.5rem 1rem;
     margin: auto;
     outline: none;
-    border: 1px solid #111;
+    border: 1px solid #ccc;
     width: 100%;
-    max-width: 500px;
-    font-size: 1rem
+    max-width: 280px;
+    font-size: 1rem;
 }
 
 .input-prepend input::placeholder {
@@ -1038,7 +1041,7 @@ div#contentLoading {
 } */
 
 .modal-body {
-    padding: 0% 10%;
+    padding: 1% 10%;
     overflow-y: scroll;
     max-height: 194px;
 }
@@ -1913,7 +1916,9 @@ label.radio-btn{
 form select {
     padding: .4rem;
     margin-bottom: .6rem;
-    width: 100%
+    width: 100%;
+    border: 1px solid #ccc;
+    outline: none;
 }
 
 /*===========================================Icone laterais*/
@@ -2296,7 +2301,12 @@ section.jumbotron {
     border-radius: 8px;
     border-style: solid;
     border-color: #ccc;
-    border: 1px solid #ccc
+    border: .5px solid #ccc
+}
+@media (max-width:780px){
+    .containerResult{
+        border: .2px solid #ccc;
+    }
 }
 
 .containerResult li {
@@ -2520,7 +2530,7 @@ section.jumbotron {
     width: 100%;
     max-width: 600px;
     margin: auto;
-    padding: .9rem;
+    padding: .9rem 0;
 }
 
 @media (min-width:782px) {
@@ -2534,6 +2544,12 @@ section.jumbotron {
 .itemVerContainer .texto h1 {
     font-size: 2.5rem;
     color: #111;
+}
+@media (max-width:780px){
+    .itemVerContainer .texto h1{
+        font-size: 1.3rem;
+        line-height: 1.9rem;
+    }
 }
 
 .texto h1::after {
@@ -2552,6 +2568,12 @@ section.jumbotron {
     max-width: 650px;
     border: 1px solid #ccc;
     padding: 1rem;
+}
+@media (max-width:780px){
+    .texto p {
+        text-align: left;
+        line-height: 1.5rem;
+    }
 }
 
 /*Formulário*/

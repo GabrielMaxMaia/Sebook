@@ -25,6 +25,8 @@ $nacionalidadeController->gravarAlterar();
 		</tbody>
 	</table>
 
+	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadNacionalidade/add'" value="Novo">
+
 	<section class="notificador">
 		<?php
 		//Estou usando a Url da lista que quero controlar
@@ -32,8 +34,7 @@ $nacionalidadeController->gravarAlterar();
 		echo $nacionalidadeController->exibirNotificador($urlDoNotificador);
 		?>
 	</section>
-
-	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadNacionalidade/add'" value="Novo">
+	
 </section>
 
 <section class="<?php echo $nacionalidadeController->getFormulario(); ?>">
@@ -46,10 +47,8 @@ $nacionalidadeController->gravarAlterar();
 
 		<label>Nacionalidade</label>
 
-
 		<input class="grande" type="text" name="txtNome" value="<?php echo $nacionalidadeController->getNacionalidadeDAO()->getNomeNacionalidade(); ?>">
 
-		<label> </label>
 		<input class="buttonCancel" type="reset" value="Limpar">
 		<input class="button" type="submit" value="Enviar">
 	</form>

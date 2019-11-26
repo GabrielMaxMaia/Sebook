@@ -28,6 +28,8 @@ $comentarioController->gravarAlterar();
 		</tbody>
 	</table>
 
+	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadComentario/add'" value="Novo">
+
 	<section class="notificador">
 		<?php
 		//Estou usando a Url da lista que quero controlar
@@ -35,8 +37,6 @@ $comentarioController->gravarAlterar();
 		echo $comentarioController->exibirNotificador($urlDoNotificador);
 		?>
 	</section>
-
-	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadComentario/add'" value="Novo">
 
 </section>
 
@@ -67,8 +67,6 @@ $comentarioController->gravarAlterar();
 		<input class="grande" type="text" id="txtNome" name="txtNome" onblur="validarNomeComentario('". _URLBASE_ ."src/view/adm/cadastro/cadComentarioAjax.php', 'txtNomeCat='+this.value, 'txtNome')" value="<?php //echo $comentarioController->getComentarioDAO()->getNomeComentario();?>"> -->
 
 		<input class="grande" type="text" id="txtComentario" name="txtComentario" value="<?= $comentarioController->getComentarioDAO()->getTxtComentario(); ?>">
-
-		<label> </label>
 		<input class="buttonCancel" type="reset" value="Limpar">
 		<input class="button" type="submit" value="Enviar">
 	</form>

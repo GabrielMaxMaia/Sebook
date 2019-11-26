@@ -141,7 +141,7 @@ if ($idUser != null && $idUser != "") {
 			</select>
 
 			<label for="txtEvento">Descrição</label>
-			<textarea name="txtEvento" id="txtEvento" maxlength="255"><?= $_POST['txtEvento']?? "" ?></textarea>
+			<textarea name="txtEvento" id="txtEvento"><?= $_POST['txtEvento']?? "" ?></textarea>
 
 			<input type="hidden" name="txtImg" id="txtImg" value="<?= $eventoDAO->getUrlFotoEvento() ?>">
 

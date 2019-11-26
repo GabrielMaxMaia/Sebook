@@ -24,6 +24,8 @@ $livroAutorController->gravarAlterar();
 		</tbody>
 	</table>
 
+	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadLivroAutor/add'" value="Novo">
+
 	<section class="notificador">
 		<?php
 		//Estou usando a Url da lista que quero controlar
@@ -32,31 +34,30 @@ $livroAutorController->gravarAlterar();
 		?>
 	</section>
 
-	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadLivroAutor/add'" value="Novo">
 </section>
 
 <section class="<?= $livroAutorController->getFormulario(); ?>">
-	<form method="post" action="">
-		<h4 class="cadCat">Cadastro de Sebos</h4>
+	<header class="headerPagina">
+		<h1>Livro/Autor</h1>
+	</header>
 
-		<input type="hidden" name="txtAcao" id="txtAcao" value="<?= $livroAutorController->getAcaoGET() ?>">
+	<div class="containerCadAdm">
 
-		<label>Id</label>
-		<input type="text" name="idAutor" id="idAutor" value="<?= $livroAutorController->getLivroAutorDAO()->getIdAutor() ?>">
+		<form method="post" action="">
+			<h4 class="cadCat">Cadastro de Sebos</h4>
 
-		<br>
+			<input type="hidden" name="txtAcao" id="txtAcao" value="<?= $livroAutorController->getAcaoGET() ?>">
 
-		<label>Isbn</label>
-		<input class="grande" type="text" name="isbnLivro" id="isbnLivro" value="<?php echo $livroAutorController->getLivroAutorDAO()->getIsbnLivro() ?>">
-		
-		<label> </label>
-		<input class="buttonCancel" type="reset" value="Limpar">
-		<input class="button" type="submit" value="Enviar">
-	</form>
+			<label>Id</label>
+			<input type="text" name="idAutor" id="idAutor" value="<?= $livroAutorController->getLivroAutorDAO()->getIdAutor() ?>">
 
+			<label>Isbn</label>
+			<input class="grande" type="text" name="isbnLivro" id="isbnLivro" value="<?php echo $livroAutorController->getLivroAutorDAO()->getIsbnLivro() ?>">
 
-	<br>
-	<br>
-	<br>
+			<input class="buttonCancel" type="reset" value="Limpar">
+			<input class="button" type="submit" value="Enviar">
+		</form>
+	</div>
+
 	<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadLivroAutor">Voltar</a>
 </section>

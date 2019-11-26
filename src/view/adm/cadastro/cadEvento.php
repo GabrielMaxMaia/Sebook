@@ -50,72 +50,65 @@ if ($eventoController->getEventoDAO()->getUrlFotoEvento() == "") {
 </section>
 
 <section class="<?php echo $eventoController->getFormulario(); ?>">
-	<form method="post" action="">
-		<h4 class="cadCat">Cadastro de Eventos</h4>
+	<header class="headerPagina">
+		<h1>Cadastro de Eventos</h1>
+	</header>
 
-		<label for="txtId">Id Evento</label>
-		<input type="text" name="txtId" id="txtId" value="<?php echo $eventoController->getEventoDAO()->getIdEvento() ?>">
-		<br>
+	<div class="containerCadAdm">
+		<div class="imgCadastro">
+			<picture>
+				<img id="imgAvatar" src="<?= _URLBASE_ . $eventoController->getEventoDAO()->getUrlFotoEvento() ?>" alt="Avatar" class="avatar">
+			</picture>
+		</div>
+		<div class="img">
+			<form action="<?= _URLBASE_ ?>src/view/adm/cadastro/uploadAdm/eventoUploadImg.php" method='post' enctype='multipart/form-data' target='ifrmUpload' name="urlFotoEvento">
 
-		<label for="idUsuario">Id Usuario</label>
-		<input type="text" name="idUsuario" id="idUsuario" value="<?php echo $eventoController->getEventoDAO()->getIdUsuario(); ?>">
+				<input type="file" name="urlFotoEvento">
 
-		<!-- <input type="text" name="dataHoraEvento" id="dataHoraEvento" value="<? //= date('Y-m-d H:i:s') 
-																					?>"> -->
+				<input class="button" type="submit" value="Carregar">
+			</form>
+			<iframe id="ifrmUpload" name="ifrmUpload" src="" frameborder="0"></iframe>
+		</div>
 
-		<!-- <input type="hidden" name="dataPost" id="dataPost" value="<?php //echo $eventoController->getEventoDAO()->getDatahoraPostagem();
-																		?>"> -->
+		<form method="post" action="">
 
-		<input type="hidden" name="txtAcao" id="txtAcao" value="<?php echo $eventoController->getAcaoGET(); ?>">
+			<label for="txtId">Id Evento</label>
+			<input type="text" name="txtId" id="txtId" value="<?php echo $eventoController->getEventoDAO()->getIdEvento() ?>">
 
-		<!-- <input class="grande" type="text" id="txtNome" name="txtNome" onblur="validarNomeUsuario('". _URLBASE_ ."src/view/adm/cadastro/cadUsuarioAjax.php', 'txtNomeCat='+this.value, 'txtNome')"
-		 value="<?php //echo $eventoController->getEventoDAO()->getNomeUsuario(); 
-				?>"> -->
-		<br>
-		<label>Titulo</label>
-		<input class="grande" type="text" name="txtNome" value="<?= $eventoController->getEventoDAO()->getNomeEvento() ?>">
-		<br>
-		<label>Descrição</label>
-		<input class="grande" type="text" name="txtEvento" value="<?= $eventoController->getEventoDAO()->getTxtEvento() ?>">
-		<br>
+			<label for="idUsuario">Id Usuario</label>
+			<input type="text" name="idUsuario" id="idUsuario" value="<?php echo $eventoController->getEventoDAO()->getIdUsuario(); ?>">
 
-		<label>Data</label>
-		<input class="grande" type="date" name="dataEvento" id="dataEvento" value="<?= $eventoController->getEventoDAO()->getDataEvento() ?>">
-		<br>
-		<label>Hora</label>
-		<input class="grande" type="time" name="horaEvento" id="horaEvento" min="00:00" max="23:59" value="<?= $eventoController->getEventoDAO()->getHoraEvento() ?>">
-		<br>
+			<input type="hidden" name="txtAcao" id="txtAcao" value="<?php echo $eventoController->getAcaoGET(); ?>">
 
-		<label>Local</label>
-		<input class="grande" type="text" name="localEvento" id="localEvento" min="00:00" max="23:59" value="<?= $eventoController->getEventoDAO()->getLocalEvento() ?>">
-		<br>
+			<label>Titulo</label>
+			<input class="grande" type="text" name="txtNome" value="<?= $eventoController->getEventoDAO()->getNomeEvento() ?>">
+			<br>
+			<label>Descrição</label>
+			<input class="grande" type="text" name="txtEvento" value="<?= $eventoController->getEventoDAO()->getTxtEvento() ?>">
 
-		<label>Cidade</label>
-		<input class="grande" type="text" name="cidadeEvento" id="cidadeEvento" min="00:00" max="23:59" value="<?= $eventoController->getEventoDAO()->getCidadeEvento() ?>">
-		<br>
 
-		<input type="hidden" name="txtImg" id="txtImg" value="<?= $eventoController->getEventoDAO()->getUrlFotoEvento() ?>">
-		<br>
-		<input class="buttonCancel" type="reset" value="Limpar">
-		<input class="button" type="submit" value="Enviar">
-	</form>
+			<label>Data</label>
+			<input class="grande" type="date" name="dataEvento" id="dataEvento" value="<?= $eventoController->getEventoDAO()->getDataEvento() ?>">
 
-	<div class="img">
-		<form action="<?= _URLBASE_ ?>src/view/adm/cadastro/uploadAdm/eventoUploadImg.php" method='post' enctype='multipart/form-data' target='ifrmUpload' name="urlFotoEvento">
+			<label>Hora</label>
+			<input class="grande" type="time" name="horaEvento" id="horaEvento" min="00:00" max="23:59" value="<?= $eventoController->getEventoDAO()->getHoraEvento() ?>">
 
-			<input type="file" name="urlFotoEvento">
 
-			<input class="button" type="submit" value="Carregar">
+			<label>Local</label>
+			<input class="grande" type="text" name="localEvento" id="localEvento" min="00:00" max="23:59" value="<?= $eventoController->getEventoDAO()->getLocalEvento() ?>">
+
+
+			<label>Cidade</label>
+			<input class="grande" type="text" name="cidadeEvento" id="cidadeEvento" min="00:00" max="23:59" value="<?= $eventoController->getEventoDAO()->getCidadeEvento() ?>">
+
+
+			<input type="hidden" name="txtImg" id="txtImg" value="<?= $eventoController->getEventoDAO()->getUrlFotoEvento() ?>">
+
+			<input class="buttonCancel" type="reset" value="Limpar">
+			<input class="button" type="submit" value="Enviar">
 		</form>
-		<iframe id="ifrmUpload" name="ifrmUpload" src="" frameborder="0"></iframe>
-	</div>
-	<div class="imgCadastro">
-		<picture>
-			<img id="imgAvatar" src="<?= _URLBASE_ . $eventoController->getEventoDAO()->getUrlFotoEvento() ?>" alt="Avatar" class="avatar">
-		</picture>
-	</div>
 
-
+	</div>
 
 	<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadEvento">Voltar</a>
 </section>

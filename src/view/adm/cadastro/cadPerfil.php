@@ -40,8 +40,6 @@
 		<input class="grande" type="text" name="nomePerfil" id="nomePefil" value="<?php echo $perfilCrontoller->getPerfilDAO()->getNomePerfil(); ?>">
 		<br>
 	
-
-		<label> </label>
 		<input class="buttonCancel" type="reset" value="Limpar">
 		<input class="button" type="submit" value="Enviar">
 	</form>

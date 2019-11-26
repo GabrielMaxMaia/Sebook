@@ -27,6 +27,8 @@ $autorController->gravarAlterar();
 		</tbody>
 	</table>
 
+	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadAutor/add'" value="Novo">
+
 	<section class="notificador">
 		<?php
 		//Estou usando a Url da lista que quero controlar
@@ -35,46 +37,43 @@ $autorController->gravarAlterar();
 		?>
 	</section>
 
-
-	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadAutor/add'" value="Novo">
 </section>
 
 <section class="<?php echo $autorController->getFormulario(); ?>">
-	<form method="post" action="">
-		<h4 class="cadCat">Cadastro de autores</h4>
-		<input type="hidden" name="txtId" id="txtId" value="<?php echo $autorController->getAutorDAO()->getIdAutor(); ?>">
-		<input type="hidden" name="txtAcao" id="txtAcao" value="<?php echo $autorController->getAcaoGET(); ?>">
-		<label>Autor</label>
-		<input class="grande" type="text" name="txtNome" value="<?php echo $autorController->getAutorDAO()->getNomeAutor(); ?>">
+	<header class="headerPagina">
+		<h1>Cadastro de autores</h1>
+	</header>
+	<div class="containerCadAdm">
+		<form method="post" action="">
 
-		<br><br>
+			<input type="hidden" name="txtId" id="txtId" value="<?php echo $autorController->getAutorDAO()->getIdAutor(); ?>">
+			<input type="hidden" name="txtAcao" id="txtAcao" value="<?php echo $autorController->getAcaoGET(); ?>">
+			<label>Autor</label>
+			<input class="grande" type="text" name="txtNome" value="<?php echo $autorController->getAutorDAO()->getNomeAutor(); ?>">
 
-		<select class="grande" name="selecNacionalidade" id="selecNacionalidade">
-			<optgroup label="Nacionalidade">
-				<?php
-				//Listagem de perfis
-				$result = $nacionalidadeController->getNacionalidadeDAO()->listarNacionalidades();
+			<div class="formGroupAdm">
+				<select class="grande" name="selecNacionalidade" id="selecNacionalidade">
+					<optgroup label="Nacionalidade">
+						<?php
+						//Listagem de perfis
+						$result = $nacionalidadeController->getNacionalidadeDAO()->listarNacionalidades();
 
-				foreach ($result as $linha) {
+						foreach ($result as $linha) {
+							//  if($linha['idNacionalidade'] == $nacionalidadeController->getNacionalidadeDAO->getIdNacionalidade()){
+							// 	$select = "select";
+							// 	echo "encontrou";
+							//  }
+							echo "<option value='{$linha['idNacionalidade']}'>{$linha['nomeNacionalidade']}</option>";
+						}
+						?>
+					</optgroup>
+				</select>
+			</div>
 
-					//  if($linha['idNacionalidade'] == $nacionalidadeController->getNacionalidadeDAO->getIdNacionalidade()){
-					// 	$select = "select";
-					// 	echo "encontrou";
-					//  }
+			<input class="modifica danger" type="reset" value="Limpar">
+			<input class="inputEnvia" type="submit" value="Enviar">
+		</form>
+	</div>
 
-					echo "<option value='{$linha['idNacionalidade']}'>{$linha['nomeNacionalidade']}</option>";
-				}
-				?>
-			</optgroup>
-		</select>
-
-		<label> </label>
-		<input class="buttonCancel" type="reset" value="Limpar">
-		<input class="button" type="submit" value="Enviar">
-	</form>
-	<br>
-	<br>
-	<br>
-	<br>
 	<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadAutor">Voltar</a>
 </section>

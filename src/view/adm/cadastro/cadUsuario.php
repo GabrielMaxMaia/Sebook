@@ -27,6 +27,8 @@ $usuarioController->gravarAlterar();
 		</tbody>
 	</table>
 
+	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadUsuario/add'" value="Novo">
+
 	<section class="notificador">
 		<?php
 		//Estou usando a Url da lista que quero controlar
@@ -34,8 +36,6 @@ $usuarioController->gravarAlterar();
 		echo $usuarioController->exibirNotificador($urlDoNotificador);
 		?>
 	</section>
-
-	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadUsuario/add'" value="Novo">
 
 </section>
 

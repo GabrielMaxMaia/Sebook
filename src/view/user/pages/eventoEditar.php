@@ -157,7 +157,7 @@ if ($resultEvento != null) {
                 </select>
 
                 <label for="txtEvento">Descrição</label>
-                <textarea name="txtEvento" id="txtEvento" maxlength="255"><?= $eventoDAO->getTxtEvento() ?></textarea>
+                <textarea name="txtEvento" id="txtEvento"><?= $eventoDAO->getTxtEvento() ?></textarea>
 
                 <input type="hidden" name="txtImg" id="txtImg" value="<?= $eventoDAO->getUrlFotoEvento() ?>">
 

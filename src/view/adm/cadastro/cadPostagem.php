@@ -6,7 +6,7 @@ $objSql = new Util\Sql($conn);
 $postagemController = new Controller\PostagemController($objSql);
 $postagemController->gravarAlterar();
 
-//Caso postagem ainda não ter foto seta a foto padrão
+//Caso postagem ainda n���o ter foto seta a foto padr���o
 if ($postagemController->getPostagemDAO()->getUrlFotoPostagem() == "") {
 	$postagemController->getPostagemDAO()->setUrlFotoPostagem('public/img/imgPost/imgPadrao/padrao.jpg');
 }
@@ -31,7 +31,7 @@ if ($postagemController->getPostagemDAO()->getUrlFotoPostagem() == "") {
 		</tbody>
 	</table>
 
-	
+
 	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadPostagem/add'" value="Novo">
 
 	<section class="notificador">
@@ -45,8 +45,12 @@ if ($postagemController->getPostagemDAO()->getUrlFotoPostagem() == "") {
 </section>
 
 <section class="<?php echo $postagemController->getFormulario(); ?>">
+
+	<header class="headerPagina">
+		<h1>Cadastro de Postagems</h1>
+	</header>
+
 	<form method="post" action="">
-		<h4 class="cadCat">Cadastro de Postagems</h4>
 
 		<input type="hidden" name="txtId" id="txtId" value="<?php echo $postagemController->getPostagemDAO()->getIdPostagem(); ?>">
 
@@ -54,14 +58,7 @@ if ($postagemController->getPostagemDAO()->getUrlFotoPostagem() == "") {
 
 		<input type="hidden" name="dataPost" id="dataPost" value="<?= date('Y-m-d H:i:s') ?>">
 
-		<!-- <input type="hidden" name="dataPost" id="dataPost" value="<?php //echo $postagemController->getPostagemDAO()->getDatahoraPostagem();
-																		?>"> -->
-
 		<input type="hidden" name="txtAcao" id="txtAcao" value="<?php echo $postagemController->getAcaoGET(); ?>">
-
-		<!-- <input class="grande" type="text" id="txtNome" name="txtNome" onblur="validarNomeUsuario('". _URLBASE_ ."src/view/adm/cadastro/cadUsuarioAjax.php', 'txtNomeCat='+this.value, 'txtNome')"
-		 value="<?php //echo $postagemController->getPostagemDAO()->getNomeUsuario(); 
-				?>"> -->
 
 		<label>Titulo</label>
 		<input class="grande" type="text" name="txtTitulo" value="<?= $postagemController->getPostagemDAO()->getTituloPostagem() ?>">

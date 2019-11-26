@@ -243,10 +243,8 @@ class ClienteController
             foreach ($result as $linha) {
                 $tabela .= "<tr>
                 <td>" . $linha['idUsuario'] . "</td>
-                <td>" . $linha['idUsuario'] . "</td>
                 <td>" . $linha['cpfCliente'] . "</td>
                 <td>" . $linha['sexoCliente'] . "</td>
-                <td>" . $linha['urlFoto'] . "</td>
                 <td>" . $linha['codStatusCliente']
                     . "</td>
                         <td>
@@ -262,7 +260,7 @@ class ClienteController
                     </tr>";
             }
         } else {
-            $tabela = "<tr colspan='5'><td>Não há clientes registradas</td></tr>";
+            $tabela = "<tr colspan='5'><td>Não há clientes registrados</td></tr>";
         }
         return $tabela;
     }

@@ -25,6 +25,8 @@
 		</tbody>
 	</table>
 
+	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadEditora/add'" value="Novo">
+
 	<section class="notificador">
 		<?php
 		//Estou usando a Url da lista que quero controlar
@@ -32,8 +34,6 @@
 		echo $editoraController->exibirNotificador($urlDoNotificador);
 		?>
 	</section>
-	
-	 <input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadEditora/add'" value="Novo">
 
 </section>
 
@@ -48,8 +48,6 @@
 		<label>Editora</label>
 		<input class="grande" type="text" name="txtNome" value="<?php echo $editoraController->getEditoraDAO()->getNomeEditora(); ?>">
 
-
-		<label> </label>
 		<input class="buttonCancel" type="reset" value="Limpar">
 		<input class="button" type="submit" value="Enviar">
 	</form>

@@ -27,6 +27,8 @@ $categoriaController->gravarAlterar();
 		</tbody>
 	</table>
 
+	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadCategoria/add'" value="Novo">
+
 	<section class="notificador">
 		<?php
 		//Estou usando a Url da lista que quero controlar
@@ -34,8 +36,6 @@ $categoriaController->gravarAlterar();
 		echo $categoriaController->exibirNotificador($urlDoNotificador);
 		?>
 	</section>
-
-	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadCategoria/add'" value="Novo">
 
 </section>
 
@@ -46,7 +46,6 @@ $categoriaController->gravarAlterar();
 		<input type="hidden" name="txtAcao" id="txtAcao" value="<?php echo $categoriaController->getAcaoGET(); ?>">
 		<label>Categoria</label>
 		<input class="grande" type="text" id="txtNome" name="txtNome" onblur="validarNomeCategoria('<?= _URLBASE_ ?>src/view/adm/cadastro/cadCategoriaAjax.php', 'txtNomeCat='+this.value, 'txtNome')" value="<?php echo $categoriaController->getCategoriaDAO()->getNomeCategoria(); ?>">
-		<label> </label>
 		<input class="buttonCancel" type="reset" value="Limpar">
 		<input class="button" type="submit" value="Enviar">
 	</form>

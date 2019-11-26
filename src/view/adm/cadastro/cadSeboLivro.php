@@ -9,11 +9,11 @@ $seboLivroController->gravarAlterar();
 
 <section class="<?php echo $seboLivroController->getLista(); ?>">
 	<table>
-		<caption>Lista de Sebos</caption>
+		<caption>Registro de Acervos</caption>
 		<thead>
 			<tr>
-				<th>Id Usuario (Sebo)</th>
-				<th>Isbn</th>
+				<th>Id do Sebo</th>
+				<th>Isbn do livro</th>
 				<th>Qtde em Estoque</th>
 				<th colspan="2">Ação</th>
 			</tr>
@@ -25,6 +25,8 @@ $seboLivroController->gravarAlterar();
 		</tbody>
 	</table>
 
+	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadseboLivro/add'" value="Novo">
+
 	<section class="notificador">
 		<?php
 		//Estou usando a Url da lista que quero controlar
@@ -32,9 +34,6 @@ $seboLivroController->gravarAlterar();
 		echo $seboLivroController->exibirNotificador($urlDoNotificador);
 		?>
 	</section>
-
-
-	<input class="button" type="button" onclick="window.location='<?= _URLBASE_ ?>area/adm/cadastro/cadseboLivro/add'" value="Novo">
 </section>
 
 <section class="<?= $seboLivroController->getFormulario(); ?>">
@@ -46,24 +45,16 @@ $seboLivroController->gravarAlterar();
 		<label>Id</label>
 		<input type="text" name="idUsuario" id="idUsuario" value="<?= $seboLivroController->getSeboLivroDAO()->getIdUsuario() ?>">
 
-		<br>
-
 		<label>Isbn</label>
 		<input class="grande" type="text" name="isbnLivro" id="isbnLivro" value="<?php echo $seboLivroController->getSeboLivroDAO()->getIsbnLivro() ?>">
 
 		<label>Qtde em estoque</label>
 		<input class="grande" type="text" name="qtdEstoque" id="qtdEstoque" value="<?= $seboLivroController->getSeboLivroDAO()->getQtdEstoque() ?>">
 
-		<br>
 		
-		<label> </label>
 		<input class="buttonCancel" type="reset" value="Limpar">
 		<input class="button" type="submit" value="Enviar">
 	</form>
 
-
-	<br>
-	<br>
-	<br>
 	<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadSeboLivro">Voltar</a>
 </section>
