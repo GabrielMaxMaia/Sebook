@@ -10,7 +10,9 @@ class LivroDAO extends Livro
     //Atributos - serão os comandos SQL  + um objeto Sql
     private static $SELECT_LAST_ID = "SELECT last_insert_id() as last_id FROM livro limit 0,1";
 
-    private static $SELECT_ALL = "SELECT * FROM livro WHERE cod_status_livro = '1' order by id_editora";
+    private static $SELECT_ALL = "SELECT * FROM livro WHERE cod_status_livro = '1' order by ano_livro";
+    
+    private static $SELECT_10 = "SELECT * FROM livro WHERE cod_status_livro = '1' order by isbn_livro ASC LIMIT 10";
 
     private static $SELECT_CATEGORIA = "SELECT * FROM livro INNER JOIN categoria ON (categoria.id_categoria = livro.id_categoria) AND livro.id_categoria = :idCategoria";
 
@@ -100,6 +102,32 @@ class LivroDAO extends Livro
             $itens = null;
         }
         //devolver o resultado     
+        return $itens;
+    }
+
+    public function listar10Livros()
+    {
+    
+        //executar a consulta no banco
+        $result = $this->sql->query(LivroDAO::$SELECT_10);
+        //devolver o resultado
+
+        if ($result->rowCount() > 0) {
+            while ($linha = $result->fetch(\PDO::FETCH_OBJ)) {
+                $itens[] = array(
+                    'isbnLivro' => $linha->isbn_livro,
+                    'anoLivro' => $linha->ano_livro,
+                    'urlFotoLivro' => $linha->url_foto_livro,
+                    'nomeLivro' => $linha->nome_livro,
+                    'sinopseLivro' => $linha->sinopse_livro,
+                    'codStatusLivro' => $linha->cod_status_livro,
+                    'idEditora' => $linha->id_editora,
+                    'idCategoria' => $linha->id_categoria
+                );
+            }
+        } else {
+            $itens = null;
+        }
         return $itens;
     }
 

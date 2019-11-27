@@ -25,17 +25,17 @@ $acessoUser = $_SESSION['userLogado']['acesso'] ?? "";
 		<?php
 		if ($acessoUser == 1) {
 		?>
+		<!-- <li>
+			<a href="<?//= _URLBASE_ ?>area/adm/cadastro/cadNacionalidade">Nacionalidades</a>
+		</li> -->
 		<li>
-			<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadNacionalidade">Nacionalidades</a>
-		</li>
-		<li>
-			<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadPerfil">Perfis de usuário</a>
+			<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadPerfil">Perfil de usuários</a>
 		</li>
 		<li>
 			<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadUsuario">Usuários</a>
 		</li>
 		<li>
-			<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadCliente">Clientes</a>
+			<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadCliente">Leitor</a>
 		</li>
 		<li>
 			<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadSebo">Sebos</a>
@@ -43,21 +43,21 @@ $acessoUser = $_SESSION['userLogado']['acesso'] ?? "";
 		<li>
 			<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadSeboLivro">Acervo</a>
 		</li>
-		<li>
-			<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadAutor">Autores</a>
+		<!-- <li>
+			<a href="<?//= _URLBASE_ ?>area/adm/cadastro/cadAutor">Autores</a>
 		</li>
 		<li>
-			<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadLivro">Livros</a>
+			<a href="<?//= _URLBASE_ ?>area/adm/cadastro/cadLivro">Livros</a>
 		</li>
 		<li>
-			<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadLivroAutor">Livros Autor</a>
+			<a href="<?//= _URLBASE_ ?>area/adm/cadastro/cadLivroAutor">Livros Autor</a>
 		</li>
 		<li>
-			<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadCategoria">Categorias</a>
+			<a href="<?//= _URLBASE_ ?>area/adm/cadastro/cadCategoria">Categorias</a>
 		</li>
 		<li>
-			<a href="<?= _URLBASE_ ?>area/adm/cadastro/cadEditora">Editoras</a>
-		</li>
+			<a href="<?//= _URLBASE_ ?>area/adm/cadastro/cadEditora">Editoras</a>
+		</li> -->
 		<?php
 		}
 		?>

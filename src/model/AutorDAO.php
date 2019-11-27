@@ -9,7 +9,7 @@ class AutorDAO extends Autor
 {
 
     //Atributos - serão os comandos SQL  + um objeto Sql
-    private static $SELECT_ALL = "select * from autor where cod_status_autor = '1'";
+    private static $SELECT_ALL = "select * from autor where cod_status_autor = '1' ORDER BY id_autor DESC";
 
     private static $SELECT_TOT = "SELECT count(id_autor) as tot from autor where cod_status_autor = '1'";
 

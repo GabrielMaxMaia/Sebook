@@ -8,7 +8,8 @@ $objSql = new Util\Sql($conn);
 
 $livroDAO = new LivroDAO($objSql);
 
-$resultLivro = $livroDAO->listarLivros();
+// $resultLivro = $livroDAO->listarLivros();
+$resultLivro = $livroDAO->listar10Livros();
 ?>
 
 <div class="containerSlick">
