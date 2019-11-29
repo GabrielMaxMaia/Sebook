@@ -1,0 +1,142 @@
+[16-Oct-2019 19:56:20 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function setAttribute() on null in /home1/sebook24/public_html/src/util/FabricaConexao.php:57
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(7): Util\FabricaConexao::getConexao('./config/bd_mys...')
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/util/FabricaConexao.php on line 57
+[16-Oct-2019 19:56:20 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function setAttribute() on null in /home1/sebook24/public_html/src/util/FabricaConexao.php:57
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(7): Util\FabricaConexao::getConexao('./config/bd_mys...')
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/util/FabricaConexao.php on line 57
+[22-Oct-2019 21:13:21 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 95
+[22-Oct-2019 21:13:28 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 95
+[23-Oct-2019 19:21:23 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/pages/cadLeitor.php:10
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(7): require_once()
+#1 /home1/sebook24/public_html/index.php(15): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/cadLeitor.php on line 10
+[25-Oct-2019 11:29:39 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/pages/cadLeitor.php:10
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(7): require_once()
+#1 /home1/sebook24/public_html/index.php(15): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/cadLeitor.php on line 10
+[25-Oct-2019 11:29:42 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/pages/cadLeitor.php:10
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(7): require_once()
+#1 /home1/sebook24/public_html/index.php(15): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/cadLeitor.php on line 10
+[25-Oct-2019 11:29:44 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/pages/cadLeitor.php:10
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(7): require_once()
+#1 /home1/sebook24/public_html/index.php(15): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/cadLeitor.php on line 10
+[25-Oct-2019 19:54:33 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/pages/cadLeitor.php:10
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(7): require_once()
+#1 /home1/sebook24/public_html/index.php(15): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/cadLeitor.php on line 10
+[26-Oct-2019 15:22:51 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/pages/cadLeitor.php:10
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(7): require_once()
+#1 /home1/sebook24/public_html/index.php(15): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/cadLeitor.php on line 10
+[29-Oct-2019 19:53:23 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/pages/cadLeitor.php:10
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(7): require_once()
+#1 /home1/sebook24/public_html/index.php(15): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/cadLeitor.php on line 10
+[30-Oct-2019 19:17:38 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/pages/perfilLeitor.php:9
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(7): require_once()
+#1 /home1/sebook24/public_html/index.php(15): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/perfilLeitor.php on line 9
+[30-Oct-2019 19:17:46 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 67
+[30-Oct-2019 19:17:46 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 114
+[30-Oct-2019 21:15:05 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function setAttribute() on null in /home1/sebook24/public_html/src/util/FabricaConexao.php:57
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(7): Util\FabricaConexao::getConexao('./config/bd_mys...')
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/util/FabricaConexao.php on line 57
+[30-Oct-2019 21:20:00 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function setAttribute() on null in /home1/sebook24/public_html/src/util/FabricaConexao.php:57
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(7): Util\FabricaConexao::getConexao('./config/bd_mys...')
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/util/FabricaConexao.php on line 57
+[30-Oct-2019 21:43:51 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function setAttribute() on null in /home1/sebook24/public_html/src/util/FabricaConexao.php:57
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(7): Util\FabricaConexao::getConexao('./config/bd_mys...')
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/util/FabricaConexao.php on line 57
+[30-Oct-2019 21:45:16 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function setAttribute() on null in /home1/sebook24/public_html/src/util/FabricaConexao.php:57
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(7): Util\FabricaConexao::getConexao('./config/bd_mys...')
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/util/FabricaConexao.php on line 57
+[30-Oct-2019 21:52:48 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function setAttribute() on null in /home1/sebook24/public_html/src/util/FabricaConexao.php:57
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(7): Util\FabricaConexao::getConexao('./config/bd_mys...')
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/util/FabricaConexao.php on line 57
+[30-Oct-2019 22:03:28 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function setAttribute() on null in /home1/sebook24/public_html/src/util/FabricaConexao.php:57
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(7): Util\FabricaConexao::getConexao('./config/bd_mys...')
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/util/FabricaConexao.php on line 57
+[30-Oct-2019 22:10:38 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function setAttribute() on null in /home1/sebook24/public_html/src/util/FabricaConexao.php:57
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(7): Util\FabricaConexao::getConexao('./config/bd_mys...')
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/util/FabricaConexao.php on line 57
+[30-Oct-2019 22:10:40 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function setAttribute() on null in /home1/sebook24/public_html/src/util/FabricaConexao.php:57
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(7): Util\FabricaConexao::getConexao('./config/bd_mys...')
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/util/FabricaConexao.php on line 57
+[30-Oct-2019 22:10:41 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function setAttribute() on null in /home1/sebook24/public_html/src/util/FabricaConexao.php:57
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(7): Util\FabricaConexao::getConexao('./config/bd_mys...')
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/util/FabricaConexao.php on line 57
+[30-Oct-2019 22:10:41 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function setAttribute() on null in /home1/sebook24/public_html/src/util/FabricaConexao.php:57
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(7): Util\FabricaConexao::getConexao('./config/bd_mys...')
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/util/FabricaConexao.php on line 57
+[30-Oct-2019 22:10:42 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function setAttribute() on null in /home1/sebook24/public_html/src/util/FabricaConexao.php:57
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(7): Util\FabricaConexao::getConexao('./config/bd_mys...')
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/util/FabricaConexao.php on line 57
+[30-Oct-2019 22:10:42 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function setAttribute() on null in /home1/sebook24/public_html/src/util/FabricaConexao.php:57
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(7): Util\FabricaConexao::getConexao('./config/bd_mys...')
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/util/FabricaConexao.php on line 57
+[30-Oct-2019 22:10:43 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function setAttribute() on null in /home1/sebook24/public_html/src/util/FabricaConexao.php:57
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(7): Util\FabricaConexao::getConexao('./config/bd_mys...')
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/util/FabricaConexao.php on line 57
+[30-Oct-2019 22:10:43 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function setAttribute() on null in /home1/sebook24/public_html/src/util/FabricaConexao.php:57
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(7): Util\FabricaConexao::getConexao('./config/bd_mys...')
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/util/FabricaConexao.php on line 57
+[30-Oct-2019 22:10:43 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function setAttribute() on null in /home1/sebook24/public_html/src/util/FabricaConexao.php:57
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(7): Util\FabricaConexao::getConexao('./config/bd_mys...')
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/util/FabricaConexao.php on line 57
+[30-Oct-2019 22:10:44 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function setAttribute() on null in /home1/sebook24/public_html/src/util/FabricaConexao.php:57
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(7): Util\FabricaConexao::getConexao('./config/bd_mys...')
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/util/FabricaConexao.php on line 57

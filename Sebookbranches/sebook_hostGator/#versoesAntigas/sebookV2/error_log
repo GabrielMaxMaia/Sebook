@@ -1,0 +1,434 @@
+[31-Oct-2019 19:49:07 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '?' in /home1/sebook24/public_html/index.php on line 5
+[31-Oct-2019 19:49:07 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '?' in /home1/sebook24/public_html/index.php on line 5
+[31-Oct-2019 19:49:08 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '?' in /home1/sebook24/public_html/index.php on line 5
+[31-Oct-2019 19:49:09 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '?' in /home1/sebook24/public_html/index.php on line 5
+[31-Oct-2019 19:49:13 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/util/slick.php:9
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/menuHome/home.php(6): require_once()
+#1 /home1/sebook24/public_html/src/view/user/index_user.php(11): require_once('/home1/sebook24...')
+#2 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#3 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/util/slick.php on line 9
+[31-Oct-2019 19:49:20 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/util/slick.php:9
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/menuHome/home.php(6): require_once()
+#1 /home1/sebook24/public_html/src/view/user/index_user.php(11): require_once('/home1/sebook24...')
+#2 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#3 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/util/slick.php on line 9
+[31-Oct-2019 19:49:39 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/util/slick.php:9
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/menuHome/home.php(6): require_once()
+#1 /home1/sebook24/public_html/src/view/user/index_user.php(11): require_once('/home1/sebook24...')
+#2 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#3 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/util/slick.php on line 9
+[31-Oct-2019 19:49:46 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/util/slick.php:9
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/menuHome/home.php(6): require_once()
+#1 /home1/sebook24/public_html/src/view/user/index_user.php(11): require_once('/home1/sebook24...')
+#2 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#3 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/util/slick.php on line 9
+[31-Oct-2019 19:49:51 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/util/slick.php:9
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/menuHome/home.php(6): require_once()
+#1 /home1/sebook24/public_html/src/view/user/index_user.php(11): require_once('/home1/sebook24...')
+#2 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#3 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/util/slick.php on line 9
+[31-Oct-2019 19:49:53 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/util/slick.php:9
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/menuHome/home.php(6): require_once()
+#1 /home1/sebook24/public_html/src/view/user/index_user.php(11): require_once('/home1/sebook24...')
+#2 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#3 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/util/slick.php on line 9
+[31-Oct-2019 19:50:27 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/util/slick.php:9
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/menuHome/home.php(6): require_once()
+#1 /home1/sebook24/public_html/src/view/user/index_user.php(11): require_once('/home1/sebook24...')
+#2 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#3 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/util/slick.php on line 9
+[31-Oct-2019 19:50:34 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/util/slick.php:9
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/menuHome/home.php(6): require_once()
+#1 /home1/sebook24/public_html/src/view/user/index_user.php(11): require_once('/home1/sebook24...')
+#2 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#3 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/util/slick.php on line 9
+[31-Oct-2019 19:57:45 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/util/slick.php:9
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/menuHome/home.php(6): require_once()
+#1 /home1/sebook24/public_html/src/view/user/index_user.php(11): require_once('/home1/sebook24...')
+#2 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#3 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/util/slick.php on line 9
+[31-Oct-2019 19:57:46 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/util/slick.php:9
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/menuHome/home.php(6): require_once()
+#1 /home1/sebook24/public_html/src/view/user/index_user.php(11): require_once('/home1/sebook24...')
+#2 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#3 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/util/slick.php on line 9
+[31-Oct-2019 20:00:08 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/util/slick.php:9
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/menuHome/home.php(6): require_once()
+#1 /home1/sebook24/public_html/src/view/user/index_user.php(11): require_once('/home1/sebook24...')
+#2 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#3 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/util/slick.php on line 9
+[31-Oct-2019 21:21:33 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/util/slick.php:9
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/menuHome/home.php(6): require_once()
+#1 /home1/sebook24/public_html/src/view/user/index_user.php(11): require_once('/home1/sebook24...')
+#2 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#3 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/util/slick.php on line 9
+[31-Oct-2019 21:21:35 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/util/slick.php:9
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/menuHome/home.php(6): require_once()
+#1 /home1/sebook24/public_html/src/view/user/index_user.php(11): require_once('/home1/sebook24...')
+#2 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#3 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/util/slick.php on line 9
+[31-Oct-2019 22:31:58 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 137
+[31-Oct-2019 22:32:33 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 137
+[31-Oct-2019 22:36:02 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/descLivro.php:13
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 13
+[31-Oct-2019 22:37:10 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/descLivro.php:13
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 13
+[31-Oct-2019 22:38:34 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 67
+[31-Oct-2019 22:38:34 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 137
+[31-Oct-2019 22:38:46 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[31-Oct-2019 22:38:58 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[31-Oct-2019 22:39:05 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[31-Oct-2019 22:39:06 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[31-Oct-2019 22:39:09 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[31-Oct-2019 22:39:10 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[31-Oct-2019 22:39:11 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[31-Oct-2019 22:39:11 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[31-Oct-2019 22:39:12 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[31-Oct-2019 22:39:18 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[31-Oct-2019 22:39:19 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[31-Oct-2019 22:39:20 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[31-Oct-2019 22:39:38 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[31-Oct-2019 22:39:41 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[31-Oct-2019 22:39:43 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[31-Oct-2019 22:40:05 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 67
+[31-Oct-2019 22:40:05 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 137
+[31-Oct-2019 22:40:05 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/adm/index_adm.php:45
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(16): require_once()
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/view/adm/index_adm.php on line 45
+[31-Oct-2019 22:41:05 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/descLivro.php:13
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 13
+[31-Oct-2019 22:41:11 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/descLivro.php:13
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 13
+[01-Nov-2019 02:05:16 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/descLivro.php:13
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 13
+[01-Nov-2019 02:06:06 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[01-Nov-2019 02:06:13 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[01-Nov-2019 02:06:48 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/descLivro.php:13
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 13
+[01-Nov-2019 02:06:55 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/busca.php:8
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/busca.php on line 8
+[01-Nov-2019 10:10:19 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/descLivro.php:13
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 13
+[01-Nov-2019 10:11:37 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/descLivro.php:13
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 13
+[01-Nov-2019 10:12:05 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/pagSebo.php:12
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/pagSebo.php on line 12
+[01-Nov-2019 10:12:20 America/Sao_Paulo] PHP Warning:  require_once(./src/view/user/pages/pagSebo?id=11.php): failed to open stream: No such file or directory in /home1/sebook24/public_html/src/view/user/index_user.php on line 8
+[01-Nov-2019 10:12:20 America/Sao_Paulo] PHP Fatal error:  require_once(): Failed opening required './src/view/user/pages/pagSebo?id=11.php' (include_path='.:/opt/cpanel/ea-php73/root/usr/share/pear') in /home1/sebook24/public_html/src/view/user/index_user.php on line 8
+[01-Nov-2019 10:12:37 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/pagSebo.php:12
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/pagSebo.php on line 12
+[01-Nov-2019 10:12:38 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/descLivro.php:13
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 13
+[01-Nov-2019 10:13:23 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/descLivro.php:13
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 13
+[01-Nov-2019 10:13:47 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/pages/cadLeitor.php:10
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/cadLeitor.php on line 10
+[01-Nov-2019 10:14:04 America/Sao_Paulo] PHP Warning:  require_once(./src/view/user/pages/cadCliente.php): failed to open stream: No such file or directory in /home1/sebook24/public_html/src/view/user/index_user.php on line 8
+[01-Nov-2019 10:14:04 America/Sao_Paulo] PHP Fatal error:  require_once(): Failed opening required './src/view/user/pages/cadCliente.php' (include_path='.:/opt/cpanel/ea-php73/root/usr/share/pear') in /home1/sebook24/public_html/src/view/user/index_user.php on line 8
+[01-Nov-2019 15:48:46 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/descLivro.php:13
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 13
+[02-Nov-2019 10:02:54 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/descLivro.php:13
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 13
+[02-Nov-2019 10:02:57 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/descLivro.php:13
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 13
+[02-Nov-2019 10:03:49 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/descLivro.php:13
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 13
+[02-Nov-2019 10:04:47 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[02-Nov-2019 10:05:24 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[02-Nov-2019 10:05:26 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[02-Nov-2019 10:06:29 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/busca.php:8
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/busca.php on line 8
+[03-Nov-2019 13:26:17 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/descLivro.php:13
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 13
+[03-Nov-2019 13:26:24 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/descLivro.php:13
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 13
+[03-Nov-2019 13:26:39 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/descLivro.php:13
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 13
+[03-Nov-2019 13:26:40 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/descLivro.php:13
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 13
+[03-Nov-2019 13:26:49 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/descLivro.php:13
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 13
+[03-Nov-2019 13:26:49 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/descLivro.php:13
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 13
+[03-Nov-2019 13:26:56 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/descLivro.php:13
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 13
+[03-Nov-2019 22:05:33 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/descLivro.php:13
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 13
+[04-Nov-2019 03:55:49 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/busca.php:8
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/busca.php on line 8
+[04-Nov-2019 07:43:01 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/descLivro.php:13
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 13
+[04-Nov-2019 08:10:06 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/descLivro.php:13
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 13
+[04-Nov-2019 18:55:54 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[04-Nov-2019 18:56:14 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[04-Nov-2019 18:58:53 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[04-Nov-2019 19:23:46 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/descLivro.php:13
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 13

@@ -1,0 +1,33 @@
+﻿#ativar mecanismo de reescrita de URL
+RewriteEngine On
+#bloqueio de navegação de diretório
+Options -Indexes
+
+#ErrorDocument código de erro caminho para página de erro customizada
+#ErrorDocument 404 http://localhost/Sebook/src/view/erros/404.php
+#ErrorDocument 403 http://localhost/Sebook/src/view/erros/403.php
+#ErrorDocument 500 http://localhost/Sebook/src/view/erros/500.php
+
+#Pega o caminho na url de tudo apos area
+RewriteRule ^area\/([a-z]+)$ index.php?area=$1 [NC,L]
+
+#Regra para caminhar até o post
+RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)\/([0-9]+)$ http://localhost/sebook/index.php?area=$1&pasta=$2&page=$3&idPost=$4 [NC,L]
+
+#Regra para excluirPost
+#RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)\/delete\/([\d]+)$ http://localhost/sebook/index.php?area=$1&pasta=$2&page=$3&acao=3&idDelete=$4 [NC,L]
+
+#regra para chegar nas pastas de adm
+RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)$ http://localhost/sebook/index.php?area=$1&pasta=$2&page=$3 [NC,L]
+
+#regra para adicionar
+RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)\/add$ http://localhost/sebook/index.php?area=$1&pasta=$2&page=$3&acao=1 [NC,L]
+
+#Regra para alterar
+RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)\/alter\/([\d]+)$ http://localhost/Sebook/index.php?area=$1&pasta=$2&page=$3&acao=2&id=$4 [NC,L]
+
+#Regra para deletar
+RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)\/delete\/([\d]+)$ http://localhost/Sebook/index.php?area=$1&pasta=$2&page=$3&acao=3&id=$4 [NC,L]
+
+#regra para sair do login
+RewriteRule ^area/adm/sair$ http://localhost/Sebook/index.php?area=adm&logout=true [NC,L]

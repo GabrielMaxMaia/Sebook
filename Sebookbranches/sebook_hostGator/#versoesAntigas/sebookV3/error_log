@@ -1,0 +1,551 @@
+[04-Nov-2019 19:35:46 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: Arquivo não encontrado: ./config/bd_mysql.ini in /home1/sebook24/public_html/src/util/FabricaConexao.php:27
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(12): Util\FabricaConexao::getConexao('./config/bd_mys...')
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/util/FabricaConexao.php on line 27
+[04-Nov-2019 19:35:48 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: Arquivo não encontrado: ./config/bd_mysql.ini in /home1/sebook24/public_html/src/util/FabricaConexao.php:27
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(12): Util\FabricaConexao::getConexao('./config/bd_mys...')
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/util/FabricaConexao.php on line 27
+[04-Nov-2019 19:35:52 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: Arquivo não encontrado: ./config/bd_mysql.ini in /home1/sebook24/public_html/src/util/FabricaConexao.php:27
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(12): Util\FabricaConexao::getConexao('./config/bd_mys...')
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/util/FabricaConexao.php on line 27
+[04-Nov-2019 19:36:45 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: Arquivo não encontrado: ./config/bd_mysql.ini in /home1/sebook24/public_html/src/util/FabricaConexao.php:27
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(12): Util\FabricaConexao::getConexao('./config/bd_mys...')
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/util/FabricaConexao.php on line 27
+[04-Nov-2019 19:36:51 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: Arquivo não encontrado: ./config/bd_mysql.ini in /home1/sebook24/public_html/src/util/FabricaConexao.php:27
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(12): Util\FabricaConexao::getConexao('./config/bd_mys...')
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/util/FabricaConexao.php on line 27
+[04-Nov-2019 19:36:53 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: Arquivo não encontrado: ./config/bd_mysql.ini in /home1/sebook24/public_html/src/util/FabricaConexao.php:27
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(12): Util\FabricaConexao::getConexao('./config/bd_mys...')
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/util/FabricaConexao.php on line 27
+[04-Nov-2019 19:37:24 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: Arquivo não encontrado: ./config/bd_mysql.ini in /home1/sebook24/public_html/src/util/FabricaConexao.php:27
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(12): Util\FabricaConexao::getConexao('./config/bd_mys...')
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/util/FabricaConexao.php on line 27
+[04-Nov-2019 19:40:54 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: Arquivo não encontrado: ./config/bd_mysql.ini in /home1/sebook24/public_html/src/util/FabricaConexao.php:27
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(12): Util\FabricaConexao::getConexao('./config/bd_mys...')
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/util/FabricaConexao.php on line 27
+[04-Nov-2019 19:43:10 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/util/slick.php:9
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/menuHome/home.php(6): require_once()
+#1 /home1/sebook24/public_html/src/view/user/index_user.php(11): require_once('/home1/sebook24...')
+#2 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#3 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/util/slick.php on line 9
+[04-Nov-2019 19:44:22 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/util/slick.php:9
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/menuHome/home.php(6): require_once()
+#1 /home1/sebook24/public_html/src/view/user/index_user.php(11): require_once('/home1/sebook24...')
+#2 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#3 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/util/slick.php on line 9
+[04-Nov-2019 20:08:03 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/descLivro.php:13
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(18): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 13
+[04-Nov-2019 20:08:12 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/busca.php:8
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(18): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/busca.php on line 8
+[04-Nov-2019 20:08:16 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/busca.php:8
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(18): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/busca.php on line 8
+[04-Nov-2019 20:08:57 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/pagSebo.php:12
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(18): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/pagSebo.php on line 12
+[04-Nov-2019 20:09:20 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/pagSebo.php:12
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(18): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/pagSebo.php on line 12
+[04-Nov-2019 20:24:37 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/pagSebo.php:12
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once()
+#1 /home1/sebook24/public_html/index.php(18): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/pagSebo.php on line 12
+[04-Nov-2019 20:40:21 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[04-Nov-2019 20:41:45 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(20): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[04-Nov-2019 20:45:26 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(23): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[04-Nov-2019 20:45:31 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(23): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[04-Nov-2019 20:46:32 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(25): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[04-Nov-2019 20:46:35 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(25): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[04-Nov-2019 20:46:43 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(25): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[04-Nov-2019 20:47:06 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 69
+[04-Nov-2019 20:47:06 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[04-Nov-2019 20:47:06 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/adm/index_adm.php:45
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(21): require_once()
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/view/adm/index_adm.php on line 45
+[04-Nov-2019 20:48:01 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(25): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[04-Nov-2019 20:48:08 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 69
+[04-Nov-2019 20:48:08 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[04-Nov-2019 20:48:08 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/adm/index_adm.php:45
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(21): require_once()
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/view/adm/index_adm.php on line 45
+[04-Nov-2019 20:55:07 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(25): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[04-Nov-2019 20:55:20 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(25): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[04-Nov-2019 21:03:28 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/adm/index_adm.php:45
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(21): require_once()
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/view/adm/index_adm.php on line 45
+[04-Nov-2019 21:04:00 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(25): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[04-Nov-2019 21:04:05 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(25): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[04-Nov-2019 21:04:06 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(25): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[04-Nov-2019 21:05:57 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(25): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[04-Nov-2019 21:06:07 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/adm/index_adm.php:45
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(21): require_once()
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/view/adm/index_adm.php on line 45
+[04-Nov-2019 21:06:43 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(25): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[04-Nov-2019 21:07:38 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(25): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[04-Nov-2019 21:09:48 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(25): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[04-Nov-2019 21:09:51 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 69
+[04-Nov-2019 21:09:51 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[04-Nov-2019 21:09:51 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/adm/index_adm.php:45
+Stack trace:
+#0 /home1/sebook24/public_html/index.php(21): require_once()
+#1 {main}
+  thrown in /home1/sebook24/public_html/src/view/adm/index_adm.php on line 45
+[04-Nov-2019 21:40:50 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(25): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[04-Nov-2019 21:40:57 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(25): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[04-Nov-2019 21:44:05 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(25): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[04-Nov-2019 21:44:10 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\ClienteDAO' not found in /home1/sebook24/public_html/src/view/user/menu/header.php:14
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/index_user.php(48): require_once()
+#1 /home1/sebook24/public_html/index.php(25): require_once('/home1/sebook24...')
+#2 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/menu/header.php on line 14
+[04-Nov-2019 21:47:54 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 69
+[04-Nov-2019 21:47:54 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[04-Nov-2019 21:53:15 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 69
+[04-Nov-2019 21:53:15 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[04-Nov-2019 21:53:50 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 69
+[04-Nov-2019 21:53:50 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[04-Nov-2019 21:54:06 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 69
+[04-Nov-2019 21:54:06 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[04-Nov-2019 22:08:01 America/Sao_Paulo] PHP Warning:  require_once(./src/view/user/pages/postVer=5.php): failed to open stream: No such file or directory in /home1/sebook24/public_html/src/view/user/index_user.php on line 8
+[04-Nov-2019 22:17:33 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[04-Nov-2019 22:17:33 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[04-Nov-2019 22:19:32 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[04-Nov-2019 22:19:32 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[04-Nov-2019 22:19:50 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[04-Nov-2019 22:19:50 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[04-Nov-2019 22:20:24 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 69
+[04-Nov-2019 22:20:24 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[04-Nov-2019 22:20:29 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[04-Nov-2019 22:20:30 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[04-Nov-2019 22:20:31 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[04-Nov-2019 22:20:32 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[04-Nov-2019 22:20:33 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[04-Nov-2019 22:20:33 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[04-Nov-2019 22:21:14 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home1/sebook24/public_html/src/model/UsuarioDAO.php:167
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/pages/cadLeitor.php(59): Model\UsuarioDAO->adicionarUsuario()
+#1 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once('/home1/sebook24...')
+#2 /home1/sebook24/public_html/index.php(23): require_once('/home1/sebook24...')
+#3 {main}
+  thrown in /home1/sebook24/public_html/src/model/UsuarioDAO.php on line 167
+[04-Nov-2019 22:22:43 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home1/sebook24/public_html/src/model/UsuarioDAO.php:167
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/pages/cadSebo.php(65): Model\UsuarioDAO->adicionarUsuario()
+#1 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once('/home1/sebook24...')
+#2 /home1/sebook24/public_html/index.php(23): require_once('/home1/sebook24...')
+#3 {main}
+  thrown in /home1/sebook24/public_html/src/model/UsuarioDAO.php on line 167
+[04-Nov-2019 22:40:56 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 69
+[04-Nov-2019 22:40:56 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[04-Nov-2019 22:41:20 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 46
+[04-Nov-2019 22:42:17 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[04-Nov-2019 22:42:17 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[04-Nov-2019 22:42:39 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[04-Nov-2019 22:42:39 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[04-Nov-2019 22:42:46 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[04-Nov-2019 22:42:46 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[04-Nov-2019 22:42:51 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 69
+[04-Nov-2019 22:42:51 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[04-Nov-2019 22:43:03 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 46
+[04-Nov-2019 22:43:16 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[04-Nov-2019 22:43:16 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[04-Nov-2019 22:43:29 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[04-Nov-2019 22:43:29 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[04-Nov-2019 22:43:38 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 69
+[04-Nov-2019 22:43:38 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[04-Nov-2019 22:44:23 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[04-Nov-2019 22:44:23 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[04-Nov-2019 22:44:28 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[04-Nov-2019 22:44:28 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[04-Nov-2019 22:44:32 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[04-Nov-2019 22:44:32 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[04-Nov-2019 22:44:38 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[04-Nov-2019 22:44:38 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[04-Nov-2019 22:44:44 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[04-Nov-2019 22:44:44 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[04-Nov-2019 22:53:35 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[04-Nov-2019 22:53:35 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[04-Nov-2019 22:53:47 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[04-Nov-2019 22:53:47 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[04-Nov-2019 22:58:12 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[04-Nov-2019 22:58:12 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[04-Nov-2019 22:58:26 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[04-Nov-2019 22:58:26 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[04-Nov-2019 22:58:37 America/Sao_Paulo] PHP Warning:  require_once(./src/view/user/pages/descLivo.php): failed to open stream: No such file or directory in /home1/sebook24/public_html/src/view/user/index_user.php on line 8
+[04-Nov-2019 22:58:41 America/Sao_Paulo] PHP Warning:  require_once(./src/view/user/pages/descLivo.php): failed to open stream: No such file or directory in /home1/sebook24/public_html/src/view/user/index_user.php on line 8
+[04-Nov-2019 23:00:22 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home1/sebook24/public_html/src/model/UsuarioDAO.php:167
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/pages/cadLeitor.php(59): Model\UsuarioDAO->adicionarUsuario()
+#1 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once('/home1/sebook24...')
+#2 /home1/sebook24/public_html/index.php(23): require_once('/home1/sebook24...')
+#3 {main}
+  thrown in /home1/sebook24/public_html/src/model/UsuarioDAO.php on line 167
+[04-Nov-2019 23:01:30 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[04-Nov-2019 23:01:30 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[04-Nov-2019 23:03:38 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[04-Nov-2019 23:03:38 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[04-Nov-2019 23:03:53 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[04-Nov-2019 23:03:53 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[04-Nov-2019 23:03:58 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[04-Nov-2019 23:03:58 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[04-Nov-2019 23:03:59 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[04-Nov-2019 23:03:59 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[04-Nov-2019 23:04:17 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[04-Nov-2019 23:04:17 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[04-Nov-2019 23:04:25 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[04-Nov-2019 23:04:25 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[04-Nov-2019 23:04:25 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[04-Nov-2019 23:04:25 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[04-Nov-2019 23:35:11 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[04-Nov-2019 23:35:11 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[05-Nov-2019 00:06:30 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[05-Nov-2019 00:06:30 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[05-Nov-2019 00:08:08 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[05-Nov-2019 00:08:08 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[05-Nov-2019 00:08:18 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 69
+[05-Nov-2019 00:08:18 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[05-Nov-2019 00:10:20 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[05-Nov-2019 00:10:20 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[05-Nov-2019 01:00:06 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[05-Nov-2019 01:00:06 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[05-Nov-2019 01:13:27 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[05-Nov-2019 01:13:27 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[05-Nov-2019 01:23:31 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[05-Nov-2019 01:23:31 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[05-Nov-2019 02:00:10 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[05-Nov-2019 02:00:10 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[05-Nov-2019 02:06:40 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 69
+[05-Nov-2019 02:06:40 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[05-Nov-2019 02:09:54 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 69
+[05-Nov-2019 02:09:54 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[05-Nov-2019 02:09:58 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[05-Nov-2019 02:10:05 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[05-Nov-2019 02:10:08 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[05-Nov-2019 02:10:11 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[05-Nov-2019 06:07:30 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[05-Nov-2019 06:07:30 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[05-Nov-2019 08:42:50 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[05-Nov-2019 08:42:50 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[05-Nov-2019 19:21:04 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 69
+[05-Nov-2019 19:21:04 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[05-Nov-2019 19:21:42 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 69
+[05-Nov-2019 19:21:42 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[05-Nov-2019 19:24:14 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 69
+[05-Nov-2019 19:24:14 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[05-Nov-2019 19:25:03 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[05-Nov-2019 19:25:11 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[05-Nov-2019 19:25:29 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[05-Nov-2019 20:16:08 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 69
+[05-Nov-2019 20:16:08 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[05-Nov-2019 20:16:20 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 69
+[05-Nov-2019 20:16:20 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[05-Nov-2019 20:17:09 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[05-Nov-2019 20:17:09 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[05-Nov-2019 20:17:49 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[05-Nov-2019 20:17:49 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[05-Nov-2019 20:19:04 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home1/sebook24/public_html/src/model/UsuarioDAO.php:167
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/pages/cadLeitor.php(59): Model\UsuarioDAO->adicionarUsuario()
+#1 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once('/home1/sebook24...')
+#2 /home1/sebook24/public_html/index.php(23): require_once('/home1/sebook24...')
+#3 {main}
+  thrown in /home1/sebook24/public_html/src/model/UsuarioDAO.php on line 167
+[05-Nov-2019 20:21:19 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home1/sebook24/public_html/src/model/UsuarioDAO.php:167
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/pages/cadSebo.php(65): Model\UsuarioDAO->adicionarUsuario()
+#1 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once('/home1/sebook24...')
+#2 /home1/sebook24/public_html/index.php(23): require_once('/home1/sebook24...')
+#3 {main}
+  thrown in /home1/sebook24/public_html/src/model/UsuarioDAO.php on line 167
+[05-Nov-2019 20:22:18 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[05-Nov-2019 20:22:18 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[05-Nov-2019 20:22:22 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[05-Nov-2019 20:22:22 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[05-Nov-2019 20:22:30 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[05-Nov-2019 20:22:30 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[05-Nov-2019 20:22:43 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[05-Nov-2019 20:22:43 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[05-Nov-2019 20:22:49 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[05-Nov-2019 20:22:49 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[05-Nov-2019 20:27:15 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[05-Nov-2019 20:27:15 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[05-Nov-2019 20:32:33 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[05-Nov-2019 20:32:33 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[05-Nov-2019 20:32:35 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[05-Nov-2019 20:32:35 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[05-Nov-2019 22:51:31 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[05-Nov-2019 22:51:31 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[05-Nov-2019 23:38:09 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 69
+[05-Nov-2019 23:38:09 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[06-Nov-2019 06:35:11 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[06-Nov-2019 06:35:11 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[06-Nov-2019 14:37:26 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[06-Nov-2019 14:37:26 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[06-Nov-2019 14:40:08 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[06-Nov-2019 14:40:08 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[06-Nov-2019 14:40:51 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[06-Nov-2019 14:40:51 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[06-Nov-2019 16:55:41 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[06-Nov-2019 16:55:41 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[06-Nov-2019 19:18:10 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[06-Nov-2019 19:18:10 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[06-Nov-2019 22:23:47 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[06-Nov-2019 22:23:47 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[06-Nov-2019 22:24:22 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[06-Nov-2019 22:24:22 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[06-Nov-2019 22:59:55 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[06-Nov-2019 22:59:55 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[07-Nov-2019 05:47:26 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[07-Nov-2019 05:47:26 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[07-Nov-2019 05:56:54 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[07-Nov-2019 05:56:54 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[07-Nov-2019 06:44:17 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[07-Nov-2019 06:44:17 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[07-Nov-2019 08:18:54 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[07-Nov-2019 08:18:54 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[07-Nov-2019 10:21:58 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[07-Nov-2019 10:21:58 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[07-Nov-2019 11:51:30 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[07-Nov-2019 11:51:30 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[07-Nov-2019 13:53:32 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[07-Nov-2019 13:53:32 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[07-Nov-2019 15:46:57 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[07-Nov-2019 15:46:57 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[07-Nov-2019 15:51:05 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[07-Nov-2019 15:51:05 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[07-Nov-2019 16:10:49 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[07-Nov-2019 16:10:49 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[07-Nov-2019 18:11:32 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 69
+[07-Nov-2019 18:11:32 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[07-Nov-2019 18:11:39 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[07-Nov-2019 18:11:41 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 69
+[07-Nov-2019 18:11:41 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[07-Nov-2019 18:11:58 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 69
+[07-Nov-2019 18:11:58 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[07-Nov-2019 18:47:52 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[07-Nov-2019 18:47:52 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[07-Nov-2019 19:53:05 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[07-Nov-2019 19:53:05 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[07-Nov-2019 23:55:56 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[07-Nov-2019 23:55:56 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[08-Nov-2019 01:09:48 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[08-Nov-2019 01:09:48 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[08-Nov-2019 02:16:36 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[08-Nov-2019 02:16:36 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[08-Nov-2019 02:24:25 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[08-Nov-2019 02:24:25 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[08-Nov-2019 03:38:25 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[08-Nov-2019 03:38:25 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[08-Nov-2019 05:00:21 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[08-Nov-2019 05:00:21 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[08-Nov-2019 06:15:41 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[08-Nov-2019 06:15:41 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[08-Nov-2019 07:04:31 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[08-Nov-2019 07:04:31 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[08-Nov-2019 07:17:59 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[08-Nov-2019 07:17:59 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[08-Nov-2019 08:48:41 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[08-Nov-2019 08:48:41 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[08-Nov-2019 10:03:10 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[08-Nov-2019 10:03:10 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[08-Nov-2019 10:24:16 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[08-Nov-2019 10:24:16 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[08-Nov-2019 10:24:59 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home1/sebook24/public_html/src/model/UsuarioDAO.php:167
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/pages/cadLeitor.php(59): Model\UsuarioDAO->adicionarUsuario()
+#1 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once('/home1/sebook24...')
+#2 /home1/sebook24/public_html/index.php(23): require_once('/home1/sebook24...')
+#3 {main}
+  thrown in /home1/sebook24/public_html/src/model/UsuarioDAO.php on line 167
+[08-Nov-2019 11:08:21 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[08-Nov-2019 11:08:21 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[08-Nov-2019 12:24:36 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[08-Nov-2019 12:24:36 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[08-Nov-2019 14:05:44 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[08-Nov-2019 14:05:44 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[08-Nov-2019 14:05:45 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[08-Nov-2019 14:05:45 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[08-Nov-2019 14:06:08 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[08-Nov-2019 14:06:08 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[08-Nov-2019 14:08:01 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[08-Nov-2019 14:08:01 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[08-Nov-2019 20:01:44 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[08-Nov-2019 20:01:44 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[08-Nov-2019 21:16:49 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[08-Nov-2019 21:16:49 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[08-Nov-2019 23:51:58 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[08-Nov-2019 23:51:58 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[09-Nov-2019 00:56:00 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[09-Nov-2019 00:56:00 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[09-Nov-2019 01:59:24 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[09-Nov-2019 01:59:24 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[09-Nov-2019 02:27:48 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[09-Nov-2019 02:27:48 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[10-Nov-2019 08:26:44 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[10-Nov-2019 08:26:44 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[11-Nov-2019 02:18:48 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[11-Nov-2019 02:18:48 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[11-Nov-2019 03:27:33 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[11-Nov-2019 03:27:33 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[11-Nov-2019 15:41:52 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[11-Nov-2019 15:41:52 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[11-Nov-2019 21:30:05 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 69
+[11-Nov-2019 21:30:05 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sebook24/public_html/src/view/adm/index_adm.php:1) in /home1/sebook24/public_html/src/controller/AutentificadorController.php on line 145
+[11-Nov-2019 21:30:26 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home1/sebook24/public_html/src/model/UsuarioDAO.php:167
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/pages/cadLeitor.php(59): Model\UsuarioDAO->adicionarUsuario()
+#1 /home1/sebook24/public_html/src/view/user/index_user.php(8): require_once('/home1/sebook24...')
+#2 /home1/sebook24/public_html/index.php(23): require_once('/home1/sebook24...')
+#3 {main}
+  thrown in /home1/sebook24/public_html/src/model/UsuarioDAO.php on line 167
+[12-Nov-2019 01:21:24 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[12-Nov-2019 01:21:24 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60
+[12-Nov-2019 18:40:54 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 37
+[12-Nov-2019 18:40:54 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 60

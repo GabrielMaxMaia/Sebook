@@ -1,0 +1,71 @@
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+#RewriteBase /
+#RewriteRule ^index\.php$ - [L]
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+
+#Pega o caminho na url de tudo apos area
+RewriteRule ^area\/([a-z]+)$ index.php?area=$1 [NC,L]
+
+#Regra para caminhar até o eventoEditar
+RewriteRule ^area\/([a-z]+)\/([a-z]+)\/(eventoEditar)\/([0-9]+)$ http://sebook.com.br/index.php?area=$1&pasta=$2&page=$3&id=$4 [NC,L]
+
+#Regra para caminhar até o postEditar
+RewriteRule ^area\/([a-z]+)\/([a-z]+)\/(postEditar)\/([0-9]+)$ http://sebook.com.br/index.php?area=$1&pasta=$2&page=$3&id=$4 [NC,L]
+
+#Regra para caminhar até o pagSebo
+RewriteRule ^area\/([a-z]+)\/([a-z]+)\/(pagSebo)\/([0-9]+)$ http://sebook.com.br/index.php?area=$1&pasta=$2&page=$3&id=$4 [NC,L]
+
+#Regra para caminhar até o eventoVer
+RewriteRule ^area\/([a-z]+)\/([a-z]+)\/(eventoVer)\/([0-9]+)$ http://sebook.com.br/index.php?area=$1&pasta=$2&page=$3&id=$4 [NC,L]
+
+#Regra para caminhar até o postVer
+RewriteRule ^area\/([a-z]+)\/([a-z]+)\/(postVer)\/([0-9]+)$ http://sebook.com.br/index.php?area=$1&pasta=$2&page=$3&id=$4 [NC,L]
+
+#Regra para descrLivro
+RewriteRule ^area\/([a-z]+)\/([a-z]+)\/(descrLivro)\/([0-9]+)$ http://sebook.com.br/index.php?area=$1&pasta=$2&page=$3&id=$4 [NC,L]
+
+#Regra para categoriaListar
+RewriteRule ^area\/([a-z]+)\/([a-z]+)\/(categoriaListar)\/([0-9]+)$ http://sebook.com.br/index.php?area=$1&pasta=$2&page=$3&id=$4 [NC,L]
+
+#Regra para caminhar até o post ou Página 
+RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)\/pagina\/([0-9]+)$ http://sebook.com.br/index.php?area=$1&pasta=$2&page=$3&pagina=$4 [NC,L]
+
+#Regra de paginação
+RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)\/([0-9]+)\/pagina\/([0-9]+)$ http://sebook.com.br/index.php?area=$1&pasta=$2&page=$3&id=$4&pagina=$5 [NC,L]
+
+#Regra para excluirPost
+RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)\/delete\/([\d]+)$ http://sebook.com.br/index.php?area=$1&pasta=$2&page=$3&acao=3&id=$4 [NC,L]
+
+#Regra para chegar nas pastas de adm
+RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)$ http://sebook.com.br/index.php?area=$1&pasta=$2&page=$3 [NC,L]
+
+#Regra para adicionar
+RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)\/add$ http://sebook.com.br/index.php?area=$1&pasta=$2&page=$3&acao=1 [NC,L]
+
+#Regra para alterar
+RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)\/alter\/([\d]+)$ http://sebook.com.br/index.php?area=$1&pasta=$2&page=$3&acao=2&id=$4 [NC,L]
+
+#Regra para altera Tabelas conjuntas com 2 ids
+RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)\/alter\/([\d]+)\/([\d]+)$ http://sebook.com.br/index.php?area=$1&pasta=$2&page=$3&acao=2&id=$4&isbnLivro=$5 [NC,L]
+
+#Regra para Tabelas conjuntas com 2 ids
+RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)\/delete\/([\d]+)\/([\d]+)$ http://sebook.com.br/index.php?area=$1&pasta=$2&page=$3&acao=3&id=$4&isbnLivro=$5 [NC,L]
+
+#Regra para deletar
+RewriteRule ^area\/([a-z]+)\/([a-z]+)\/([a-z]+)\/delete\/([\d]+)$ http://sebook.com.br/index.php?area=$1&pasta=$2&page=$3&acao=3&id=$4 [NC,L]
+
+#Regra para sair do login
+RewriteRule ^area/adm/sair$ http://sebook.com.br/index.php?area=adm&logout=true [NC,L]
+
+</IfModule>
+# END WordPress
+
+# php -- BEGIN cPanel-generated handler, do not edit 
+# Set the “ea-php72” package as the default “PHP” programming language. 
+<IfModule mime_module> 
+AddHandler application/x-httpd-ea-php73 .php .php7 .phtml 
+</IfModule>
+ # php -- END cPanel-generated handler, do not edit

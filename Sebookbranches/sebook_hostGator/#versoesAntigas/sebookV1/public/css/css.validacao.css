@@ -1,0 +1,9 @@
+*{
+    margin: 10px;
+}
+
+.error{
+  border: solid 1px red;
+  box-shadow: 3px 3px 10px red;
+}
+

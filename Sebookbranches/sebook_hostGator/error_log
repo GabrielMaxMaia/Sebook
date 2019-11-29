@@ -1,0 +1,158 @@
+[23-Nov-2019 20:37:15 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '}' in /home1/sebook24/public_html/src/view/user/index_user.php on line 8
+[24-Nov-2019 22:56:42 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 46
+[24-Nov-2019 22:56:49 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/postListar.php on line 43
+[24-Nov-2019 22:56:51 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 46
+[24-Nov-2019 23:04:38 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 22
+[24-Nov-2019 23:04:38 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 46
+[24-Nov-2019 23:05:38 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 22
+[24-Nov-2019 23:05:38 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 46
+[24-Nov-2019 23:05:51 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 22
+[24-Nov-2019 23:05:51 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 46
+[24-Nov-2019 23:05:52 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 22
+[24-Nov-2019 23:05:52 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 46
+[24-Nov-2019 23:05:59 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 22
+[24-Nov-2019 23:05:59 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 46
+[24-Nov-2019 23:06:02 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 22
+[24-Nov-2019 23:06:02 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 46
+[24-Nov-2019 23:06:26 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 22
+[24-Nov-2019 23:06:26 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 46
+[24-Nov-2019 23:06:56 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 22
+[24-Nov-2019 23:06:56 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 46
+[24-Nov-2019 23:07:00 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 22
+[24-Nov-2019 23:07:00 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 46
+[24-Nov-2019 23:07:01 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 22
+[24-Nov-2019 23:07:01 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 46
+[24-Nov-2019 23:07:04 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 22
+[24-Nov-2019 23:07:04 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 46
+[24-Nov-2019 23:07:07 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 22
+[24-Nov-2019 23:07:07 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 46
+[24-Nov-2019 23:07:53 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 22
+[24-Nov-2019 23:07:53 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 46
+[24-Nov-2019 23:08:00 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 22
+[24-Nov-2019 23:08:00 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 46
+[24-Nov-2019 23:10:40 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 22
+[24-Nov-2019 23:10:40 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 46
+[24-Nov-2019 23:10:52 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 22
+[24-Nov-2019 23:10:52 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 46
+[24-Nov-2019 23:12:27 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 22
+[24-Nov-2019 23:12:27 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 46
+[24-Nov-2019 23:12:34 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 22
+[24-Nov-2019 23:12:34 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 46
+[24-Nov-2019 23:12:44 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 22
+[24-Nov-2019 23:12:44 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 46
+[24-Nov-2019 23:13:33 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 22
+[24-Nov-2019 23:13:33 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 46
+[24-Nov-2019 23:14:30 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 22
+[24-Nov-2019 23:14:30 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 46
+[24-Nov-2019 23:14:40 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 22
+[24-Nov-2019 23:14:40 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 46
+[24-Nov-2019 23:14:46 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 22
+[24-Nov-2019 23:14:46 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 46
+[24-Nov-2019 23:18:27 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 22
+[24-Nov-2019 23:20:22 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 22
+[24-Nov-2019 23:22:03 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 22
+[24-Nov-2019 23:25:09 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 22
+[24-Nov-2019 23:27:25 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 22
+[24-Nov-2019 23:27:32 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/util/ultimosFeeds.php on line 22
+[25-Nov-2019 00:44:53 America/Sao_Paulo] PHP Warning:  require_once(./src/view/adm/cadastro/cadlivro.php): failed to open stream: No such file or directory in /home1/sebook24/public_html/src/view/adm/index_adm.php on line 69
+[25-Nov-2019 00:44:53 America/Sao_Paulo] PHP Fatal error:  require_once(): Failed opening required './src/view/adm/cadastro/cadlivro.php' (include_path='.:/opt/cpanel/ea-php73/root/usr/share/pear') in /home1/sebook24/public_html/src/view/adm/index_adm.php on line 69
+[25-Nov-2019 00:47:13 America/Sao_Paulo] PHP Warning:  require_once(./src/view/adm/cadastro/cadlivro.php): failed to open stream: No such file or directory in /home1/sebook24/public_html/src/view/adm/index_adm.php on line 69
+[25-Nov-2019 00:47:13 America/Sao_Paulo] PHP Fatal error:  require_once(): Failed opening required './src/view/adm/cadastro/cadlivro.php' (include_path='.:/opt/cpanel/ea-php73/root/usr/share/pear') in /home1/sebook24/public_html/src/view/adm/index_adm.php on line 69
+[25-Nov-2019 00:49:14 America/Sao_Paulo] PHP Warning:  require_once(./src/view/adm/cadastro/cadlivro.php): failed to open stream: No such file or directory in /home1/sebook24/public_html/src/view/adm/index_adm.php on line 69
+[25-Nov-2019 00:49:14 America/Sao_Paulo] PHP Fatal error:  require_once(): Failed opening required './src/view/adm/cadastro/cadlivro.php' (include_path='.:/opt/cpanel/ea-php73/root/usr/share/pear') in /home1/sebook24/public_html/src/view/adm/index_adm.php on line 69
+[25-Nov-2019 00:49:45 America/Sao_Paulo] PHP Warning:  require_once(./src/view/adm/cadastro/cadlivro.php): failed to open stream: No such file or directory in /home1/sebook24/public_html/src/view/adm/index_adm.php on line 69
+[25-Nov-2019 00:49:45 America/Sao_Paulo] PHP Fatal error:  require_once(): Failed opening required './src/view/adm/cadastro/cadlivro.php' (include_path='.:/opt/cpanel/ea-php73/root/usr/share/pear') in /home1/sebook24/public_html/src/view/adm/index_adm.php on line 69
+[25-Nov-2019 00:51:28 America/Sao_Paulo] PHP Warning:  require_once(./src/view/adm/cadastro/cadlivro.php): failed to open stream: No such file or directory in /home1/sebook24/public_html/src/view/adm/index_adm.php on line 60
+[25-Nov-2019 00:51:28 America/Sao_Paulo] PHP Fatal error:  require_once(): Failed opening required './src/view/adm/cadastro/cadlivro.php' (include_path='.:/opt/cpanel/ea-php73/root/usr/share/pear') in /home1/sebook24/public_html/src/view/adm/index_adm.php on line 60
+[25-Nov-2019 00:51:30 America/Sao_Paulo] PHP Warning:  require_once(./src/view/adm/cadastro/cadlivro.php): failed to open stream: No such file or directory in /home1/sebook24/public_html/src/view/adm/index_adm.php on line 60
+[25-Nov-2019 00:51:30 America/Sao_Paulo] PHP Fatal error:  require_once(): Failed opening required './src/view/adm/cadastro/cadlivro.php' (include_path='.:/opt/cpanel/ea-php73/root/usr/share/pear') in /home1/sebook24/public_html/src/view/adm/index_adm.php on line 60
+[25-Nov-2019 00:52:03 America/Sao_Paulo] PHP Warning:  require_once(./src/view/adm/cadastro/cadlivro.php): failed to open stream: No such file or directory in /home1/sebook24/public_html/src/view/adm/index_adm.php on line 60
+[25-Nov-2019 00:52:03 America/Sao_Paulo] PHP Fatal error:  require_once(): Failed opening required './src/view/adm/cadastro/cadlivro.php' (include_path='.:/opt/cpanel/ea-php73/root/usr/share/pear') in /home1/sebook24/public_html/src/view/adm/index_adm.php on line 60
+[25-Nov-2019 00:58:01 America/Sao_Paulo] PHP Warning:  require_once(./src/view/adm/cadastro/cadlivro.php): failed to open stream: No such file or directory in /home1/sebook24/public_html/src/view/adm/index_adm.php on line 60
+[25-Nov-2019 00:58:01 America/Sao_Paulo] PHP Fatal error:  require_once(): Failed opening required './src/view/adm/cadastro/cadlivro.php' (include_path='.:/opt/cpanel/ea-php73/root/usr/share/pear') in /home1/sebook24/public_html/src/view/adm/index_adm.php on line 60
+[25-Nov-2019 00:58:29 America/Sao_Paulo] PHP Warning:  require_once(./src/view/adm/cadastro/cadlivro.php): failed to open stream: No such file or directory in /home1/sebook24/public_html/src/view/adm/index_adm.php on line 60
+[25-Nov-2019 00:58:29 America/Sao_Paulo] PHP Fatal error:  require_once(): Failed opening required './src/view/adm/cadastro/cadlivro.php' (include_path='.:/opt/cpanel/ea-php73/root/usr/share/pear') in /home1/sebook24/public_html/src/view/adm/index_adm.php on line 60
+[25-Nov-2019 01:02:53 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[25-Nov-2019 01:03:24 America/Sao_Paulo] PHP Warning:  require_once(./src/view/adm/cadastro/cadlivro.php): failed to open stream: No such file or directory in /home1/sebook24/public_html/src/view/adm/index_adm.php on line 60
+[25-Nov-2019 01:03:24 America/Sao_Paulo] PHP Fatal error:  require_once(): Failed opening required './src/view/adm/cadastro/cadlivro.php' (include_path='.:/opt/cpanel/ea-php73/root/usr/share/pear') in /home1/sebook24/public_html/src/view/adm/index_adm.php on line 60
+[25-Nov-2019 01:20:14 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[25-Nov-2019 01:24:38 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[25-Nov-2019 01:24:52 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[25-Nov-2019 01:25:05 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[25-Nov-2019 01:25:08 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[25-Nov-2019 01:26:39 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[25-Nov-2019 01:26:54 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[25-Nov-2019 01:27:18 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[25-Nov-2019 01:27:27 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[25-Nov-2019 01:29:34 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[25-Nov-2019 21:42:41 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home1/sebook24/public_html/src/model/LivroDAO.php:259
+Stack trace:
+#0 /home1/sebook24/public_html/src/controller/LivroController.php(186): Model\LivroDAO->adicionarLivro()
+#1 /home1/sebook24/public_html/src/view/adm/cadastro/cadLivro.php(7): Controller\LivroController->gravarAlterar()
+#2 /home1/sebook24/public_html/src/view/adm/index_adm.php(60): require_once('/home1/sebook24...')
+#3 /home1/sebook24/public_html/index.php(22): require_once('/home1/sebook24...')
+#4 {main}
+  thrown in /home1/sebook24/public_html/src/model/LivroDAO.php on line 259
+[25-Nov-2019 21:45:56 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[25-Nov-2019 21:46:32 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[25-Nov-2019 21:46:49 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[25-Nov-2019 21:47:07 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[25-Nov-2019 22:02:28 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 41
+[25-Nov-2019 22:02:28 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 66
+[25-Nov-2019 22:02:33 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 41
+[25-Nov-2019 22:02:33 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 66
+[26-Nov-2019 00:14:30 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[26-Nov-2019 00:28:38 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[26-Nov-2019 00:34:50 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[26-Nov-2019 00:54:03 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[26-Nov-2019 18:11:55 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[26-Nov-2019 18:14:01 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[26-Nov-2019 22:26:44 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[26-Nov-2019 23:59:46 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function rowCount() on null in /home1/sebook24/public_html/src/model/LivroDAO.php:146
+Stack trace:
+#0 /home1/sebook24/public_html/src/view/user/menuHome/livros.php(102): Model\LivroDAO->listarLivros(0, 8)
+#1 /home1/sebook24/public_html/src/view/user/index_user.php(7): require_once('/home1/sebook24...')
+#2 /home1/sebook24/public_html/index.php(24): require_once('/home1/sebook24...')
+#3 {main}
+  thrown in /home1/sebook24/public_html/src/model/LivroDAO.php on line 146
+[27-Nov-2019 00:00:54 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 41
+[27-Nov-2019 00:00:54 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home1/sebook24/public_html/src/view/user/pages/descLivro.php on line 66
+[27-Nov-2019 00:06:18 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 00:20:09 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 00:25:13 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 00:27:59 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 00:31:01 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 00:33:55 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 00:38:15 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 00:40:59 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 00:43:35 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 00:45:56 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 00:48:49 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 00:51:15 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 00:53:20 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 00:56:58 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 00:59:32 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 01:02:04 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 01:06:20 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 01:08:15 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 01:10:29 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 01:13:37 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 01:15:57 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 01:20:49 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 01:24:19 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 01:25:38 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 01:27:09 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 01:31:42 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 01:35:14 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 01:39:14 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 01:42:54 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 01:44:58 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 01:49:04 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 01:51:10 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 01:53:34 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 01:55:38 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 01:57:49 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 02:04:02 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 02:07:17 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/sebook24/public_html/src/controller/LivroController.php on line 205
+[27-Nov-2019 02:23:49 America/Sao_Paulo] PHP Warning:  require_once(./src/view/adm/cadastro/cadLivros.php): failed to open stream: No such file or directory in /home1/sebook24/public_html/src/view/adm/index_adm.php on line 60
+[27-Nov-2019 02:23:49 America/Sao_Paulo] PHP Fatal error:  require_once(): Failed opening required './src/view/adm/cadastro/cadLivros.php' (include_path='.:/opt/cpanel/ea-php73/root/usr/share/pear') in /home1/sebook24/public_html/src/view/adm/index_adm.php on line 60

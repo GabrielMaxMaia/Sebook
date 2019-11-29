@@ -1,0 +1,284 @@
+[31-Oct-2019 22:35:58 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[31-Oct-2019 22:36:05 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[31-Oct-2019 22:37:25 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[31-Oct-2019 22:37:35 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[31-Oct-2019 22:38:23 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[31-Oct-2019 22:40:33 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[31-Oct-2019 22:40:43 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[31-Oct-2019 22:40:43 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[31-Oct-2019 22:40:58 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[31-Oct-2019 22:40:58 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[31-Oct-2019 22:41:00 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[31-Oct-2019 22:41:00 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[31-Oct-2019 22:41:02 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[31-Oct-2019 22:41:14 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 02:03:42 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 02:03:49 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 02:03:50 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 02:03:51 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 02:03:51 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 02:03:52 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 02:03:58 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 02:03:59 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 02:04:14 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 02:04:15 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 02:04:16 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 10:09:58 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 10:10:01 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 10:10:04 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 10:10:05 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 10:10:06 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 10:10:08 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 10:10:09 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 10:10:10 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 10:10:10 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 10:10:10 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 10:10:14 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 10:10:14 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 10:10:14 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 10:10:14 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 10:10:14 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 10:10:15 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 10:10:41 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 10:14:40 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 10:16:33 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 10:16:58 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 10:17:14 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 15:48:57 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 15:49:00 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 15:49:03 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[01-Nov-2019 15:49:28 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[02-Nov-2019 10:06:49 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[02-Nov-2019 10:06:57 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[02-Nov-2019 10:06:57 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[02-Nov-2019 14:03:49 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[03-Nov-2019 13:26:13 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[03-Nov-2019 13:26:21 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[03-Nov-2019 13:26:27 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[03-Nov-2019 13:26:43 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[03-Nov-2019 13:26:52 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[03-Nov-2019 13:27:11 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[04-Nov-2019 08:09:46 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[04-Nov-2019 08:10:05 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[04-Nov-2019 08:10:08 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[04-Nov-2019 19:14:15 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[04-Nov-2019 19:19:34 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[04-Nov-2019 19:19:57 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[04-Nov-2019 19:20:03 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[04-Nov-2019 19:20:03 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[04-Nov-2019 19:20:03 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[04-Nov-2019 19:20:03 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7
+[04-Nov-2019 19:20:03 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Model\livroDAO' not found in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php:7
+Stack trace:
+#0 {main}
+  thrown in /home1/sebook24/public_html/src/view/user/pages/includes/pesquisa.php on line 7

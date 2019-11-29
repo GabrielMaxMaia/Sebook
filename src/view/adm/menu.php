@@ -46,9 +46,7 @@ $acessoUser = $_SESSION['userLogado']['acesso'] ?? "";
 		<!-- <li>
 			<a href="<?//= _URLBASE_ ?>area/adm/cadastro/cadAutor">Autores</a>
 		</li>
-		<li>
-			<a href="<?//= _URLBASE_ ?>area/adm/cadastro/cadLivro">Livros</a>
-		</li>
+		
 		<li>
 			<a href="<?//= _URLBASE_ ?>area/adm/cadastro/cadLivroAutor">Livros Autor</a>
 		</li>

@@ -1,0 +1,328 @@
+
+/* Reset */
+header, footer, article, nav, section, aside, time, hgroup {
+	display : block;
+}
+html, body, header, footer, article, nav, section, aside, time, h1, h2, h3, p, a, ul, li, dl, dd, dt, table, thead, tfoot, tbody, th, tr, td {
+	border : 0;
+	font : 12px/22px Verdana, sans-serif;
+	margin : 0;
+	outline : 0;
+	padding : 0;
+}
+
+/* BASICS */
+BODY {
+	background : #B5B3A9;
+	border-top : 5px solid black;
+	color : #444;
+}
+
+A {
+	color : #444;
+        font-weight: bold;
+	text-decoration : none;
+	}
+	A:HOVER {
+		color : #DB0202;
+	}
+	
+H1, H3, H4, H5, H6 {
+	background : url(../img/ai4.png) no-repeat 0 7px;
+	border-bottom : 1px dotted #B5B3A9;
+	color : #222;
+	font-weight : bold;
+	margin : 0 0 10px;
+	padding : 0 0 0 25px;
+	}
+	H1 {
+		background : url(../img/ai4.png) no-repeat 0 6px;
+		font-size : 15px;
+	}
+	H2 {
+		font-size : 14px;
+		margin : 0 0 20px 0;
+	}
+	H3 {
+		background : url(../img/ai5.png) no-repeat 0 7px;
+	}
+	H3, H4, H5, H6 {
+		font-size : 13px;
+	}
+
+SUP {
+	top : -4px;
+}
+
+
+/* Header */	
+header {
+	background : url(../img/hd1.png) no-repeat top left;
+	height : 230px;
+	position : relative;
+	}
+	header a, header p {
+		-moz-border-radius: 4px;
+		-webkit-border-radius: 4px;
+		color : #FFF;
+	}
+	header a {
+		background : black;
+		font-size: 16px;
+		margin : 0 10px 0 10px;
+		padding : 5px 10px;
+	}
+	header a:hover {
+		color : #000;
+	}
+	header p {
+		background : #000;
+		bottom:30px;
+		font-weight: bold;
+		opacity: 0.3;
+		padding : 10px;
+		position:absolute;
+                top:60px;
+		right : 20px;
+		width : 400px;
+	}
+
+/* Article */
+article {
+	/*border-right : 1px dotted #666; */
+	float : left;
+	height : 500px;
+	padding : 0 0 0 5px ;
+	width : 520px;
+	}
+	article p {
+		margin : 0 0 20px 0;
+	}
+	article img {
+		float : left;
+		margin : 6px 10px 0 0;
+	}
+
+/* Sidebar */
+aside {
+	float : left;
+	margin : 0 0 0 10px;
+	width : 190px;
+        height: 400px;
+	border-right : 1px dotted #666;
+}
+aside form input.peq {
+		background: #999;
+		border : 1px solid #888;
+		color: #FFF;
+		cursor : pointer;
+		font-weight : bold;
+		margin : 10px 0 0 0;
+		text-shadow : 0 -1px 1px rgba(0,0,0,0.25);
+		width : 80px;
+}	
+
+/* Navigation & Menu */
+nav ul {
+	list-style : none;
+	}
+	nav li {
+		background : url(../img/ai1.png) no-repeat 0 8px;
+		padding : 0 0 0 15px;
+	}
+	nav li ul, aside li ul li ul {
+		margin : 0;
+	}
+	nav li li a {
+		font-size : 11px;
+	}
+	nav li li li a {
+		font-size : 10px;
+		}
+	nav li li li, aside li.active li li {
+		background : url(../img/ai8.png) no-repeat 0 10px;
+	}
+	nav li.active, aside li.active li {
+		background : url(../img/ai2.png) no-repeat 0 8px;
+	}
+        
+/* Wrappers */
+#a, #b {
+	margin : 0 auto;
+	position : relative;
+        background-color: white;
+	}
+	#a {
+		width : 730px;
+	}
+	#b {
+		overflow : hidden;
+                margin-top: 15px;
+	}        
+        
+/* Footer */
+footer {
+	border-top : 1px dotted #B5B3A9;
+	clear : both;
+	margin : 0;
+	}
+	footer a, footer p {
+	  color : #666;
+	  display : inline;
+	  font-size : 10px;
+	}
+        
+
+
+.icons {
+    text-align: center;
+}
+.icons li {
+    line-height:24px;
+    font-size:12px;
+display:inline;
+}
+.icons img {
+    margin-right:5px;
+    margin-top:10px
+}
+
+/* Formul�rio */
+form{
+   width: 500px;
+   height: 250px;   
+}
+
+label{
+    width: 120px;
+    float: left;
+    display: block;
+    text-align: right;
+}
+
+input, select{
+    margin-left:5px;
+    width: 250px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.mini{
+    width: 70px;
+}
+.peq{
+    width: 100px;
+}
+.med{
+    width: 180px;
+}
+.btn{
+    width: 55px;
+}
+
+.rbSexo{
+  width: 20px;  
+  float: left;
+}
+
+.lblSexo{
+    text-align: left;
+    width: 60px;
+}
+
+/* -------------------------------- Tabela ---------------------------------- */
+table {
+        width: 100%;
+	border-collapse : collapse;
+	text-align:left;
+	margin : 0 0 0 0;
+	}
+	caption {
+		-moz-border-radius : 4px;
+		-webkit-border-radius : 4px;
+		background : #000;
+		color : #FFF;
+		font-weight : bold;
+		}
+	tr:nth-child(odd) { 
+		background : #FFF;
+                font-weight: bold;                
+		}
+	tr:nth-child(even) {
+		background : #DDD;
+                font-weight: bold;
+		}
+	tr:hover td {
+		color : red;
+                font-weight: bold;
+		}
+	td, th {
+		padding : 0 5px;
+		vertical-align:top;               
+                font-weight: bold;
+		}
+	th {
+		background : #FFF;
+		border-bottom : 2px solid #000;
+		color : #666;
+		font-size : 10px;
+		font-weight : bold;
+                text-align: center;
+		}
+	td {
+		border-bottom : 1px solid #CCC;
+		font-size : 10px;
+		}
+                td a img{
+                    padding-bottom: 2px;
+                }
+                
+        .btnFrm{
+           width: 30px;
+        }
+/* ----------------------------- FIM TABELA --------------------------------- */
+
+
+/* ------------------------- valida��o email -------------------------------- */
+
+/*
+#txtEmail:valid{
+   background-color: lime;
+}
+*/
+
+/* ------------------------ formul�rio de Login ----------------------------- */
+
+
+.frmLogin{
+    width: 180px;
+    height: 130px;
+    border-radius: 9px; 
+    -moz-border-radius: 9px; 
+    -webkit-border-radius: 9px; 
+    border: 2px solid blue;
+    background-color: deepskyblue;
+}
+.frmLogin input{
+    width: 100px;
+    border-radius: 9px; 
+    -moz-border-radius: 9px; 
+    -webkit-border-radius: 9px; 
+    border: 1px solid #FFF;    
+}
+.frmLogin input.btn{
+    width: 80px;
+    border: 4px double #000;
+    background-color: lightgreen;
+}
+.frmLogin label{
+    width: 60px;
+    font-weight: bold;
+}
+
+.on{
+    display: block;
+}
+
+.off{
+    display: none;
+}

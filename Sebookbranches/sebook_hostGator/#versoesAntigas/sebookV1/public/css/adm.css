@@ -1,0 +1,471 @@
+* {
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: sans-serif;
+    margin: auto
+}
+
+
+/*Barra divisória entre header e body do adm*/
+
+div#divisor {
+    padding: 20px 20px;
+    background: #111;
+}
+
+
+/*Container pai de todos, centraliza tudo*/
+
+div#container {
+    width: 100%;
+    height: 100%;
+    /* margin:1rem auto 0; */
+    box-sizing: border-box;
+    background: linear-gradient(45deg, #06cc3e26, #008a9b47)
+}
+
+img {
+    width: 100%;
+    object-fit: cover
+}
+
+*/ a {
+    text-decoration: none;
+    color: #123
+}
+
+.container {
+    margin: 0 10px
+}
+
+
+/*======================Topo======================*/
+
+header img {
+    max-width: 150px;
+    object-fit: contain
+}
+
+header {
+    background: linear-gradient(45deg, #008a9b47, #06cc3e26);
+    background-color: #fff;
+    z-index: 9999
+}
+
+header img {
+    max-width: 130px
+}
+
+header .perfil {
+    max-width: 40px;
+    align-self: flex-end
+}
+
+header .menuGroup {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    box-sizing: border-box
+}
+
+.navDesk {
+    padding: 20px 20px;
+    background: #111
+}
+
+
+/*===========================================Menu*/
+
+.middle {
+    position: absolute;
+}
+
+.middle .Menu {
+    width: 300px;
+    border-radius: 1px;
+    overflow: hidden
+}
+
+.middle .item {
+    border-top: 1px solid #111;
+    overflow: hidden
+}
+
+.middle .btn {
+    display: block;
+    padding: 20px 20px;
+    background: #111;
+    color: #fff;
+    position: relative
+}
+
+.middle .btn:before {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #111;
+    left: 20px;
+    bottom: -7px;
+    transform: rotate(45deg)
+}
+
+.middle .smenu {
+    background: #333;
+    overflow: hidden;
+    transition: max-height 0.6s;
+    max-height: 0;
+}
+
+.middle a {
+    display: block;
+    padding: 16px 26px;
+    color: #fff;
+    font-size: 14px;
+    margin: 0;
+    position: relative;
+}
+
+.middle .smenu a:before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background: #000;
+    left: 0;
+    top: 0;
+    transition: 0.3s;
+    opacity: 0
+}
+
+.middle a:hover:before {
+    opacity: 1
+}
+
+.middle .item:target .smenu {
+    max-height: 15em;
+}
+
+
+/*===========================================Icone laterais*/
+
+.Social-Bar {
+    position: fixed;
+    right: 0;
+    top: 35%;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 100
+}
+
+.icon {
+    color: white;
+    text-decoration: none;
+    padding: .7rem;
+    display: flex;
+    transition: all .5s
+}
+
+.icon-facebook {
+    background: #2E406E
+}
+
+.icon-twitter {
+    background: #339DC5
+}
+
+.icon-instagram {
+    background: linear-gradient(45Deg, #405DE6, #5851DB, #833AB4, #C13584, #C13584, #E1306C, #FD1D1D)
+}
+
+.icon:first-child {
+    border-radius: 1rem 0 0 0
+}
+
+.icon:last-child {
+    border-radius: 0 0 0 1rem
+}
+
+.icon:hover {
+    padding-right: 3rem;
+    border-radius: 1rem 0 0 1rem;
+    box-shadow: 0 0 .5rem rgb(255, 255, 255)
+}
+
+
+/*----------------------NIVEL 2
+
+/*==========================Tratamento=================*/
+
+.tratamento {
+    width: 100%;
+    position: relative;
+    padding: 1rem;
+    margin: auto;
+    box-sizing: border-box;
+    max-width: 460px;
+    align-self: center
+}
+
+.tratamento img {
+    margin-top: 20px;
+    max-width: 50px
+}
+
+.tratamento h2 {
+    padding: 10px 20px
+}
+
+.tratamento .balaoContainer {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    z-index: 1;
+    width: 100%;
+    border: 1px solid #ccc
+}
+
+.tratamento .balaoContainer {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    z-index: 1;
+    width: 100%;
+    border: 1px solid #ccc
+}
+
+.tratamento #balao {
+    background: #fff;
+    position: relative;
+    padding: 1rem;
+    width: auto;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100px;
+    color: #111;
+    background: linear-gradient(45deg, #ccede3, #bee3e3)
+}
+
+.tratamento #balao h5,
+.tratamento #balao p {
+    align-self: center
+}
+
+#balao h5 {
+    padding: .5rem;
+    box-sizing: border-box
+}
+
+#balao:before,
+#balao::after {
+    content: '';
+    position: absolute;
+    background: #fff
+}
+
+.tratamento #balao:before {
+    width: 19px;
+    height: 19px;
+    left: -10px;
+    top: 17px;
+    -webkit-transform: rotate(45deg);
+    border: 1px solid #ccc
+}
+
+.tratamento #balao::after {
+    width: 20px;
+    height: 22px;
+    left: -7.5px;
+    top: 16px;
+    -webkit-transform: rotate(45deg);
+    z-index: 9999
+}
+
+.tratamento .itemComentario figure {
+    display: flex;
+    align-items: flex-end
+}
+
+.tratamento .itemComentario figcaption p {
+    align-self: flex-end
+}
+
+.tratamento .itemComentario h4 {
+    margin-top: .3rem
+}
+
+.tratamento .itemComentario p {
+    text-align: left;
+    padding: 20px
+}
+
+.tratamento .btn {
+    background: none;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: #6eb9b4;
+    width: 7rem;
+    margin: .4rem 0;
+    align-self: flex-end;
+    color: #fff
+}
+
+.tratamento .btn:hover {
+    color: #fff;
+    background-color: #7bc5c0;
+    transition: .2s all ease-in-out
+}
+
+
+/*===================Eventos e Cometnarios========================*/
+
+.comentarios {
+    padding: 1rem;
+    box-sizing: border-box
+}
+
+.comentarios div#container {
+    max-width: 10000px!important
+}
+
+.comentarios .containerTable table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto
+}
+
+.comentarios .containerTable table th {
+    min-width: 100px
+}
+
+.comentarios th,
+.comentarios td {
+    padding: .5rem;
+    box-sizing: border-box;
+    text-align: center
+}
+
+
+/*======================Controle Usuario======================*/
+
+.controle {
+    width: 100%;
+    position: relative;
+    padding: 1rem;
+    margin: auto;
+    box-sizing: border-box;
+    max-width: 460px;
+    align-self: center;
+    top: 10px
+}
+
+.controle .container h1 {
+    font-size: 30px;
+    text-align: center;
+    background-color: none
+}
+
+.controle .container p {
+    margin: .5rem 0;
+    font-size: .95rem;
+    text-align: center;
+    line-height: 1.3rem
+}
+
+.controle .container hr {
+    margin-bottom: 25px
+}
+
+.controle .container form input {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 15px
+}
+
+.controle .container form .tex {
+    height: 70px
+}
+
+.controle .container form button {
+    width: 35%;
+    margin: 0 auto;
+    margin: 1rem 0;
+    padding: .6rem;
+    border: 1px solid #ccc;
+    background: #fff
+}
+
+@media (max-width: 780px) {
+    .headerAjuda {
+        position: inherit!important
+    }
+}
+
+
+/*===================NIVEL 1==================*/
+
+
+/*===================Cadastrar Evento==================*/
+
+.cadastrarEve {
+    width: 100%;
+    position: relative;
+    padding: 1rem;
+    margin: auto;
+    box-sizing: border-box;
+    max-width: 460px;
+    align-self: center
+}
+
+
+/*===================Aprovar Sebo==================*/
+
+.aprovaSebo {
+    width: 100%;
+    position: relative;
+    padding: 1rem;
+    margin: auto;
+    box-sizing: border-box;
+    max-width: 460px;
+    align-self: center
+}
+
+
+/*===================Apagar==================*/
+
+.apagar {
+    width: 100%;
+    position: relative;
+    padding: 1rem;
+    margin: auto;
+    box-sizing: border-box;
+    max-width: 460px;
+    align-self: center
+}
+
+
+/*===================MASTER==================*/
+
+.banir {
+    width: 100%;
+    position: relative;
+    padding: 1rem;
+    margin: auto;
+    box-sizing: border-box;
+    max-width: 460px;
+    align-self: center
+}
